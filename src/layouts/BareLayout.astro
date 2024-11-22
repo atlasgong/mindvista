@@ -1,0 +1,26 @@
+---
+import "src/global.css";
+
+interface Props {
+    pageTitle: string;
+    description?: string;
+}
+
+const { pageTitle, description = "Your One-Stop Hub for Wellness and Engagement. Explore MindVista, McGill University's student-led wellness hub. Access resources, support, and tools to enhance your mental health, well-being, and campus engagement." } = Astro.props;
+---
+
+<html lang="en" class="light bg-cBackground">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+        <meta name="description" content={description} />
+
+        <!-- social media here-->
+	</head>
+	<body class="min-h-screen flex flex-col justify-between text-cText antialiased">
+		<slot />
+	</body>
+</html>
