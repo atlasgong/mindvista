@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import EmergencyButton from "@components/EmergencyButton";
 import ThemeIcon from "@components/ThemeIcon";
 
-import "src/hamburgers.css";
+import "@styles/hamburgers.css";
 
 export default function NavBar() {
     const [nav, setNav] = useState(false);
 
     return (
         <header>
-            <div className="fixed z-20 flex w-full flex-row justify-between px-6 py-2 shadow-cBackgroundOffset drop-shadow-sm backdrop-blur-2xl">
+            <div className="fixed z-20 top-0 left-0 flex w-full flex-row justify-between px-6 py-2 shadow-cBackgroundOffset drop-shadow-sm backdrop-blur-2xl">
                 <div className="basis-0">
                     <LogoButton />
                 </div>

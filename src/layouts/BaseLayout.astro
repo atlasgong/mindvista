@@ -3,6 +3,8 @@ import BareLayout from '@layouts/BareLayout.astro';
 import Footer from '@components/Footer';
 import NavBar from '@components/NavBar';
 
+import "@styles/global.css";
+
 interface Props {
     pageTitle: string;
     description?: string;
@@ -13,7 +15,7 @@ const { pageTitle, description } = Astro.props;
 
 <BareLayout pageTitle=`${pageTitle} - MindVista` description={description}>
     <NavBar client:load />
-    <main class="flex-grow mt-[10vh]">
+    <main class="mt-[10vh]">
         <slot />
     </main>
     <Footer />
