@@ -14,6 +14,8 @@
     --text: theme("colors.neutral.950");
     --text-offset: theme("colors.neutral.600");
     --border: theme("colors.sky.300");
+
+    --color-gradient: linear-gradient(45deg, theme("colors.sky.800"), theme("colors.sky.600"));
 }
 
 .dark {
@@ -23,4 +25,6 @@
     --text: theme("colors.neutral.200");
     --text-offset: theme("colors.neutral.300");
     --border: theme("colors.slate.700");
+
+    --color-gradient: linear-gradient(45deg, theme("colors.emerald.300"), theme("colors.emerald.500"));
 }
