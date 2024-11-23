@@ -20,7 +20,7 @@ const { page } = Astro.props as { page: CollectionEntry<"legal"> };
 const { Content } = await page.render();
 ---
 
-<MarkdownLayout pageTitle={`${page.data.title} - MindVista`} description={page.data.description}>
+<MarkdownLayout pageTitle={page.data.title} description={page.data.description}>
   <Prose>
     <Content />
   </Prose>
