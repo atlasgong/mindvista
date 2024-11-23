@@ -55,3 +55,13 @@ This repository follows a modified conventional commit style to keep our commit 
 -   **Scope**: Use lowercase, concise scopes if you want to specify a particular section (e.g., `feat(nav): add dropdown menu`).
 
 ---
+
+# Documentation
+
+### Layouts
+There exist 3 layouts, all found in [src/layouts](src/layouts):
+- [BareLayout.astro](src/layouts/BareLayout.astro)
+- [BaseLayout.astro](src/layouts/BaseLayout.astro)
+- [MarkdownLayout.astro](src/layouts/MarkdownLayout.astro)
+
+`MarkdownLayout` extends `BaseLayout` extends `BareLayout`. All markdown rendered pages **do and should continue to extend** `MarkdownLayout`. `BareLayout` contains an HTML boilerplate for all pages, and should not be extended with the exception of experimental design.

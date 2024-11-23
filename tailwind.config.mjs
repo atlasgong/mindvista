@@ -20,7 +20,17 @@ export default {
                 cBorder: "var(--border)",
                 cSoftWhite: "var(--soft-white)",
             },
+            typography: {
+                DEFAULT: { // affects prose components
+                    css: {
+                        color: "var(--text)",
+                        '*': { color: 'inherit' },
+                    }
+                }
+            }
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };

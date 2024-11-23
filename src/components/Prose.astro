@@ -1,0 +1,12 @@
+---
+// general wrapper class for styling Content pages (specifically for markdown content)
+// see https://docs.astro.build/en/recipes/tailwind-rendered-markdown/
+
+// prose modifiers follow the syntax: prose-[element]:class-to-apply
+---
+
+<div
+    class="prose min-w-full prose-h1:text-4xl prose-h1:md:text-5xl prose-h1:lg:text-6xl prose-h1:md:text-center prose-h1:uppercase prose-h2:text-3xl prose-headings:font-bold prose-headings:mt-4 prose-headings:mb-2"
+>
+    <slot />
+</div>

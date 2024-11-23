@@ -1,0 +1,27 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import Prose from "@components/Prose.astro";
+
+interface PageProps {
+  params: { legal: string },
+  props: { page: CollectionEntry<"legal"> },
+}
+
+export async function getStaticPaths(): Promise<PageProps[]> {
+  const pages = await getCollection("legal");
+  return pages.map((page: CollectionEntry<"legal">) => ({
+    params: { legal: page.slug },
+    props: { page },
+  })); 
+}
+
+const { page } = Astro.props as { page: CollectionEntry<"legal"> };
+const { Content } = await page.render();
+---
+
+<MarkdownLayout pageTitle={`${page.data.title} - MindVista`} description={page.data.description}>
+  <Prose>
+    <Content />
+  </Prose>
+</MarkdownLayout>

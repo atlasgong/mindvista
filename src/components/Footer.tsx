@@ -142,12 +142,16 @@ function LegalBar() {
     return (
         <div className="flex flex-col text-center md:flex-row md:text-right">
             <div className="flex grow flex-row justify-center gap-2 font-semibold md:justify-normal">
-                <a href="/" className="">
+                <a href="/privacy-policy" className="">
                     Privacy Policy
                 </a>
                 <span className="font-normal">|</span>
-                <a href="/" className="">
-                    Terms of Service
+                <a href="/disclaimers" className="">
+                    Disclaimers
+                </a>
+                <span className="font-normal">|</span>
+                <a href="/copyright" className="">
+                    Copyright
                 </a>
             </div>
             <p className="grow">&copy; {year} MindVista. All rights reserved.</p>
