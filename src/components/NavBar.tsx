@@ -9,12 +9,12 @@ export default function NavBar() {
 
     return (
         <header>
-            <div className="fixed z-20 top-0 left-0 flex w-full flex-row justify-between px-6 py-2 shadow-cBackgroundOffset drop-shadow-sm backdrop-blur-2xl">
+            <div className="fixed left-0 top-0 z-20 flex w-full flex-row items-center justify-between px-6 py-2 drop-shadow-sm backdrop-blur-2xl md:py-4 dark:border-b dark:border-cBackgroundOffset">
                 <div className="basis-0">
                     <LogoButton />
                 </div>
 
-                <div className="content-center max-lg:hidden">
+                <div className="text-lg max-lg:hidden">
                     <NavLinks flexDirection="row" className="gap-6" />
                 </div>
 
@@ -39,35 +39,26 @@ interface HamburgerProps {
 }
 function Hamburger({ nav, setNav }: HamburgerProps) {
     return (
-        <button
-            className={`${nav ? "is-active" : ""} hamburger hamburger--emphatic`}
-            type="button"
-            aria-label="Toggle Navigation Menu"
-            onClick={() => setNav(!nav)}
-        >
+        <button className={`${nav ? "is-active" : ""} hamburger hamburger--emphatic`} type="button" aria-label="Toggle Navigation Menu" onClick={() => setNav(!nav)}>
             <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
             </span>
         </button>
     );
-};
+}
 
 interface NavMenuProps {
     nav: boolean;
 }
 function NavMenu({ nav }: NavMenuProps) {
     return (
-        <div
-            className={`navMenu fixed left-0 top-0 z-10 h-full w-full bg-cBackground transition-transform duration-300 ${
-                nav ? "translate-x-0" : "translate-x-full"
-            } pointer-events-auto flex flex-col items-center justify-center gap-4`}
-        >
+        <div className={`navMenu fixed left-0 top-0 z-10 h-full w-full bg-cBackground transition-transform duration-300 ${nav ? "translate-x-0" : "translate-x-full"} pointer-events-auto flex flex-col items-center justify-center gap-4`}>
             <ThemeIcon />
             <NavLinks flexDirection="col" className="gap-2 text-center text-5xl" />
             <EmergencyButton className="mt-2" />
         </div>
     );
-};
+}
 
 interface NavLinksProps {
     flexDirection: "row" | "col";
@@ -91,13 +82,7 @@ function LogoButton() {
 
     return (
         <button className="flex flex-row gap-2 text-left text-cAccent" onClick={redirectToHomepage}>
-            <img
-                className="max-w-12 rounded-full border-4 border-cAccent bg-cAccent dark:border-0 dark:bg-transparent"
-                src="/logo.png"
-                alt="MindVista Logo"
-                width="164"
-                height="164"
-            />
+            <img className="max-w-12 rounded-full border-4 border-cAccent bg-cAccent dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" width="164" height="164" />
             <div className="flex flex-col max-lg:hidden">
                 <h1 className="text-lg font-bold">MINDVISTA</h1>
                 <p className="-mt-1 text-[0.6rem] font-bold leading-[0.5rem]">Your wellness journey starts here.</p>
