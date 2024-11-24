@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-start gap-6">
+
+    <!-- this outer div is necessary -->
+    <div>
+        <Icon name={icon} class="text-cBackground rounded-full p-2 w-12 h-12 bg-cAccent"></Icon>
+    </div>
+
+    <div class="flex flex-col">
+        <h3 class="text-xl font-bold mb-1">{title}</h3>
+        <p class="text-md font-medium text-cTextOffset sm:max-w-[95%]">{description}</p>
+    </div>
+
+</div>

@@ -1,14 +1,16 @@
 ---
+import MentalWellnessFact from "@components/MentalWellnessFact.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const suffix = false;
 ---
 
-<BaseLayout pageTitle="MindVista", suffix={suffix}>
+<BaseLayout pageTitle="MindVista", suffix={suffix} className="[&_h2]:tracking-tighter [&_p]:tracking-tight">
+    <!-- FIRST SECTION -->
     <div
-        class="py-[10vh] lg:py-[15vh] px-[5vw] md:px-[7.5vw] lg:px-[10vw] text-center"
+        class="text-center pt-[10vh] lg:pt-[15vh] pb-12 px-[5vw] md:px-[7.5vw] lg:px-[10vw]"
     >
-        <h2 class="text-5xl md:text-6xl font-bold tracking-tighter">
+        <h2 class="text-5xl md:text-6xl font-bold">
             Your Central Hub for <span class="text-cAccent">Wellness</span> and <span
                 class="text-cAccent">Growth</span
             > at McGill
@@ -16,16 +18,46 @@ const suffix = false;
         </h2>
 
         <p
-            class="text-xl tracking-tight font-medium text-cTextOffset py-6 md:px-20 lg:px-28"
+            class="text-xl font-medium text-cTextOffset py-6 md:px-20 lg:px-28"
         >
             Welcome to <span class="font-semibold text-cAccent">MindVista</span
             >, an innovative student-led initiative at McGill University
             committed to enhancing student wellness and engagement.
             <span class="hidden md:inline">
-                asda Our passionate team of volunteers is devoted to regularly
+                Our passionate team of volunteers is devoted to regularly
                 updating our website to simplify the process of accessing
                 essential resources for your well-being.
             </span>
         </p>
     </div>
+    <!-- END OF FIRST SECTION -->
+
+    <p class="text-center bg-cBackgroundOffset min-h-12 content-center font-bold text-lg">Info Bar</p>
+
+    <!-- MENTAL WELLNESS SECTION -->
+    <div class="px-[5vw]">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mt-16">What is Mental Wellness?</h2>
+        <p class="text-center text-xl  font-medium text-cTextOffset py-3 md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one’s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
+
+        <div class="sm:mx-6 lg:mx-6 xl:mx-12 mt-12 mb-8 grid grid-cols-1 sm:grid-cols-2 grid-rows-3 sm:grid-rows-3 gap-4">
+            <div class="p-4"><MentalWellnessFact icon="tabler:stretching" title="Regular Physical Activity" description="Exercise boosts endorphins, improves sleep, and reduces stress. A daily walk, yoga, or gym session can enhance both physical and mental resilience."></div>
+            <div class="hidden sm:grid p-4"><MentalWellnessFact icon="tabler:heart-handshake" title="Healthy Relationships" description="Meaningful connections provide emotional support, reduce feelings of loneliness, and foster a sense of belonging. Prioritize time with friends and family."></div>
+            <div class="hidden sm:grid p-4"><MentalWellnessFact icon="tabler:circles-relation" title="Mindfulness and Stress Management" description="Techniques like meditation, deep breathing, or journaling help regulate emotions, lower anxiety, and keep you grounded in the present moment."></div>
+            <div class="hidden sm:grid p-4"><MentalWellnessFact icon="tabler:apple" title="A Balanced Diet" description="A nutrient-rich diet fuels your brain and body. Consuming omega-3s, whole grains, fruits, and vegetables positively affects mood and cognitive function."></div>
+            <div class="p-4"><MentalWellnessFact icon="tabler:zzz" title="Quality Sleep" description="Restorative sleep is essential for memory, mood regulation, and decision-making. Aim for 7-9 hours per night and establish a consistent bedtime routine."></div>
+            <div class="p-4"><MentalWellnessFact icon="tabler:user-check" title="Professional Support" description="Therapy or counseling can provide strategies to manage challenges and foster growth. It\'s a proactive step toward building long-term mental strength."></div>
+        </div>
+
+        <div class="flex justify-center">
+            <a href="/mental-wellness" class="rounded-full bg-cBackground text-lg p-3 font-semibold border-2 border-cText"><button>Learn More</button></a>
+        </div>
+
+    </div>
+    <!-- END OF MENTAL WELLNESS SECTION -->
+
+    <!-- RESOURCE & CLUB SECTION -->
+    <!-- END OF RESOURCE & CLUB SECTION -->
+
+    <div class="mt-16"></div>
+
 </BaseLayout>

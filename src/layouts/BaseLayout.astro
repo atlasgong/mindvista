@@ -9,17 +9,18 @@ interface Props {
     pageTitle: string;
     description?: string;
     suffix: boolean; // whether or not " - MindVista" should be appended to the page title
+    className?: string;
 }
 
 let { pageTitle } = Astro.props;
-const { description, suffix } = Astro.props;
+const { description, suffix, className } = Astro.props;
 
 if (suffix) pageTitle += ' - MindVista';
 ---
 
 <BareLayout pageTitle=`${pageTitle}` description={description}>
     <NavBar client:load />
-    <main class="mt-[10vh]">
+    <main class={`${className} pt-[10vh]`}>
         <slot />
     </main>
     <Footer />
