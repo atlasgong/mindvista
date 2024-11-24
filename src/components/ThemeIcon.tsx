@@ -16,7 +16,7 @@ export default function ThemeIcon() {
 
     return (
         <button id="themeToggle" className="border-0 bg-none" onClick={handleToggleClick}>
-            <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <svg width="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
                     className="fill-transparent dark:fill-cText"
                     fillRule="evenodd"
