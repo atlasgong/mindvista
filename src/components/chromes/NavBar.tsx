@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import EmergencyButton from "@components/EmergencyButton";
-import ThemeIcon from "@components/ThemeIcon";
+import EmergencyButton from "@components/buttons/EmergencyButton";
+import ThemeIcon from "@components/buttons/ThemeIcon";
 
 import "@styles/hamburgers.css";
 

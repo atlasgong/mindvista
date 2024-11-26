@@ -1,4 +1,4 @@
-import EmergencyButton from "@components/EmergencyButton";
+import EmergencyButton from "@components/buttons/EmergencyButton";
 
 export default function Footer() {
     return (
