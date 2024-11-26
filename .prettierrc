@@ -3,5 +3,7 @@
     "useTabs": false,
     "printWidth": 120,
     "semi": true,
-    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+    "singleQuote": false,
+    "jsxSingleQuote": false
 }

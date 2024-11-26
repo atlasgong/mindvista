@@ -1,0 +1,15 @@
+---
+import ContactForm from "@components/forms/ContactForm";
+import PageLayout from "@layouts/PageLayout.astro";
+
+
+const pageTitle = "Contact Us";
+---
+
+<PageLayout pageTitle={pageTitle}>
+    <div class="flex flex-col items-center">
+        <h1>{pageTitle}</h1>
+        <p>Get in touch with us!</p>
+        <ContactForm />
+    </div>
+</PageLayout>

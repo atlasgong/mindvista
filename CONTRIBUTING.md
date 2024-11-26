@@ -6,11 +6,11 @@ Thank you and happy coding!
 
 — Atlas ❤️
 
-## General Guidelines
+# General Guidelines
 Please write clear and concise code. It is recommended to use a formatter (e.g. Prettier). Ensure that files are well-commented. 
 
 ### Responsiveness
-REM is 16px. Do not use any absolute length units. If you do anyways, justification must be provided.
+REM is 16px. Do not use any absolute length units. If you do anyways, justification must be provided. Borders excepted.
 
 ### Accessibility
 We make an attempt to follow [WCAG 2.1 AA standards](https://www.w3.org/TR/WCAG21/).
@@ -58,10 +58,35 @@ This repository follows a modified conventional commit style to keep our commit 
 
 # Documentation
 
+## Stack
+- Astro
+- Tailwind CSS
+    - Typography Plugin (for Prose)
+- UI Frameworks:
+    - React (.tsx)
+- Forms:
+    - Web3Forms (essentially "user submits form" -> "we receive email with form inputs")
+    - React Hook Form
+        - Resolvers
+    - HCaptcha
+
+## Design
+Design and styling is a work in progress. Currently (Nov 25, 2024), no efforts are being made toward style but rather toward functionality. Once a proper skeleton containing all pages is complete, styling will become priority.
+
+## Pages
 ### Layouts
+---
 There exist 3 layouts, all found in [src/layouts](src/layouts):
 - [BareLayout.astro](src/layouts/BareLayout.astro)
 - [BaseLayout.astro](src/layouts/BaseLayout.astro)
-- [MarkdownLayout.astro](src/layouts/MarkdownLayout.astro)
+- [PageLayout.astro](src/layouts/PageLayout.astro)
 
-`MarkdownLayout` extends `BaseLayout` extends `BareLayout`. All markdown rendered pages **do and should continue to extend** `MarkdownLayout`. `BareLayout` contains an HTML boilerplate for all pages, and should not be extended with the exception of experimental design.
+`PageLayout` extends `BaseLayout` extends `BareLayout`. All [markdown rendered pages](#markdown-rendered-pages) **do and should continue to extend** `PageLayout`. Default  `BareLayout` contains an HTML boilerplate for all pages, and should not be extended with the exception of experimental design.
+
+### Markdown Rendered Pages
+---
+- All legal pages
+- All club posts
+- All resource posts
+
+Markdown pages are styled with a [Prose](src/components/Prose.astro) component.
