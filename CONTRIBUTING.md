@@ -70,8 +70,11 @@ This repository follows a modified conventional commit style to keep our commit 
         - Resolvers
     - HCaptcha
 
-## Design
-Design and styling is a work in progress. Currently (Nov 25, 2024), no efforts are being made toward style but rather toward functionality. Once a proper skeleton containing all pages is complete, styling will become priority.
+## Styling
+Styling and design are a work in progress. Currently (Nov 25, 2024), no efforts are being made toward style but rather toward functionality. Once a proper skeleton containing all pages is complete, styling will become priority.
+
+### Tailwind CSS
+Everything except for the contact form is styled with Tailwind.
 
 ## Pages
 ### Layouts

@@ -1,9 +1,11 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import useWeb3Forms from "@web3forms/react";
+
+import '@components/forms/ContactForm.css';
 
 // define form scheme for input validation
 const schema = z.object({
@@ -27,7 +29,14 @@ const schema = z.object({
 type FormFields = z.infer<typeof schema>;
 
 export default function ContactForm() {
-    const { register, handleSubmit, setValue, trigger, reset, formState: { errors, isSubmitting } } = useForm<FormFields>({
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        trigger,
+        reset,
+        formState: { errors, isSubmitting },
+    } = useForm<FormFields>({
         resolver: zodResolver(schema),
         mode: "onTouched", // triggers on first blur event, then on every change
     });
@@ -37,8 +46,8 @@ export default function ContactForm() {
     // handle form submission
     const { submit: onSubmit } = useWeb3Forms({
         access_key: import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY,
-        settings: { from_name: "mindvista.ca" },
-        onSuccess: () => { 
+        settings: { from_name: "mindvista.ca" }, // fallback sender name
+        onSuccess: () => {
             setIsSuccess(true);
             reset();
         },
@@ -47,42 +56,32 @@ export default function ContactForm() {
         },
     });
 
-
     // handle captcha change event
     const onHCaptchaChange = (token: string | null) => {
         setValue("captcha", token || "");
         trigger("captcha");
     };
 
+    const [theme, setTheme] = useState("light"); // default to light theme
+
+    // handle theme change for hcaptcha
+    useEffect(() => {
+        setTheme(localStorage.getItem("theme") || "light"); // default to light if theme null
+    }, []);
 
     // html form
     return (
-        <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
+        <form className="contactForm" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="name">Name</label>
-            <input
-                id="name"
-                {...register("name")}
-                type="text"
-                placeholder="Johnny Appleseed"
-            />
+            <input id="name" {...register("name")} type="text" placeholder="Johnny Appleseed" />
             {errors.name && <div className="fieldError">{errors.name.message}</div>}
 
             <label htmlFor="email">Email</label>
-            <input
-                id="email"
-                {...register("email")}
-                type="text"
-                placeholder="johnny.appleseed@mail.mcgill.ca"
-            />
+            <input id="email" {...register("email")} type="text" placeholder="johnny.appleseed@mail.mcgill.ca" />
             {errors.email && <div className="fieldError">{errors.email.message}</div>}
 
             <label htmlFor="subject">Subject</label>
-            <input
-                id="subject"
-                {...register("subject")}
-                type="text"
-                placeholder="A concise subject line"
-            />
+            <input id="subject" {...register("subject")} type="text" placeholder="A concise subject line" />
             {errors.subject && <div className="fieldError">{errors.subject.message}</div>}
 
             <label htmlFor="message">Message</label>
@@ -90,18 +89,18 @@ export default function ContactForm() {
                 id="message"
                 {...register("message")}
                 placeholder="An interesting message."
-                rows={15}
-                cols={40}
             ></textarea>
             {errors.message && <div className="fieldError">{errors.message.message}</div>}
 
             {/* HCaptcha Integration, sitekey is publicly provided by Web3Forms */}
-            <div className="hcaptcha"><HCaptcha
-                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" // safe to include in client side code
-                reCaptchaCompat={false}
-                onVerify={onHCaptchaChange}
-                theme="dark"
-            /></div>
+            <div className="hcaptcha">
+                <HCaptcha
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" // safe to include in client side code
+                    reCaptchaCompat={false}
+                    onVerify={onHCaptchaChange}
+                    theme={theme}
+                />
+            </div>
             {errors.captcha && <div className="fieldError captchaError">{errors.captcha.message}</div>}
 
             {/* {errors.root && <div className="fieldError">{errors.root.message}</div>} */}
@@ -110,11 +109,10 @@ export default function ContactForm() {
                 {isSubmitting
                     ? "Sending..."
                     : isSuccess === true
-                    ? "Sent!"
-                    : isSuccess === false
-                    ? "Something went wrong..."
-                    : "Send Message!"
-                }
+                      ? "Sent!"
+                      : isSuccess === false
+                        ? "Something went wrong..."
+                        : "Send Message!"}
             </button>
 
             {isSuccess !== null && (
@@ -129,7 +127,6 @@ export default function ContactForm() {
                     )}
                 </div>
             )}
-            
         </form>
     );
 }
