@@ -131,7 +131,7 @@ function EmergencySection(props: ClassNameProps) {
             <h3 className="text-xl font-semibold">MINDVISTA</h3>
             <p>Your wellness journey starts here.</p>
 
-            <EmergencyButton className="mt-2" client:load />
+            <EmergencyButton className="mt-2" />
         </div>
     );
 }
