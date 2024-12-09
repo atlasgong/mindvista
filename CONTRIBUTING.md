@@ -74,7 +74,10 @@ This repository follows a modified conventional commit style to keep our commit 
 Styling and design are a work in progress. Currently (Nov 25, 2024), no efforts are being made toward style but rather toward functionality. Once a proper skeleton containing all pages is complete, styling will become priority.
 
 ### Tailwind CSS
-Everything except for the contact form is styled with Tailwind.
+
+Tailwind CSS is used for styling. For more information, see [Tailwind's documentation](https://tailwindcss.com/docs).
+
+Components may still use CSS, but they will never be in a `<style>` tag, but rather have their own CSS file found in [src/styles](src/styles). To check whether or not a component has its own CSS file, check the component's imports.
 
 ## Pages
 ### Layouts

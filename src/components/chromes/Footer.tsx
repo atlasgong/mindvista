@@ -21,7 +21,7 @@ export default function Footer() {
                         ]}
                     />
                     <Links
-                        className="max-w-[5 0%] text-right"
+                        className="max-w-[50%] text-right"
                         links={[
                             { href: "/", text: "Wellness Resources" },
                             { href: "/", text: "Club List" },
@@ -131,7 +131,7 @@ function EmergencySection(props: ClassNameProps) {
             <h3 className="text-xl font-semibold">MINDVISTA</h3>
             <p>Your wellness journey starts here.</p>
 
-            <EmergencyButton className="mt-2" />
+            <EmergencyButton className="mt-2" client:load />
         </div>
     );
 }

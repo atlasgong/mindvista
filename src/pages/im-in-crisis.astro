@@ -1,0 +1,79 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import "@styles/components/crisis.css";
+---
+
+<PageLayout pageTitle="Crisis Support" description="Immediate support and resources for mental health crisis">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Emergency Number Section -->
+        <div class="text-center mb-16">
+            <p class="text-2xl font-medium text-[var(--text)] mb-0">
+                DIAL
+            </p>
+
+            <h1 class="text-9xl font-bold bg-gradient-to-r from-red-400 to-red-700 bg-clip-text text-transparent emergency-pulse leading-none mb-1">
+                911
+            </h1>
+
+            <p class="text-2xl font-medium text-[var(--text)]">
+                If you or someone else is in <span class="text-red-600 dark:text-red-500">immediate danger</span>.
+            </p>
+        </div>
+
+        <!-- Crisis Resources Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- 24/7 Support by Talk Suicide Canada -->
+            <div class="bg-[var(--crisis-card-bg)] border border-[var(--crisis-card-border)] p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-[var(--text)]">24/7 Support Line</h2>
+                <p class="mb-4 text-[var(--text-offset)]">Talk to someone anytime, day or night.</p>
+                <div class="font-bold text-xl mb-2 text-[var(--text)]">1-833-456-4566</div>
+                <p class="text-sm text-[var(--text-offset)]">Talk Suicide Canada (Toll Free)</p>
+                <a href="https://talksuicide.ca/" class="text-[var(--accent)] hover:opacity-80 mt-2 inline-block">Learn More →</a>
+            </div>
+
+            <!-- Student Support (Keep.meSAFE) -->
+            <div class="bg-[var(--crisis-card-bg)] border border-[var(--crisis-card-border)] p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-[var(--text)]">Student Support (Keep.meSAFE)</h2>
+                <p class="mb-4 text-[var(--text-offset)]">Free, confidential, emotional support for students.</p>
+                <div class="space-y-2 text-[var(--text)]">
+                    <div><strong>North America:</strong> 1-844-451-9700</div>
+                    <div><strong>International:</strong> 001-416-380-6578</div>
+                </div>
+                <a href="https://myssp.app/ca/home" class="text-[var(--accent)] hover:opacity-80 mt-2 inline-block">Access Services →</a>
+            </div>
+
+            <!-- SSMU Students' Nightline -->
+            <div class="bg-[var(--crisis-card-bg)] border border-[var(--crisis-card-border)] p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-[var(--text)]">SSMU Students' Nightline</h2>
+                <p class="mb-4 text-[var(--text-offset)]">Confidential listening service by students, for students.</p>
+                <div class="font-bold text-xl mb-2 text-[var(--text)]">514-398-6246</div>
+                <p class="text-sm text-[var(--text-offset)]">Available Monday-Sunday, 6PM-3AM</p>
+                <a href="https://nightline.ssmu.ca/" class="text-[var(--accent)] hover:opacity-80 mt-2 inline-block">More Information →</a>
+            </div>
+
+            <!-- McGill's Peer Support Center-->
+            <div class="bg-[var(--crisis-card-bg)] border border-[var(--crisis-card-border)] p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-[var(--text)]">McGill's Peer Support Centre</h2>
+                <p class="mb-4 text-[var(--text-offset)]">45-minute sessions with trained student supporters.</p>
+                <ul class="list-disc list-inside mb-4 text-[var(--text-offset)]">
+                    <li>Drop-in sessions available</li>
+                    <li>Appointment booking</li>
+                    <li>Resource navigation assistance</li>
+                </ul>
+                <a href="https://psc.ssmu.ca/" class="text-[var(--accent)] hover:opacity-80 mt-2 inline-block">Book a Session →</a>
+            </div>
+        </div>
+
+        <hr class="my-12 border-t border-[var(--crisis-card-border)]">
+
+        <!-- Additional Resources -->
+        <div class="my-12 bg-[var(--crisis-card-bg)] border border-[var(--crisis-card-border)] p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-[var(--text)]">Additional Resources</h2>
+            <p class="mb-4 text-[var(--text-offset)]">If you're not sure what support you need, we're here to help you find the right resources.</p>
+            <button class="[background:var(--color-gradient)] text-white font-bold py-2 px-4 rounded hover:opacity-90">
+                Find Support
+            </button>
+            <!-- TODO: initalize button to redirect...somewhere -->
+        </div>
+    </div>
+</PageLayout>
