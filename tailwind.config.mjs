@@ -13,12 +13,16 @@ export default {
             colors: {
                 cBackground: "var(--background)",
                 cBackgroundOffset: "var(--background-offset)",
+                cBackgroundOffsetAccent: "var(--background-offset-accent)",
                 cAccent: "var(--accent)",
                 cText: "var(--text)",
                 cTextOffset: "var(--text-offset)",
                 cRed: "var(--red)",
                 cBorder: "var(--border)",
                 cSoftWhite: "var(--soft-white)",
+                cNavyBlue: "var(--navy-blue)",
+                cLightBlue: "var(--light-blue)",
+                cPurple: "var(--purple)",
             },
             typography: {
                 DEFAULT: { // affects prose components

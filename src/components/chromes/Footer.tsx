@@ -25,7 +25,7 @@ export default function Footer() {
                         links={[
                             { href: "/", text: "Wellness Resources" },
                             { href: "/", text: "Club List" },
-                            { href: "/", text: "Contact Us" },
+                            { href: "/contact", text: "Contact Us" },
                         ]}
                     />
                 </div>

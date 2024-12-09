@@ -5,26 +5,31 @@
 :root {
     --soft-white: theme("colors.neutral.50");
     --red: theme("colors.red.700");
+    --navy-blue: theme("colors.slate.900");
+    --light-blue: theme("colors.blue.300");
+    --purple: theme("colors.purple.400");
 }
 
 .light {
-    --background: theme("colors.sky.50");
-    --background-offset: theme("colors.sky.100");
-    --accent: theme("colors.sky.800");
-    --text: theme("colors.neutral.950");
-    --text-offset: theme("colors.neutral.600");
-    --border: theme("colors.sky.300");
+    --background: theme("colors.slate.50");
+    --background-offset: theme("colors.white");
+    --background-offset-accent: theme("colors.blue.50");
+    --accent: theme("colors.purple.500");
+    --text: theme("colors.slate.900");
+    --text-offset: theme("colors.slate.600");
+    --border: theme("colors.sky.200");
 
-    --color-gradient: linear-gradient(45deg, theme("colors.sky.800"), theme("colors.sky.600"));
+    --color-gradient: linear-gradient(45deg, theme("colors.purple.500"), theme("colors.blue.400"));
 }
 
 .dark {
     --background: theme("colors.slate.950");
     --background-offset: theme("colors.slate.900");
-    --accent: theme("colors.emerald.300");
-    --text: theme("colors.neutral.200");
+    --background-offset-accent: theme("colors.slate.800");
+    --accent: theme("colors.blue.300");
+    --text: theme("colors.neutral.100");
     --text-offset: theme("colors.neutral.300");
     --border: theme("colors.slate.700");
 
-    --color-gradient: linear-gradient(45deg, theme("colors.emerald.300"), theme("colors.emerald.500"));
+    --color-gradient: linear-gradient(45deg, theme("colors.purple.400"), theme("colors.blue.500"));
 }

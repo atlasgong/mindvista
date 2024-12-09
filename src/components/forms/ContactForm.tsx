@@ -133,7 +133,7 @@ export default function ContactForm() {
             )}
 
             {isSuccess === true && (
-                <div className="text-center p-4 rounded-lg bg-emerald-50 dark:bg-slate-800 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                <div className="text-center p-4 rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
                     Thank you for your message! We'll get back to you soon.
                 </div>
             )}
@@ -147,7 +147,7 @@ export default function ContactForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full md:w-auto mx-auto px-8 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-sky-800 to-sky-600 dark:from-emerald-300 dark:to-emerald-500 hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed ${
+                className={`w-full md:w-auto mx-auto px-8 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-400 dark:from-purple-400 dark:to-blue-300 hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed ${
                     isSubmitting ? 'relative text-transparent' : ''
                 }`}
             >

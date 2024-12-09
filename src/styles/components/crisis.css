@@ -1,14 +1,10 @@
-/* Crisis-specific styles */
+/* crisis-specific styles */
 .light {
     --emergency-gradient: linear-gradient(45deg, theme("colors.red.400"), theme("colors.red.700"));
-    --crisis-card-bg: theme("colors.sky.50");
-    --crisis-card-border: theme("colors.sky.200");
 }
 
 .dark {
     --emergency-gradient: linear-gradient(45deg, theme("colors.red.500"), theme("colors.rose.400"));
-    --crisis-card-bg: theme("colors.slate.900");
-    --crisis-card-border: theme("colors.slate.700");
 }
 
 @keyframes emergency-pulse {
