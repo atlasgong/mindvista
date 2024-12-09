@@ -5,8 +5,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import useWeb3Forms from "@web3forms/react";
 
-import '@components/forms/ContactForm.css';
-
 // define form scheme for input validation
 const schema = z.object({
     name: z.string()
@@ -71,62 +69,95 @@ export default function ContactForm() {
 
     // html form
     return (
-        <form className="contactForm" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="name">Name</label>
-            <input id="name" {...register("name")} type="text" placeholder="Johnny Appleseed" />
-            {errors.name && <div className="fieldError">{errors.name.message}</div>}
+        <form className="flex flex-col space-y-6" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
+            <div>
+                <label htmlFor="name" className="block text-cText font-medium mb-1">Name</label>
+                <input 
+                    id="name" 
+                    {...register("name")} 
+                    type="text" 
+                    placeholder="Johnny Appleseed" 
+                    className="w-full px-4 py-2 rounded-lg border-2 border-cBorder bg-cBackground text-cText placeholder:text-cTextOffset/50 focus:outline-none focus:border-cAccent transition-colors"
+                />
+                {errors.name && <div className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name.message}</div>}
+            </div>
 
-            <label htmlFor="email">Email</label>
-            <input id="email" {...register("email")} type="text" placeholder="johnny.appleseed@mail.mcgill.ca" />
-            {errors.email && <div className="fieldError">{errors.email.message}</div>}
+            <div>
+                <label htmlFor="email" className="block text-cText font-medium mb-1">Email</label>
+                <input 
+                    id="email" 
+                    {...register("email")} 
+                    type="text" 
+                    placeholder="johnny.appleseed@mail.mcgill.ca" 
+                    className="w-full px-4 py-2 rounded-lg border-2 border-cBorder bg-cBackground text-cText placeholder:text-cTextOffset/50 focus:outline-none focus:border-cAccent transition-colors"
+                />
+                {errors.email && <div className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</div>}
+            </div>
 
-            <label htmlFor="subject">Subject</label>
-            <input id="subject" {...register("subject")} type="text" placeholder="A concise subject line" />
-            {errors.subject && <div className="fieldError">{errors.subject.message}</div>}
+            <div>
+                <label htmlFor="subject" className="block text-cText font-medium mb-1">Subject</label>
+                <input 
+                    id="subject" 
+                    {...register("subject")} 
+                    type="text" 
+                    placeholder="A concise subject line" 
+                    className="w-full px-4 py-2 rounded-lg border-2 border-cBorder bg-cBackground text-cText placeholder:text-cTextOffset/50 focus:outline-none focus:border-cAccent transition-colors"
+                />
+                {errors.subject && <div className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.subject.message}</div>}
+            </div>
 
-            <label htmlFor="message">Message</label>
-            <textarea
-                id="message"
-                {...register("message")}
-                placeholder="An interesting message."
-            ></textarea>
-            {errors.message && <div className="fieldError">{errors.message.message}</div>}
+            <div>
+                <label htmlFor="message" className="block text-cText font-medium mb-1">Message</label>
+                <textarea
+                    id="message"
+                    {...register("message")}
+                    placeholder="An interesting message."
+                    className="w-full px-4 py-2 rounded-lg border-2 border-cBorder bg-cBackground text-cText placeholder:text-cTextOffset/50 focus:outline-none focus:border-cAccent transition-colors min-h-[150px] resize-none"
+                ></textarea>
+                {errors.message && <div className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message.message}</div>}
+            </div>
 
-            {/* HCaptcha Integration, sitekey is publicly provided by Web3Forms */}
-            <div className="hcaptcha">
+            {/* HCaptcha Integration */}
+            <div className="flex justify-center">
                 <HCaptcha
-                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" // safe to include in client side code
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
                     reCaptchaCompat={false}
                     onVerify={onHCaptchaChange}
                     theme={theme}
                 />
             </div>
-            {errors.captcha && <div className="fieldError captchaError">{errors.captcha.message}</div>}
-
-            {/* {errors.root && <div className="fieldError">{errors.root.message}</div>} */}
-
-            <button disabled={isSubmitting || isSuccess !== null} type="submit">
-                {isSubmitting
-                    ? "Sending..."
-                    : isSuccess === true
-                      ? "Sent!"
-                      : isSuccess === false
-                        ? "Something went wrong..."
-                        : "Send Message!"}
-            </button>
-
-            {isSuccess !== null && (
-                <div className={isSuccess ? "success" : "error"}>
-                    {isSuccess ? (
-                        "Thanks for the message! We will get back to you soon."
-                    ) : (
-                        <>
-                            Something went wrong! Please try again later or email{" "}
-                            <a href="mailto:contact@mindvista.ca">contact@mindvista.com</a>.
-                        </>
-                    )}
+            {errors.captcha && (
+                <div className="text-center text-sm text-red-600 dark:text-red-400 -mt-4">
+                    {errors.captcha.message}
                 </div>
             )}
+
+            {isSuccess === true && (
+                <div className="text-center p-4 rounded-lg bg-emerald-50 dark:bg-slate-800 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+            )}
+
+            {isSuccess === false && (
+                <div className="text-center p-4 rounded-lg bg-red-50 dark:bg-slate-800 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800">
+                    Something went wrong. Please try again later or <a href="mailto:info@mindvista.ca" className="underline">email us directly</a>.
+                </div>
+            )}
+
+            <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full md:w-auto mx-auto px-8 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-sky-800 to-sky-600 dark:from-emerald-300 dark:to-emerald-500 hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed ${
+                    isSubmitting ? 'relative text-transparent' : ''
+                }`}
+            >
+                Send Message
+                {isSubmitting && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-5 h-5 border-2 border-white border-r-transparent rounded-full animate-spin"></div>
+                    </div>
+                )}
+            </button>
         </form>
     );
 }

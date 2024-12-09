@@ -1,0 +1,15 @@
+.light {
+    --contact-card-bg: theme("colors.white");
+    --contact-shadow: theme("colors.sky.100");
+}
+
+.dark {
+    --contact-card-bg: theme("colors.slate.900");
+    --contact-shadow: theme("colors.slate.800");
+}
+
+.contact-card {
+    @apply rounded-xl;
+    background: var(--contact-card-bg);
+    box-shadow: 0 4px 24px -4px var(--contact-shadow);
+}

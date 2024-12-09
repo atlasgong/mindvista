@@ -1,17 +1,54 @@
 ---
 import ContactForm from "@components/forms/ContactForm";
-import HeadingSection from "@components/HeadingSection.astro";
 import PageLayout from "@layouts/PageLayout.astro";
-
-
-const pageTitle = "Contact Us";
 ---
 
-<PageLayout pageTitle={pageTitle}>
-    <HeadingSection heading={pageTitle} description="Get in touch with us!" />
-    <div class="flex flex-col items-center my-24">
-        <div class="min-w-[50vw] max-w-[85vw]">
-            <ContactForm client:load />
+<PageLayout pageTitle="Contact Us" description="Get in touch with us - we're here to help!">
+    <div class="container mx-auto px-6 sm:px-4 py-12 max-w-4xl">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sky-800 to-sky-600 dark:from-emerald-300 dark:to-emerald-500 bg-clip-text text-transparent">
+                Contact Us
+            </h1>
+            <p class="text-xl text-cTextOffset max-w-2xl mx-auto">
+                Have questions or feedback? We're here to listen and help. Your mental health journey matters to us.
+            </p>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg shadow-sky-100 dark:shadow-slate-800/50 p-8 md:p-12 mb-16">
+            <div class="mx-auto">
+                <ContactForm client:load />
+            </div>
+        </div>
+
+        <!-- Additional Contact Info -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-semibold mb-4 text-cText">Other Ways to Reach Us</h2>
+            <p class="text-cTextOffset mb-6">
+                If you prefer other methods of communication or need immediate assistance:
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-cBackgroundOffset p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2 text-cText">Emergency Support</h3>
+                    <p class="text-cTextOffset">
+                        If you're in crisis, please visit our
+                        <a href="/im-in-crisis" class="text-cAccent hover:opacity-80">
+                            emergency resources
+                        </a>
+                        page.
+                    </p>
+                </div>
+                <div class="bg-cBackgroundOffset p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2 text-cText">General Inquiries</h3>
+                    <p class="text-cTextOffset">
+                        For general questions, email us at
+                        <a href="mailto:info@mindvista.ca" class="text-cAccent hover:opacity-80">
+                            info@mindvista.ca.
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </PageLayout>
