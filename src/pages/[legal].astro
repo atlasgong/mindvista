@@ -21,7 +21,11 @@ const { Content } = await page.render();
 ---
 
 <PageLayout pageTitle={page.data.title} description={page.data.description}>
-  <Prose>
-    <Content />
-  </Prose>
+  <div class="container mx-auto px-4 py-8 md:py-12 lg:py-16 max-w-4xl">
+    <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg shadow-sky-100 dark:shadow-slate-800/50 p-6 md:p-8 lg:p-12">
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
+  </div>
 </PageLayout>
