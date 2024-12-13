@@ -154,7 +154,7 @@ function LegalBar() {
                     Copyright
                 </a>
             </div>
-            <p className="grow">&copy; {year} MindVista. All rights reserved.</p>
+            <p className="grow font-medium">&copy; {year} MindVista. All rights reserved.</p>
         </div>
     );
 }
