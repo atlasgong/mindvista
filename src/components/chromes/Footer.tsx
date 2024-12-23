@@ -92,38 +92,39 @@ function Links(props: LinkProps) {
 
 function NewsletterSection() {
     return (
-        <div className="flex flex-col gap-6 text-center md:flex-row md:text-left">
-            <div className="flex flex-col self-center md:max-w-[50%]">
-                <p className="text-lg font-semibold">Join Our Wellness Newsletter.</p>
-                <p>
-                    Don’t miss new content, resources and events from MindVista. Unsubscribe anytime. Seriously! No hard
-                    feelings 🙂
-                </p>
-                {/* put social media icons here */}
+        <div className="rounded-xl bg-cBackgroundOffsetAccent p-6 shadow-lg transition-transform duration-300 hover:scale-[1.01]">
+            <div className="flex flex-col gap-6 text-center md:flex-row md:text-left">
+                <div className="flex flex-col space-y-2 self-center md:max-w-[50%]">
+                    <h3 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-xl font-bold text-transparent">
+                        Join Our Wellness Newsletter
+                    </h3>
+                    <p className="text-cTextOffset">
+                        Stay updated with new content, resources and events from MindVista. Unsubscribe anytime — no
+                        hard feelings! 🙂
+                    </p>
+                </div>
+                <EmailForm />
             </div>
-
-            <EmailForm />
         </div>
     );
 }
 
 function EmailForm() {
     return (
-        <div className="grow pl-4 max-md:pr-4">
-            <form className="flex flex-col text-lg">
-                <label className="font-semibold" htmlFor="email">
-                    Email
-                </label>
-                <input
-                    className="mb-2 min-h-12 rounded-lg border-4 border-cText bg-cBackground"
-                    id="email"
-                    type="email"
-                ></input>
-                <button className="Background rounded-lg border-2 border-solid border-cText bg-cAccent font-semibold text-cSoftWhite dark:text-cBackgroundOffset">
-                    Sign up!
-                </button>
-            </form>
-        </div>
+        <form className="flex w-full flex-col gap-3 self-center md:flex-row md:items-start">
+            <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset px-4 py-2 text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg"
+                required
+            />
+            <button
+                type="submit"
+                className="w-full rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-2 font-semibold text-white transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:w-auto md:py-3 md:text-lg"
+            >
+                Subscribe
+            </button>
+        </form>
     );
 }
 
