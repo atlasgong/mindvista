@@ -1,17 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-interface Resource {
-    id: string;
-    data: {
-        name: string;
-        description: string;
-        status: string;
-        availability: string[] | { note: string };
-        categories: Record<string, string[]> | null;
-    };
-}
+import SearchBar from "@components/search/SearchBar.astro";
 
 // Get all resources and sort by name
 const resources = (await getCollection("resources")).sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -78,6 +68,9 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
             </button>
             <div id="filters-panel" class="mt-2 hidden rounded-lg border border-cBorder bg-cBackgroundOffset p-6">
                 <div class="space-y-4">
+                    <!-- Search -->
+                    <SearchBar id="resources-search" placeholder="Search resources..." />
+                    
                     <!-- Status Filter -->
                     <div class="filter-section">
                         <button class="flex w-full items-center justify-between text-left" data-toggle="status">
@@ -237,28 +230,23 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
 
     <script>
         function updateResults() {
+            const searchTerm = ((document.getElementById('resources-search') as HTMLInputElement)?.value || '').toLowerCase();
             const statusFilters = Array.from<HTMLInputElement>(
-                document.querySelectorAll(
-                    'input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]',
-                ),
-            )
-                .filter((cb) => cb.checked)
-                .map((cb) => cb.value);
+                document.querySelectorAll('input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]')
+            ).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
 
-            const availabilityFilters = Array.from(
-                document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-availability]'),
-            )
-                .filter((cb) => cb.checked)
-                .map((cb) => cb.dataset.availability);
+            const availabilityFilters = Array.from<HTMLInputElement>(
+                document.querySelectorAll('input[type="checkbox"][data-availability]')
+            ).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.dataset.availability);
 
             const categoryFilters = new Map();
-            document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-category]').forEach((cb) => {
-                const category = cb.dataset.category!;
+            document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-category]').forEach((checkbox) => {
+                const category = checkbox.dataset.category!;
                 if (!categoryFilters.has(category)) {
                     categoryFilters.set(category, new Set());
                 }
-                if (cb.checked) {
-                    categoryFilters.get(category).add(cb.value);
+                if (checkbox.checked) {
+                    categoryFilters.get(category).add(checkbox.value);
                 }
             });
 
@@ -294,7 +282,12 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
                     return Array.from(selectedTags).some((tag) => categories[category].includes(tag));
                 });
 
-                item.style.display = statusMatch && availabilityMatch && categoryMatch ? "block" : "none";
+                const name = item.querySelector('h3')?.textContent || '';
+                const description = item.querySelector('p')?.textContent || '';
+
+                const matchesSearch = searchTerm === '' || name.toLowerCase().includes(searchTerm) || description.toLowerCase().includes(searchTerm);
+
+                item.style.display = matchesSearch && statusMatch && availabilityMatch && categoryMatch ? "block" : "none";
             });
         }
 
@@ -346,5 +339,7 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
             const arrow = element as SVGElement;
             arrow.style.transform = "rotate(0deg)";
         });
+
+        document.getElementById('resources-search')?.addEventListener('input', updateResults);
     </script>
 </BaseLayout>

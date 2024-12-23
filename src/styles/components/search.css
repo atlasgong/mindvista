@@ -1,0 +1,13 @@
+.search-input {
+    @apply w-full rounded-lg border border-cBorder bg-cBackground px-4 py-2 text-cText;
+    @apply focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-cAccent focus:ring-opacity-50;
+    @apply placeholder:text-cTextOffset;
+}
+
+.search-container {
+    @apply relative mb-4;
+}
+
+.search-icon {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 text-cTextOffset;
+}

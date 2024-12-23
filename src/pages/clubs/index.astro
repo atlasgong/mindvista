@@ -1,16 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-interface Club {
-    id: string;
-    data: {
-        name: string;
-        description: string;
-        status: string;
-        categories: Record<string, string[]> | null;
-    };
-}
+import SearchBar from "@components/search/SearchBar.astro";
 
 // Get all clubs and sort by name
 const clubs = (await getCollection("clubs")).sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -68,6 +59,9 @@ const sortedCategories = Array.from(categories.entries())
             </button>
             <div id="filters-panel" class="mt-2 hidden rounded-lg border border-cBorder bg-cBackgroundOffset p-6">
                 <div class="space-y-4">
+                    <!-- Search -->
+                    <SearchBar id="clubs-search" placeholder="Search clubs..." />
+                    
                     <!-- Status Filter -->
                     <div class="filter-section">
                         <button class="flex w-full items-center justify-between text-left" data-toggle="status">
@@ -202,14 +196,16 @@ const sortedCategories = Array.from(categories.entries())
     // panel?.classList.remove("hidden");
     // if (panelArrow) panelArrow.style.transform = "rotate(180deg)";
 
+    // Search functionality
+    const searchInput = document.getElementById('clubs-search') as HTMLInputElement;
+    searchInput?.addEventListener('input', updateResults);
+
+    // Update results
     function updateResults() {
+        const searchTerm = (searchInput?.value || '').toLowerCase();
         const statusFilters = Array.from<HTMLInputElement>(
-            document.querySelectorAll(
-                'input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]',
-            ),
-        )
-            .filter((cb) => cb.checked)
-            .map((cb) => cb.value);
+            document.querySelectorAll('input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]')
+        ).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
 
         const categoryFilters = new Map();
         document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-category]').forEach((cb) => {
@@ -241,8 +237,18 @@ const sortedCategories = Array.from(categories.entries())
                 return Array.from(selectedTags).some((tag) => categories[category].includes(tag));
             });
 
-            item.style.display = statusMatch && categoryMatch ? "block" : "none";
+            const nameElement = item.querySelector('h3');
+            const descriptionElement = item.querySelector('p');
+            
+            const name = nameElement ? nameElement.textContent?.toLowerCase() ?? '' : '';
+            const description = descriptionElement ? descriptionElement.textContent?.toLowerCase() ?? '' : '';
+
+            const matchesSearch = searchTerm === '' || name.includes(searchTerm) || description.includes(searchTerm);
+
+            item.style.display = matchesSearch && statusMatch && categoryMatch ? "block" : "none";
         });
+
+        updateActiveFiltersCount();
     }
 
     // Add event listeners
