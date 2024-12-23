@@ -1,5 +1,6 @@
 import EmergencyButton from "@components/buttons/EmergencyButton";
 import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
+import { type IconType } from "react-icons";
 
 export default function Footer() {
     return (
@@ -140,6 +141,34 @@ function EmergencySection(props: ClassNameProps) {
 function LegalBar() {
     const year = new Date().getFullYear();
 
+    const socialLinks = [
+        {
+            href: "https://www.facebook.com/mindvista.mcgill",
+            icon: FaFacebook,
+            label: "Facebook",
+        },
+        {
+            href: "https://www.instagram.com/mindvista.mcgill/",
+            icon: FaInstagram,
+            label: "Instagram",
+        },
+        {
+            href: "https://www.tiktok.com/@mindvistamcgill",
+            icon: FaTiktok,
+            label: "TikTok",
+        },
+        {
+            href: "https://www.linkedin.com/company/mindvista/",
+            icon: FaLinkedin,
+            label: "LinkedIn",
+        },
+        {
+            href: "https://github.com/atlasgong/mindvista",
+            icon: FaGithub,
+            label: "GitHub",
+        },
+    ];
+
     return (
         <div className="flex flex-col justify-between text-center md:flex-row md:text-right">
             <div className="flex grow basis-0 flex-row justify-center gap-2 font-semibold text-cTextOffset md:justify-start">
@@ -156,50 +185,33 @@ function LegalBar() {
                 </a>
             </div>
             <div className="mt-4 flex grow basis-0 items-center justify-center gap-4 md:mt-0">
-                <a
-                    href="https://www.facebook.com/mindvista.mcgill"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 text-gray-600 transition-colors"
-                >
-                    <FaFacebook className="h-5 w-5" />
-                </a>
-                <a
-                    href="https://www.instagram.com/mindvista.mcgill/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 text-gray-600 transition-colors"
-                >
-                    <FaInstagram className="h-5 w-5" />
-                </a>
-                <a
-                    href="https://www.tiktok.com/@mindvistamcgill"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 text-gray-600 transition-colors"
-                >
-                    <FaTiktok className="h-5 w-5" />
-                </a>
-                <a
-                    href="https://www.linkedin.com/company/mindvista/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 text-gray-600 transition-colors"
-                >
-                    <FaLinkedin className="h-5 w-5" />
-                </a>
-                <a
-                    href="https://github.com/atlasgong/mindvista"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 text-gray-600 transition-colors"
-                >
-                    <FaGithub className="h-5 w-5" />
-                </a>
+                {socialLinks.map((link) => (
+                    <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} />
+                ))}
             </div>
             <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">
                 &copy; {year} MindVista. All rights reserved.
             </p>
         </div>
+    );
+}
+
+interface SocialMediaLinkProps {
+    href: string;
+    icon: IconType;
+    label: string;
+}
+
+function SocialMediaLink({ href, icon: Icon, label }: SocialMediaLinkProps) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary-600 text-gray-600 transition-colors"
+            aria-label={`Visit our ${label} page.`}
+        >
+            <Icon className="h-5 w-5" title={label} />
+        </a>
     );
 }
