@@ -111,7 +111,7 @@ function NewsletterSection() {
 
 function EmailForm() {
     return (
-        <form className="flex w-full flex-col gap-3 self-center md:flex-row md:items-start">
+        <form className="flex w-full flex-col items-center gap-3 self-center md:flex-row">
             <input
                 type="email"
                 placeholder="Enter your email"
