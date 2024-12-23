@@ -1,0 +1,17 @@
+---
+name: "Desautels Exchange Network"
+description: |
+  The DEN (Desautels Exchange Network) is a student-run organization whose mandate is to welcome and fully integrate exchange students into the student body. Through ongoing communication and regular social & cultural gatherings, DEN allows students to feel home away from home. Going on exchange opens a new world of experiences and the DEN is here to ensure a smooth, fun, and easy transition into life in Montreal. DEN also provides students with a link to other international associations in Montreal, such as MESA (McGill Exchange Students Association), IMA (International Management Association), and groups at Concordia and UQAM.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/desautels.exchange.network/?ref=br_rs"
+  instagram: "https://www.instagram.com/desautels.exchange.network/"
+  other:
+    - "https://www.linkedin.com/company/desautels-exchange-network/about/"
+contact_info: |
+  den@musonline.com
+categories:
+  career:
+    - Networking
+  faculty specific:
+    - Management

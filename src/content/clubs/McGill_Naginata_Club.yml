@@ -1,0 +1,17 @@
+---
+name: "McGill Naginata Club"
+description: |
+  The McGill Naginata Club is dedicated to the martial art of Naginata. A naginata is a Japanese pole-arm similar to a glaive. In addition to teaching the techniques of the sport, the club also promotes healthy teamwork and fosters strong bonds between members through competition, mutual learning, and social activities. The McGill Naginata Club welcomes all students, of every level, and especially those who have never tried (or seen) naginata before! There is practice for both the competitively minded and non-competitive student. All equipment for beginners can be borrowed for the first few months.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillnaginata/"
+  instagram: "https://www.instagram.com/mcgillnaginata/"
+  other:
+website: "https://mcgillnaginata.com/"
+contact_info: |
+  mcgillnaginata@gmail.com
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

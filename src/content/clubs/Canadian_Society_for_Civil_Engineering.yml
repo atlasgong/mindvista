@@ -1,0 +1,17 @@
+---
+name: "Canadian Society for Civil Engineering"
+description: |
+  The Canadian Society for Civil Engineering (CSCE) is a national professional society whose membership is comprised of practicing civil engineers, corporations, professors, and students like you. The society promotes professional development, exchange of knowledge, public awareness, and networking in the field of Civil Engineering. CSCE McGill Chapter connects students to the professional engineering world through construction site tours, guest speakers, industry tours and seminars. Membership is free!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/CSCEmcgill/"
+  other:
+website: "https://www.mcgill.ca/civil/students/csce"
+contact_info: |
+  csce@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

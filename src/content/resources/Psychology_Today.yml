@@ -1,0 +1,20 @@
+---
+name: "Psychology Today"
+description: |
+  The Psychology Today directory features therapy and health professionals, online therapy, treatment centres and support groups.
+status: active
+availability:
+  - online
+insurance:
+  details: |
+    Contact insurance company for coverage information
+website: "https://www.psychologytoday.com/ca"
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Psychological
+    - Counselling
+    - Support Group

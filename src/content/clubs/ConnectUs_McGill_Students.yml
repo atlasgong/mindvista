@@ -1,0 +1,15 @@
+---
+name: "ConnectUs McGill Students"
+description: |
+  ConnectUs McGill Students provides consulting services to under-resourced organizations seeking support. Our mission is to connect our team of McGill undergraduate students with local small businesses and nonprofits to help address their organizational challenges. By partnering with ConnectUs McGill Students, organizations are exposed to new and diverse perspectives, including suggestions on solutions to help solve ongoing issues and navigate their evolving operating environment.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgill.cu"
+  instagram: "https://www.instagram.com/mcgill.cu/"
+  other:
+contact_info: |
+  connectus@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

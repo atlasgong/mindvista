@@ -1,0 +1,19 @@
+---
+name: "McGill Engineers in Action"
+description: |
+  McGill Engineers in Action, or McGill EIA, is a student chapter of the EIA Bridge Program which designs, funds, and builds pedestrians footbridges in remote communities.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillEIA/"
+  instagram: "https://www.instagram.com/mcgill.engineersinaction/?hl=it"
+  other:
+    - "https://www.linkedin.com/company/mcgill-eia/?originalSubdomain=ca"
+website: "https://eus.wiki/McGill_Engineers_in_Action"
+contact_info: |
+  eia.president@mcgilleus.ca
+categories:
+  community support:
+    - Community Outreach
+    - Social Activism
+  faculty specific:
+    - Engineering

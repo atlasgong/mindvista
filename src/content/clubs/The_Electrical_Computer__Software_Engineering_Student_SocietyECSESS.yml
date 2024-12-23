@@ -1,0 +1,19 @@
+---
+name: "The Electrical, Computer, & Software Engineering Student Society
+(ECSESS)"
+description: |
+  ECSESS (Electrical, Computer & Software Engineering Students' Society at McGill) is a student association which helps McGill ECSE students in their academic, technical, social and professional progression.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ECSESS"
+  instagram: "https://www.instagram.com/mcgill_ecsess/"
+  other:
+website: "https://ecsess.mcgilleus.ca/?fbclid=IwAR1NxCGvSm5lbK1rE6iWTgLaUZ6GqBCKQgvfVwuUjrb3X9OOrKyizPojEIA#/home"
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

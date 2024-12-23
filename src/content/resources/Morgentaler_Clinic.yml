@@ -1,0 +1,27 @@
+---
+name: "Morgentaler Clinic"
+description: |
+  The Morgentaler Clinic offers a wide range of abortion care and related services, including counselling, contraceptive education and testing for sexually transmitted infections (STIs).
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+  details: |
+    Fees apply if you do not have RAMQ or IFHP. Contact for specific fees.
+website: "https://montrealmorgentaler.ca/en/"
+contact_info: |
+  514-844-4844
+  1-800-401-4844
+  infos@montrealmorgentaler.ca
+location: "8560 rue St-Hubert"
+categories:
+  medical services:
+    - Abortion Services
+    - STI Testing
+    - Medical Clinic
+    - Contraception Services
+  on campus:
+    - Off-Campus

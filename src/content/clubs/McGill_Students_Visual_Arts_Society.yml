@@ -1,0 +1,17 @@
+---
+name: "McGill Students’ Visual Arts Society"
+description: |
+  Whether you’re a beginner doodler or an expert artist, the McGill Students’ Visual Arts Society welcomes you! Events are hosted weekly and include live model drawing, tutorials, Open Sketch, watercolour and acrylic sessions, and the occasional field trip! An annual conference is held near the end of the Fall semester and our Year-End Art Show is held near the end of the Winter semester, where all members can submit and display their artwork. Art supplies and materials are provided by the club during in-person events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillstudentsvisualartssociety/"
+  instagram: "https://www.instagram.com/mcgillvisualarts/?hl=en"
+  other:
+website: "https://mcgillvisualarts.wixsite.com/msvas"
+contact_info: |
+  mcgillvisualarts@gmail.com
+categories:
+  arts:
+    - Fine Art
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,20 @@
+---
+name: "The Chemistry Undergraduate Students’ Society"
+description: |
+  The Chemistry Undergraduate Students’ Society is a group of chemistry students elected by their peers with the goal of building a community for all undergraduates in the department of chemistry, by organizing both academic and social events and services. Make sure to check out everything we have to offer!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilluCUSS/"
+  instagram: "https://www.instagram.com/cuss_mcgill/"
+  other:
+website: "https://cussmcgill.ca/"
+contact_info: |
+  mcgill.chemistry@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

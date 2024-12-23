@@ -1,0 +1,20 @@
+---
+name: "McGill Students' Nightline"
+description: |
+  McGill Students’ Nightline is a confidential, anonymous, and non-judgmental listening service run by McGill students. We aim to provide the community with non-professional support in all kinds of situations, including information, guidance during a crisis, or an empathetic space to share your experiences and emotions. Please note that we are an English service that is not able to accept calls in French or any other language.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://nightline.ssmu.ca"
+contact_info: |
+  514-398-6246
+categories:
+  on campus:
+    - On-Campus
+  mental health services:
+    - Mental Wellness
+    - Psychological
+    - Crisis Support

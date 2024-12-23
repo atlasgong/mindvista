@@ -1,0 +1,19 @@
+---
+name: "Tashan Dance Company"
+description: |
+  Montreal-based South Asian Fusion dance company.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/tashandancecompany/"
+  instagram: "https://www.instagram.com/tashandancecompany/?hl=en"
+  other:
+    - "https://www.youtube.com/channel/UCReU4xLzSoynd73ehkhArtg"
+website: "http://www.tashandancecompany.com/"
+contact_info: |
+  tashandancecompany@ssmu.ca
+categories:
+  athletics:
+    - Dance
+  culture:
+    - Leisure & Hobbies
+    - Religion & Cultural

@@ -1,0 +1,15 @@
+---
+name: "Junior Hong Kong Business Association"
+description: |
+  The Junior Hong Kong Canada Business Association (JHKCBA) is a student association in Canada that promotes the business collaboration between Canada and Hong Kong and fosters leadership and business skills among students. We are the junior chapter of the Hong Kong Canada Business Association (HKCBA), one of the largest bilateral trade associations in Canada.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/JHKCBA/"
+  other:
+website: "https://www.hkcba.com/cpages/home"
+contact_info: |
+  jhkcba@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

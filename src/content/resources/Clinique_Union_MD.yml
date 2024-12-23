@@ -1,0 +1,23 @@
+---
+name: "Clinique Union MD"
+description: |
+  UnionMD is a group of private clinics located in downtown Montreal, the Town of Mount Royal, West Island, Laval, Gatineau and Ottawa. They offer a wide range of medical, surgical, and cosmetic services.  Telehealth services are also available. Fees are listed on the website.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Fees vary depending on service. Private insurance may cover the cost of some services.
+website: "https://unionmd.ca/en/"
+contact_info: |
+  514-400-3291
+  info@unionmd.ca
+location: "Several Locations"
+categories:
+  medical services:
+    - Medical Clinic
+    - Physiotherapy
+    - Contraception Services
+  on campus:
+    - Off-Campus

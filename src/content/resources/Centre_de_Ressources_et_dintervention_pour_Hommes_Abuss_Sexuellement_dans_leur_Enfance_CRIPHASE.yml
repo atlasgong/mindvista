@@ -1,0 +1,22 @@
+---
+name: "Centre de Ressources et d'intervention pour Hommes Abusés Sexuellement dans leur Enfance (CRIPHASE)"
+description: |
+  CRIPHASE is a non-profit organization that helps support men that have experienced sexual assault. They offer services including counselling, training, and support groups.
+status: active
+availability:
+  - in_person
+insurance:
+  insurance:
+    - Free
+website: "https://www.criphase.org/?fbclid=IwAR0rkiy13SLKnoZU8zTBlRkMHXh_fiEVwVFwYVm5OELVIx4lhex2EqFarXU"
+contact_info: |
+  Email: info@criphase.org     Facebook: CRIPHASE
+location: "Exact location is confidential ( Montréal, QC H2J 1L7)"
+categories:
+  violence services:
+    - Sexual Assault Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Counselling
+    - Support Group

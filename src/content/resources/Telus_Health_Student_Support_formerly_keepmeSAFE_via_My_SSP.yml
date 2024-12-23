@@ -1,0 +1,23 @@
+---
+name: "Telus Health Student Support (formerly keep.meSAFE via My SSP)"
+description: |
+  Telus Health Student Support provides 24/7, confidential mental health support for students from experienced professionals in real time. This service can be accessed through its app, telephone number and website. There are no additional charges for students enrolled in schools that have signed up for Student Support.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    Instant access at no additional charge for students enrolled in schools that have signed up for Student Support.
+website: "https://myssp.app/ca/home"
+contact_info: |
+  North America:  1-844-451-9700 Outside North America: 001-416-380-6578
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Crisis Support
+    - Psychological

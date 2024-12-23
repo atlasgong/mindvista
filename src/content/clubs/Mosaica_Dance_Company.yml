@@ -1,0 +1,18 @@
+---
+name: "Mosaica Dance Company"
+description: |
+  Mosaica is one of the oldest dance companies at McGill! We are an egalitarian dance company, and we welcome dancers with training in a variety of backgrounds. All company members have the opportunity to choreograph and perform in dances in our year-end showcase, as well as other performances throughout the school year!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mosaicadancecompany/"
+  instagram: "https://www.instagram.com/mosaicadancecompany/"
+  other:
+contact_info: |
+  mosaicadance@ssmu.ca
+categories:
+  arts:
+    - Performance
+  athletics:
+    - Dance
+  culture:
+    - Leisure & Hobbies

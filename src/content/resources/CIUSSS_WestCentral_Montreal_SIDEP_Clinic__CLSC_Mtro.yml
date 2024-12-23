@@ -1,0 +1,19 @@
+---
+name: "CIUSSS West-Central Montreal 
+SIDEP Clinic - CLSC Métro"
+description: |
+  Clinic offering sexually transmitted and blood-borne infections (STBBI) screening services for those who fall into one of the following criteria groups:multiple sexual partners in the last year, man who has sex with men, unprotected sex with a new partner, user of intravenous (injecting) or intranasal (snorting) drugs
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+website: "https://www.ciussswestcentral.ca/"
+location: "1801 de Maisonneuve West"
+categories:
+  medical services:
+    - STI Testing
+    - Medical Clinic
+  on campus:
+    - Off-Campus

@@ -1,0 +1,18 @@
+---
+name: "McGill Arts Collective"
+description: |
+  The McGill Arts Collective is McGill’s first multimedia arts club.​ We are dedicated to forming a diverse community of artists of all skill levels and all disciplines—visual, written, and performance. The MAC is committed to filling the artistic gap on campus and providing opportunities for students to explore new arts, meet new people, and connect with the Montreal arts scene. By hosting bi-weekly events artistic and roundtable events as well as community socials, we believe this club has the potential to create a new and unique community—a multimedia artistic community composed of artists and art lovers—within McGill by being an accessible, no-judgment, source of artistic exploration, growth, and expression, multi-perspective, and cross-medium conversation.
+status: active
+social_media:
+  facebook: "https://facebook.com/mcgillartscollective"
+  instagram: "https://www.instagram.com/mcgill.arts.collective/"
+  other:
+website: "https://mcgillartscollecti.wixsite.com/mcgill"
+contact_info: |
+  mcgillartscollective@gmail.com
+categories:
+  arts:
+    - Fine Art
+    - Performance
+  culture:
+    - Leisure & Hobbies

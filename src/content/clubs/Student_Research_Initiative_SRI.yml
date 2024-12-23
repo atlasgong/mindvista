@@ -1,0 +1,16 @@
+---
+name: "Student Research Initiative (SRI)"
+description: |
+  Student Research Initiative is a club at McGill with the goal of helping undergraduates get involved in research. Through our informative seminars, our networking events, our mentorship program, our research database, and our annual research award, we aim to lower the barrier into undergraduate, providing McGill students with the necessary resources to support their research endeavours.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/StudentResearchInitiative/"
+  instagram: "https://instagram.com/sri.mcgill?igshid=NzZlODBkYWE4Ng=="
+  other:
+website: "https://srissmu.wixsite.com/srimcgill"
+contact_info: |
+  Studentresearchinitiative@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

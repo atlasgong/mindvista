@@ -1,0 +1,21 @@
+---
+name: "CSA – Classics Students’ Association"
+description: |
+  The CSA allows students who love the Ancient Mediterranean World in all its aspects to come together
+status: active
+social_media:
+  facebook: "https://www.facebook.com/csamcgill/"
+  instagram: "http://www.instagram.com/mcgillcsa"
+  other:
+    - "http://www.twitter.com/mcgillcsa"
+website: "https://mcgillcsa.com/"
+contact_info: |
+  classics.students.mcgill@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

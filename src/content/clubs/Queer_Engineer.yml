@@ -1,0 +1,18 @@
+---
+name: "Queer Engineer"
+description: |
+  Queer Engineer (QE) is an EUS club at McGill University that strives to provide a safe and welcoming environment for gender and sexual minorities, both within the Faculty of Engineering and McGill as whole. QE welcomes all gay, lesbian, bisexual, asexual, trans, queer and allied students, and students with a variety of sexual and/or gender identities outside of those labels.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/QueerEngineerMcGill/"
+  instagram: "https://www.instagram.com/queerengineermcgill/"
+  other:
+website: "https://eus.wiki/Queer_Engineer"
+contact_info: |
+  queer.engineer@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

@@ -1,0 +1,16 @@
+---
+name: "TVM: Student Television at McGill"
+description: |
+  TVM provides training to learn the basics of filmmaking and media production, as well as video promotion and event coverage free of cost for the McGill and Montreal community. TVM also hopes to help these clubs and organizations promote their events or raise aware for important causes using our services. TVM aims to be a creative outlet for any and all SSMU and PGSS members who wish to express themselves and explore the medium of video production. Lastly, TVM provides its members with an enjoyable place to work, create and learn by encouraging and stimulating growth and professional development. We have general members, executive members (Producers and Editors) and our Admin and Leadership team. The admin team includes the President, VP Internal, VP External, VP Finance, VP Equity, and Executive Producer. The leadership includes the Tech Director, IT Director, Chief Editor, Music Composer, and Graphics Coordinator. The admin and leadership team oversees the day-to-day operations of TVM.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/TVMTelevision/"
+  instagram: "https://www.instagram.com/tvm.television/"
+  other:
+    - "https://www.youtube.com/user/TVMTelevision"
+website: "https://tvmtelevision.com/"
+contact_info: |
+  hello@tvmtelevision.com
+categories:
+  community support:
+    - Service

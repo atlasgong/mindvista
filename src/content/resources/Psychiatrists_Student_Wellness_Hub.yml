@@ -1,0 +1,23 @@
+---
+name: "Psychiatrists (Student Wellness Hub)"
+description: |
+  Diagnose mental illnesses (including, but not limited to depression, anxiety, eating disorders, bipolar, and other mood disorders)
+  Prescribe and monitor medication for a diagnosed mental illness
+  Make referrals for appropriate care, both on- and off-campus
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+contact_info: |
+  (514) 398-6018
+location: "Student Wellness Hub"
+categories:
+  on campus:
+    - On-Campus
+  mental health services:
+    - Psychological
+    - Counselling

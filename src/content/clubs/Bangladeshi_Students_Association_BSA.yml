@@ -1,0 +1,16 @@
+---
+name: "Bangladeshi Students Association (BSA)"
+description: |
+  The Bangladeshi Student Association (BSA) is a student group of the SSMU (Students Society of McGill University) committed to showcase the rich culture and history of Bangladesh both in McGill and to the Montreal community at large. This group is open to not just those who are Bengali, but also to those that have a love and appreciation for the country and it’s culture. Various events and activities shall be held throughout the year to promote BSA as well as to foster a vibrant Bangladeshi community on the McGill campus, leaving everyone involved with a plethora of fond memories.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/bsamcgill/"
+  instagram: "https://www.instagram.com/bsamcgill/"
+  other:
+contact_info: |
+  bsa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

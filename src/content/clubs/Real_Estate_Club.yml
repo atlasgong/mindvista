@@ -1,0 +1,20 @@
+---
+name: "Real Estate Club"
+description: |
+  Real Estate Club at McGill's mission is to expose students to various opportunities in the Real Estate industry and provide them with knowledge to successfully a career in this sector. The Real Estate Club helps students connect and network with local real estate professionals.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/realestateclubmcgill"
+  instagram: "https://www.instagram.com/realestateclubmcgill/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/real-estate-club-at-mcgill-university/about/"
+website: "https://www.realestateclubmcgill.com"
+contact_info: |
+  rec.mus@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Real Estate
+  faculty specific:
+    - Management

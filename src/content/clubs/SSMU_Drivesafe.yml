@@ -1,0 +1,16 @@
+---
+name: "SSMU Drivesafe"
+description: |
+  DriveSafe is a service run by the Student Society of McGill University. Our volunteers drive students home safely from anywhere on the Island of Montreal for free. We run regular shifts Thursday, Friday, and Saturday nights from 11:00 PM to 3:00 AM, and we run at special events including Frosh, Carnival, Grad Ball, etc.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillSSMUDriveSafe/"
+  instagram: "https://www.instagram.com/ssmudrivesafe/?hl=en"
+  other:
+    - "http://www.twitter.com/SSMUDriveSafe"
+website: "https://linktr.ee/ssmudrivesafe"
+contact_info: |
+  drivesafe@ssmu.ca
+categories:
+  community support:
+    - Service

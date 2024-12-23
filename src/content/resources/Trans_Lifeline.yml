@@ -1,0 +1,21 @@
+---
+name: "Trans Lifeline"
+description: |
+  Trans Lifeline is run by and for trans people. It is a grassroots hotline and microgrants 501(c)(3) non-profit organization offering direct emotional and financial support to trans people in crisis- for the trans community, by the trans community. The hotline is available 24 hours a day to help, support, and inform anyone concerned with issues of sexual diversity and gender diversity. Available by phone.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "Home - Trans Lifeline"
+contact_info: |
+  Phone number: 877- 330- 6366
+location: "Online"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support

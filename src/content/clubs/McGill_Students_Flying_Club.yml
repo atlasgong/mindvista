@@ -1,0 +1,18 @@
+---
+name: "McGill Students' Flying Club"
+description: |
+  In a short span, McGill Students' Flying Club has become one of Canada’s largest student-run aviation organizations. Operating from McGill University in Montreal, McGill Students' Flying Club provides a platform for its members to engage in flight training and other aviation-related activities. Our mission is to promote aviation and aerospace fields and foster a growing community of pilots and aviation enthusiasts.
+   
+   Be part of a community that shares your passion!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McgillStudentsFlyingClub/"
+  instagram: "https://www.instagram.com/mcgillflyingclub/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-flying-club/about/"
+website: "http://mcgillflyingclub.com/"
+contact_info: |
+  mcgillflyingclub@gmail.com
+categories:
+  culture:
+    - Leisure & Hobbies

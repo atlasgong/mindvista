@@ -1,0 +1,17 @@
+---
+name: "Health Occupation Students of America McGill (HOSA)"
+description: |
+  HOSA McGill provides an educational and interactive learning experience for students that are interested in health care professions. We help to provide students with the means to attend a Spring-Leadership Conference in Toronto as well as an International Conference (if student qualifies). The conference allows students to get hands-on experience in the profession they are interested in such as dentistry, laboratory science, forensic medicine, and more.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/HOSAMcGill"
+  instagram: "https://www.instagram.com/hosamcgill/"
+  other:
+website: "https://hosacanada.org/home/"
+contact_info: |
+  hosamcgill@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Healthcare

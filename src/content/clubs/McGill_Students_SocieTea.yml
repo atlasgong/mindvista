@@ -1,0 +1,13 @@
+---
+name: "McGill Students’ SocieTea"
+description: |
+  A fun club where tea drinkers can gather to study, socialize, and drink tea.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/McGillSocieTea/"
+  other:
+contact_info: |
+  McGillSocieTea@outlook.com
+categories:
+  culture:
+    - Leisure & Hobbies

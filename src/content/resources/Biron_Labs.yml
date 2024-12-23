@@ -1,0 +1,20 @@
+---
+name: "Biron Labs"
+description: |
+  Biron Labs is a medical imaging directory of medical clinics. A doctor's prescription is required for all services at Biron Labs.
+status: active
+availability:
+  - online
+insurance:
+  details: |
+    Not covered  by RAMQ or out-of-province healthcare. Private insurance may cover costs fully or partially, only if applicable.
+website: "https://www.biron.com/en/"
+contact_info: |
+  info@biron.com
+categories:
+  medical services:
+    - Lab
+    - Medical Clinic
+    - STI Testing
+  on campus:
+    - Off-Campus

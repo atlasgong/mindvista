@@ -1,0 +1,19 @@
+---
+name: "Engineering Undergraduate Society (EUS)"
+description: |
+  The Engineering Undergraduate Society (EUS) is the representative body of the undergraduate students of engineering at McGill University. The EUS is a full-fledged not-for-profit organization that is financially independent from McGill.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilleus"
+  other:
+website: "https://mcgilleus.ca/"
+contact_info: |
+  vpcomm@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

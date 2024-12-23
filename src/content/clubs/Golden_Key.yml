@@ -1,0 +1,16 @@
+---
+name: "Golden Key"
+description: |
+  The Golden Key chapter at McGill University believes in excellence and strives to provide the best environment possible for guiding our members to achieve in academics, leadership and service. The 246th Golden Key chapter and the 1st in Canada, McGill was chartered April 7, 1997. With more than 9000 members since 1997, the McGill Golden Key chapter is one of the largest chapters in Canada with an average of over 700 members currently at McGill in any given year. Members focus on community service, networking events, and reaching out to make connections with the local community and the entire university student body. We welcome prospective members who are in the top 15% of their class and interested in service and leadership development.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/goldenkeymcgill?fref=ts"
+  instagram: "https://www.instagram.com/goldenkeymcgill/?hl=en"
+  other:
+website: "https://www.goldenkey.org/"
+contact_info: |
+  info@goldenkeymcgill.org
+categories:
+  career:
+    - Networking
+    - Professional Development

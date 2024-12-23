@@ -1,0 +1,25 @@
+---
+name: "Clinique Médicale de L’Alternative"
+description: |
+  Clinique Médicale de L’Alternative is a clinic that specializes in contraception, abortion and sexual health services. It offers a number of STI and HIV testing, vasectomy, and contraception options including implants and prescriptions such as the Pill, Plan B, or Depo-Provera. Surgical and medical abortion services are also available.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+    - Blue Cross
+  details: |
+    Services are free upon presentation of RAMQ card or Blue Cross. If you do not have these, please contact the clinic to find the applicable cost/fees.
+website: "http://www.cliniquedelalternative.com/"
+contact_info: |
+  STI and Gynecology: 514-281-9848  Abortion: 514-281-6476
+location: "2034, Rue St-Hubert, Montreal, QC"
+categories:
+  medical services:
+    - STI Testing
+    - Abortion Services
+    - Contraception Services
+    - Menstrual Health
+  on campus:
+    - Off-Campus

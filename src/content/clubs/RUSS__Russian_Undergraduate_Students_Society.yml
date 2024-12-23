@@ -1,0 +1,20 @@
+---
+name: "RUSS - Russian Undergraduate Students’ Society"
+description: |
+  The Russian Undergraduate Students' Society is the community for McGill students studying Russian literature and language. They run many events, including conversation hours, translation workshops, and community events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/pages/Russian-Undergraduate-Students-Society/172301576181468"
+  instagram: "https://www.instagram.com/russmcgill/"
+  other:
+website: "http://russmcgill.weebly.com"
+contact_info: |
+  russ.aus@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

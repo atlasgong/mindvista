@@ -1,0 +1,22 @@
+---
+name: "Tel-Aide Montreal"
+description: |
+  Tel-Aide Montreal is a free, confidential, and anonymous listening service. This call center in Quebec offers a listening service for those who are suffering from mental health problems or simply needing to be listened to. Tel-Aide Montreal work with clients that are struggling with issues including stress at work, emotional distress, solitude, strained relationships, abuse and intimidation, and domestic violence. They also offer a helpline service number at (514)-935-1101.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://telaidemontreal.org/en/"
+contact_info: |
+  514-935-1101
+categories:
+  violence services:
+    - Domestic Violence
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Psychological
+    - Mental Wellness

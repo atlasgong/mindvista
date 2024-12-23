@@ -1,0 +1,20 @@
+---
+name: "SMAT"
+description: |
+  Service de Messagerie texte pour Arrêter le Tabac (SMAT) is a free, online automated text messages services that provides individual-specific support and advice to help people quit cigarettes. People can sign up for SMAT through both SMS and Messenger. Usual text messaging and data charges may apply.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+  details: |
+    For Quebec residents only.
+website: "https://www.smat.ca/en?&lang=en?lang=en"
+categories:
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support

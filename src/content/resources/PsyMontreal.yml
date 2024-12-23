@@ -1,0 +1,25 @@
+---
+name: "PsyMontreal"
+description: |
+  PsyMontreal offers individual psychotherapy, coaching, child and parenting services, and online therapy.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    The fees of psychotherapy services in private practice are not covered by Medicare, but many insurance companies reimburse a certain amount, depending on your coverage. Official receipts are provided for each appointment.
+    insurance information
+website: "http://psymontreal.com/"
+contact_info: |
+  514-337-2473 ext.0
+location: "Multiple office locations throughout Montreal Telephone: (514)-337-2473, extension 0"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

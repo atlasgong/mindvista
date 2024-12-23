@@ -1,0 +1,23 @@
+---
+name: "Action Santé Transvesti(e)s & Transexuel(le)s du Quebéc (ASTT(e)Q)"
+description: |
+  ASTT(e)Q is a peer support program that promotes mental health and well-being of trans people by providing outreach, interventions, support and accompaniment. They offer different services to many segments of the Quebec trans community. ASTT(e)Q also provides a 24/7 lisiteing line (1-855-909-9038 31). Their services are confidential, low cost or free.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://cactusmontreal.org/en/trans-support/"
+contact_info: |
+  514 847-0067      info@cactusmontreal.org
+location: "1300 Sanguinet Street, Montréal, QC H2X 3E7"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  medical services:
+    - STI Testing
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus

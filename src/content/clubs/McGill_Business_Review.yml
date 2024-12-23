@@ -1,0 +1,17 @@
+---
+name: "McGill Business Review"
+description: |
+  The McGill Business Review was founded in 2015 and is the first periodical at McGill University to be devoted solely to the publication of articles focusing on the global business community. The MBR, an online-only journal, serves as an outlet for McGill students to express their varied views and opinions on a range of business topics, including: economics, entrepreneurship, finance, technology, innovation, global politics, and government policy. Composed of a team of undergraduate student editors, writers and executives that each play an integral role individually in the production and publication process, the MBR is driven to produce excellent content and curate articles for a multifarious scholastic and professional audience.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillBR/"
+  instagram: "https://instagram.com/mcgillbusinessreview?igshid=YmMyMTA2M2Y="
+  other:
+website: "https://mcgillbusinessreview.com/"
+contact_info: |
+  mcgillbusinessreview@ssmu.ca
+categories:
+  career:
+    - Professional Development
+  culture:
+    - Publication & Writing

@@ -1,0 +1,26 @@
+---
+name: "Clinique Médicale L’Actuel"
+description: |
+  Clinique Médicale L'Actuel specializes in sexual health. This clinic has a wide range of services including non-emergency STI testing, post-exposure prophylaxis (PEP), quick-HIV testing, hepatitis clinics, and opioid replacement therapies like methadone and suboxone.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    A charge of $5.00 to $15.00 is issued for laboratory services. Please contact the clinic for more information regarding pricing and insurance coverage.
+website: "http://cliniquelactuel.com/home"
+contact_info: |
+  courriel@lactuel.ca  514-524-1001
+location: "CLINIQUE MÉDICALE L'ACTUEL
+1001, boul. De Maisonneuve Est, bureau 1130
+Montréal Québec H2L 4P9"
+categories:
+  medical services:
+    - STI Testing
+    - Medical Clinic
+    - Lab
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Counselling

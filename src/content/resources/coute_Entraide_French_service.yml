@@ -1,0 +1,21 @@
+---
+name: "Écoute Entraide (French service)"
+description: |
+  Écoute Entraide provices free, confidential, listening and support services available everywhere in Quebec. They offer listening services, self-help groups, and telephone pairing to recieve calls on a continous bases for support. Their help lines are open from 8 am to 10 pm 7 days a week.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.ecoute-entraide.org"
+contact_info: |
+  1-855-365-4463
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Psychological
+    - Support Group
+    - Mental Wellness

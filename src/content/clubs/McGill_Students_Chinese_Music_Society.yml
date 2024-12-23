@@ -1,0 +1,19 @@
+---
+name: "McGill Students’ Chinese Music Society"
+description: |
+  McGill Students Chinese Music Society (MSCMS) was formed in 2013 by McGill students with a vivid passion for traditional Chinese music culture with the goal of promoting various styles of traditional Chinese music and the exchange of occidental and oriental music within the McGill community.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/mcgillstudentschinesemusicsociety/"
+  instagram: "https://www.instagram.com/mcgillchinesemusic2/"
+  other:
+    - "https://www.youtube.com/channel/UC57hHM5J83Xr62Zj1XOrarw"
+website: "https://mcgillchinesemusic.wixsite.com/mscms"
+contact_info: |
+  mscms@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies
+    - Religion & Cultural

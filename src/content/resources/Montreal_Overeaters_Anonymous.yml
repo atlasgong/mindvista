@@ -1,0 +1,22 @@
+---
+name: "Montreal Overeaters Anonymous"
+description: |
+  Overeaters Anonymous (OA) is a Twelve-Step Fellowship for people recovering from compulsive eating. OA is not a diet club, but rather a supportive community focused on helping individuals overcome compulsive eating, anorexia, bulimia, food addiction, and obesity. If you’re struggling, OA provides a space where you can find support and guidance.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://oamontrealenglish.org/meetings/"
+contact_info: |
+  info@oamontrealenglish.org
+  (514)-488-1812 English OA group
+  (514)-490-1939 French OA group
+location: "Locations vary. Online meetings also available."
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Disordered Eating
+    - Support Group

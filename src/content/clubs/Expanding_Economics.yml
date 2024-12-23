@@ -1,0 +1,19 @@
+---
+name: "Expanding Economics"
+description: |
+  Expanding Economics is McGill University’s branch of a global network of groups called Rethinking Economics, which are united by the mission to practice and promote an economics that is open, relevant, and for everyone. To achieve this, we host various events on and off-campus and share resources on our social media that present new schools of economic thought and foster discussion on these perspectives. We also hope to create a stronger relationship with the Economics department at McGill in order to communicate our missions and have them incorporated into the curriculum at McGill.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ExpandingEconomicsMcGill/"
+  instagram: "https://www.instagram.com/expandingeconomics/"
+  other:
+    - "http://www.twitter.com/expandingecon"
+website: "https://www.expandingeconomics.com/"
+contact_info: |
+  expanding.economics@ssmu.ca, expandingecon.mtl@rethinkingeconomics.org
+categories:
+  community support:
+    - Social Activism
+  career:
+    - Professional Development
+    - Networking

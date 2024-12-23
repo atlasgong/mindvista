@@ -1,0 +1,16 @@
+---
+name: "McGill Polish Students’ Association (MPSA)"
+description: |
+  The McGill Polish Students’ Association (MPSA) is an initiative looking to: 1) Provide a source of social and cultural contact for McGill Polish Students (either being the roughly 50 international students from Poland that visit the university each semester or the hundreds of full-time students identifying as Polish or of Polish descent); 2) Serve McGill students at large with a place to uncover more about Polonia or Polish language, culture, or history and 3) Connect the greater McGill community with the little known McGill affiliated Polish Institute of Arts and Sciences in Canada which has served the McGill and Polish-Canadian community since 1943. As a McGill affiliate all students and faculty at McGill can use its library free of charge.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/polishmcgill/"
+  instagram: "https://www.instagram.com/mcgill.mpsa/"
+  other:
+contact_info: |
+  polishmcgill@gmail.com
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

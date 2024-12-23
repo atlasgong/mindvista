@@ -1,0 +1,27 @@
+---
+name: "Ordre de Psychologues du Quebec"
+description: |
+  Ordre de Psychologues du Quebec is a service that helps people to find licensed psychologists or psychotherapist in their area. Their services are paid for and generally covered by group insurance.
+status: active
+availability:
+  - online
+insurance:
+  details: |
+    Contact insurance company for coverage information
+website: "https://www.ordrepsy.qc.ca/fr/accueil"
+contact_info: |
+  514-738-1223
+  1-800-363-2644
+  info@ordrepsy.qc.ca
+location: "Ordre des psychologues du Québec
+1100, avenue Beaumont, bureau 510
+Mont-Royal (Québec) H3P 3H5"
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

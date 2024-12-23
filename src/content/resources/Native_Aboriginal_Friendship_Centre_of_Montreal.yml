@@ -1,0 +1,26 @@
+---
+name: "Native (Aboriginal) Friendship Centre of Montreal"
+description: |
+  Native Friendship Centre of Montreal is an urban multipurpose centre with homeless projects, health services and information, as wel as youth programs/centre. This Aboriginal centre consits of population from ten First Nations of Quebec as well as the Inuit and Metis of Montreal.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://www.nfcm.org/"
+contact_info: |
+  514-499-1854
+location: "2001 Saint-Laurent Boulevard
+Montreal, Quebec
+H2X 2T3
+Canada"
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Crisis Support
+    - Mental Wellness

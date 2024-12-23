@@ -1,0 +1,17 @@
+---
+name: "Hack4Impact"
+description: |
+  Hack4Impact McGill is a university initiative pairing students with non-profit organizations to design and develop socially impactful projects while gaining meaningful hands on experience.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/hack4impactmcgill"
+  instagram: "https://www.instagram.com/hack4impact/"
+  other:
+website: "https://mcgill.hack4impact.org/"
+contact_info: |
+  hack4impact@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+  career:
+    - Technology

@@ -1,0 +1,21 @@
+---
+name: "National Eating Disorder Information Center"
+description: |
+  National Eating Disorder Information Center provides services including a help line, support and information on disordered eating, and referrals to health professionals.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://nedic.ca/"
+contact_info: |
+  1-866-633-4220
+location: "ES 7-421, 200 Elizabeth Street,Toronto ON M5G 2C4"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Disordered Eating
+    - Crisis Support
+    - Support Group

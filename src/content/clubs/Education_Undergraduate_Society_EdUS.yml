@@ -1,0 +1,20 @@
+---
+name: "Education Undergraduate Society (EdUS)"
+description: |
+  The Education Undergraduate Society represents the interests of all undergraduate students in the Faculty of Education to the university and various external organizations. Every Education undergraduate student (including Kin!) is automatically a member of the EdUS, which is funded by a $10-per-semester student fee. The EdUS also provides its students with a wide range of events and services that are designed to enhance their experience at McGill. These services include: facilitating Mentoring, maintaining the Education lounge in the Education Building, hosting a Career Fair, funding Education initiatives, and planning a variety of great social events throughout the year (including Frosh, 4à7, and Grad Ball).
+status: active
+social_media:
+  facebook: "https://www.facebook.com/EdUSMcGill"
+  instagram: "https://www.instagram.com/edusmcgill/"
+  other:
+website: "https://www.edusmcgill.com/"
+contact_info: |
+  admin.edus@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Education
+  culture:
+    - Student Society

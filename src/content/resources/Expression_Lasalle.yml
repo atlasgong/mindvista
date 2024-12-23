@@ -1,0 +1,25 @@
+---
+name: "Expression Lasalle"
+description: |
+  Expression LaSalle centre communautaire en santé mentale, located in the borough of LaSalle (Montreal) is a community mental health centre whose objective is to offer free professional therapeutic services in mental health to citizens of Montreal (18 to 65 years of age inclusively) and surrounding areas . The Centre’s creative arts therapies (art therapy, drama therapy, music therapy, etc.), relaxation and meditation workshops, groups on the theme of sexual abuse, and verbal counseling encourage self-expression, and psychological and/or emotional well being.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+  details: |
+    The services are free. A nominal yearly administrative fee (Membership Card) is payable upon participation only.
+website: "https://www.expressionlasalletherapies.ca/services/"
+contact_info: |
+  info@expressionlasalletherapies.ca
+  514-368-3736
+location: "405 Terrasse Newman, Office 210 LaSalle (Quebec) H8R 2Y9"
+categories:
+  violence services:
+    - Sexual Assault Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Support Group
+    - Mental Wellness

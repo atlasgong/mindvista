@@ -1,0 +1,20 @@
+---
+name: "Computer Science Undergraduate Society  (CSUS)"
+description: |
+  The CSUS is an elected student group tasked with improving student academics and life in the computer science department. This includes discussing course changes with faculty, organizing events, collating student feedback, and promoting a sense of community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/mcgillcsus/?fref=ts"
+  other:
+    - "https://twitter.com/mcgillcsus"
+website: "https://mcgill-csus.ca/"
+contact_info: |
+  csus@cs.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

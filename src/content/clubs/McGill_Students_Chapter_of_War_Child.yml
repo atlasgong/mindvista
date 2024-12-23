@@ -1,0 +1,17 @@
+---
+name: "McGill Students Chapter of War Child"
+description: |
+  Our organization aims to raise awareness and funds for the War Child NGO which provides assistance to children in areas experiencing conflict and the aftermath of conflict. War Child aims to provide aid amid crisis to improve children’s lives.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillstudentschapterofwarchild"
+  instagram: "https://www.instagram.com/warchildmcgill/"
+  other:
+    - "http://www.twitter.com/WarChildCan"
+website: "https://www.warchild.ca/"
+contact_info: |
+  warchildatmcgill@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

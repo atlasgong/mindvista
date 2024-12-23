@@ -1,0 +1,17 @@
+---
+name: "McGill Pharmaceutical Career Student Network (PCSN)"
+description: |
+  The McGill Pharmaceutical Career Student Network (PCSN) is a student-run organization that facilitates interactions between key industry experts and McGill students seeking to explore and enter the pharmaceutical industry– a highly complex, competitive, and rewarding field. Through a variety of exciting and informative events, we aim to assist both undergraduate and graduate students in navigating their post-graduate career options. Ultimately, we hope that the new opportunities we create to network and connect with like-minded individuals and professionals will stimulate a strong desire to enter the pharmaceutical space whether it be in science or business. Whether you are a student interested in becoming a McGill PCSN member, or an industry professional excited by the opportunity to inspire students to pursue careers in industry at future events, please do not hesitate to contact us today!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/pcsnmcgill/"
+  instagram: "https://www.instagram.com/pcsn_mcgill/"
+  other:
+    - "https://www.linkedin.com/company/18993263/admin/"
+website: "https://pcsn-mcgill.com/"
+contact_info: |
+  pcsn.mcgill@gmail.com
+categories:
+  career:
+    - Networking
+    - Professional Development

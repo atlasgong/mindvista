@@ -1,0 +1,18 @@
+---
+name: "Montreal Heart of the City Piano Program (MHCPP)"
+description: |
+  The Montreal Heart of the City Piano Program (MHCPP) is a chapter of the national organization, founded in Saskatchewan in 1995. Since November 2007, the MHCPP has offered tuition-free piano lessons to at-risk children at English and French inner-city elementary schools in Montreal. Led by a team of dedicated volunteers through the Student Society of McGill University, the Montreal chapter has grown to include a total of four schools.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/montrealheartofthecity/"
+  instagram: "https://www.instagram.com/montrealheartofthecity/?hl=en"
+  other:
+    - "https://www.youtube.com/channel/UCSZAMYlVzvvOYuzrwn34Ndw"
+website: "https://montrealheartofthecity.com/"
+contact_info: |
+  montrealhcpp@ssmu.ca
+categories:
+  arts:
+    - Performance
+  community support:
+    - Social Activism

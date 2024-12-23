@@ -1,0 +1,26 @@
+---
+name: "Peer Support Centre (PSC)"
+description: |
+  The Peer Support Centre (PSC) provides mental health services through their friendly and well-trained student peer supporters that can connect students to ressources. The PSC is welcoming space where students can share their experiences and feel truly listened to. Appointments can be drop-in or can be scheduled. There is also online support provided by the PSC, in which students may make preferential appointments with a BIPOC, 2SLGBTQIA+, or woman supporter if desired. All services are confidential and non-judgemental.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://psc.ssmu.ca"
+contact_info: |
+  514-398-3782 mcgill.psc@gmail.com
+location: "The University Centre, 3480 Rue McTavish, Room 411, Montreal, QC, H3A 0E7"
+categories:
+  bipoc services:
+    - Bipoc Services
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - On-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness
+    - Crisis Support

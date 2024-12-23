@@ -1,0 +1,16 @@
+---
+name: "Engineering Peer Tutoring Service"
+description: |
+  The Engineering Peer Tutoring Service, or EPTS, offers free tutoring of U0 and U1 classes for engineering students. Our tutors go through a rigorous selection process and are able to provide students with the help that they need. All of our tutors are undergraduate students that have taken the courses that they are tutoring. We hold weekly drop in hours in FDA 6B as well as midterm and final exam review sessions. Whether you need help with an assignment, study for an exam or sharpen your skills, EPTS is for you!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/epts.mcgill/"
+  other:
+website: "https://epts.mcgilleus.ca/"
+contact_info: |
+  epts@mcgilleus.ca
+categories:
+  community support:
+    - Service
+  faculty specific:
+    - Engineering

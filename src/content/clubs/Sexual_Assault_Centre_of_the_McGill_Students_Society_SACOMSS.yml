@@ -1,0 +1,15 @@
+---
+name: "Sexual Assault Centre of the McGill Students’ Society (SACOMSS)"
+description: |
+  The Sexual Assault Centre of the McGill Students’ Society (SACOMSS) is a volunteer-run organization committed to supporting survivors of sexual assault and their allies through direct support, advocacy, and outreach. SACOMSS strives to be a pro-survivor, pro-feminist, anti-racist, anti-colonial, anti-ableist, anti-classist, queer-positive, trans-positive, pro-sex worker, and anti-oppressive organization. We provide a safe, accessible and non-judgmental space for members of many different communities and identifications. All our services are open to the public and are provided free of charge. The DIAL hotline service has been temporarily moved to Zoom. Information on how to call in, along with the updated weekly hours can be found on our homepage.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/sacomss/"
+  instagram: "https://www.instagram.com/sacomss/"
+  other:
+website: "http://www.sacomss.org/wp/"
+contact_info: |
+  SACOMSS@gmail.com
+categories:
+  community support:
+    - Service

@@ -1,0 +1,18 @@
+---
+name: "Student’s Association for Multiple Sclerosis"
+description: |
+  Multiple Sclerosis (MS) is a disease that affects approximately 2.5 million people worldwide. Canada has one of the highest prevalence rates of MS, which mostly affects the young adult demographic. This same age group is the one that is found in the McGill student community. Currently, there are very few associations that raise awareness for this prevalent disease. For this reason, SAMS aims to increase awareness and fundraising for Multiple Sclerosis through various events and programs.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/samsmcgill"
+  instagram: "https://www.instagram.com/samsmcgill/"
+  other:
+website: "http://www.samsmcgill.com/"
+contact_info: |
+  sams@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach
+  career:
+    - Healthcare

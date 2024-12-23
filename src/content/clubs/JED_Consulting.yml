@@ -1,0 +1,19 @@
+---
+name: "JED Consulting"
+description: |
+  Based out of McGill University, JED Consulting is Canada's premier student-run consulting firm. Each semester, our team of 30 student consultants tackles the Gen Z-related business challenges of start-ups, nonprofits and Fortune 500 companies.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/JEDmtl"
+  instagram: "https://www.instagram.com/jed.mcgill/"
+  other:
+website: "https://jed-consulting.com"
+contact_info: |
+  Juniorenterprise.desautels@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Consulting
+  faculty specific:
+    - Management

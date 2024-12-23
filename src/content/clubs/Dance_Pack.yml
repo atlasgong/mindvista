@@ -1,0 +1,18 @@
+---
+name: "Dance Pack"
+description: |
+  Dance Pack is a collective of McGill students who share a passion in dance with a focus on hip hop. As a tight-knit team of 10-20 members, Dance Pack values fun and enthusiasm and encourage inclusivity and creativity on the dance floor. Performances include athletic events, faculty events, and more.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/mcgilldancepack"
+  instagram: "https://instagram.com/mcgilldancepack?igshid=YmMyMTA2M2Y="
+  other:
+contact_info: |
+  dancepak@ssmu.ca
+categories:
+  arts:
+    - Performance
+  athletics:
+    - Dance
+  culture:
+    - Leisure & Hobbies

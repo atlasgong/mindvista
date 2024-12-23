@@ -1,0 +1,19 @@
+---
+name: "McGill Product Management Association"
+description: |
+  The McGill Product Management Association is Montreal’s first product management club/association dedicated to raising awareness about PM, teaching people key PM skills, giving members confidence in PM job search, and to building a community of aspirational product managers.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mpma.mcgill/"
+  instagram: "https://www.instagram.com/mpma.mcgill/"
+  other:
+    - "https://www.linkedin.com/company/mpma-mcgill/?originalSubdomain=ca"
+contact_info: |
+  mpma@musmcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Marketing
+  faculty specific:
+    - Management

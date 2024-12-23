@@ -1,0 +1,13 @@
+---
+name: "McGill Wine Society"
+description: |
+  The wine world is a complicated and daunting place for beginner wine drinkers. Do the words Chardonnay, Merlot or Pinot Noir sound too complex, so you keep reaching for that bottle of Barefoot or Yellow Tail? This is a problem that many university students face, but the McGill Wine Society is here to solve this issue on campus. Our club was founded to help the confused college student learn more about wine, the wine industry and expand their knowledge of the beverage in a safe and inclusive environment of fellow wine enthusiasts. Cheers!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/winesocietymcgill/"
+  other:
+contact_info: |
+  winesociety@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

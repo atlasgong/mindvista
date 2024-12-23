@@ -1,0 +1,18 @@
+---
+name: "McGill Access Advisors"
+description: |
+  McGill Access Advisors provide help and guidance to McGill students who would like to access services offered by the Student Wellness Hub. They provided one-on-one appointments and run workshops.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/access-advisors"
+location: "Student Wellness Hub"
+categories:
+  on campus:
+    - On-Campus
+  mental health services:
+    - Mental Wellness
+    - Counselling

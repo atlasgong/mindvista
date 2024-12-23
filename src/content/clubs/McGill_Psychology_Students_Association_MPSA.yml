@@ -1,0 +1,20 @@
+---
+name: "McGill Psychology Students Association (MPSA)"
+description: |
+  McGill Psychology Students' Association (MPSA) is an undergraduate student association at McGill University. We are the McGill psychology community's source of academic and social events and resources for students.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillpsychology/"
+  instagram: "https://www.instagram.com/msps_mcgill/"
+  other:
+website: "https://www.mpsamcgill.com/"
+contact_info: |
+  mpsa.mcgil@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

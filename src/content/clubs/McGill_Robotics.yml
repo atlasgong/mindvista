@@ -1,0 +1,17 @@
+---
+name: "McGill Robotics"
+description: |
+  McGill Robotics is an engineering design team that builds robots for international competitions as well as organizes a robotics themed hackathon annually. The team’s goal is to foster an interest in robotics through competition, cultivate a relationship with the surrounding Montreal community, and much closer to home, to create a core community at McGill. We prioritize team bonding and growth along with engineering accomplishment, with the belief that it takes a solid team to build a winning robot. McGill Robotics currently fosters four technical projects – AUV, Drone, Mars Rover, RoboHacks – and one Business Team, who oversees team Finances, Sponsorship, Marketing and Outreach Events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillrobotics/"
+  instagram: "https://www.instagram.com/mcgillrobotics/"
+  other:
+    - "https://ca.linkedin.com/company/mcgill-robotics"
+website: "https://mcgillrobotics.com/"
+categories:
+  career:
+    - Professional Development
+    - Networking
+  culture:
+    - Leisure & Hobbies

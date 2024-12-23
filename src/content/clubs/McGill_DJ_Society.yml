@@ -1,0 +1,15 @@
+---
+name: "McGill DJ Society"
+description: |
+  The McGill DJ Society was established to promote musical talent on campus. Through our network and events, we hope to create an interconnected community that shares their passion for Djing and music production. We welcome people of all experience levels with interests in all kinds of music! If you want to learn about how to DJ or connect with like-minded individuals, then the McGill DJ Society is the place for you!
+status: active
+social_media:
+  instagram: "https://www.instagram.com/mcgilldjsociety/"
+  other:
+contact_info: |
+  mdjs@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

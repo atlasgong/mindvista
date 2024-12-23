@@ -1,0 +1,18 @@
+---
+name: "Chromatones a Cappella"
+description: |
+  We are Chromatones A Cappella, a student-led, 16 member a cappella group at McGill University! We are one of the four groups on campus and since forming in 2012, our repertoire has been constantly evolving to reflect the unique styles of our members. We rehearse songs of all genres which are arranged by current and past members, and perform at our end of semester concert and in various gigs in the community. We also release our concerts onto our Youtube channel and have released two albums which you can find on Spotify or Apple Music! If you are interested in joining, we hold auditions at the beginning of each semester and are open to all McGill students.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ChromatonesACappella/"
+  instagram: "https://www.instagram.com/chromatones/"
+  other:
+    - "https://www.youtube.com/channel/UCUGJYtbVWZknbgSbCew8EGA"
+website: "http://chromatones.ca/"
+contact_info: |
+  chromatonesmcgill@gmail.com
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

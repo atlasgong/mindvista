@@ -1,0 +1,19 @@
+---
+name: "Society of Undergraduate Mathematics Student (SUMS)"
+description: |
+  SUMS represents the undergraduate mathematics community at McGill University.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/sumsmcgill"
+  other:
+website: "https://sumsmcgill.ca/"
+contact_info: |
+  sums@math.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

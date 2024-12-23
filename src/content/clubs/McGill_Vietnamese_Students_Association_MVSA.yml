@@ -1,0 +1,15 @@
+---
+name: "McGill Vietnamese Students Association (MVSA)"
+description: |
+  Established in the 1970 and restarted again in 2014, MVSA was originally created to promote Vietnamese culture with fellow McGill students and the community at large. We also strive to share our wonderful food, values, and traditions with the McGill community and the population of Montreal. We hope to provide members with support, skills, and opportunities to make student life fun and rewarding at university. To achieve these goals, we offer multiple events throughout the year such as welcome back parties, bake sales, restaurant outings, cooking events, and our annual Tết in collaboration with the Montreal Vietnamese Community. In short, our mission is to build a strong community while having fun!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillvsa/"
+  other:
+contact_info: |
+  mvsa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

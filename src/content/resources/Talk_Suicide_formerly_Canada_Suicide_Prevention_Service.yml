@@ -1,0 +1,19 @@
+---
+name: "Talk Suicide (formerly Canada Suicide Prevention Service)"
+description: |
+  Talk Suicide is a suicide crisis helpline that offers support for those who need urgent help, those who are unsure if they need help, and those who are worried about someone else. They offer 24/7 support by trained crisis responders via phone (toll free) and 4pm - midnight (EST) via SMS messaging.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://talksuicide.ca"
+contact_info: |
+  1-833-456-4566 (24/7 phone), 45645 (4pm-midnight text)
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Psychological

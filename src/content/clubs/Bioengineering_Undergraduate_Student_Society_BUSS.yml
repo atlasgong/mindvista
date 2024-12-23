@@ -1,0 +1,18 @@
+---
+name: "Bioengineering Undergraduate Student Society (BUSS)"
+description: |
+  The Bioengineering Undergraduate Student Society (BUSS) is a student organization which serves to represent all undergraduate students in the Department of Bioengineering at McGill University. BUSS is dedicated to providing academic and social opportunities to inspire, entertain, and guide its members through their undergraduate degree.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/BUSSMcGill"
+  instagram: "https://www.instagram.com/buss.mcgill/"
+  other:
+website: "https://buss.mcgilleus.ca/"
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

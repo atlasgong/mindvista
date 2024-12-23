@@ -1,0 +1,19 @@
+---
+name: "Salseros McGill"
+description: |
+  Do you love latin music and dance or simply want to learn some fiery dance moves? Come join our fun and lively community! We bring students affordable beginner and intermediate salsa and bachata classes, practice sessions, parties (our Latin Socials) and fabulous outings which introduce our students to the Montreal salsa scene.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/SalserosMcGill"
+  instagram: "https://www.instagram.com/salserosmcgill/"
+  other:
+    - "http://www.twitter.com/McGillSalseros"
+website: "http://salserosmcgill.weebly.com/"
+contact_info: |
+  salserosmcgill@ssmu.ca
+categories:
+  athletics:
+    - Dance
+  culture:
+    - Religion & Cultural
+    - Leisure & Hobbies

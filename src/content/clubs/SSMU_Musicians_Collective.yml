@@ -1,0 +1,19 @@
+---
+name: "SSMU Musicians Collective"
+description: |
+  The Musicians Collective is a service which provides opportunities for musicians at McGill to meet each other. We organize a variety of events throughout the school year, including open mics, workshops, jam sessions, and end of year concerts. These events give students the opportunity to play music, to listen to other McGill students perform, to maybe learn a new instrument, and to meet other like-minded musicians. We also offer a student-teacher referral service, in which students seeking to learn a new instrument or to improve their skills of their current instrument, can reach out to a list of students who are willing to teach them.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/ssmumusicianscollective"
+  instagram: "https://www.instagram.com/ssmumusicianscollective/"
+  other:
+    - "https://www.linkedin.com/company/ssmu-musicians-collective/about/"
+contact_info: |
+  muscollective@gmail.com
+categories:
+  arts:
+    - Performance
+  career:
+    - Networking
+  culture:
+    - Leisure & Hobbies

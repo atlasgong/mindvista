@@ -1,0 +1,13 @@
+---
+name: "Université de Montréal - University Clinic of Psychology"
+description: |
+  Clinical training and research facilities that provide services (low cost) including psychological assessment, neuropsychological assessment, and individual, couple, and family therapy. Service provided to general public
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+website: "https://psy.umontreal.ca/ressources-services/clinique-universitaire-de-psychologie/"
+categories:
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

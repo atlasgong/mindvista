@@ -1,0 +1,26 @@
+---
+name: "Quorum"
+description: |
+  Quorum is a medical clinic that specializes in sexual health and ITSS. Their services include HIV, STIs, and hepatitis care as well as women's health and transgender health services. These services are available by appointment only. Their website is only available in French.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Contact for information regarding insurance and costs.
+website: "http://cliniquequorum.com/"
+contact_info: |
+  info@cliniquequorum.com  514-360-0614
+location: "800, boul. de Maisonneuve Est suite RC-1
+Montréal (QC), H2L 4L8"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  medical services:
+    - STI Testing
+    - Medical Clinic
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus

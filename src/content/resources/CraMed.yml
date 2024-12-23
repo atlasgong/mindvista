@@ -1,0 +1,22 @@
+---
+name: "Créa-Med"
+description: |
+  Créa-Med is a private family medical clinic that provides general medicine services. Their clinic offers STI/STD testing, annual checkups, gynecology appointments, IUD insertion, and much more. Patients must contact their clinic to book an appointment.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Canadian resident membership fee: $99 Non-residents: $149          Varying fees depending on service, please refer to website.  Receipts given may be used to ask for reimbursement by insurance if applicable. Not covered by RAMQ or out-of-province healthcare.
+website: "https://crea-med.ca/en/?utm_source=G&utm_medium=lpm&utm_campaign=medicentres"
+contact_info: |
+  514-613-3520    info@crea-med.ca
+location: "2055 rue Mansfield"
+categories:
+  medical services:
+    - Medical Clinic
+    - STI Testing
+    - Contraception Services
+  on campus:
+    - Off-Campus

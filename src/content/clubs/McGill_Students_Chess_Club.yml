@@ -1,0 +1,14 @@
+---
+name: "McGill Students’ Chess Club"
+description: |
+  The McGill Chess Club meets every Thursday evening for casual chess. We offer lessons, seminars, tournaments and other activities. All levels welcome, from beginner to master!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/McGillChess/"
+  other:
+website: "https://discord.gg/sx65wQDWDx"
+contact_info: |
+  mcgill.chess@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

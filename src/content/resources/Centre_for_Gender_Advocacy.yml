@@ -1,0 +1,23 @@
+---
+name: "Centre for Gender Advocacy"
+description: |
+  The Centre for Gender Advocacy is an independent, student-funded, Concordia University organization mandated to promote gender equality and empowerment, particularly as it relates to marginalized communities.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  details: |
+    Email organization for more information regarding cost and insurance coverage.
+website: "https://genderadvocacy.org/"
+contact_info: |
+  info@genderadvocacy.org
+location: "2110 rue Mackay, First Floor
+Montréal, Quebec"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Support Group

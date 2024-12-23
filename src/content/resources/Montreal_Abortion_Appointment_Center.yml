@@ -1,0 +1,23 @@
+---
+name: "Montreal Abortion Appointment Center"
+description: |
+  Montreal’s Abortion Appointment Centre helps people find an free abortion appointments in clinics near them in less than two weeks.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+  details: |
+    To get free abortion services, you must have a valid health insurance card, an immigration certificate, or any other document giving you access to healthcare in Quebec.
+website: "https://santemontreal.qc.ca/en/public/support-and-services/abortion-montreal-appointment-centre/"
+contact_info: |
+  514-380-8299
+categories:
+  medical services:
+    - Abortion Services
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory

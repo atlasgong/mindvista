@@ -1,0 +1,23 @@
+---
+name: "Maison de Lina (Lina's Home)"
+description: |
+  Maison de Lina is a shelter and service provider that aims to support women and children who are victims of domestic violence. Their services include a 24/7 helpline, accomodations, external services, youth services and other services such as legal ones.
+status: active
+availability:
+  - in_person
+insurance:
+  insurance:
+    - Free
+website: "https://maisondelina.org/en/services/"
+contact_info: |
+  Email: info@maisondelina.org.      Tel: 450-962-8085  SOS Violence conjugale Tel: 1-8000-363-9010
+location: "Location is confidential."
+categories:
+  violence services:
+    - Domestic Violence
+  on campus:
+    - Off-Campus
+  support and community services:
+    - Legal Service
+  mental health services:
+    - Crisis Support

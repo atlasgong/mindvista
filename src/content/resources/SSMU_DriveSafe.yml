@@ -1,0 +1,23 @@
+---
+name: "SSMU DriveSafe"
+description: |
+  SSMU DriveSafe is a student-run service that provides McGill students with safe and free drives home from anywhere on the Island of Montreal as well as to Montmorency metro station, Longueuil metro station, and to Kahnawá:ke. For their marginalized communities initiatives, they extend regular service to the Mohawk Territory of Kahnawake, and will treat all calls to Kahnawake as regular calls on all days.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://drivesafe.ssmu.ca"
+contact_info: |
+  Email: drivesafe@ssmu.ca
+  Phone: (514) 398-8040
+location: "Locations vary."
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - On-Campus
+  support and community services:
+    - Safety Service
+    - Accessibility

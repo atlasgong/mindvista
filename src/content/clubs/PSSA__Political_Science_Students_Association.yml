@@ -1,0 +1,20 @@
+---
+name: "PSSA – Political Science Students’ Association"
+description: |
+  The Political Science Students' Association (PSSA) represents the students enrolled in the program.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGill.PSSA?fref=ts"
+  instagram: "https://www.instagram.com/mcgillpssa/?hl=en"
+  other:
+website: "https://mcgillpssa.ca"
+contact_info: |
+  president@mcgillpssa.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

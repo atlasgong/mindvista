@@ -1,0 +1,21 @@
+---
+name: "McGill Biology Student Union (MBSU)"
+description: |
+  We represent all McGill Biology students pursuing their Major, Honours, Liberal, or Minor degree to help you get the most out of your undergrad. Peruse our website to learn more about our services, events, and community!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillBiology"
+  instagram: "https://www.instagram.com/mbsumcgill/"
+  other:
+    - "https://twitter.com/mbsumcgill"
+website: "https://www.mbsu.sus.mcgill.ca/?fbclid=IwAR345eC1zjsk46S5OdO50A5TMVlawR_nZLYRJZM69eB9abrunAqAHX0hoIc"
+contact_info: |
+  thembsu@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

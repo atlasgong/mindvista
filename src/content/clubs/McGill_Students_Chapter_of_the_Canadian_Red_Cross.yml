@@ -1,0 +1,16 @@
+---
+name: "McGill Students Chapter of the Canadian Red Cross"
+description: |
+  The McGill Students Chapter of the Canadian Red Cross is an officially-affiliated student chapter of the Canadian Red Cross. The objectives of our club are to hold events to raise awareness of the humanitarian and charitable initiative of the Canadian Red Cross, to raise funds in support of the Canadian Red Cross, and to provide interested students with information about how they can get involved with Canadian Red Cross initiative.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillredcross/"
+  instagram: "https://www.instagram.com/mcgillredcross/"
+  other:
+website: "https://redcross.ssmu.ca/"
+contact_info: |
+  redcrossmcgill@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

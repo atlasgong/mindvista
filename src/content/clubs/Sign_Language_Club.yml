@@ -1,0 +1,16 @@
+---
+name: "Sign Language Club"
+description: |
+  McGill club dedicated to bringing D/deaf and Sign Language awareness, education and activities to the McGill community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillsignlanguage"
+  instagram: "https://instagram.com/mcgillsignlanguage_?igshid=YmMyMTA2M2Y="
+  other:
+contact_info: |
+  signlanguageclub@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+  culture:
+    - Religion & Cultural

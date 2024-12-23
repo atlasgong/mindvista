@@ -1,0 +1,20 @@
+---
+name: "RedPoint Capital"
+description: |
+  RedPoint Capital (RPC) is McGill’s first and only finance club that focuses on alternative asset class investing and careers. The organization is structured as a multi-program investment fund covering 4 main themes: private equity, special situations, real assets, and global macro investing. Members of the club have the opportunity to gain exposure and develop deep expertise in their respective sectors through a three-part program consisting of research projects, educational training, and industry-related forums.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/RedPointCapital"
+  instagram: "https://www.instagram.com/redpointcapital/"
+  other:
+    - "https://www.linkedin.com/company/redpointcapital/"
+website: "https://redpointcapital.ca"
+contact_info: |
+  redpointcapital.mus@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Finance
+  faculty specific:
+    - Management

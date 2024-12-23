@@ -1,0 +1,17 @@
+---
+name: "McGill Biomedical Engineering Club"
+description: |
+  McGill Biomedical Engineering Club is a student run society with the objective of fostering and expanding interests in the Biomedical Engineering field among McGill student
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/MBEC.McGill/"
+  other:
+website: "https://eus.wiki/McGill_Biomedical_Engineering_Club"
+contact_info: |
+  mbec.president@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

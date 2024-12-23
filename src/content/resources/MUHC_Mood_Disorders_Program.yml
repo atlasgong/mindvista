@@ -1,0 +1,13 @@
+---
+name: "MUHC Mood Disorders Program"
+description: |
+  Therapy and treatment for mood disorders. (Referral needed)
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+website: "https://muhc.ca/mental-health/page/mood-disorders-program"
+categories:
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

@@ -1,0 +1,19 @@
+---
+name: "Energy Association"
+description: |
+  The MEA focuses on bringing the McGill community stimulating events regarding climate change and the energy transition to increase awareness and conversation. Our team of passionate students works every day to make navigating our increasingly complex world a bit easier. The McGill Energy Journal is our editorial arm where a strong team of editors and writers produce content to provide further information and insight.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillEnergyAssociation/"
+  instagram: "https://www.instagram.com/mcgillenergyassociation/"
+  other:
+    - "https://www.linkedin.com/company/11752274/admin/"
+website: "https://www.mcgillenergyassociation.com/"
+contact_info: |
+  mcgillenergyassociation@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Sustainability
+  culture:
+    - Publication & Writing

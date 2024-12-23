@@ -1,0 +1,17 @@
+---
+name: "Hillel McGill"
+description: |
+  Hillel McGill is your one-stop shop for Jewish life on campus. Representing the vast and diverse Jewish community here at McGill, we offer a wide variety of programs, events, internships, and connection opportunities for everyone to take part in. From socials to Shabbat services, fashion to politics, Hillel’s vision is that every student is inspired to take part in Jewish life on campus!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/HillelMTL/"
+  instagram: "https://www.instagram.com/hillel.mcgill/"
+  other:
+website: "https://www.hillel.org/college-guide/list/record/mcgill-university"
+contact_info: |
+  hillelmcgill@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

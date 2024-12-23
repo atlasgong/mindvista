@@ -1,0 +1,17 @@
+---
+name: "McGill Engineering Competition (MEC) Committee"
+description: |
+  The McGill Engineering Competition (MEC) is an annual interdisciplinary event providing all McGill engineering students the opportunity to test their skills in varying competitions. The goal of MEC is to foster relationships between students by providing a setting for professional engineering practice as well as networking opportunities.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillEngComp/"
+  other:
+website: "https://mec.mcgilleus.ca"
+contact_info: |
+  engineering.competition@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

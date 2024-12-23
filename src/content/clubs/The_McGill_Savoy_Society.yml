@@ -1,0 +1,18 @@
+---
+name: "The McGill Savoy Society"
+description: |
+  The McGill Savoy Society is a student theatre group specializing in the comic operas of Gilbert & Sullivan, the iconic Victorian dramatist-composer duo. Each winter we put on a spectacular show filled with fun songs, energetic dancing, and witty dialogue. We also produce a spring cabaret that showcases contemporary musical theatre pieces. We place a high priority on the “community” aspect of community theatre, welcoming all kinds of people and organizing great parties so that the cast, crew, and orchestra can truly come together at showtime.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillsavoy"
+  instagram: "https://www.instagram.com/mcgillsavoysociety/"
+  other:
+    - "https://www.youtube.com/c/McGillSavoySociety"
+website: "https://mcgillsavoy.ca/"
+contact_info: |
+  mcgillsavoy@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,19 @@
+---
+name: "Midnight Kitchen"
+description: |
+  Midnight Kitchen offers free weekly lunches that are plant-based nut-free, consisting of tasty creative dishes and salads. Their program is targeted to low-income students, and/or students with disabilities, chronic illness, mental health conditions, or other impairments, who self-identify as benefiting from access to food through Midnight Kitchen. See their website or Facebook for their lunch calendar.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://midnightkitchen.org/meal-program"
+contact_info: |
+  Email: midnightkitchencollective@gmail.com   Facebook: Midnight Kitchen https://www.facebook.com/midnightkitchencollective/
+location: "SSMU Ballroom (University Centre, 3rd Floor), 3480 McTavish Street"
+categories:
+  on campus:
+    - On-Campus
+  support and community services:
+    - Accessibility

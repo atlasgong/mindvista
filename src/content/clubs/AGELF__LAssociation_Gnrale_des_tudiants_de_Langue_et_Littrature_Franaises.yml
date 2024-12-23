@@ -1,0 +1,18 @@
+---
+name: "AGELF - L’Association Générale des Étudiants de Langue et Littérature Françaises"
+description: |
+  Toutes les personnes actuellement inscrites à une majeure, à une mineure ou à une spécialisation au Département des littératures de langue française, de traduction et de création (DLTC) de l'université McGill sont membres de l'AGELF.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/agelf"
+  other:
+contact_info: |
+  mcgillagelf@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

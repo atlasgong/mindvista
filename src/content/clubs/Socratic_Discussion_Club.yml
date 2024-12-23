@@ -1,0 +1,16 @@
+---
+name: "Socratic Discussion Club"
+description: |
+  The Socratic Discussion Club brings together McGill students who are interested in meeting people to discuss ideas, gain knowledge, and take part in thought-provoking events. We are the first and only student organization at McGill University that seeks to bring people of diverse views together to share ideas on various topics, ranging from philosophy to politics to economics and others. Come join us at our weekly discussion circles!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGill-Socratic-Discussion-Club-107741391444376/?ref=page_internal"
+  instagram: "https://www.instagram.com/socratic_discussion_mcgill/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+  other:
+contact_info: |
+  socraticdiscussion@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Politics
+    - Networking

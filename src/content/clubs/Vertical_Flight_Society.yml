@@ -1,0 +1,19 @@
+---
+name: "Vertical Flight Society"
+description: |
+  Vertical Flight Society (VFS)aspires to advance the involvement of vertical flight enthusiasts at McGill University in the industry.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/vfsMcGill?ref=py_c/"
+  instagram: "https://www.instagram.com/vfs.mcgill/"
+  other:
+    - "https://www.linkedin.com/company/vfsmcgill/?originalSubdomain=ca/"
+website: "https://vtol.org/"
+contact_info: |
+  vfs@mcgilleus.ca
+categories:
+  career:
+    - Technology
+    - Networking
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,18 @@
+---
+name: "McGill Students’ Cancer Society (MSCS) – Relay for Life"
+description: |
+  The McGill Students’ Cancer Society (MSCS) is a student-led group dedicated to making a difference in the lives of Canadians affected by cancer. By organizing fundraising campaigns, raising awareness, and of course planning our annual Relay For Life, the MSCS contributes to funding life-saving cancer research and patient support programs provided by the Canadian Cancer Society. A cancer diagnosis can change everything, but then again, so can you.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McgillRelayForLife"
+  instagram: "https://www.instagram.com/mcgill.relay/"
+  other:
+website: "https://www.mcgillcancersociety.wordpress.com/"
+contact_info: |
+  mcgill.relay@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach
+  career:
+    - Healthcare

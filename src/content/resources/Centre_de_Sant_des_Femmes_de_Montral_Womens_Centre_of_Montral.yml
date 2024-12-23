@@ -1,0 +1,24 @@
+---
+name: "Centre de Santé des Femmes de Montréal (Women's Centre of Montréal)"
+description: |
+  The Centre de Santé des Femmes de Montréal (Montreal Women’s Health Centre) offers abortion services, gynecology services to members with a file, and sexual and reproductive health training sessions.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+  details: |
+    The abortion is free if you have a valid Quebec health insurance card (RAMQ), if you are covered by the Interim Federal Health Program (IFHP), if you are from another Canadian province and for most foreign university students.
+website: "https://csfmontreal.qc.ca/en/home/"
+contact_info: |
+  514-270-6110
+location: "3401, Avenue De Lormier, Montreal, QC H2K 3X5"
+categories:
+  medical services:
+    - Abortion Services
+    - Medical Clinic
+  on campus:
+    - Off-Campus

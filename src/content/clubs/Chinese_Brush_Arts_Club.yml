@@ -1,0 +1,19 @@
+---
+name: "Chinese Brush Arts Club"
+description: |
+  McGill Students Chinese Brush Arts Club (MSCBAC) is a student organization at McGill University, aiming to introduce Chinese painting and calligraphy cultures on campus, provide guidance and training in the practice of Chinese fine arts, and build up multicultural, communicative network for brush art lovers through various events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mscbac"
+  instagram: "https://www.instagram.com/mscbac/"
+  other:
+    - "https://www.youtube.com/channel/UCiqTJQ7FOgore3C-OPr_l8Q"
+website: "https://mscbac.my-free.website/"
+contact_info: |
+  mschinesebrushartsclub@gmail.com
+categories:
+  arts:
+    - Fine Art
+  culture:
+    - Religion & Cultural
+    - Leisure & Hobbies

@@ -1,0 +1,18 @@
+---
+name: "McGill Chinese Students Society (MCSS)"
+description: |
+  MCSS, McGill Chinese Students’ Society is the largest and most influential cultural student organization in Eastern Canada. With over 15 events per year and 40 years of history, we provide a variety of events to our over 1,500 active members and help our members succeed in school and life. Our short-term goal is to provide our students with valuable events to make their student life more meaningful, while our long-term goal is to motivate and encourage our students to give back to their community and excel academically by providing them with helpful services including seminars, lessons, and talks.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcss.ca"
+  instagram: "https://www.instagram.com/mcssfam/"
+  other:
+    - "https://www.linkedin.com/company/mcssmcgill/"
+website: "https://mcss.ca/"
+contact_info: |
+  mcss@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

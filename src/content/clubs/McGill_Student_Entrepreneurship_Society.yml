@@ -1,0 +1,19 @@
+---
+name: "McGill Student Entrepreneurship Society"
+description: |
+  The McGill Student Entrepreneurship Society is a student-run group dedicated to promoting and celebrating the entrepreneurial spirit in McGill, Montreal, and beyond, through innovative student events and initiatives. With a mission centred around three pillars – Connect, Inspire & Educate – the MSES aims to intervene in the early stages of student/youth entrepreneurship –namely the consideration and planning phases – as the first resource for McGillians and Montrealers to get inspired, share, learn, and discuss entrepreneurship. We bring threefold value: we foster a community of students from all faculties dedicated to excellence and impact, offer unparalleled educational/career opportunities, and inspire by sharing success/alum stories.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillentrepreneurship"
+  instagram: "https://www.instagram.com/mcgillentrepreneurship/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-entrepreneurship-society/"
+contact_info: |
+  entrepreneurship@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Entrepreneurship
+  faculty specific:
+    - Management

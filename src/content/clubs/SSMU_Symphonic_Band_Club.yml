@@ -1,0 +1,16 @@
+---
+name: "SSMU Symphonic Band Club"
+description: |
+  Symphonic Band is a concert band open to all McGill students who play traditional band instruments, no auditions required! We play medium difficulty band pieces and students are encouraged to set up their own small ensembles. Past repertoire has included everything from World of Warcraft to Wagner. We sharpen our pop culture knowledge with games during break time and have other non-music related activities throughout the year.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/symphonicclub/"
+  other:
+website: "https://symphonicband.ssmu.ca/"
+contact_info: |
+  symphonic.band.club@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

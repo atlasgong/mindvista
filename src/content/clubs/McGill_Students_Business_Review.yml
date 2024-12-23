@@ -1,0 +1,20 @@
+---
+name: "McGill Students Business Review"
+description: |
+  The McGill Students Business Review (MSBR) operates as both an online platform and a social hub for those with a passion for business affairs. The MSBR provides all undergraduates with the opportunity and resources to explore and learn about the business world. The MSBR aims to inspire a way thinking that stretches beyond the campus and into the professional world.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillBR"
+  instagram: "https://www.instagram.com/mcgillbusinessreview/"
+  other:
+website: "https://mcgillbusinessreview.com/"
+contact_info: |
+  mcgillsbr@gmail.com
+categories:
+  career:
+    - Professional Development
+  faculty specific:
+    - Management
+  culture:
+    - Leisure & Hobbies
+    - Publication & Writing

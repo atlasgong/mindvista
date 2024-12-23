@@ -1,0 +1,20 @@
+---
+name: "Concrete Canoe"
+description: |
+  What do we do? Design, Build & Race a winning concrete canoe…. no, there is no typo here, we make a canoe entirely out of concrete!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/CanoeMcgill/"
+  instagram: "https://www.instagram.com/mcgillconcretecanoe/"
+  other:
+website: "https://canoe.mcgilleus.ca/"
+contact_info: |
+  concrete.canoe@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

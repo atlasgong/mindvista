@@ -1,0 +1,16 @@
+---
+name: "Union for Gender Empowerment (UGE)"
+description: |
+  The Union for Gender Empowerment is a Referral Service of the Students’ Society of McGill University (SSMU), though we open our doors to all and do not limit our services to undergraduate McGill students.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/UGEMcGill/"
+  instagram: "https://www.instagram.com/ugecollective/"
+  other:
+    - "https://www.linkedin.com/company/the-union-for-gender-empowerment/"
+website: "https://theuge.org/"
+contact_info: |
+  uge@ssmu.ca
+categories:
+  community support:
+    - Service

@@ -1,0 +1,17 @@
+---
+name: "McGill Lebanese Students Association (LSA)"
+description: |
+  We operate to facilitate the integration of Lebanese students into the McGill environment and Montréal. We aim to represent, unite and promote the Lebanese Community through cultural, educational and social activities and introduce our culture to students of different nationalities and backgrounds.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/lsamcgill"
+  instagram: "https://www.instagram.com/lsamcgill"
+  other:
+    - "https://www.linkedin.com/company/mcgill-lebanese-student-s-association/"
+contact_info: |
+  lsa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

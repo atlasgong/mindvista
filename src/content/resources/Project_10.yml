@@ -1,0 +1,23 @@
+---
+name: "Project 10"
+description: |
+  Project 10 works to promote the personal, social, sexual and mental well being of lesbian, gay, bisexual, transgender, transsexual, two-spirit, intersex and questioning (2LGBTQ+) youth and adults 14-25.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://p10.qc.ca/"
+contact_info: |
+  514-989-0001
+location: "10138 Rue Lajeunesse, Montréal, Quebec H3L 2E2"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Support Group

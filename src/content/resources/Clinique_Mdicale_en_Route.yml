@@ -1,0 +1,25 @@
+---
+name: "Clinique Médicale en Route"
+description: |
+  Clinique Médicale en Route provides blood work services, general medicine, physiotherapy, and many other services. Specialists are also available.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Contact organization regarding pricing and insurance coverage.
+website: "https://cliniqueenroute.com/en/"
+contact_info: |
+  514-312-7777
+location: "150 rue Ste-Catherine O, Level 4, Tour Hilton, C.P.65"
+categories:
+  medical services:
+    - Medical Clinic
+    - Physiotherapy
+    - Lab
+    - STI Testing
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological

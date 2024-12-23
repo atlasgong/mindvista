@@ -1,0 +1,23 @@
+---
+name: "Native Montreal"
+description: |
+  Native Montreal has a variety of programs for different needs. Their programs include wellness navigation, education, culture, land-based programs, community, as well as sports and leisure programs.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://www.nativemontreal.com/en/home.html"
+contact_info: |
+  514-331-6587     info@nativemontreal.com
+location: "3183 Rue Saint-Jacques, Montréal, QC, H4C 1G7"
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Support Group

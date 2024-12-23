@@ -1,0 +1,20 @@
+---
+name: "Centre Médicale Décelles"
+description: |
+  The Centre Médicale Décelles (Décelles Medical Center) offers services such as general medicine, endicronology, and more. Fees apply for some services. Available in French and English.
+status: active
+availability:
+  - telephone
+insurance:
+  details: |
+    Contact clinic regarding pricing and insurance coverage.
+website: "https://sante.gouv.qc.ca/repertoire-ressources/ressource/?nofiche=51177"
+contact_info: |
+  514 739-7771
+location: "6900, boulevard Décarie, suite M-150
+Côte-Saint-Luc (Québec)  H3X 2T8"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus

@@ -1,0 +1,27 @@
+---
+name: "CIUSS West-Central Youth Clinic (ages 14 to 24)"
+description: |
+  The Youth Clinic at the Centre Integré Universitaire de Santé et de Services Sociaux (CIUSSS) West-Central Montreal provides sexual health services for youth and young adults between the ages of 14 and 24. They provide STI tests and treatment, contraception services, pregnancy tests and guidance services, abortion services and advice on romantic relationships.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+  details: |
+    Contact for more information regarding non-RAMQ coverage.
+website: "https://www.ciussswestcentral.ca/programs-and-services/children-families-and-youth/children-teens-and-young-adults/youth-clinic-ages-14-to-24/"
+contact_info: |
+  CLSC Benny Farm clinic: 514-484-7878 ext. 63363
+  CLSC Côte-des-Neiges clinic: 514-731-8531 ext. 2870 - Ask for an appointment with the Youth Clinic nurse
+location: "CLSC Benny Farm: 6484 Monkland Avenue  CLSC Côte-des-Neiges: 5700 Côtes-des-Neiges Road"
+categories:
+  medical services:
+    - STI Testing
+    - Abortion Services
+    - Contraception Services
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological

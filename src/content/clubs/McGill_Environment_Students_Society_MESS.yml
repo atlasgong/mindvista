@@ -1,0 +1,20 @@
+---
+name: "McGill Environment Students Society (MESS)"
+description: |
+  The McGill  Environment Students' Society logo Environment Students’ Society (MESS) represents undergraduate and diploma Environment students at McGill University.
+  
+  MESS holds a variety of events each year of both academic and social focuses.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/messmcgill/about"
+  other:
+contact_info: |
+  mcgill.environment@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

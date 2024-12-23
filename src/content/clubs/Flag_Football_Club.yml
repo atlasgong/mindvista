@@ -1,0 +1,15 @@
+---
+name: "Flag Football Club"
+description: |
+  
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/profile.php?id=100064841528547"
+  instagram: "https://www.instagram.com/flagfootball_mcgill/?hl=en"
+  other:
+website: "https://recreation.mcgill.ca/intra-sports/flag-football"
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

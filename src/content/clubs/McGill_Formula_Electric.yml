@@ -1,0 +1,18 @@
+---
+name: "McGill Formula Electric"
+description: |
+  McGill Formula Electric is an engineering design team that designs, manufactures, and competes a formula-style, open wheel, electric prototype with a full CFRP monocoque. The team strives to understand, develop, and implement the latest in green technology in order to produce the most competitive electric prototype and to be able to enter the workforce equipped to engineer a more sustainable future. This project stems from the continuous improvements made over the course of 20 years in McGill’s FSAE Chapter, and even a merger between two very competitive teams.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/FSAE"
+  instagram: "https://www.instagram.com/mcgillformulaelectric/"
+  other:
+website: "https://www.mcgillformulaelectric.com/"
+contact_info: |
+  fsae@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

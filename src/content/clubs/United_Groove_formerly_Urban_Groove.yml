@@ -1,0 +1,20 @@
+---
+name: "United Groove (formerly Urban Groove)"
+description: |
+  Formed in 2003 at McGill University, United Groove (UG) brings together students who share a love and passion for dance. Today, UG consists of dancers from many different backgrounds, mastering styles from hip-hop to contemporary to street-jazz, all while fostering a strong sense of artistry, family, and dedication. UG has come to establish a reputation that goes beyond McGill and into the greater Montreal community, performing at athletic events, competitions, fundraisers, and parties.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/United-Groove-43950288647"
+  instagram: "https://www.instagram.com/united.groove/"
+  other:
+    - "https://www.youtube.com/channel/UCBJXjYmmU50I_RWQoIeYo1w"
+website: "http://www.ugroove.ca/"
+contact_info: |
+  urbangroove@ssmu.ca
+categories:
+  arts:
+    - Performance
+  athletics:
+    - Dance
+  culture:
+    - Leisure & Hobbies

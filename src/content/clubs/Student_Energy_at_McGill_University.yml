@@ -1,0 +1,17 @@
+---
+name: "Student Energy at McGill University"
+description: |
+  Student Energy at McGill empowers students to take action and shape their energy future in their communities. With Student Energy's organizational knowledge that facilitates students around the world sharing knowledge with one another, we are able to organize and host events, panels, and projects to create space for youth to have an impact.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/studentenergyatmcgill/"
+  instagram: "https://www.instagram.com/studentenergyatmcgill/"
+  other:
+    - "https://www.linkedin.com/company/student-energy-at-mcgill-university/"
+website: "https://studentenergy.org/chapter/mcgill-university/"
+contact_info: |
+  studentenergy@mcgilleus.ca
+categories:
+  community support:
+    - Sustainability
+    - Social Activism

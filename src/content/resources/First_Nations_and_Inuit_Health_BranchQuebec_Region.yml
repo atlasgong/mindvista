@@ -1,0 +1,16 @@
+---
+name: "First Nations and Inuit Health Branch/Quebec Region"
+description: |
+  To obtain information on health benefits program.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "http://www.hc-sc.gc.ca/"
+categories:
+  indigenous health:
+    - Indigenous Health
+  on campus:
+    - Off-Campus

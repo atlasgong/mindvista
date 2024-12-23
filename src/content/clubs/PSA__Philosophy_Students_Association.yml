@@ -1,0 +1,18 @@
+---
+name: "PSA – Philosophy Students’ Association"
+description: |
+  The Philosophy Students’ Association (PSA) at McGill University organizes philosophical activities, as well as social and fundraising events, throughout the year. It receives support from the Arts Undergraduate Society and the Department of Philosophy.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillPSA"
+  other:
+contact_info: |
+  mcgillpsa@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

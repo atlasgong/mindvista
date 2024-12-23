@@ -1,0 +1,15 @@
+---
+name: "Canadian Engineering Competition"
+description: |
+  Each year, the Canadian Engineering Competition (CEC) brings together 150 of the most innovative and creative engineering undergraduate students from across the nation to compete against each other in one of six categories, ranging from design, consulting, presentation and debate. Each competition category at CEC challenges its participants to expand their frame of reference and to identify solutions to problems experienced by our profession.
+status: active
+social_media:
+  other:
+website: "https://eus.wiki/Canadian_Engineering_Competition
+https://mec.mcgilleus.ca/"
+categories:
+  career:
+    - Networking
+    - Professional Development
+  faculty specific:
+    - Engineering

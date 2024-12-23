@@ -1,0 +1,20 @@
+---
+name: "National Society for Black Engineers"
+description: |
+  The National Society of Black Engineers (NSBE) was created by two engineering students at Purdue University, Edward Barnett and Fred Cooper. NSBE’s main goal is to provide academic and career opportunities to its members through various programs, scholarships and training.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillNSBE/"
+  instagram: "https://www.instagram.com/nsbemcgill/?hl=it"
+  other:
+    - "https://www.linkedin.com/company/nsbemcgill/?originalSubdomain=ca"
+website: "https://eus.wiki/National_Society_for_Black_Engineers"
+contact_info: |
+  nsbe@mcgilleus.ca
+categories:
+  career:
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Religion & Cultural

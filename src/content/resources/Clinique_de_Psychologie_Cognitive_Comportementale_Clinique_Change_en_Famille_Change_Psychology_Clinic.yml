@@ -1,0 +1,19 @@
+---
+name: "Clinique de Psychologie Cognitive Comportementale, Clinique Change en Famille (Change Psychology Clinic)"
+description: |
+  Change Psychology Clinic is a multidisciplinary psychology clinic, that specializes in Cognitive Behavioral Therapy for a variety of mental health disorders and physical conditions. They offer a combination of psychology and nutritional counselling to individuals, couples and families for children, teenagers and adults. Some others services they offer include sexology, art therapy, animal assited therapy, and online therapy.
+status: active
+availability:
+  - online
+website: "https://changepsy.ca/en/"
+contact_info: |
+  514-508-5779   Email: info@changeenfamille.ca
+location: "1030 Cherrier Street #507, Montreal, Qc H1L 1H7 AND
+2100 Av. de Marlowe #630, Montreal, Qc, H4A 3L5"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Counselling
+    - Disordered Eating

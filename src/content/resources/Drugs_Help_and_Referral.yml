@@ -1,0 +1,20 @@
+---
+name: "Drugs: Help and Referral"
+description: |
+  Drugs: Help and Referral is a 24/7, free and confidential substance use service. It provides support, information and referrals to anyone worried about their own or a loved one's use of drugs, alcohol and/or medication. Drugs: Help and Referral services help people discover resources and intervention centers in their area to meet their support needs.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.aidedrogue.ca/en/"
+contact_info: |
+  514-527-2626
+categories:
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory

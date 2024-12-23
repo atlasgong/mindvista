@@ -1,0 +1,15 @@
+---
+name: "Dsign Lab"
+description: |
+  Dsign Lab aims to spark discussions around the fashion industry and its future through its blog with an emphasis on sustainability and ethics. More than that, we make sure to provide a creative platform for students to explore their ideas and designer instinct. So, if you feel inspired, join us to write a post sharing your thoughts on the latest fashion controverse, visit with us fashion exhibits or attend one of our sewing classes. We are excited to meet you!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillDsignLab/"
+  instagram: "https://www.instagram.com/dsignlabmcgill/"
+  other:
+    - "https://dsignlabmcgill.wixsite.com/monsite/about"
+contact_info: |
+  dsignlab@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

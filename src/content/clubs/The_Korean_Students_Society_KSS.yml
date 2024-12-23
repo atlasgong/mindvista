@@ -1,0 +1,16 @@
+---
+name: "The Korean Students Society (KSS)"
+description: |
+  McGill Korean Students Society (KSS) is the official student association dedicated to Korean students within McGill. We aim to assist Korean students in building connections and help integrate new students into the McGill community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillkoreanstudentssociety/"
+  other:
+contact_info: |
+  kss@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural
+    - Student Society

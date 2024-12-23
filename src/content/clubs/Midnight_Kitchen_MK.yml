@@ -1,0 +1,16 @@
+---
+name: "Midnight Kitchen (MK)"
+description: |
+  Midnight Kitchen is a non-profit worker and volunteer run collective dedicated to increasing food accessibility on McGill campus and beyond. We support individuals and communities by providing a working alternative to capitalist, profit-driven systems of food production. We also offer education with respect to: food politics, social justice issues, food preparation, and urban agriculture. By taking the initiative to produce and distribute food in our own communities, we act in the pursuit of social and environmental justice and support others who share these goals.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/midnightkitchencollective/"
+  instagram: "https://www.instagram.com/midnightkitchencollective/"
+  other:
+    - "https://www.linkedin.com/company/the-midnight-kitchen_mcgill/about/"
+website: "https://midnightkitchen.org/"
+contact_info: |
+  midnightkitchencollective@gmail.com
+categories:
+  community support:
+    - Service

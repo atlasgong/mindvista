@@ -1,0 +1,17 @@
+---
+name: "Borderless World Volunteers"
+description: |
+  Borderless World Volunteers is a registered Canadian charity founded in 2003 with the goal of helping undergraduate university students lead development projects across the globe while contributing to the wellness of their own local communities. Borderless World Volunteers was founded to provide a link between university students and local development organizations in developing countries.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/BWVMcGill/"
+  instagram: "https://www.instagram.com/bwvmcgill/?hl=en"
+  other:
+    - "http://www.twitter.com/BWV_McGill"
+website: "http://www.borderlessworld.org/"
+contact_info: |
+  borderlessworldvolunteers@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

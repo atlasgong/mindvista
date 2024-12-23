@@ -1,0 +1,17 @@
+---
+name: "Materials Engineering Undergraduate Society (MEUS)"
+description: |
+  The Materials Engineering Undergraduate Society (MEUS) is a student run organization that strives to improve the experience of undergraduates in the department of Material Engineering at McGill. MEUS organizes social, academic and industry related events, and acts as a liaison between the faculty and undergraduates.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillMEUS"
+  other:
+website: "https://www.linkedin.com/company/mcgillmeus/?originalSubdomain=ca"
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

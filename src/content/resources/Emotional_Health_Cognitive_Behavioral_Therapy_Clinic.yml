@@ -1,0 +1,30 @@
+---
+name: "Emotional Health Cognitive Behavioral Therapy Clinic"
+description: |
+  Emotional Health Cognitive Behavioral Therapy Clinic provides various professionals offering treatment for the full spectrum of anxiety and mood disorders, as well as for low self-esteem, anger, relational difficulties, and sleep disorders. Services are offered in French and English.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    The clinic does not directly deal with client insurance companies, but receipts are provided for clients to submit to their insurance providers. Additionally, RAMQ is not accepted.
+website: "https://cbtclinic.ca/"
+contact_info: |
+  514-485-7772
+  info@cbtclinic.ca
+location: "Queen Elizabeth Health Complex, Suite 261 2100 Marlowe Ave.
+Montreal, Quebec H4A 3L5
+1250 Saint-Joseph East Boulevard 
+Montreal, Quebec H2J 1L8
+911 Jean-Talon East Street, Suite 325
+Montreal, Quebec H2R 1V5"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

@@ -1,0 +1,20 @@
+---
+name: "First-Year Undergraduate Science Society (FUSS)"
+description: |
+  The First-Year Undergraduate Science Society (FUSS) of McGill University is a group of appointed first-year science students at McGill with the goal of representing U0 and U1 undergraduates through organizing events as well as acting as a liaison between students and Faculty. Through these initiatives, FUSS strives to engage the first-year community and ease the transition to university life.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/sciencefuss/"
+  instagram: "https://www.instagram.com/mcgill.fuss/"
+  other:
+website: "https://www.fussmcgill.com/"
+contact_info: |
+  fuss.sus@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

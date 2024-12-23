@@ -1,0 +1,14 @@
+---
+name: "Gamers’ Guild"
+description: |
+  We are a club who meet up to play board games in person or online every week! We welcome anyone who wants to drop by, and have a variety of both simple and complex games for all to enjoy.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/thegamersguildmcgill/"
+  other:
+website: "http://ssmugamersguild.blogspot.com/"
+contact_info: |
+  mcgillgamersguild@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

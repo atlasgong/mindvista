@@ -1,0 +1,17 @@
+---
+name: "McGill Students Running Club – McRun"
+description: |
+  McRUN is a recreational running club that meets every week to provide students the opportunity to get to know each other while going on short runs around Montreal. We have four pace groups and each group meets about 1-2 times per week! Come when you can, there is no obligation to attend every week! 1-2 times per semester, we hold larger events like a pub run, Halloween run, ice cream run, etc. Come run with us!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcrunmcgill/"
+  instagram: "https://www.instagram.com/mcgillstudentsrunningclub/"
+  other:
+website: "http://mcrunmcgill.com/"
+contact_info: |
+  mcrunningclub@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

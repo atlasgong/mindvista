@@ -1,0 +1,21 @@
+---
+name: "Medical Westmount"
+description: |
+  The Westmount Medical Building is a group of physicians in general and specialized practices that offer a multitude of services including family medicine, massage therapy, gastroentorology, pediatrics, and more.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Contact for information regarding insurance and costs.
+website: "https://westmountmedicalbuilding.ca/"
+contact_info: |
+  514-488-9888   wmbadmin@videotron.ca
+location: "1, Westmount Square, Tower 1, Suite C-180"
+categories:
+  medical services:
+    - Medical Clinic
+    - Physiotherapy
+  on campus:
+    - Off-Campus

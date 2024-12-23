@@ -1,0 +1,14 @@
+---
+name: "Peel Street Cinema"
+description: |
+  Peel Street Cinema hosts free screenings on campus during the semester…check out our Instagram @peelstcinema for more information !!!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/peelstreetcinema/"
+  instagram: "https://www.instagram.com/peelstcinema/"
+  other:
+contact_info: |
+  peelstreetcinema@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

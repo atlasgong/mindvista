@@ -1,0 +1,21 @@
+---
+name: "TRACOM Centre for Crisis Intervention "
+description: |
+  TRACOM Centre for Crisis Intervention is a 24/7, free crisis intervention service for those experiencing high levels of anxiety, distress, or suicidal ideas.
+  This intervention service provides psychosocial crisis intervention services to an adult clientele, as well as family members, caregivers, or friends of adults in distress. They also provide short-term housing to help patients through their intervention plans and community follow-up.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.tracom.ca/services-en"
+contact_info: |
+  514-483-3033
+location: "Confidential, offers free pickup to access centers as well."
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Psychological

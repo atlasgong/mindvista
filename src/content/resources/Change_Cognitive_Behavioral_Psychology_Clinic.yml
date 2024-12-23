@@ -1,0 +1,29 @@
+---
+name: "Change Cognitive Behavioral Psychology Clinic"
+description: |
+  Change Cognitive Behavioral Psychology Clinic specializes in cognitive behavioural therapy (CBT) for a variety of individuals. Services they offer include individual and couples therapy, child, teen and family therapy, nutrition, sexology, art therapy, animal assisted therapy, online therapy, as well as conferences and training.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    RAMQ is not accepted. You must pay for the entirety of the sessions and you will subsequently be reimbursed by your insurance.
+website: "https://changepsy.ca/en/"
+contact_info: |
+  (514) 508-5779
+  info@changeenfamille.ca
+location: "3275 Saint Jacques
+Montreal, Quebec
+H4C 1G8"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

@@ -1,0 +1,13 @@
+---
+name: "McGill Counselling Clinic"
+description: |
+  Psychological services by graduate students in-training (low cost) children, adolescents, and adults who are experiencing difficulties in an educational, social, vocational or interpersonal context.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+website: "https://www.mcgill.ca/edu-ecp/about/clinic"
+categories:
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

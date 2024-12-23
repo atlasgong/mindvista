@@ -1,0 +1,18 @@
+---
+name: "Desautels Tech Club"
+description: |
+  DTech organizes events that will help students gain exposure to the technology field in a manner that complements their studies. Whether that means meeting and learning from industry professionals, understanding the latest trends in technology for a specific industry or applying what they have learned in class in a real-world context, DTech bridges the gap between the classroom and industry.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/dtechclub/"
+  instagram: "https://www.instagram.com/dtech.mcgill/"
+  other:
+contact_info: |
+  dtech@mus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Technology
+  faculty specific:
+    - Management

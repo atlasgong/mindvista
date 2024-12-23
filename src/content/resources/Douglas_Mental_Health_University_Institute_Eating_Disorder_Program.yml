@@ -1,0 +1,22 @@
+---
+name: "Douglas Mental Health University Institute: Eating Disorder Program"
+description: |
+  The Eating Disorder Program specializes in anorexia and bulimia for adults aged 18 and older. Their services include external follow-ups, day program, residential program, and research program. Medical referral required.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+website: "http://www.douglas.qc.ca/page/eating-disorders-program"
+contact_info: |
+  514-761-6131 
+  ext. 2895 or 3898
+location: "6603-6605 LaSalle Boulevard, Montreal QC, H4H 1R3"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Disordered Eating
+    - Support Group
+    - Counselling

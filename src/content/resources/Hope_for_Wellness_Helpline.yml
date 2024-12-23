@@ -1,0 +1,22 @@
+---
+name: "Hope for Wellness Helpline"
+description: |
+  The Hope for Wellness Helpline provides mental health for support Indigenous people. Their trained counsellors are experienced, culturally competent, and available by phone or online chat 24/7. Their services are available in English and French as well as telephone counselling in Cree, Ojibway and Inuktitut upon request.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.hopeforwellness.ca"
+contact_info: |
+  1-855-242-3310
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Counselling

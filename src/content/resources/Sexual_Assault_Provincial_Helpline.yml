@@ -1,0 +1,30 @@
+---
+name: "Sexual Assault Provincial Helpline"
+description: |
+  The Montreal Sexual Assault Centre (MSAC), created in 1980, offers a range of bilingual services free of charge to anyone who has been a victim of sexual violence. Services are also offered to the victim’s family and close friends.
+   
+  Provincial services : 
+  Sexual Violence Helpline: for victims of all ages, their loved ones, and anyone working to help victims. Learn more at sexualviolencehelpline.ca
+  Support Service for Designated Centres Providing Medico-social Services for Sexual Assault Victims: for the medico-social teams. Learn more at en.serviceconseilqc.ca
+   
+  Local services :
+  Medical and legal support: for victims of 18 years and older, and their close ones
+  Clinical services: for victims of 18 years and older, and their close ones
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://www.cvasm.org/en/"
+contact_info: |
+  1-888-933-9007
+categories:
+  violence services:
+    - Sexual Assault Services
+  medical services:
+    - STI Testing
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support

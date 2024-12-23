@@ -1,0 +1,16 @@
+---
+name: "SSMU WALKSAFE"
+description: |
+  SSMU WALKSAFE is a volunteer service run and supported by students at McGill University. Our mandate is to accompany our clientele to and from any location in the City of Montreal. By using WALKSAFE, students can avoid having to walk alone at night. By providing this service, WALKSAFE is helping to establish a culture of safety in the McGill and Montreal communities.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/SSMUWalksafe/"
+  instagram: "https://www.instagram.com/ssmu_walksafe/"
+  other:
+    - "https://www.linkedin.com/company/ssmu-walksafe/about/"
+website: "https://walksafe.ca/"
+contact_info: |
+  walksafe@ssmu.ca
+categories:
+  community support:
+    - Service

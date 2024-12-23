@@ -1,0 +1,21 @@
+---
+name: "Hope and Cope"
+description: |
+  Hope and Cope supports those facing a new diagnosis, a recurrence, have an advanced cancer, or are accompanying a family member who has cancer. They offer peer support programs, support groups, wellness programs and activities in a warm and welcoming environment. Their staff and volunteers have experience with cancer, and offer support by providing companionship and emotional support.
+status: active
+availability:
+  - online
+  - telephone
+website: "https://hopeandcope.ca"
+contact_info: |
+  info.wellnesscentre@bellnet.ca
+  514-340-3616
+location: "Hope & Cope Cancer Wellness Centre 
+4635 Côte-Sainte-Catherine
+Montréal, Québec H3W 1M1"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Support Group

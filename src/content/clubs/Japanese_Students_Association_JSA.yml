@@ -1,0 +1,25 @@
+---
+name: "Japanese Students Association (JSA)"
+description: |
+  We are a student association based at McGill University that intends to:
+   
+   1. Raise awareness of traditional and modern Japanese culture.
+   2. Create opportunities for both Japanese and non-Japanese students to practice and learn the language.
+   3. Aid students in finding opportunities to work or intern at Japanese companies or global companies based in Japan.
+   Raise funds for charities in Japan that support the well-being of the country e.g. the Tohoku relief.
+   4. Provide students with opportunities for socializing and involvement, through social events and volunteering, from which friendships and community are built.
+   5. Create a local Japanese community and Japanese Alumni network for the purpose of sharing information and resources.
+   
+   We are a very diverse group of students and although some of our members are indeed Japanese, there are many non-Japanese members as well. Even though we have varying backgrounds, we all have a common interest in Japanese culture and language.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/jsa.mcgill/"
+  instagram: "https://www.instagram.com/jsamcgill/"
+  other:
+contact_info: |
+  jsa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

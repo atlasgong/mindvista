@@ -1,0 +1,15 @@
+---
+name: "Y Mind (YMCA)"
+description: |
+  Y Mind Youth is a free seven-week mental wellness program for young adults aged 18 to 30 and struggling with mild-to-moderate anxiety or stress. Anxiety can impacts the lives of young adults by preventing them from doing what we want or need to do. It can also be an isolating experience, and Y Mind is here to help.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://www.ymca.ca/ymind"
+categories:
+  mental health services:
+    - Mental Wellness
+    - Support Group

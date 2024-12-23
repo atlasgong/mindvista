@@ -1,0 +1,17 @@
+---
+name: "AIESEC McGill"
+description: |
+  AIESEC is the largest student-run nonprofit organization in 127 countries. We aim to develop leadership by sending students abroad for international volunteer and internship programs.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/AIESECCanada"
+  other:
+    - "http://www.twitter.com/aiesecmcgill
+https://www.youtube.com/user/aiesecglobal"
+website: "http://aiesec.ca/"
+contact_info: |
+  general@aiesecmcgill.ca
+categories:
+  community support:
+    - Community Outreach
+    - Social Activism

@@ -1,0 +1,18 @@
+---
+name: "McGill Ultimate Club"
+description: |
+  The McGill Ultimate Club consists of four ultimate teams affiliated with McGill University: Men’s A and B, and Women’s A and B. Our A teams are highly competitive and consistently place top 5 at the Canadian University Ultimate Championships. The B teams are more developmental and are composed of players with less experience or those who would prefer a less competitive atmosphere. All members become part of a tight-knit community that hosts several events throughout the year, including an end-of-season banquet that recognizes the hard work and achievement of our members.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillultimateteam"
+  instagram: "https://www.instagram.com/mcgillultimate/"
+  other:
+    - "http://www.twitter.com/McGillUltimate"
+website: "https://www.mcgillultimate.com/"
+contact_info: |
+  mcgillultimate@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

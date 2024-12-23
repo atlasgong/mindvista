@@ -1,0 +1,21 @@
+---
+name: "Wellness Together Canada"
+description: |
+  Wellness Together Canada is a mental health and substance use support service. Wellness Together's online platform and Pocketwell app consolidates mental wellness resources to learn and practice mental wellness as well as track your progress. It also offers to option to call and talk with a counselor.
+status: inactive
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.wellnesstogether.ca/en-CA"
+contact_info: |
+  Adults: 741741 (text)        Indigenous Peoples: 1-855-242-3310      Youth: 686868
+categories:
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Crisis Support

@@ -1,0 +1,18 @@
+---
+name: "McGill Blockchain Association"
+description: |
+  Blockchain at McGill is a student run educational group that aims to raise awareness and foster engagement in the field of Blockchain and it’s related technologies. BAM accelerates it’s members to become leaders in the industry by providing them with relevant experience and fostering industry connections.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/blockchainatmcgill/"
+  instagram: "https://www.instagram.com/blockchain_mcgill/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/blockchain-at-mcgill/?originalSubdomain=ca"
+website: "https://www.blockchainatmcgill.xyz/"
+contact_info: |
+  blockchain@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Technology
+    - Networking

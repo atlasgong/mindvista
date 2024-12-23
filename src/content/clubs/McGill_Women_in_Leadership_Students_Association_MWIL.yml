@@ -1,0 +1,17 @@
+---
+name: "McGill Women in Leadership Students Association (MWIL)"
+description: |
+  At MWIL, we’re dedicated to providing students with the information, opportunities, and support network they need to tap into their full potential as professionals, students, and young people. We welcome women and non-binary identifying students from a range of career fields to share their accomplishments and experiences; connect members with extensive opportunities to learn, and ultimately empower them to be critically engaged global leaders.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MWILeadership/"
+  instagram: "https://www.instagram.com/mcgillwil/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-women-in-leadership/?originalSubdomain=ca"
+website: "https://www.mwil.org/"
+contact_info: |
+  mcgillwil@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

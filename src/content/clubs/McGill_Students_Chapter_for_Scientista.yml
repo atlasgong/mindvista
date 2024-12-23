@@ -1,0 +1,17 @@
+---
+name: "McGill Students Chapter for Scientista"
+description: |
+  A Chapter of the National Scientista Foundation (currently the largest network of campus women across STEM disciplines). Our all-female team is made up entirely of McGill University students studying various fields in science.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/scientistamcgill/"
+  instagram: "https://www.instagram.com/scientistamcgill/"
+  other:
+    - "http://www.twitter.com/_scientista_"
+website: "https://scientistamcgill.wordpress.com/"
+contact_info: |
+  scientista.mcgill@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

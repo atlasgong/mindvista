@@ -1,0 +1,18 @@
+---
+name: "McGill Student’s Outdoors Club "
+description: |
+  The MOC mission is to get you outside, no matter what your experience. We run trips, rent out gear at very low prices, and provide a communal house in the foothills of the Shield. The MOC is one of the oldest Outdoors Clubs in Montreal, founded in 1936. If you love the outdoors and you live near Montreal, you can join the MOC!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilloutdoorsclub/"
+  instagram: "https://www.instagram.com/mcgilloutdoorsclub/"
+  other:
+    - "https://www.youtube.com/user/McGillOutdoorsClub"
+website: "https://mcgilloutdoorsclub.ca/"
+contact_info: |
+  info@mcgilloutdoorsclub.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

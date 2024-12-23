@@ -1,0 +1,19 @@
+---
+name: "EUS Sports"
+description: |
+  EUS Sports is an intramural sports program offered by the Engineering Undergraduate Society to all full-time McGill students and provides the opportunity to participate in competitive sport. Individuals are encouraged to participate in the spirit of fair play and good sportsmanship. EUS Sports provides soccer and flag football during the fall semester and broomball (which is represented as our engineering sport) during the winter semester. The leagues run throughout the semester and are then ended with a tournament to have a winning team declared and labelled on the EUS trophy.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/EusSports/"
+  instagram: "https://www.instagram.com/eus_sports/"
+  other:
+website: "https://eus.wiki/EUS_Sports?fbclid=IwAR0y3EzgB4V74eos7-vQdFyRN6rYje4eD40zDl82WYYfr0Ra2kuSsQoyHz4"
+contact_info: |
+  sports@mcgilleus.ca
+categories:
+  athletics:
+    - Athletics
+  career:
+    - Networking
+  faculty specific:
+    - Engineering

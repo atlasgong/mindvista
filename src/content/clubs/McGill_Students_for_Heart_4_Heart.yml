@@ -1,0 +1,17 @@
+---
+name: "McGill Students for Heart 4 Heart"
+description: |
+  Heart4Heart is a non-profit organization that raises money to fund surgeries for children born with congenital heart disease (CHD) in developing countries. CHD is the leading birth defect worldwide, and children with CHD who cannot afford treatment often face a death sentence. At Heart4Heart, we work on a one-child basis to fund one surgery at a time. We also aim to raise awareness in the McGill community about congenital heart disease and the social disparity in healthcare, hoping to bridge the gap in access to medical treatment.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/heart4heartmcgill/"
+  instagram: "https://www.instagram.com/heart4heart_mcgill/"
+  other:
+    - "http://www.twitter.com/H4HCharity"
+website: "https://www.heart4heart.ca/mcgill-chapter"
+contact_info: |
+  heart4heart@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

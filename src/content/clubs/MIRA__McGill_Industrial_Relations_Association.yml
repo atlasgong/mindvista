@@ -1,0 +1,20 @@
+---
+name: "MIRA – McGill Industrial Relations Association"
+description: |
+  The Industrial Relations Association of McGill University, Montreal
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/mcgillindustrialrelations/?fref=ts"
+  other:
+    - "https://www.linkedin.com/company/mcgill-industrial-relations-association/?originalSubdomain=ca"
+website: "https://miraaus.wixsite.com/home"
+contact_info: |
+  mira.aus@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

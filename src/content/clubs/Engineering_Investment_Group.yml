@@ -1,0 +1,18 @@
+---
+name: "Engineering Investment Group"
+description: |
+  The Engineering Investment Group aims to bridge the gap between engineering and finance by providing opportunities for engineering students to learn about the ever-changing world of finance. We educate engineering students through real-life investment activities and events. We wish to create a community of finance oriented individuals to share their thoughts and challenge each other’s ideas. The key objectives of the group are to showcase the merit of McGill Engineering students to large financial institutions and for members to both gain and demonstrate investment skills and knowledge.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/McGillEIG/"
+  other:
+    - "https://www.linkedin.com/company-beta/2772838/"
+website: "http://eig.mcgilleus.ca/"
+contact_info: |
+  eig.president@mcgilleus.ca
+categories:
+  career:
+    - Finance
+    - Networking
+  faculty specific:
+    - Engineering

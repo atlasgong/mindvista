@@ -1,0 +1,18 @@
+---
+name: "Game Development Student's Society"
+description: |
+  The Game Development Student's Society (Game Dev McGill, or GDM) is a community of people that enjoy creating games and learning about all aspects of game development. The club also hosts McGame Jam, which is the second biggest game jam in Quebec.
+status: active
+social_media:
+  facebook: "http://fb.com/gamedevmcgill"
+  other:
+website: "https://www.gamedevmcgill.ca"
+contact_info: |
+  gamedev@mcgilleus.ca
+categories:
+  career:
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

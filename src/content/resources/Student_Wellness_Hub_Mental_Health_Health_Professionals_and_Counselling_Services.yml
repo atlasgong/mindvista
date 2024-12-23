@@ -1,0 +1,27 @@
+---
+name: "Student Wellness Hub Mental Health, Health Professionals and Counselling Services"
+description: |
+  Counsellors and Local Wellness Advisors (LWAs) are mental health professionals that can help McGill students reach their mental health and wellness goals. Student can also access a wide range of services, including support from dietitians, doctors, nurses, psychiatrists, sexologists, and laboratory services at McGill.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+  details: |
+    Fees vary depending on service. Late cancellation and no-show fees apply.
+website: "https://www.mcgill.ca/wellness-hub/about-hub/clinicians"
+contact_info: |
+  (514) 398-6017     hub.clinic@mcgill.ca (for general questions, requests, or cancellations)
+location: "Student Wellness Hub"
+categories:
+  medical services:
+    - Medical Clinic
+    - Contraception Services
+  on campus:
+    - On-Campus
+  mental health services:
+    - Mental Wellness
+    - Counselling

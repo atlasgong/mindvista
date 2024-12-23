@@ -1,0 +1,20 @@
+---
+name: "McGill Association of Mechanical Engineers (MAME)"
+description: |
+  The McGill Association of Mechanical Engineers (MAME) represents over 700 undergraduate mechanical engineering students at McGill University. The elected student council of the association provides yearlong services and events for all of the students within the mechanical engineering department. We aim to support them academically, professionally, and socially. In terms of academics, we voice all concerns and suggestions to the department in order to enrich our students’ McGill undergraduate studies. Building networks is also a big part of our goal, such that our students have as many opportunities as possible upon graduation. Moreover, MAME also strives to maintain a fun and exciting atmosphere throughout the year by organizing social events in addition to the academic and professional ones. These range from weekend long CAD competitions to end of semester banquets.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mamemcgill"
+  instagram: "https://www.instagram.com/mame_mcgill/"
+  other:
+website: "https://mame.mcgilleus.ca/"
+contact_info: |
+  mame.president@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

@@ -1,0 +1,17 @@
+---
+name: "Muslim Students’ Association (MSA)"
+description: |
+  The Muslim Students Association (MSA) brings together Muslim students to provide resources, essential services, and educational tools needed to enhance their university experience. Through the services and events provided, the MSA aims to facilitate the spiritual and social growth of its members, as well as the larger McGill community, supporting diverse student needs. Services provided include: weekly Jum’uah (Friday) prayers, a regularly maintained general prayer space, a student-run Islamic library, halaqas (religious knowledge gatherings), tajweed (Qur’an recitation) classes, social events, community and environmental activities. Past events (not limited to): annual MSA Frosh, Ramadan Iftars (dinners), Eid al Fitr & Eid al Adha celebrations, movie screenings, lecture series, information sessions, social awareness campaigns, fundraising dinners, Islam Awareness Week, annual inter-MSA Ski Trip, spoken-word/poetry/comedy/game nights, and open photography exhibitions.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MSAMcGill"
+  instagram: "https://www.instagram.com/msamcgill/"
+  other:
+    - "https://www.youtube.com/user/MSAMcGill"
+website: "https://msamcgill.com/"
+contact_info: |
+  msamcgill@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

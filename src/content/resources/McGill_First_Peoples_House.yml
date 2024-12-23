@@ -1,0 +1,27 @@
+---
+name: "McGill First People's House"
+description: |
+  McGill's First Peoples' House offers a "home away from home" for Indigenous students. Services they offer include wellness and cultural programming services, Indigenous student mentorship programs, and support programs.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.mcgill.ca/fph/"
+contact_info: |
+  514-398-3217
+location: "First Peoples' House at McGill
+3505 Peel Street
+Montreal, Quebec H3A 1W7"
+categories:
+  bipoc services:
+    - Bipoc Services
+  medical services:
+    - Menstrual Health
+  on campus:
+    - On-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Support Group

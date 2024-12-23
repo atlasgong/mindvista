@@ -1,0 +1,19 @@
+---
+name: "McGill BioDesign Team"
+description: |
+  McGill BioDesign is an official Engineering Undergraduate Society design team whose goal is to address real-world issues by finding solutions at the intersection of engineering, biology, and business. We work on biotechnology projects and present them at competitions, provide students with research experience, build a community for like-minded students from a range of backgrounds, and offer networking and professional development opportunities through workshops and tutorials.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McgillBiodesign/"
+  instagram: "https://www.instagram.com/mcgillbiodesign/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-biodesign-team/?originalSubdomain=ca"
+website: "http://mcgillbiodesign.com/"
+contact_info: |
+  biodesign@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

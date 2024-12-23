@@ -1,0 +1,24 @@
+---
+name: "Hôpital Notre-Dame"
+description: |
+  Hôpital Notre-Dame provides an emergency room open 24/7 where patients can ask for the on-call sexual assault support worker.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Blue Cross
+    - Mcgill Student Care
+website: "https://www.mcgill.ca/osvrse/get-support/additional-resources/off"
+contact_info: |
+  (514) 413-8999
+location: "1560 Sherbrooke E. Emergency room: Plessis St. entrance"
+categories:
+  violence services:
+    - Sexual Assault Services
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus

@@ -1,0 +1,18 @@
+---
+name: "McGill Muggle Quidditch Club"
+description: |
+  McGill Quidditch is Canada’s first and most prestigious quidditch club. McQuid provides a fun, competitive, and inclusive environment for everyone who wants to play! Boasting first place at last year’s divisional championships, McGill is a front-runner on the Canadian quidditch scene. As a team, we travel across Canada and even to the US for tournaments against other universities and regional teams. McQuid provides a large network of diverse McGill students, with members in almost every faculty. By being on the team, you not only get to play a cool sport, but you also have an instant circle of close and caring friends and teammates who will stay with you for life. Find us practicing on Lower Field or on the McTavish Reservoir!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillQuidditch/"
+  instagram: "https://www.instagram.com/mcgill_quidditch/"
+  other:
+    - "http://www.twitter.com/McGillQuidditch"
+website: "https://quidditch.ssmu.ca/"
+contact_info: |
+  quidditch@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

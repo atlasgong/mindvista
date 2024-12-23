@@ -1,0 +1,13 @@
+---
+name: "Lettuce Club"
+description: |
+  At Lettuce Club McGill, all members meet once a year and will have 10 minutes to eat an entire head of lettuce. Whoever eats the lettuce the fastest is dubbed the Head of Lettuce and organizes the meeting the following year.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/lettuceclubmcgill/"
+  other:
+contact_info: |
+  lettuceclub@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

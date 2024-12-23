@@ -1,0 +1,19 @@
+---
+name: "International Relations Students’ Association of McGill (IRSAM)"
+description: |
+  As a federally incorporated, not-for-profit corporation with special consultative status to the Economic and Social Council of the United Nations, IRSAM has something to offer to everyone within and outside the McGill community. From our community outreach programs to our Model UN conferences, we have a broad range of events and activities that focus on international relations, the United Nations and local volunteer work.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/IRSAMinc/"
+  instagram: "https://www.instagram.com/irsaminc/"
+  other:
+    - "https://twitter.com/irsaminc"
+website: "http://www.irsam.ca/home"
+contact_info: |
+  internal@irsam.ca
+categories:
+  career:
+    - Networking
+    - Professional Development
+  faculty specific:
+    - Arts

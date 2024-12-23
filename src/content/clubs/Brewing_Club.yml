@@ -1,0 +1,16 @@
+---
+name: "Brewing Club"
+description: |
+  The Brewing Club is a student organization within the EUS that focuses on the fermentation of various beverages and food. This club is meant to provide an interesting and enjoyable outlet for engineering students who want to explore process engineering and biologics manufacturing through the production of fermented beverages and foods, such as kombucha and ginger beer. Brewing club aims to provide members with opportunities to apply classroom knowledge, research methods, and practical learning to plan and record the steps for brewing drinks with certain desired characteristics. Detailed notes on production will be kept and organized by the club, and every batch will be tested for consistency and repeatability of results.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillbrewing/"
+  other:
+website: "https://brewingclub.mcgilleus.ca/"
+contact_info: |
+  brewingclub@mcgilleus.ca
+categories:
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

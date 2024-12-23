@@ -1,0 +1,25 @@
+---
+name: "Face à Face (Face to Face) Listening and Referral Centre"
+description: |
+  Specially trained volunteers provide listening and referral service. Face à Face offers conselling services, active listening and referal line services, mail reception for those withou a fixed address and afffordable housing and accompaniment serices. All services are confidential and free of charge.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://faceafacemontreal.org/contact-us/"
+contact_info: |
+  Phone number: (514)-934-4546  Email: info@faceafacemontreal.org.  Facebook: Face à Face
+location: "1857 Maisonneuve West, suite 100
+Montreal, Quebec
+H3H 1J9"
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  support and community services:
+    - Accessibility
+  mental health services:
+    - Mental Wellness

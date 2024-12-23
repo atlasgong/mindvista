@@ -1,0 +1,19 @@
+---
+name: "Lotus Initiative McGill"
+description: |
+  The Lotus Initiative is a student-run organization through McGill University that provides students with the opportunity to better their mental health by hosting various free fitness classes such as yoga, floor barre, dance, and spin.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://www.instagram.com/lotusinitiative.mcgill/?hl=en"
+contact_info: |
+  Instagram: lotusinitive.mcgill          Facebook: Lotus Initiave
+location: "Locations vary."
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness

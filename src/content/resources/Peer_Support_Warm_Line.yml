@@ -1,0 +1,19 @@
+---
+name: "Peer Support Warm Line"
+description: |
+  The Warm Line is a confidential and anonymous service for adults aged 18 and older. It is not a crisis line. Are you feeling lonely, isolated, anxious, depressed or in need of a friendly ear. Chat online, text or call a Warm Line peer support worker. Phone and Chat services available 4pm- midnight est 7 days a week.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://www.warmline.ca/"
+contact_info: |
+  1-888-768-2488
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Crisis Support

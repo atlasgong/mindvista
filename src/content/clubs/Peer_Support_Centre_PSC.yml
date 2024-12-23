@@ -1,0 +1,16 @@
+---
+name: "Peer Support Centre (PSC)"
+description: |
+  The Peer Support Centre is a safe space for McGill students to receive support sessions from a peer who is trained in active listening. These sessions are available by drop-in or appointment through our website. Our mission is to provide a confidential, non-judgemental, and non-directional service to our community! We believe everyone deserves the chance to be heard and are privileged to empower our community through our support sessions, mental health advocacy, and education! Drop-in or make an appointment to chat one-on-one with a supporter about anything on your mind.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/peersupportmcgill/"
+  instagram: "https://www.instagram.com/pscmcgill/"
+  other:
+    - "https://www.linkedin.com/company/peersupportcenter/about/"
+website: "https://psc.ssmu.ca/"
+contact_info: |
+  mcgill.psc@gmail.com
+categories:
+  community support:
+    - Service

@@ -1,0 +1,20 @@
+---
+name: "Sexologists (Student Wellness Hub)"
+description: |
+  Sexologists are mental health professionals with a specialty in sexual health. Sexologists at the Student Wellness Hub offer information and sexual health support in a safe judgement-free space concerning sexuality-related concerns.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+contact_info: |
+  (514) 398-6019
+location: "Student Wellness Hub"
+categories:
+  medical services:
+    - STI Testing
+  on campus:
+    - On-Campus

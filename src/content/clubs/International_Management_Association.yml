@@ -1,0 +1,18 @@
+---
+name: "International Management Association"
+description: |
+  The International Management Association is a platform where the students, faculty and alumni of the Major in International Management Program can meet and interact with one another. We aim to provide networking opportunities and self-developing resources as well to create a stronger student body for both International Management students and those passionate about the field of international business. We will also serve as a bridge between students and the faculty, representing the students’ perspectives in various issues in order to help shape the future of the program.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/InternationalManagementAssociationhttps://www.facebook.com/InternationalManagementAssociation"
+  instagram: "https://www.instagram.com/mcgill_ima/"
+  other:
+    - "https://www.linkedin.com/company/ima-mcgill/"
+contact_info: |
+  ima@mus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Management

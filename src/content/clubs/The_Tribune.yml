@@ -1,0 +1,17 @@
+---
+name: "The Tribune"
+description: |
+  The McGill Tribune is an independently published weekly student newspaper. Any McGill student is encouraged to contribute to any of our sections: News, Opinion, SciTech, Sports, Arts & Entertainment, Student Life. You can also join our Photography, Multimedia or Design sections.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/thetribuneca/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-tribune/"
+website: "https://www.thetribune.ca/"
+contact_info: |
+  editor@thetribune.ca
+categories:
+  community support:
+    - Social Activism
+  culture:
+    - Publication & Writing

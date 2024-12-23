@@ -1,0 +1,19 @@
+---
+name: "The Good Food Box - Student Nutrition Acessibility club (SNAC) McGill"
+description: |
+  The Good Food Box, offered by SNAC, is a free weekly produce distribution program, with produce supplied by Terra Bella, a local, family-owned grocery distributor. Please note that the Good Food Box is available only to members of the McGill community (faculty, alumni, staff, etc.), especially those facing food insecurity. See their website to register for the Good Food Box. A paid option is also offered through their partners at Marché SecondLife.​
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://snacmcgill.wixsite.com/snac/the-good-food-box"
+contact_info: |
+  Email: snac.mcgill@gmail.com (general inquiries)   gfb.mcgill.downtown@gmail.com (questions about the Good Food Box)
+location: "Room 106 in the University Centre on McGill's downtown campus"
+categories:
+  on campus:
+    - On-Campus
+  support and community services:
+    - Accessibility

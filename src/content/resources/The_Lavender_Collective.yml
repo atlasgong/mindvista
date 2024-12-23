@@ -1,0 +1,24 @@
+---
+name: "The Lavender Collective"
+description: |
+  The Lavender Collective is a Black-led community effort, that advocates for culturally relevant mental health related needs in BIPOC communities through education, network and resource building.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  details: |
+    For information regarding pricing and insurance coverage, please contact organization or health professionals directly.
+website: "https://www.thelavendercollective.ca/"
+contact_info: |
+  allo@thelavendercollective.ca
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Counselling
+    - Mental Wellness
+    - Psychological

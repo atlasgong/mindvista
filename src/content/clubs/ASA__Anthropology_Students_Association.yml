@@ -1,0 +1,21 @@
+---
+name: "ASA – Anthropology Students’ Association"
+description: |
+  The ASA represents all undergrad major, minor, honours, and joint-honours Anth students.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/AnthroMcGill?fref=ts"
+  instagram: "https://www.instagram.com/mcgillanthropology/"
+  other:
+    - "https://www.linkedin.com/company/anthromcgill/"
+website: "https://www.asamcgill.net"
+contact_info: |
+  anthropology.asa.mcgill@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

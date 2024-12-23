@@ -1,0 +1,18 @@
+---
+name: "SSMU Ski and Snowboard Club"
+description: |
+  SSMU Ski and Snowboard Club is a service that, in the winter term, takes students to local mountains for weekly ski trips. In the fall, there are a few events that allow for students to meet each other before we head out skiing and snowboarding in the winter semester.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ssmuskiandsnowboardclub"
+  instagram: "https://www.instagram.com/ssmuski/"
+  other:
+    - "http://www.twitter.com/SSMUSki"
+website: "https://www.ssmuski.com/"
+contact_info: |
+  mail@ssmuskiandsnowboardclub.com
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,16 @@
+---
+name: "McGill E-Sports Students' Society"
+description: |
+  The McGill eSports Student Association is one of the campus’ largest clubs, with over a hundred members and over 7 competitive collegiate teams that are playing Valorant, League of Legends, Rocket League, Apex Legends, DOTA II and Smash. Come join our discord, hop in a call and play some games with your fellow students or look to compete on one of our many teams!
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/mcgillesports"
+  instagram: "https://www.instagram.com/mcgillesportsassociation/"
+  other:
+    - "http://www.twitter.com/esportsmcgill, https://www.youtube.com/channel/UCpD5BG4YL7qLC25NsAdWHzw/discussion"
+website: "https://mcgillathletics.ca/sports/2020/9/2/Esports.aspx?id=567"
+contact_info: |
+  esports@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

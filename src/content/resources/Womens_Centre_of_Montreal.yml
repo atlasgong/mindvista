@@ -1,0 +1,26 @@
+---
+name: "Women's Centre of Montreal"
+description: |
+  The Women's Centre of Montreal is a non-profit organization created by women, for women. Their mission is to provide educational and vocational training, as well as information, counselling and referral services to help women themselves.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+  details: |
+    Contact organization regarding fees and insurance coverage.
+website: "https://centredesfemmesdemtl.org/en/"
+contact_info: |
+  spl@centredesfemmesdemtl.org     514-842-4780
+location: "3585 Saint-Urbain
+Montréal (Québec)
+H2X 2N6"
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness
+    - Counselling

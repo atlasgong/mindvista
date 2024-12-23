@@ -1,0 +1,13 @@
+---
+name: "UQAM - Centre de services psychologiques"
+description: |
+  Psychological services by graduate students in-training (low cost) for adults, children, and adolescents.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+website: "https://psychologie.uqam.ca/centre-de-services-psychologiques-csp/"
+categories:
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

@@ -1,0 +1,17 @@
+---
+name: "Turkish Students Society of McGill University (TSSMU)"
+description: |
+  Turkish Students’ Society of McGill University is one of the largest student organizations in Montreal area and represents all Turkish students enrolled at McGill University. TSSMU was founded in 1994 with the goal to improve the student experience of Turkish students. We aim to make a beneficial impact through our events by establishing and enhancing student relationships within the McGill community as well as by fundraising for various causes. Every semester we donate a portion of our proceedings to a different charity in Turkey.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/tssmu.ca/"
+  instagram: "https://www.instagram.com/turkishssmu/"
+  other:
+contact_info: |
+  turkish@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural
+    - Student Society

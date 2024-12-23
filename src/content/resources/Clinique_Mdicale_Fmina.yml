@@ -1,0 +1,24 @@
+---
+name: "Clinique Médicale Fémina"
+description: |
+  Clinique Médicale Fémina is a clinic that offers abortion services during the first trimester of pregnancy. Additional services include contraception consultations, contraception insertions and removals, and vasectomies.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+  details: |
+    Free with RAMQ card.
+website: "http://www.clinique-femina.com/"
+contact_info: |
+  514-843-6706
+  femina@clinique-femina.com
+location: "1265, rue Berri, Room 430"
+categories:
+  medical services:
+    - Abortion Services
+    - Medical Clinic
+    - Contraception Services
+  on campus:
+    - Off-Campus

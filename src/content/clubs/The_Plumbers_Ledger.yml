@@ -1,0 +1,16 @@
+---
+name: "The Plumber's Ledger"
+description: |
+  The Plumber's Ledger is the non-satirical student publication of the McGill Engineering Undergraduate Society (EUS), falling within the Communications portfolio. Founded in 2012, this publication serves as a platform for engineering student voices, covering a diverse range news and culture with specific emphasis on what is relevant to McGill engineering and engineers. The Plumber's Ledger maintains a close relationship with its less-serious sister EUS publication, the Plumber's Faucet.
+status: inactive
+social_media:
+  facebook: "http://fb.com/ThePlumbersLedger"
+  other:
+website: "http://ledger.mcgilleus.ca/"
+contact_info: |
+  ledger@mcgilleus.ca
+categories:
+  faculty specific:
+    - Engineering
+  culture:
+    - Publication & Writing

@@ -1,0 +1,23 @@
+---
+name: "Pride Therapy Network of Montreal"
+description: |
+  The Pride Therapy Network of Montreal is a collective of independent mental health practitioners that provide affirmative services to members of sexual and gender diverse communities. This collective aims to counter the discrimination of sexual and gender-diverse individuals who have been stigmatized and mistreated in mental health care systems. They offer financially accessibility services with their reduced fee option spots, and other acessibility requests.
+status: active
+availability:
+  - in_person
+insurance:
+  insurance:
+    - Free
+website: "https://pridetherapynetworkmontreal.com"
+contact_info: |
+  Email:  info@montrealpridetherapynetwork.com
+location: "Locations vary."
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Counselling

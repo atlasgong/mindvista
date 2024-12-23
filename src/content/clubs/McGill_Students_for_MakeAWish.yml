@@ -1,0 +1,16 @@
+---
+name: "McGill Students for Make-A-Wish"
+description: |
+  McGill Students for Make-a-Wish is a chapter of the Make A Wish Foundation located at McGill University. Throughout the year, we organize various events, both social and athletic to raise funds for Make-A-Wish Quebec. Our mission is to adopt one child’s wish every year as well as to raise awareness to the student body about this great cause. Last year we met this goal.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/mcgillstudentsformakeawish/"
+  instagram: "https://www.instagram.com/makeawishmcgill/?hl=en"
+  other:
+website: "https://makeawish.ssmu.ca/"
+contact_info: |
+  makeawish@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

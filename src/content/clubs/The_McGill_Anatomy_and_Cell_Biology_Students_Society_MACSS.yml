@@ -1,0 +1,20 @@
+---
+name: "The McGill Anatomy and Cell Biology Students’ Society (MACSS)"
+description: |
+  MACSS is your student council for Anatomy and Cell Biology. We’re here to take you to greater heights in and outside of the classroom!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillAnat/"
+  instagram: "https://www.instagram.com/macssmcgill/?hl=en"
+  other:
+website: "https://macssmcgill.com/"
+contact_info: |
+  macss.u1reps@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

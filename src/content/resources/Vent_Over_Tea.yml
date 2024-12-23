@@ -1,0 +1,21 @@
+---
+name: "Vent Over Tea"
+description: |
+  Vent Over Tea is a free and confidential active listening service. There are both in-person and virtual sessions available that can be booked through their website. Active-listening workshops and events are also available.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "ventovertea.com"
+contact_info: |
+  Email: info@ventovertea.com  Facebook: Vent Over Tea                    Instagram: ventovertea
+location: "Locations vary"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Support Group

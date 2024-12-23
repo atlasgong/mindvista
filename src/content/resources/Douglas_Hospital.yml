@@ -1,0 +1,14 @@
+---
+name: "Douglas Hospital"
+description: |
+  Interdisciplinary teams provide clinical services to all age groups in French and English. Treatment is provided for anxiety, depression, eating disorders, bipolar disorders, behaviour disorders, attention deficit disorders in children, Alzheimer’s disease and other forms of dementia, schizophrenia, and other forms of psychosis. (Referral needed)
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+website: "http://www.douglas.qc.ca/section/psychotic-disorders-144"
+categories:
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness
+    - Disordered Eating

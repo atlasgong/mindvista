@@ -1,0 +1,18 @@
+---
+name: "Players’ Theatre"
+description: |
+  Players’ Theatre is committed to giving students the opportunity to create theatre. Under the guidance of our executive, students have the chance to put on a show in a variety of roles, including but not limited to: directing, stage management, performing, set design, costume design, lighting design, props design and more! We put on already published plays, as well as host the annual McGill Drama Festival, which produces six student-written plays.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/PlayersTheatreMcGill/"
+  instagram: "https://www.instagram.com/playerstheatremcgill/"
+  other:
+    - "http://www.twitter.com/McGillPlayers"
+website: "https://www.playerstheatre.ca/"
+contact_info: |
+  players@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

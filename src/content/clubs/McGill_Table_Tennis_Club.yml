@@ -1,0 +1,16 @@
+---
+name: "McGill Table Tennis Club"
+description: |
+  The McGill Table Tennis Club aims to increase exposure for the sport of table tennis in the McGill community as well as foster a friendly, yet competitive environment for players of all skill levels to improve at the sport. We host practice sessions once a week where you can drop-in whenever you have time and either play with friends or seek guidance from one of our practice coordinators who can help you improve.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/159427097309/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-table-tennis-club/about/"
+contact_info: |
+  mcgilltabletennis@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

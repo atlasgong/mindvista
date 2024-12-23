@@ -1,0 +1,20 @@
+---
+name: "Foundation of Health"
+description: |
+  The Fountain of Health™ is a national non-profit initiative started at Dalhousie University Department of Psychiatry in 2011. It is dedicated to sharing the science of brain health and resilience and to translating that knowledge into practical action. They provide paper and app-based tools for clinicians to use in frontline care to invite and support health behavior change in 5 key health areas known to support long-term well-being. All clinical resources are free and available for use from the website.
+status: inactive
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://fountainofhealth.ca/"
+contact_info: |
+  info@foundationofhealth.ca
+location: "Online"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Psychological

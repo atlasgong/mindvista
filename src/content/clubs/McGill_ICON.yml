@@ -1,0 +1,14 @@
+---
+name: "McGill ICON"
+description: |
+  ICON is a Christian club at McGill open to everyone looking for a spiritual and social group. Our purpose is to offer a religious group on campus and to create a community that is friendly and welcoming to everyone. We encourage people to share opinions about their faith and develop enlightening discussions. We hope that through this, people learn more about the Christian faith, if they wish to do so. Meetings take place on a weekly basis at the Newman Centre of McGill University. Our club is very people-oriented, so not only do we go to dinner together on a weekly basis after our meetings, but we also offer various social activities throughout the semester in order to promote fellowship and introduce a fun side to spirituality. These events bring our members together and are instrumental in harboring a spirit of friendship at ICON.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/ICONbiblestudy"
+  other:
+contact_info: |
+  icon@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

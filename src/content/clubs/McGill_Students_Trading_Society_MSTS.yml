@@ -1,0 +1,18 @@
+---
+name: "McGill Students Trading Society (MSTS)"
+description: |
+  The McGill Students’ Trading Society seeks to promote advanced knowledge of the financial services industry and increase the understanding of financial markets for all its members. The society strives to host engaging events, workshops, and round-table discussions relating to a broad range of economics, finance, and business topics. Through our four pillars – education, engagement, advancement, and inclusivity – we aim to empower our student community and help bridge the gap between education and the field of finance.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillsts/"
+  instagram: "https://www.instagram.com/mstsmcgill/"
+  other:
+    - "https://www.linkedin.com/company/mcgillsts/"
+website: "https://tradingsociety.wixsite.com/msts"
+contact_info: |
+  tradingsociety@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Finance
+    - Networking

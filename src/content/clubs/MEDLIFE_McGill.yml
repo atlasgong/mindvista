@@ -1,0 +1,18 @@
+---
+name: "MEDLIFE McGill"
+description: |
+  MEDLIFE is a non-profit student organization that was established with a view towards alleviating global poverty through the distribution and promotion of Medicine, Education, and Development. With a network of over 50 chapters in universities across North America, MEDLIFE continues to grow. The McGill chapter, the first in Canada, was founded in 2010 giving Canadian students the opportunity to participate. We currently operate in Ecuador and Peru and hope to expand our reach in the near future. All 50+ chapters send several groups of students each year to areas most in need. These teams, called Service Learning Trips, work to establish a permanent MEDLIFE presence. Whether it’s building fully staffed medical clinics or schools, or the installment of absent necessities such as clean-water wells and staircases, we continue to serve a community until we feel we have done all we can. Our long-term mission is to help families achieve freedom from the constraints of poverty, empowering them to live healthier lives.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MedlifeMcGill/"
+  instagram: "https://www.instagram.com/medlifemcgill/"
+  other:
+website: "https://medlifemcgill.com/"
+contact_info: |
+  medlife.mcgill@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach
+  career:
+    - Healthcare

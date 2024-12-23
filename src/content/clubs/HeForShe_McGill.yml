@@ -1,0 +1,15 @@
+---
+name: "HeForShe McGill"
+description: |
+  HeForShe McGill is an SSMU club dedicated to raising awareness on campus about the importance of involving male-identifying and majority-gendered individuals in the movement for gender equality, and about gender issues, their causes, and their consequences on people of all genders. We seek to create a forum for discussion for those of all gender identities interested in gender issues, and encourage those who typically feel alienated from the movement to be a part of it, through interactive movie screenings, fundraisers, discussions, and educational events.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/heforshemcgill/"
+  instagram: "https://www.instagram.com/heforshemcgill/?hl=en"
+  other:
+website: "https://heforshe.ssmu.ca"
+contact_info: |
+  heforshemcgill@ssmu.ca
+categories:
+  community support:
+    - Social Activism

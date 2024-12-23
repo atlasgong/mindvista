@@ -1,0 +1,20 @@
+---
+name: "EUS Ski Trip Committee"
+description: |
+  EUS Ski Trip is the hottest event of the year. The trip usually takes place over the 3rd weekend in January. 50+ McGill Engineers hop on a coach bus and travel to Mount Saint Anne for 2 days and 2 nights of gnar skiing, snowboarding and fun party times. The EUS Ski Trip is a great opportunity to shred some pow and chill with new or old friends. The event is always a hit and sells out so make sure you buy your ticket early!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/EUS.ski/"
+  other:
+website: "https://eus.wiki/EUS_Ski_Trip"
+contact_info: |
+  ski.trip@mcgilleus.ca
+categories:
+  community support:
+    - Service
+  career:
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

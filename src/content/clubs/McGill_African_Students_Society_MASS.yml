@@ -1,0 +1,18 @@
+---
+name: "McGill African Students Society (MASS)"
+description: |
+  The McGill African Students Society (MASS) is a full status club whose mandate is to promote and present the diverse and rich African cultures to the McGill community and the greater Montreal area. We are a diverse group of students who are not solely African but who are passionate about African-oriented topics. We host a range of events each semester, each targeting different facets of African culture and life, and hoping to spread knowledge and inspire passion about African culture and issues both on and off campus.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillMASS"
+  instagram: "http://www.instagram.com/McgillMASS"
+  other:
+    - "https://www.linkedin.com/company/mcgillmass/about/"
+website: "https://massmcgill.wixsite.com/mass"
+contact_info: |
+  mass@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

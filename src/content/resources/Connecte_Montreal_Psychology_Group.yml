@@ -1,0 +1,18 @@
+---
+name: "Connecte: Montreal Psychology Group"
+description: |
+  The Connecte Montreal Psychology Group is a practice that offers psychotherapy and group therapy services in English, French and Mandarin. They provide CBT, ACT, and DBT therapies, mindfulness-based therapy, and psychodynamic therapy. Connecte also offers group therapy including anxiety, relationship, and eating disorder support groups.
+status: inactive
+availability:
+  - online
+website: "https://connectepsychology.com/en/our-services/psychotherapy/"
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Counselling
+    - Psychological
+    - Support Group
+    - Disordered Eating

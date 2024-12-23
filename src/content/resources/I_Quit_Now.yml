@@ -1,0 +1,24 @@
+---
+name: "I Quit Now"
+description: |
+  I Quit Now is a free and confidential online service that helps people quit cigarettes. People can seek help by speaking to a speacialist on the phone, participating in QUIT NOW online, recieving helpful adivce by text, or by finding an in-person Quit Smoking Centre closest to them.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+  details: |
+    For Quebec residents only.
+website: "https://www.tobaccofreequebec.ca/iquitnow"
+contact_info: |
+  1-866-527-7383
+location: "Locations vary depending on city."
+categories:
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support

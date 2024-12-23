@@ -1,0 +1,23 @@
+---
+name: "Black Mental Health Connections Peer Support Program"
+description: |
+  Black Mental Health Connections Montreal (BMHC MTL) is an alliance of organizations and individuals focused on the mental health and well-being of the English-speaking Black community in Montreal. Their Peer Support Program provides the opportunity for Black individuals to talk and connect with others who are like them and have lived shared experiences. This program is remote and offered online.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  details: |
+    Contact organization regarding fees and insurance coverage.
+website: "https://bmhcmtl.ca/online-peer-support-group/"
+contact_info: |
+  info@bmhcmtl.ca
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness
+    - Support Group

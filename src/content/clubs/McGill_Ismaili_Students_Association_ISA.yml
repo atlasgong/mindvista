@@ -1,0 +1,15 @@
+---
+name: "McGill Ismaili Students Association (ISA)"
+description: |
+  The McGill Ismaili Student Association is a club that helps welcome incoming Ismailis in Montreal to feel welcome and comfortable in the community. We have events to build and grow relationships within our religious community.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/isamtl/"
+  instagram: "https://www.instagram.com/therealmisa514/"
+  other:
+contact_info: |
+  ismaili@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

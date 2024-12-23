@@ -1,0 +1,14 @@
+---
+name: "McGill Students for Best Buddies"
+description: |
+  McGill Students for Best Buddies pairs McGill students with adults in the Montreal community with intellectual and/or developmental disabilities. Students develop 1-1 friendships with their buddies and also participate in monthly group events with other buddy pairings. Best Buddies fosters healthy and supportive friendships, and promotes inclusivity, community involvement and social awareness!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgill.bestbuddies"
+  instagram: "https://www.instagram.com/bestbuddiesmcgill/"
+  other:
+contact_info: |
+  bestbuddies@ssmu.ca
+categories:
+  community support:
+    - Social Activism

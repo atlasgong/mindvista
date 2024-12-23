@@ -1,0 +1,20 @@
+---
+name: "Physiology Undergraduate League of Students (PULS)"
+description: |
+  PULS, the Physiology Undergraduate League of Students, is a group of elected and appointed members who represent their undergraduate peers in the Department of Physiology. The goals and functions of PULS are to advocate and connect students to the physiology program, professors, and the greater McGill community. Located in McIntyre Medical Building Room 1017, PULS hosts daily office hours where students are welcome to study, hang out, and use the appliances we have to offer, such as a microwave, printer, and free lab coat rentals. PULS organizes academic initiatives in the form of class note resources, Journal Clubs, and the annual Wine and Cheese to inform undergraduate students about the physiology program at McGill. PULS also hosts many social events throughout the semester with the most popular being the biweekly PHGY Fridays at the campus bar and various formal and interdepartmental events throughout the year.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/pulsmcgill/"
+  instagram: "https://www.instagram.com/pulsmcgill/"
+  other:
+website: "http://puls.sus.mcgill.ca/"
+contact_info: |
+  puls@sus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

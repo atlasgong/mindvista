@@ -1,0 +1,19 @@
+---
+name: "Fit For a Cause"
+description: |
+  Fit For A Cause (FFAC) is a student-run charity fitness program in which fitness instructors volunteer their services teaching fitness classes whilst collecting donations for charity. In order for participants to take part in the fitness classes, we ask for a minimum donation of $2.00 per class. All proceeds that FFAC raises will be donated to an organization of choice, determined by the end of each semester. This semester we are exploring virtual operations and alternative activities to our traditional physical classes, due to COVID.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/FFACpage/"
+  instagram: "https://www.instagram.com/fit_for_a_cause/?hl=en"
+  other:
+    - "https://twitter.com/fit_for_a_cause"
+website: "http://contactffac.wixsite.com/ffacmcgill"
+contact_info: |
+  getfit@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  community support:
+    - Social Activism
+    - Community Outreach

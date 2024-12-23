@@ -1,0 +1,17 @@
+---
+name: "McGill Students for Concussion Legacy Foundation"
+description: |
+  Our group works on educating and spreading awareness about concussions within the Montreal community as well as providing support for those recovering from mild traumatic brain injuries and concussions. We educate through workshops and presentations and provide support through providing resources as well as offering a support group that meets twice a week.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/concussionmtl/?fref=ts"
+  instagram: "@concussion.can.umcgill"
+  other:
+    - "https://www.youtube.com/channel/UCNl2TY5y1ax8gW4FvQ2BUjg"
+website: "https://www.concussionmtl.com/"
+contact_info: |
+  concussionmtl@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

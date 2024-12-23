@@ -1,0 +1,27 @@
+---
+name: "Queen Elizabeth Health Complex"
+description: |
+  The Queen Elizabeth Health Complex offers services including imaging radiology, medical care, mental health, alternative therapy, and a variety of other services. There may be additional fees for materials (e.g. cast or stitches)
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+  details: |
+    Most medical services covered by RAMQ. Psychiatric services covered by the RAMQ. The QEHC offers a range of services from individual health providers. Each health provider and individual insurance plans must be consulted for each service offered.
+website: "https://www.qehc.org/contact-us"
+contact_info: |
+  514-485-5013
+location: "2100, Marlowe Avenue
+Montréal, Québec
+H4A 3L5"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

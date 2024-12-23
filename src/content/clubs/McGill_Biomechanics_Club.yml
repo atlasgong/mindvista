@@ -1,0 +1,17 @@
+---
+name: "McGill Biomechanics Club"
+description: |
+  McGill Biomechanics Club innovates medical solutions that help others, by building skills and knowledge through practical experience in biomechanical projects, workshops and events. By combining both practical and social experiences, we aim to teach people more about biomechanics while also helping them to build a social and professional network.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillbiomechclub"
+  instagram: "https://www.instagram.com/mcgillbiomechanicsclub/"
+  other:
+    - "https://www.linkedin.com/company/mcgillbiomechanicsclub/about/"
+contact_info: |
+  mbc@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Technology
+    - Healthcare

@@ -1,0 +1,18 @@
+---
+name: "Recreational Dance Company (RDC)"
+description: |
+  RDC is a dance club at McGill! We are a student group of the Students’ Society of McGill University (SSMU), an undergraduate students society at McGill University. RDC offers the opportunity for anyone to learn a variety of dance styles. There are classes a few times a week but no competitions or performances, so if you can’t make it, no stress! Our teachers are all volunteers, meaning that there are no costs except the studio rental, keeping classes affordable. If you are a more experienced dancer, we also hold auditions each semester for our Executive team. Dancers of all styles are always welcome! The Exec team is responsible for choreographing and leading each class, in addition to behind the scenes planning. Outside of the Exec team, the club is open to anyone… no auditions! If you are looking for a recreational club where you can stay fit, make friends and just dance, then RDC is for you!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/RDCmcgill"
+  instagram: "https://www.instagram.com/rdc.mcgill/"
+  other:
+contact_info: |
+  rdcmcgill@ssmu.ca
+categories:
+  arts:
+    - Performance
+  athletics:
+    - Dance
+  culture:
+    - Leisure & Hobbies

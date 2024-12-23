@@ -1,0 +1,15 @@
+---
+name: "McGill Sikh Students’ Association"
+description: |
+  We provide a positive and inclusive space for all Sikh students and organize events that are in line with Sikh spirituality and bring awareness around articles of faith, including turbans.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/sikhsatmcgill/"
+  instagram: "https://www.instagram.com/mcgill.sikhs/"
+  other:
+contact_info: |
+  mcgill.sikhs@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

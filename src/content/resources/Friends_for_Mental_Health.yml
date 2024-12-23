@@ -1,0 +1,23 @@
+---
+name: "Friends for Mental Health"
+description: |
+  Friends for Mental Health offers a wide range of services including counseling both for those suffering from mental illness and those who have family members facing mental health challenges, art therapy, dramatherapy, support groups, including services specifically for youth ages 13 through 25.
+status: active
+availability:
+  - telephone
+insurance:
+  details: |
+    Services offered to the residents of the West Island of Montreal (Sainte-Anne-de-Bellevue, Senneville, Baie d'Urfé, Kirklands, Beaconsfield, Pointe-Claire, Sainte-Geneviève, Île-Bizard, Pierrefonds-Roxboro, Dollard-des-Ormeaux, Dorval, Lachine)
+website: "https://asmfmh.org/en/"
+contact_info: |
+  Call: 514-636-6885  Text: 438-922-3474    info@asmfmh.org
+location: "Locations vary"
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness
+    - Support Group
+    - Counselling

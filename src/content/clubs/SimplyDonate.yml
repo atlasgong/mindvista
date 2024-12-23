@@ -1,0 +1,16 @@
+---
+name: "SimplyDonate"
+description: |
+  SimplyDonate is a non profit organization that aims to facilitate the collection of items to be delivered to shelters and people in need. We have collected over 11,000 lbs of clothing since the organization’s founding in June 2016! By conducting clothing drives throughout the year, raising awareness on campus about reducing clothing waste, and delivering donations to charities and local donation centres, we seek to institute positive change within our community, as well as provide opportunities to McGill students to volunteer with us and make a difference.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/SimplyDonate/"
+  instagram: "https://www.instagram.com/simplydonatessmu/?fbclid=IwAR0WjvAOtyPv7qJm3EOl-Kg-IoWXi8aRQGMZIxSKzbaJC4Dq807oG3ORInw"
+  other:
+website: "https://simplydonatecanada.wixsite.com/website"
+contact_info: |
+  simplydonate@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

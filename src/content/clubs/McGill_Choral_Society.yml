@@ -1,0 +1,17 @@
+---
+name: "McGill Choral Society"
+description: |
+  One of the largest student groups on the McGill campus, the McGill Choral Society gives members of the University community the chance to explore and enjoy making music together. Each year, we perform two major classical choral works accompanied by a small orchestra and professional soloists. Our audiences range from 500 to 1000 people! In the second half of our concerts, we perform a selection of seasonal and popular music. There are no auditions and sight-reading skills are not required, but all are encouraged to give their heart and voice to the joy of making music. Through benefit concerts, the choir has raised significant funds for groups such as the McGill Aids Centre, the Farha Foundation, Sun Youth and the McGill Assault Centre, and to support research into Lou Gehrig’s disease and lymphedema.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/mcgillchoralsociety/"
+  other:
+    - "https://www.youtube.com/user/McGillChoralSociety/featured"
+website: "https://www.mcgillchoral.ca/"
+contact_info: |
+  mcgillchoral@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

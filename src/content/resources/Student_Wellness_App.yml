@@ -1,0 +1,17 @@
+---
+name: "Student Wellness App"
+description: |
+  The Student Wellness apps provides ways to look after your health is by setting small, doable health goals in areas that matter to you.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://studentwellnessapp.org/app/login"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Psychological

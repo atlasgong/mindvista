@@ -1,0 +1,17 @@
+---
+name: "McGill Students’ Improv"
+description: |
+  Social anxiety, lack of comedic ability, having too much sex, these are just a few of the things that McGill Improv can remedy for you. Come join McGill Improv with free workshops for any experience level and bi-weekly shows to get involved in the McGill comedy scene. We host workshops every Tuesday from 6-8pm in the SSMU ballroom and have shows on the 1st and 3rd Wednesday of every month in the McConnell Engineering Building basement at 8pm! We hope to see you there to learn how to act, love, laugh, and cry.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillimprov/"
+  instagram: "https://www.instagram.com/mcgillimprov/"
+  other:
+    - "https://www.youtube.com/mcgillimprov"
+contact_info: |
+  mcgillimprov@gmail.com
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

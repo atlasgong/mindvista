@@ -1,0 +1,23 @@
+---
+name: "Nurses (McGill Student Wellness Hub)"
+description: |
+  Nurses at the Student Wellness Hub have an important role in providing preventative medical interventions to students and are a great first point of contact
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+website: "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/nurses-doctors#Nurses"
+contact_info: |
+  (514) 398-6017
+location: "Student Wellness Hub"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - On-Campus
+  mental health services:
+    - Mental Wellness

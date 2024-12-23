@@ -1,0 +1,17 @@
+---
+name: "McGill Badminton Club"
+description: |
+  Here at the McGill Badminton Club, we strive to create an encouraging atmosphere where members of all levels feel welcome playing together; whether you are looking for a recreational or a competitive environment. We are currently not offering drop-ins for the fall 2022 semester. Instead, we will be hosting a semester-long tournament collaborating with the McGill Intramurals team.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/McGillBadmintonClub/"
+  instagram: "https://www.instagram.com/mcgillbadminton/"
+  other:
+website: "https://recreation.mcgill.ca/intra-sports/badminton?fbclid=IwAR03nNzBWIoXjALHrf5FqgqGQ2_kSq9XfO5aDOzxC_JUkAldptlXDf6uhLs"
+contact_info: |
+  mcgillbadmintonclub@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,26 @@
+---
+name: "Montreal Therapy Centre"
+description: |
+  Montreal Therapy Centre provides individual therapy, couple’s and family therapy, child and adolescent therapy, online therapy, therapy groups, and workshops. Services are provided in fourteen different languages.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+    - Out-of-province Healthcare
+  details: |
+    Medicare does not provide coverage for private therapy fees. Insurance receipts are available to those covered by extended health care plans.
+website: "http://www.montrealtherapy.com/"
+contact_info: |
+  514-244-1290
+location: "Queen Elizabeth Health Complex, Suite 532, Montreal, Qc H4A 3L5"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Counselling
+    - Support Group
+    - Mental Wellness

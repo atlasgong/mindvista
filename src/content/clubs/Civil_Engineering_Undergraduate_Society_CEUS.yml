@@ -1,0 +1,23 @@
+---
+name: "Civil Engineering Undergraduate Society (CEUS)"
+description: |
+  The Civil Engineering Undergraduate Society (CEUS) is a student organization in the Department of Civil Engineering and Applied Mechanics. Our purpose is to organize activities to promote a sense of community among the undergraduate students in Civil Engineering.  In addition, we aim to create inclusive events varying from academic, social and informative.
+  
+  We also collaborate closely with the Engineering Undergraduate Society of McGill, as well as the other Engineering departments, in planning and executing diverse events.  All undergraduate students automatically become members of the CEUS upon registration in the Civil Engineering program. Ultimately, our goal is to encourage civil engineering students to immerse themselves in the prosperous engineering community that McGill has to offer.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ceusmcgill/"
+  instagram: "https://www.instagram.com/ceusmcgill/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-chemical-engineering-student-society/"
+website: "https://ceus.mcgilleus.ca/project-page.html"
+contact_info: |
+  ceus.vpcomm@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

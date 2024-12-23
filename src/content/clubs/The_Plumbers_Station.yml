@@ -1,0 +1,20 @@
+---
+name: "The Plumber's Station"
+description: |
+  The Plumber’s Station (TPS) is the film club if the McGill Engineering Undergraduate Society (EUS). This committee welcomes all film enthusiasts to write, produce, edit video and meet individuals who share their passion for film making. The club encourages all kinds of original projects and gives a chance to its members to partake in various filming and photography events. Through the years, TPS has filmed many student-run and McGill events. We are easily noticeable at various events by our navy crew neck in which ‘Film Crew’ is engaged at the back.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ThePlumbersStationMcGill"
+  instagram: "http://www.instagram.com/theplumbersstationmcgill"
+  other:
+    - "https://www.youtube.com/channel/UCx7REwIt-qeIGq9Ygl4pChw"
+website: "https://eus.wiki/The_Plumber%27s_Station"
+contact_info: |
+  station@mcgilleus.ca
+categories:
+  career:
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

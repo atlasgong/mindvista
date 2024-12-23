@@ -1,0 +1,19 @@
+---
+name: "Medical Students' Society (MSS)"
+description: |
+  The mission of the society is to represent its members and promote their views in all dealings with the Faculty of Medicine of McGill University, McGill University, professional organizations and the community at large; to promote activities encouraging interaction between its members; to facilitate and promote the formation and functioning of Society organizations, clubs, and committees; to disseminate information pertinent to the academic, professional, and cultural enrichment of all Society members; and to act as a positive leader in the McGill University community and the community at large.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MSSmcgill/"
+  instagram: "https://www.instagram.com/mcgillmss/"
+  other:
+    - "https://twitter.com/MSSMcGill"
+website: "https://mcgillmed.com/"
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Medicine
+  culture:
+    - Student Society

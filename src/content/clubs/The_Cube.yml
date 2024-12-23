@@ -1,0 +1,13 @@
+---
+name: "The Cube"
+description: |
+  The Cube is the largest student-run 3D-printing service at McGill University. It's main lab space is located on the second floor of the MacDonald Engineering Building, room MD264 (just down the hall from Mechanical Engineering Reception). There are currently five 3D printers in the lab, and 2 3D scanners, servicing clients including students, professors, and even the general public can submit 3D printing orders to The Cube via their online ordering system found on their website. A student technician uses 3D printing software to evaluate the submitted designs and then sends an quote to the customer. Once the price of the quote has been confirmed by the customer, the technician will put the print on the printer. When the print is complete, the customer can pay for and pick up their completed print at CopiEUS. The typical lead time of a print ranges from 2 days to 1 week.
+status: active
+social_media:
+  other:
+website: "http://cube.mcgilleus.ca/"
+contact_info: |
+  cube@mcgilleus.ca
+categories:
+  community support:
+    - Service

@@ -1,0 +1,17 @@
+---
+name: "McGill Tennis Club"
+description: |
+  The McGill Tennis Club is a recreational tennis club that serves players of all levels. The club organizes practices, tournaments, and leagues throughout the year.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/mcgilltennisclub/"
+  instagram: "https://www.instagram.com/mcgilltennisclub/?hl=en"
+  other:
+website: "https://mcgillathletics.ca/sports/2012/11/7/1107121039.aspx"
+contact_info: |
+  tennis@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

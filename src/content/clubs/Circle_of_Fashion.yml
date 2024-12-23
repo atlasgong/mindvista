@@ -1,0 +1,13 @@
+---
+name: "Circle of Fashion"
+description: |
+  A club where students can express their fashion creativity
+status: active
+social_media:
+  instagram: "https://www.instagram.com/circleoffashionmcgill/"
+  other:
+    - "https://www.linkedin.com/company/circle-of-fashion-mcgill/"
+website: "https://circleoffashion.ssmu.ca"
+categories:
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,17 @@
+---
+name: "Enactus McGill"
+description: |
+  Enactus McGill is a group of talented and motivated students from McGill University striving to make a difference in the Montreal community through entrepreneurial action. They strive to create a long-term impact on the communities and businesses that they are involved with. Whether it be by providing education to Syrian refugees, empowering young students to become entrepreneurs, or decreasing the food insecurity in Montreal, their projects reach a diverse community both locally and nationally. Their ultimate vision is to enact positive change through social entrepreneurship. In other words, they envision a brighter future where local communities are improved through their impactful projects, empowering events, and engagement with community partners.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/enactusmcgill/"
+  instagram: "https://www.instagram.com/enactusmcgill/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/enactus-mcgill/?originalSubdomain=ca"
+website: "https://enactusmcgill.ssmu.ca/"
+contact_info: |
+  mcgillenactus@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

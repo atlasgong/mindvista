@@ -1,0 +1,16 @@
+---
+name: "Mcsway Poetry Collective"
+description: |
+  Mcsway was founded on October 13, 2012 with the mission to reintroduce spoken word poetry to the McGill community. We support artists of all levels and welcome everyone to our events, students and non-students alike. Our mission is to foster a safe(r), accessible, and inclusive space for writers and artists to build a creative community through the poetry writing, reading, and sharing/performance sessions we regularly host. We also run an online poetry journal, Snaps, on our website and accept submissions all year round!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcswaypoetry/"
+  instagram: "https://www.instagram.com/mcswaypoetry/?hl=en"
+  other:
+website: "https://www.mcswaypoetrycollective.com/"
+contact_info: |
+  mcsway@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies
+    - Publication & Writing

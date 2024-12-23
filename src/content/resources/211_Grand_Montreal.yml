@@ -1,0 +1,19 @@
+---
+name: "211 Grand Montreal"
+description: |
+  211 is an information and referral service that refers citizens to community organizations, public and para-public services and programs near them.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.211qc.ca/en/"
+contact_info: |
+  211 or 1-844-387-3598
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory

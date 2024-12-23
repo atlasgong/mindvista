@@ -1,0 +1,15 @@
+---
+name: "McGill Cycling"
+description: |
+  Interactive forum whereby members can post group rides, races, potlucks and other club events. The website also serves as a platform for discussing the sport of cycling as well as a free and for sale classified service.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillCycling"
+  other:
+contact_info: |
+  mcgillcycling@gmail.com
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

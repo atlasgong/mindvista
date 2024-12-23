@@ -1,0 +1,21 @@
+---
+name: "SOS Conjugal Violence"
+description: |
+  SOS Conjugal Violence offers support for those in the province of Quebece facing domestic violence. Anyone who is concerned about domestic violence regardless of their sex, sexual orientation, age, ethnic background is encouraged to use this service. They offer chat, text, phone and email services 24/7.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://sosviolenceconjugale.ca/en/looking-for-answers"
+contact_info: |
+  1-800-363-9010
+categories:
+  violence services:
+    - Domestic Violence
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support

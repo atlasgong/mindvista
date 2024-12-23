@@ -1,0 +1,20 @@
+---
+name: "Chemical Engineering Students' Society (ChESS)"
+description: |
+  Providing events and services to all McGill Undergraduate Chemical Engineering Students! Our mission is to provide future engineers with the tools to succeed in their academics and career development.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillchess/"
+  instagram: "https://www.instagram.com/chessmcgill/"
+  other:
+website: "https://chess.mcgilleus.ca/"
+contact_info: |
+  chess.vpcomm@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Student Society

@@ -1,0 +1,17 @@
+---
+name: "Caribbean Students Society of McGill University (CSS)"
+description: |
+  We are a culture club at McGill that seeks to promote, foster, encourage, share and celebrate Caribbean Culture in the McGill and Montreal communities.
+status: active
+social_media:
+  facebook: "http://facebook.com/mcgillcss"
+  instagram: "https://www.instagram.com/mcgillcss/"
+  other:
+    - "https://www.linkedin.com/company/the-caribbean-students-society-of-mcgill-university/"
+contact_info: |
+  css@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

@@ -1,0 +1,18 @@
+---
+name: "McGill Students for Greenpeace"
+description: |
+  McGill Students for Greenpeace is the first university-level chapter of Greenpeace International to be established in Canada. We promote environmental awareness and advocacy around campus and the greater Montreal community. Our campaigns are related to sustainable habits and practices around consumption, food, waste, and resource-use, as well as increasing awareness of global environmental challenges. Follow our Instagram to find out more about our many events and initiatives!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/GreenpeaceMcGill/"
+  instagram: "https://www.instagram.com/greenpeacemcgill/"
+  other:
+    - "http://www.twitter.com/@gpmcgill"
+website: "https://greenpeacemcgill1.wixsite.com/msfgreenpeace"
+contact_info: |
+  greenpeace.mcgill@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Sustainability
+    - Community Outreach

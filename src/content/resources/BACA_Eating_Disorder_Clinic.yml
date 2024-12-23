@@ -1,0 +1,25 @@
+---
+name: "BACA Eating Disorder Clinic"
+description: |
+  BACA Eating Disorder Clinic is a private clinic that offers services including disordered eating evaluation, supervised housing, intensive treatment for adults, and group therapy, for a fee.
+status: active
+availability:
+  - telephone
+insurance:
+  details: |
+    Contact organization regarding pricing and insurance coverage.
+website: "https://cliniquebaca.com/en/"
+contact_info: |
+  (514) 544-2323
+  1-833-544-2323
+  info@cliniquequebaca.com
+location: "2121 rue Crescent, bureau 200,Montréal QC  H3G 2C1"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Disordered Eating
+    - Counselling
+    - Support Group

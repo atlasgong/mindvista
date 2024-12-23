@@ -1,0 +1,18 @@
+---
+name: "Women in Tech (WIT)"
+description: |
+  Women in Tech is a student-run club at McGill University that aims to encourage more women to get involved in the world of technology. Whether it be through networking events, coding workshops, or company tours, we want to provide all women of varying backgrounds with opportunities and skills to be able to excel in the tech world.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/witmcgill"
+  instagram: "https://www.instagram.com/witmcgill/"
+  other:
+    - "https://ca.linkedin.com/company/women-in-tech-wit"
+website: "https://womenintech.ssmu.ca/"
+contact_info: |
+  womenintech@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Technology

@@ -1,0 +1,15 @@
+---
+name: "Swimming With A Mission (SWAM) Montreal"
+description: |
+  Swimming With A Mission (SWAM) Montreal is a non-profit organization that provides affordable and accessible one-on-one swimming instruction to children with disabilities.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/SWAMMontreal/"
+  instagram: "https://www.instagram.com/swammontreal/"
+  other:
+website: "http://www.montreal.qc.swamcanada.ca/"
+contact_info: |
+  montrealswamcanada@ssmu.ca
+categories:
+  community support:
+    - Social Activism

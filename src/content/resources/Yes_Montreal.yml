@@ -1,0 +1,21 @@
+---
+name: "Yes Montreal"
+description: |
+  YES is a non-profit, community-driven English-language service provider that has been helping Quebecers find employment and develop as entrepreneurs since 1995.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://yesmontreal.ca/english-mental-health-services-resources/"
+contact_info: |
+  (514) 878-9788     info@yesmontreal.ca
+location: "666 Sherbrooke St. W., suite 700
+Montreal, QC H3A 1E7"
+categories:
+  directory:
+    - Directory
+  mental health services:
+    - Support Group

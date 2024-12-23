@@ -1,0 +1,23 @@
+---
+name: "Cura Santé"
+description: |
+  Cura Santé offers private medical services such as home blood tests, cardiology, nursing services, and more.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    Cura Santé services are not reimbursable from the RAMQ. However, most insurance companies cover the cost between 80%-100%.
+website: "https://curasante.com/appointment-booking/"
+contact_info: |
+  514-824-2872      info@curasante.com
+location: "5515 Rue St. Jacques, Suite 106"
+categories:
+  medical services:
+    - Medical Clinic
+    - Lab
+  on campus:
+    - Off-Campus

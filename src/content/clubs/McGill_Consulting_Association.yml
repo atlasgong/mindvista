@@ -1,0 +1,20 @@
+---
+name: "McGill Consulting Association"
+description: |
+  The McGill Consulting Association (MCA) aims to help undergraduate students understand, prepare for, and develop careers in the consulting and related fields. By creating and fostering deep relationships with consulting firms and organizations, we hope to expose students to the nature and scope of consulting practices, as well as provide them with the appropriate opportunities and tools to succeed as a consultant. Through our various events and activities, from preparatory workshops to case competitions, we wish to provide students from a variety of academic backgrounds with recruitment opportunities to network and gain valuable experience in order to help them further a career in the multifaceted field of consulting.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillConsultingAssociation"
+  instagram: "https://www.instagram.com/mcgillconsultingassociation/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/mcgillconsulting/"
+website: "https://www.mcgillconsultingassociation.com"
+contact_info: |
+  mca@mus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Consulting
+  faculty specific:
+    - Management

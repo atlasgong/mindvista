@@ -1,0 +1,24 @@
+---
+name: "SACOMSS: Sexual Assult Centre of the McGill Student's Society"
+description: |
+  The Sexual Assault Centre of the McGill Students’ Society (SACOMSS) is a volunteer-run organization committed to supporting survivors of sexual assault and their allies through direct support, advocacy, and outreach. Their services include Drop-In and Line (DIAL), support groups, and advocacy, and outreach services. Additionally, they offer sexual assault sensitivity training to McGill and Montreal groups, provide information and referrals, and organize events to raise awareness about sexual assault.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://www.sacomss.org/wp/"
+contact_info: |
+  sacomss@gmail.com     438-943-4855
+location: "The University Centre, 3480 Rue McTavish, Room B27, Montreal, QC, H3A 0E7"
+categories:
+  violence services:
+    - Sexual Assault Services
+  medical services:
+    - STI Testing
+  on campus:
+    - On-Campus
+  mental health services:
+    - Crisis Support
+    - Counselling

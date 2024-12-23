@@ -1,0 +1,16 @@
+---
+name: "Projet Montréal McGill Students Association"
+description: |
+  Projet Montréal McGill Students Association seeks to promote and build upon, with the McGill student body, the mission of Projet Montréal as enumerated in section 2 of its statutes: “Projet Montréal offers Montrealers a way of life in the city on a human scale, respectful of its diversity and the identity and richness of each of its boroughs and each and every one of its residents. To do this, it puts forward an innovative urban, social and economic vision, on the lookout for good practices, centred on sustainable development, democracy, solidarity, equity, social justice, sound management and transparency. The Party aims for a better quality of life for all”.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ProjetMontrealJeunes/"
+  instagram: "https://www.instagram.com/projetmontreal/"
+  other:
+    - "https://twitter.com/projetmontreal"
+website: "http://en.projetmontreal.org/"
+contact_info: |
+  projetmontrealmcgill@ssmu.ca
+categories:
+  community support:
+    - Social Activism

@@ -1,0 +1,16 @@
+---
+name: "McGill Students Comedy Club"
+description: |
+  The McGill Students Comedy club is the place for McGill comics or aspiring comedians or people who just love comedy to meet up, work together on projects, bounce ideas off one another, and organize/perform stand-up comedy shows. If you like comedy you found the right place.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillcomedy?fref=ts"
+  instagram: "https://www.instagram.com/mcgillcomedy/"
+  other:
+contact_info: |
+  mcgillstudentscomedy@gmail.com
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

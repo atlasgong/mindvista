@@ -1,0 +1,22 @@
+---
+name: "Jewish General Hospital - Infectious Diseases and STI Clinic"
+description: |
+  The Jewish General Hospita (JGH) Division of Infectious Diseases specialize in clinical activities, teaching, research, and clinical lab-related activities in relation to infectious diseases and STIs. It is a drop-in clinic and appointments are not mandatory. However, a hospital card is required for an appointment, which can be obtained in Pavilion E, Room 0014, near the Légaré Street entrance.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+website: "https://www.jgh.ca/care-services/infectious-diseases/"
+contact_info: |
+  514-340-8230
+location: "3755 Côte-Sainte-Catherine Road, Pavilion E, Room E-0064"
+categories:
+  medical services:
+    - Medical Clinic
+    - STI Testing
+    - Lab
+  on campus:
+    - Off-Campus

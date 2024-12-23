@@ -1,0 +1,16 @@
+---
+name: "The Meditation Club"
+description: |
+  The goal of The Meditation Club is to foster the practice of Meditation, and discuss the theory behind it.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/themeditationclubmcgill"
+  instagram: "https://www.instagram.com/mcgillmeditation/"
+  other:
+    - "https://www.linkedin.com/company/the-meditation-club-at-mcgill/"
+contact_info: |
+  meditation@ssmu.ca
+categories:
+  culture:
+    - Spiritual
+    - Leisure & Hobbies

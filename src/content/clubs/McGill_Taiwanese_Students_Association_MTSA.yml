@@ -1,0 +1,17 @@
+---
+name: "McGill Taiwanese Students’ Association (MTSA)"
+description: |
+  The McGill Taiwanese Students Association (MTSA) is the one and only Taiwanese student community at McGill University. Our main goal is to promote the most exciting and essential parts of Taiwanese culture and to forge a strong and open student society. While we pride ourselves yearly in our past and continuing commitments to our members and their interests, we hope this year to reinvent areas of this society by focusing on a unique, multicultural approach to our rich culture.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgill.mtsa"
+  instagram: "https://www.instagram.com/mtsalovesyou/"
+  other:
+website: "https://mtsa.netlify.app/"
+contact_info: |
+  mtsa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

@@ -1,0 +1,16 @@
+---
+name: "The Plumber's Faucet"
+description: |
+  The Plumber's Faucet is a satirical publication written by and for engineering students. The Faucet covers topics from on-campus events, the life of an engineering student, to the basic rigmarole of being a human bean. The Faucet is usually around 16 pages, published every 6 weeks or so, and can be found in the stands around engineering buildings and more.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ThePlumbersFaucet/"
+  other:
+website: "https://faucet.mcgilleus.ca"
+contact_info: |
+  faucet@mcgilleus.ca
+categories:
+  faculty specific:
+    - Engineering
+  culture:
+    - Publication & Writing

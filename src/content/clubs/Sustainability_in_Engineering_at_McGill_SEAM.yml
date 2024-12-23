@@ -1,0 +1,20 @@
+---
+name: "Sustainability in Engineering at McGill (SEAM)"
+description: |
+  Sustainability in Engineering at McGill (SEAM), is a committee within the Engineering Undergraduate Society (EUS). The committee was formally founded in 2014. SEAM's purpose is to foster and promote a culture of sustainability in the Engineering community. SEAM's main efforts are planning events, managing projects, providing consulting work, and offering sustainability resourcesto the McGill Engineering community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/sustainability.eus/"
+  other:
+    - "https://www.linkedin.com/company/seammcgill/about/"
+website: "http://seam.mcgilleus.ca/"
+contact_info: |
+  seam.chair@mcgilleus.ca
+categories:
+  community support:
+    - Sustainability
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

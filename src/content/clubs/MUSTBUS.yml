@@ -1,0 +1,16 @@
+---
+name: "MUSTBUS"
+description: |
+  MUSTBUS is a student-led initiative focused on providing low-cost transit travel. The organization offers weekend and holiday bus services for McGill students to explore cities like Toronto, NYC, and more. Through the service, we hope to promote student mobility and public transit usage/education for the student body.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MUSTBUSCOOP"
+  instagram: "https://www.instagram.com/mustbuscoop/"
+  other:
+    - "https://www.linkedin.com/company/mustbus/"
+website: "http://www.mustbuscoop.ca/"
+contact_info: |
+  mustbus@ssmu.ca
+categories:
+  community support:
+    - Service

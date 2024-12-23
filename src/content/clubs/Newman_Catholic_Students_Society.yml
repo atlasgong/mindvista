@@ -1,0 +1,15 @@
+---
+name: "Newman Catholic Students’ Society"
+description: |
+  The Newman Catholic Students’ Society is the Catholic student community of McGill University. Based out of the Newman Centre of McGill University, we seek to make our Christian faith alive through social activities and community life, faith formation and spiritual enrichment, charitable outreach and service, and a strong sense of friendship and fellowship among our members. We also enthusiastically collaborate with our brothers and sisters in other Christian and religious groups on campus. Finally, we are open for any student, regardless of their religious affiliation, to come hang out and take a break from the busy life of a student in a warm, comfy, and communal atmosphere.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillcatholics/"
+  other:
+website: "https://www.mcgillcatholics.ca/"
+contact_info: |
+  mcgillcatholics@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

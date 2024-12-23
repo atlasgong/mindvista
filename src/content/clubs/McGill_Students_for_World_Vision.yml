@@ -1,0 +1,17 @@
+---
+name: "McGill Students for World Vision"
+description: |
+  McGill Students for World Vision is founded with the mission to help achieve the goals set by World Vision—a humanitarian charity organization dedicated to working with children, families, and communities worldwide. We set out to tackle the causes of poverty and injustice in these communities, and we are determined to improve the lives of all disadvantaged children and families regardless of religion, race, ethnicity, and gender. Our key activities include fundraising, advocacy, and education within the McGill community in order to promote awareness on campus and student participation in both international and Canadian World Vision programs.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillworldvision/"
+  instagram: "https://www.instagram.com/worldvisionmcgill/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-students-for-world-vision/"
+website: "https://worldvision.ssmu.ca/"
+contact_info: |
+  worldvision.mcgill@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

@@ -1,0 +1,18 @@
+---
+name: "McGIll Chem-E Car"
+description: |
+  It's simple really; Chem-E Car are a group of university students who wanted to participate in a design team. The chemical engineering background shared by much of our team led us to look past conventional engineering competitions. Thus, we decided to participate in the AIChE Chem-E Car competition for the first time in March 2014.
+status: active
+social_media:
+  facebook: "http://fb.com/McGillChemECarTeam"
+  instagram: "https://www.instagram.com/mcgill.chemecar/"
+  other:
+website: "http://mcgillchemecar/"
+contact_info: |
+  chemecar@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

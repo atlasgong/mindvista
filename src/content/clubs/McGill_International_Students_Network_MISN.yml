@@ -1,0 +1,17 @@
+---
+name: "McGill International Students Network (MISN)"
+description: |
+  The McGill International Student Network is an orgaMcto Montreal and McGill! Our events allow students to take part in cultural activities, excursions in Quebec, Canada and other countries, as well as meet other fellow international students! We also provide language exchange services and free language classes. All students – both Canadian and international – are welcome to join!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillisn/"
+  instagram: "https://www.instagram.com/misnmcgill/"
+  other:
+website: "https://misn.ssmu.ca/"
+contact_info: |
+  misn@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

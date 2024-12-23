@@ -1,0 +1,16 @@
+---
+name: "Radio CKUT 90.3 FM"
+description: |
+  CKUT 90.3 FM is a non-profit, campus-community radio station based at McGill University. We've been powered by McGill students since we began as the radio club in the 1940s, and a dedicated group of McGill students fought to get us on the FM airwaves in 1987 - and won! CKUT provides alternative music, news and spoken word programming to the city of Montreal, surrounding areas, & around the world 24 hours a day, 365 days a year. Hear us at 90.3 MHz on the FM dial, 91.7 by cable, or listen online at ckut.ca. CKUT is made up of over 200 student and community volunteers working with a staff of coordinators to make creative and insightful radio programming. As a campus-community radio station, CKUT’s mandate is to provide an essential service to those in the Montreal community whose needs are not met by mainstream commercial radio. CKUT functions not only as an alternative to the status quo, but also as a viable community resource. CKUT serves as a training ground for the community and student populations, and in doing so, provides an essential educational and information service to the greater Montreal community. Students can listen to CKUT at 90.3FM on the radio dial, online at ckut.ca or on the go with the free Tune-In App. To get involved, email volunteering@ckut.ca!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/RadioCKUT/"
+  instagram: "https://www.instagram.com/ckutmtl/"
+  other:
+    - "https://www.linkedin.com/company/ckut-radio/"
+website: "https://ckut.ca/"
+contact_info: |
+  funding@ckut.ca
+categories:
+  community support:
+    - Social Activism

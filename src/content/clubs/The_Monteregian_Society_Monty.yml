@@ -1,0 +1,20 @@
+---
+name: "The Monteregian Society (Monty)"
+description: |
+  The undergraduate society for Earth & Planetary Sciences and Earth System Science students at McGill University.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/profile.php?id=100067185693800"
+  instagram: "https://www.instagram.com/montysociety/"
+  other:
+website: "https://www.monteregiansociety.com/"
+contact_info: |
+  monteregian@eps.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

@@ -1,0 +1,20 @@
+---
+name: "Engineering Adventure Committee"
+description: |
+  The Engineering Adventure Committee is dedicated to organizing fun and inclusive non-drinking events for engineering undergraduate students at McGill. If you are interested in participating in exciting and low cost events, check out our Facebook Page for more information on upcoming events!
+status: active
+social_media:
+  facebook: "http://fb.com/EngAdventures"
+  other:
+website: "https://eus.wiki/Engineering_Adventure_Committee"
+contact_info: |
+  eac@mcgilleus.ca
+categories:
+  community support:
+    - Service
+  career:
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

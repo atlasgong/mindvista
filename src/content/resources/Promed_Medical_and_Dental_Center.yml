@@ -1,0 +1,21 @@
+---
+name: "Promed Medical and Dental Center"
+description: |
+  Promed Medical and Dental Center offers a variety of services such as dental, medical, physiotherapy, diet and nutrition, and more.
+status: active
+availability:
+  - telephone
+insurance:
+  details: |
+    Contact for information regarding insurance and costs.
+website: "http://www.promedweb.com"
+contact_info: |
+  514-845-1800
+location: "1250 rue Mansfield, 3rd floor, corner of St-Catherine"
+categories:
+  medical services:
+    - Medical Clinic
+    - Dental Clinic
+    - Physiotherapy
+  on campus:
+    - Off-Campus

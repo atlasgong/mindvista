@@ -1,0 +1,16 @@
+---
+name: "Nordic Culture Club"
+description: |
+  The McGill Students’ Nordic Culture Club (NCC) is a student group of the SSMU (Students’ Society of McGill University) whose purpose is to provide opportunities for students of all backgrounds to explore an interest in Nordic (Danish, Finnish, Icelandic, Norwegian and Swedish) culture. In addition to providing a welcoming space for anyone to learn about Nordic art, languages, holidays, and more, our events help students with existing ties to the Nordic countries to connect on campus. Join us for casual fika or for any of our special events throughout the school year!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgill.ncc"
+  instagram: "https://www.instagram.com/mcgill_ncc/"
+  other:
+contact_info: |
+  nordicculture@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

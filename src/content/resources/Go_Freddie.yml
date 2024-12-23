@@ -1,0 +1,22 @@
+---
+name: "Go Freddie"
+description: |
+  Go Freddie offers online PreP services. Through Go Freddie, patients can speak with an affirming clinician for blood tests prior to starting the medication. PreP prescriptions and medication delivery are avaliable for free or at a low cost at Go Freddie. The Go Freddie Health Hub also provides LGBTQ+ focused sexual health services and wellness ressources.
+status: inactive
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.gofreddie.com/"
+contact_info: |
+  437-747-7584
+location: "Online service with locations across Canada."
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  medical services:
+    - STI Testing
+  on campus:
+    - Off-Campus

@@ -1,0 +1,20 @@
+---
+name: "Rockland MD"
+description: |
+  Rockland MD is a private medical and surgical center that offers general and preventative medicine, as well as specialized care and complementary services such as nutrition. There are fees to open a file, and for the consultation. Additional fees for testing.
+status: active
+availability:
+  - telephone
+insurance:
+  details: |
+    Contact organization regarding pricing and insurance coverage.
+website: "https://www.rocklandmd.com/"
+contact_info: |
+  514-667-3383
+location: "100 Chemin Rockland, Suite 500, 1538 Sherbrooke West"
+categories:
+  medical services:
+    - Medical Clinic
+    - Lab
+  on campus:
+    - Off-Campus

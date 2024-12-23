@@ -1,0 +1,24 @@
+---
+name: "Dental Students' Society (DSS)"
+description: |
+  The Dental Students’ Society (DSS) represents the student body of all students studying to acquire a DMD degree and which are currently enrolled in the Faculty of Dentistry at McGill University. It serves to promote the views of its members in all dealings with the Faculty of Dentistry of McGill University and the University at large.  
+  
+  
+  
+  The DSS serves to encourage interaction among its members and to disseminate information pertinent to the academic, professional and cultural enrichment of all its members.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/DSSmcgill"
+  instagram: "https://www.instagram.com/mcgilldentistry/"
+  other:
+website: "https://mcgilldss.com/"
+contact_info: |
+  president.dss@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Dentistry
+  culture:
+    - Student Society

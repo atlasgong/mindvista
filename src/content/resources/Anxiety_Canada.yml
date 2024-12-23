@@ -1,0 +1,22 @@
+---
+name: "Anxiety Canada"
+description: |
+  Anxiety Canada is a registered charity and non-profit organization created to raise awareness about anxiety and support access to proven resources and treatment. They are a leader in developing free, online self-help and evidence-based tools to help manage anxiety. Anxiety Canada offers a variety of services such as group therapy, an anxiety app, online courses, videos, podcasts, and pdf and downloadable resources.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+  details: |
+    Free, except for assessment fee, which is returned upon completion of the group CBT program.
+website: "https://www.anxietycanada.com/"
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Psychological
+    - Mental Wellness
+    - Support Group

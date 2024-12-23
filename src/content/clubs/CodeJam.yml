@@ -1,0 +1,17 @@
+---
+name: "CodeJam"
+description: |
+  Annual 36-hour programming competition @ McGill
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillcodejam/"
+  instagram: "https://www.instagram.com/mcgillcodejam"
+  other:
+    - "https://www.linkedin.com/company/codejam"
+website: "http://codejam.mcgilleus.ca/"
+contact_info: |
+  codejam@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

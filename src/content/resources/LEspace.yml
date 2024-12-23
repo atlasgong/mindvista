@@ -1,0 +1,22 @@
+---
+name: "L'Espace"
+description: |
+  L'Espace is a group of psychologists and psychotherapists that are passionate about adressing the mental health issues of today. Their services include individual therapy, couples therapy, child/adolescent therapy, teletherapy, group therapy and flash appointments. Appointments can be made by phone, email or on their website.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.lespacepsychologie.com/services"
+contact_info: |
+  Phone number: 438-520-2013   Email: info@lespacepsychologie.com
+location: "1591 rue Fleury, Est. Suite 300, H2C1S7"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Counselling
+    - Mental Wellness
+    - Psychological
+    - Support Group

@@ -1,0 +1,15 @@
+---
+name: "McGill Armenian Students Association (MASA)"
+description: |
+  McGill Armenian Students Association (MASA) aims to unite McGill students and advance multiculturalism and academic progress by promoting Armenian culture, heritage, and history. Through engaging cultural events, historical presentations, and charitable promotions, we hope to extend our wonderful culture with our fellow McGill students. MASA is not only for Armenians, and we welcome all students to join the club and take part in our events!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillASA/"
+  other:
+contact_info: |
+  asa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

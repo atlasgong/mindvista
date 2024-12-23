@@ -1,0 +1,16 @@
+---
+name: "Legal Information Clinic at McGill (LICM)"
+description: |
+  The LICM is committed to increasing access to justice for McGill and Montreal communities and to meeting the needs of students and marginalized groups because justice matters for everyone. We offer free and bilingual legal information as well as student advocacy services.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/licm.cijm/"
+  instagram: "https://www.instagram.com/licm_cijm/"
+  other:
+    - "https://www.linkedin.com/company/licm-cijm/"
+website: "https://licm.ca/"
+contact_info: |
+  438-944-6546
+categories:
+  community support:
+    - Service

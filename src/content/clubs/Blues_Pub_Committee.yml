@@ -1,0 +1,17 @@
+---
+name: "Blues Pub Committee"
+description: |
+  Blues Pub is a student run bar that occurs on a weekly basis in the McConnell Engineering Common Room. A long withstanding tradition in the faculty of engineering, Blues Pub is a place to gather, drink beverages, and relax from a long week of trying academics.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillBluesPub"
+  instagram: "https://www.instagram.com/mcgill.bluespub/?hl=fr"
+  other:
+website: "https://eus.wiki/Blues_Pub"
+contact_info: |
+  blues.pub@mcgilleus.ca
+categories:
+  community support:
+    - Service
+  faculty specific:
+    - Engineering

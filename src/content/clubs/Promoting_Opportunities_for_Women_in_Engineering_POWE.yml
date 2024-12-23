@@ -1,0 +1,19 @@
+---
+name: "Promoting Opportunities for Women in Engineering (POWE)"
+description: |
+  Promoting Opportunities for Women in Engineering (POWE) is a McGill student-run organization with a vision to increase the presence of women in the engineering classroom and profession. To achieve this goal, POWE reaches out to future engineering students and supports current students through professional development activities.
+status: active
+social_media:
+  facebook: "http://fb.com/powemcgill"
+  instagram: "https://www.instagram.com/powemcgill/"
+  other:
+    - "https://www.linkedin.com/company/powemcgill/?originalSubdomain=ca"
+website: "http://powe.mcgilleus.ca/"
+contact_info: |
+  powe@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

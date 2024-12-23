@@ -1,0 +1,15 @@
+---
+name: "Club de débat francophone"
+description: |
+  The Club de débat francophone is McGill’s francophone debate club. Our mission is to bring together French-speaking students through the art form of debating. Whether you want to practice your French, regularly compete in tournaments across Quebec, or make new friends, join us at one of our weekly practices, no experience required!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/cdfmcgill/"
+  other:
+contact_info: |
+  clubdebatmcgill@ssmu.ca
+categories:
+  career:
+    - Professional Development
+  culture:
+    - Leisure & Hobbies

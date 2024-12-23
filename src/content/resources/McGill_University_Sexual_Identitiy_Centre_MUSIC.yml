@@ -1,0 +1,22 @@
+---
+name: "McGill University Sexual Identitiy Centre (MUSIC)"
+description: |
+  The McGill University Sexual Identity Centre (MUSIC) provides specialized mental health care to individuals, couples and families with sexual orientation and gender identity issues. Their clientele includes people who are questioning their gender identity or sexual orientation or who feel unhappy about it, individuals and couples seeking to improve the quality of their interpersonal relationships, and couples and families who have concerns about a loved one’s gender identity or sexual orientation. MUSIC also works to enhance the health of the larger community through research, education, outreach and advocacy around sexual orientation and gender issues, homophobia and transphobia.
+status: active
+availability:
+  - in_person
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+website: "McGill University Sexual Identity Centre (MUSIC) | McGill University Health Centre (muhc.ca)"
+contact_info: |
+  General phone number: 514-934-1934
+location: "Located at the Montreal General Hospital, 1650 Cedar Avenue Montreal, Quebec Canada H3G 1A4, Second Floor A2-160"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness

@@ -1,0 +1,22 @@
+---
+name: "Dialogue (app)"
+description: |
+  Dialogue provides virtual mental health care to Canadians. They provide high quality healthcare services delivered with expertise, convenience, and warmth.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    SSMU members are automatically covered by HI (Virtual Health Care). The fee for full-year access (from Sept. 1, 2023 – Aug. 31, 2024) is $44.84. New Winter Term students pay $29.90 for access from Jan. 1 – Aug. 31, 2024. Please check your tuition statement to confirm if you've been automatically charged the HI (Virtual Health Care) fee.
+website: "https://www.studentcare.ca/rte/en/McGillUniversityundergraduatestudentsSSMU_Dialogue_Dialogue"
+categories:
+  medical services:
+    - Medical Clinic
+    - STI Testing
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness

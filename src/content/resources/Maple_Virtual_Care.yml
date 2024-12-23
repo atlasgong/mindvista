@@ -1,0 +1,23 @@
+---
+name: "Maple Virtual Care"
+description: |
+  Maple Virtual Care provides Medivie Blue Cross plan memebers 24/7 on-demand access to doctors by secure text or video for advice, diagnosis and prescriptions. Members can talk with a physician within minutes online. Services include Doctor's notes, prescriptions, medical advice, lab work requisitions and mental health services.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Blue Cross
+website: "https://www.mcgill.ca/internationalstudents/health/coverage/maple-virtual-care"
+contact_info: |
+  Website: https://www.getmaple.ca/medavie-rdzjlguyyb/?ext_id=124c1a7f9be3219db2c7b25b5d6026af
+categories:
+  medical services:
+    - Lab
+    - Medical Clinic
+  on campus:
+    - On-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness

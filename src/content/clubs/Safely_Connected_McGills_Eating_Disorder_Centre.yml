@@ -1,0 +1,16 @@
+---
+name: "Safely Connected McGill’s Eating Disorder Centre"
+description: |
+  Safely Connected McGill is the first post-secondary chapter of the not-for-profit organization Safely Connected. As a part of Safely Connected’s chapters program, it belongs to what will become a network of university based community resources. Run by peers, for peers, Safely Connected McGill has a youth centered approach and understanding to care, education and advocacy. Safely Connected McGill is dedicated to providing and creating inclusive, accessible resources and content that address, acknowledge and break down the white centered, cisnormative, ableist stereotypes and structures of care for eating disorders. Diet culture, fitness culture and fatphobia create unsafe, activating and toxic environments and conceptions of the meaning of food, health and bodies. Safely Connected McGill aims to break down the unrealistic and distorted aims of these forces, to create university campuses that become spaces of care, recognition and understanding, allowing students to connect and heal through community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/safelyconnectedmcgill"
+  instagram: "https://www.instagram.com/mcgilleatingdisordercentre/"
+  other:
+    - "https://www.linkedin.com/company/eating-disorder-resource-support-centre"
+website: "https://edrsc.ssmu.ca/"
+contact_info: |
+  eatingdisorder@ssmu.ca
+categories:
+  community support:
+    - Service

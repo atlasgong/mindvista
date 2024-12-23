@@ -1,0 +1,21 @@
+---
+name: "Neuroscience Undergraduates of McGill (NUM)"
+description: |
+  The Neuroscience Undergraduates of McGill (NUM) council is a student organization dedicated to serving the needs and wants of McGill Neuroscience students and other neuroscience enthusiasts. Hosting events, organizing a buddy mentorship program and providing students with support and resources are just some of the ways we go about achieving this.
+  
+  Throughout the year, we host academic and social events. These events include, but are not limited to: annual Meet & Greet with fellow neuroscience students, Buddy bonding events, Meet the Professor events, apartment crawls, career information sessions, trivia nights and Wine & Cheese events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/sumsmcgill"
+  other:
+website: "http://num.sus.mcgill.ca/"
+contact_info: |
+  num@sus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

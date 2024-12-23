@@ -1,0 +1,16 @@
+---
+name: "Franc-Jeu"
+description: |
+  We are a French theatre club that organizes weekly improv workshops and a play at the end of each semester. Join us to improve your improvisation and acting skills and to meet people with the same passion as yours! You don’t need to have acted before to come to our workshops, everyone is invited!
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/francjeutheatre/"
+  instagram: "https://www.instagram.com/francjeu/?hl=en"
+  other:
+contact_info: |
+  francjeu@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

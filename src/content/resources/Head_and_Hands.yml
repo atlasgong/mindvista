@@ -1,0 +1,26 @@
+---
+name: "Head and Hands"
+description: |
+  Head and Hands is a youth health service that provides free medical services, legal services, counseling services, and food pantry for young adults aged 12 to 25. Head and Hands prioritizes harm-reduction, non-judgment, education, holistic care, and confidentiality.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://www.headandhands.ca/"
+contact_info: |
+  514-481-0277   info@headandhands.ca
+location: "3465 ave Benny
+Montreal, QC H4B 2R9"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  support and community services:
+    - Legal Service
+    - Accessibility
+  mental health services:
+    - Counselling

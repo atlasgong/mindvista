@@ -1,0 +1,17 @@
+---
+name: "McGill Student Boxing Club"
+description: |
+  This is a student-run club that aims to bring together both boxers and aspiring boxers of McGill University and provide trainings in a safe and social environment. The club is co-ed and people of all skill levels are welcome!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillBoxingClub/"
+  instagram: "https://www.instagram.com/mcgillssmuboxing/?hl=en"
+  other:
+website: "https://mcgillstudentboxingclub.ca/"
+contact_info: |
+  mcgillboxingclub@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

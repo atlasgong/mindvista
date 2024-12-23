@@ -1,0 +1,18 @@
+---
+name: "McGill Students’ Emergency Response Team (MSERT)"
+description: |
+  The McGill Student Emergency Response Team is a student-run volunteer service, supported by the Students' Society of McGill University (SSMU). Our mission is to provide a free and accessible first aid service to McGill University and the greater Montreal community. Our team is made up of 75+ dedicated volunteers that are certified First Responders under the Canadian Red Cross. We carry a wide range of first aid equipment, including automated external defibrillators, oxygen tanks, cervical collars, and Epi-Pens, and we operate under nationally-recognized protocols. We respond to all McGill residences, with the exception of Solin Hall, between the hours of 18h00 and 6h00. As an official training partner of the Canadian Red Cross, we aim to disseminate first aid knowledge and skills to the public, by offering first aid courses and certifications.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/msertfirstaid/"
+  instagram: "https://www.instagram.com/msert.mcgill/"
+  other:
+    - "http://www.twitter.com/MSERTFirstaid"
+website: "http://www.msert.ca/"
+contact_info: |
+  msert@ssmu.ca
+categories:
+  community support:
+    - Service
+  career:
+    - Healthcare

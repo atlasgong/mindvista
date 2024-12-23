@@ -1,0 +1,15 @@
+---
+name: "Poseidon Water Polo"
+description: |
+  We are a student run club that aims to bring together players of all experience levels. Poseidon plays in the University and Quebec Water Polo leagues. Our practices are twice a week and are great to stay in shape and make new friends!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillwaterpolo/"
+  other:
+contact_info: |
+  poseidonwaterpolo@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

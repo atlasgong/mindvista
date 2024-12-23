@@ -1,0 +1,27 @@
+---
+name: "Centre Médicale Metro-Medic"
+description: |
+  Centre Médicale Métro Médic provides services in family medicine, dermatology, gynecology, and psychiatry, as well as access to diagnostic services provided by their wholly owned subsidiary, CDL Laboratories. Minor and general surgery services are also offered at this clinic.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+  details: |
+    RAMQ-affiliated clinics covers most of the cost. Private clinics are covered by most private insurance plans.
+website: "https://www.metromedic.com"
+contact_info: |
+  514-932-2122
+location: "1538 Sherbrooke Street West, Suite 100
+Montréal, Québec, H3H 2L9"
+categories:
+  medical services:
+    - Medical Clinic
+    - Lab
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Mental Wellness

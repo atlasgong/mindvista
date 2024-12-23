@@ -1,0 +1,18 @@
+---
+name: "Spanish and Latin American Students’ Association of McGill University (SLASA)"
+description: |
+  SLASA is a student-run organization based in Montreal, Canada since 1989. We serve as a social and professional network for the Spanish-Speaking and Latin students at McGill University.
+   
+   Throughout the year, we organize many events and activities to celebrate and share our culture, promote the academic success of Spanish-Speaking McGillians, and integrate our members into the greater Montreal community. SLASA is an inclusive organization, and all are welcome to attend our events and participate in our discussions regardless of language, cultural background, or citizenship.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/SLASA.Mcgill/"
+  other:
+website: "https://slasa.ssmu.ca/"
+contact_info: |
+  slasamcgill@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

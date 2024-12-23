@@ -1,0 +1,17 @@
+---
+name: "Folio Magazine"
+description: |
+  Folio is a student-run visual art and design magazine that acts as an ongoing archive of McGill’s artistic community by providing a venue for student artists to showcase their work. It is published biannually.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/foliooo"
+  other:
+website: "https://www.foliomagazine.ca/"
+contact_info: |
+  foliomag@gmail.com
+categories:
+  arts:
+    - Fine Art
+  culture:
+    - Leisure & Hobbies
+    - Publication & Writing

@@ -1,0 +1,18 @@
+---
+name: "McGill Artificial Intelligence Society"
+description: |
+  McGill Artificial Intelligence Society, or McGill AI, aims to foster interest in AI through teaching, sharing, and competition, to connect with industry in a collaborative manner, and to provide a passionate AI community within McGill University that is accessible to all, regardless of background or experience.
+status: active
+social_media:
+  facebook: "http://fb.com/McGillAI"
+  instagram: "https://www.instagram.com/mcgillaisociety?fbclid=IwAR2rNGD02YiWy91QINRCye_QcEQNNv3qbNjHJo_2WP19iq6h3s_uou7uOrI"
+  other:
+website: "https://mcgillai.com/"
+contact_info: |
+  mcgillaicontact@gmail.com
+categories:
+  career:
+    - Technology
+    - Networking
+  faculty specific:
+    - Engineering

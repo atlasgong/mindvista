@@ -1,0 +1,25 @@
+---
+name: "Black Healing Center (BHC)"
+description: |
+  The BHC provides access to free and subsidized therapy to members of the Black community. They aim to counteract the shared trauma that comes with the Black experience by empowering those of Black descent to reclaim their mental, physical, emotional and spiritual wellness. BHC offers services including support groups such as the Black Men's Wellness program, Black Queer and Trans Collective Circle, and Black Women's Collective Care Circle. They also provide training, retreat and research opportunities.
+status: active
+availability:
+  - online
+  - in_person
+insurance:
+  insurance:
+    - Free
+website: "https://www.blackhealingcentre.com/"
+contact_info: |
+  Email: info@blackhealingcentre.com    Facebook: Black Healing Center   Instagram: blackhealingcenter
+location: "Locations vary."
+categories:
+  bipoc services:
+    - Bipoc Services
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Support Group
+    - Mental Wellness

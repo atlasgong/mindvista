@@ -1,0 +1,17 @@
+---
+name: "McGill Students Chapter of Jack.Org"
+description: |
+  The McGill Students Chapter of Jack.org is a student initiative advocating for youth mental health and well-being both on campus and in the greater Montreal community. We host various events throughout the year including Outreach initiatives as well as de-stress activities in order to initiate conversations surrounding mental health amongst the McGill community. Our goal is to increase mental health awareness and understanding amongst students and young people. We want to open up the conversation about mental health to reach not only the 1 in 5 who experience mental illness but also the 5 in 5 who have mental health.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilljack.org/"
+  instagram: "https://www.instagram.com/mscjackdotorg/"
+  other:
+website: "https://jack.org/chapters/mcgill-university"
+contact_info: |
+  mscjackdotorg@gmail.com
+categories:
+  community support:
+    - Social Activism
+  career:
+    - Healthcare

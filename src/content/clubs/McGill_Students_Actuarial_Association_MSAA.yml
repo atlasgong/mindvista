@@ -1,0 +1,16 @@
+---
+name: "McGill Students’ Actuarial Association (MSAA)"
+description: |
+  The McGill Students’ Actuarial Association is a nascent SSMU student club looking to boost support for aspiring actuaries at McGill. We serve as a liaison between actuarial students and their goals, providing members with information on actuarial science to allow them to break into the actuarial world. We provide a place where students with similar interests can connect with one another and be represented for by a student association.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgill.msaa/"
+  other:
+website: "https://mcgillmsaa.wordpress.com/"
+contact_info: |
+  msaa@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Finance
+    - Networking

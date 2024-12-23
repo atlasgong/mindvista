@@ -1,0 +1,16 @@
+---
+name: "McGill Dharma Society"
+description: |
+  McGill Dharma Society (MDS) serves as the official campus representation for students belonging to Hindu and other Dharmic traditions. MDS provides community and resources for students of these faiths, as well as allows students of all backgrounds to collectively learn about and participate in our spiritual and cultural practices.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilldharmasociety"
+  instagram: "https://www.instagram.com/mcgilldharmasociety/"
+  other:
+    - "http://www.twitter.com/McGillDharma"
+contact_info: |
+  dharmasociety@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

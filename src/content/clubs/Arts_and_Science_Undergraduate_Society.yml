@@ -1,0 +1,20 @@
+---
+name: "Arts and Science Undergraduate Society"
+description: |
+  The Arts & Science Undergraduate Society (formerly Bachelor of Arts & Science Integrative Council) of McGill University is a student organization that represents the students enrolled in the Faculty of Arts & Science.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillasus/"
+  instagram: "https://www.instagram.com/mcgillasus/"
+  other:
+website: "https://www.mcgillasus.com"
+contact_info: |
+  communications@mcgillasus.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

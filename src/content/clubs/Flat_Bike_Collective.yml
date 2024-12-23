@@ -1,0 +1,16 @@
+---
+name: "Flat Bike Collective"
+description: |
+  The Flat Bike Collective is a student run organization at McGill dedicated to promoting cycling as an accessible, affordable, and environmentally friendly mode of transportation. We seek to empower cyclists by encouraging self sufficiency and to foster the cycling community both on and off campus.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/TheFlatBikeCollective"
+  instagram: "https://www.instagram.com/theflatbikecollective/"
+  other:
+website: "http://www.theflat.wordpress.com/"
+contact_info: |
+  theflat.bikecollective@gmail.com
+categories:
+  community support:
+    - Sustainability
+    - Service

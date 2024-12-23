@@ -1,0 +1,18 @@
+---
+name: "Les Muses Chorale"
+description: |
+  Les Muses Chorale is a women’s choral ensemble affiliated with the Student’s Society of McGill University (SSMU). We began in 2001 as “Simply Sweetly,” a group of talented young women who created a McGill club to express their passion for fun and challenging choral music. Now in our 20th season, Les Muses Chorale is proud to be a vibrant ensemble dedicated to choral excellence.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/LesMusesChorale"
+  instagram: "https://www.instagram.com/lesmuseschorale/?hl=en"
+  other:
+    - "https://www.youtube.com/channel/UCOVF6MmBeD58-Tp3ydCkdsw/videos?view=0&sort=dd&shelf_id=0"
+website: "https://lesmuseschorale.wordpress.com/"
+contact_info: |
+  lesmuseschorale@ssmu.ca
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

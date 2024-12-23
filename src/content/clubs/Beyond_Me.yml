@@ -1,0 +1,16 @@
+---
+name: "Beyond Me"
+description: |
+  Beyond Me is a student-run non-profit organization in Montreal that provides one-on-one mentoring services for children and teenagers with special needs.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mtlbeyondme/"
+  instagram: "https://www.instagram.com/beyondme_mcgill/"
+  other:
+website: "https://www.montrealbeyondme.ca/"
+contact_info: |
+  montrealbeyondme@gmail.com
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

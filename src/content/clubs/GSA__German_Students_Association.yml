@@ -1,0 +1,18 @@
+---
+name: "GSA – German Students’ Association"
+description: |
+  The German Students' Association of McGill University, Montreal
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/gsamcgill/"
+  other:
+contact_info: |
+  gsamcgill@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

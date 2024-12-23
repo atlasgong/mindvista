@@ -1,0 +1,16 @@
+---
+name: "McGill Debating Union"
+description: |
+  The McGill Debating Union is one of the oldest and top university debating societies in the world. We compete regularly at tournaments across Canada and the US! We’re always welcoming new members, no experience necessary.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilldebate/"
+  instagram: "https://www.instagram.com/mcgilldebatingunion/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-debating-union/mycompany/"
+website: "https://debatingunion.ssmu.ca/"
+contact_info: |
+  mcgill.debating@ssmu.ca
+categories:
+  career:
+    - Professional Development

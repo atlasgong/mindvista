@@ -1,0 +1,21 @@
+---
+name: "McGill Sport Medicine Clinic"
+description: |
+  McGill's Sport Medicine Clinic provides sport medicine, massage therapy, physiotherapy, osteopathy, and more. Book an appointment through the website.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.mcgillsportmedicineclinic.ca"
+contact_info: |
+  sportsmedicine.athletics@mcgill.ca    514-398-7007
+location: "475 Pine Ave W, Montreal, Quebec H2W 1S4"
+categories:
+  medical services:
+    - Medical Clinic
+    - Physiotherapy
+  on campus:
+    - On-Campus

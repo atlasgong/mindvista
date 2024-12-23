@@ -1,0 +1,17 @@
+---
+name: "McGill Data Network"
+description: |
+  The McGill Data Network was created to prepare students for the ever-evolving data driven world by providing members with a platform to learn, develop and connect with data-related opportunities.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilldatanetwork/"
+  instagram: "https://www.instagram.com/mcgilldatanetwork/?hl=en"
+  other:
+website: "https://mcgilldatanetwork.weebly.com"
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Technology
+  faculty specific:
+    - Management

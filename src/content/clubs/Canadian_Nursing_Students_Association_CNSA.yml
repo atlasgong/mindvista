@@ -1,0 +1,16 @@
+---
+name: "Canadian Nursing Students Association (CNSA)"
+description: |
+  The Canadian Nursing Students’ Association (CNSA) is the national voice of Canadian nursing students. Our goal is to increase the legal, ethical, professional, and educational aspects which are an integral part of nursing. CNSA is actively dedicated to the positive promotion of nurses and the nursing profession as a whole.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/CNSA.AEIC"
+  other:
+    - "http://www.twitter.com/CNSA1"
+website: "http://www.cnsa.ca/"
+contact_info: |
+  mcgill@cnsa.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

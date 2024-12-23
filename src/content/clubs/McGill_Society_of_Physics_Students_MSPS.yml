@@ -1,0 +1,20 @@
+---
+name: "McGill Society of Physics Students (MSPS)"
+description: |
+  Composed of a group of 9 elected and appointed physics students, the McGill Society of Physics Students (MSPS) is McGill's official organisation representing the undergraduates in physics, including joint majors, and minors.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillphysics"
+  instagram: "https://www.instagram.com/msps_mcgill/"
+  other:
+website: "http://msps.sus.mcgill.ca/"
+contact_info: |
+  mcgill.physics@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

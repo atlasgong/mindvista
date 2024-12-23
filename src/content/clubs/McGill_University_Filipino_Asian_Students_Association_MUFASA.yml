@@ -1,0 +1,19 @@
+---
+name: "McGill University Filipino Asian Students Association (MUFASA)"
+description: |
+  MUFASA stands for McGill University’s Filipino Asian Students’ Association. Our club was founded in 1997 and is in its 21st year running. MUFASA is for Filipinos and Non-Filipinos alike!
+   
+   Our mission is to establish and create a network of Filipinos across McGill’s campus to educate and raise awareness of Filipino culture. We organize cultural fundraising events in support of different Filipino organizations -every little bit counts! Anyone can join: Filipinos, Non-Filipinos, Undergrad, Grad students!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MufasaMcgill/"
+  instagram: "https://www.instagram.com/mufasamcgill/?hl=en"
+  other:
+website: "https://mufasa.ssmu.ca/"
+contact_info: |
+  mufasa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

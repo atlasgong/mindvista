@@ -1,0 +1,16 @@
+---
+name: "McGill Italian Student Society"
+description: |
+  The McGill Italian Student Society embrasses and promotes italian culture on campus.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillitalians/"
+  instagram: "https://www.instagram.com/mcgill_iss/?hl=en"
+  other:
+contact_info: |
+  MISS@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

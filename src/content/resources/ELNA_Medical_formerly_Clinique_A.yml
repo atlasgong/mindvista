@@ -1,0 +1,24 @@
+---
+name: "ELNA Medical (formerly Clinique A)"
+description: |
+  Transgender health clinic/prescriptions/follow-up with Dr Landry (Private MD) available.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Pricing ranges from $100 - $325 depending on the service. Cancellation fee of $50 is applicable. Contact clinic for insurance coverage.
+website: "https://drgabriellelandry.com/en/hormone-therapy/"
+contact_info: |
+  514-787-0055
+location: "ELNA CLINIQUE A ESTHÉTIQUE
+407, McGill St, Office 900
+Montreal (Quebec) H2Y 2G3"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus

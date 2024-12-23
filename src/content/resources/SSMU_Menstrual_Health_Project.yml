@@ -1,0 +1,21 @@
+---
+name: "SSMU Menstrual Health Project"
+description: |
+  The SSMU Menstral Health Project is a service that aims to provide McGill students with free menstral products on campus. Every month the Menstrual Health Project Team gives out free sustainable and reusable menstrual products as well as disposable pads and tampons to members of the McGill Community. Visit their website to learn about the next menstral product pick up date and location.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://ssmu.ca/resources/menstrual-health-project/#:~:text=Monthly%20Period%20Product%20Pick%2DUp&text=Each%20month%2C%20the%20Menstrual%20Health,the%20McGill%20community%20for%20free."
+contact_info: |
+  Email: menstrualhealth@ssmu.ca                 Facebook: SSMU Menstrual Health Project              Instagram: ssmumenstrualhealth
+location: "Locations vary. Please verify by checking website."
+categories:
+  medical services:
+    - Menstrual Health
+  on campus:
+    - On-Campus
+  support and community services:
+    - Accessibility

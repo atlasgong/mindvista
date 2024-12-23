@@ -1,0 +1,19 @@
+---
+name: "Social Work Students' Association (SWSA)"
+description: |
+  SWSA is a liaison between students and faculty at the School of Social Work and between the School of Social Work and the wider McGill University community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillSWSA"
+  instagram: "https://www.instagram.com/swsamcgill/"
+  other:
+contact_info: |
+  internal.swsa@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Social Work
+  culture:
+    - Student Society

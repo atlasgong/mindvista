@@ -1,0 +1,19 @@
+---
+name: "Liberal McGill"
+description: |
+  Liberal McGill is accredited by the Young Liberals of Canada (Quebec) and is a student group of the Students’ Society of McGill University (SSMU). This page is a means to connect Liberals from across Canada with Liberals at McGill to discuss ideas, get information about our upcoming events, and further theCanadian political dialogue.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/YLCatMcGill?fref=ts"
+  instagram: "https://instagram.com/liberalmcgill?igshid=NzZlODBkYWE4Ng=="
+  other:
+    - "http://www.twitter.com/LiberalmcGill"
+website: "http://www.liberal.ca/"
+contact_info: |
+  liberalmcgill@gmail.com
+categories:
+  community support:
+    - Social Activism
+  career:
+    - Politics
+    - Professional Development

@@ -1,0 +1,16 @@
+---
+name: "McGill Students for Geriatric Health"
+description: |
+  Our mission in McGill Students for Geriatric Health is to raise awareness, create a dialogue, and establish connections with volunteer organizations on the subject matter of geriatric healthcare.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/msghmcgill"
+  instagram: "https://www.instagram.com/mcgillgeriatrichealth/?hl=en"
+  other:
+    - "https://ca.linkedin.com/company/mcgill-students-for-geriatric-health?trk=public_profile_experience-group-header"
+website: "https://geriatrichealth.ssmu.ca/"
+contact_info: |
+  mcgillgeriatrichealth@ssmu.ca
+categories:
+  career:
+    - Healthcare

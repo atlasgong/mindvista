@@ -1,0 +1,17 @@
+---
+name: "McGill Climbing Club"
+description: |
+  The McGill Climbing Club is a place where McGill students can try or develop their climbing! Ranging from beginners to national level climbers, the club has a spot for anyone who is interested in climbing. Each semester we run trips outdoors as well as weekly themed climbing sessions.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/profile.php?id=100087166224542"
+  instagram: "https://www.instagram.com/mcgillclimbing/"
+  other:
+website: "https://www.mcgilloutdoorsclub.ca/rock-climbing/"
+contact_info: |
+  mcgillclimbing@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,21 @@
+---
+name: "CSAUS – Canadian Studies Association of Undergraduate Students"
+description: |
+  The Canadian Studies Association of Undergraduate Students (CSAUS) represents undergraduate students both to the MISC and the AUS (Arts Undergraduate Society). We run events for students in Canadian Studies but welcome those from all departments with an interest in Canada! CSAUS also edits and organizes the annual undergraduate Canadian Studies journal, Canadian Content.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/mcgill.csaus/"
+  instagram: "@csaus.mcgill"
+  other:
+    - "https://www.linkedin.com/company/csaus/"
+website: "https://www.csausmcgill.com"
+contact_info: |
+  csaus.exec@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

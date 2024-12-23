@@ -1,0 +1,18 @@
+---
+name: "Engineering Games"
+description: |
+  Engineering Games (also known as Eng Games, or Jeux de Génie, JDG in french) is a province-wide engineering competition around which a community of engineering undergraduate students from 12 different schools is built. The Games themselves takes place during the first week of January every year, but the participants keep in touch and participate in many social events together year-round.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillenggames/"
+  other:
+website: "https://eus.wiki/Engineering_Games"
+contact_info: |
+  enggames@mcgilleus.ca
+categories:
+  career:
+    - Networking
+  faculty specific:
+    - Engineering
+  culture:
+    - Leisure & Hobbies

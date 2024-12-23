@@ -1,0 +1,17 @@
+---
+name: "McGill Students’ Classical Music Club (CMC)"
+description: |
+  As the name implies, the Classical Music Club (CMC) brings together people who share a love for classical music! Whether you’re a lifelong musician or someone who just enjoys listening, our club has something for everyone. Some of our initiatives include providing affordable tickets for exciting concerts and grouping people to play chamber music together. Don’t hesitate to reach out to us, and we look forward to meeting you!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillcmc/"
+  instagram: "https://www.instagram.com/mcgillcmc/"
+  other:
+website: "https://sites.google.com/site/mcgillcmc/"
+contact_info: |
+  mcgillcmc@gmail.com
+categories:
+  arts:
+    - Performance
+  culture:
+    - Leisure & Hobbies

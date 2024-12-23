@@ -1,0 +1,15 @@
+---
+name: "Information and Referral Centre of Greater Montreal (Centraide)"
+description: |
+  An autonomous bilingual agency. It gives free information on community resources and directs persons seeking help in solving their problems (e.g., drugs and alcohol, gambling) to the appropriate agency providing the service needed.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+website: "https://www.centraide-mtl.org/en/directory-of-agencies-and-projects/information-and-referral-center-of-greater-montreal/"
+categories:
+  substance use:
+    - Substance Use
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness

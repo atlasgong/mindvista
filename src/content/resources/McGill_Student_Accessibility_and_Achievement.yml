@@ -1,0 +1,30 @@
+---
+name: "McGill Student Accessibility and Achievement"
+description: |
+  McGill Student Accessibility and Achievement services provides ressources and accomodations for McGill students that are experiencing academic, mental, or physical barriers. Students must have a documented disability, mental health condition, chronic health condition, or other impairment. Appointments can be made online or in-person.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.mcgill.ca/access-achieve/"
+contact_info: |
+  Email: access.achieve@mcgill.ca                                 Tel: 514-398-6009 (select option 1 or 2)
+location: "Main Office: 1010 Sherbrooke Ouest
+Suite 410
+Montreal, Quebec 
+H3A 2R7                                                                           Exam Center: 3459 McTavish Street
+Room RS56
+Montreal, Quebec, H3A 0C9"
+categories:
+  on campus:
+    - On-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Psychological
+    - Mental Wellness
+  support and community services:
+    - Accessibility

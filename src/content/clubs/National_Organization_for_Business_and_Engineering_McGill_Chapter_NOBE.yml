@@ -1,0 +1,19 @@
+---
+name: "National Organization for Business and Engineering McGill Chapter (NOBE)"
+description: |
+  National Organization for Business and Engineering (NOBE) engages engineering students to diversify and broaden their engineering curriculum. Through exclusive skills-building workshops and networking events, NOBE provides engineering students with the skills, confidence, and network to excel in careers outside the typical engineering scope, such as consulting (management, tech, or engineering), banking, marketing, and more!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/NOBEMcGill/"
+  instagram: "https://www.instagram.com/nobemcgill/?hl=it"
+  other:
+    - "https://www.linkedin.com/company/nobemcgill/?originalSubdomain=ca"
+website: "https://eus.wiki/National_Organization_for_Business_and_Engineering_McGill_Chapter"
+contact_info: |
+  president@nobemcgill.org
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

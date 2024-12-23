@@ -1,0 +1,28 @@
+---
+name: "Montreal Sexual Assault Centre/CLSC Metro"
+description: |
+  Montreal Sexual Assault Centre/CLSC Metro provides accompaniment services, medical examinations, forensic examinations, medical monitoring and treatment, information on follow-up therapy, and a 24/7  crisis line.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://cvasm.org/main.asp?lang=en&page=accueil"
+contact_info: |
+  Sexual Violence Helpline:
+  1-888-933-9007
+  Montreal: 
+  514-933-9007
+  info@cvasm.ca
+categories:
+  violence services:
+    - Sexual Assault Services
+  medical services:
+    - Medical Clinic
+    - STI Testing
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Counselling

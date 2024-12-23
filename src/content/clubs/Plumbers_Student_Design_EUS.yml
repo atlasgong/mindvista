@@ -1,0 +1,17 @@
+---
+name: "Plumbers' Student Design EUS"
+description: |
+  Plumber's Student Design is a student-run service providing free, innovative and efficient graphic design solutions for EUS members and organizations. The PSD is a committee under the VP Communications.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/psdeus/"
+  other:
+website: "https://eus.wiki/Plumbers%27_Student_Design"
+contact_info: |
+  psd@mcgilleus.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Engineering

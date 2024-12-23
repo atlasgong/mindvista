@@ -1,0 +1,26 @@
+---
+name: "Native Women's Shelter of Montreal"
+description: |
+  Native Women's Shelter of Montreal (NWSM) provides a safe environment for Indigenous women and children to begin rebuilding their lives. Support and frontline services are offered to First Nations, Inuit and Métis women and children.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "http://www.nwsm.info/"
+contact_info: |
+  nakuset@gmail.com 514-933-4688
+location: "Contact organization for address"
+categories:
+  bipoc services:
+    - Bipoc Services
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Crisis Support
+    - Mental Wellness

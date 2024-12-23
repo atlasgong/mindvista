@@ -1,0 +1,20 @@
+---
+name: "West Island Crisis Center"
+description: |
+  The West Island Crisis Center provides support for adults 16 years of age or older who are experiencing a situational crisis, emotional distress, and suicidal ideation. They offer a 24/7 crisis line, crisis intervention in the community, short term residential stays, and post crisis support.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://www.centredecriseoi.com/en/index.html"
+contact_info: |
+  514-684-6160
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Crisis Support
+    - Psychological
+    - Support Group

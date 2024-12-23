@@ -1,0 +1,22 @@
+---
+name: "Suicide Action Montréal"
+description: |
+  Suicide Action Montreal (SAM) offers a range of services to Montrealers who are distressed or suicidal, to their family, the individual`s social network, workers and/or other professionals who might be involved. SAM also supports those who have experienced the suicide of a loved one. Their services provide research-based training for a diverse audience as well as resources specifically developed for workers, professionals, schools and organizations affected by suicide.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://suicideactionmontreal.org/en/"
+contact_info: |
+  Phone: 1-866-277-3553         Text: 535353
+categories:
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Crisis Support
+    - Psychological
+    - Crisis Support

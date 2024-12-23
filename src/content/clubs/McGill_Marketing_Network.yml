@@ -1,0 +1,19 @@
+---
+name: "McGill Marketing Network"
+description: |
+  The McGill Marketing Network (MMN) is a student-run organization which provides students passionate about marketing various professional growth, community-building, and learning opportunities. From conducting informational webinars and sharing relevant job postings to hosting networking sessions with experts from the industry, we bring together the right mix of resources and industry expertise to help students succeed in their professional life, and beyond.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/McGillMarketingNetwork/"
+  instagram: "https://www.instagram.com/musmarketingnetwork/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/mcgillmarketingnetwork/?originalSubdomain=ca"
+contact_info: |
+  mmn@mus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Marketing
+  faculty specific:
+    - Management

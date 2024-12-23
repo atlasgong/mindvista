@@ -1,0 +1,15 @@
+---
+name: "McGill University Photography Students’ Society (MUPSS)"
+description: |
+  The McGill University Photography Students Society (MUPSS), founded in 1978, is one of McGill’s oldest clubs. Today, the club offers a variety of services, events, and resources for McGill students and the greater Montréal photographic community. Every semester, the club hosts various events including: photo discussions, introductory workshops, and more. MUPSS also holds an annual photo exhibition to display the photography of members of the McGill community. An up to date schedule of these events can be found on the club Facebook, as well as by subscribing to our newsletter.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/MUPSSMcGill/"
+  instagram: "https://www.instagram.com/mupssmcgill/"
+  other:
+website: "http://www.mupss.ca/"
+contact_info: |
+  mupss.mcgill@gmail.com
+categories:
+  culture:
+    - Leisure & Hobbies

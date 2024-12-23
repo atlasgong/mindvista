@@ -1,0 +1,26 @@
+---
+name: "Inclusive Therapists"
+description: |
+  Inclusive Therapists is a mental health directory and community focused on liberation. They help you find and match with therapists committed to racial, 2SLGBTQIA+, neurodivergent, and disability justice. They hope to amplify BIPOC and QTBIPOC voices, as well as neurodivergent and disabled communities of color. They aim to work towards mental health liberation through education, care, and activism, celebrating marginalized identities, abilities, and bodies. They also provide and reference other resources and help lines that have similar values. They have therapists in Montreal, as well as the rest of Canada and USA.
+status: inactive
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://www.inclusivetherapists.com/"
+contact_info: |
+  Through website: https://www.inclusivetherapists.com/contact
+location: "N/A. They are an online directory"
+categories:
+  bipoc services:
+    - Bipoc Services
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory
+  mental health services:
+    - Mental Wellness
+    - Counselling

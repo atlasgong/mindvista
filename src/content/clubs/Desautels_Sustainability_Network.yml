@@ -1,0 +1,21 @@
+---
+name: "Desautels Sustainability Network"
+description: |
+  The Sustainability Network is a club for management students interested in pursuing careers in environmentally friendly businesses. The club aims to bring students together by hosting both professional and interactive events. In the past, events have included networking, speaker panels, and seasonal activities such as apple picking and yoga classes.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/DesautelsSustainabilityNetwork/"
+  instagram: "https://www.instagram.com/mcgilldsn/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/desautels-sustainabilitynetwork/"
+website: "https://www.mcgilldsn.com"
+contact_info: |
+  ford@mcgilldsn.ca
+categories:
+  community support:
+    - Sustainability
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Management

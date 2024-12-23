@@ -1,0 +1,20 @@
+---
+name: "Music Undergraduate Students' Association (MUSA)"
+description: |
+  
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillMUSA"
+  instagram: "https://www.instagram.com/mcgill_musa/"
+  other:
+website: "https://www.mcgillmusa.ca/"
+contact_info: |
+  administration.musa@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Music
+  culture:
+    - Student Society

@@ -1,0 +1,13 @@
+---
+name: "McGill Trivia Club"
+description: |
+  The McGill Trivia Club provides a forum for McGill students who enjoy trivia to assemble and indulge their interest. We meet twice a week to practice and we attend tournaments in Ottawa, Toronto, Waterloo, and Chicago.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/McGillTrivia/"
+  other:
+contact_info: |
+  mcgill.triviaclub@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

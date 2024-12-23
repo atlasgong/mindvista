@@ -1,0 +1,21 @@
+---
+name: "SSMU Walksafe"
+description: |
+  SSMU DriveSafe is a student-run service that provides McGill students with safe and free walks home. Walksafe volunteers wear easily-identifiable red jackets and provide their peers with a safe way to get to where they need to go.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://walksafe.ssmu.ca"
+contact_info: |
+  Email: executive@walksafe.ca
+  Phone: (514) 398-2498
+location: "Locations vary."
+categories:
+  on campus:
+    - On-Campus
+  support and community services:
+    - Safety Service
+    - Accessibility

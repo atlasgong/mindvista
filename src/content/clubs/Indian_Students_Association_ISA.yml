@@ -1,0 +1,17 @@
+---
+name: "Indian Students Association (ISA)"
+description: |
+  The Indian Students Association at McGill is a student-run organization that upholds Indian culture by celebrating various festivals throughout the year. The events are inclusive, unique, and energetic and will always leave you with a plethora of good memories. As the largest South-asian community on campus, the ISA aims to provide its members with a microcosm of rich Indian traditions. We are the bridge for anyone who wishes to get more involved with Indian culture, whether it’s through food, cinema, music or volunteer projects!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ISAMcGill/"
+  instagram: "https://www.instagram.com/isamcgillu/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-indian-students-association/mycompany/"
+contact_info: |
+  indianstudentsassociation@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

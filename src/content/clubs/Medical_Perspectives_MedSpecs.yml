@@ -1,0 +1,18 @@
+---
+name: "Medical Perspectives (MedSpecs)"
+description: |
+  Medical Perspectives (MedSpecs) is a McGill undergraduate organization that maintains a supportive community for students who are curious about medical careers to access information, exchange ideas, and gain experience first-hand.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillmedspecs/"
+  instagram: "https://www.instagram.com/mcgillmedspecs/"
+  other:
+    - "http://www.twitter.com/mcgillmedspecs"
+website: "https://medspecs.ssmu.ca/"
+contact_info: |
+  medspecs@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Healthcare
+    - Networking

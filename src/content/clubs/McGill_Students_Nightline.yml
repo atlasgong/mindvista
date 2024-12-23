@@ -1,0 +1,16 @@
+---
+name: "McGill Students’ Nightline"
+description: |
+  514-398-6246 to call, or visit our website for the online chat! McGill Students’ Nightline is a confidential, anonymous and non-judgmental listening service run by McGill students to provide the community with a variety of support. This includes anything from information, to crisis management, to referrals, to a chat on your way home. We are an English service in operation since 1984 open every night of the fall and winter semesters from 6pm to 3am. Feeling stressed, lonely, anxious, depressed, or suicidal? Looking to have a nice chat on your way home? Need to talk but don't think your friends would understand? Confused about booking an appointment at Health Services, Mental Health, or Counseling? Searching for the tastiest late-night pizza, or the closest poutine within a 500m radius? Want to talk about a difficult situation, like a sudden loss, tough relationship, or recent trauma? We're here for all of this (and more!) any night of the week. Give us a call, send us a chat!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgill.nightline/"
+  instagram: "https://www.instagram.com/nightlinemcgill/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-students-nightline/about/"
+website: "https://nightline.ssmu.ca/"
+contact_info: |
+  nightline@ssmu.ca
+categories:
+  community support:
+    - Service

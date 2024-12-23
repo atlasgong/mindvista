@@ -1,0 +1,16 @@
+---
+name: "Girls For Ghana"
+description: |
+  Girls for Ghana is a student-run club with the main goal of fundraising on behalf of the Create Change Foundation. The Create Change Foundation is a registered Canadian non-profit that focuses on empowering girls in Ghana through education and leadership, allowing them to help their families and communities out of poverty. Their mission is to lead a self-sufficient model of charity that is run by empowered youth. We host various fundraisers throughout the year, as well as guest speaker panels and social events. This club is a safe space for all McGill students to learn more about the importance of women’s education, gain leadership experience, and help grant others the same opportunities that we are so privileged to have.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/girlsforghanamcgill/"
+  instagram: "https://www.instagram.com/girlsforghanamcgill/"
+  other:
+website: "https://www.createchangenow.ca/?fbclid=IwAR2-g-qIpjiqUr7gpox80tO3Utek5bplZaifGS-SOQuQkrdCEyOpZcWuE5A"
+contact_info: |
+  girlsforghana@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

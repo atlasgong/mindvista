@@ -1,0 +1,20 @@
+---
+name: "Student Wellness Hub Medical Laboratory Services"
+description: |
+  The medical laboratory team provides in-person services to students during opening hours by appointment only. Before booking an appointment, you must: Have a lab requisition from a clinician working at the Student Wellness Hub. We do not accept laboratory requisitions from outside the Student Wellness Hub.
+  To book an appointment with a Hub clinician call (514) 398-6017.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+website: "https://outlook.office365.com/owa/calendar/StudentWellnessHubLaboratoryServices1@McGill.onmicrosoft.com/bookings/"
+location: "Student Wellness Hub"
+categories:
+  medical services:
+    - Lab
+  on campus:
+    - On-Campus

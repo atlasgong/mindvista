@@ -1,0 +1,15 @@
+---
+name: "McGill Christian Fellowship (MCF)"
+description: |
+  All are welcome to McGill Christian Fellowship (MCF), a community where students are invited to love one another and be loved by God. Through weekly Bible studies and fellowship-wide events, we encourage students to uncover what it means to serve others and follow Jesus, both on campus and in the greater Montreal community. As part of InterVarsity Christian Fellowship of Canada, MCF gathers undergraduate and graduate students, in all their ethnic diversity, to grow in their relationship with God. Through prayer, worship, and fellowship, we are a community that walks by faith and seeks to make God known on campus. Our community is open to people of all faith backgrounds and those who are interested in exploring faith for the first time.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ivmcgillcf/"
+  other:
+website: "https://www.mcgillcf.com/"
+contact_info: |
+  intervarsitymcf@ssmu.ca
+categories:
+  culture:
+    - Religion & Cultural
+    - Spiritual

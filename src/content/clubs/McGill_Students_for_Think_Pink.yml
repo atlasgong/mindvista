@@ -1,0 +1,16 @@
+---
+name: "McGill Students for Think Pink"
+description: |
+  Think Pink aims to raise awareness and funds for breast cancer research by hosting informative workshops and fun events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillThinkPink/"
+  instagram: "https://www.instagram.com/thinkpink.mcgill/"
+  other:
+website: "https://involvement.mcgill.ca/organization/McGillThinkPink"
+contact_info: |
+  thinkpink@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

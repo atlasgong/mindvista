@@ -1,0 +1,19 @@
+---
+name: "Research and Sustainability Network"
+description: |
+  The Research and Sustainability Network (RSN) seeks to inform and empower students at McGill, bridging the gap between researchers in sustainability and undergraduates interested in research. Through recurring conferences, speaker series, and networking events, we aim to connect like-minded individuals within a cross-faculty network, facilitating collaboration and increasing accessibility to undergraduate research positions.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/RSNMcGill"
+  instagram: "https://www.instagram.com/rsn.mcgill/?hl=en"
+  other:
+    - "https://at.linkedin.com/company/research-and-sustainability-network"
+website: "https://rsn.ssmu.ca/"
+contact_info: |
+  Rsnetwork@ssmu.ca
+categories:
+  community support:
+    - Sustainability
+  career:
+    - Professional Development
+    - Networking

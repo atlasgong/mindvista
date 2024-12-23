@@ -1,0 +1,21 @@
+---
+name: "Science Undergraduate Society (SUS)"
+description: |
+  The Science Undergraduate Society (SUS) of McGill University is a student-run organization located at 805 Sherbrooke St. W. in Burnside Hall Room 1B21. We are proud to support over 5000 undergraduate students and their respective departments pursuing their degrees in sciences and art sciences.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/susmcgill/"
+  instagram: "https://www.instagram.com/mcgillsus/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/scienceundergraduatesociety/"
+website: "https://susmcgill.ca/"
+contact_info: |
+  communications@susmcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

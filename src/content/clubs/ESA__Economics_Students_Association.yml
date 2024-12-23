@@ -1,0 +1,20 @@
+---
+name: "ESA – Economics Students’ Association"
+description: |
+  If you study economics at McGill University, we are your student association. Abbreviated as 'the ESA', the Economics Students’ Association is an on-campus student organization mandated to enhance the student experience for those of us studying economics at McGill University.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/esamcgill/"
+  instagram: "https://www.instagram.com/esamcgill/?hl=en"
+  other:
+    - "https://ca.linkedin.com/company/mcgill-economics-students-association-esa"
+contact_info: |
+  esamcgill@gmail.com
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Arts
+  culture:
+    - Student Society

@@ -1,0 +1,16 @@
+---
+name: "McGill Students’ Anime Club"
+description: |
+  The McGill Student’s Anime Club is a social club with the goal of bringing people together through a shared interest in anime and manga. We host weekly in-person and online events, ranging from screenings to games, workshops to outings. Above all, we want to make sure that everybody has a good time with us. Check out our Facebook page for details about upcoming events!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillAnime/"
+  instagram: "https://www.instagram.com/mcgillanime/"
+  other:
+    - "http://www.twitter.com/AniMcGill"
+website: "https://msac.ssmu.ca/"
+contact_info: |
+  animeclub@ssmu.ca
+categories:
+  culture:
+    - Leisure & Hobbies

@@ -1,0 +1,23 @@
+---
+name: "Centre Professionnel Alter-Natives Inc."
+description: |
+  Centre Professionnel Alter-Natives is a centre of mental health professionals created by women of diverse ethnic identities to support people with diverse ethnic identities. They offer consultations and training aimed at the psychological well-being of individuals and their personal and professional development. In their approach, they focus on a peros's physical and mental health, personal and professional context, life stage, ethnicity, language, beliefs and culture. Mental health professionals speak multiple languages including Spanish, Creole, and Arabic (Libanese and Tunisian dialects).Their professionals are multi-diciplinary, multi-ethnic, and multi-confessional.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+website: "https://alter-natives.ca"
+contact_info: |
+  Website: info@alter-natives.ca   Phone number: (514) 569-6222   Facebook: Centre Professionnel Alter-Natives Inc.   Instagram: centre_alternatives
+categories:
+  bipoc services:
+    - Bipoc Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Counselling
+    - Mental Wellness

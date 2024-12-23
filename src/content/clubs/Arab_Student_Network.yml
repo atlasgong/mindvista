@@ -1,0 +1,18 @@
+---
+name: "Arab Student Network"
+description: |
+  Since its foundation, the McGill Arab Students' Network (ASN) has represented the Arab population at McGill and introduced the McGill and Montreal community to the rich Arab culture and heritage. Throughout the years, the ASN has expanded in proportion to the increasing number of Arab students on campus and the vast interest in the hosted events expressed by the general McGill community. The ASN offers a diversity of events and initiatives ‚Äì some social, some educational, others centered around charity and development. Our goal is to create a tight-knit and active community to make McGill and Montreal feel like home, while also bridging gaps and positively engaging as representatives of our culture with the wider McGill and Montreal community. So whether it's a Middle East enthusiast or just a homesick student craving their homeland's cuisine, the ASN is reaching out. Please note that the ASN has no political or religious affiliation; any charities or initiatives we support are humanitarian or educationally oriented. We stand for international human rights, equality, and justice for all.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ASNMcGill"
+  instagram: "https://www.instagram.com/asnmcgill/"
+  other:
+    - "https://www.linkedin.com/company/mcgillasn/about/"
+website: "https://asnmcgill.ca/"
+contact_info: |
+  asnmcgill@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

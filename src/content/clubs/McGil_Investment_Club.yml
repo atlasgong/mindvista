@@ -1,0 +1,20 @@
+---
+name: "McGil Investment Club"
+description: |
+  MIC is a comprehensive finance club, open to all students of McGill University in all faculties, with two main components: an Investment Management side and an Investment Banking side. The club plays a major role in bridging the gap between the classroom and the financial workplace, and proudly supports the career preparation and development processes of McGill students. The MIC strives to help educate students about the financial markets via seminars, speaker-series, information sessions, newsletters, and forums on market specific topics.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McgillInvestmentClub/"
+  instagram: "https://www.instagram.com/mcgillinvestmentclub/"
+  other:
+    - "https://www.linkedin.com/company/mcgill-investment-club/"
+website: "https://www.mcgillinvestmentclub.ca"
+contact_info: |
+  investmentclub@mail.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+    - Finance
+  faculty specific:
+    - Management

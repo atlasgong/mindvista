@@ -1,0 +1,24 @@
+---
+name: "Integrated STBBI Screening and Prevention Services (SIDEP+)"
+description: |
+  The mission of SIDEP+ clinic is to provide HIV and other STBBI prevention services to men who have sex with men and trans people.
+status: active
+availability:
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://santemontreal.qc.ca/en/public/support-and-services/sidep-clinic/"
+contact_info: |
+  514-527-9565 x 1480
+location: "CLSC de la Visitation
+1705, rue de la Visitation
+Montréal H2L 3C3"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  medical services:
+    - Medical Clinic
+    - STI Testing
+  on campus:
+    - Off-Campus

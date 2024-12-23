@@ -1,0 +1,16 @@
+---
+name: "Queer McGill"
+description: |
+  Queer McGill, in adopting the mantra “For Queer Students, by Queer Students,” promotes and protects Queerness at McGill University and in the greater Montreal community. While Queer McGill is dedicated to serving all those who may face discrimination on the basis of their gender and/or sexuality, Queer McGill does not make determinations of eligibility but instead serves those who self-identify with this description. Queer McGill fulfills this mandate by providing both material and immaterial services including, but not limited to, maintaining a safer space and active presence on campus, participating in political action, representing and advocating for Queer students, and facilitating social activities to strengthen the Queer community. Queer McGill organizes educational campaigns and events while supporting a library and archives of Queer media and information and dispensing Queer-affirming and health-related products to those who want them. Queer McGill carries out its mandate with the utmost commitment to equity and anti-oppression and strives to continually improve itself and its views. In recognition of the intersection of Queerness and other marginalized identities, Queer McGill allies itself with organizations supporting marginalized and oppressed Groups and supports their political actions and causes.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/QueerMcGill/"
+  instagram: "https://www.instagram.com/queermcgill/"
+  other:
+    - "http://www.twitter.com/queermcgill"
+website: "http://www.twitter.com/queermcgill"
+contact_info: |
+  admin.qm@gmail.com
+categories:
+  community support:
+    - Service

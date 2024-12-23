@@ -1,0 +1,29 @@
+---
+name: "Cloud Med"
+description: |
+  Cloud Med is a private clinic that offers services for family medicine, menopause, colorectal surgery, dermatology, and gynecology and fertility. Fees apply to access these services.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  details: |
+    Provincial health insurance not accepted. Private insurance may cover some services. Individuals will have to contact their insurance providers to verify if they will accept receipts from CloudMed. Appointments range from $219 - $349, depending on the service accessed.
+website: "https://www.cloudmed.ca/"
+contact_info: |
+  438-943-0909
+location: "Griffintown:
+210 Rue Seigneurs
+Montreal, Quebec
+H3J 1R5
+Westmount:
+4060 Sainte-Catherine St. West, Suite 405
+Westmount, Quebec
+H3Z 2Z3"
+categories:
+  medical services:
+    - Medical Clinic
+    - Contraception Services
+    - Lab
+  on campus:
+    - Off-Campus

@@ -1,0 +1,23 @@
+---
+name: "Syrian Students’ Association (SSA)"
+description: |
+  Welcome to the Syrian Students’ Association of McGill University! We are a non-profit student club under SSMU. We are a secular, apolitical club that is not affiliated with nor subsidized by any political party or religious group. Our events are open to everyone! 🙂
+   
+   Our club’s mission can be summarized in 4 main articles:
+   1. Social mission: assist newly settled Syrians in Montreal by helping them with social integration and navigating available resources, from applying to University or finding language classes.
+   2. Humanitarian mission: support Syrian refugees, both locally and abroad, through supporting organizations that provide humanitarian relief and raising awareness on McGill campus about the Syrian refugee crisis and conflict.
+   3. Educational mission: empower Syrian youth by supporting organizations that offer educational resources.
+   4. Cultural mission: bring the Syrian community in Montreal together by holding cultural and social events.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/ssamcgillu/"
+  instagram: "https://www.instagram.com/ssamcgill/?hl=en"
+  other:
+website: "https://ssamcgill.ssmu.ca/"
+contact_info: |
+  ssamcgill@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

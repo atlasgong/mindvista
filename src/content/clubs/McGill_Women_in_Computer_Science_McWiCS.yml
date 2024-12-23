@@ -1,0 +1,17 @@
+---
+name: "McGill Women in Computer Science (McWiCS)"
+description: |
+  We seek to cultivate a warm, open-minded community of techies dedicated to supporting and encouraging women in computer science.Within this community, we seek to expand the opportunities of women to explore all aspects of the technological world and to encouraging them to create a positive impact on it.
+status: active
+social_media:
+  facebook: "http://facebook.com/mcwics"
+  other:
+    - "http://www.twitter.com/McGillWiCS"
+website: "http://mcwics.com/"
+contact_info: |
+  team@mcwics.com
+categories:
+  career:
+    - Professional Development
+    - Technology
+    - Networking

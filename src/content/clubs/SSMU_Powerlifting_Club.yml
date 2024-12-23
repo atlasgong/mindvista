@@ -1,0 +1,16 @@
+---
+name: "SSMU Powerlifting Club"
+description: |
+  The SSMU Powerlifting Club is a student society at McGill dedicated to strength training. Our club caters both to competitive athletes, those who are looking to learn or progress in a new sport as well as those who enjoy lifting weights at the gym to get fit and stronger! Our goals as a club are to build a social community of people who share a passion in lifting heavy weights, setting goals at the gym and of course, eating a lot of food. We offer our members a chance to make new friends and have a good time at the gym while reaching their goals.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/groups/226973927426723/about"
+  instagram: "https://www.instagram.com/ssmupowerlifting/"
+  other:
+contact_info: |
+  powerliftingclub@ssmu.ca
+categories:
+  athletics:
+    - Athletics
+  culture:
+    - Leisure & Hobbies

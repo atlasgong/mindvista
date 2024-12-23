@@ -1,0 +1,18 @@
+---
+name: "Diversity In Math"
+description: |
+  The Diversity in Math club at McGill university is dedicated to inspire people from all backgrounds to explore and develop their passion for mathematics. We provide mentorship and networking opportunities to encourage students from underrepresented backgrounds to pursue mathematics-related careers. We host community-building events to foster an open learning environment in mathematics for underrepresented minorities and allies. We also push to raise awareness about the need for more diversity in mathematics.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgilldiversityinmath/"
+  instagram: "https://www.instagram.com/mcgilldiversityinmath/"
+  other:
+website: "https://diversityinmath.ssmu.ca/"
+contact_info: |
+  diversityinmath@ssmu.ca
+categories:
+  community support:
+    - Community Outreach
+  career:
+    - Professional Development
+    - Networking

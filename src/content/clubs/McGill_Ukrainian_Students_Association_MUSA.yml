@@ -1,0 +1,16 @@
+---
+name: "McGill Ukrainian Students Association (MUSA)"
+description: |
+  The McGill Ukrainian Students’ Association (MUSA) represents a diverse group of students with a passion and interest in Ukrainian culture. We welcome students of all cultural and educational backgrounds. Each year we host a diverse number of events, from the traditional to the political, from cultural to the academic. At MUSA, we understand that youth has a key role in supporting the culture and sustaining the tradition. We are a group of individuals who cares about the past, present, and future of Ukraine and are passionate about our culture. We welcome any student or member of the community who shares our values, regardless of the motive.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/musamontreal/"
+  instagram: "https://www.instagram.com/mcgill_ukies/"
+  other:
+contact_info: |
+  musa@ssmu.ca
+categories:
+  career:
+    - Networking
+  culture:
+    - Religion & Cultural

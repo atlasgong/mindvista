@@ -1,0 +1,21 @@
+---
+name: "Doctors (McGill Student Wellness Hub)"
+description: |
+  Doctors at the Student Wellness Hub are a great first option to provide care and referrals for any medical condition. Appointments are required and can be booked on the phone or through a nurse.
+status: inactive
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - RAMQ
+    - Out-of-province Healthcare
+    - Mcgill Student Care
+website: "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/nurses-doctors#Nurses"
+contact_info: |
+  (514) 398-6017
+location: "Student Wellness Hub"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - On-Campus

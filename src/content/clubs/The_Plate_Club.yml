@@ -1,0 +1,16 @@
+---
+name: "The Plate Club"
+description: |
+  The Plate Club is a free dishware rental service dedicated to providing a sustainable alternative to disposable dishware for on and off campus events. We have everything you'd need to host any event, from plates, forks, wine glasses, pitchers and more.
+status: inactive
+social_media:
+  facebook: "http://facebook.com/theplateclubmcgill"
+  other:
+    - "http://www.twitter.com/ThePlateClub"
+website: "http://theplateclub.wixsite.com/mcgill"
+contact_info: |
+  theplateclub@ssmu.ca
+categories:
+  community support:
+    - Service
+    - Sustainability

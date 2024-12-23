@@ -1,0 +1,17 @@
+---
+name: "McGill Pre-Dental Students’ Society (MPDSS)"
+description: |
+  McGill’s very own pre-dental student society is a club that welcomes all students interested in dentistry. We share resources, events, shadowing opportunities, and a network of support for pre-dental students.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillpredent/"
+  instagram: "https://www.instagram.com/mcgillpredentalsociety/"
+  other:
+website: "https://mpdss.ssmu.ca/"
+contact_info: |
+  mpdss@ssmu.ca
+categories:
+  career:
+    - Healthcare
+  culture:
+    - Student Society

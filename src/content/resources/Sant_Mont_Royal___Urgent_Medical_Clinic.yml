@@ -1,0 +1,25 @@
+---
+name: "Santé Mont Royal  – Urgent Medical Clinic"
+description: |
+  Santé Mont Royal's Urgent Medical Clinic division provides GMF, urgent care, family medicine, and specialist appointments.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - RAMQ
+  details: |
+    Medical services are covered by RAMQ.
+website: "https://santemontroyal.com/index.asp?Lang=En"
+contact_info: |
+  514-819-6649
+  reception@santemontroyal.com
+location: "4480 Chemin de la Côte de liesse Suite 110 Ville"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological

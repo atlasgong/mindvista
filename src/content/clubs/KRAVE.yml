@@ -1,0 +1,20 @@
+---
+name: "K-RAVE"
+description: |
+  K-Rave is a club that aims to engage members in K-pop and Korean entertainment culture through events, performances, and more! Our club consists of two sides: the performance team and regular K-Rave events. Our performance team works on covers, performances, workshops, and a year-end showcase every March. We recruit new performers in the Fall semesters and we encourage you to audition! We also have non-performance events that consist of casual hangouts, picnics, game nights, and more. No performance skills required, they are meant for everyone to enjoy!
+status: active
+social_media:
+  facebook: "https://www.facebook.com/kravemcgill/"
+  instagram: "https://www.instagram.com/krave_mcgill/"
+  other:
+    - "https://www.youtube.com/user/kraveKPOPclub"
+website: "https://k-rave.wixsite.com/krave"
+contact_info: |
+  mcgillkrave@gmail.com
+categories:
+  arts:
+    - Performance
+  athletics:
+    - Dance
+  culture:
+    - Leisure & Hobbies

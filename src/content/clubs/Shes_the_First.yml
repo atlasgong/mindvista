@@ -1,0 +1,17 @@
+---
+name: "She’s the First"
+description: |
+  We are a community of passionate McGill University students working on campus to raise awareness and funds for girls’ education worldwide. In partnership with the central organization, She’s the First, STF McGill helps provide support and funding to a network of grassroots education organizations in low-income countries – improving outcomes for girls with a sustainable and holistic approach.
+status: inactive
+social_media:
+  facebook: "https://www.facebook.com/STFMcGill/"
+  instagram: "https://www.instagram.com/stfmcgill/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/she-s-the-first-mcgill/mycompany/ + http://www.twitter.com/stf_mcgill"
+website: "https://stfmcgill.wixsite.com/shesthefirst"
+contact_info: |
+  shesthefirst@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach

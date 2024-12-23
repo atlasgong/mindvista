@@ -1,0 +1,17 @@
+---
+name: "McGill Students Chapter of Jam for Justice"
+description: |
+  Jam for Justice is a non-profit organization that supports social development and well-being through music. We organize events around Montreal that highlight local and emerging talent. The money raised goes to support charities that are involved in providing musical instruments and education to young children, or to promoting music and the arts in the general Montreal community. We also coordinate Concerts for Comfort, in which we rally local artists to play a musical set at retirement homes or nearby hospitals. Our goal is to engage the McGill community by highlighting musical talent, and using music as a positive and powerful way to bring people together, while helping and fundraising for the community.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/jamforjusticemcgill/"
+  instagram: "https://www.instagram.com/jam_for_justice/"
+  other:
+    - "https://www.linkedin.com/company/jam-for-justice/about/"
+contact_info: |
+  jamforjustice@ssmu.ca
+categories:
+  arts:
+    - Performance
+  community support:
+    - Social Activism

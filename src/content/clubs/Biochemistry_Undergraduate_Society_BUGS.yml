@@ -1,0 +1,20 @@
+---
+name: "Biochemistry Undergraduate Society (BUGS)"
+description: |
+  BUGS is a student-run organization that represents McGill's biochemistry undergraduate population. BUGS organizes a variety of social and academic events for biochemistry students and the general student body throughout the year.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/biochemundergradmcgill/"
+  other:
+    - "https://twitter.com/BUGS_McGill?lang=en  https://www.linkedin.com/company/mcgill-biochemistry-undergraduate-society-bugs/about/"
+website: "https://bugs.sus.mcgill.ca/"
+contact_info: |
+  bugs@sus.mcgill.ca
+categories:
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Science
+  culture:
+    - Student Society

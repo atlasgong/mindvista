@@ -1,0 +1,20 @@
+---
+name: "McGill Sports Management Club"
+description: |
+  The McGill Sports Management Club has tasked itself with providing opportunities to educate and inspire students, as well as provide them with opportunities to establish meaningful careers in the highly-competitive sports marketplace.
+status: active
+social_media:
+  facebook: "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.msmcgill.com%2F%3Ffbclid%3DIwAR2q794dg1-8iXIx0iiGpk5DDs4irEWKUYxplLy1b_zgXDRM9QlNJFkHntM&h=AT08SJ8rDsUdL4OGvOfJfTSd09MhUjrhayJA6n79zkCML_ur0Vc2xmSj7bpx3xpwJ5SnIRe903AatHQnwOvYMUy1dUmD4iZGrTXC0jpUr06kP3-Z-eevBCAw5QyW4GVnRC0wDEq_bX4"
+  instagram: "https://www.instagram.com/mcgillsportsmanagement/"
+  other:
+website: "https://www.msmcgill.com/"
+contact_info: |
+  msmc@musmcgill.ca
+categories:
+  athletics:
+    - Athletics
+  career:
+    - Professional Development
+    - Networking
+  faculty specific:
+    - Management

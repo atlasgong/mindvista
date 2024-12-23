@@ -1,0 +1,16 @@
+---
+name: "O-week Committee Engineering"
+description: |
+  Orientation-week or O-week or more generally Frosh is an event for entering students filled with enjoyable activities, networking sessions to meet new students and Dank Memes.
+status: active
+social_media:
+  facebook: "http://fb.com/EngineeringFrosh"
+  other:
+website: "https://frosh.mcgilleus.ca"
+contact_info: |
+  oweek@mcgilleus.ca
+categories:
+  career:
+    - Networking
+  faculty specific:
+    - Engineering

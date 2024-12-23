@@ -1,0 +1,17 @@
+---
+name: "iGEM"
+description: |
+  McGill iGEM is a student-run organization dedicated to bringing forth innovative ideas from the lab to the marketplace, and was started to allow students to experience the entire research cycle from ideation to experimentation to commercialization. Our mission is simple: we want students at McGill University who are passionate about science and biotechnology to have an opportunity to work on cutting-edge projects that can have an impact on society.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/igemmcgill/"
+  instagram: "https://www.instagram.com/igem.mcgill/"
+  other:
+    - "https://ca.linkedin.com/company/mcgill-igem"
+website: "https://igem.org.mcgill.ca/"
+contact_info: |
+  igem@ssmu.ca
+categories:
+  career:
+    - Professional Development
+    - Networking

@@ -1,0 +1,25 @@
+---
+name: "ANEB (Anorexia and Bulimia Quebec)"
+description: |
+  ANEB (Anorexia and Bulimia Quebec) provides open and closed support groups (for adults aged 17+), online forums, online chat, helpline and referral line. Many services are free while more intensive treatments have a fee.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+  details: |
+    Contact ANEB for coverage information regarding paid services.
+website: "https://anebquebec.com/en"
+contact_info: |
+  Help and reference line:
+  (514) 630-0907 (Toll free): 1-800-630-0907
+location: "5500, Transcanadienne Pointe-Claire QC H9R 1B6"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Disordered Eating
+    - Support Group
+    - Crisis Support

@@ -1,0 +1,19 @@
+---
+name: "TRRAMM Directory: Trans*Resources At Montreal"
+description: |
+  TRRAM is a directory that provides resources for trans people in Montreal by a trans person in Montreal.
+status: active
+availability:
+  - online
+insurance:
+  insurance:
+    - Free
+website: "https://www.trram.directory/"
+location: "Directory of various resource locations catered to trans persons in Montreal."
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  directory:
+    - Directory

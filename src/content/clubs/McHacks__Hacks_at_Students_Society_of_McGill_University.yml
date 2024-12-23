@@ -1,0 +1,20 @@
+---
+name: "McHacks – Hacks at Students’ Society of McGill University"
+description: |
+  HackMcGill is the student-run group that organizes the premier annual hackathon, McHacks. We bring together a diverse group of over 500 students from across North America for 24 hours to build projects and applications that range from hardware to mobile to artificial intelligence.
+   
+   As a group, we are a talented team that loves working with people from various backgrounds. Our team does events and workshops, social media communications, sponsor outreach, front and backend development, design, and much more! Whether you are a seasoned hacker or have never written a line of code, HackMcGill welcomes you to join our team.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mcgillhacks"
+  instagram: "https://www.instagram.com/mcgillhacks"
+  other:
+    - "http://www.twitter.com/McGillHacks"
+website: "https://mchacks.ca/"
+contact_info: |
+  hackmcgill@ssmu.ca, contact@mchacks.ca
+categories:
+  career:
+    - Professional Development
+    - Technology
+    - Networking

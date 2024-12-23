@@ -1,0 +1,27 @@
+---
+name: "L'Annexe: Agence Ometz"
+description: |
+  L’Annexe: the Ometz Centre for Young Adults is a diverse, LGBTQ-affirming Jewish social service and community space open to everyone aged 16 to 35.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+  details: |
+    Most activities are free, while others may have a cost. Refer to website for more information.
+website: "https://www.ometz.ca/lannexe/"
+contact_info: |
+  social@lannexe.ca
+  514-345-2656
+  514-249-3812    Instagram: @lannexemtl
+location: "5400 Westbury Ave, Montréal, Quebec
+H3Y 2W8"
+categories:
+  lgbtq services:
+    - LGBTQ+ Services
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Support Group
+    - Mental Wellness
