@@ -29,7 +29,7 @@ const sortedCategories = Array.from(categories.entries())
 ---
 
 <BaseLayout pageTitle="Clubs Directory" description="Browse all clubs" suffix={true}>
-    <div class="mx-auto max-w-7xl px-4 py-8">
+    <div class="mx-auto mb-14 max-w-7xl px-4 py-8">
         <header class="mb-8 mt-8 text-center">
             <h1 class="mb-4 text-4xl font-bold text-cText">Clubs Directory</h1>
             <p class="text-lg text-cTextOffset">Browse and filter through all available clubs.</p>
@@ -61,7 +61,7 @@ const sortedCategories = Array.from(categories.entries())
                 <div class="space-y-4">
                     <!-- Search -->
                     <SearchBar id="clubs-search" placeholder="Search clubs..." />
-                    
+
                     <!-- Status Filter -->
                     <div class="filter-section">
                         <button class="flex w-full items-center justify-between text-left" data-toggle="status">
@@ -197,15 +197,19 @@ const sortedCategories = Array.from(categories.entries())
     // if (panelArrow) panelArrow.style.transform = "rotate(180deg)";
 
     // Search functionality
-    const searchInput = document.getElementById('clubs-search') as HTMLInputElement;
-    searchInput?.addEventListener('input', updateResults);
+    const searchInput = document.getElementById("clubs-search") as HTMLInputElement;
+    searchInput?.addEventListener("input", updateResults);
 
     // Update results
     function updateResults() {
-        const searchTerm = (searchInput?.value || '').toLowerCase();
+        const searchTerm = (searchInput?.value || "").toLowerCase();
         const statusFilters = Array.from<HTMLInputElement>(
-            document.querySelectorAll('input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]')
-        ).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
+            document.querySelectorAll(
+                'input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]',
+            ),
+        )
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => checkbox.value);
 
         const categoryFilters = new Map();
         document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-category]').forEach((cb) => {
@@ -237,13 +241,13 @@ const sortedCategories = Array.from(categories.entries())
                 return Array.from(selectedTags).some((tag) => categories[category].includes(tag));
             });
 
-            const nameElement = item.querySelector('h3');
-            const descriptionElement = item.querySelector('p');
-            
-            const name = nameElement ? nameElement.textContent?.toLowerCase() ?? '' : '';
-            const description = descriptionElement ? descriptionElement.textContent?.toLowerCase() ?? '' : '';
+            const nameElement = item.querySelector("h3");
+            const descriptionElement = item.querySelector("p");
 
-            const matchesSearch = searchTerm === '' || name.includes(searchTerm) || description.includes(searchTerm);
+            const name = nameElement ? (nameElement.textContent?.toLowerCase() ?? "") : "";
+            const description = descriptionElement ? (descriptionElement.textContent?.toLowerCase() ?? "") : "";
+
+            const matchesSearch = searchTerm === "" || name.includes(searchTerm) || description.includes(searchTerm);
 
             item.style.display = matchesSearch && statusMatch && categoryMatch ? "block" : "none";
         });

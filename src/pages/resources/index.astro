@@ -38,7 +38,7 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
 ---
 
 <BaseLayout pageTitle="Resources Directory" description="Browse all resources" suffix={true}>
-    <div class="mx-auto max-w-7xl px-4 py-8">
+    <div class="mx-auto mb-14 max-w-7xl px-4 py-8">
         <header class="mb-8 mt-8 text-center">
             <h1 class="mb-4 text-4xl font-bold text-cText">Resources Directory</h1>
             <p class="text-lg text-cTextOffset">Browse and filter through all available resources.</p>
@@ -70,7 +70,7 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
                 <div class="space-y-4">
                     <!-- Search -->
                     <SearchBar id="resources-search" placeholder="Search resources..." />
-                    
+
                     <!-- Status Filter -->
                     <div class="filter-section">
                         <button class="flex w-full items-center justify-between text-left" data-toggle="status">
@@ -230,14 +230,22 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
 
     <script>
         function updateResults() {
-            const searchTerm = ((document.getElementById('resources-search') as HTMLInputElement)?.value || '').toLowerCase();
+            const searchTerm = (
+                (document.getElementById("resources-search") as HTMLInputElement)?.value || ""
+            ).toLowerCase();
             const statusFilters = Array.from<HTMLInputElement>(
-                document.querySelectorAll('input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]')
-            ).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
+                document.querySelectorAll(
+                    'input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]',
+                ),
+            )
+                .filter((checkbox) => checkbox.checked)
+                .map((checkbox) => checkbox.value);
 
             const availabilityFilters = Array.from<HTMLInputElement>(
-                document.querySelectorAll('input[type="checkbox"][data-availability]')
-            ).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.dataset.availability);
+                document.querySelectorAll('input[type="checkbox"][data-availability]'),
+            )
+                .filter((checkbox) => checkbox.checked)
+                .map((checkbox) => checkbox.dataset.availability);
 
             const categoryFilters = new Map();
             document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-category]').forEach((checkbox) => {
@@ -282,12 +290,16 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
                     return Array.from(selectedTags).some((tag) => categories[category].includes(tag));
                 });
 
-                const name = item.querySelector('h3')?.textContent || '';
-                const description = item.querySelector('p')?.textContent || '';
+                const name = item.querySelector("h3")?.textContent || "";
+                const description = item.querySelector("p")?.textContent || "";
 
-                const matchesSearch = searchTerm === '' || name.toLowerCase().includes(searchTerm) || description.toLowerCase().includes(searchTerm);
+                const matchesSearch =
+                    searchTerm === "" ||
+                    name.toLowerCase().includes(searchTerm) ||
+                    description.toLowerCase().includes(searchTerm);
 
-                item.style.display = matchesSearch && statusMatch && availabilityMatch && categoryMatch ? "block" : "none";
+                item.style.display =
+                    matchesSearch && statusMatch && availabilityMatch && categoryMatch ? "block" : "none";
             });
         }
 
@@ -340,6 +352,6 @@ const sortedAvailability = Array.from(availabilityOptions).sort();
             arrow.style.transform = "rotate(0deg)";
         });
 
-        document.getElementById('resources-search')?.addEventListener('input', updateResults);
+        document.getElementById("resources-search")?.addEventListener("input", updateResults);
     </script>
 </BaseLayout>
