@@ -1,0 +1,23 @@
+---
+name: "AMI-Quebec"
+description: |
+  AMI-Quebec is a non-profit organization that helps families manage the effects of mental illness 
+  through support, education, guidance, and advocacy. They offer a wide range of services such as workshops, support groups, counselling, education and outreach, online learning, and more. AMI-Quebec's programs are free.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Free
+website: "https://amiquebec.org/"
+contact_info: |
+  (514) 486-1448
+location: "5800 boul. Decarie, Montreal QC H3X 2J5"
+categories:
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Mental Wellness
+    - Support Group
+    - Counselling

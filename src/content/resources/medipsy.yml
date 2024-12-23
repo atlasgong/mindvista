@@ -1,0 +1,27 @@
+---
+name: "Medipsy"
+description: |
+  Medipsy provides individual psychotherapy, sex therapy, ADHD clinic, assessments and diagnosis, neuropsychological assessments, couple and family therapy, phobic clinic, and vocational counselling.
+status: active
+availability:
+  - online
+  - telephone
+insurance:
+  insurance:
+    - Mcgill Student Care
+  details: |
+    Your paid receipt is required by your insurance company for reimbursement.
+website: "https://www.medipsy.ca/"
+contact_info: |
+  514-419-3005
+  info@medipsy.ca
+location: "4610 Ste. Catherine Ouest, Westmount, H3Z 1S3"
+categories:
+  medical services:
+    - Medical Clinic
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Psychological
+    - Counselling
+    - Mental Wellness

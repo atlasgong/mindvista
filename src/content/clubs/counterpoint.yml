@@ -1,0 +1,17 @@
+---
+name: "Counterpoint"
+description: |
+  Counterpoint is McGill University’s first fully student-run music magazine providing music news, reviews and articles with the purpose of exposing McGill students to campus musicians and Montreal’s vibrant music scene in general. As well, Counterpoint also hosts events and parties which aim to bring people together to celebrate Montreal’s diverse nightlife and musical talent. We at Counterpoint are obsessed with music and through Counterpoint, we hope to rub off some of our passion onto you.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/counterpointmcgill/"
+  instagram: "https://www.instagram.com/counterpoint.mcgill/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/counterpoint-music-magazine/?originalSubdomain=ca"
+website: "https://counterpoint.ssmu.ca/"
+contact_info: |
+  counterpoint.mcgill@gmail.com
+categories:
+  culture:
+    - Leisure & Hobbies
+    - Publication & Writing

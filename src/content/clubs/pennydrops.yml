@@ -1,0 +1,22 @@
+---
+name: "PennyDrops"
+description: |
+  PennyDrops is a registered not-for-profit organization dedicated to the advancement of financial education in Canada. We work to increase the level of financial literacy nationwide, foster a community of shared intellectual resources and bridge the financial literacy gap currently experienced by youth.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/McGillPD/"
+  instagram: "https://www.instagram.com/pennydrops.official/?hl=en"
+  other:
+    - "https://www.linkedin.com/company/pennydrops/?originalSubdomain=ca"
+website: "https://www.pennydrops.org"
+contact_info: |
+  contact@pennydrops.org
+categories:
+  community support:
+    - Community Outreach
+  career:
+    - Finance
+  faculty specific:
+    - Management
+  culture:
+    - Leisure & Hobbies

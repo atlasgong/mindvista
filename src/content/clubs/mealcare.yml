@@ -1,0 +1,17 @@
+---
+name: "MealCare"
+description: |
+  MealCare McGill is one of 7 of MealCare’s operating chapters across Canada. Find out more about each chapter here: https://www.mealcare.org/team. At McGill, MealCare involves our Executive Team as well as our food donors, volunteers, and recipients. Beyond our Executive Team, MealCare includes cafeteria chefs, café employees, Drivesafe and student volunteers that work towards fulfilling our mission.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/mealcaremcgill"
+  instagram: "https://www.instagram.com/mealcare_mcgill/"
+  other:
+website: "https://mealcare.org/"
+contact_info: |
+  mealcare@ssmu.ca
+categories:
+  community support:
+    - Social Activism
+    - Community Outreach
+    - Sustainability

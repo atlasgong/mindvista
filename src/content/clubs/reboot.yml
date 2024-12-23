@@ -1,0 +1,16 @@
+---
+name: "Reboot"
+description: |
+  Reboot McGill is located on the Downtown McGill Campus in room 218 on the 2nd floor of the Ferrier Building. The mission of Reboot McGill is to facilitate asset reallocation around the university by collecting old computers and peripherals, refurbishing the equipment if possible, redeploying the equipment where appropriate, donating any unwanted usable equipment, and finally arranging the proper disposal of all unusable equipment scrap. The purpose of the program is to reallocate computer equipment for university/personal use only. Abuse of this privilege by way of resale or financial exchange will result in suspension of privileges.
+status: active
+social_media:
+  facebook: "https://www.facebook.com/RebootMcGill/"
+  other:
+    - "https://www.linkedin.com/company/reboot-mcgill-nonprofit-organization/?trk=public_profile_volunteering-position_profile-section-card_full-click&originalSubdomain=ca"
+website: "https://eus.wiki/Reboot"
+contact_info: |
+  reboot@mcgilleus.ca
+categories:
+  community support:
+    - Sustainability
+    - Social Activism

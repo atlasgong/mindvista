@@ -1,0 +1,20 @@
+---
+name: "Alcochoix+"
+description: |
+  Alcochoix+ is a program that provides support and solutions for those concerned about the consequences their drinking habits and want to change them. Alcochoix+ offers a self-directed program option, a consellor-guided option, or a support group option.
+status: active
+availability:
+  note: "Contact organization directly for more details."
+insurance:
+  insurance:
+    - Free
+website: "https://www.quebec.ca/en/health/advice-and-prevention/alcohol-drugs-gambling/alcochoix-plus/"
+location: "Contact your local CLSC to find out where this service may be offered."
+categories:
+  substance use:
+    - Substance Use
+  on campus:
+    - Off-Campus
+  mental health services:
+    - Support Group
+    - Counselling

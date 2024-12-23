@@ -1,0 +1,14 @@
+---
+name: "McConnect"
+description: |
+  McConnect is a club whose overarching purpose is to give students the resources to broaden their networks and acquire professional experience. Given the repercussions of the pandemic, our team noticed that students struggled with finding internships and connecting with people of different backgrounds and expertise. We aim to supply students with workshops, opportunities, and support networks needed to prosper post-graduation. Throughout our workshops, we aim to uncover the secrets behind acing interviews in various fields and showcasing your best side in internship and grad school applications. We connect students with opportunities to learn from experts across multiple domains.
+status: active
+social_media:
+  other:
+    - "https://www.linkedin.com/company/mcconnect-mcgill/about/"
+contact_info: |
+  mcconnect@ssmu.ca
+categories:
+  career:
+    - Networking
+    - Professional Development
