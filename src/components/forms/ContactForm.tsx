@@ -84,7 +84,7 @@ export default function ContactForm() {
                     {...register("name")}
                     type="text"
                     placeholder="Johnny Appleseed"
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 border-cBorder/20 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-lg border px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:bg-cBackgroundOffset"
+                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
                 />
                 {errors.name && <div className="text-md mt-2 text-cRed">{errors.name.message}</div>}
             </div>
@@ -98,7 +98,7 @@ export default function ContactForm() {
                     {...register("email")}
                     type="text"
                     placeholder="johnny.appleseed@mail.mcgill.ca"
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 border-cBorder/20 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-lg border px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:bg-cBackgroundOffset"
+                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
                 />
                 {errors.email && <div className="text-md mt-2 text-cRed">{errors.email.message}</div>}
             </div>
@@ -112,7 +112,7 @@ export default function ContactForm() {
                     {...register("subject")}
                     type="text"
                     placeholder="A concise subject line"
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 border-cBorder/20 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-lg border px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:bg-cBackgroundOffset"
+                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
                 />
                 {errors.subject && <div className="text-md mt-2 text-cRed">{errors.subject.message}</div>}
             </div>
@@ -125,7 +125,7 @@ export default function ContactForm() {
                     id="message"
                     {...register("message")}
                     placeholder="An interesting message."
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 border-cBorder/20 focus:ring-cAccent/20 focus:ring-cAccent/20 min-h-[150px] w-full resize-none rounded-lg border px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:bg-cBackgroundOffset"
+                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 min-h-[150px] w-full resize-none rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
                 ></textarea>
                 {errors.message && <div className="text-md mt-2 text-cRed">{errors.message.message}</div>}
             </div>
