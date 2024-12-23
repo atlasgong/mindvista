@@ -46,8 +46,8 @@ export default function Footer() {
                 <Links
                     className="max-w-[33%] text-right"
                     links={[
-                        { href: "/", text: "Wellness Resources" },
-                        { href: "/", text: "Club List" },
+                        { href: "/resources", text: "Wellness Resources" },
+                        { href: "/clubs", text: "Club List" },
                         { href: "/contact", text: "Contact Us" },
                     ]}
                 />

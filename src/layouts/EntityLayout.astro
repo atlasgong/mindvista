@@ -1,0 +1,169 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const { frontmatter, type } = Astro.props;
+
+interface Category {
+    name: string;
+    tags: string[];
+}
+
+const categories = frontmatter.categories
+    ? Object.entries(frontmatter.categories).map(([name, tags]) => ({
+          name,
+          tags: tags as string[],
+      }))
+    : [];
+---
+
+<BaseLayout pageTitle={frontmatter.name} description={frontmatter.description} suffix={true}>
+    <article class="mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="mb-4 text-4xl font-bold">{frontmatter.name}</h1>
+            <div class="mb-4 flex items-center">
+                <span
+                    class={`px-3 py-1 rounded-full text-sm font-medium ${frontmatter.status === "active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                >
+                    {frontmatter.status.charAt(0).toUpperCase() + frontmatter.status.slice(1)}
+                </span>
+            </div>
+        </header>
+
+        <div class="prose mb-8 max-w-none">
+            <p>{frontmatter.description}</p>
+        </div>
+
+        {
+            type === "resource" && frontmatter.availability && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Availability</h2>
+                    {Array.isArray(frontmatter.availability) ? (
+                        <ul class="list-inside list-disc">
+                            {frontmatter.availability.map((mode: string) => (
+                                <li class="capitalize">{mode.replace("_", " ")}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>{frontmatter.availability.note}</p>
+                    )}
+                </section>
+            )
+        }
+
+        {
+            frontmatter.website && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Website</h2>
+                    <a
+                        href={frontmatter.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                        Visit Website
+                    </a>
+                </section>
+            )
+        }
+
+        {
+            frontmatter.social_media && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Social Media</h2>
+                    <div class="space-y-2">
+                        {frontmatter.social_media.facebook && (
+                            <a
+                                href={frontmatter.social_media.facebook}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block text-blue-600 hover:text-blue-800 hover:underline"
+                            >
+                                Facebook
+                            </a>
+                        )}
+                        {frontmatter.social_media.instagram && (
+                            <a
+                                href={frontmatter.social_media.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block text-blue-600 hover:text-blue-800 hover:underline"
+                            >
+                                Instagram
+                            </a>
+                        )}
+                        {frontmatter.social_media.other?.map((link: string) => (
+                            <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block text-blue-600 hover:text-blue-800 hover:underline"
+                            >
+                                {link}
+                            </a>
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {
+            frontmatter.contact_info && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Contact Information</h2>
+                    <div class="prose max-w-none">
+                        <p>{frontmatter.contact_info}</p>
+                    </div>
+                </section>
+            )
+        }
+
+        {
+            type === "resource" && frontmatter.location && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Location</h2>
+                    <p>{frontmatter.location}</p>
+                </section>
+            )
+        }
+
+        {
+            type === "resource" && frontmatter.insurance && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Insurance</h2>
+                    {frontmatter.insurance.insurance && (
+                        <div class="mb-4">
+                            <ul class="list-inside list-disc">
+                                {frontmatter.insurance.insurance.map((tag: string) => (
+                                    <li>{tag}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    {frontmatter.insurance.details && (
+                        <div class="prose max-w-none">
+                            <p>{frontmatter.insurance.details}</p>
+                        </div>
+                    )}
+                </section>
+            )
+        }
+
+        {
+            categories.length > 0 && (
+                <section class="mb-8">
+                    <h2 class="mb-4 text-2xl font-semibold">Categories</h2>
+                    {categories.map((category: Category) => (
+                        <div class="mb-4">
+                            <h3 class="mb-2 text-xl font-medium capitalize">{category.name.replace("_", " ")}</h3>
+                            <div class="flex flex-wrap gap-2">
+                                {category.tags.map((tag: string) => (
+                                    <span class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-800">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </section>
+            )
+        }
+    </article>
+</BaseLayout>

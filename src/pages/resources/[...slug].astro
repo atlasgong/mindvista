@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import EntityLayout from '../../layouts/EntityLayout.astro';
+
+export async function getStaticPaths() {
+    const resources = await getCollection('resources');
+    return resources.map(entry => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+---
+
+<EntityLayout frontmatter={data} type="resource" />

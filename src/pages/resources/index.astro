@@ -1,0 +1,350 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+interface Resource {
+    id: string;
+    data: {
+        name: string;
+        description: string;
+        status: string;
+        availability: string[] | { note: string };
+        categories: Record<string, string[]> | null;
+    };
+}
+
+// Get all resources and sort by name
+const resources = (await getCollection("resources")).sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Get unique categories and their tags
+const categories = new Map<string, Set<string>>();
+resources.forEach((resource) => {
+    if (resource.data.categories) {
+        Object.entries(resource.data.categories).forEach(([category, tags]) => {
+            if (!categories.has(category)) {
+                categories.set(category, new Set());
+            }
+            tags.forEach((tag) => categories.get(category)?.add(tag));
+        });
+    }
+});
+
+// Convert to array and sort
+const sortedCategories = Array.from(categories.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([category, tags]) => ({
+        name: category,
+        tags: Array.from(tags).sort(),
+    }));
+
+// Get unique availability options
+const availabilityOptions = new Set<string>();
+resources.forEach((resource) => {
+    if (Array.isArray(resource.data.availability)) {
+        resource.data.availability.forEach((option) => availabilityOptions.add(option));
+    }
+});
+const sortedAvailability = Array.from(availabilityOptions).sort();
+---
+
+<BaseLayout pageTitle="Resources Directory" description="Browse all resources" suffix={true}>
+    <div class="mx-auto max-w-7xl px-4 py-8">
+        <header class="mb-8 mt-8 text-center">
+            <h1 class="mb-4 text-4xl font-bold text-cText">Resources Directory</h1>
+            <p class="text-lg text-cTextOffset">Browse and filter through all available resources.</p>
+        </header>
+
+        <!-- Filters -->
+        <div class="mb-8">
+            <button
+                class="flex w-full items-center justify-between rounded-lg border border-cBorder bg-cBackgroundOffset p-4 text-left hover:bg-cBackground"
+                data-toggle="filters-panel"
+            >
+                <div class="flex items-center gap-2">
+                    <h2 class="text-2xl font-semibold text-cText">Filters</h2>
+                    <span class="text-sm text-cTextOffset" id="active-filters-count"></span>
+                </div>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 transform text-cText transition-transform"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div id="filters-panel" class="mt-2 hidden rounded-lg border border-cBorder bg-cBackgroundOffset p-6">
+                <div class="space-y-4">
+                    <!-- Status Filter -->
+                    <div class="filter-section">
+                        <button class="flex w-full items-center justify-between text-left" data-toggle="status">
+                            <h3 class="font-medium text-cText">Status</h3>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 transform text-cText transition-transform"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="filter-content mt-3" id="status-filter">
+                            <div class="flex flex-wrap gap-4">
+                                <label
+                                    class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50"
+                                >
+                                    <input type="checkbox" class="form-checkbox hidden" value="active" />
+                                    <span>Active</span>
+                                </label>
+                                <label
+                                    class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50"
+                                >
+                                    <input type="checkbox" class="form-checkbox hidden" value="inactive" />
+                                    <span>Inactive</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability Filter -->
+                    {
+                        sortedAvailability.length > 0 && (
+                            <div class="filter-section">
+                                <button
+                                    class="flex w-full items-center justify-between text-left"
+                                    data-toggle="availability"
+                                >
+                                    <h3 class="font-medium text-cText">Availability</h3>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 transform text-cText transition-transform"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="filter-content mt-3" id="availability-filter">
+                                    <div class="flex flex-wrap gap-4">
+                                        {sortedAvailability.map((option) => (
+                                            <label class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50">
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-checkbox hidden"
+                                                    data-availability={option}
+                                                />
+                                                <span>{option.replace("_", " ")}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+
+                    <!-- Category Filters -->
+                    {
+                        sortedCategories.map((category) => (
+                            <div class="filter-section">
+                                <button
+                                    class="flex w-full items-center justify-between text-left"
+                                    data-toggle={category.name}
+                                >
+                                    <h3 class="font-medium capitalize text-cText">{category.name.replace("_", " ")}</h3>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 transform text-cText transition-transform"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="filter-content mt-3" id={`${category.name}-filter`}>
+                                    <div class="flex flex-wrap gap-2">
+                                        {category.tags.map((tag) => (
+                                            <label class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50">
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-checkbox hidden"
+                                                    data-category={category.name}
+                                                    value={tag}
+                                                />
+                                                <span>{tag}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" id="results">
+                {
+                    resources.map((resource) => (
+                        <a
+                            href={`/resources/${resource.id}`}
+                            class="block rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow transition-shadow hover:shadow-md"
+                            data-status={resource.data.status}
+                            data-categories={JSON.stringify(resource.data.categories)}
+                            data-availability={JSON.stringify(resource.data.availability)}
+                        >
+                            <div class="mb-2 flex items-center justify-between">
+                                <h3 class="text-xl font-semibold text-cText">{resource.data.name}</h3>
+                                <span
+                                    class={`rounded-full px-2 py-1 text-xs font-medium ${
+                                        resource.data.status === "active"
+                                            ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
+                                            : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100"
+                                    }`}
+                                >
+                                    {resource.data.status.charAt(0).toUpperCase() + resource.data.status.slice(1)}
+                                </span>
+                            </div>
+                            <p class="line-clamp-3 text-cTextOffset">{resource.data.description}</p>
+                            {Array.isArray(resource.data.availability) && (
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    {resource.data.availability.map((mode) => (
+                                        <span class="rounded-full bg-blue-50 px-2 py-1 text-xs capitalize text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+                                            {mode.replace("_", " ")}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateResults() {
+            const statusFilters = Array.from<HTMLInputElement>(
+                document.querySelectorAll(
+                    'input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]',
+                ),
+            )
+                .filter((cb) => cb.checked)
+                .map((cb) => cb.value);
+
+            const availabilityFilters = Array.from(
+                document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-availability]'),
+            )
+                .filter((cb) => cb.checked)
+                .map((cb) => cb.dataset.availability);
+
+            const categoryFilters = new Map();
+            document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-category]').forEach((cb) => {
+                const category = cb.dataset.category!;
+                if (!categoryFilters.has(category)) {
+                    categoryFilters.set(category, new Set());
+                }
+                if (cb.checked) {
+                    categoryFilters.get(category).add(cb.value);
+                }
+            });
+
+            const activeFiltersCount =
+                statusFilters.length +
+                availabilityFilters.length +
+                Array.from(categoryFilters.values()).reduce((acc, tags) => acc + tags.size, 0);
+            document.getElementById("active-filters-count")!.textContent =
+                activeFiltersCount > 0 ? `(${activeFiltersCount})` : "";
+
+            document.querySelectorAll<HTMLElement>("#results > a").forEach((item) => {
+                const status = item.dataset.status!;
+                const categories = JSON.parse(item.dataset.categories || "{}");
+                const availability = JSON.parse(item.dataset.availability || "[]");
+
+                // Status filtering - show only if no status filters or status matches
+                const statusMatch = statusFilters.length === 0 || statusFilters.includes(status);
+
+                // Availability filtering - show only if no availability filters or item has at least one selected mode
+                const availabilityMatch =
+                    availabilityFilters.length === 0 ||
+                    (Array.isArray(availability) && availability.some((mode) => availabilityFilters.includes(mode)));
+
+                // Category filtering - show only if item has the selected tags
+                const categoryMatch = Array.from(categoryFilters.entries()).every(([category, selectedTags]) => {
+                    // If no tags are selected for this category, it's a match
+                    if (selectedTags.size === 0) return true;
+
+                    // If tags are selected but item doesn't have this category, it's not a match
+                    if (!categories || !categories[category]) return false;
+
+                    // Check if item has at least one of the selected tags
+                    return Array.from(selectedTags).some((tag) => categories[category].includes(tag));
+                });
+
+                item.style.display = statusMatch && availabilityMatch && categoryMatch ? "block" : "none";
+            });
+        }
+
+        // Collapsible panel logic
+        const panelButton = document.querySelector('[data-toggle="filters-panel"]');
+        const panel = document.getElementById("filters-panel");
+        const panelArrow = panelButton?.querySelector("svg");
+
+        panelButton?.addEventListener("click", () => {
+            panel?.classList.toggle("hidden");
+            if (panelArrow) {
+                panelArrow.style.transform = panel?.classList.contains("hidden") ? "rotate(0deg)" : "rotate(180deg)";
+            }
+        });
+
+        // Add event listeners
+        document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach((checkbox) => {
+            checkbox.addEventListener("change", updateResults);
+        });
+
+        // Initialize with all checkboxes unchecked
+        document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach((checkbox) => {
+            checkbox.checked = false;
+        });
+
+        // Initialize display
+        updateResults();
+
+        // Collapsible sections logic
+        document.querySelectorAll("[data-toggle]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const section = button.getAttribute("data-toggle")!;
+                const content = document.getElementById(`${section}-filter`)!;
+                const arrow = button.querySelector("svg")!;
+
+                // Toggle the content
+                content.classList.toggle("hidden");
+
+                // Rotate the arrow
+                arrow.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(180deg)";
+            });
+        });
+
+        // Initialize with all sections collapsed
+        document.querySelectorAll(".filter-content").forEach((content) => {
+            content.classList.add("hidden");
+        });
+        document.querySelectorAll("[data-toggle] svg").forEach((element) => {
+            const arrow = element as SVGElement;
+            arrow.style.transform = "rotate(0deg)";
+        });
+    </script>
+</BaseLayout>
