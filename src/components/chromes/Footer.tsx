@@ -1,4 +1,5 @@
 import EmergencyButton from "@components/buttons/EmergencyButton";
+import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -33,7 +34,7 @@ export default function Footer() {
             {/* END */}
 
             {/* MIDDLE ROW (DESKTOP) */}
-            <div className="flex flex-row items-center text-cText max-md:hidden">
+            <div className="flex grow basis-0 flex-row items-center justify-between text-cText max-md:hidden">
                 <Links
                     className="max-w-[33%] text-left"
                     links={[
@@ -44,7 +45,7 @@ export default function Footer() {
                 />
                 <EmergencySection className="max-w-[33%]" />
                 <Links
-                    className="max-w-[33%] text-right"
+                    className="max-w-[33%] grow basis-0 text-right"
                     links={[
                         { href: "/resources", text: "Wellness Resources" },
                         { href: "/clubs", text: "Club List" },
@@ -140,8 +141,8 @@ function LegalBar() {
     const year = new Date().getFullYear();
 
     return (
-        <div className="flex flex-col text-center md:flex-row md:text-right">
-            <div className="flex grow flex-row justify-center gap-2 font-semibold md:justify-normal">
+        <div className="flex flex-col justify-between text-center md:flex-row md:text-right">
+            <div className="flex grow basis-0 flex-row justify-center gap-2 font-semibold text-cTextOffset md:justify-start">
                 <a href="/privacy-policy" className="">
                     Privacy Policy
                 </a>
@@ -154,7 +155,51 @@ function LegalBar() {
                     Copyright
                 </a>
             </div>
-            <p className="grow font-medium">&copy; {year} MindVista. All rights reserved.</p>
+            <div className="mt-4 flex grow basis-0 items-center justify-center gap-4 md:mt-0">
+                <a
+                    href="https://www.facebook.com/mindvista.mcgill"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-600 text-gray-600 transition-colors"
+                >
+                    <FaFacebook className="h-5 w-5" />
+                </a>
+                <a
+                    href="https://www.instagram.com/mindvista.mcgill/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-600 text-gray-600 transition-colors"
+                >
+                    <FaInstagram className="h-5 w-5" />
+                </a>
+                <a
+                    href="https://www.tiktok.com/@mindvistamcgill"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-600 text-gray-600 transition-colors"
+                >
+                    <FaTiktok className="h-5 w-5" />
+                </a>
+                <a
+                    href="https://www.linkedin.com/company/mindvista/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-600 text-gray-600 transition-colors"
+                >
+                    <FaLinkedin className="h-5 w-5" />
+                </a>
+                <a
+                    href="https://github.com/atlasgong/mindvista"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-600 text-gray-600 transition-colors"
+                >
+                    <FaGithub className="h-5 w-5" />
+                </a>
+            </div>
+            <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">
+                &copy; {year} MindVista. All rights reserved.
+            </p>
         </div>
     );
 }
