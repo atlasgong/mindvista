@@ -29,7 +29,7 @@ const sortedCategories = Array.from(categories.entries())
 ---
 
 <BaseLayout pageTitle="Clubs Directory" description="Browse all clubs" suffix={true}>
-    <div class="mx-auto mb-14 max-w-7xl px-4 py-8">
+    <div class="mx-auto mb-14 max-w-7xl px-4 py-8 sm:px-8 md:px-12 lg:px-20">
         <header class="mb-8 mt-8 text-center">
             <h1 class="mb-4 text-4xl font-bold text-cText">Clubs Directory</h1>
             <p class="text-lg text-cTextOffset">Browse and filter through all available clubs.</p>
@@ -37,24 +37,13 @@ const sortedCategories = Array.from(categories.entries())
 
         <!-- Filters -->
         <div class="mb-8">
-            <button
-                class="flex w-full items-center justify-between rounded-lg border border-cBorder bg-cBackgroundOffset p-4 text-left hover:bg-cBackground"
-                data-toggle="filters-panel"
-            >
+            <button class="flex w-full items-center justify-between rounded-lg border border-cBorder bg-cBackgroundOffset p-4 text-left hover:bg-cBackground" data-toggle="filters-panel">
                 <div class="flex items-center gap-2">
                     <h2 class="text-2xl font-semibold text-cText">Filters</h2>
                     <span class="text-sm text-cTextOffset" id="active-filters-count"></span>
                 </div>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 transform text-cText transition-transform"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform text-cText transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
             <div id="filters-panel" class="mt-2 hidden rounded-lg border border-cBorder bg-cBackgroundOffset p-6">
@@ -66,29 +55,17 @@ const sortedCategories = Array.from(categories.entries())
                     <div class="filter-section">
                         <button class="flex w-full items-center justify-between text-left" data-toggle="status">
                             <h3 class="font-medium text-cText">Status</h3>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 transform text-cText transition-transform"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform text-cText transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
                         </button>
                         <div class="filter-content mt-3 hidden" id="status-filter">
                             <div class="flex flex-wrap gap-4">
-                                <label
-                                    class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50"
-                                >
+                                <label class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50">
                                     <input type="checkbox" class="form-checkbox hidden" value="active" />
                                     <span>Active</span>
                                 </label>
-                                <label
-                                    class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50"
-                                >
+                                <label class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50">
                                     <input type="checkbox" class="form-checkbox hidden" value="inactive" />
                                     <span>Inactive</span>
                                 </label>
@@ -100,34 +77,17 @@ const sortedCategories = Array.from(categories.entries())
                     {
                         sortedCategories.map((category) => (
                             <div class="filter-section">
-                                <button
-                                    class="flex w-full items-center justify-between text-left"
-                                    data-toggle={category.name}
-                                >
+                                <button class="flex w-full items-center justify-between text-left" data-toggle={category.name}>
                                     <h3 class="font-medium capitalize text-cText">{category.name.replace("_", " ")}</h3>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="h-5 w-5 transform text-cText transition-transform"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"
-                                        />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform text-cText transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
                                 <div class="filter-content mt-3 hidden" id={`${category.name}-filter`}>
                                     <div class="flex flex-wrap gap-2">
                                         {category.tags.map((tag) => (
                                             <label class="inline-flex cursor-pointer items-center rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 transition-colors hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800 [&:has(input:checked)]:bg-blue-200 [&:has(input:checked)]:text-blue-900 dark:[&:has(input:checked)]:bg-blue-700 dark:[&:has(input:checked)]:text-blue-50">
-                                                <input
-                                                    type="checkbox"
-                                                    class="form-checkbox hidden"
-                                                    data-category={category.name}
-                                                    value={tag}
-                                                />
+                                                <input type="checkbox" class="form-checkbox hidden" data-category={category.name} value={tag} />
                                                 <span>{tag}</span>
                                             </label>
                                         ))}
@@ -144,23 +104,10 @@ const sortedCategories = Array.from(categories.entries())
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" id="results">
             {
                 clubs.map((club) => (
-                    <a
-                        href={`/clubs/${club.id}`}
-                        class="block rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow transition-shadow hover:shadow-md"
-                        data-status={club.data.status}
-                        data-categories={JSON.stringify(club.data.categories)}
-                    >
+                    <a href={`/clubs/${club.id}`} class="block rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow transition-shadow hover:shadow-md" data-status={club.data.status} data-categories={JSON.stringify(club.data.categories)}>
                         <div class="mb-2 flex items-center justify-between">
                             <h3 class="text-xl font-semibold text-cText">{club.data.name}</h3>
-                            <span
-                                class={`rounded-full px-2 py-1 text-xs font-medium ${
-                                    club.data.status === "active"
-                                        ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                                        : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100"
-                                }`}
-                            >
-                                {club.data.status.charAt(0).toUpperCase() + club.data.status.slice(1)}
-                            </span>
+                            <span class={`rounded-full px-2 py-1 text-xs font-medium ${club.data.status === "active" ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100" : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100"}`}>{club.data.status.charAt(0).toUpperCase() + club.data.status.slice(1)}</span>
                         </div>
                         <p class="line-clamp-3 text-cTextOffset">{club.data.description}</p>
                     </a>
@@ -203,11 +150,7 @@ const sortedCategories = Array.from(categories.entries())
     // Update results
     function updateResults() {
         const searchTerm = (searchInput?.value || "").toLowerCase();
-        const statusFilters = Array.from<HTMLInputElement>(
-            document.querySelectorAll(
-                'input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]',
-            ),
-        )
+        const statusFilters = Array.from<HTMLInputElement>(document.querySelectorAll('input[type="checkbox"][value="active"], input[type="checkbox"][value="inactive"]'))
             .filter((checkbox) => checkbox.checked)
             .map((checkbox) => checkbox.value);
 
