@@ -17,7 +17,7 @@
     --accent: theme("colors.purple.500");
     --text: theme("colors.slate.900");
     --text-offset: theme("colors.slate.600");
-    --border: theme("colors.sky.200");
+    --border: theme("colors.slate.200");
 
     --color-gradient: linear-gradient(45deg, theme("colors.purple.500"), theme("colors.blue.400"));
 }

@@ -1,0 +1,35 @@
+---
+interface TeamMember {
+    role: string;
+    name: string;
+    pronouns: string;
+    image: string;
+}
+
+interface Props {
+    title: string;
+    members: TeamMember[];
+}
+
+const { title, members } = Astro.props;
+---
+
+<section class="mb-16">
+    <h2 class="mb-8 text-center text-3xl font-bold text-cText">{title}</h2>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+            members.map((member) => (
+                <div class="flex flex-col items-center rounded-xl bg-cBackgroundOffset p-6 text-center shadow-lg">
+                    <div class="mb-4 h-40 w-40 overflow-hidden rounded-full">
+                        <img src={member.image} alt={member.name} class="h-full w-full object-cover" />
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                        <h3 class="text-xl font-semibold text-cText">{member.name}</h3>
+                        <span class="ml-1 text-sm italic text-cTextOffset">({member.pronouns})</span>
+                    </div>
+                    <p class="font-medium text-cTextOffset">{member.role}</p>
+                </div>
+            ))
+        }
+    </div>
+</section>
