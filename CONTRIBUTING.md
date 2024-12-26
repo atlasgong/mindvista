@@ -1,5 +1,3 @@
-CommitLint status: ![Commitlint](/actions/workflows/commitlint.yml/badge.svg)
-
 ### A Note to Contributors
 
 Please make an effort to follow these guidelines and conventions to help us keep our code and commit history clear and organized. If you have ideas for further improvements, or better conventions, we'd like to hear them :)
