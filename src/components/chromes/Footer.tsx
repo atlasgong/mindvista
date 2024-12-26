@@ -1,13 +1,14 @@
 import EmergencyButton from "@components/buttons/EmergencyButton";
 import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
 import { type IconType } from "react-icons";
+import Hr from "@components/Hr";
 
 export default function Footer() {
     return (
-        <footer className="sticky top-[100vh] flex flex-col gap-4 bg-cBackgroundOffset px-[5vw] py-6">
+        <footer className="sticky top-[100vh] flex flex-col gap-8 bg-cBackgroundOffset px-[5vw] py-6 pt-8">
             <NewsletterSection />
 
-            <HorizontalBar className="mt-4" />
+            <Hr />
 
             {/* MIDDLE ROW (MOBILE) */}
             <div className="flex flex-col items-center text-cText md:hidden">
@@ -56,7 +57,7 @@ export default function Footer() {
             </div>
             {/* END */}
 
-            <HorizontalBar />
+            <Hr />
 
             <LegalBar />
         </footer>
@@ -72,10 +73,6 @@ interface LinkProps extends ClassNameProps {
         href: string;
         text: string;
     }>;
-}
-
-function HorizontalBar(props: ClassNameProps) {
-    return <hr className={`${props.className} border-cBorder bg-cBorder text-cBorder`}></hr>;
 }
 
 function Links(props: LinkProps) {
@@ -95,13 +92,8 @@ function NewsletterSection() {
         <div className="rounded-xl bg-cBackgroundOffsetAccent p-6 shadow-lg transition-transform duration-300 hover:scale-[1.01]">
             <div className="flex flex-col gap-6 text-center md:flex-row md:text-left">
                 <div className="flex flex-col space-y-2 self-center md:max-w-[50%]">
-                    <h3 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-xl font-bold text-transparent">
-                        Join Our Wellness Newsletter
-                    </h3>
-                    <p className="text-cTextOffset">
-                        Stay updated with new content, resources and events from MindVista. Unsubscribe anytime — no
-                        hard feelings! 🙂
-                    </p>
+                    <h3 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-xl font-bold text-transparent">Join Our Wellness Newsletter</h3>
+                    <p className="text-cTextOffset">Stay updated with new content, resources and events from MindVista. Unsubscribe anytime — no hard feelings! 🙂</p>
                 </div>
                 <EmailForm />
             </div>
@@ -112,16 +104,8 @@ function NewsletterSection() {
 function EmailForm() {
     return (
         <form className="flex w-full flex-col items-center gap-3 self-center md:flex-row">
-            <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset px-4 py-2 text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg"
-                required
-            />
-            <button
-                type="submit"
-                className="w-full rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-2 font-semibold text-white transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:w-auto md:py-3 md:text-lg"
-            >
+            <input type="email" placeholder="Enter your email" className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset px-4 py-2 text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg" required />
+            <button type="submit" className="w-full rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-2 font-semibold text-white transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:w-auto md:py-3 md:text-lg">
                 Subscribe
             </button>
         </form>
@@ -130,7 +114,7 @@ function EmailForm() {
 
 function EmergencySection(props: ClassNameProps) {
     return (
-        <div className={`${props.className} mb-4 flex grow flex-col items-center gap-1 text-center`}>
+        <div className={`${props.className} flex grow flex-col items-center gap-1 text-center`}>
             <h3 className="text-xl font-semibold">MINDVISTA</h3>
             <p>Your wellness journey starts here.</p>
 
@@ -190,9 +174,7 @@ function LegalBar() {
                     <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} />
                 ))}
             </div>
-            <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">
-                &copy; {year} MindVista. All rights reserved.
-            </p>
+            <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">&copy; {year} MindVista. All rights reserved.</p>
         </div>
     );
 }
@@ -205,13 +187,7 @@ interface SocialMediaLinkProps {
 
 function SocialMediaLink({ href, icon: Icon, label }: SocialMediaLinkProps) {
     return (
-        <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary-600 text-gray-600 transition-colors"
-            aria-label={`Visit our ${label} page.`}
-        >
+        <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 text-gray-600 transition-colors" aria-label={`Visit our ${label} page.`}>
             <Icon className="h-5 w-5" title={label} />
         </a>
     );
