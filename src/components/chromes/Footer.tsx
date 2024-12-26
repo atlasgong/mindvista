@@ -19,15 +19,15 @@ export default function Footer() {
                         className="max-w-[50%] text-left"
                         links={[
                             { href: "/", text: "Home" },
-                            { href: "/", text: "About" },
+                            { href: "/about", text: "About" },
                             { href: "/", text: "What is Mental Wellness?" },
                         ]}
                     />
                     <Links
                         className="max-w-[50%] text-right"
                         links={[
-                            { href: "/", text: "Wellness Resources" },
-                            { href: "/", text: "Club List" },
+                            { href: "/resources", text: "Wellness Resources" },
+                            { href: "/clubs", text: "Club List" },
                             { href: "/contact", text: "Contact Us" },
                         ]}
                     />
@@ -41,7 +41,7 @@ export default function Footer() {
                     className="max-w-[33%] text-left"
                     links={[
                         { href: "/", text: "Home" },
-                        { href: "/", text: "About" },
+                        { href: "/about", text: "About" },
                         { href: "/", text: "What is Mental Wellness?" },
                     ]}
                 />
