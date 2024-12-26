@@ -1,3 +1,5 @@
+CommitLint status: ![Commitlint](/actions/workflows/commitlint.yml/badge.svg)
+
 ### A Note to Contributors
 
 Please make an effort to follow these guidelines and conventions to help us keep our code and commit history clear and organized. If you have ideas for further improvements, or better conventions, we'd like to hear them :)
@@ -28,6 +30,7 @@ This repository follows a modified conventional commit style to keep our commit 
 | ---------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | `build`    | Changes that affect the build system or dependencies.                                    | `build: update to latest mindfulness package`                 |
 | `ci`       | Changes to continuous integration setup, like configuration files.                       | `ci: add deployment workflow for GitHub Actions`              |
+| `merge`    | Represents any `git merge`.                                                              | `merge: branch 'master' into about-page`                      |
 | `content`  | Adding, updating, or removing website content (text, images, etc.).                      | `content: update About Us page`                               |
 | `feat`     | A new feature or functionality added to the website.                                     | `feat: add search bar to the navigation`                      |
 | `fix`      | A bug fix, including broken links, layout issues, or code bugs.                          | `fix: resolve mobile menu not opening on small screens`       |
