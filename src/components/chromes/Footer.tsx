@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="flex flex-col items-center text-cText md:hidden">
                 <EmergencySection />
 
-                <div className="flex flex-row">
+                <div className="mt-4 flex flex-row">
                     <Links
                         className="max-w-[50%] text-left"
                         links={[
