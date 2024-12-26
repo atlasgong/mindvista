@@ -31,6 +31,7 @@ This repository follows a modified conventional commit style to keep our commit 
 | `content`  | Adding, updating, or removing website content (text, images, etc.).                      | `content: update About Us page`                               |
 | `feat`     | A new feature or functionality added to the website.                                     | `feat: add search bar to the navigation`                      |
 | `fix`      | A bug fix, including broken links, layout issues, or code bugs.                          | `fix: resolve mobile menu not opening on small screens`       |
+| `resp`     | Changes to improve responsive design.                                                    | `resp: decrease side margins for smaller devices`             |
 | `a11y`     | Accessibility improvements to enhance website usability.                                 | `a11y: add alt text to all homepage images`                   |
 | `ui`       | Visual changes to the site’s appearance (e.g., colors, fonts, spacing adjustments).      | `ui: change button color to match theme`                      |
 | `perf`     | Changes made to improve website performance (e.g., optimizing images or code).           | `perf: lazy-load images on about us page`                     |
@@ -64,10 +65,12 @@ This repository follows a modified conventional commit style to keep our commit 
 ## Stack
 
 -   Astro
--   Tailwind CSS
-    -   Typography Plugin (for Prose)
+-   Typescript
 -   UI Frameworks:
     -   React (.tsx)
+        -   React-Icons
+-   Tailwind CSS
+    -   Typography Plugin (for Prose)
 -   Forms:
     -   Web3Forms (essentially "user submits form" -> "we receive email with form inputs")
     -   React Hook Form
