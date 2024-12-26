@@ -28,12 +28,15 @@ const sortedCategories = Array.from(categories.entries())
     }));
 ---
 
-<BaseLayout pageTitle="Clubs Directory" description="Browse all clubs" suffix={true}>
+<BaseLayout pageTitle="Clubs Directory" description="Browse and filter through MindVista's collection of clubs!" suffix={true}>
     <div class="mx-auto mb-14 max-w-7xl px-4 py-8 sm:px-8 md:px-12 lg:px-20">
         <header class="mb-8 mt-8 text-center">
             <h1 class="mb-4 text-4xl font-bold text-cText">Clubs Directory</h1>
             <p class="text-lg text-cTextOffset">Browse and filter through all available clubs.</p>
         </header>
+
+        <!-- Search -->
+        <SearchBar id="clubs-search" placeholder="Search clubs..." />
 
         <!-- Filters -->
         <div class="mb-8">
@@ -48,9 +51,6 @@ const sortedCategories = Array.from(categories.entries())
             </button>
             <div id="filters-panel" class="mt-2 hidden rounded-lg border border-cBorder bg-cBackgroundOffset p-6">
                 <div class="space-y-4">
-                    <!-- Search -->
-                    <SearchBar id="clubs-search" placeholder="Search clubs..." />
-
                     <!-- Status Filter -->
                     <div class="filter-section">
                         <button class="flex w-full items-center justify-between text-left" data-toggle="status">
