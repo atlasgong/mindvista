@@ -7,21 +7,10 @@ import useWeb3Forms from "@web3forms/react";
 
 // define form scheme for input validation
 const schema = z.object({
-    name: z
-        .string()
-        .min(2, { message: "Must be at least 2 characters long." })
-        .max(64, { message: "Must be at most 64 characters long." })
-        .trim(),
+    name: z.string().min(2, { message: "Must be at least 2 characters long." }).max(64, { message: "Must be at most 64 characters long." }).trim(),
     email: z.string().email({ message: "You must enter a valid email address." }).trim(),
-    subject: z
-        .string()
-        .min(4, { message: "Must be at least 4 characters long." })
-        .max(78, { message: "Subject line must not be longer than 78 characters." })
-        .trim(),
-    message: z
-        .string()
-        .min(50, { message: "Please enter at least 50 characters." })
-        .max(2048, { message: "Message cannot be longer than 2048 characters." }),
+    subject: z.string().min(4, { message: "Must be at least 4 characters long." }).max(78, { message: "Subject line must not be longer than 78 characters." }).trim(),
+    message: z.string().min(50, { message: "Please enter at least 50 characters." }).max(2048, { message: "Message cannot be longer than 2048 characters." }),
     captcha: z.string({ message: "Captcha verification is required!" }),
 });
 
@@ -70,22 +59,12 @@ export default function ContactForm() {
 
     // html form
     return (
-        <form
-            className="border-cBorder/20 mx-auto flex max-w-2xl flex-col space-y-8 rounded-xl border bg-cBackground p-8 shadow-lg dark:border-cBorder"
-            id="contactForm"
-            onSubmit={handleSubmit(onSubmit)}
-        >
+        <form className="border-cBorder/20 mx-auto flex max-w-2xl flex-col space-y-8 rounded-xl border bg-cBackground p-8 shadow-lg dark:border-cBorder" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="name" className="text-cText/80 text-md mb-2 block font-semibold">
                     Name
                 </label>
-                <input
-                    id="name"
-                    {...register("name")}
-                    type="text"
-                    placeholder="Johnny Appleseed"
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
-                />
+                <input id="name" {...register("name")} type="text" placeholder="Johnny Appleseed" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
                 {errors.name && <div className="text-md mt-2 text-cRed">{errors.name.message}</div>}
             </div>
 
@@ -93,13 +72,7 @@ export default function ContactForm() {
                 <label htmlFor="email" className="text-cText/80 text-md mb-2 block font-semibold">
                     Email
                 </label>
-                <input
-                    id="email"
-                    {...register("email")}
-                    type="text"
-                    placeholder="johnny.appleseed@mail.mcgill.ca"
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
-                />
+                <input id="email" {...register("email")} type="text" placeholder="johnny.appleseed@mail.mcgill.ca" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
                 {errors.email && <div className="text-md mt-2 text-cRed">{errors.email.message}</div>}
             </div>
 
@@ -107,13 +80,7 @@ export default function ContactForm() {
                 <label htmlFor="subject" className="text-cText/80 text-md mb-2 block font-semibold">
                     Subject
                 </label>
-                <input
-                    id="subject"
-                    {...register("subject")}
-                    type="text"
-                    placeholder="A concise subject line"
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
-                />
+                <input id="subject" {...register("subject")} type="text" placeholder="A concise subject line" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
                 {errors.subject && <div className="text-md mt-2 text-cRed">{errors.subject.message}</div>}
             </div>
 
@@ -121,48 +88,28 @@ export default function ContactForm() {
                 <label htmlFor="message" className="text-cText/80 text-md mb-2 block font-semibold">
                     Message
                 </label>
-                <textarea
-                    id="message"
-                    {...register("message")}
-                    placeholder="An interesting message."
-                    className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 min-h-[150px] w-full resize-none rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"
-                ></textarea>
+                <textarea id="message" {...register("message")} placeholder="An interesting message..." className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 min-h-[150px] w-full resize-none rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"></textarea>
                 {errors.message && <div className="text-md mt-2 text-cRed">{errors.message.message}</div>}
             </div>
 
             <div className="flex justify-center">
-                <HCaptcha
-                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                    reCaptchaCompat={false}
-                    onVerify={onHCaptchaChange}
-                    theme={theme}
-                />
+                <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" reCaptchaCompat={false} onVerify={onHCaptchaChange} theme={theme} />
             </div>
             {errors.captcha && <div className="text-md text-center text-cRed">{errors.captcha.message}</div>}
 
-            {isSuccess === true && (
-                <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in rounded-lg border p-4 text-center text-cAccent">
-                    Thank you for your message! We'll get back to you soon.
-                </div>
-            )}
+            {isSuccess === true && <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in rounded-lg border py-4 text-center font-medium text-cAccent">Thank you for your message! We'll get back to you soon.</div>}
 
             {isSuccess === false && (
-                <div className="bg-cRed/10 border-cRed/20 animate-fade-in rounded-lg border p-4 text-center text-cRed">
-                    Something went wrong. Please try again later or{" "}
+                <div className="bg-cRed/10 border-cRed/20 animate-fade-in rounded-lg border py-4 text-center text-cRed">
+                    Something went wrong. Please try again later or email us directly at{" "}
                     <a href="mailto:info@mindvista.ca" className="underline transition-opacity hover:opacity-80">
-                        email us directly
+                        info@mindvista.ca
                     </a>
                     .
                 </div>
             )}
 
-            <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full rounded-lg bg-gradient-to-r from-cPurple to-cLightBlue py-3 font-semibold text-cSoftWhite transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto md:px-8 ${
-                    isSubmitting ? "relative text-transparent" : ""
-                }`}
-            >
+            <button type="submit" disabled={isSubmitting} className={`w-full rounded-lg bg-gradient-to-r from-cPurple to-cLightBlue py-3 font-semibold text-cSoftWhite transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto md:px-8 ${isSubmitting ? "relative text-transparent" : ""}`}>
                 Send Message
                 {isSubmitting && (
                     <div className="absolute inset-0 flex items-center justify-center">
