@@ -1,4 +1,4 @@
-import "@styles/components/birds.css";
+import "./_birds.css";
 
 export default function Birds() {
     return (
