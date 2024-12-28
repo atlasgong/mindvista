@@ -38,8 +38,8 @@ export default function NavigationController() {
 function LandingNavBarDesktop() {
     return (
         <header>
-            <div className="fixed z-20 flex w-full flex-row items-center px-20 py-10">
-                <nav className="flex w-2/5 flex-row gap-16 text-lg font-semibold">
+            <div className="fixed z-20 flex w-full flex-row items-center px-20 py-10 xl:px-28 xl:py-12 2xl:px-32 2xl:py-14">
+                <nav className="flex w-2/5 flex-row gap-10 text-lg font-semibold xl:gap-12 2xl:gap-16">
                     <a href="/">Home</a>
                     <a href="/about">About</a>
                 </nav>
@@ -48,7 +48,7 @@ function LandingNavBarDesktop() {
                     <LogoButton />
                 </div>
 
-                <nav className="flex w-2/5 flex-row justify-end gap-16 text-lg font-semibold">
+                <nav className="flex w-2/5 flex-row justify-end gap-10 text-lg font-semibold xl:gap-14 2xl:gap-20">
                     <a href="/directory">Directory</a>
                     <a href="/contact">Contact</a>
                     <ThemeIcon />
