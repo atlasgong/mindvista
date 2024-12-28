@@ -115,7 +115,7 @@ function EmailForm() {
 function EmergencySection(props: ClassNameProps) {
     return (
         <div className={`${props.className} flex grow flex-col items-center gap-1 text-center`}>
-            <h3 className="text-xl font-semibold">MINDVISTA</h3>
+            <h3 className="font-serif text-xl font-semibold">MINDVISTA</h3>
             <p>Your wellness journey starts here.</p>
 
             <EmergencyButton className="mt-2" />
