@@ -104,7 +104,7 @@ function NewsletterSection() {
 function EmailForm() {
     return (
         <form className="flex w-full flex-col items-center gap-3 self-center md:flex-row">
-            <input type="email" placeholder="Enter your email" className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset px-4 py-2 text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg" required />
+            <input type="email" placeholder="Enter your email" className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset px-4 py-2 text-cText focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg" required />
             <button type="submit" className="w-full rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-2 font-semibold text-white transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:w-auto md:py-3 md:text-lg">
                 Subscribe
             </button>
