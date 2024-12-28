@@ -5,9 +5,11 @@ import Footer from "@components/chromes/Footer";
 import LandingNavBarDesktop from "./LandingNavBarDesktop";
 
 import "@styles/global.css";
+import "@styles/components/birds.css";
 import { Image } from "astro:assets";
 import lightThemeImage from "@public/landing/meritt-thomas.webp";
 import darkThemeImage from "@public/landing/jordan-steranka.webp";
+import Birds from "@components/Birds";
 ---
 
 <BareLayout pageTitle="landing">
@@ -16,12 +18,13 @@ import darkThemeImage from "@public/landing/jordan-steranka.webp";
             <LandingNavBarDesktop client:load />
 
             <section class="relative mx-auto flex min-h-[100vh] w-screen items-center justify-center">
+                <Birds />
                 <div class="absolute left-1/2 w-[20vw] -translate-x-1/2 transform">
                     <Image src={lightThemeImage} alt="A green leafy plant." class="h-auto max-h-screen object-contain dark:hidden" />
                     <Image src={darkThemeImage} alt="A green leafy plant." class="hidden h-auto max-h-screen w-full object-contain dark:block" />
                 </div>
 
-                <h1 class="font-serif text-[12vw] font-semibold tracking-tight text-[#1D1D1B] dark:text-slate-100 z-10">MINDVISTA</h1>
+                <h1 class="font-serif z-10 -mt-32 text-[12vw] font-semibold tracking-tight text-[#1D1D1B] dark:text-slate-100">MINDVISTA</h1>
             </section>
 
             <div class="lg:hidden"></div>
