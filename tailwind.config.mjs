@@ -8,7 +8,7 @@ export default {
     theme: {
         fontFamily: {
             sans: ["Inter Variable", ...fontFamily.sans],
-            serif: ["Baskerville", ...fontFamily.serif],
+            serif: ["Libre Baskerville", "Baskerville", ...fontFamily.serif],
         },
         extend: {
             colors: {
