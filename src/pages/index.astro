@@ -1,63 +1,100 @@
 ---
+import BareLayout from "@layouts/BareLayout.astro";
+import Footer from "@components/chromes/Footer";
 import MentalWellnessFact from "@components/MentalWellnessFact.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
 
-const suffix = false;
+import "@styles/global.css";
+import { Image } from "astro:assets";
+import lightThemeImage from "@public/landing/meritt-thomas.webp";
+import darkThemeImage from "@public/landing/jordan-steranka.webp";
+import Birds from "@components/Birds";
+import Hr from "@components/Hr";
+import NavigationController from "@components/chromes/NavigationController";
+import NavBar from "@components/chromes/NavBar";
 ---
 
-<BaseLayout pageTitle="MindVista", suffix={suffix} className="[&_h2]:tracking-tighter [&_p]:tracking-tight">
-    <!-- FIRST SECTION -->
-    <div
-        class="text-center pt-[10vh] lg:pt-[15vh] pb-12 px-[5vw] md:px-[7.5vw] lg:px-[10vw]"
-    >
-        <h2 class="text-5xl md:text-6xl font-bold">
-            Your Central Hub for <span class="text-cAccent">Wellness</span> and <span
-                class="text-cAccent">Growth</span
-            > at McGill
-            <!-- <span class="hidden max-md:inline">Your Hub</span> <span class="hidden md:inline">The One-Stop-Shop</span> for <span class="text-cAccent">Wellness</span> and <span class="text-cAccent">Engagement</span> at McGill. -->
-        </h2>
+<BareLayout pageTitle="MindVista">
+    <div class="max-lg:hidden"><NavigationController client:load /></div>
+    <div class="lg:hidden"><NavBar client:load /></div>
+    <main class="flex min-h-screen flex-col [&_h2]:tracking-tighter [&_p]:tracking-tight">
+        <!-- TOP SECTION START -->
 
-        <p
-            class="text-xl font-medium text-cTextOffset py-6 md:px-20 lg:px-28"
-        >
-            Welcome to <span class="font-semibold text-cAccent">MindVista</span
-            >, an innovative student-led initiative at McGill University
-            committed to enhancing student wellness and engagement.
-            <span class="hidden md:inline">
-                Our passionate team of volunteers is devoted to regularly
-                updating our website to simplify the process of accessing
-                essential resources for your well-being.
-            </span>
-        </p>
-    </div>
-    <!-- END OF FIRST SECTION -->
+        <!-- TOP SECTION DESKTOP START -->
+        <section class="flex-1 overflow-x-hidden max-lg:hidden">
+            <div class="relative mx-auto flex min-h-[100vh] w-screen items-center justify-center">
+                <Birds />
 
-    <p class="text-center bg-cBackgroundOffset min-h-12 content-center font-bold text-lg">Info Bar</p>
+                <!-- "Est. 2023" -->
+                <p class="absolute left-[22vw] top-[20vh] z-10 font-serif text-[2vh] font-semibold text-slate-400 dark:text-slate-100">&copy; Est. 2023</p>
 
-    <!-- MENTAL WELLNESS SECTION -->
-    <div class="px-[5vw]">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mt-16">What is Mental Wellness?</h2>
-        <p class="text-center text-xl  font-medium text-cTextOffset py-3 md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one’s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
+                <!-- Column Image -->
+                <div class="absolute inset-0 left-1/2 w-[25vw] -translate-x-1/2 transform">
+                    <Image src={lightThemeImage} alt="A green leafy plant." class="h-full w-full object-cover dark:hidden" />
+                    <Image src={darkThemeImage} alt="A green leafy plant." class="hidden h-full w-full object-cover dark:block" />
+                </div>
 
-        <div class="sm:mx-6 lg:mx-6 xl:mx-12 mt-12 mb-8 grid grid-cols-1 sm:grid-cols-2 grid-rows-3 sm:grid-rows-3 gap-4">
-            <div class="p-4"><MentalWellnessFact icon="tabler:stretching" title="Regular Physical Activity" description="Exercise boosts endorphins, improves sleep, and reduces stress. A daily walk, yoga, or gym session can enhance both physical and mental resilience."></div>
-            <div class="hidden sm:grid p-4"><MentalWellnessFact icon="tabler:heart-handshake" title="Healthy Relationships" description="Meaningful connections provide emotional support, reduce feelings of loneliness, and foster a sense of belonging. Prioritize time with friends and family."></div>
-            <div class="hidden sm:grid p-4"><MentalWellnessFact icon="tabler:circles-relation" title="Mindfulness and Stress Management" description="Techniques like meditation, deep breathing, or journaling help regulate emotions, lower anxiety, and keep you grounded in the present moment."></div>
-            <div class="hidden sm:grid p-4"><MentalWellnessFact icon="tabler:apple" title="A Balanced Diet" description="A nutrient-rich diet fuels your brain and body. Consuming omega-3s, whole grains, fruits, and vegetables positively affects mood and cognitive function."></div>
-            <div class="p-4"><MentalWellnessFact icon="tabler:zzz" title="Quality Sleep" description="Restorative sleep is essential for memory, mood regulation, and decision-making. Aim for 7-9 hours per night and establish a consistent bedtime routine."></div>
-            <div class="p-4"><MentalWellnessFact icon="tabler:user-check" title="Professional Support" description="Therapy or counseling can provide strategies to manage challenges and foster growth. It\'s a proactive step toward building long-term mental strength."></div>
+                <!-- "MINDVISTA" -->
+                <div class="z-10 flex flex-row gap-0">
+                    <h1 class="-mt-32 font-serif text-[12vw] font-semibold tracking-tight text-[#1D1D1B] dark:text-slate-100">MIND</h1>
+                    <h1 class="-mt-32 font-serif text-[12vw] font-semibold tracking-tight text-[#1D1D1B] dark:text-slate-100">VISTA</h1>
+                </div>
+
+                <!-- Quote -->
+                <div class="text-md absolute bottom-[20vh] right-[10vw] z-10 max-w-[20vw] text-[2vh] font-semibold text-[#1D1D1B] dark:text-slate-100">
+                    <p>Mental wellness is an active process that helps us to build resilience, grow, and flourish.</p>
+                    <p class="text-[#1D1D1B]/60 dark:text-slate-400">&mdash; Global Wellness Institute</p>
+                </div>
+
+                <!-- add logo overlay to bottom left corner -->
+            </div>
+
+            <!-- INFO BAR -->
+            <p class="min-h-[10vh] content-center bg-slate-300 text-center text-lg font-bold">SPONSORS HERE</p>
+        </section>
+        <!-- TOP SECTION DESKTOP END -->
+
+        <!-- TOP SECTION MOBILE START -->
+        <section class="pt-[10vh] lg:hidden"></section>
+        <!-- TOP SECTION MOBILE END -->
+        <!-- TOP SECTION END -->
+
+        <!-- FIRST SECTION -->
+        <div class="px-[5vw] pb-12 pt-[10vh] text-center md:px-[7.5vw] lg:px-[10vw]">
+            <h2 class="text-5xl font-bold md:text-6xl">
+                Your Central Hub for <span class="text-cAccent">Wellness</span> and <span class="text-cAccent">Growth</span> at McGill
+                <!-- <span class="hidden max-md:inline">Your Hub</span> <span class="hidden md:inline">The One-Stop-Shop</span> for <span class="text-cAccent">Wellness</span> and <span class="text-cAccent">Engagement</span> at McGill. -->
+            </h2>
+
+            <p class="py-6 text-xl font-medium text-cTextOffset md:px-20 lg:px-28">
+                Welcome to <span class="font-semibold text-cAccent">MindVista</span>, an innovative student-led initiative at McGill University committed to enhancing student wellness and engagement.
+                <span class="hidden md:inline"> Our passionate team of volunteers is devoted to regularly updating our website to simplify the process of accessing essential resources for your well-being. </span>
+            </p>
         </div>
+        <!-- END OF FIRST SECTION -->
 
-        <div class="flex justify-center">
-            <a href="/mental-wellness" class="rounded-full bg-cBackground text-lg p-3 font-semibold border-2 border-cText"><button>Learn More</button></a>
+        <Hr className="mx-[25vw]" />
+
+        <!-- MENTAL WELLNESS SECTION -->
+        <div class="px-[5vw]">
+            <h2 class="mt-16 text-center text-3xl font-bold md:text-4xl">What is Mental Wellness?</h2>
+            <p class="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one’s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
+
+            <div class="mb-8 mt-10 grid grid-cols-1 grid-rows-3 gap-4 sm:mx-6 sm:grid-cols-2 sm:grid-rows-3 lg:mx-6 xl:mx-12">
+                <div class="p-4"><MentalWellnessFact icon="tabler:stretching" title="Regular Physical Activity" description="Exercise boosts endorphins, improves sleep, and reduces stress. A daily walk, yoga, or gym session can enhance both physical and mental resilience." /></div>
+                <div class="hidden p-4 sm:grid"><MentalWellnessFact icon="tabler:heart-handshake" title="Healthy Relationships" description="Meaningful connections provide emotional support, reduce feelings of loneliness, and foster a sense of belonging. Prioritize time with friends and family." /></div>
+                <div class="hidden p-4 sm:grid"><MentalWellnessFact icon="tabler:circles-relation" title="Mindfulness and Stress Management" description="Techniques like meditation, deep breathing, or journaling help regulate emotions, lower anxiety, and keep you grounded in the present moment." /></div>
+                <div class="hidden p-4 sm:grid"><MentalWellnessFact icon="tabler:apple" title="A Balanced Diet" description="A nutrient-rich diet fuels your brain and body. Consuming omega-3s, whole grains, fruits, and vegetables positively affects mood and cognitive function." /></div>
+                <div class="p-4"><MentalWellnessFact icon="tabler:zzz" title="Quality Sleep" description="Restorative sleep is essential for memory, mood regulation, and decision-making. Aim for 7-9 hours per night and establish a consistent bedtime routine." /></div>
+                <div class="p-4"><MentalWellnessFact icon="tabler:user-check" title="Professional Support" description="Therapy or counseling can provide strategies to manage challenges and foster growth. It\'s a proactive step toward building long-term mental strength." /></div>
+            </div>
+
+            <div class="flex justify-center">
+                <a href="/mental-wellness" class="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold"><button>Learn More</button></a>
+            </div>
         </div>
+        <!-- END OF MENTAL WELLNESS SECTION -->
 
-    </div>
-    <!-- END OF MENTAL WELLNESS SECTION -->
-
-    <!-- RESOURCE & CLUB SECTION -->
-    <!-- END OF RESOURCE & CLUB SECTION -->
-
-    <div class="mt-16"></div>
-
-</BaseLayout>
+        <div class="mt-16"></div>
+    </main>
+    <Footer />
+</BareLayout>

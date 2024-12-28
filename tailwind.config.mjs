@@ -8,6 +8,7 @@ export default {
     theme: {
         fontFamily: {
             sans: ["Inter Variable", ...fontFamily.sans],
+            serif: ["Libre Baskerville", "Baskerville", ...fontFamily.serif],
         },
         extend: {
             colors: {
@@ -25,16 +26,15 @@ export default {
                 cPurple: "var(--purple)",
             },
             typography: {
-                DEFAULT: { // affects prose components
+                DEFAULT: {
+                    // affects prose components
                     css: {
                         color: "var(--text)",
-                        '*': { color: 'inherit' },
-                    }
-                }
-            }
+                        "*": { color: "inherit" },
+                    },
+                },
+            },
         },
     },
-    plugins: [
-        require('@tailwindcss/typography'),
-    ],
+    plugins: [require("@tailwindcss/typography")],
 };
