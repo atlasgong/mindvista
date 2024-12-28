@@ -8,6 +8,8 @@ Thank you and happy coding!
 
 # General Guidelines
 
+[Skip to documentation.](#documentation)
+
 Please write clear and concise code. It is recommended to use a formatter (e.g. Prettier). Ensure that files are well-commented.
 
 ### Responsiveness
@@ -20,7 +22,7 @@ We make an attempt to follow [WCAG 2.1 AA standards](https://www.w3.org/TR/WCAG2
 
 ## Conventional Commit Guidelines
 
-This repository follows a modified conventional commit style to keep our commit history clear and structured. Here are the commit types to use:
+This repository follows modified a [conventional commit](https://www.conventionalcommits.org) guide to keep our commit history clear and structured. Here are the commit types to use:
 
 ### Commit Types
 
@@ -59,7 +61,15 @@ This repository follows a modified conventional commit style to keep our commit 
 -   **Descriptions**: Descriptions are...a free for all...for right now. Ensure clarity and concision nevertheless.
 -   **Scope**: Use lowercase, concise scopes if you want to specify a particular section (e.g., `feat(nav): add dropdown menu`).
 
----
+### Husky
+
+These commit guidelines are remotely enforced and deployment will be blocked if conventions are not adhered to.
+
+To prevent "bad" commit messages from reaching the remote server in the first place, we use [Husky](https://typicode.github.io/husky/) to run [commitlint](https://commitlint.js.org/guides/ci-setup.html) on every commit attempt. Husky is already installed locally as a dev dependency when you clone this repo.
+
+You do not need to take any action here, but be aware of what is going on here and do not modify anything in [/.husky/](/.husky/).
+
+If you would like to add additional commit types, you may edit [/.commitlintrc.ts](/.commitlintrc.ts), and of course remember to update the documentation here. You should however, not have to do this. Take caution.
 
 # Documentation
 
@@ -86,7 +96,7 @@ Styling and design are a work in progress. Currently (Nov 25, 2024), no efforts 
 
 Tailwind CSS is used for styling. For more information, see [Tailwind's documentation](https://tailwindcss.com/docs).
 
-Components may still use CSS, but they will never be in a `<style>` tag, but rather have their own CSS file found in [src/styles](src/styles). To check whether or not a component has its own CSS file, check the component's imports.
+Components may still use CSS, but they will never be in a `<style>` tag, but rather have their own CSS file found in [/src/styles](/src/styles). To check whether or not a component has its own CSS file, check the component's imports.
 
 ## Pages
 
@@ -94,12 +104,12 @@ Components may still use CSS, but they will never be in a `<style>` tag, but rat
 
 ---
 
-There exist 4 layouts, all found in [src/layouts](src/layouts):
+There exist 4 layouts, all found in [/src/layouts](/src/layouts):
 
--   [BareLayout.astro](src/layouts/BareLayout.astro)
--   [BaseLayout.astro](src/layouts/BaseLayout.astro)
--   [PageLayout.astro](src/layouts/PageLayout.astro)
--   [EntityLayout.astro](src/layouts/EntityLayout.astro)
+-   [BareLayout.astro](/src/layouts/BareLayout.astro)
+-   [BaseLayout.astro](/src/layouts/BaseLayout.astro)
+-   [PageLayout.astro](/src/layouts/PageLayout.astro)
+-   [EntityLayout.astro](/src/layouts/EntityLayout.astro)
 
 `PageLayout` extends `BaseLayout` extends `BareLayout`. All [markdown rendered pages](#markdown-rendered-pages) **do and should continue to extend** `PageLayout`. Default `BareLayout` contains an HTML boilerplate for all pages, and should not be extended with the exception of experimental design. `EntityLayout` is dedicated to _club_ and _resource_ posts.
 
@@ -109,7 +119,7 @@ There exist 4 layouts, all found in [src/layouts](src/layouts):
 
 -   All legal pages
 
-Markdown pages are styled with a [Prose](src/components/Prose.astro) component.
+Markdown pages are styled with a [Prose](/src/components/Prose.astro) component.
 
 ### YAML Rendered Pages
 
