@@ -13,31 +13,31 @@ import NavigationController from "@pages/landing/_NavigationController";
 import NavBar from "@components/chromes/NavBar";
 ---
 
-<BareLayout pageTitle="landing">
+<BareLayout pageTitle="MindVista">
     <div class="max-lg:hidden"><NavigationController client:load /></div>
     <div class="lg:hidden"><NavBar client:load /></div>
     <main class="flex min-h-screen flex-col [&_h2]:tracking-tighter [&_p]:tracking-tight">
         <!-- TOP SECTION START -->
 
         <!-- TOP SECTION DESKTOP START -->
-        <section class="flex-1 max-lg:hidden overflow-x-hidden">
+        <section class="flex-1 overflow-x-hidden max-lg:hidden">
             <div class="relative mx-auto flex min-h-[100vh] w-screen items-center justify-center">
                 <Birds />
 
                 <!-- "Est. 2023" -->
-                <p class="font-serif absolute left-[25vw] top-[20vh] z-10 text-lg font-semibold text-slate-400 dark:text-slate-100">&copy; Est. 2023</p>
+                <p class="absolute left-[22vw] top-[20vh] z-10 font-serif text-[2vh] font-semibold text-slate-400 dark:text-slate-100">&copy; Est. 2023</p>
 
-                <!-- Column image -->
+                <!-- Column Image -->
                 <div class="absolute inset-0 left-1/2 w-[25vw] -translate-x-1/2 transform">
                     <Image src={lightThemeImage} alt="A green leafy plant." class="h-full w-full object-cover dark:hidden" />
                     <Image src={darkThemeImage} alt="A green leafy plant." class="hidden h-full w-full object-cover dark:block" />
                 </div>
 
                 <!-- "MINDVISTA" -->
-                <h1 class="font-serif z-10 -mt-32 text-[12vw] font-semibold tracking-tight text-[#1D1D1B] dark:text-slate-100">MINDVISTA</h1>
+                <h1 class="z-10 -mt-32 font-serif text-[12vw] font-semibold tracking-tight text-[#1D1D1B] dark:text-slate-100">MINDVISTA</h1>
 
                 <!-- Quote -->
-                <div class="text-md absolute bottom-[20vh] right-[10vw] z-10 max-w-[20vw] font-medium text-[#1D1D1B] dark:text-slate-100">
+                <div class="text-md absolute bottom-[20vh] right-[10vw] z-10 max-w-[20vw] text-[2vh] font-semibold text-[#1D1D1B] dark:text-slate-100">
                     <p>Mental wellness is an active process that helps us to build resilience, grow, and flourish.</p>
                     <p class="text-[#1D1D1B]/60 dark:text-slate-400">&mdash; Global Wellness Institute</p>
                 </div>
@@ -46,7 +46,7 @@ import NavBar from "@components/chromes/NavBar";
             </div>
 
             <!-- INFO BAR -->
-            <p class="min-h-12 content-center bg-slate-300 text-center text-lg font-bold">Sponsors</p>
+            <p class="min-h-12 content-center bg-slate-300 text-center text-lg font-bold">SPONSORS HERE</p>
         </section>
         <!-- TOP SECTION DESKTOP END -->
 
