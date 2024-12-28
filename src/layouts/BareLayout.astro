@@ -8,18 +8,41 @@ const { pageTitle, description = "Your One-Stop Hub for Wellness and Engagement.
 ---
 
 <html lang="en" class="light bg-cBackground">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
         <meta name="description" content={description} />
 
         <!-- social media here-->
-	</head>
-	<body class="min-h-screen text-cText antialiased">
-		<!-- removed justify-between and flex flex-col  -->
-		<slot />
-	</body>
+    </head>
+    <body class="min-h-screen text-cText antialiased">
+        <slot />
+    </body>
 </html>
+
+<!-- initialize and handle theme switching (see @components/ThemeIcon.tsx for event management) -->
+<script is:inline>
+    const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+            return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+        }
+        return "light";
+    })();
+
+    const element = document.documentElement;
+    if (theme === "light") {
+        element.classList.remove("dark");
+        element.classList.add("light");
+    } else {
+        element.classList.remove("light");
+        element.classList.add("dark");
+    }
+
+    window.localStorage.setItem("theme", theme);
+</script>
