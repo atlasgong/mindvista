@@ -1,7 +1,7 @@
 ---
-import BareLayout from '@layouts/BareLayout.astro';
-import Footer from '@components/chromes/Footer';
-import NavBar from '@components/chromes/NavBar';
+import BareLayout from "@layouts/BareLayout.astro";
+import Footer from "@components/chromes/Footer";
+import NavBar from "@components/chromes/NavBar";
 
 import "@styles/global.css";
 
@@ -15,7 +15,7 @@ interface Props {
 let { pageTitle } = Astro.props;
 const { description, suffix, className } = Astro.props;
 
-if (suffix) pageTitle += ' - MindVista';
+if (suffix) pageTitle += " - MindVista";
 ---
 
 <BareLayout pageTitle=`${pageTitle}` description={description}>
@@ -25,28 +25,3 @@ if (suffix) pageTitle += ' - MindVista';
     </main>
     <Footer />
 </BareLayout>
-
-
-<!-- initialize and handle theme switching (see @components/ThemeIcon.tsx for event management) -->
-<script is:inline>
-    const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            return localStorage.getItem('theme');
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
-        }
-        return 'light';
-    })();
-
-    const element = document.documentElement;
-    if (theme === 'light') {
-        element.classList.remove('dark');
-        element.classList.add('light');
-    } else {
-        element.classList.remove('light');
-        element.classList.add('dark');
-    }
-
-    window.localStorage.setItem('theme', theme);
-</script>
