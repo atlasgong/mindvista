@@ -30,7 +30,10 @@ import NavBar from "@components/chromes/NavBar";
                 <!-- Column Image -->
                 <div class="absolute inset-0 left-1/2 w-[25vw] -translate-x-1/2 transform">
                     <Image src={lightThemeImage} alt="A green leafy plant." class="h-full w-full object-cover dark:hidden" />
-                    <Image src={darkThemeImage} alt="A green leafy plant." class="hidden h-full w-full object-cover dark:block" />
+                    <div class="hidden dark:inline">
+                        <Image src={darkThemeImage} alt="A green leafy plant." class="h-full w-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                    </div>
                 </div>
 
                 <!-- "MINDVISTA" -->
