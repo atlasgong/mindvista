@@ -20,7 +20,7 @@ export default function Footer() {
                         links={[
                             { href: "/", text: "Home" },
                             { href: "/about", text: "About" },
-                            { href: "/", text: "What is Mental Wellness?" },
+                            { href: "/mental-wellness", text: "What is Mental Wellness?" },
                         ]}
                     />
                     <Links
@@ -42,7 +42,7 @@ export default function Footer() {
                     links={[
                         { href: "/", text: "Home" },
                         { href: "/about", text: "About" },
-                        { href: "/", text: "What is Mental Wellness?" },
+                        { href: "/mental-wellness", text: "What is Mental Wellness?" },
                     ]}
                 />
                 <EmergencySection className="max-w-[33%]" />
