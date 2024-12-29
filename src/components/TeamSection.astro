@@ -25,7 +25,7 @@ const { title, members } = Astro.props;
                     </div>
                     <div class="flex flex-row items-center justify-center">
                         <h3 class="text-xl font-semibold text-cText">{member.name}</h3>
-                        <span class="ml-1 text-sm italic text-cTextOffset">({member.pronouns})</span>
+                        {member.pronouns !== "" && <span class="ml-1 text-sm italic text-cTextOffset">({member.pronouns})</span>}
                     </div>
                     <p class="font-medium text-cTextOffset">{member.role}</p>
                 </div>
