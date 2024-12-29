@@ -1,16 +1,17 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SearchBar from "@components/search/SearchBar.astro";
 
 // Get all clubs and sort by name
-const clubs = (await getCollection("clubs")).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const clubs: CollectionEntry<"clubs">[] = (await getCollection("clubs")).sort((a: CollectionEntry<"clubs">, b: CollectionEntry<"clubs">) => a.data.name.localeCompare(b.data.name));
 
 // Get unique categories and their tags
 const categories = new Map<string, Set<string>>();
 clubs.forEach((club) => {
     if (club.data.categories) {
-        Object.entries(club.data.categories).forEach(([category, tags]) => {
+        Object.entries(club.data.categories as Record<string, string[]>).forEach(([category, tags]) => {
             if (!categories.has(category)) {
                 categories.set(category, new Set());
             }
