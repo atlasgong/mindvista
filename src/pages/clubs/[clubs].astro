@@ -1,0 +1,18 @@
+---
+import { getEntry } from "astro:content";
+import EntityLayout from "@layouts/EntityLayout.astro";
+
+const { clubs } = Astro.params;
+if (clubs === undefined) {
+    return Astro.redirect("/404");
+}
+
+const entry = await getEntry("clubs", clubs);
+if (entry === undefined) {
+    return Astro.redirect("/404");
+}
+
+const { data } = entry;
+---
+
+<EntityLayout frontmatter={data} type="club" />

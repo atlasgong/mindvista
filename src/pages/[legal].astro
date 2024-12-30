@@ -1,31 +1,29 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Prose from "@components/wrappers/Prose.astro";
 
-interface PageProps {
-  params: { legal: string },
-  props: { page: CollectionEntry<"legal"> },
+// 1. Get the slug from the incoming server request
+const { legal } = Astro.params;
+if (legal === undefined) {
+    return Astro.redirect("/404");
 }
-
-export async function getStaticPaths(): Promise<PageProps[]> {
-  const pages = await getCollection("legal");
-  return pages.map((page: CollectionEntry<"legal">) => ({
-    params: { legal: page.slug },
-    props: { page },
-  })); 
+// 2. Query for the entry directly using the request slug
+const post = await getEntry("legal", legal);
+// 3. Redirect if the entry does not exist
+if (post === undefined) {
+    return Astro.redirect("/404");
 }
-
-const { page } = Astro.props as { page: CollectionEntry<"legal"> };
-const { Content } = await page.render();
+// 4. Render the entry to HTML in the template
+const { Content } = await render(post);
 ---
 
-<PageLayout pageTitle={page.data.title} description={page.data.description}>
-  <div class="container mx-auto px-4 py-8 md:py-12 lg:py-16 max-w-4xl">
-    <div class="bg-cBackgroundOffset rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(15,23,42,0.3)] p-6 md:p-8 lg:p-12">
-      <Prose>
-        <Content />
-      </Prose>
+<PageLayout pageTitle={post.data.title} description={post.data.description}>
+    <div class="container mx-auto max-w-4xl px-4 py-8 md:py-12 lg:py-16">
+        <div class="rounded-xl bg-cBackgroundOffset p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] md:p-8 lg:p-12 dark:shadow-[0_8px_30px_rgb(15,23,42,0.3)]">
+            <Prose>
+                <Content />
+            </Prose>
+        </div>
     </div>
-  </div>
 </PageLayout>
