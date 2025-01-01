@@ -2,7 +2,7 @@ import "@styles/components/birds.css";
 
 export default function Birds() {
     return (
-        <div>
+        <div className="z-[5]">
             <div className="bird-container bird-container--one">
                 <div className="bird bird--one"></div>
             </div>
