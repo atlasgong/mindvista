@@ -10,8 +10,10 @@ import sharp from "sharp";
 import { en } from "@payloadcms/translations/languages/en";
 import { fr } from "@payloadcms/translations/languages/fr";
 
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
+import { Users } from "@collections/Users";
+import { Media } from "@collections/Media";
+import { Index } from "@globals/Index";
+import { Pages } from "@collections/Pages";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -24,7 +26,8 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [Users, Media],
+    collections: [Users, Pages, Media],
+    globals: [Index],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
