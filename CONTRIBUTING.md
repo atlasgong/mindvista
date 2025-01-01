@@ -30,6 +30,7 @@ This repository follows modified a [conventional commit](https://www.conventiona
 | ---------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | `build`    | Changes that affect the build system or dependencies.                                    | `build: update to latest mindfulness package`                 |
 | `ci`       | Changes to continuous integration setup, like configuration files.                       | `ci: add deployment workflow for GitHub Actions`              |
+| `cms`      | Changes to Payload CMS configuration and the like.                                       | `cms: add new pages collection`                               |
 | `merge`    | Represents any `git merge`.                                                              | `merge: branch 'master' into about-page`                      |
 | `content`  | Adding, updating, or removing website content (text, images, etc.).                      | `content: update About Us page`                               |
 | `feat`     | A new feature or functionality added to the website.                                     | `feat: add search bar to the navigation`                      |
@@ -61,7 +62,7 @@ This repository follows modified a [conventional commit](https://www.conventiona
 - **Descriptions**: Descriptions are...a free for all...for right now. Ensure clarity and concision nevertheless.
 - **Scope**: Use lowercase, concise scopes if you want to specify a particular section (e.g., `feat(nav): add dropdown menu`).
 
-<!-- ### Husky
+### Husky
 
 These commit guidelines are remotely enforced and deployment will be blocked if conventions are not adhered to.
 
@@ -69,7 +70,7 @@ To prevent "bad" commit messages from reaching the remote server in the first pl
 
 You do not need to take any action here, but be aware of what is going on here and do not modify anything in [/.husky/](/.husky/).
 
-If you would like to add additional commit types, you may edit [/.commitlintrc.ts](/.commitlintrc.ts), and of course remember to update the documentation here. You should however, not have to do this. Take caution. -->
+If you would like to add additional commit types, you may edit [/.commitlintrc.ts](/.commitlintrc.ts), and of course remember to update the documentation here. You should however, not have to do this. Take caution.
 
 # Documentation
 
@@ -81,6 +82,10 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
 - Neon Serverless Postgres
 
 Not all dependencies are listed above. Run `npm list` for all dependencies.
+
+## Getting Started with Payload CMS
+
+This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/what-is-payload).
 
 ## Styling
 
