@@ -64,7 +64,7 @@ export default function CrisisPage() {
 
                     {/* SSMU Students' Nightline */}
                     <div className="border-cBorder bg-cBackgroundOffset rounded-lg border p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
-                        <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">SSMU Students' Nightline</h2>
+                        <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">SSMU Students&apos; Nightline</h2>
                         <p className="mb-4 text-[var(--text-offset)]">Confidential listening service by students, for students.</p>
                         <div className="mb-2 text-xl font-bold text-[var(--text)]">514-398-6246</div>
                         <p className="text-sm text-[var(--text-offset)]">Available Monday-Sunday, 6PM-3AM</p>
@@ -75,7 +75,7 @@ export default function CrisisPage() {
 
                     {/* McGill's Peer Support Center */}
                     <div className="border-cBorder bg-cBackgroundOffset rounded-lg border p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
-                        <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">McGill's Peer Support Centre</h2>
+                        <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">McGill&apos;s Peer Support Centre</h2>
                         <p className="mb-4 text-[var(--text-offset)]">45-minute sessions with trained student supporters.</p>
                         <ul className="mb-4 list-inside list-disc text-[var(--text-offset)]">
                             <li>Drop-in sessions available</li>
@@ -93,7 +93,7 @@ export default function CrisisPage() {
                 {/* Additional Resources */}
                 <div className="border-cBorder bg-cBackgroundOffset my-12 rounded-lg border p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
                     <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">Additional Resources</h2>
-                    <p className="mb-4 text-[var(--text-offset)]">If you're not sure what support you need, we're here to help you find the right resources.</p>
+                    <p className="mb-4 text-[var(--text-offset)]">If you&apos;re here to help you find the right resources.</p>
                     <button className="rounded px-4 py-2 font-bold text-white [background:var(--color-gradient)] hover:opacity-90"> Find Support </button>
                     {/* TODO: initalize button to redirect...somewhere */}
                 </div>

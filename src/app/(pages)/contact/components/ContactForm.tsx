@@ -99,7 +99,7 @@ export default function ContactForm() {
             </div>
             {errors.captcha && <div className="text-md text-cRed text-center">{errors.captcha.message}</div>}
 
-            {isSuccess === true && <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in text-cAccent rounded-lg border py-4 text-center font-medium">Thank you for your message! We'll get back to you soon.</div>}
+            {isSuccess === true && <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in text-cAccent rounded-lg border py-4 text-center font-medium">Thank you for your message! We&apos;ll get back to you soon.</div>}
 
             {isSuccess === false && (
                 <div className="bg-cRed/10 border-cRed/20 animate-fade-in text-cRed rounded-lg border py-4 text-center">

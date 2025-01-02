@@ -42,7 +42,7 @@ export default function AboutPage() {
 
             {/* About Content */}
             <div className="mx-auto mb-16 max-w-4xl space-y-6">
-                <h1 className="mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-center text-3xl font-bold text-transparent md:text-4xl dark:from-purple-400 dark:to-blue-300">About MindVista's Initiative</h1>
+                <h1 className="mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-center text-3xl font-bold text-transparent md:text-4xl dark:from-purple-400 dark:to-blue-300">About MindVista&apos;s Initiative</h1>
 
                 <p className="text-cTextOffset text-base font-medium leading-relaxed">Established in 2023, MindVista emerged from the collaborative as part of the Integrated Management Student Fellowship (IMSF) at McGill University. Rooted in a commitment to enhancing mental wellness, our group functions as a student, volunteer-run initiative that envisions a holistic approach to fostering well-being for every McGill student.</p>
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
                     <li>Wellness Challenges and Giveaways with Epic Rewards</li>
                 </ul>
 
-                <p className="text-cTextOffset text-base font-medium leading-relaxed">Join MindVista on our mission to cultivate a campus culture that prioritizes mental wellness and fosters a sense of community among McGill students. Together, let's embark on a journey towards a healthier and more connected student experience.</p>
+                <p className="text-cTextOffset text-base font-medium leading-relaxed">Join MindVista on our mission to cultivate a campus culture that prioritizes mental wellness and fosters a sense of community among McGill students. Together, let&apos;s embark on a journey towards a healthier and more connected student experience.</p>
             </div>
 
             <Hr className="mb-16" />
