@@ -93,4 +93,8 @@ This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/w
 
 [Tailwind CSS](https://tailwindcss.com/docs) is used for styling.
 
+### Payload CMS' Lexical Rich Text
+
+See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography) for a set of prose classes to style Rich Text from Payload.
+
 ## Pages

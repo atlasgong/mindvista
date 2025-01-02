@@ -1,0 +1,50 @@
+/* prettier-ignore */
+.legalContent {
+  @apply prose dark:prose-invert min-w-full max-w-none
+    /* Base typography */
+    text-lg text-cText space-y-2
+
+    /* Headings */
+    prose-headings:font-bold prose-headings:text-cText prose-headings:mt-4 prose-headings:mb-2
+    
+    /* H1 - Main title */
+    prose-h1:text-center prose-h1:text-[10vmin] prose-h1:font-extrabold
+    prose-h1:uppercase prose-h1:mt-0 prose-h1:mb-4
+    
+    /* H2 - Section headers */
+    prose-h2:text-2xl prose-h2:font-bold prose-h2:md:text-3xl
+    prose-h2:mt-4 prose-h2:mb-2
+    
+    /* H3 - Sub-sections */
+    prose-h3:text-xl prose-h3:font-semibold prose-h3:md:text-2xl
+    prose-h3:mt-3 prose-h3:mb-1
+    
+    /* Text elements */
+    prose-p:text-lg prose-p:text-cText prose-p:my-1
+    prose-strong:text-cText
+    
+    /* Links */
+    prose-a:text-cAccent prose-a:no-underline
+    hover:prose-a:underline
+    
+    /* Lists */
+    prose-li:text-cText prose-ul:my-1 prose-ol:my-1
+    
+    /* Code blocks */
+    prose-code:bg-cBackgroundOffsetAccent prose-code:text-cAccent
+    prose-pre:bg-cBackgroundOffset prose-pre:my-2
+    
+    /* Blockquotes */
+    prose-blockquote:border-l-4 prose-blockquote:border-cAccent
+    prose-blockquote:text-cTextOffset prose-blockquote:my-2
+}
+
+/* Custom blockquote background */
+.legalContent blockquote {
+    @apply bg-cBackgroundOffset bg-opacity-50;
+}
+
+/* Add smooth transitions */
+.legalContent * {
+    @apply transition-colors duration-200;
+}
