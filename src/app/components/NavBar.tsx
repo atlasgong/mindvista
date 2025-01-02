@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import EmergencyButton from "./EmergencyButton";
 import ThemeIcon from "./ThemeIcon";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavBar() {
     const [nav, setNav] = useState(false);
@@ -84,7 +85,7 @@ function LogoButton() {
 
     return (
         <button className="text-cAccent flex flex-row gap-2 text-left" onClick={redirectToHomepage}>
-            <img className="border-cAccent bg-cAccent max-w-12 rounded-full border-4 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" width="164" height="164" />
+            <Image width={164} height={164} className="border-cAccent bg-cAccent max-w-12 rounded-full border-4 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
             <div className="flex flex-col max-lg:hidden">
                 <h1 className="text-lg font-bold">MINDVISTA</h1>
                 <p className="-mt-1 text-[0.6rem] font-bold leading-[0.5rem]">Your wellness journey starts here.</p>

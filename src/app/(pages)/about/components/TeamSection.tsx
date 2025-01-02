@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface TeamMember {
     role: string;
     name: string;
@@ -18,7 +20,7 @@ export default function TeamSection(props: Props) {
                 {props.members.map((member) => (
                     <div key={member.name} className="bg-cBackgroundOffset flex flex-col items-center rounded-xl p-6 text-center shadow-lg">
                         <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
-                            <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
+                            <Image src={member.image} alt={member.name} width={500} height={500} className="h-full w-full object-cover" />
                         </div>
                         <div className="flex flex-row items-center justify-center">
                             <h3 className="text-cText text-xl font-semibold">{member.name}</h3>

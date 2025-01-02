@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import ThemeIcon from "./ThemeIcon";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavigationController() {
     const [showMainNav, setShowMainNav] = useState(false);
@@ -48,7 +49,7 @@ function LandingNavBarDesktop() {
 
                 <div className="flex w-1/5 justify-center">
                     <Link href="/">
-                        <img className="h-16 w-16 rounded-full border-4 border-slate-600 bg-slate-600 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
+                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-slate-600 bg-slate-600 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
                     </Link>
                 </div>
 

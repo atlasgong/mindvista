@@ -1,5 +1,6 @@
 import TeamSection from "./components/TeamSection";
 import Hr from "../../components/Hr";
+import Image from "next/image";
 
 const teams = {
     leadership: [
@@ -32,7 +33,7 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-6 pb-12 pt-20">
             {/* Group Photo */}
             <div className="group relative mb-16 aspect-[16/9] w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300">
-                <img src="/team/group-photo.webp" alt="MindVista Team" className="h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105 group-hover:brightness-100" />
+                <Image src="/team/group-photo.webp" alt="MindVista Team" width={2000} height={1500} className="h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105 group-hover:brightness-100" />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-black/40 p-4 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <h3 className="text-xl font-semibold">MindVista Team 2024-2025</h3>
