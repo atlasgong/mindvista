@@ -15,6 +15,12 @@ export interface Config {
     pages: Page;
     legal: Legal;
     media: Media;
+    clubs: Club;
+    resources: Resource;
+    'club-tag-categories': ClubTagCategory;
+    'resource-tag-categories': ResourceTagCategory;
+    'club-tags': ClubTag;
+    'resource-tags': ResourceTag;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -25,6 +31,12 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     legal: LegalSelect<false> | LegalSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    clubs: ClubsSelect<false> | ClubsSelect<true>;
+    resources: ResourcesSelect<false> | ResourcesSelect<true>;
+    'club-tag-categories': ClubTagCategoriesSelect<false> | ClubTagCategoriesSelect<true>;
+    'resource-tag-categories': ResourceTagCategoriesSelect<false> | ResourceTagCategoriesSelect<true>;
+    'club-tags': ClubTagsSelect<false> | ClubTagsSelect<true>;
+    'resource-tags': ResourceTagsSelect<false> | ResourceTagsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -141,6 +153,103 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clubs".
+ */
+export interface Club {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  website?: string | null;
+  email?: string | null;
+  phoneNumber?: string | null;
+  facebook?: string | null;
+  instagram?: string | null;
+  otherSocials?:
+    | {
+        link: string;
+        id?: string | null;
+      }[]
+    | null;
+  currentlyActive: string;
+  tags?: (number | ClubTag)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "club-tags".
+ */
+export interface ClubTag {
+  id: number;
+  name: string;
+  category: number | ClubTagCategory;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "club-tag-categories".
+ */
+export interface ClubTagCategory {
+  id: number;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources".
+ */
+export interface Resource {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  website?: string | null;
+  insuranceDetails?: string | null;
+  insuranceProviders?:
+    | {
+        insuranceProvider: {
+          name: string;
+          description?: string | null;
+          id?: string | null;
+        }[];
+        id?: string | null;
+      }[]
+    | null;
+  email?: string | null;
+  phoneNumber?: string | null;
+  location?: string | null;
+  channel?: string | null;
+  currentlyActive: string;
+  tags?: (number | ResourceTag)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resource-tags".
+ */
+export interface ResourceTag {
+  id: number;
+  name: string;
+  category: number | ResourceTagCategory;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resource-tag-categories".
+ */
+export interface ResourceTagCategory {
+  id: number;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -161,6 +270,30 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'clubs';
+        value: number | Club;
+      } | null)
+    | ({
+        relationTo: 'resources';
+        value: number | Resource;
+      } | null)
+    | ({
+        relationTo: 'club-tag-categories';
+        value: number | ClubTagCategory;
+      } | null)
+    | ({
+        relationTo: 'resource-tag-categories';
+        value: number | ResourceTagCategory;
+      } | null)
+    | ({
+        relationTo: 'club-tags';
+        value: number | ClubTag;
+      } | null)
+    | ({
+        relationTo: 'resource-tags';
+        value: number | ResourceTag;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -258,6 +391,99 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clubs_select".
+ */
+export interface ClubsSelect<T extends boolean = true> {
+  slug?: T;
+  title?: T;
+  description?: T;
+  website?: T;
+  email?: T;
+  phoneNumber?: T;
+  facebook?: T;
+  instagram?: T;
+  otherSocials?:
+    | T
+    | {
+        link?: T;
+        id?: T;
+      };
+  currentlyActive?: T;
+  tags?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources_select".
+ */
+export interface ResourcesSelect<T extends boolean = true> {
+  slug?: T;
+  title?: T;
+  description?: T;
+  website?: T;
+  insuranceDetails?: T;
+  insuranceProviders?:
+    | T
+    | {
+        insuranceProvider?:
+          | T
+          | {
+              name?: T;
+              description?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  email?: T;
+  phoneNumber?: T;
+  location?: T;
+  channel?: T;
+  currentlyActive?: T;
+  tags?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "club-tag-categories_select".
+ */
+export interface ClubTagCategoriesSelect<T extends boolean = true> {
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resource-tag-categories_select".
+ */
+export interface ResourceTagCategoriesSelect<T extends boolean = true> {
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "club-tags_select".
+ */
+export interface ClubTagsSelect<T extends boolean = true> {
+  name?: T;
+  category?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resource-tags_select".
+ */
+export interface ResourceTagsSelect<T extends boolean = true> {
+  name?: T;
+  category?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

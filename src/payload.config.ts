@@ -15,6 +15,12 @@ import { Media } from "@collections/Media";
 import { Index } from "@globals/Index";
 import { Pages } from "@collections/Pages";
 import { LegalPages } from "@collections/LegalPages";
+import { Clubs } from "./collections/lists/clubs/Clubs";
+import { Resources } from "./collections/lists/resources/Resources";
+import { ClubTagCategories } from "./collections/lists/clubs/ClubTagCategories";
+import { ResourceTagCategories } from "./collections/lists/resources/ResourceTagCategories";
+import { ClubTags } from "./collections/lists/clubs/ClubTags";
+import { ResourceTags } from "./collections/lists/resources/ResourceTags";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -27,7 +33,7 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [Users, Pages, LegalPages, Media],
+    collections: [Users, Pages, LegalPages, Media, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
     globals: [Index],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
