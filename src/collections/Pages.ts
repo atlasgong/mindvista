@@ -15,7 +15,8 @@ export const Pages: CollectionConfig = {
             type: "text",
         },
         {
-            name: "description",
+            name: "seoDescription",
+            label: "SEO Description",
             required: true,
             type: "text",
         },
