@@ -2,6 +2,7 @@ import EmergencyButton from "./EmergencyButton";
 import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
 import { type IconType } from "react-icons";
 import Hr from "./Hr";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -157,17 +158,17 @@ function LegalBar() {
     return (
         <div className="flex flex-col justify-between text-center md:flex-row md:text-right">
             <div className="text-cTextOffset flex grow basis-0 flex-row justify-center gap-2 font-semibold md:justify-start">
-                <a href="/privacy-policy" className="">
+                <Link href="/privacy-policy" className="">
                     Privacy Policy
-                </a>
+                </Link>
                 <span className="font-normal">|</span>
-                <a href="/disclaimers" className="">
+                <Link href="/disclaimers" className="">
                     Disclaimers
-                </a>
+                </Link>
                 <span className="font-normal">|</span>
-                <a href="/copyright" className="">
+                <Link href="/copyright" className="">
                     Copyright
-                </a>
+                </Link>
             </div>
             <div className="mt-4 flex grow basis-0 items-center justify-center gap-4 md:mt-0">
                 {socialLinks.map((link) => (
@@ -187,8 +188,8 @@ interface SocialMediaLinkProps {
 
 function SocialMediaLink({ href, icon: Icon, label }: SocialMediaLinkProps) {
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 text-gray-600 transition-colors" aria-label={`Visit our ${label} page.`}>
+        <Link href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 text-gray-600 transition-colors" aria-label={`Visit our ${label} page.`}>
             <Icon className="h-5 w-5" title={label} />
-        </a>
+        </Link>
     );
 }

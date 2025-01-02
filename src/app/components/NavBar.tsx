@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import EmergencyButton from "./EmergencyButton";
 import ThemeIcon from "./ThemeIcon";
+import Link from "next/link";
 
 export default function NavBar() {
     const [nav, setNav] = useState(false);
@@ -68,10 +69,10 @@ interface NavLinksProps {
 function NavLinks(props: NavLinksProps) {
     return (
         <nav className={`${props.className} flex flex-${props.flexDirection} font-semibold`}>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/directory">Directory</a>
-            <a href="/contact">Contact</a>
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/directory">Directory</Link>
+            <Link href="/contact">Contact</Link>
         </nav>
     );
 }

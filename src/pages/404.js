@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const messages = [
     {
         main: "Sometimes we lose our way, and that's okay.",
@@ -33,9 +35,9 @@ export default function Custom404() {
             <h1 className="from-cAccent to-cLightBlue dark:to-cText bg-gradient-to-r bg-clip-text text-[20vmax] font-bold text-transparent">404</h1>
             <p className="text-cText mb-3 text-xl font-semibold">{randomMessage.main}</p>
             <p className="text-cTextOffset mb-8 text-lg font-medium">{randomMessage.sub}</p>
-            <a href="/" className="text-cBackground from-cAccent to-cLightBlue dark:to-cText inline-block rounded-lg bg-gradient-to-r px-6 py-3 font-medium transition-opacity hover:opacity-90">
+            <Link href="/" className="text-cBackground from-cAccent to-cLightBlue dark:to-cText inline-block rounded-lg bg-gradient-to-r px-6 py-3 font-medium transition-opacity hover:opacity-90">
                 Go Home
-            </a>
+            </Link>
         </div>
     );
 }

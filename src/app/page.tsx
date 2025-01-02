@@ -10,6 +10,7 @@ import lightThemeImage from "@public/landing/meritt-thomas.webp";
 import darkThemeImage from "@public/landing/jordan-steranka.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -97,9 +98,9 @@ export default function Home() {
                     </div>
 
                     <div className="flex justify-center">
-                        <a href="/mental-wellness" className="border-cText bg-cBackground rounded-full border-2 p-3 text-lg font-semibold">
-                            <button>Learn More</button>
-                        </a>
+                        <Link href="/mental-wellness" className="border-cText bg-cBackground rounded-full border-2 p-3 text-lg font-semibold">
+                            Learn More
+                        </Link>
                     </div>
                 </div>
                 {/* END OF MENTAL WELLNESS SECTION */}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import ThemeIcon from "./ThemeIcon";
+import Link from "next/link";
 
 export default function NavigationController() {
     const [showMainNav, setShowMainNav] = useState(false);
@@ -41,32 +42,22 @@ function LandingNavBarDesktop() {
         <header>
             <div className="fixed z-20 flex w-full flex-row items-center px-20 py-10 xl:px-28 xl:py-12 2xl:px-32 2xl:py-14">
                 <nav className="flex w-2/5 flex-row gap-10 text-lg font-semibold xl:gap-12 2xl:gap-16">
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
+                    <Link href="/">Home</Link>
+                    <Link href="/about">About</Link>
                 </nav>
 
                 <div className="flex w-1/5 justify-center">
-                    <LogoButton />
+                    <Link href="/">
+                        <img className="h-16 w-16 rounded-full border-4 border-slate-600 bg-slate-600 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
+                    </Link>
                 </div>
 
                 <nav className="flex w-2/5 flex-row justify-end gap-10 text-lg font-semibold xl:gap-14 2xl:gap-20">
-                    <a href="/directory">Directory</a>
-                    <a href="/contact">Contact</a>
+                    <Link href="/directory">Directory</Link>
+                    <Link href="/contact">Contact</Link>
                     <ThemeIcon />
                 </nav>
             </div>
         </header>
-    );
-}
-
-function LogoButton() {
-    const redirectToHomepage = () => {
-        window.location.href = "/";
-    };
-
-    return (
-        <button onClick={redirectToHomepage}>
-            <img className="h-16 w-16 rounded-full border-4 border-slate-600 bg-slate-600 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
-        </button>
     );
 }
