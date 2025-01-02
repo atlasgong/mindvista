@@ -12,7 +12,6 @@ import { fr } from "@payloadcms/translations/languages/fr";
 
 import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
-import { Index } from "@globals/Index";
 import { Pages } from "@collections/Pages";
 import { LegalPages } from "@collections/LegalPages";
 import { Clubs } from "./collections/lists/clubs/Clubs";
@@ -34,7 +33,6 @@ export default buildConfig({
         },
     },
     collections: [Users, Pages, LegalPages, Media, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
-    globals: [Index],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {

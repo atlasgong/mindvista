@@ -44,12 +44,8 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {
-    '/index': Index;
-  };
-  globalsSelect: {
-    '/index': IndexSelect<false> | IndexSelect<true>;
-  };
+  globals: {};
+  globalsSelect: {};
   locale: 'en' | 'fr';
   user: User & {
     collection: 'users';
@@ -516,32 +512,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "/index".
- */
-export interface Index {
-  id: number;
-  page: number | Page;
-  mobileTitle: string;
-  desktopTitle: string;
-  description: string;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "/index_select".
- */
-export interface IndexSelect {
-  page?: boolean;
-  mobileTitle?: boolean;
-  desktopTitle?: boolean;
-  description?: boolean;
-  updatedAt?: boolean;
-  createdAt?: boolean;
-  globalType?: boolean;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -1,11 +1,34 @@
 "use client";
 
-import { useState } from "react";
-import { useTheme } from "../context/ThemeContext";
+import { useEffect, useState } from "react";
+
+type Theme = "light" | "dark";
 
 export default function ThemeIcon() {
+    const [theme, setTheme] = useState<Theme>("light");
     const [isInCooldown, setIsInCooldown] = useState(false);
-    const { theme, setTheme } = useTheme();
+
+    useEffect(() => {
+        // Check localStorage
+        const storedTheme = localStorage.getItem("theme") as Theme;
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setTheme("dark");
+        }
+    }, []);
+
+    useEffect(() => {
+        const element = document.documentElement;
+        if (theme === "light") {
+            element.classList.remove("dark");
+            element.classList.add("light");
+        } else {
+            element.classList.remove("light");
+            element.classList.add("dark");
+        }
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
     const handleToggleClick = () => {
         if (isInCooldown) return;
