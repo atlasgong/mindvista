@@ -4,6 +4,10 @@ import NavigationController from "./components/NavigationController";
 import Birds from "./components/Birds";
 import Footer from "./components/Footer";
 import Hr from "./components/Hr";
+import Image from "next/image";
+
+import lightThemeImage from "@public/landing/meritt-thomas.webp";
+import darkThemeImage from "@public/landing/jordan-steranka.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
 
@@ -29,9 +33,9 @@ export default function Home() {
 
                         {/* Column Image */}
                         <div className="absolute inset-0 left-1/2 w-[25vw] -translate-x-1/2 transform">
-                            {/* <Image src={lightThemeImage} alt="A green leafy plant." className="h-full w-full object-cover dark:hidden" /> */}
+                            <Image src={lightThemeImage} alt="A green leafy plant." className="h-full w-full object-cover dark:hidden" />
                             <div className="hidden dark:inline">
-                                {/* <Image src={darkThemeImage} alt="A green leafy plant." className="h-full w-full object-cover" /> */}
+                                <Image src={darkThemeImage} alt="A green leafy plant." className="h-full w-full object-cover" />
                                 <div className="absolute inset-0 bg-black/30"></div>
                             </div>
                         </div>
