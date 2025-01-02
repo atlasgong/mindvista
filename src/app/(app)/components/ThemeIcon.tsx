@@ -5,18 +5,18 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 export default function ThemeIcon() {
-    const [theme, setTheme] = useState<Theme>("light");
-    const [isInCooldown, setIsInCooldown] = useState(false);
-
-    useEffect(() => {
-        // Check localStorage
-        const storedTheme = localStorage.getItem("theme") as Theme;
-        if (storedTheme) {
-            setTheme(storedTheme);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setTheme("dark");
+    const [theme, setTheme] = useState<Theme>(() => {
+        // Only access localStorage on the client side
+        if (typeof window !== 'undefined') {
+            const storedTheme = localStorage.getItem("theme") as Theme;
+            if (storedTheme) return storedTheme;
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                return "dark";
+            }
         }
-    }, []);
+        return "light";
+    });
+    const [isInCooldown, setIsInCooldown] = useState(false);
 
     useEffect(() => {
         const element = document.documentElement;
@@ -29,6 +29,19 @@ export default function ThemeIcon() {
         }
         localStorage.setItem("theme", theme);
     }, [theme]);
+
+    useEffect(() => {
+        // Sync with system preferences
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const handleChange = (e: MediaQueryListEvent) => {
+            if (!localStorage.getItem("theme")) {
+                setTheme(e.matches ? "dark" : "light");
+            }
+        };
+        
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
+    }, []);
 
     const handleToggleClick = () => {
         if (isInCooldown) return;
