@@ -25,6 +25,7 @@
         "payload": "3.9.0",
         "react": "19.0.0",
         "react-dom": "19.0.0",
+        "react-icons": "^5.4.0",
         "sharp": "0.32.6"
     },
     "devDependencies": {
