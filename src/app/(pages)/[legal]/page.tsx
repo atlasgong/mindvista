@@ -21,13 +21,13 @@ async function getLegalPage(legal: string) {
 }
 
 interface LegalPageProps {
-    params: {
+    params: Promise<{
         legal: string;
-    };
+    }>;
 }
 
 export default async function LegalPage(props: LegalPageProps) {
-    const page = await getLegalPage(props.params.legal);
+    const page = await getLegalPage((await props.params).legal);
 
     if (!page) {
         return notFound();
