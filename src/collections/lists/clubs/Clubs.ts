@@ -3,6 +3,7 @@ import type { CollectionConfig } from "payload";
 export const Clubs: CollectionConfig = {
     slug: "clubs",
     admin: {
+        useAsTitle: "title",
         group: "Clubs",
     },
     hooks: {
@@ -10,31 +11,31 @@ export const Clubs: CollectionConfig = {
             async () => {
                 try {
                     await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                            secret: process.env.REVALIDATION_SECRET
+                            secret: process.env.REVALIDATION_SECRET,
                         }),
                     });
                 } catch (err) {
-                    console.error('Error revalidating:', err);
+                    console.error("Error revalidating:", err);
                 }
-            }
+            },
         ],
         afterDelete: [
             async () => {
                 try {
                     await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                            secret: process.env.REVALIDATION_SECRET
+                            secret: process.env.REVALIDATION_SECRET,
                         }),
                     });
                 } catch (err) {
-                    console.error('Error revalidating:', err);
+                    console.error("Error revalidating:", err);
                 }
-            }
+            },
         ],
     },
     fields: [

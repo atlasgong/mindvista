@@ -4,6 +4,7 @@ export const ClubTags: CollectionConfig = {
     slug: "club-tags",
     admin: {
         group: "Clubs",
+        useAsTitle: "name",
     },
     fields: [
         {

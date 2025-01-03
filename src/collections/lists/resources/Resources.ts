@@ -3,6 +3,7 @@ import type { CollectionConfig } from "payload";
 export const Resources: CollectionConfig = {
     slug: "resources",
     admin: {
+        useAsTitle: "title",
         group: "Resources",
     },
     hooks: {
