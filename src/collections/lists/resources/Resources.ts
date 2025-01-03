@@ -116,6 +116,16 @@ export const Resources: CollectionConfig = {
             },
         },
         {
+            name: "onCampus",
+            type: "text",
+            validate: (value: string | null | undefined) => {
+                if (value && (value === "true" || value === "false")) {
+                    return true;
+                }
+                return "Must be 'true' or 'false'.";
+            },
+        },
+        {
             name: "currentlyActive",
             type: "text",
             required: true,
