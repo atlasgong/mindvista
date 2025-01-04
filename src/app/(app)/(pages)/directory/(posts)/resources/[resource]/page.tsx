@@ -5,14 +5,16 @@ import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
 
 interface Props {
-    params: {
+    params: Promise<{
         resource: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
+    }>;
+    searchParams: Promise<{
+        [key: string]: string | string[];
+    }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const resource = await getResource(params.resource);
+    const resource = await getResource((await params).resource);
     if (!resource) return { title: "Resource Not Found" };
 
     return {
@@ -36,7 +38,7 @@ async function getResource(slug: string) {
 }
 
 export default async function ResourcePage({ params, searchParams }: Props) {
-    const resource = await getResource(params.resource);
+    const resource = await getResource((await params).resource);
     if (!resource) return notFound();
 
     return (

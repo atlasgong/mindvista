@@ -5,14 +5,16 @@ import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
 
 interface Props {
-    params: {
+    params: Promise<{
         club: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
+    }>;
+    searchParams: Promise<{
+        [key: string]: string | string[];
+    }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const club = await getClub(params.club);
+    const club = await getClub((await params).club);
     if (!club) return { title: "Club Not Found" };
 
     return {
@@ -36,7 +38,7 @@ async function getClub(slug: string) {
 }
 
 export default async function ClubPage({ params, searchParams }: Props) {
-    const club = await getClub(params.club);
+    const club = await getClub((await params).club);
     if (!club) return notFound();
 
     return (
