@@ -14,7 +14,7 @@ export default async function DirectoryPage() {
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 {/* Clubs Card */}
-                <a href="/clubs" className="border-cBorder bg-cBackgroundOffset block rounded-lg border p-8 shadow-lg transition-shadow hover:shadow-xl">
+                <a href="/directory/clubs" className="border-cBorder bg-cBackgroundOffset block rounded-lg border p-8 shadow-lg transition-shadow hover:shadow-xl">
                     <div className="mb-4 flex items-center justify-between">
                         <h2 className="text-cText text-3xl font-bold">Clubs</h2>
                         <span className="bg-cBackgroundOffsetAccent text-cText rounded-full px-4 py-2 font-medium">
@@ -31,7 +31,7 @@ export default async function DirectoryPage() {
                 </a>
 
                 {/* Resources Card */}
-                <a href="/resources" className="border-cBorder bg-cBackgroundOffset block rounded-lg border p-8 shadow-lg transition-shadow hover:shadow-xl">
+                <a href="/directory/resources" className="border-cBorder bg-cBackgroundOffset block rounded-lg border p-8 shadow-lg transition-shadow hover:shadow-xl">
                     <div className="mb-4 flex items-center justify-between">
                         <h2 className="text-cText text-3xl font-bold">Resources</h2>
                         <span className="bg-cBackgroundOffsetAccent text-cText rounded-full px-4 py-2 font-medium">

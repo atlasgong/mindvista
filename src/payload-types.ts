@@ -218,6 +218,7 @@ export interface Resource {
   phoneNumber?: string | null;
   location?: string | null;
   channel?: string | null;
+  onCampus?: string | null;
   currentlyActive: string;
   tags?: (number | ResourceTag)[] | null;
   updatedAt: string;
@@ -438,6 +439,7 @@ export interface ResourcesSelect<T extends boolean = true> {
   phoneNumber?: T;
   location?: T;
   channel?: T;
+  onCampus?: T;
   currentlyActive?: T;
   tags?: T;
   updatedAt?: T;
