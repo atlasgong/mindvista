@@ -1,0 +1,26 @@
+[
+    {
+        "category": "Arts",
+        "tags": ["Fine Art", "Performance"]
+    },
+    {
+        "category": "Athletics",
+        "tags": ["Athletics", "Dance"]
+    },
+    {
+        "category": "Career",
+        "tags": ["Consulting", "Entrepreneurship", "Finance", "Healthcare", "Marketing", "Networking", "Politics", "Professional Development", "Real Estate", "Technology"]
+    },
+    {
+        "category": "Community Support",
+        "tags": ["Community Outreach", "Service", "Social Activism", "Sustainability"]
+    },
+    {
+        "category": "Culture",
+        "tags": ["Leisure & Hobbies", "Publication & Writing", "Religion & Cultural", "Spiritual", "Student Society"]
+    },
+    {
+        "category": "Faculty Specific",
+        "tags": ["Arts", "Dentistry", "Education", "Engineering", "Law", "Management", "Medicine", "Music", "Nursing", "Physical Therapy", "Science", "Social Work"]
+    }
+]

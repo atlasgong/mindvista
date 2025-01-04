@@ -83,9 +83,17 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
 
 Not all dependencies are listed above. Run `npm list` for all dependencies.
 
-## Getting Started with Payload CMS
+## Payload CMS
 
 This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/what-is-payload).
+
+### Bulk Importing to Payload
+
+To (re)import **club** or **resource tags**, modify the `json` files located in [scripts/bulkUpload/tagData/](scripts/bulkUpload/tagData/), then run:
+
+```sh
+payload run scripts/bulkUpload/bulkUploadTags.ts <club|resource>
+```
 
 ## Styling
 
