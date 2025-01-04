@@ -1,12 +1,3 @@
-# blank
-
-blank
-
-## Attributes
-
-- **Database**: mongodb
-- **Storage Adapter**: localDisk
-
 # mindvista.ca
 
 Contributors: see [CONTRIBUTING.md](CONTRIBUTING.md).
