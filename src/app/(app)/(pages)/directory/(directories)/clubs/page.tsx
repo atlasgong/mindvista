@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useDirectory } from "../layout";
+import { useDirectory } from "../DirectoryProvider";
 import { Club } from "@/payload-types";
 import { DirectoryItemBox } from "../components/DirectoryItemBox";
 

@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
 
-type Props = {
+interface Props {
     params: {
         resource: string;
     };
-};
+    searchParams: { [key: string]: string | string[] | undefined };
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resource = await getResource(params.resource);
@@ -34,7 +35,7 @@ async function getResource(slug: string) {
     return docs[0] || null;
 }
 
-export default async function ResourcePage({ params }: Props) {
+export default async function ResourcePage({ params, searchParams }: Props) {
     const resource = await getResource(params.resource);
     if (!resource) return notFound();
 
