@@ -1,17 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EmergencyButton from "./EmergencyButton";
 import ThemeIcon from "./ThemeIcon";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
     const [nav, setNav] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        setNav(false);
+    }, [pathname]);
 
     return (
         <header>
-            <div className="dark:border-cBackgroundOffset fixed left-0 top-0 z-20 flex w-full flex-row items-center justify-between px-6 py-2 drop-shadow-sm backdrop-blur-2xl md:py-4 dark:border-b">
+            <div className="fixed left-0 top-0 z-20 flex w-full flex-row items-center justify-between px-6 py-2 drop-shadow-sm backdrop-blur-2xl md:py-4 dark:border-b dark:border-cBackgroundOffset">
                 <div className="basis-0">
                     <LogoButton />
                 </div>
@@ -55,7 +61,7 @@ interface NavMenuProps {
 }
 function NavMenu({ nav }: NavMenuProps) {
     return (
-        <div className={`navMenu bg-cBackground fixed left-0 top-0 z-10 h-full w-full transition-transform duration-300 ${nav ? "translate-x-0" : "translate-x-full"} pointer-events-auto flex flex-col items-center justify-center gap-4`}>
+        <div className={`navMenu fixed left-0 top-0 z-10 h-full w-full bg-cBackground transition-transform duration-300 ${nav ? "translate-x-0" : "translate-x-full"} pointer-events-auto flex flex-col items-center justify-center gap-4`}>
             <ThemeIcon />
             <NavLinks flexDirection="col" className="gap-2 text-center text-5xl" />
             <EmergencyButton className="mt-2" />
@@ -79,18 +85,14 @@ function NavLinks(props: NavLinksProps) {
 }
 
 function LogoButton() {
-    const redirectToHomepage = () => {
-        window.location.href = "/";
-    };
-
     return (
-        <button className="text-cAccent flex flex-row gap-2 text-left" onClick={redirectToHomepage}>
-            <Image width={164} height={164} className="border-cAccent bg-cAccent max-w-12 rounded-full border-4 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
+        <Link href="/" className="flex flex-row gap-2 text-left text-cAccent">
+            <Image width={164} height={164} className="max-w-12 rounded-full border-4 border-cAccent bg-cAccent dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" priority />
             <div className="flex flex-col max-lg:hidden">
                 <h1 className="text-lg font-bold">MINDVISTA</h1>
                 <p className="-mt-1 text-[0.6rem] font-bold leading-[0.5rem]">Your wellness journey starts here.</p>
             </div>
-        </button>
+        </Link>
     );
 }
 
