@@ -32,12 +32,12 @@ export const getPayloadClient = async (): Promise<Payload> => {
         payloadClient = await getPayload({ config });
 
         if (!payloadClient) {
-            throw new PayloadInitializationError("Payload client initialization returned null");
+            throw new PayloadInitializationError("payload client initialization returned null");
         }
 
         return payloadClient;
     } catch (error: unknown) {
         payloadClient = null;
-        throw new PayloadInitializationError("Failed to initialize Payload client", error);
+        throw new PayloadInitializationError("failed to initialize Payload client", error);
     }
 };
