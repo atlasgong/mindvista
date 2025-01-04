@@ -27,15 +27,15 @@ const messages = [
     },
 ];
 
-const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+export default function NotFound() {
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
-export default function Custom404() {
     return (
-        <div className="mb-[16vmin] flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-            <h1 className="from-cAccent to-cLightBlue dark:to-cText bg-gradient-to-r bg-clip-text text-[20vmax] font-bold text-transparent">404</h1>
-            <p className="text-cText mb-3 text-xl font-semibold">{randomMessage.main}</p>
-            <p className="text-cTextOffset mb-8 text-lg font-medium">{randomMessage.sub}</p>
-            <Link href="/" className="text-cBackground from-cAccent to-cLightBlue dark:to-cText inline-block rounded-lg bg-gradient-to-r px-6 py-3 font-medium transition-opacity hover:opacity-90">
+        <div className="mb-[16vmin] mt-[5vh] flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
+            <h1 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-[20vmax] font-bold text-transparent dark:to-cText">404</h1>
+            <p className="mb-3 text-xl font-semibold text-cText">{randomMessage.main}</p>
+            <p className="mb-8 text-lg font-medium text-cTextOffset">{randomMessage.sub}</p>
+            <Link href="/" className="inline-block rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-3 font-medium text-cBackground transition-opacity hover:opacity-90 dark:to-cText">
                 Go Home
             </Link>
         </div>
