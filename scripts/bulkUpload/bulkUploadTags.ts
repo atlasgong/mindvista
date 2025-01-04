@@ -87,19 +87,18 @@ const bulkUpload = async (type: TagType): Promise<void> => {
                     },
                 });
 
-                let categoryId: number;
+                let categoryDoc;
                 if (category.docs.length === 0) {
-                    const newCategory = await payload.create({
+                    categoryDoc = await payload.create({
                         collection: collections.categories,
                         data: {
                             name: data.category,
                         },
                     });
-                    categoryId = newCategory.id;
                     stats.created.categories++;
                     console.log(`created new category: ${data.category}`);
                 } else {
-                    categoryId = category.docs[0].id;
+                    categoryDoc = category.docs[0];
                     console.log(`found existing category: ${data.category}`);
                 }
 
@@ -118,7 +117,7 @@ const bulkUpload = async (type: TagType): Promise<void> => {
                                     },
                                     {
                                         category: {
-                                            equals: categoryId,
+                                            equals: categoryDoc.id,
                                         },
                                     },
                                 ],
@@ -134,7 +133,7 @@ const bulkUpload = async (type: TagType): Promise<void> => {
                             collection: collections.tags,
                             data: {
                                 name: tagName,
-                                category: categoryId,
+                                category: categoryDoc.id,
                             },
                         });
                         stats.created.tags++;
