@@ -106,3 +106,19 @@ payload run scripts/bulkUpload/bulkUploadTags.ts <club|resource>
 See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography) for a set of prose classes to style Rich Text from Payload.
 
 ## Pages
+
+## Error Handling / Common Errors
+
+### Dynamic APIs are Asynchronous
+
+Read [Dynamic APIs are Asynchronous](https://nextjs.org/docs/messages/sync-dynamic-apis) and run
+
+```sh
+npx @next/codemod@canary next-async-request-api .
+```
+
+Then commit
+
+```sh
+git commit -m "fix: sync dynamic APIs"
+```
