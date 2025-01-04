@@ -37,7 +37,7 @@ async function getResource(slug: string) {
     return docs[0] || null;
 }
 
-export default async function ResourcePage({ params, searchParams }: Props) {
+export default async function ResourcePage({ params }: Props) {
     const resource = await getResource((await params).resource);
     if (!resource) return notFound();
 

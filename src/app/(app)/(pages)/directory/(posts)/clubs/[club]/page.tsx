@@ -37,7 +37,7 @@ async function getClub(slug: string) {
     return docs[0] || null;
 }
 
-export default async function ClubPage({ params, searchParams }: Props) {
+export default async function ClubPage({ params }: Props) {
     const club = await getClub((await params).club);
     if (!club) return notFound();
 
