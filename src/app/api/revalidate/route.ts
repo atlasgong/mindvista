@@ -15,6 +15,6 @@ export async function POST(request: Request) {
         revalidatePath("/directory");
         return NextResponse.json({ revalidated: true, now: Date.now() });
     } catch (err) {
-        return NextResponse.json({ message: "Error revalidating" }, { status: 500 });
+        return NextResponse.json({ message: `Error revalidating: ${err}` }, { status: 500 });
     }
 }
