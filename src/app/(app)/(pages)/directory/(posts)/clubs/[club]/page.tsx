@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
+import Link from "next/link";
 
 type Props = {
     params: {
@@ -58,27 +59,27 @@ export default async function ClubPage({ params }: Props) {
                     {club.website && (
                         <div>
                             <h2 className="mb-2 text-xl font-semibold">Website</h2>
-                            <a href={club.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                            <Link href={club.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                 {club.website}
-                            </a>
+                            </Link>
                         </div>
                     )}
 
                     {club.email && (
                         <div>
                             <h2 className="mb-2 text-xl font-semibold">Contact Email</h2>
-                            <a href={`mailto:${club.email}`} className="text-blue-600 hover:underline">
+                            <Link href={`mailto:${club.email}`} className="text-blue-600 hover:underline">
                                 {club.email}
-                            </a>
+                            </Link>
                         </div>
                     )}
 
                     {club.phoneNumber && (
                         <div>
                             <h2 className="mb-2 text-xl font-semibold">Phone Number</h2>
-                            <a href={`tel:${club.phoneNumber}`} className="text-blue-600 hover:underline">
+                            <Link href={`tel:${club.phoneNumber}`} className="text-blue-600 hover:underline">
                                 {club.phoneNumber}
-                            </a>
+                            </Link>
                         </div>
                     )}
                 </div>
@@ -88,19 +89,19 @@ export default async function ClubPage({ params }: Props) {
                         <h2 className="mb-4 text-2xl font-semibold">Social Media</h2>
                         <div className="space-y-2">
                             {club.facebook && (
-                                <a href={club.facebook} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                                <Link href={club.facebook} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                                     Facebook
-                                </a>
+                                </Link>
                             )}
                             {club.instagram && (
-                                <a href={club.instagram} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                                <Link href={club.instagram} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                                     Instagram
-                                </a>
+                                </Link>
                             )}
                             {club.otherSocials?.map((social: any, index: number) => (
-                                <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                                <Link key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                                     {social.platform}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

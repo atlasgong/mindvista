@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
+import Link from "next/link";
 
 type Props = {
     params: {
@@ -54,25 +55,25 @@ export default async function ResourcePage({ params }: Props) {
                         {resource.website && (
                             <p>
                                 <span className="font-medium">Website:</span>{" "}
-                                <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                <Link href={resource.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
                                     {resource.website}
-                                </a>
+                                </Link>
                             </p>
                         )}
                         {resource.email && (
                             <p>
                                 <span className="font-medium">Email:</span>{" "}
-                                <a href={`mailto:${resource.email}`} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                <Link href={`mailto:${resource.email}`} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
                                     {resource.email}
-                                </a>
+                                </Link>
                             </p>
                         )}
                         {resource.phoneNumber && (
                             <p>
                                 <span className="font-medium">Phone:</span>{" "}
-                                <a href={`tel:${resource.phoneNumber}`} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                <Link href={`tel:${resource.phoneNumber}`} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
                                     {resource.phoneNumber}
-                                </a>
+                                </Link>
                             </p>
                         )}
                         {resource.location && (
