@@ -6,13 +6,13 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-cBackgroundOffset sticky top-[100vh] flex flex-col gap-8 px-[5vw] py-6 pt-8">
+        <footer className="sticky top-[100vh] flex flex-col gap-8 bg-cBackgroundOffset px-[5vw] py-6 pt-8">
             <NewsletterSection />
 
             <Hr />
 
             {/* MIDDLE ROW (MOBILE) */}
-            <div className="text-cText flex flex-col items-center md:hidden">
+            <div className="flex flex-col items-center text-cText md:hidden">
                 <EmergencySection />
 
                 <div className="mt-4 flex flex-row">
@@ -27,8 +27,8 @@ export default function Footer() {
                     <Links
                         className="max-w-[50%] text-right"
                         links={[
-                            { href: "/resources", text: "Wellness Resources" },
-                            { href: "/clubs", text: "Club List" },
+                            { href: "/directory/resources", text: "Wellness Resources" },
+                            { href: "/directory/clubs", text: "Club List" },
                             { href: "/contact", text: "Contact Us" },
                         ]}
                     />
@@ -37,7 +37,7 @@ export default function Footer() {
             {/* END */}
 
             {/* MIDDLE ROW (DESKTOP) */}
-            <div className="text-cText flex grow basis-0 flex-row items-center justify-between max-md:hidden">
+            <div className="flex grow basis-0 flex-row items-center justify-between text-cText max-md:hidden">
                 <Links
                     className="max-w-[33%] text-left"
                     links={[
@@ -50,8 +50,8 @@ export default function Footer() {
                 <Links
                     className="max-w-[33%] grow basis-0 text-right"
                     links={[
-                        { href: "/resources", text: "Wellness Resources" },
-                        { href: "/clubs", text: "Club List" },
+                        { href: "/directory/resources", text: "Wellness Resources" },
+                        { href: "/directory/clubs", text: "Club List" },
                         { href: "/contact", text: "Contact Us" },
                     ]}
                 />
@@ -90,10 +90,10 @@ function Links(props: LinkProps) {
 
 function NewsletterSection() {
     return (
-        <div className="bg-cBackgroundOffsetAccent rounded-xl p-6 shadow-lg transition-transform duration-300 hover:scale-[1.01]">
+        <div className="rounded-xl bg-cBackgroundOffsetAccent p-6 shadow-lg transition-transform duration-300 hover:scale-[1.01]">
             <div className="flex flex-col gap-6 text-center md:flex-row md:text-left">
                 <div className="flex flex-col space-y-2 self-center md:max-w-[50%]">
-                    <h3 className="from-cAccent to-cLightBlue bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent">Join Our Wellness Newsletter</h3>
+                    <h3 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-xl font-bold text-transparent">Join Our Wellness Newsletter</h3>
                     <p className="text-cTextOffset">Stay updated with new content, resources and events from MindVista. Unsubscribe anytime — no hard feelings! 🙂</p>
                 </div>
                 <EmailForm />
@@ -105,8 +105,8 @@ function NewsletterSection() {
 function EmailForm() {
     return (
         <form className="flex w-full flex-col items-center gap-3 self-center md:flex-row">
-            <input type="email" placeholder="Enter your email" className="border-cBorder bg-cBackgroundOffset text-cText focus:border-cAccent w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg" required />
-            <button type="submit" className="from-cAccent to-cLightBlue w-full rounded-lg bg-gradient-to-r px-6 py-2 font-semibold text-white transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:w-auto md:py-3 md:text-lg">
+            <input type="email" placeholder="Enter your email" className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset px-4 py-2 text-cText focus:border-cAccent focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:py-4 md:text-lg" required />
+            <button type="submit" className="w-full rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-2 font-semibold text-white transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:rgb(var(--accent)/0.2)] md:w-auto md:py-3 md:text-lg">
                 Subscribe
             </button>
         </form>
@@ -157,7 +157,7 @@ function LegalBar() {
 
     return (
         <div className="flex flex-col justify-between text-center md:flex-row md:text-right">
-            <div className="text-cTextOffset flex grow basis-0 flex-row justify-center gap-2 font-semibold md:justify-start">
+            <div className="flex grow basis-0 flex-row justify-center gap-2 font-semibold text-cTextOffset md:justify-start">
                 <Link href="/privacy-policy" className="">
                     Privacy Policy
                 </Link>
@@ -175,7 +175,7 @@ function LegalBar() {
                     <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} />
                 ))}
             </div>
-            <p className="text-cTextOffset mt-4 grow basis-0 font-medium md:mt-0">&copy; {year} MindVista. All rights reserved.</p>
+            <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">&copy; {year} MindVista. All rights reserved.</p>
         </div>
     );
 }
