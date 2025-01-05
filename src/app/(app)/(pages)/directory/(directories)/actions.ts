@@ -1,7 +1,6 @@
 "use server";
 
 import { getPayloadClient } from "@/payloadClient";
-import { is } from "@payloadcms/db-vercel-postgres/drizzle";
 
 export async function fetchDirectoryData(isClubDirectory: boolean) {
     try {
