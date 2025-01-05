@@ -45,7 +45,7 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState<Array<Club | Resource>>([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10;
+    const itemsPerPage = isClubDirectory ? 10 : 12;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -158,7 +158,7 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
         </div>
     );
 
-    // Reset to first page when filters change
+    // reset to first page when filters change
     useEffect(() => {
         setCurrentPage(1);
     }, [searchQuery, activeFilters]);
@@ -187,32 +187,32 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
         );
 
         const getVisiblePages = () => {
-            const delta = 1; // Number of pages to show before and after current page
+            const delta = 1; // # of pages to show before and after current page
             const pages: (number | string)[] = [];
 
-            // Always include first page
+            // always include first page
             pages.push(1);
 
-            // Calculate range around current page
+            // calculate range around current page
             const rangeStart = Math.max(2, currentPage - delta);
             const rangeEnd = Math.min(totalPages - 1, currentPage + delta);
 
-            // Add ellipsis after first page if needed
+            // add ellipsis after first page if needed
             if (rangeStart > 2) {
                 pages.push("ellipsis1");
             }
 
-            // Add pages around current page
+            // add pages around current page
             for (let i = rangeStart; i <= rangeEnd; i++) {
                 pages.push(i);
             }
 
-            // Add ellipsis before last page if needed
+            // add ellipsis before last page if needed
             if (rangeEnd < totalPages - 1) {
                 pages.push("ellipsis2");
             }
 
-            // Always include last page if not already included
+            // always include last page if not already included
             if (totalPages > 1) {
                 pages.push(totalPages);
             }
