@@ -29,6 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
@@ -38,6 +39,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.env
-
 /media
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+/.idea/
+*.iml
+*.ipr
+*.iws
+out/
