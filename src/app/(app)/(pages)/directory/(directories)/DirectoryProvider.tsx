@@ -2,7 +2,8 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { ClubTag, ResourceTag, ClubTagCategory, ResourceTagCategory, Club, Resource } from "../../../../../payload-types";
+import { ClubTag, ResourceTag, ClubTagCategory, ResourceTagCategory, Club, Resource } from "@/payload-types";
+import { fetchDirectoryData } from "./actions";
 
 interface DirectoryContextType {
     filteredItems: Array<Club | Resource>;
@@ -42,29 +43,15 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
+                const data = await fetchDirectoryData(isClubDirectory);
 
-                // fetch items (clubs or resources)
-                const itemsRes = await fetch(`/api/${isClubDirectory ? "clubs" : "resources"}`);
-                if (!itemsRes.ok) {
-                    throw new Error(`Failed to fetch items: ${itemsRes.status}`);
-                }
-                const itemsData = await itemsRes.json();
-                setItems(itemsData.docs || []);
-
-                // fetch tags and categories
-                const [tagsRes, categoriesRes] = await Promise.all([fetch(`/api/${isClubDirectory ? "club-tags" : "resource-tags"}`), fetch(`/api/${isClubDirectory ? "club-tag-categories" : "resource-tag-categories"}`)]);
-
-                if (!tagsRes.ok || !categoriesRes.ok) {
-                    throw new Error("Failed to fetch tags or categories");
-                }
-
-                const [tagsData, categoriesData] = await Promise.all([tagsRes.json(), categoriesRes.json()]);
+                setItems(data.items);
 
                 const tagsByCat: TagsByCategory = {};
 
                 // process categories
-                if (categoriesData?.docs) {
-                    categoriesData.docs.forEach((category: ClubTagCategory | ResourceTagCategory) => {
+                if (data.categories) {
+                    data.categories.forEach((category: ClubTagCategory | ResourceTagCategory) => {
                         tagsByCat[category.name] = {
                             id: category.id,
                             name: category.name,
@@ -74,8 +61,8 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                 }
 
                 // process tags
-                if (tagsData?.docs) {
-                    tagsData.docs.forEach((tag: ClubTag | ResourceTag) => {
+                if (data.tags) {
+                    data.tags.forEach((tag: ClubTag | ResourceTag) => {
                         if (tag.category && typeof tag.category !== "number") {
                             const categoryName = tag.category.name;
                             if (tagsByCat[categoryName]) {
