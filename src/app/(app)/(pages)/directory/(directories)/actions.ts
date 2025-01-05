@@ -1,6 +1,7 @@
 "use server";
 
 import { getPayloadClient } from "@/payloadClient";
+import { is } from "@payloadcms/db-vercel-postgres/drizzle";
 
 export async function fetchDirectoryData(isClubDirectory: boolean) {
     try {
@@ -10,6 +11,12 @@ export async function fetchDirectoryData(isClubDirectory: boolean) {
         const [itemsData, tagsData, categoriesData] = await Promise.all([
             payload.find({
                 collection: isClubDirectory ? "clubs" : "resources",
+                limit: isClubDirectory ? 500 : 250,
+                where: {
+                    currentlyActive: {
+                        equals: true,
+                    },
+                },
             }),
             payload.find({
                 collection: isClubDirectory ? "club-tags" : "resource-tags",
