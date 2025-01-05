@@ -84,14 +84,17 @@ export default async function ResourcePage({ params }: Props) {
                                 <span className="font-medium">Location:</span> {resource.location}
                             </p>
                         )}
-                        {resource.channel && (
-                            <p>
-                                <span className="font-medium">Channel:</span> {resource.channel}
-                            </p>
-                        )}
+                        <div className="mt-3">
+                            <span className="font-medium">Available Channels:</span>
+                            <div className="mt-1 flex flex-wrap gap-2">
+                                {resource.channelOnline && <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">Online</span>}
+                                {resource.channelTelephone && <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">Telephone</span>}
+                                {resource.channelInPerson && <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">In Person</span>}
+                            </div>
+                        </div>
                         {resource.onCampus && (
-                            <p>
-                                <span className="font-medium">On Campus:</span> {resource.onCampus}
+                            <p className="mt-3">
+                                <span className="inline-block rounded-full bg-green-50 px-3 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100">On Campus Location</span>
                             </p>
                         )}
                     </div>
