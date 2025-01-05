@@ -87,14 +87,6 @@ Not all dependencies are listed above. Run `npm list` for all dependencies.
 
 This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/what-is-payload).
 
-### Bulk Importing to Payload
-
-To (re)import **club** or **resource tags**, modify the `json` files located in [scripts/bulkUpload/tagData/](scripts/bulkUpload/tagData/), then run:
-
-```sh
-payload run scripts/bulkUpload/bulkUploadTags.ts <club|resource>
-```
-
 ## Styling
 
 ### Tailwind CSS
@@ -121,4 +113,24 @@ Then commit
 
 ```sh
 git commit -m "fix: sync dynamic APIs"
+```
+
+# Archived Documentation
+
+For documentation which may no longer be relevant.
+
+### Bulk Importing to Payload
+
+To (re)import **club** or **resource tags**, modify the `json` files located in [scripts/bulkUpload/tagData/](scripts/bulkUpload/tagData/), then run:
+
+```sh
+payload run scripts/bulkUpload/bulkUploadTags.ts <club|resource>
+```
+
+To (re)import **clubs** or **resources**, modify the `json` files located in [scripts/bulkUpload/entityData/](scripts/bulkUpload/entityData/), then run:
+
+```sh
+payload run scripts/bulkUpload/bulkUploadClubs.ts
+# or
+payload run scripts/bulkUpload/bulkUploadResources.ts
 ```

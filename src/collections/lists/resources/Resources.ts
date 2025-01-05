@@ -6,38 +6,6 @@ export const Resources: CollectionConfig = {
         useAsTitle: "title",
         group: "Resources",
     },
-    hooks: {
-        afterChange: [
-            async () => {
-                try {
-                    await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            secret: process.env.REVALIDATION_SECRET,
-                        }),
-                    });
-                } catch (err) {
-                    console.error("Error revalidating:", err);
-                }
-            },
-        ],
-        afterDelete: [
-            async () => {
-                try {
-                    await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            secret: process.env.REVALIDATION_SECRET,
-                        }),
-                    });
-                } catch (err) {
-                    console.error("Error revalidating:", err);
-                }
-            },
-        ],
-    },
     fields: [
         {
             name: "slug",
@@ -59,7 +27,13 @@ export const Resources: CollectionConfig = {
             name: "website",
             type: "text",
             validate: (value: string | null | undefined) => {
-                const urlRegex = /^(https?:\/\/)?([\w.-]+)+(:\d+)?(\/[\w.-]*)*\/?$/;
+                // Allow URLs with:
+                // - Optional protocol
+                // - Domains with hyphens
+                // - Subdomains
+                // - Path segments with special chars
+                // - Query params and fragments
+                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
                 if (value && !urlRegex.test(value)) {
                     return "Please provide a valid URL.";
                 }
@@ -106,15 +80,19 @@ export const Resources: CollectionConfig = {
             type: "text",
         },
         {
-            name: "channel",
-            type: "text",
-            validate: (value: string | null | undefined) => {
-                const validValues = ["online", "telephone", "inPerson"];
-                if (value && validValues.includes(value)) {
-                    return true;
-                }
-                return "Must be 'online', 'telephone', or 'inPerson'.";
-            },
+            name: "channelOnline",
+            type: "checkbox",
+            label: "Online",
+        },
+        {
+            name: "channelTelephone",
+            type: "checkbox",
+            label: "Telephone",
+        },
+        {
+            name: "channelInPerson",
+            type: "checkbox",
+            label: "In Person",
         },
         {
             name: "onCampus",
@@ -123,7 +101,6 @@ export const Resources: CollectionConfig = {
         {
             name: "currentlyActive",
             type: "checkbox",
-            required: true,
         },
         {
             name: "tags",

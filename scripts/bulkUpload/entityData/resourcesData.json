@@ -1,0 +1,3644 @@
+[
+    {
+        "slug": "clic-sante",
+        "title": "Clic Sante",
+        "description": "Clic Sant\u00e9 offers services including blood tests, STI screening, vaccinations, and many other medical services at a hospital, a private clinic, or a pharmacy. Their website portal refers patients to various health clinics near them where their desired service is available.",
+        "website": "https://portal3.clicsante.ca/",
+        "insuranceDetails": "Pricing and coverage varies depending on service and location chosen.",
+        "email": null,
+        "phoneNumber": "877-644-4545",
+        "location": "Multiple clinics,\nLocations vary \nby postal code",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "biron-labs",
+        "title": "Biron Labs",
+        "description": "Biron Labs is a medical imaging directory of medical clinics, a doctor's prescription is required for all services.",
+        "website": "https://www.biron.com/en/",
+        "insuranceDetails": "Not covered  by RAMQ or out-of-province healthcare. Private insurance may cover costs fully or partially, only if applicable.",
+        "email": "info@biron.com",
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            }
+        ]
+    },
+    {
+        "slug": "montreal-therapy-centre",
+        "title": "Montreal Therapy Centre",
+        "description": "Montreal Therapy Centre provides individual therapy, couple\u2019s and family therapy, child and adolescent therapy, online therapy, therapy groups, and workshops. Services are provided in fourteen different languages.",
+        "website": "http://www.montrealtherapy.com/",
+        "insuranceDetails": "Medicare does not provide coverage for private therapy fees. Insurance receipts are available to those covered by extended health care plans.",
+        "email": null,
+        "phoneNumber": "514-244-1290",
+        "location": "Queen Elizabeth Health Complex, Suite 532, Montreal, Qc H4A 3L5",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "psymontreal",
+        "title": "PsyMontreal",
+        "description": "PsyMontreal offers individual psychotherapy, coaching, child and parenting services, and online therapy.",
+        "website": "http://psymontreal.com/",
+        "insuranceDetails": "The fees of psychotherapy services in private practice are not covered by Medicare, but many insurance companies reimburse a certain amount, depending on your coverage. Official receipts are provided for each appointment.\ninsurance information",
+        "email": null,
+        "phoneNumber": "514-337-2473",
+        "location": "Multiple office locations throughout Montreal Telephone: (514)-337-2473, extension 0",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "medipsy",
+        "title": "Medipsy",
+        "description": "Medipsy provides individual psychotherapy, sex therapy, ADHD clinic, assessments and diagnosis, neuropsychological assessments, couple and family therapy, phobic clinic, and vocational counselling.",
+        "website": "https://www.medipsy.ca/",
+        "insuranceDetails": "Your paid receipt is required by your insurance company for reimbursement.",
+        "email": "info@medipsy.ca",
+        "phoneNumber": "514-419-3005",
+        "location": "4610 Ste. Catherine Ouest, Westmount, H3Z 1S3",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "emotional-health-cognitive-beh",
+        "title": "Emotional Health Cognitive Behavioral Therapy Clinic",
+        "description": "Emotional Health Cognitive Behavioral Therapy Clinic offers treatment for the full spectrum of anxiety and mood disorders, as well as for low self-esteem, anger, relational difficulties, and sleep disorders. Services are offered in French and English.",
+        "website": "https://cbtclinic.ca/",
+        "insuranceDetails": "The clinic does not directly deal with client insurance companies, but receipts are provided for clients to submit to their insurance providers. Additionally, RAMQ is not accepted.",
+        "email": "info@cbtclinic.ca",
+        "phoneNumber": "514-485-7772",
+        "location": "Queen Elizabeth Health Complex, Suite 261 2100 Marlowe Ave.\nMontreal, Quebec H4A 3L5\n1250 Saint-Joseph East Boulevard \nMontreal, Quebec H2J 1L8\n911 Jean-Talon East Street, Suite 325\nMontreal, Quebec H2R 1V5",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "psychology-today",
+        "title": "Psychology Today",
+        "description": "The Psychology Today directory features therapy and health professionals, online therapy, treatment centres and support groups.",
+        "website": "https://www.psychologytoday.com/ca",
+        "insuranceDetails": "Contact insurance company for coverage information",
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "ordre-de-psychologues-du-quebe",
+        "title": "Ordre de Psychologues du Quebec",
+        "description": "Ordre de Psychologues du Quebec is a service that helps people to find licensed psychologists or psychotherapist in their area. Their services are paid for and generally covered by group insurance.",
+        "website": "https://www.ordrepsy.qc.ca/fr/accueil",
+        "insuranceDetails": "Contact insurance company for coverage information",
+        "email": "info@ordrepsy.qc.ca",
+        "phoneNumber": "514-738-1223",
+        "location": "Ordre des psychologues du Qu\u00e9bec\n1100, avenue Beaumont, bureau 510\nMont-Royal (Qu\u00e9bec) H3P 3H5",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "change-cognitive-behavioral-ps",
+        "title": "Change Cognitive Behavioral Psychology Clinic",
+        "description": "Change Cognitive Behavioral Psychology Clinic specializes in cognitive behavioural therapy (CBT). Services they offer include individual and couples therapy, child, teen and family therapy, nutrition, sexology, art therapy, animal assisted therapy, online therapy, as well as conferences and training.",
+        "website": "https://changepsy.ca/en/",
+        "insuranceDetails": "RAMQ is not accepted. You must pay for the entirety of the sessions and you will subsequently be reimbursed by your insurance.",
+        "email": "info@changeenfamille.ca",
+        "phoneNumber": "(514) 508-5779",
+        "location": "3275 Saint Jacques\nMontreal, Quebec\nH4C 1G8",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "aneb-anorexia-and-bulimia-queb",
+        "title": "ANEB (Anorexia and Bulimia Quebec)",
+        "description": "ANEB (Anorexia and Bulimia Quebec) provides open and closed support groups for ages 17+, online forums, online chat, helpline and referral line. Many services are free while more intensive treatments have a fee.",
+        "website": "https://anebquebec.com/en",
+        "insuranceDetails": "Contact ANEB for coverage information regarding paid services.",
+        "email": null,
+        "phoneNumber": "(514) 630-0907",
+        "location": "5500, Transcanadienne Pointe-Claire QC H9R 1B6",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "douglas-mental-health-universi",
+        "title": "Douglas Mental Health University Institute: Eating Disorder Program",
+        "description": "The Eating Disorder Program specializes in anorexia and bulimia for adults aged 18 and older. Their services include external follow-ups, day program, residential program, and research program. Medical referral required.",
+        "website": "http://www.douglas.qc.ca/page/eating-disorders-program",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-761-6131",
+        "location": "6603-6605 LaSalle Boulevard, Montreal QC, H4H 1R3",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "amiquebec",
+        "title": "AMI-Quebec",
+        "description": "AMI-Quebec is a non-profit organization that helps families manage effects of mental illness through support, education, guidance, and advocacy. Services offered include workshops, support groups, counselling, education and outreach, online learning, and more. AMI-Quebec's programs are free.",
+        "website": "https://amiquebec.org/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "(514) 486-1448",
+        "location": "5800 boul. Decarie, Montreal QC H3X 2J5",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "baca-eating-disorder-clinic",
+        "title": "BACA Eating Disorder Clinic",
+        "description": "BACA Eating Disorder Clinic is a private clinic that offers services including disordered eating evaluation, supervised housing, intensive treatment for adults, and group therapy, for a fee.",
+        "website": "https://cliniquebaca.com/en/",
+        "insuranceDetails": "Contact organization regarding pricing and insurance coverage.",
+        "email": "info@cliniquequebaca.com",
+        "phoneNumber": "(514) 544-2323",
+        "location": "2121 rue Crescent, bureau 200,Montr\u00e9al QC  H3G 2C1",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "national-eating-disorder-infor",
+        "title": "National Eating Disorder Information Center",
+        "description": "National Eating Disorder Information Center provides services including a help line, support and information on disordered eating, and referrals to health professionals.",
+        "website": "https://nedic.ca/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "866-633-4220",
+        "location": "ES 7-421, 200 Elizabeth Street,Toronto ON M5G 2C4",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "montreal-abortion-appointment-",
+        "title": "Montreal Abortion Appointment Center",
+        "description": "Montreal\u2019s Abortion Appointment Centre locates free abortion appointments for patients at clinics near them, in less than two weeks.",
+        "website": "https://santemontreal.qc.ca/en/public/support-and-services/abortion-montreal-appointment-centre/",
+        "insuranceDetails": "To get free abortion services, you must have a valid health insurance card, an immigration certificate, or any other document giving you access to healthcare in Quebec.",
+        "email": null,
+        "phoneNumber": "514-380-8299",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-mdicale-fmina",
+        "title": "Clinique M\u00e9dicale F\u00e9mina",
+        "description": "Clinique M\u00e9dicale F\u00e9mina is a clinic that offers abortion services during the first trimester of pregnancy. Additional services include contraception consultations, contraception insertions and removals, and vasectomies.",
+        "website": "http://www.clinique-femina.com/",
+        "insuranceDetails": "Free with RAMQ card.",
+        "email": "femina@clinique-femina.com",
+        "phoneNumber": "514-843-6706",
+        "location": "1265, rue Berri, Room 430",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            }
+        ]
+    },
+    {
+        "slug": "morgentaler-clinic",
+        "title": "Morgentaler Clinic",
+        "description": "The Morgentaler Clinic offers a wide range of abortion care and related services, including counselling, contraceptive education and testing for sexually transmitted infections (STIs).",
+        "website": "https://montrealmorgentaler.ca/en/",
+        "insuranceDetails": "Fees apply if you do not have RAMQ or IFHP. Contact for specific fees.",
+        "email": "infos@montrealmorgentaler.ca",
+        "phoneNumber": "514-844-4844",
+        "location": "8560 rue St-Hubert",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            }
+        ]
+    },
+    {
+        "slug": "centre-de-sant-des-femmes-de-m",
+        "title": "Centre de Sant\u00e9 des Femmes de Montr\u00e9al (Women's Centre of Montr\u00e9al)",
+        "description": "The Centre de Sant\u00e9 des Femmes de Montr\u00e9al (Montreal Women\u2019s Health Centre) offers abortion services, gynecology services to members with a file, and sexual and reproductive health training sessions.",
+        "website": "https://csfmontreal.qc.ca/en/home/",
+        "insuranceDetails": "The abortion is free if you have a valid Quebec health insurance card (RAMQ), if you are covered by the Interim Federal Health Program (IFHP), if you are from another Canadian province and for most foreign university students.",
+        "email": null,
+        "phoneNumber": "514-270-6110",
+        "location": "3401, Avenue De Lormier, Montreal, QC H2K 3X5",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-mdicale-de-lalternati",
+        "title": "Clinique M\u00e9dicale de L\u2019Alternative",
+        "description": "The Clinique de L\u2019Alternative offers abortions services, contraception and vasectomy services as well as a dilation and curettage service for terminated pregnancies.",
+        "website": "http://www.cliniquedelalternative.com/   https://www.mcgill.ca/internationalstudents/health/coverage/centre-de-sante-des-femmeswomens-health-center",
+        "insuranceDetails": "Free with RAMQ card",
+        "email": null,
+        "phoneNumber": "514-281-9848",
+        "location": "2034, Rue St-Hubert\nMontreal, QC",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            }
+        ]
+    },
+    {
+        "slug": "montreal-sexual-assault-centre",
+        "title": "Montreal Sexual Assault Centre/CLSC Metro",
+        "description": "Montreal Sexual Assault Centre/CLSC Metro provides accompaniment services, medical examinations, forensic examinations, medical monitoring and treatment, information on follow-up therapy, and a 24/7 crisis line.",
+        "website": "http://cvasm.org/main.asp?lang=en&page=accueil",
+        "insuranceDetails": null,
+        "email": "info@cvasm.ca",
+        "phoneNumber": "888-933-9007",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Violence Services",
+                "tag": "Sexual Assault Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "hpital-notredame",
+        "title": "H\u00f4pital Notre-Dame",
+        "description": "H\u00f4pital Notre-Dame provides an emergency room open 24/7 where patients can ask for the on-call sexual assault support worker.",
+        "website": "https://www.mcgill.ca/osvrse/get-support/additional-resources/off",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "(514) 413-8999",
+        "location": "1560 Sherbrooke E. Emergency room: Plessis St. entrance",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Violence Services",
+                "tag": "Sexual Assault Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "sant-mont-royal-urgent-medical",
+        "title": "Sant\u00e9 Mont Royal  \u2013 Urgent Medical Clinic",
+        "description": "Sant\u00e9 Mont Royal's Urgent Medical Clinic division provides GMF, urgent care, family medicine, and specialist appointments.",
+        "website": "https://santemontroyal.com/index.asp?Lang=En",
+        "insuranceDetails": "Medical services are covered by RAMQ.",
+        "email": "reception@santemontroyal.com",
+        "phoneNumber": "514-819-6649",
+        "location": "4480 Chemin de la C\u00f4te de liesse Suite 110 Ville",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-mdicale-en-route",
+        "title": "Clinique M\u00e9dicale en Route",
+        "description": "Clinique M\u00e9dicale en Route provides blood work services, general medicine, physiotherapy, and many other services. Specialists are also available.",
+        "website": "https://cliniqueenroute.com/en/",
+        "insuranceDetails": "Contact organization regarding pricing and insurance coverage.",
+        "email": null,
+        "phoneNumber": "514-312-7777",
+        "location": "150 rue Ste-Catherine O, Level 4, Tour Hilton, C.P.65",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Physiotherapy"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            }
+        ]
+    },
+    {
+        "slug": "rockland-md",
+        "title": "Rockland MD",
+        "description": "Rockland MD is a private medical and surgical center that offers general and preventative medicine, specialized care, and complementary services such as nutrition. There are fees to open a file and for a consultation. Additional fees for testing.",
+        "website": "https://www.rocklandmd.com/",
+        "insuranceDetails": "Contact organization regarding pricing and insurance coverage.",
+        "email": null,
+        "phoneNumber": "514-667-3383",
+        "location": "100 Chemin Rockland, Suite 500, 1538 Sherbrooke West",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            }
+        ]
+    },
+    {
+        "slug": "cloud-med",
+        "title": "Cloud Med",
+        "description": "Cloud Med is a private clinic that offers services for family medicine, colorectal surgery, dermatology, gynecology, fertility, and menopause. Fees apply to access these services.",
+        "website": "https://www.cloudmed.ca/",
+        "insuranceDetails": "Provincial health insurance not accepted. Private insurance may cover some services. Individuals will have to contact their insurance providers to verify if they will accept receipts from CloudMed. Appointments range from $219 - $349, depending on the service accessed.",
+        "email": null,
+        "phoneNumber": "438-943-0909",
+        "location": "Griffintown:\n210 Rue Seigneurs\nMontreal, Quebec\nH3J 1R5\nWestmount:\n4060 Sainte-Catherine St. West, Suite 405\nWestmount, Quebec\nH3Z 2Z3",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-union-md",
+        "title": "Clinique Union MD",
+        "description": "UnionMD is a group of private clinics located in downtown Montreal, the Town of Mount Royal, West Island, Laval, Gatineau and Ottawa. They offer a range of medical, surgical, and cosmetic services.  Telehealth services are also available. Fees are listed on the website.",
+        "website": "https://unionmd.ca/en/",
+        "insuranceDetails": "Fees vary depending on service. Private insurance may cover the cost of some services.",
+        "email": "info@unionmd.ca",
+        "phoneNumber": "514-400-3291",
+        "location": "Several Locations",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Physiotherapy"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            }
+        ]
+    },
+    {
+        "slug": "queen-elizabeth-health-complex",
+        "title": "Queen Elizabeth Health Complex",
+        "description": "The Queen Elizabeth Health Complex offers services including imaging radiology, medical care, mental health, alternative therapy, and a variety of other services. There may be additional fees for materials (e.g. cast or stitches)",
+        "website": "https://www.qehc.org/contact-us",
+        "insuranceDetails": "Most medical services covered by RAMQ. Psychiatric services covered by the RAMQ. The QEHC offers a range of services from individual health providers. Each health provider and individual insurance plans must be consulted for each service offered.",
+        "email": null,
+        "phoneNumber": "514-485-5013",
+        "location": "2100, Marlowe Avenue\nMontr\u00e9al, Qu\u00e9bec\nH4A 3L5",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "centre-mdicale-dcelles",
+        "title": "Centre M\u00e9dicale D\u00e9celles",
+        "description": "The Centre M\u00e9dicale D\u00e9celles (D\u00e9celles Medical Center) offers services such as general medicine, endicronology, and more. Fees apply for some services. Available in French and English.",
+        "website": "https://sante.gouv.qc.ca/repertoire-ressources/ressource/?nofiche=51177",
+        "insuranceDetails": "Contact clinic regarding pricing and insurance coverage.",
+        "email": null,
+        "phoneNumber": "514 739-7771",
+        "location": "6900, boulevard D\u00e9carie, suite M-150\nC\u00f4te-Saint-Luc (Qu\u00e9bec)  H3X 2T8",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "cura-sant",
+        "title": "Cura Sant\u00e9",
+        "description": "Cura Sant\u00e9 offers private medical services such as home blood tests, cardiology, nursing services, and more.",
+        "website": "https://curasante.com/appointment-booking/",
+        "insuranceDetails": "Cura Sant\u00e9 services are not reimbursable from the RAMQ. However, most insurance companies cover the cost between 80%-100%.",
+        "email": "info@curasante.com",
+        "phoneNumber": "514-824-2872",
+        "location": "5515 Rue St. Jacques, Suite 106",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            }
+        ]
+    },
+    {
+        "slug": "medical-westmount",
+        "title": "Medical Westmount",
+        "description": "The Westmount Medical Building is a group of physicians in general and specialized practices that offer a multitude of services including family medicine, massage therapy, gastroentorology, pediatrics, and more.",
+        "website": "https://westmountmedicalbuilding.ca/",
+        "insuranceDetails": "Contact for information regarding insurance and costs.",
+        "email": "wmbadmin@videotron.ca",
+        "phoneNumber": "514-488-9888",
+        "location": "1, Westmount Square, Tower 1, Suite C-180",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Physiotherapy"
+            }
+        ]
+    },
+    {
+        "slug": "promed-medical-and-dental-cent",
+        "title": "Promed Medical and Dental Center",
+        "description": "Promed Medical and Dental Center offers a variety of services such as dental, medical, physiotherapy, diet and nutrition, and more.",
+        "website": "http://www.promedweb.com",
+        "insuranceDetails": "Contact for information regarding insurance and costs.",
+        "email": null,
+        "phoneNumber": "514-845-1800",
+        "location": "1250 rue Mansfield, 3rd floor, corner of St-Catherine",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Dental Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Physiotherapy"
+            }
+        ]
+    },
+    {
+        "slug": "cramed",
+        "title": "Cr\u00e9a-Med",
+        "description": "Cr\u00e9a-Med is a private family medical clinic that provides general medicine services. Their clinic offers STI/STD testing, annual checkups, gynecology appointments, IUD insertion, and much more. Patients must contact their clinic to book an appointment.",
+        "website": "https://crea-med.ca/en/?utm_source=G&utm_medium=lpm&utm_campaign=medicentres",
+        "insuranceDetails": "Canadian resident membership fee: $99 Non-residents: $149          Varying fees depending on service, please refer to website.  Receipts given may be used to ask for reimbursement by insurance if applicable. Not covered by RAMQ or out-of-province healthcare.",
+        "email": "info@crea-med.ca",
+        "phoneNumber": "514-613-3520",
+        "location": "2055 rue Mansfield",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            }
+        ]
+    },
+    {
+        "slug": "centre-mdicale-metromedic",
+        "title": "Centre M\u00e9dicale Metro-Medic",
+        "description": "Centre M\u00e9dicale M\u00e9tro M\u00e9dic provides services in family medicine, dermatology, gynecology, and psychiatry, as well as access to diagnostic services provided by their wholly owned subsidiary, CDL Laboratories. Minor and general surgery services are also offered at this clinic.",
+        "website": "https://www.metromedic.com",
+        "insuranceDetails": "RAMQ-affiliated clinics covers most of the cost. Private clinics are covered by most private insurance plans.",
+        "email": null,
+        "phoneNumber": "514-932-2122",
+        "location": "1538 Sherbrooke Street West, Suite 100\nMontr\u00e9al, Qu\u00e9bec, H3H 2L9",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-sport-medicine-clinic",
+        "title": "McGill Sport Medicine Clinic",
+        "description": "McGill's Sport Medicine Clinic provides sport medicine, massage therapy, physiotherapy, osteopathy, and more. Book an appointment through the website.",
+        "website": "https://www.mcgillsportmedicineclinic.ca",
+        "insuranceDetails": null,
+        "email": "sportsmedicine.athletics@mcgill.ca",
+        "phoneNumber": "514-398-7007",
+        "location": "475 Pine Ave W, Montreal, Quebec H2W 1S4",
+        "channel": "Online and telephone",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Physiotherapy"
+            }
+        ]
+    },
+    {
+        "slug": "first-nations-and-inuit-health",
+        "title": "First Nations and Inuit Health Branch/Quebec Region",
+        "description": "To obtain information on health benefits program.",
+        "website": "http://www.hc-sc.gc.ca/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Indigenous Health",
+                "tag": "Indigenous Health"
+            }
+        ]
+    },
+    {
+        "slug": "duplicate-of-75",
+        "title": "DUPLICATE OF #75",
+        "description": "Listening, support, crisis line. Service is available in Cree, Ojibway, Inuktitut, English and French",
+        "website": "https://hopeforwellness.ca/home.html",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "855-242-3310",
+        "location": null,
+        "channel": "Both",
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Indigenous Health",
+                "tag": "Indigenous Health"
+            },
+            {
+                "category": "Help Lines",
+                "tag": "Help Lines"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-first-peoples-house",
+        "title": "McGill First People's House",
+        "description": "McGill's First Peoples' House offers a \"home away from home\" for Indigenous students. Services they offer include wellness and cultural programming services, Indigenous student mentorship programs, and support programs.",
+        "website": "https://www.mcgill.ca/fph/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-398-3217",
+        "location": "First Peoples' House at McGill\n3505 Peel Street\nMontreal, Quebec H3A 1W7",
+        "channel": "Telephone",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Menstrual Health"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "first-nations-and-inuit-suicid",
+        "title": "First Nations and Inuit Suicide Prevention Association of Quebec and Labrador",
+        "description": "The First Nations and Inuit Suicide Prevention Association of Quebec and Labrador provides community awareness, prevention, and education services. They actively support the development of psychosocial interventions and make them accessible in the language and the cultural context respective of each nation and community.",
+        "website": "http://www.dialogue-for-life.com/",
+        "insuranceDetails": null,
+        "email": "2023dialogueforlife@gmail.com",
+        "phoneNumber": "438-375-1036",
+        "location": "3177 St. Jacques West, suite 202\nMontreal, Quebec H4C 1G7",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "native-montreal",
+        "title": "Native Montreal",
+        "description": "Native Montreal has a variety of programs for different needs. Their programs include wellness navigation, education, culture, land-based programs, community, as well as sports and leisure programs.",
+        "website": "http://www.nativemontreal.com/en/home.html",
+        "insuranceDetails": null,
+        "email": "info@nativemontreal.com",
+        "phoneNumber": "514-331-6587",
+        "location": "3183 Rue Saint-Jacques, Montr\u00e9al, QC, H4C 1G7",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "native-aboriginal-friendship-c",
+        "title": "Native (Aboriginal) Friendship Centre of Montreal",
+        "description": "Native Friendship Centre of Montreal is an urban multipurpose centre with homeless projects, health services and information, and youth programs. This Aboriginal centre consits of population from ten First Nations of Quebec as well as the Inuit and Metis of Montreal.",
+        "website": "http://www.nfcm.org/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-499-1854",
+        "location": "2001 Saint-Laurent Boulevard\nMontreal, Quebec\nH2X 2T3\nCanada",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "native-womens-shelter-of-montr",
+        "title": "Native Women's Shelter of Montreal",
+        "description": "Native Women's Shelter of Montreal (NWSM) provides a safe environment for Indigenous women and children to begin rebuilding their lives. Support and frontline services are offered to First Nations, Inuit and M\u00e9tis women and children.",
+        "website": "http://www.nwsm.info/",
+        "insuranceDetails": null,
+        "email": "nakuset@gmail.com",
+        "phoneNumber": "514-933-4688",
+        "location": "Contact organization for address",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "quebec-native-women-inc",
+        "title": "Quebec Native Women Inc",
+        "description": "Quebec Native Women Inc. supports Aboriginal women in their efforts to better their living conditions through the promotion of nonviolence, justice, equal rights and health. They promote the development of new training initiatives for Indigenous women.",
+        "website": "www.faq-qnw.org",
+        "insuranceDetails": null,
+        "email": "info@faq-qnw.org",
+        "phoneNumber": "450-632-0088",
+        "location": "Contact organization for address",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "residential-school-crisis-line",
+        "title": "Residential School Crisis Line",
+        "description": "The Indian Residential Schools Resolution Health Support Program provides safe, confidential, respectful, and non-judgmental mental health and emotional support services to eligible former Indian Residential School students and their families throughout all phases of the Indian Residential School Settlement Agreement, including the Common Experience Payments (CEP), Independent Assessment Process (IAP), Truth and Reconciliation Commission (TRC) events, and Commemorative activities.",
+        "website": null,
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "866-925-4419",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "tasiutigiitassociation-of-cros",
+        "title": "Tasiutigiit-Association of Cross-Cultural Families of Inuit and Native Children",
+        "description": "Friendship and support group for cross-cultural families of Inuit and native children in the greater Montreal area.",
+        "website": "https://tasiutigiit.org/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "450-479-6827",
+        "location": "Contact organization for address",
+        "channel": "Both",
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Indigenous Health",
+                "tag": "Indigenous Health"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "vision-2120",
+        "title": "Vision 21/20",
+        "description": "Optometrist with Aboriginal clientele.",
+        "website": null,
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-931-3591",
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Indigenous Health",
+                "tag": "Indigenous Health"
+            }
+        ]
+    },
+    {
+        "slug": "trramm-directory-transresource",
+        "title": "TRRAMM Directory: Trans*Resources At Montreal",
+        "description": "TRRAM is a directory that provides resources for trans people in Montreal by a trans person in Montreal.",
+        "website": "https://www.trram.directory/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Directory of various resource locations catered to trans persons in Montreal.",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "integrated-stbbi-screening-and",
+        "title": "Integrated STBBI Screening and Prevention Services (SIDEP+)",
+        "description": "The mission of SIDEP+ clinic is to provide HIV and other STBBI prevention services to men who have sex with men and trans people.",
+        "website": "https://santemontreal.qc.ca/en/public/support-and-services/sidep-clinic/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-527-9565",
+        "location": "CLSC de la Visitation\n1705, rue de la Visitation\nMontr\u00e9al H2L 3C3",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            }
+        ]
+    },
+    {
+        "slug": "elna-medical-formerly-clinique",
+        "title": "ELNA Medical (formerly Clinique A)",
+        "description": "Transgender health clinic/prescriptions/follow-up with Dr Landry (Private MD) available.",
+        "website": "https://drgabriellelandry.com/en/hormone-therapy/",
+        "insuranceDetails": "Pricing ranges from $100 - $325 depending on the service. Cancellation fee of $50 is applicable. Contact clinic for insurance coverage.",
+        "email": null,
+        "phoneNumber": "514-787-0055",
+        "location": "ELNA CLINIQUE A ESTH\u00c9TIQUE\n407, McGill St, Office 900\nMontreal (Quebec) H2Y 2G3",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "go-freddie",
+        "title": "Go Freddie",
+        "description": "Go Freddie offers online PreP services. Through Go Freddie, patients can speak with an affirming clinician for blood tests prior to starting the medication. PreP prescriptions and medication delivery are avaliable for free or at a low cost at Go Freddie. The Go Freddie Health Hub also provides LGBTQ+ focused sexual health services and wellness ressources.",
+        "website": "https://www.gofreddie.com/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "437-747-7584",
+        "location": "Online service with locations across Canada.",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            }
+        ]
+    },
+    {
+        "slug": "i-quit-now",
+        "title": "I Quit Now",
+        "description": "I Quit Now is a free and confidential online service that helps people quit cigarettes. People can seek help by speaking to a speacialist on the phone, participating in QUIT NOW online, recieving helpful adivce by text, or by finding an in-person Quit Smoking Centre closest to them.",
+        "website": "https://www.tobaccofreequebec.ca/iquitnow",
+        "insuranceDetails": "For Quebec residents only.",
+        "email": null,
+        "phoneNumber": "866-527-7383",
+        "location": "Locations vary depending on city.",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "smat",
+        "title": "SMAT",
+        "description": "Service de Messagerie texte pour Arr\u00eater le Tabac (SMAT) is a free, online automated text messages services that provides individual-specific support and advice to help people quit cigarettes. People can sign up for SMAT through both SMS and Messenger. Usual text messaging and data charges may apply.",
+        "website": "https://www.smat.ca/en?&lang=en?lang=en",
+        "insuranceDetails": "For Quebec residents only.",
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "alcochoix",
+        "title": "Alcochoix+",
+        "description": "Alcochoix+ is a program that provides support and solutions for those concerned about the consequences their drinking habits and want to change them. Alcochoix+ offers a self-directed program option, a consellor-guided option, or a support group option.",
+        "website": "https://www.quebec.ca/en/health/advice-and-prevention/alcohol-drugs-gambling/alcochoix-plus/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Contact your local CLSC to find out where this service may be offered.",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "drugs-help-and-referral",
+        "title": "Drugs: Help and Referral",
+        "description": "Drugs: Help and Referral is a 24/7, free and confidential substance use service. It provides support, information and referrals to anyone worried about their own or a loved one's use of drugs, alcohol and/or medication. Drugs: Help and Referral services help people discover resources and intervention centers in their area to meet their support needs.",
+        "website": "https://www.aidedrogue.ca/en/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-527-2626",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "head-and-hands",
+        "title": "Head and Hands",
+        "description": "Head and Hands is a youth health service that provides free medical services, legal services, counseling services, and food pantry for young adults aged 12 to 25. Head and Hands prioritizes harm-reduction, non-judgment, education, holistic care, and confidentiality.",
+        "website": "http://www.headandhands.ca/",
+        "insuranceDetails": null,
+        "email": "info@headandhands.ca",
+        "phoneNumber": "514-481-0277",
+        "location": "3465 ave Benny\nMontreal, QC H4B 2R9",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Legal Service"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "midnight-kitchen",
+        "title": "Midnight Kitchen",
+        "description": "Midnight Kitchen offers free weekly lunches that are plant-based and nut-free creative dishes and salads targeted to low-income students, and/or students with disabilities, chronic illness, mental health conditions, or other impairments, who self-identify as benefiting from access to food through Midnight Kitchen. See their website or Facebook for their lunch calendar.",
+        "website": "https://midnightkitchen.org/meal-program",
+        "insuranceDetails": null,
+        "email": "midnightkitchencollective@gmail.com",
+        "phoneNumber": null,
+        "location": "SSMU Ballroom (University Centre, 3rd Floor), 3480 McTavish Street",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "the-good-food-box-student-nutr",
+        "title": "The Good Food Box - Student Nutrition Acessibility club (SNAC) McGill",
+        "description": "The Good Food Box, offered by SNAC, is a free weekly produce distribution program, with produce supplied by Terra Bella, a local, family-owned grocery distributor. Please note that the Good Food Box is available only to members of the McGill community, especially those facing food insecurity. See their website to register for the Good Food Box. A paid option is also offered through their partners at March\u00e9 SecondLife.\u200b",
+        "website": "https://snacmcgill.wixsite.com/snac/the-good-food-box",
+        "insuranceDetails": null,
+        "email": "snac.mcgill@gmail.com",
+        "phoneNumber": null,
+        "location": "Room 106 in the University Centre on McGill's downtown campus",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-de-psychologie-cognit",
+        "title": "Clinique de Psychologie Cognitive Comportementale, Clinique Change en Famille (Change Psychology Clinic)",
+        "description": "Change Psychology Clinic is a multidisciplinary psychology clinic, that specializes in Cognitive Behavioral Therapy for a variety of mental health disorders and physical conditions. They offer a combination of psychology and nutritional counselling to individuals, couples and families for children, teenagers and adults. Some others services they offer include sexology, art therapy, animal assited therapy, and online therapy.",
+        "website": "https://changepsy.ca/en/",
+        "insuranceDetails": null,
+        "email": "info@changeenfamille.ca",
+        "phoneNumber": "514-508-5779",
+        "location": "1030 Cherrier Street #507, Montreal, Qc H1L 1H7 AND\n2100 Av. de Marlowe #630, Montreal, Qc, H4A 3L5",
+        "channel": "Online available",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-mdicale-lactuel",
+        "title": "Clinique M\u00e9dicale L\u2019Actuel",
+        "description": "Clinique M\u00e9dicale L'Actuel specializes in sexual health. This clinic has a wide range of services including non-emergency STI testing, post-exposure prophylaxis (PEP), quick-HIV testing, hepatitis clinics, and opioid replacement therapies like methadone and suboxone.",
+        "website": "http://cliniquelactuel.com/home",
+        "insuranceDetails": "A charge of $5.00 to $15.00 is issued for laboratory services. Please contact the clinic for more information regarding pricing and insurance coverage.",
+        "email": "courriel@lactuel.ca",
+        "phoneNumber": "514-524-1001",
+        "location": "CLINIQUE M\u00c9DICALE L'ACTUEL\n1001, boul. De Maisonneuve Est, bureau 1130\nMontr\u00e9al Qu\u00e9bec H2L 4P9",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "clinique-mdicale-de-lalternati",
+        "title": "Clinique M\u00e9dicale de L\u2019Alternative",
+        "description": "Clinique M\u00e9dicale de L\u2019Alternative is a clinic that specializes in contraception, abortion and sexual health services. It offers a number of STI and HIV testing, vasectomy, and contraception options including implants and prescriptions such as the Pill, Plan B, or Depo-Provera. Surgical and medical abortion services are also available.",
+        "website": "http://www.cliniquedelalternative.com/",
+        "insuranceDetails": "Services are free upon presentation of RAMQ card or Blue Cross. If you do not have these, please contact the clinic to find the applicable cost/fees.",
+        "email": null,
+        "phoneNumber": "514-281-9848",
+        "location": "2034, Rue St-Hubert, Montreal, QC",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Menstrual Health"
+            }
+        ]
+    },
+    {
+        "slug": "quorum",
+        "title": "Quorum",
+        "description": "Quorum is a medical clinic that specializes in sexual health and ITSS. Their services include HIV, STIs, and hepatitis care as well as women's health and transgender health services. These services are available by appointment only. Their website is only available in French.",
+        "website": "http://cliniquequorum.com/",
+        "insuranceDetails": "Contact for information regarding insurance and costs.",
+        "email": "info@cliniquequorum.com",
+        "phoneNumber": "514-360-0614",
+        "location": "800, boul. de Maisonneuve Est suite RC-1\nMontr\u00e9al (QC), H2L 4L8",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            }
+        ]
+    },
+    {
+        "slug": "jewish-general-hospital-infect",
+        "title": "Jewish General Hospital - Infectious Diseases and STI Clinic",
+        "description": "The Jewish General Hospita Division of Infectious Diseases specialize in clinical activities, teaching, research, and clinical lab-related activities in relation to infectious diseases and STIs. It is a drop-in clinic, however, a hospital card is required for an appointment and can be obtained in Pavilion E, Room 0014, near the L\u00e9gar\u00e9 Street entrance.",
+        "website": "https://www.jgh.ca/care-services/infectious-diseases/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-340-8230",
+        "location": "3755 C\u00f4te-Sainte-Catherine Road, Pavilion E, Room E-0064",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            }
+        ]
+    },
+    {
+        "slug": "ciuss-westcentral-youth-clinic",
+        "title": "CIUSS West-Central Youth Clinic (ages 14 to 24)",
+        "description": "The Youth Clinic at the Centre Integr\u00e9 Universitaire de Sant\u00e9 et de Services Sociaux West-Central Montreal provides sexual health services for youth and young adults between the ages of 14 and 24. They provide STI tests and treatment, contraception services, pregnancy tests and guidance services, abortion services and advice on romantic relationships.",
+        "website": "https://www.ciussswestcentral.ca/programs-and-services/children-families-and-youth/children-teens-and-young-adults/youth-clinic-ages-14-to-24/",
+        "insuranceDetails": "Contact for more information regarding non-RAMQ coverage.",
+        "email": null,
+        "phoneNumber": "514-484-7878",
+        "location": "CLSC Benny Farm: 6484 Monkland Avenue  CLSC C\u00f4te-des-Neiges: 5700 C\u00f4tes-des-Neiges Road",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Abortion Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "ciusss-westcentral-montreal-si",
+        "title": "CIUSSS West-Central Montreal \nSIDEP Clinic - CLSC M\u00e9tro",
+        "description": "Clinic offering sexually transmitted and blood-borne infections (STBBI) screening services for those who fall into one of the following criteria groups:multiple sexual partners in the last year, man who has sex with men, unprotected sex with a new partner, user of intravenous (injecting) or intranasal (snorting) drugs",
+        "website": "https://www.ciussswestcentral.ca/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "1801 de Maisonneuve West",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "lactuel-sur-rue",
+        "title": "L'Actuel sur Rue",
+        "description": "Offers drop-in services.  Free, Confidential Rapid/standard HIV screening, standard syphilis test, Vaccination Hepatitis A and/or B. Access to sexual health care and appointments with specialized physicians.  One-on-one prevention, information or sex education",
+        "website": "https://cliniquelactuel.com/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "1359, rue Ste-Catherine Est, Mtl, QC, H2L 2H7",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "infosant-811",
+        "title": "Info-Sant\u00e9 811",
+        "description": "Info-Sant\u00e9 811 (option 1) is a free and confidential telephone consultation service. 811 is the only telephone number for this service. Dialling 811 (option 1) promptly puts you in contact with a nurse in case of a non-urgent health issue. However, in the event of a serious problem or emergency, it is important to dial 9-1-1 or go to the emergency room.This service 24/7 support 365 days a year. Anyone living in Qu\u00e9bec can call Info-Sant\u00e9 811 for themselves or a family member.",
+        "website": "https://www.quebec.ca/en/health/finding-a-resource/info-sante-811",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "suicide-action-montral",
+        "title": "Suicide Action Montr\u00e9al",
+        "description": "Suicide Action Montreal (SAM) offers a range of services to Montrealers who are distressed or suicidal, to their family, the individual`s social network, workers and/or other professionals who might be involved. SAM also supports those who have experienced the suicide of a loved one. Their services provide research-based training for a diverse audience as well as resources specifically developed for workers, professionals, schools and organizations affected by suicide.",
+        "website": "https://suicideactionmontreal.org/en/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "866-277-3553",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "talk-suicide-formerly-canada-s",
+        "title": "Talk Suicide (formerly Canada Suicide Prevention Service)",
+        "description": "Talk Suicide is a suicide crisis helpline that offers support for those who need urgent help, those who are unsure if they need help, and those who are worried about someone else. They offer 24/7 support by trained crisis responders via phone (toll free) and 4pm - midnight (EST) via SMS messaging.",
+        "website": "https://talksuicide.ca",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "833-456-4566",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "tracom-centre-for-crisis-inter",
+        "title": "TRACOM Centre for Crisis Intervention",
+        "description": "TRACOM Centre for Crisis Intervention is a 24/7, free crisis intervention service for those experiencing high levels of anxiety, distress, or suicidal ideas.\nThis intervention service provides psychosocial crisis intervention services to an adult clientele, as well as family members, caregivers, or friends of adults in distress. They also provide short-term housing to help patients through their intervention plans and community follow-up.",
+        "website": "https://www.tracom.ca/services-en",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-483-3033",
+        "location": "Confidential, offers free pickup to access centers as well.",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "wellness-together-canada",
+        "title": "Wellness Together Canada",
+        "description": "Wellness Together Canada is a mental health and substance use support service. Wellness Together's online platform and Pocketwell app consolidates mental wellness resources to learn and practice mental wellness as well as track your progress. It also offers to option to call and talk with a counselor.",
+        "website": "https://www.wellnesstogether.ca/en-CA",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "855-242-3310",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            }
+        ]
+    },
+    {
+        "slug": "telaide-montreal",
+        "title": "Tel-Aide Montreal",
+        "description": "Tel-Aide Montreal is a free, confidential, and anonymous listening service. This call center in Quebec offers a listening service for those who are suffering from mental health problems or simply needing to be listened to. Tel-Aide Montreal work with clients that are struggling with issues including stress at work, emotional distress, solitude, strained relationships, abuse and intimidation, and domestic violence.",
+        "website": "http://telaidemontreal.org/en/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-935-1101",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Violence Services",
+                "tag": "Domestic Violence"
+            }
+        ]
+    },
+    {
+        "slug": "west-island-crisis-center",
+        "title": "West Island Crisis Center",
+        "description": "The West Island Crisis Center provides support for adults 16 years of age or older who are experiencing a situational crisis, emotional distress, and suicidal ideation. They offer a 24/7 crisis line, crisis intervention in the community, short term residential stays, and post crisis support.",
+        "website": "https://www.centredecriseoi.com/en/index.html",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-684-6160",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "telus-health-student-support-f",
+        "title": "Telus Health Student Support (formerly keep.meSAFE via My SSP)",
+        "description": "Telus Health Student Support provides 24/7, confidential mental health support for students from experienced professionals in real time. This service can be accessed through its app, telephone number and website. There are no additional charges for students enrolled in schools that have signed up for Student Support.",
+        "website": "https://myssp.app/ca/home",
+        "insuranceDetails": "Instant access at no additional charge for students enrolled in schools that have signed up for Student Support.",
+        "email": null,
+        "phoneNumber": "844-451-9700",
+        "location": null,
+        "channel": "Telephone and online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "sos-conjugal-violence",
+        "title": "SOS Conjugal Violence",
+        "description": "SOS Conjugal Violence offers support for those in the province of Quebece facing domestic violence. Anyone who is concerned about domestic violence regardless of their sex, sexual orientation, age, ethnic background is encouraged to use this service. They offer chat, text, phone and email services 24/7.",
+        "website": "https://sosviolenceconjugale.ca/en/looking-for-answers",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "800-363-9010",
+        "location": null,
+        "channel": "Telephone and online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Violence Services",
+                "tag": "Domestic Violence"
+            }
+        ]
+    },
+    {
+        "slug": "hope-for-wellness-helpline",
+        "title": "Hope for Wellness Helpline",
+        "description": "The Hope for Wellness Helpline provides mental health for support Indigenous people. Their trained counsellors are experienced, culturally competent, and available by phone or online chat 24/7. Their services are available in English and French as well as telephone counselling in Cree, Ojibway and Inuktitut upon request.",
+        "website": "https://www.hopeforwellness.ca",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "855-242-3310",
+        "location": null,
+        "channel": "Telephone and online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            }
+        ]
+    },
+    {
+        "slug": "coute-entraide-french-service",
+        "title": "\u00c9coute Entraide (French service)",
+        "description": "\u00c9coute Entraide provices free, confidential, listening and support services available everywhere in Quebec. They offer listening services, self-help groups, and telephone pairing to recieve calls on a continous bases for support. Their help lines are open from 8 am to 10 pm 7 days a week.",
+        "website": "https://www.ecoute-entraide.org",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "855-365-4463",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "sexual-assault-provincial-help",
+        "title": "Sexual Assault Provincial Helpline",
+        "description": "The Montreal Sexual Assault Centre offers a range of bilingual services free of charge to victims of sexual violence. Services are also offered to the victim\u2019s family and close friends. Local services include medical and legal support, and clinical services for victims ages 18+, and their close ones. \nProvincial services include a Sexual Violence Helpline (learn more at sexualviolencehelpline.ca) and Support Service for Designated Centres Providing Medico-social Services for Sexual Assault Victims (learn more at en.serviceconseilqc.ca)",
+        "website": "https://www.cvasm.org/en/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "888-933-9007",
+        "location": null,
+        "channel": "Both",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Violence Services",
+                "tag": "Sexual Assault Services"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            }
+        ]
+    },
+    {
+        "slug": "sacomss-sexual-assult-centre-o",
+        "title": "SACOMSS: Sexual Assult Centre of the McGill Student's Society",
+        "description": "The Sexual Assault Centre of the McGill Students\u2019 Society is a volunteer-run organization committed to supporting survivors of sexual assault and their allies through direct support, advocacy, and outreach. Their services include Drop-In and Line, support groups, and advocacy, and outreach services. They offer sexual assault sensitivity training to McGill and Montreal groups, provide information and referrals, and organize events to raise awareness about sexual assault.",
+        "website": "http://www.sacomss.org/wp/",
+        "insuranceDetails": null,
+        "email": "sacomss@gmail.com",
+        "phoneNumber": "438-943-4855",
+        "location": "The University Centre, 3480 Rue McTavish, Room B27, Montreal, QC, H3A 0E7",
+        "channel": "Telephone",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Violence Services",
+                "tag": "Sexual Assault Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "expression-lasalle",
+        "title": "Expression Lasalle",
+        "description": "Expression LaSalle centre communautaire en sant\u00e9 mentale is a non-profit charity organization administered by a Board of Directors comprised of participating-members and partner-members from the community of Montreal. They offer professional therapeutic services in mental health to citizens of Montreal ages 18-65. A Director assures program development and activities, in which numerous therapists and professionals participate. Programs include creative art therapies, relaxation and meditation workshops, groups on the theme of sexual abuse, and verbal counseling encouraging self-expression, and psychological and/or emotional well-being.",
+        "website": "Montreal Art Therapy Centre: Art Therapy Montreal (LaSalle), Ville LaSalle, Quebec, Community Mental Health Centre in Montreal, art therapy in Montreal, drama therapy, music therapy in Montreal, sexual abuse counseling Montreal, free professional therapeu (expressionlasalletherapies.ca)",
+        "insuranceDetails": "Services are free. A nominal yearly administrative fee is required at the moment of integration into a service.",
+        "email": "info@expressionlasalletherapies.ca",
+        "phoneNumber": "514-368-3736",
+        "location": "405 Terrasse Newman, Office 210 LaSalle",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-students-nightline",
+        "title": "McGill Students' Nightline",
+        "description": "McGill Students\u2019 Nightline is a confidential, anonymous, and non-judgmental listening service run by McGill students, providing the community with non-professional support in various situations, including information, guidance during a crisis, or an empathetic space to share your experiences and emotions. Services in English only.",
+        "website": "https://nightline.ssmu.ca",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-398-6246",
+        "location": null,
+        "channel": "Telephone",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-access-advisors",
+        "title": "McGill Access Advisors",
+        "description": "McGill Access Advisors provide help and guidance to McGill students who would like to access services offered by the Student Wellness Hub. They provided one-on-one appointments and run workshops.",
+        "website": "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/access-advisors",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "student-wellness-hub-mental-he",
+        "title": "Student Wellness Hub Mental Health, Health Professionals and Counselling Services",
+        "description": "Counsellors and Local Wellness Advisors (LWAs) are mental health professionals that can help McGill students reach their mental health and wellness goals. Student can also access a wide range of services, including support from dietitians, doctors, nurses, psychiatrists, sexologists, and laboratory services at McGill.",
+        "website": "https://www.mcgill.ca/wellness-hub/about-hub/clinicians",
+        "insuranceDetails": "Fees vary depending on service. Late cancellation and no-show fees apply.",
+        "email": "hub.clinic@mcgill.ca",
+        "phoneNumber": "(514) 398-6017",
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Contraception Services"
+            }
+        ]
+    },
+    {
+        "slug": "local-wellness-advisors",
+        "title": "Local Wellness Advisors",
+        "description": "LWAs (Local Wellness Advisors) are mental health professionals located within each faculty. They provide outreach events and workshops and have one-on-one appointments.",
+        "website": "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/local-wellness-advisors",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "maple",
+        "title": "Maple",
+        "description": "A hand-picked network of online doctors, nurse practitioners, and allied healthcare professionals ready to help you.",
+        "website": "https://www.getmaple.ca/",
+        "insuranceDetails": "Prices start at $210/visit for a general practitioner and $110/visit for a specialist for Quebec residents.",
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "anxiety-canada",
+        "title": "Anxiety Canada",
+        "description": "Anxiety Canada is a registered charity and non-profit organization created to raise awareness about anxiety and support access to proven resources and treatment. They are a leader in developing free, online self-help and evidence-based tools to help manage anxiety. Anxiety Canada offers a variety of services such as group therapy, an anxiety app, online courses, videos, podcasts, and pdf and downloadable resources.",
+        "website": "https://www.anxietycanada.com/",
+        "insuranceDetails": "Free, except for assessment fee, which is returned upon completion of the group CBT program.",
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "certified-listeners-society",
+        "title": "Certified Listeners Society",
+        "description": "Crisis and Distress Call Centres directory. They to people who need emotional support before they are in either distress or crisis. They believe that by providing early-stage and real-time interventions to the masses, they can help individuals make better mental health lifestyle choices to live better, happier, healthier lives. This list is originally published at http://www.dcontario.org/centres.html",
+        "website": "https://certifiedlisteners.org/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "5500 North Service Rd Suite 300\n\nBurlington ON Canada L7L 6W6",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "student-wellness-app",
+        "title": "Student Wellness App",
+        "description": "The Student Wellness apps provides ways to look after your health is by setting small, doable health goals in areas that matter to you.",
+        "website": "https://studentwellnessapp.org/app/login",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "foundation-of-health",
+        "title": "Foundation of Health",
+        "description": "The Fountain of Health\u2122 is a national non-profit initiative started at Dalhousie University Department of Psychiatry, dedicated to sharing the science of brain health and resilience and to translating that knowledge into practical action. They provide paper and app-based tools for clinicians to use in frontline care to invite and support health behavior change in 5 key health areas known to support long-term well-being. Clinical resources are free and available for use from the website.",
+        "website": "https://fountainofhealth.ca/",
+        "insuranceDetails": null,
+        "email": "info@foundationofhealth.ca",
+        "phoneNumber": null,
+        "location": "Online",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "peer-support-warm-line",
+        "title": "Peer Support Warm Line",
+        "description": "The Warm Line is a confidential and anonymous service for adults. It is not a crisis line. Are you feeling lonely, isolated, anxious, depressed or in need of a friendly ear? Chat online, text, or call a Warm Line peer support worker. Phone and Chat services available 4pm-12am EST 7 days a week.",
+        "website": "https://www.warmline.ca/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "888-768-2488",
+        "location": null,
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "the-lavender-collective",
+        "title": "The Lavender Collective",
+        "description": "The Lavender Collective is a Black-led community effort, that advocates for culturally relevant mental health related needs in BIPOC communities through education, network and resource building.",
+        "website": "https://www.thelavendercollective.ca/",
+        "insuranceDetails": "For information regarding pricing and insurance coverage, please contact organization or health professionals directly.",
+        "email": "allo@thelavendercollective.ca",
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            }
+        ]
+    },
+    {
+        "slug": "lannexe-agence-ometz",
+        "title": "L'Annexe: Agence Ometz",
+        "description": "L\u2019Annexe: the Ometz Centre for Young Adults is a diverse, LGBTQ-affirming Jewish social service and community space open to everyone aged 16 to 35.",
+        "website": "https://www.ometz.ca/lannexe/",
+        "insuranceDetails": "Most activities are free, while others may have a cost. Refer to website for more information.",
+        "email": "social@lannexe.ca",
+        "phoneNumber": "514-345-2656",
+        "location": "5400 Westbury Ave, Montr\u00e9al, Quebec\nH3Y 2W8",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            }
+        ]
+    },
+    {
+        "slug": "centre-for-gender-advocacy",
+        "title": "Centre for Gender Advocacy",
+        "description": "The Centre for Gender Advocacy is an independent, student-funded, Concordia University organization mandated to promote gender equality and empowerment, particularly as it relates to marginalized communities.",
+        "website": "https://genderadvocacy.org/",
+        "insuranceDetails": "Email organization for more information regarding cost and insurance coverage.",
+        "email": "info@genderadvocacy.org",
+        "phoneNumber": null,
+        "location": "2110 rue Mackay, First Floor\nMontr\u00e9al, Quebec",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "expression-lasalle",
+        "title": "Expression Lasalle",
+        "description": "Expression LaSalle centre communautaire en sant\u00e9 mentale, located in the borough of LaSalle (Montreal) is a community mental health centre whose objective is to offer free professional therapeutic services in mental health to citizens of Montreal (18 to 65 years of age inclusively) and surrounding areas . The Centre\u2019s creative arts therapies (art therapy, drama therapy, music therapy, etc.), relaxation and meditation workshops, groups on the theme of sexual abuse, and verbal counseling encourage self-expression, and psychological and/or emotional well being.",
+        "website": "https://www.expressionlasalletherapies.ca/services/",
+        "insuranceDetails": "The services are free. A nominal yearly administrative fee (Membership Card) is payable upon participation only.",
+        "email": "info@expressionlasalletherapies.ca",
+        "phoneNumber": "514-368-3736",
+        "location": "405 Terrasse Newman, Office 210 LaSalle (Quebec) H8R 2Y9",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Violence Services",
+                "tag": "Sexual Assault Services"
+            }
+        ]
+    },
+    {
+        "slug": "calm-app",
+        "title": "Calm (app)",
+        "description": "Calm is mental health platform that provides ressources for sleep, meditation, and relaxation. This ressource is available for free to McGill students through sign up with McGill email.",
+        "website": "https://ssmu.ca/resources/access-to-prowritingaid-calm-and-udemy/",
+        "insuranceDetails": "Calm's premium membership is offered for free to McGill students.",
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "womens-centre-of-montreal",
+        "title": "Women's Centre of Montreal",
+        "description": "The Women's Centre of Montreal is a non-profit organization created by women, for women. Their mission is to provide educational and vocational training, as well as information, counselling and referral services to help women themselves.",
+        "website": "https://centredesfemmesdemtl.org/en/",
+        "insuranceDetails": "Contact organization regarding fees and insurance coverage.",
+        "email": "spl@centredesfemmesdemtl.org",
+        "phoneNumber": "514-842-4780",
+        "location": "3585 Saint-Urbain\nMontr\u00e9al (Qu\u00e9bec)\nH2X 2N6",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "dialogue-app",
+        "title": "Dialogue (app)",
+        "description": "Dialogue provides virtual mental health care to Canadians. They provide high quality healthcare services delivered with expertise, convenience, and warmth.",
+        "website": "https://www.studentcare.ca/rte/en/McGillUniversityundergraduatestudentsSSMU_Dialogue_Dialogue",
+        "insuranceDetails": "SSMU members are automatically covered by HI (Virtual Health Care). The fee for full-year access (from Sept. 1, 2023 \u2013 Aug. 31, 2024) is $44.84. New Winter Term students pay $29.90 for access from Jan. 1 \u2013 Aug. 31, 2024. Please check your tuition statement to confirm if you've been automatically charged the HI (Virtual Health Care) fee.",
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Telephone and online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "black-mental-health-connection",
+        "title": "Black Mental Health Connections Peer Support Program",
+        "description": "Black Mental Health Connections Montreal is an alliance of organizations and individuals focused on the mental health and well-being of the English-speaking Black community in Montreal. Their Peer Support Program provides the opportunity for Black individuals to talk and connect with others who are like them and have lived shared experiences. This program is remote and offered online.",
+        "website": "https://bmhcmtl.ca/online-peer-support-group/",
+        "insuranceDetails": "Contact organization regarding fees and insurance coverage.",
+        "email": "info@bmhcmtl.ca",
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "211-grand-montreal",
+        "title": "211 Grand Montreal",
+        "description": "211 is an information and referral service that refers citizens to community organizations, public and para-public services and programs near them.",
+        "website": "https://www.211qc.ca/en/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "844-387-3598",
+        "location": null,
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "yes-montreal",
+        "title": "Yes Montreal",
+        "description": "YES is a non-profit, community-driven English-language service provider that has been helping Quebecers find employment and develop as entrepreneurs since 1995.",
+        "website": "https://yesmontreal.ca/english-mental-health-services-resources/",
+        "insuranceDetails": null,
+        "email": "info@yesmontreal.ca",
+        "phoneNumber": "(514) 878-9788",
+        "location": "666 Sherbrooke St. W., suite 700\nMontreal, QC H3A 1E7",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "project-10",
+        "title": "Project 10",
+        "description": "Project 10 works to promote the personal, social, sexual and mental well being of lesbian, gay, bisexual, transgender, transsexual, two-spirit, intersex and questioning (2LGBTQ+) youth and adults 14-25.",
+        "website": "https://p10.qc.ca/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-989-0001",
+        "location": "10138 Rue Lajeunesse, Montr\u00e9al, Quebec H3L 2E2",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "y-mind-ymca",
+        "title": "Y Mind (YMCA)",
+        "description": "Y Mind Youth is a free seven-week mental wellness program for young adults aged 18 to 30 and struggling with mild-to-moderate anxiety or stress. Anxiety can impacts the lives of young adults by preventing them from doing what we want or need to do. It can also be an isolating experience, and Y Mind is here to help.",
+        "website": "https://www.ymca.ca/ymind",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "action-sant-transvesties-trans",
+        "title": "Action Sant\u00e9 Transvesti(e)s & Transexuel(le)s du Queb\u00e9c (ASTT(e)Q)",
+        "description": "ASTT(e)Q is a peer support program that promotes mental health and well-being of trans people by providing outreach, interventions, support and accompaniment. They offer different services to many segments of the Quebec trans community. ASTT(e)Q also provides a 24/7 lisiteing line (1-855-909-9038 31). Their services are confidential, low cost or free.",
+        "website": "https://cactusmontreal.org/en/trans-support/",
+        "insuranceDetails": null,
+        "email": "info@cactusmontreal.org",
+        "phoneNumber": "514 847-0067",
+        "location": "1300 Sanguinet Street, Montr\u00e9al, QC H2X 3E7",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            }
+        ]
+    },
+    {
+        "slug": "montreal-overeaters-anonymous",
+        "title": "Montreal Overeaters Anonymous",
+        "description": "Overeaters Anonymous (OA) is a Twelve-Step Fellowship for people recovering from compulsive eating. OA is not a diet club, but rather a supportive community focused on helping individuals overcome compulsive eating, anorexia, bulimia, food addiction, and obesity. If you\u2019re struggling, OA provides a space where you can find support and guidance.",
+        "website": "https://oamontrealenglish.org/meetings/",
+        "insuranceDetails": null,
+        "email": "info@oamontrealenglish.org",
+        "phoneNumber": "(514)-488-1812",
+        "location": "Locations vary. Online meetings also available.",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "nurses-mcgill-student-wellness",
+        "title": "Nurses (McGill Student Wellness Hub)",
+        "description": "Nurses at the Student Wellness Hub have an important role in providing preventative medical interventions to students and are a great first point of contact",
+        "website": "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/nurses-doctors#Nurses",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "(514) 398-6017",
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "doctors-mcgill-student-wellnes",
+        "title": "Doctors (McGill Student Wellness Hub)",
+        "description": "Doctors at the Student Wellness Hub are a great first option to provide care and referrals for any medical condition. Appointments are required and can be booked on the phone or through a nurse.",
+        "website": "https://www.mcgill.ca/wellness-hub/hub-clinical-services/hub-clinicians/nurses-doctors#Nurses",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "(514) 398-6017",
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "psychiatrists-student-wellness",
+        "title": "Psychiatrists (Student Wellness Hub)",
+        "description": "Diagnose mental illnesses (including, but not limited to depression, anxiety, eating disorders, bipolar, and other mood disorders)\nPrescribe and monitor medication for a diagnosed mental illness\nMake referrals for appropriate care, both on- and off-campus",
+        "website": null,
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "(514) 398-6018",
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            }
+        ]
+    },
+    {
+        "slug": "sexologists-student-wellness-h",
+        "title": "Sexologists (Student Wellness Hub)",
+        "description": "Sexologists are mental health professionals with a specialty in sexual health. Sexologists at the Student Wellness Hub offer information and sexual health support in a safe judgement-free space concerning sexuality-related concerns.",
+        "website": null,
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "(514) 398-6019",
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "STI Testing"
+            }
+        ]
+    },
+    {
+        "slug": "student-wellness-hub-medical",
+        "title": "Student Wellness Hub Medical Laboratory Services",
+        "description": "The medical laboratory team provides in-person services to students during opening hours by appointment only. Before booking an appointment, you must: Have a lab requisition from a clinician working at the Student Wellness Hub. We do not accept laboratory requisitions from outside the Student Wellness Hub.\nTo book an appointment with a Hub clinician call (514) 398-6017.",
+        "website": "https://outlook.office365.com/owa/calendar/StudentWellnessHubLaboratoryServices1@McGill.onmicrosoft.com/bookings/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Student Wellness Hub",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            }
+        ]
+    },
+    {
+        "slug": "big-brothers-big-sisters-of-gr",
+        "title": "Big Brothers Big Sisters of Greater Montreal 16-21 Mentoring Program",
+        "description": "Big Brothers Big Sisters of Montreal match young people facing adversity with trained adult mentors in 1-1 or group mentoring programs. Their mentorship program offers youth experience with these essential back-and-forth relationships, developing them into healthy young people better able to deal with and overcome life\u2019s adversities. Big Brothers Big Sisters of Montreal champion the health and well-being of youth by intervening before it\u2019s too late, to give youth a chance to reach their full potential.",
+        "website": "https://gfgsmtl.qc.ca",
+        "insuranceDetails": "Contact organization to inquire about fees.",
+        "email": "Montreal@grandsfreresgrandessoeurs.ca",
+        "phoneNumber": "(514)-842-9715",
+        "location": "3155 Hochelaga St\nOffice 202\nMontreal, QC\nH1W 1G4",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "hope-and-cope",
+        "title": "Hope and Cope",
+        "description": "Hope and Cope supports those facing a new diagnosis, a recurrence, have an advanced cancer, or are accompanying a family member who has cancer. They offer peer support programs, support groups, wellness programs and activities in a warm and welcoming environment. Their staff and volunteers have experience with cancer, and offer support by providing companionship and emotional support.",
+        "website": "https://hopeandcope.ca",
+        "insuranceDetails": null,
+        "email": "info.wellnesscentre@bellnet.ca",
+        "phoneNumber": "514-340-3616",
+        "location": "Hope & Cope Cancer Wellness Centre \n4635 C\u00f4te-Sainte-Catherine\nMontr\u00e9al, Qu\u00e9bec H3W 1M1",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "friends-for-mental-health",
+        "title": "Friends for Mental Health",
+        "description": "Friends for Mental Health offers a wide range of services including counseling both for those suffering from mental illness and those who have family members facing mental health challenges, art therapy, dramatherapy, support groups, including services specifically for youth ages 13 through 25.",
+        "website": "https://asmfmh.org/en/",
+        "insuranceDetails": "Services offered to the residents of the West Island of Montreal (Sainte-Anne-de-Bellevue, Senneville, Baie d'Urf\u00e9, Kirklands, Beaconsfield, Pointe-Claire, Sainte-Genevi\u00e8ve, \u00cele-Bizard, Pierrefonds-Roxboro, Dollard-des-Ormeaux, Dorval, Lachine)",
+        "email": "info@asmfmh.org",
+        "phoneNumber": "514-636-6885",
+        "location": "Locations vary",
+        "channel": "Telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "vent-over-tea",
+        "title": "Vent Over Tea",
+        "description": "Vent Over Tea is a free and confidential active listening service. There are both in-person and virtual sessions available that can be booked through their website. Active-listening workshops and events are also available.",
+        "website": "ventovertea.com",
+        "insuranceDetails": null,
+        "email": "info@ventovertea.com",
+        "phoneNumber": null,
+        "location": "Locations vary",
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "ssmu-menstrual-health-project",
+        "title": "SSMU Menstrual Health Project",
+        "description": "The SSMU Menstral Health Project is a service that aims to provide McGill students with free menstral products on campus. Every month the Menstrual Health Project Team gives out free sustainable and reusable menstrual products as well as disposable pads and tampons to members of the McGill Community. Visit their website to learn about the next menstral product pick up date and location.",
+        "website": "https://ssmu.ca/resources/menstrual-health-project/#:~:text=Monthly%20Period%20Product%20Pick%2DUp&text=Each%20month%2C%20the%20Menstrual%20Health,the%20McGill%20community%20for%20free.",
+        "insuranceDetails": null,
+        "email": "menstrualhealth@ssmu.ca",
+        "phoneNumber": null,
+        "location": "Locations vary. Please verify by checking website.",
+        "channel": "Online",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Medical Services",
+                "tag": "Menstrual Health"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-student-accessibility-a",
+        "title": "McGill Student Accessibility and Achievement",
+        "description": "McGill Student Accessibility and Achievement services provides ressources and accomodations for McGill students that are experiencing academic, mental, or physical barriers. Students must have a documented disability, mental health condition, chronic health condition, or other impairment. Appointments can be made online or in-person.",
+        "website": "https://www.mcgill.ca/access-achieve/",
+        "insuranceDetails": null,
+        "email": "access.achieve@mcgill.ca",
+        "phoneNumber": "514-398-6009",
+        "location": "Main Office: 1010 Sherbrooke Ouest\nSuite 410\nMontreal, Quebec \nH3A 2R7                                                                           Exam Center: 3459 McTavish Street\nRoom RS56\nMontreal, Quebec, H3A 0C9",
+        "channel": "Online and telephone",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "ssmu-drivesafe",
+        "title": "SSMU DriveSafe",
+        "description": "SSMU DriveSafe is a student-run service that provides McGill students with safe and free drives home from anywhere on the Island of Montreal as well as to Montmorency metro station, Longueuil metro station, and to Kahnaw\u00e1:ke. For their marginalized communities initiatives, they extend regular service to the Mohawk Territory of Kahnawake, and will treat all calls to Kahnawake as regular calls on all days.",
+        "website": "https://drivesafe.ssmu.ca",
+        "insuranceDetails": null,
+        "email": "drivesafe@ssmu.ca",
+        "phoneNumber": "(514) 398-8040",
+        "location": "Locations vary.",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Support and Community Services",
+                "tag": "Safety Service"
+            },
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "ssmu-walksafe",
+        "title": "SSMU Walksafe",
+        "description": "SSMU DriveSafe is a student-run service that provides McGill students with safe and free walks home. Walksafe volunteers wear easily-identifiable red jackets and provide their peers with a safe way to get to where they need to go.",
+        "website": "https://walksafe.ssmu.ca",
+        "insuranceDetails": null,
+        "email": "executive@walksafe.ca",
+        "phoneNumber": "(514) 398-2498",
+        "location": "Locations vary.",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Support and Community Services",
+                "tag": "Safety Service"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "lotus-initiative-mcgill",
+        "title": "Lotus Initiative McGill",
+        "description": "The Lotus Initiative is a student-run organization through McGill University that provides students with the opportunity to better their mental health by hosting various free fitness classes such as yoga, floor barre, dance, and spin.",
+        "website": "https://www.instagram.com/lotusinitiative.mcgill/?hl=en",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Locations vary.",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "neurodivergent-student-support",
+        "title": "Neurodivergent Student Support Group (Student Wellness Hub)",
+        "description": "The Neurodivergent Student Support Group helps neurodivergent students who are seeking support to navigate alternative learning methods and develop the confidence and communication skills to help navigate interpersonal relationships. Neurodivergent students include those who fall within the spectrum of neurodiverse learning styles or those on the autism spectrum. Participants of this group will have the opportunity to share mutual experiences, challenges, and tips on navigating academic and personal wellness at McGill.",
+        "website": "https://www.mcgill.ca/wellness-hub/channels/event/neurodivergent-students-support-group-353461",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Healthy Living Annex-Room 3100 (Brown Student Services), 3600 McTavish, CA",
+        "channel": null,
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-university-sexual-ident",
+        "title": "McGill University Sexual Identitiy Centre (MUSIC)",
+        "description": "The McGill University Sexual Identity Centre (MUSIC) provides specialized mental health care to individuals, couples and families with sexual orientation and gender identity issues. Their clientele includes people who are questioning their gender identity or sexual orientation or who feel unhappy about it, individuals and couples seeking to improve the quality of their interpersonal relationships, and couples and families who have concerns about a loved one\u2019s gender identity or sexual orientation. MUSIC also works to enhance the health of the larger community through research, education, outreach and advocacy around sexual orientation and gender issues, homophobia and transphobia.",
+        "website": "https://muhc.ca",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-934-1934",
+        "location": "Located at the Montreal General Hospital, 1650 Cedar Avenue Montreal, Quebec Canada H3G 1A4, Second Floor A2-160",
+        "channel": "In person",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "black-healing-center-bhc",
+        "title": "Black Healing Center (BHC)",
+        "description": "The BHC provides access to free and subsidized therapy to members of the Black community. They aim to counteract the shared trauma that comes with the Black experience by empowering those of Black descent to reclaim their mental, physical, emotional and spiritual wellness. BHC offers services including support groups such as the Black Men's Wellness program, Black Queer and Trans Collective Circle, and Black Women's Collective Care Circle. They also provide training, retreat and research opportunities.",
+        "website": "https://www.blackhealingcentre.com/",
+        "insuranceDetails": null,
+        "email": "info@blackhealingcentre.com",
+        "phoneNumber": null,
+        "location": "Locations vary.",
+        "channel": "In-person and online",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "maison-de-lina-linas-home",
+        "title": "Maison de Lina (Lina's Home)",
+        "description": "Maison de Lina is a shelter and service provider that aims to support women and children who are victims of domestic violence. Their services include a 24/7 helpline, accomodations, external services, youth services and other services such as legal ones.",
+        "website": "https://maisondelina.org/en/services/",
+        "insuranceDetails": null,
+        "email": "info@maisondelina.org.",
+        "phoneNumber": "450-962-8085",
+        "location": "Location is confidential.",
+        "channel": "In-person",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Violence Services",
+                "tag": "Domestic Violence"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Legal Service"
+            }
+        ]
+    },
+    {
+        "slug": "pride-therapy-network-of-montr",
+        "title": "Pride Therapy Network of Montreal",
+        "description": "The Pride Therapy Network of Montreal is a collective of independent mental health practitioners that provide affirmative services to members of sexual and gender diverse communities. This collective aims to counter the discrimination of sexual and gender-diverse individuals who have been stigmatized and mistreated in mental health care systems. They offer financially accessibility services with their reduced fee option spots, and other acessibility requests.",
+        "website": "https://pridetherapynetworkmontreal.com",
+        "insuranceDetails": null,
+        "email": "info@montrealpridetherapynetwork.com",
+        "phoneNumber": null,
+        "location": "Locations vary.",
+        "channel": "In-person",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "centre-de-ressources-et-dinter",
+        "title": "Centre de Ressources et d'intervention pour Hommes Abus\u00e9s Sexuellement dans leur Enfance (CRIPHASE)",
+        "description": "CRIPHASE is a non-profit organization that helps support men that have experienced sexual assault. They offer services including counselling, training, and support groups.",
+        "website": "https://www.criphase.org/?fbclid=IwAR0rkiy13SLKnoZU8zTBlRkMHXh_fiEVwVFwYVm5OELVIx4lhex2EqFarXU",
+        "insuranceDetails": null,
+        "email": "info@criphase.org",
+        "phoneNumber": null,
+        "location": "Exact location is confidential ( Montr\u00e9al, QC H2J 1L7)",
+        "channel": "In-person",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Violence Services",
+                "tag": "Sexual Assault Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "inclusive-therapists",
+        "title": "Inclusive Therapists",
+        "description": "Inclusive Therapists is a mental health directory and community focused on liberation. They help you find and match with therapists committed to racial, 2SLGBTQIA+, neurodivergent, and disability justice. They hope to amplify BIPOC and QTBIPOC voices, as well as neurodivergent and disabled communities of color. They aim to work towards mental health liberation through education, care, and activism, celebrating marginalized identities, abilities, and bodies. They also provide and reference other resources and help lines that have similar values. They have therapists in Montreal, as well as the rest of Canada and USA.",
+        "website": "https://www.inclusivetherapists.com/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "N/A. They are an online directory",
+        "channel": "Online",
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            }
+        ]
+    },
+    {
+        "slug": "jeunesse-lambda",
+        "title": "Jeunesse Lambda",
+        "description": "A community organization created by and for lesbian, gay, bisexual, trans, queer and questioning youth from 14 to 30 years old. They organize weekly discussions and themed activities to promote the heathy socialization as well as the mental, sexual and physical wellbeing of 2SLGBTQIA+ youth. 14 to 30 year old trans and non-binary folks can obtain access to gear such as binders, gaffs, packers, harnesses, STP, breast forms, etc, for free or on a pay-what-you-can basis. They offer free and confidential one-on-one active listening sessions on a punctual or recurring basis and they are able to swear in forms to change name and gender markers.",
+        "website": "https://www.jeunesselambda.com/",
+        "insuranceDetails": null,
+        "email": "info@jeunesselambda.com",
+        "phoneNumber": null,
+        "location": "1575 Rue Atateken, Montr\u00e9al, QC H2L 3L4",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "trans-lifeline",
+        "title": "Trans Lifeline",
+        "description": "Trans Lifeline is run by and for trans people. It is a grassroots hotline and microgrants 501(c)(3) non-profit organization offering direct emotional and financial support to trans people in crisis- for the trans community, by the trans community. The hotline is available 24 hours a day to help, support, and inform anyone concerned with issues of sexual diversity and gender diversity. Available by phone.",
+        "website": "",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": "Online",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            }
+        ]
+    },
+    {
+        "slug": "centre-professionnel-alternati",
+        "title": "Centre Professionnel Alter-Natives Inc.",
+        "description": "Centre Professionnel Alter-Natives is a centre of mental health professionals created by women of diverse ethnic identities to support people with diverse ethnic identities. They offer consultations and training aimed at the psychological well-being of individuals and their personal and professional development. In their approach, they focus on a peros's physical and mental health, personal and professional context, life stage, ethnicity, language, beliefs and culture. Mental health professionals speak multiple languages including Spanish, Creole, and Arabic (Libanese and Tunisian dialects).Their professionals are multi-diciplinary, multi-ethnic, and multi-confessional.",
+        "website": "https://alter-natives.ca",
+        "insuranceDetails": null,
+        "email": "info@alter-natives.ca",
+        "phoneNumber": "(514) 569-6222",
+        "location": null,
+        "channel": "Online and telephone",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "lespace",
+        "title": "L'Espace",
+        "description": "L'Espace is a group of psychologists and psychotherapists that are passionate about adressing the mental health issues of today. Their services include individual therapy, couples therapy, child/adolescent therapy, teletherapy, group therapy and flash appointments. Appointments can be made by phone, email or on their website.",
+        "website": "https://www.lespacepsychologie.com/services",
+        "insuranceDetails": null,
+        "email": "info@lespacepsychologie.com",
+        "phoneNumber": "438-520-2013",
+        "location": "1591 rue Fleury, Est. Suite 300, H2C1S7",
+        "channel": "Telephone (teletherapy option)",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            }
+        ]
+    },
+    {
+        "slug": "smart-recovery-quebec",
+        "title": "SMART Recovery Quebec",
+        "description": "SMART Recovery is the leading self-empowering addiction recovery support group. Participants learn tools for addiction recovery based on the latest scientific research and participate in a world-wide community which includes free, self- empowering, secular and science-based, mutual-help support groups. SMART Recovery helps with recovery from all types of addiction and addictive behaviors, including: alcoholism, drug abuse, drug addiction, substance abuse, alcohol abuse, gambling addiction, cocaine addiction, and addiction to other substances and activities. Services are offered in English. Meetings are held from 6-7:30 on Monday and Wednesday evenings, registration is not required to attend.",
+        "website": "https://smartrecoveryquebec.org",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": "514-621-2257",
+        "location": "OHMH \u2013 Habitation Saint Raymond on 5605 Upper Lachine Rd. H4A 3S1",
+        "channel": "Online meeting option",
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            }
+        ]
+    },
+    {
+        "slug": "peer-support-centre-psc",
+        "title": "Peer Support Centre (PSC)",
+        "description": "The Peer Support Centre (PSC) provides mental health services through their friendly and well-trained student peer supporters that can connect students to ressources. The PSC is welcoming space where students can share their experiences and feel truly listened to. Appointments can be drop-in or can be scheduled. There is also online support provided by the PSC, in which students may make preferential appointments with a BIPOC, 2SLGBTQIA+, or woman supporter if desired. All services are confidential and non-judgemental.",
+        "website": "https://psc.ssmu.ca",
+        "insuranceDetails": null,
+        "email": "mcgill.psc@gmail.com",
+        "phoneNumber": "514-398-3782",
+        "location": "The University Centre, 3480 Rue McTavish, Room 411, Montreal, QC, H3A 0E7",
+        "channel": "Online (zoom) meeting option",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            },
+            {
+                "category": "LGBTQ+ Services",
+                "tag": "LGBTQ+ Services"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Crisis Support"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            }
+        ]
+    },
+    {
+        "slug": "maple-virtual-care",
+        "title": "Maple Virtual Care",
+        "description": "Maple Virtual Care provides Medivie Blue Cross plan memebers 24/7 on-demand access to doctors by secure text or video for advice, diagnosis and prescriptions. Members can talk with a physician within minutes online. Services include Doctor's notes, prescriptions, medical advice, lab work requisitions and mental health services.",
+        "website": "https://www.mcgill.ca/internationalstudents/health/coverage/maple-virtual-care",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online",
+        "onCampus": true,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Lab"
+            },
+            {
+                "category": "Medical Services",
+                "tag": "Medical Clinic"
+            }
+        ]
+    },
+    {
+        "slug": "face-face-face-to-face-listeni",
+        "title": "Face \u00e0 Face (Face to Face) Listening and Referral Centre",
+        "description": "Specially trained volunteers provide listening and referral service. Face \u00e0 Face offers conselling services, active listening and referal line services, mail reception for those withou a fixed address and afffordable housing and accompaniment serices. All services are confidential and free of charge.",
+        "website": "https://faceafacemontreal.org/contact-us/",
+        "insuranceDetails": null,
+        "email": "info@faceafacemontreal.org.",
+        "phoneNumber": "(514)-934-4546",
+        "location": "1857 Maisonneuve West, suite 100\nMontreal, Quebec\nH3H 1J9",
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": true,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Support and Community Services",
+                "tag": "Accessibility"
+            }
+        ]
+    },
+    {
+        "slug": "uqam-centre-de-services-psycho",
+        "title": "UQAM - Centre de services psychologiques",
+        "description": "Psychological services by graduate students in-training (low cost) for adults, children, and adolescents.",
+        "website": "https://psychologie.uqam.ca/centre-de-services-psychologiques-csp/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "universit-de-montral-universit",
+        "title": "Universit\u00e9 de Montr\u00e9al - University Clinic of Psychology",
+        "description": "Clinical training and research facilities that provide services (low cost) including psychological assessment, neuropsychological assessment, and individual, couple, and family therapy. Service provided to general public",
+        "website": "https://psy.umontreal.ca/ressources-services/clinique-universitaire-de-psychologie/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "mcgill-counselling-clinic",
+        "title": "McGill Counselling Clinic",
+        "description": "Psychological services by graduate students in-training (low cost) children, adolescents, and adults who are experiencing difficulties in an educational, social, vocational or interpersonal context.",
+        "website": "https://www.mcgill.ca/edu-ecp/about/clinic",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "information-and-referral-centr",
+        "title": "Information and Referral Centre of Greater Montreal (Centraide)",
+        "description": "An autonomous bilingual agency. It gives free information on community resources and directs persons seeking help in solving their problems (e.g., drugs and alcohol, gambling) to the appropriate agency providing the service needed.",
+        "website": "https://www.centraide-mtl.org/en/directory-of-agencies-and-projects/information-and-referral-center-of-greater-montreal/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Substance Use",
+                "tag": "Substance Use"
+            },
+            {
+                "category": "Directory",
+                "tag": "Directory"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "douglas-hospital",
+        "title": "Douglas Hospital",
+        "description": "Interdisciplinary teams provide clinical services to all age groups in French and English. Treatment is provided for anxiety, depression, eating disorders, bipolar disorders, behaviour disorders, attention deficit disorders in children, Alzheimer\u2019s disease and other forms of dementia, schizophrenia, and other forms of psychosis. (Referral needed)",
+        "website": "http://www.douglas.qc.ca/section/psychotic-disorders-144",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            }
+        ]
+    },
+    {
+        "slug": "muhc-mood-disorders-program",
+        "title": "MUHC Mood Disorders Program",
+        "description": "Therapy and treatment for mood disorders. (Referral needed)",
+        "website": "https://muhc.ca/mental-health/page/mood-disorders-program",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": null,
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Mental Wellness"
+            }
+        ]
+    },
+    {
+        "slug": "connecte-montreal-psychology-g",
+        "title": "Connecte: Montreal Psychology Group",
+        "description": "The Connecte Montreal Psychology Group is a practice that offers psychotherapy and group therapy services in English, French and Mandarin. They provide CBT, ACT, and DBT therapies, mindfulness-based therapy, and psychodynamic therapy. Connecte also offers group therapy including anxiety, relationship, and eating disorder support groups.",
+        "website": "https://connectepsychology.com/en/our-services/psychotherapy/",
+        "insuranceDetails": null,
+        "email": null,
+        "phoneNumber": null,
+        "location": null,
+        "channel": "Online service available.",
+        "onCampus": false,
+        "currentlyActive": false,
+        "tags": [
+            {
+                "category": "Mental Health Services",
+                "tag": "Counselling"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Psychological"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Support Group"
+            },
+            {
+                "category": "Mental Health Services",
+                "tag": "Disordered Eating"
+            },
+            {
+                "category": "BIPOC Services",
+                "tag": "BIPOC Services"
+            }
+        ]
+    }
+]

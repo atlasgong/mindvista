@@ -55,7 +55,7 @@ const getDataPath = (type: TagType): string => {
     return path.join(DATA_PATH, filename);
 };
 
-const bulkUpload = async (type: TagType): Promise<void> => {
+async function bulkUpload(type: TagType): Promise<void> {
     const payload = await getPayload({ config });
     const collections = getCollectionNames(type);
 
@@ -172,7 +172,7 @@ const bulkUpload = async (type: TagType): Promise<void> => {
 
         exit(stats.errors.count > 0 ? 1 : 0);
     }
-};
+}
 
 // get tag type from command line argument
 const tagType = process.argv[2]?.toLowerCase() as TagType;
@@ -182,4 +182,8 @@ if (!tagType || !["club", "resource"].includes(tagType)) {
     exit(1);
 }
 
-bulkUpload(tagType);
+// start the upload
+bulkUpload(tagType).catch((error) => {
+    console.error("Fatal error:", error);
+    exit(1);
+});

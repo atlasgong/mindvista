@@ -6,38 +6,6 @@ export const Clubs: CollectionConfig = {
         useAsTitle: "title",
         group: "Clubs",
     },
-    hooks: {
-        afterChange: [
-            async () => {
-                try {
-                    await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            secret: process.env.REVALIDATION_SECRET,
-                        }),
-                    });
-                } catch (err) {
-                    console.error("Error revalidating:", err);
-                }
-            },
-        ],
-        afterDelete: [
-            async () => {
-                try {
-                    await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            secret: process.env.REVALIDATION_SECRET,
-                        }),
-                    });
-                } catch (err) {
-                    console.error("Error revalidating:", err);
-                }
-            },
-        ],
-    },
     fields: [
         {
             name: "slug",
@@ -59,7 +27,13 @@ export const Clubs: CollectionConfig = {
             name: "website",
             type: "text",
             validate: (value: string | null | undefined) => {
-                const urlRegex = /^(https?:\/\/)?([\w.-]+)+(:\d+)?(\/[\w.-]*)*\/?$/;
+                // Allow URLs with:
+                // - Optional protocol
+                // - Domains with hyphens
+                // - Subdomains
+                // - Path segments with special chars
+                // - Query params and fragments
+                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
                 if (value && !urlRegex.test(value)) {
                     return "Please provide a valid URL.";
                 }
@@ -79,7 +53,7 @@ export const Clubs: CollectionConfig = {
             name: "facebook",
             type: "text",
             validate: (value: string | null | undefined) => {
-                const facebookRegex = /^(https?:\/\/)?(www\.)?facebook\.com\/[A-Za-z0-9._-]+$/;
+                const facebookRegex = /^(https?:\/\/)?(www\.)?(facebook|fb)\.com\/[A-Za-z0-9._%+-]+\/?.*$/;
                 if (value && !facebookRegex.test(value)) {
                     return "Please provide a valid Facebook URL.";
                 }
@@ -90,7 +64,7 @@ export const Clubs: CollectionConfig = {
             name: "instagram",
             type: "text",
             validate: (value: string | null | undefined) => {
-                const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._-]+$/;
+                const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._%+-]+\/?.*$/;
                 if (value && !instagramRegex.test(value)) {
                     return "Please provide a valid Instagram URL.";
                 }
@@ -106,7 +80,13 @@ export const Clubs: CollectionConfig = {
                     type: "text",
                     required: true,
                     validate: (value: string | null | undefined) => {
-                        const urlRegex = /^(https?:\/\/)?([\w.-]+)+(:\d+)?(\/[\w.-]*)*\/?$/;
+                        // Allow URLs with:
+                        // - Optional protocol
+                        // - Domains with hyphens
+                        // - Subdomains
+                        // - Path segments with special chars
+                        // - Query params and fragments
+                        const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
                         if (value && !urlRegex.test(value)) {
                             return "Please provide a valid URL.";
                         }
@@ -118,7 +98,6 @@ export const Clubs: CollectionConfig = {
         {
             name: "currentlyActive",
             type: "checkbox",
-            required: true,
         },
         {
             name: "tags",
