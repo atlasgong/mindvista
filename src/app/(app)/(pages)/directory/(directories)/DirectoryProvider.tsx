@@ -7,6 +7,8 @@ import { fetchDirectoryData } from "./actions";
 import { DirectoryItemBoxSkeleton } from "./components/skeletons/DirectoryItemBoxSkeleton";
 import { FiltersSkeleton } from "./components/skeletons/FiltersSkeleton";
 import { Filters } from "./components/Filters";
+import { FaSearch } from "react-icons/fa";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 interface DirectoryContextType {
     filteredItems: Array<Club | Resource>;
@@ -237,29 +239,27 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                     {/* Search - Always at top */}
                     <div className="relative mb-8">
                         <input type="text" className="w-full rounded-lg border border-cBorder bg-cBackgroundOffset p-4 pl-12 text-cText placeholder-cTextOffset transition-colors duration-200 hover:border-blue-400 focus:border-blue-500 focus:outline-none dark:hover:border-blue-500 dark:focus:border-blue-400" placeholder={isClubDirectory ? "Search clubs..." : "Search resources..."} value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-                        <svg className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-cTextOffset" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clipRule="evenodd" />
-                        </svg>
+                        <FaSearch className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-cTextOffset" />
                     </div>
 
                     {/* Responsive Layout */}
                     <div className="lg:grid lg:grid-cols-[18rem_1fr] lg:gap-8">
                         {/* Filters - Sidebar on large screens, collapsible on small screens */}
                         <div className="mb-8 lg:mb-0">
-                            {/* Mobile Filter Toggle */}
-                            <button className="mb-4 flex w-full items-center justify-between rounded-lg border border-cBorder bg-cBackgroundOffset p-4 text-left transition-colors duration-200 hover:bg-cBackground lg:hidden" onClick={() => setShowFilters(!showFilters)}>
-                                <div className="flex items-center gap-2">
-                                    <h2 className="text-2xl font-semibold text-cText">Filters</h2>
-                                    <span className="text-sm text-cTextOffset">{activeFilters.size > 0 ? `(${activeFilters.size} active)` : ""}</span>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 transform text-cText transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="currentColor">
-                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                                </svg>
-                            </button>
+                            <div className="rounded-lg border border-cBorder bg-cBackgroundOffset lg:p-6">
+                                {/* Mobile Filter Toggle */}
+                                <button className="flex w-full items-center justify-between p-4 text-left transition-colors duration-200 hover:bg-cBackground lg:hidden" onClick={() => setShowFilters(!showFilters)}>
+                                    <div className="flex items-center gap-2">
+                                        <h2 className="text-2xl font-semibold text-cText">Filters</h2>
+                                        <span className="text-sm text-cTextOffset">{activeFilters.size > 0 ? `(${activeFilters.size} active)` : ""}</span>
+                                    </div>
+                                    <RiArrowDropDownLine className={`h-9 w-9 transform text-cText transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`} />
+                                </button>
 
-                            {/* Filters Content */}
-                            <div className={`rounded-lg border border-cBorder bg-cBackgroundOffset p-6 lg:block ${showFilters ? "block" : "hidden"}`}>
-                                <Suspense fallback={<FiltersSkeleton />}>{isLoading ? <FiltersSkeleton /> : <Filters tagsByCategory={tagsByCategory} activeFilters={activeFilters} onFilterChange={handleFilterChange} />}</Suspense>
+                                {/* Filters Content */}
+                                <div className={`px-4 pb-4 pt-2 lg:block lg:p-0 ${showFilters ? "block" : "hidden"}`}>
+                                    <Suspense fallback={<FiltersSkeleton />}>{isLoading ? <FiltersSkeleton /> : <Filters tagsByCategory={tagsByCategory} activeFilters={activeFilters} onFilterChange={handleFilterChange} />}</Suspense>
+                                </div>
                             </div>
                         </div>
 
