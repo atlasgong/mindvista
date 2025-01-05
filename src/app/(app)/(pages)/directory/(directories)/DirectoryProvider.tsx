@@ -8,6 +8,9 @@ import { fetchDirectoryData } from "./actions";
 interface DirectoryContextType {
     filteredItems: Array<Club | Resource>;
     isLoading: boolean;
+    currentPage: number;
+    totalPages: number;
+    setCurrentPage: (page: number) => void;
 }
 
 interface TagsByCategory {
@@ -21,6 +24,9 @@ interface TagsByCategory {
 const DirectoryContext = createContext<DirectoryContextType>({
     filteredItems: [],
     isLoading: true,
+    currentPage: 1,
+    totalPages: 1,
+    setCurrentPage: () => {},
 });
 
 export const useDirectory = () => useContext(DirectoryContext);
@@ -38,6 +44,8 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
     const [tagsByCategory, setTagsByCategory] = useState<TagsByCategory>({});
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState<Array<Club | Resource>>([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -150,8 +158,91 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
         </div>
     );
 
+    // Reset to first page when filters change
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [searchQuery, activeFilters]);
+
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+    const paginatedItems = filteredItems.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const renderPagination = () => {
+        if (totalPages <= 1) return null;
+
+        const renderPageButton = (page: number) => (
+            <button key={page} onClick={() => handlePageChange(page)} className={`min-w-[2.5rem] rounded-lg px-3 py-2 ${currentPage === page ? "bg-indigo-600 text-white dark:bg-indigo-500" : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"}`}>
+                {page}
+            </button>
+        );
+
+        const renderEllipsis = (key: string) => (
+            <span key={key} className="px-2 text-gray-400">
+                ...
+            </span>
+        );
+
+        const getVisiblePages = () => {
+            const delta = 1; // Number of pages to show before and after current page
+            const pages: (number | string)[] = [];
+
+            // Always include first page
+            pages.push(1);
+
+            // Calculate range around current page
+            const rangeStart = Math.max(2, currentPage - delta);
+            const rangeEnd = Math.min(totalPages - 1, currentPage + delta);
+
+            // Add ellipsis after first page if needed
+            if (rangeStart > 2) {
+                pages.push("ellipsis1");
+            }
+
+            // Add pages around current page
+            for (let i = rangeStart; i <= rangeEnd; i++) {
+                pages.push(i);
+            }
+
+            // Add ellipsis before last page if needed
+            if (rangeEnd < totalPages - 1) {
+                pages.push("ellipsis2");
+            }
+
+            // Always include last page if not already included
+            if (totalPages > 1) {
+                pages.push(totalPages);
+            }
+
+            return pages;
+        };
+
+        return (
+            <div className="mt-8 flex flex-wrap justify-center gap-2">
+                <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className={`rounded-lg px-3 py-2 ${currentPage === 1 ? "cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-500" : "bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400"}`}>
+                    Previous
+                </button>
+                <div className="flex items-center gap-1">{getVisiblePages().map((page) => (typeof page === "number" ? renderPageButton(page) : renderEllipsis(page)))}</div>
+                <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} className={`rounded-lg px-3 py-2 ${currentPage === totalPages ? "cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-500" : "bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400"}`}>
+                    Next
+                </button>
+            </div>
+        );
+    };
+
     return (
-        <DirectoryContext.Provider value={{ filteredItems, isLoading }}>
+        <DirectoryContext.Provider
+            value={{
+                filteredItems: paginatedItems,
+                isLoading,
+                currentPage,
+                totalPages,
+                setCurrentPage: handlePageChange,
+            }}
+        >
             <div className="min-h-screen bg-cBackground">
                 <div className="mx-auto max-w-7xl px-4 py-8 sm:px-8 md:px-12 lg:px-20">
                     <header className="mb-8 mt-8 text-center">
@@ -199,6 +290,7 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                                     </div>
                                 )}
                             </div>
+                            {renderPagination()}
                         </main>
                     </div>
                 </div>
