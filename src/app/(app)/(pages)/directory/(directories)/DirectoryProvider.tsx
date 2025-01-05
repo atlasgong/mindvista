@@ -1,9 +1,12 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, Suspense } from "react";
 import { usePathname } from "next/navigation";
-import { ClubTag, ResourceTag, ClubTagCategory, ResourceTagCategory, Club, Resource } from "@/payload-types";
+import { ClubTag, ResourceTag, ClubTagCategory, ResourceTagCategory, Club, Resource } from "../../../../../payload-types";
 import { fetchDirectoryData } from "./actions";
+import { DirectoryItemBoxSkeleton } from "./components/skeletons/DirectoryItemBoxSkeleton";
+import { FiltersSkeleton } from "./components/skeletons/FiltersSkeleton";
+import { Filters } from "./components/Filters";
 
 interface DirectoryContextType {
     filteredItems: Array<Club | Resource>;
@@ -47,12 +50,16 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = isClubDirectory ? 10 : 12;
 
+    // Fetch data on mount and directory type change
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setIsLoading(true);
-                const data = await fetchDirectoryData(isClubDirectory);
+        setIsLoading(true);
+        // reset filters when switching between clubs and resources
+        setActiveFilters(new Set());
+        setSearchQuery("");
 
+        // Use Promise to handle async data fetching
+        fetchDirectoryData(isClubDirectory)
+            .then((data) => {
                 setItems(data.items);
 
                 const tagsByCat: TagsByCategory = {};
@@ -81,19 +88,15 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                 }
 
                 setTagsByCategory(tagsByCat);
-            } catch (error) {
+            })
+            .catch((error) => {
                 console.error("Error fetching data:", error);
                 setItems([]);
                 setTagsByCategory({});
-            } finally {
+            })
+            .finally(() => {
                 setIsLoading(false);
-            }
-        };
-
-        fetchData();
-        // reset filters when switching between clubs and resources
-        setActiveFilters(new Set());
-        setSearchQuery("");
+            });
     }, [isClubDirectory]);
 
     const handleFilterChange = (tagId: string) => {
@@ -116,7 +119,7 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                 item.title.toLowerCase().includes(searchLower) ||
                 item.description.toLowerCase().includes(searchLower) ||
                 (Array.isArray(item.tags) &&
-                    item.tags.some((tag) => {
+                    item.tags.some((tag: ClubTag | ResourceTag | number) => {
                         if (typeof tag === "number") return false;
                         return tag.name.toLowerCase().includes(searchLower);
                     }));
@@ -127,7 +130,7 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
         // tag filters
         if (activeFilters.size > 0) {
             const itemTagIds = Array.isArray(item.tags)
-                ? item.tags.map((tag) => {
+                ? item.tags.map((tag: ClubTag | ResourceTag | number) => {
                       if (typeof tag === "number") return String(tag);
                       return String(tag.id);
                   })
@@ -138,25 +141,6 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
 
         return true;
     });
-
-    const renderFilters = () => (
-        <div className="space-y-6">
-            {/* Tag Filters */}
-            {Object.entries(tagsByCategory).map(([categoryName, { tags }]) => (
-                <div key={categoryName} className="filter-section">
-                    <h3 className="mb-4 text-lg font-semibold text-cText">{categoryName}</h3>
-                    <div className="flex flex-wrap gap-2">
-                        {tags.map((tag) => (
-                            <label key={tag.id} className={`inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-sm transition-colors ${activeFilters.has(tag.id.toString()) ? "bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400" : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"}`}>
-                                <input type="checkbox" className="form-checkbox hidden" onChange={() => handleFilterChange(tag.id.toString())} checked={activeFilters.has(tag.id.toString())} />
-                                <span>{tag.name}</span>
-                            </label>
-                        ))}
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
 
     // reset to first page when filters change
     useEffect(() => {
@@ -274,16 +258,32 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                             </button>
 
                             {/* Filters Content */}
-                            <div className={`rounded-lg border border-cBorder bg-cBackgroundOffset p-6 lg:block ${showFilters ? "block" : "hidden"}`}>{renderFilters()}</div>
+                            <div className={`rounded-lg border border-cBorder bg-cBackgroundOffset p-6 lg:block ${showFilters ? "block" : "hidden"}`}>
+                                <Suspense fallback={<FiltersSkeleton />}>{isLoading ? <FiltersSkeleton /> : <Filters tagsByCategory={tagsByCategory} activeFilters={activeFilters} onFilterChange={handleFilterChange} />}</Suspense>
+                            </div>
                         </div>
 
                         {/* Main Content */}
                         <main>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3">
                                 {isLoading ? (
-                                    <div className="col-span-full text-center text-cTextOffset">Loading...</div>
+                                    <div className="col-span-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3">
+                                        {[...Array(6)].map((_, index) => (
+                                            <DirectoryItemBoxSkeleton key={index} />
+                                        ))}
+                                    </div>
                                 ) : filteredItems.length > 0 ? (
-                                    children
+                                    <Suspense
+                                        fallback={
+                                            <div className="col-span-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3">
+                                                {[...Array(6)].map((_, index) => (
+                                                    <DirectoryItemBoxSkeleton key={index} />
+                                                ))}
+                                            </div>
+                                        }
+                                    >
+                                        {children}
+                                    </Suspense>
                                 ) : (
                                     <div className="col-span-full text-center text-cTextOffset">
                                         <p className="text-lg">No {isClubDirectory ? "clubs" : "resources"} found matching your criteria.</p>
