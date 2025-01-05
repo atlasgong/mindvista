@@ -167,7 +167,7 @@ export interface Club {
         id?: string | null;
       }[]
     | null;
-  currentlyActive: string;
+  currentlyActive?: boolean | null;
   tags?: (number | ClubTag)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -217,9 +217,11 @@ export interface Resource {
   email?: string | null;
   phoneNumber?: string | null;
   location?: string | null;
-  channel?: string | null;
-  onCampus?: string | null;
-  currentlyActive: string;
+  channelOnline?: boolean | null;
+  channelTelephone?: boolean | null;
+  channelInPerson?: boolean | null;
+  onCampus?: boolean | null;
+  currentlyActive?: boolean | null;
   tags?: (number | ResourceTag)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -438,7 +440,9 @@ export interface ResourcesSelect<T extends boolean = true> {
   email?: T;
   phoneNumber?: T;
   location?: T;
-  channel?: T;
+  channelOnline?: T;
+  channelTelephone?: T;
+  channelInPerson?: T;
   onCampus?: T;
   currentlyActive?: T;
   tags?: T;
