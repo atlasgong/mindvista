@@ -117,14 +117,8 @@ export const Clubs: CollectionConfig = {
         },
         {
             name: "currentlyActive",
-            type: "text",
+            type: "checkbox",
             required: true,
-            validate: (value: string | null | undefined) => {
-                if (value && (value === "true" || value === "false")) {
-                    return true;
-                }
-                return "Must be 'true' or 'false'.";
-            },
         },
         {
             name: "tags",
