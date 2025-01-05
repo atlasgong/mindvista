@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
+import { ClubTag } from "@/payload-types";
 
 interface Props {
     params: Promise<{
@@ -47,7 +48,7 @@ export default async function ClubPage({ params }: Props) {
                 <h1 className="mb-4 text-4xl font-bold">{club.title}</h1>
 
                 <div className="mb-6">
-                    {club.tags?.map((tag: any) => (
+                    {club.tags?.filter((tag): tag is ClubTag => typeof tag !== 'number').map((tag: ClubTag) => (
                         <span key={tag.id} className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-sm">
                             {tag.name}
                         </span>
@@ -101,9 +102,9 @@ export default async function ClubPage({ params }: Props) {
                                     Instagram
                                 </Link>
                             )}
-                            {club.otherSocials?.map((social: any, index: number) => (
-                                <Link key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                                    {social.platform}
+                            {club.otherSocials?.map((social: { link: string; id?: string | null }, index: number) => (
+                                <Link key={index} href={social.link} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                                    {social.link}
                                 </Link>
                             ))}
                         </div>
