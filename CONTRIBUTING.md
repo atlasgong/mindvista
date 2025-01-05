@@ -89,9 +89,9 @@ This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/w
 
 ## Styling
 
-### Tailwind CSS
+### Colors
 
-[Tailwind CSS](https://tailwindcss.com/docs) is used for styling.
+[Tailwind CSS](https://tailwindcss.com/docs) is used for styling. See the [config](./tailwind.config.js) for colors defined in [src/global.css](src/global.css). Attempt to always use colors defined in these files.
 
 ### Payload CMS' Lexical Rich Text
 
