@@ -137,9 +137,9 @@ export default async function ResourcePage({ params }: Props) {
                                 <div>
                                     <h2 className="mb-4 text-xl font-semibold text-cText">Insurance Providers</h2>
                                     <div className="space-y-4">
-                                        {resource.insuranceProviders.map((provider: any, index: number) => (
+                                        {resource.insuranceProviders.map((provider: { id?: string | null; insuranceProvider: Array<{ id?: string | null; name: string; description?: string | null }> }, index: number) => (
                                             <div key={provider.id || index} className="border-cBorder/20 hover:border-cBorder/40 rounded-xl border bg-cBackground p-4 transition-colors dark:bg-cBackgroundOffset">
-                                                {provider.insuranceProvider.map((p: any, i: number) => (
+                                                {provider.insuranceProvider.map((p: { id?: string | null; name: string; description?: string | null }, i: number) => (
                                                     <div key={p.id || i} className="mb-3 last:mb-0">
                                                         <h3 className="mb-1 font-medium text-cText">{p.name}</h3>
                                                         {p.description && <p className="break-words text-sm leading-relaxed text-cTextOffset">{p.description}</p>}
