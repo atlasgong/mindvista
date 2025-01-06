@@ -6,7 +6,7 @@ import { Resource } from "@/payload-types";
 import { DirectoryItemBox } from "../components/DirectoryItemBox";
 
 export default function ResourceDirectory() {
-    const { filteredItems, isLoading } = useDirectory();
+    const { filteredItems } = useDirectory();
     const resources = filteredItems as Resource[];
 
     return (

@@ -6,7 +6,7 @@ import { Club } from "@/payload-types";
 import { DirectoryItemBox } from "../components/DirectoryItemBox";
 
 export default function ClubDirectory() {
-    const { filteredItems, isLoading } = useDirectory();
+    const { filteredItems } = useDirectory();
     const clubs = filteredItems as Club[];
 
     return (
