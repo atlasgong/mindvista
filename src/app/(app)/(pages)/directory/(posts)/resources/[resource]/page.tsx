@@ -2,7 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
-import Link from "next/link";
+import { Resource } from "@/payload-types";
+import { PostHeader, ContactSection, TagsSection } from "../../layout";
+import { FiMapPin, FiGlobe, FiPhone, FiUser, FiShield } from "react-icons/fi";
 
 interface Props {
     params: Promise<{
@@ -23,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-async function getResource(slug: string) {
+async function getResource(slug: string): Promise<Resource | null> {
     const payload = await getPayloadClient();
     const { docs } = await payload.find({
         collection: "resources",
@@ -41,104 +43,123 @@ export default async function ResourcePage({ params }: Props) {
     const resource = await getResource((await params).resource);
     if (!resource) return notFound();
 
-    return (
-        <div className="container mx-auto px-4 py-8">
-            <div className="mb-8">
-                <div className="flex items-center justify-between">
-                    <h1 className="text-3xl font-bold text-cText">{resource.title}</h1>
-                    <span className={`rounded-full px-3 py-1 text-sm font-medium ${resource.currentlyActive ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100" : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100"}`}>{resource.currentlyActive ? "Active" : "Inactive"}</span>
-                </div>
-                <p className="mt-4 text-lg text-cTextOffset">{resource.description}</p>
-            </div>
+    const tags = resource.tags?.map((tag: number | { id: string | number; name?: string }) => (typeof tag === "number" ? { id: tag, name: tag.toString() } : tag)) ?? [];
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div>
-                    <h2 className="mb-4 text-xl font-semibold text-cText">Contact Information</h2>
-                    <div className="space-y-3">
-                        {resource.website && (
-                            <p>
-                                <span className="font-medium">Website:</span>{" "}
-                                <Link href={resource.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    {resource.website}
-                                </Link>
-                            </p>
-                        )}
-                        {resource.email && (
-                            <p>
-                                <span className="font-medium">Email:</span>{" "}
-                                <Link href={`mailto:${resource.email}`} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    {resource.email}
-                                </Link>
-                            </p>
-                        )}
-                        {resource.phoneNumber && (
-                            <p>
-                                <span className="font-medium">Phone:</span>{" "}
-                                <Link href={`tel:${resource.phoneNumber}`} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    {resource.phoneNumber}
-                                </Link>
-                            </p>
-                        )}
-                        {resource.location && (
-                            <p>
-                                <span className="font-medium">Location:</span> {resource.location}
-                            </p>
-                        )}
-                        <div className="mt-3">
-                            <span className="font-medium">Available Channels:</span>
-                            <div className="mt-1 flex flex-wrap gap-2">
-                                {resource.channelOnline && <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">Online</span>}
-                                {resource.channelTelephone && <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">Telephone</span>}
-                                {resource.channelInPerson && <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">In Person</span>}
+    const hasLocation = resource.location || resource.channelOnline || resource.channelTelephone || resource.channelInPerson || resource.onCampus;
+    const hasInsurance = resource.insuranceDetails || (resource.insuranceProviders && resource.insuranceProviders.length > 0);
+
+    return (
+        <>
+            <PostHeader
+                title={resource.title}
+                description={resource.description}
+                status={{
+                    isActive: resource.currentlyActive || false,
+                    label: resource.currentlyActive ? "Active" : "Inactive",
+                }}
+            />
+
+            <div className="grid auto-rows-fr grid-cols-1 gap-6 md:auto-cols-fr md:grid-flow-col">
+                {/* Contact Information */}
+                {(resource.website || resource.email || resource.phoneNumber) && (
+                    <div className="h-full md:col-span-1">
+                        <ContactSection
+                            contactInfo={{
+                                website: resource.website || undefined,
+                                email: resource.email || undefined,
+                                phoneNumber: resource.phoneNumber || undefined,
+                            }}
+                        />
+                    </div>
+                )}
+
+                {/* Location Information */}
+                {hasLocation && (
+                    <div className={`h-full ${!resource.website && !resource.email && !resource.phoneNumber ? "md:col-span-2" : "md:col-span-1"}`}>
+                        <div className="flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
+                            <div className="space-y-6">
+                                {resource.location && (
+                                    <div>
+                                        <div className="mb-2 flex items-center gap-2">
+                                            <FiMapPin className="h-5 w-5 text-cTextOffset" />
+                                            <span className="font-medium text-cText">Location</span>
+                                        </div>
+                                        <span className="block break-words text-cTextOffset">{resource.location}</span>
+                                    </div>
+                                )}
+                                {(resource.channelInPerson || resource.channelOnline || resource.channelTelephone) && (
+                                    <div>
+                                        <div className="mb-3 flex items-center gap-2">
+                                            <FiGlobe className="h-5 w-5 text-cTextOffset" />
+                                            <span className="font-medium text-cText">Available Channels</span>
+                                        </div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {resource.channelOnline && <span className="inline-flex items-center rounded-full bg-cBackgroundOffsetAccent px-3 py-1 text-sm text-cAccent">Online</span>}
+                                            {resource.channelTelephone && (
+                                                <span className="inline-flex items-center rounded-full bg-cBackgroundOffsetAccent px-3 py-1 text-sm text-cAccent">
+                                                    <FiPhone className="mr-1 h-4 w-4" />
+                                                    Telephone
+                                                </span>
+                                            )}
+                                            {resource.channelInPerson && (
+                                                <span className="inline-flex items-center rounded-full bg-cBackgroundOffsetAccent px-3 py-1 text-sm text-cAccent">
+                                                    <FiUser className="mr-1 h-4 w-4" />
+                                                    In Person
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
+                                {resource.onCampus && (
+                                    <div className="">
+                                        <span className="inline-flex items-center rounded-full bg-cBackgroundOffsetAccent px-3 py-1 text-sm text-cAccent">On Campus Location</span>
+                                    </div>
+                                )}
                             </div>
                         </div>
-                        {resource.onCampus && (
-                            <p className="mt-3">
-                                <span className="inline-block rounded-full bg-green-50 px-3 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100">On Campus Location</span>
-                            </p>
-                        )}
                     </div>
-                </div>
+                )}
 
-                <div>
-                    {resource.insuranceDetails && (
-                        <div className="mb-6">
-                            <h2 className="mb-4 text-xl font-semibold text-cText">Insurance Information</h2>
-                            <p className="text-cTextOffset">{resource.insuranceDetails}</p>
-                        </div>
-                    )}
-                    {resource.insuranceProviders && resource.insuranceProviders.length > 0 && (
-                        <div>
-                            <h2 className="mb-4 text-xl font-semibold text-cText">Insurance Providers</h2>
-                            <div className="space-y-4">
-                                {resource.insuranceProviders.map((provider, index) => (
-                                    <div key={provider.id || index} className="rounded-lg border border-cBorder p-4">
-                                        {provider.insuranceProvider.map((p, i) => (
-                                            <div key={p.id || i} className="mb-2 last:mb-0">
-                                                <h3 className="font-medium text-cText">{p.name}</h3>
-                                                {p.description && <p className="mt-1 text-sm text-cTextOffset">{p.description}</p>}
+                {/* Insurance Information */}
+                {hasInsurance && (
+                    <div className={`h-full ${!resource.website && !resource.email && !resource.phoneNumber && !hasLocation ? "md:col-span-2" : "md:col-span-1"}`}>
+                        <div className="flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
+                            {resource.insuranceDetails && (
+                                <div className="mb-8">
+                                    <div className="mb-3 flex items-center gap-2">
+                                        <FiShield className="h-5 w-5 text-cTextOffset" />
+                                        <h2 className="text-xl font-semibold text-cText">Insurance Information</h2>
+                                    </div>
+                                    <p className="break-words text-base leading-relaxed text-cTextOffset">{resource.insuranceDetails}</p>
+                                </div>
+                            )}
+                            {resource.insuranceProviders && resource.insuranceProviders.length > 0 && (
+                                <div>
+                                    <h2 className="mb-4 text-xl font-semibold text-cText">Insurance Providers</h2>
+                                    <div className="space-y-4">
+                                        {resource.insuranceProviders.map((provider: any, index: number) => (
+                                            <div key={provider.id || index} className="border-cBorder/20 hover:border-cBorder/40 rounded-xl border bg-cBackground p-4 transition-colors dark:bg-cBackgroundOffset">
+                                                {provider.insuranceProvider.map((p: any, i: number) => (
+                                                    <div key={p.id || i} className="mb-3 last:mb-0">
+                                                        <h3 className="mb-1 font-medium text-cText">{p.name}</h3>
+                                                        {p.description && <p className="break-words text-sm leading-relaxed text-cTextOffset">{p.description}</p>}
+                                                    </div>
+                                                ))}
                                             </div>
                                         ))}
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
-            </div>
-
-            {resource.tags && resource.tags.length > 0 && (
-                <div className="mt-8">
-                    <h2 className="mb-4 text-xl font-semibold text-cText">Tags</h2>
-                    <div className="flex flex-wrap gap-2">
-                        {resource.tags.map((tag) => (
-                            <span key={typeof tag === "number" ? tag : tag.id} className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-100">
-                                {typeof tag === "number" ? tag : tag.name}
-                            </span>
-                        ))}
                     </div>
+                )}
+            </div>
+            {/* Tags */}
+            {tags.length > 0 && (
+                <div className="mt-4">
+                    <TagsSection tags={tags} />
                 </div>
             )}
-        </div>
+        </>
     );
 }

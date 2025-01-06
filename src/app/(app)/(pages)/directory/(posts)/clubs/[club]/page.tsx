@@ -3,7 +3,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
-import { ClubTag } from "@/payload-types";
+import { Club } from "@/payload-types";
+import { PostHeader, ContactSection, TagsSection } from "../../layout";
+import { FiShare2, FiFacebook, FiInstagram, FiLink } from "react-icons/fi";
 
 interface Props {
     params: Promise<{
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-async function getClub(slug: string) {
+async function getClub(slug: string): Promise<Club | null> {
     const payload = await getPayloadClient();
     const { docs } = await payload.find({
         collection: "clubs",
@@ -42,75 +44,85 @@ export default async function ClubPage({ params }: Props) {
     const club = await getClub((await params).club);
     if (!club) return notFound();
 
+    const tags = club.tags?.map((tag: number | { id: string | number; name?: string }) => (typeof tag === "number" ? { id: tag, name: tag.toString() } : tag)) ?? [];
+
+    const hasSocialMedia = club.facebook || club.instagram || (club.otherSocials && club.otherSocials.length > 0);
+
     return (
-        <div className="container mx-auto px-4 py-8">
-            <div className="mx-auto max-w-4xl">
-                <h1 className="mb-4 text-4xl font-bold">{club.title}</h1>
+        <>
+            <PostHeader
+                title={club.title}
+                description={club.description}
+                status={{
+                    isActive: club.currentlyActive || false,
+                    label: club.currentlyActive ? "Active" : "Inactive",
+                }}
+            />
 
-                <div className="mb-6">
-                    {club.tags?.filter((tag): tag is ClubTag => typeof tag !== 'number').map((tag: ClubTag) => (
-                        <span key={tag.id} className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-sm">
-                            {tag.name}
-                        </span>
-                    ))}
-                </div>
+            <div className="grid auto-rows-fr grid-cols-1 gap-6 md:auto-cols-fr md:grid-flow-col">
+                {/* Contact Information */}
+                {(club.website || club.email || club.phoneNumber) && (
+                    <div className="h-full md:col-span-1">
+                        <ContactSection
+                            contactInfo={{
+                                website: club.website || undefined,
+                                email: club.email || undefined,
+                                phoneNumber: club.phoneNumber || undefined,
+                            }}
+                        />
+                    </div>
+                )}
 
-                <div className="prose mb-8 max-w-none">
-                    <p className="text-lg">{club.description}</p>
-                </div>
-
-                <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-                    {club.website && (
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold">Website</h2>
-                            <Link href={club.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                {club.website}
-                            </Link>
-                        </div>
-                    )}
-
-                    {club.email && (
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold">Contact Email</h2>
-                            <Link href={`mailto:${club.email}`} className="text-blue-600 hover:underline">
-                                {club.email}
-                            </Link>
-                        </div>
-                    )}
-
-                    {club.phoneNumber && (
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold">Phone Number</h2>
-                            <Link href={`tel:${club.phoneNumber}`} className="text-blue-600 hover:underline">
-                                {club.phoneNumber}
-                            </Link>
-                        </div>
-                    )}
-                </div>
-
-                {(club.facebook || club.instagram || (club.otherSocials && club.otherSocials?.length > 0)) && (
-                    <div className="mb-8">
-                        <h2 className="mb-4 text-2xl font-semibold">Social Media</h2>
-                        <div className="space-y-2">
-                            {club.facebook && (
-                                <Link href={club.facebook} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                                    Facebook
-                                </Link>
-                            )}
-                            {club.instagram && (
-                                <Link href={club.instagram} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                                    Instagram
-                                </Link>
-                            )}
-                            {club.otherSocials?.map((social: { link: string; id?: string | null }, index: number) => (
-                                <Link key={index} href={social.link} target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                                    {social.link}
-                                </Link>
-                            ))}
+                {/* Social Media */}
+                {hasSocialMedia && (
+                    <div className={`h-full ${!club.website && !club.email && !club.phoneNumber ? "md:col-span-2" : "md:col-span-1"}`}>
+                        <div className="flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
+                            <div className="mb-6 flex items-center gap-2">
+                                <FiShare2 className="h-5 w-5 text-cTextOffset" />
+                                <h2 className="text-xl font-semibold text-cText">Social Media</h2>
+                            </div>
+                            <div className="space-y-4">
+                                {club.facebook && (
+                                    <div className="group">
+                                        <Link href={club.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cAccent transition-colors hover:text-cPurple">
+                                            <FiFacebook className="h-5 w-5 flex-shrink-0" />
+                                            <span className="font-medium">Facebook</span>
+                                            <span className="text-cTextOffset transition-transform group-hover:translate-x-1">→</span>
+                                            <span className="hidden truncate break-all text-sm text-cTextOffset sm:inline-block">{club.facebook}</span>
+                                        </Link>
+                                    </div>
+                                )}
+                                {club.instagram && (
+                                    <div className="group">
+                                        <Link href={club.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cAccent transition-colors hover:text-cPurple">
+                                            <FiInstagram className="h-5 w-5 flex-shrink-0" />
+                                            <span className="font-medium">Instagram</span>
+                                            <span className="text-cTextOffset transition-transform group-hover:translate-x-1">→</span>
+                                            <span className="hidden truncate break-all text-sm text-cTextOffset sm:inline-block">{club.instagram}</span>
+                                        </Link>
+                                    </div>
+                                )}
+                                {club.otherSocials?.map((social: { id?: string | null; link: string }, index: number) => (
+                                    <div key={social.id || index} className="group">
+                                        <Link href={social.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cAccent transition-colors hover:text-cPurple">
+                                            <FiLink className="h-5 w-5 flex-shrink-0" />
+                                            <span className="font-medium">Others</span>
+                                            <span className="text-cTextOffset transition-transform group-hover:translate-x-1">→</span>
+                                            <span className="hidden truncate break-all text-sm text-cTextOffset sm:inline-block">{social.link}</span>
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 )}
             </div>
-        </div>
+            {/* Tags */}
+            {tags.length > 0 && (
+                <div className="mt-4">
+                    <TagsSection tags={tags} />
+                </div>
+            )}
+        </>
     );
 }
