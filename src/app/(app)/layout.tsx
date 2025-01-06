@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import "src/global.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -28,7 +29,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     }}
                 />
             </head>
-            <body className="text-cText bg-cBackground min-h-screen antialiased">{children}</body>
+            <body className="min-h-screen bg-cBackground text-cText antialiased">{children}</body>
+
+            {/* https://vercel.com/docs/analytics/quickstart#add-the-analytics-component-to-your-app */}
+            <Analytics />
         </html>
     );
 }
