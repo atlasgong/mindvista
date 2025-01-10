@@ -52,14 +52,14 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = isClubDirectory ? 10 : 12;
 
-    // Fetch data on mount and directory type change
+    // fetch data on mount and directory type change
     useEffect(() => {
         setIsLoading(true);
         // reset filters when switching between clubs and resources
         setActiveFilters(new Set());
         setSearchQuery("");
 
-        // Use Promise to handle async data fetching
+        // use promise to handle async data fetching
         fetchDirectoryData(isClubDirectory)
             .then((data) => {
                 setItems(data.items);
@@ -137,8 +137,8 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                       return String(tag.id);
                   })
                 : [];
-            const hasMatchingTag = Array.from(activeFilters).some((filterId) => itemTagIds.includes(filterId));
-            if (!hasMatchingTag) return false;
+            const hasAllSelectedTags = Array.from(activeFilters).every((filterId) => itemTagIds.includes(filterId));
+            if (!hasAllSelectedTags) return false;
         }
 
         return true;
@@ -173,7 +173,7 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
         );
 
         const getVisiblePages = () => {
-            const delta = 1; // # of pages to show before and after current page
+            const delta = 1; // num of pages to show before and after current page
             const pages: (number | string)[] = [];
 
             // always include first page
