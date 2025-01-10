@@ -3,6 +3,7 @@ import { getPayloadClient } from "@/payloadClient";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import styles from "./legal.module.css";
+import { Page } from "@/payload-types";
 
 async function getLegalPage(legal: string) {
     const payload = await getPayloadClient();
@@ -14,7 +15,6 @@ async function getLegalPage(legal: string) {
                 equals: legal,
             },
         },
-        depth: 1,
     });
 
     return legalPages.docs[0];
@@ -24,6 +24,17 @@ interface LegalPageProps {
     params: Promise<{
         legal: string;
     }>;
+}
+
+export async function generateMetadata(props: { params: Promise<{ legal: string }> }) {
+    const params = await props.params;
+    const legalPage = await getLegalPage(params.legal);
+    const page = legalPage.page as Page;
+
+    return {
+        title: `${page.title} - MindVista`,
+        description: page.seoDescription,
+    };
 }
 
 export default async function LegalPage(props: LegalPageProps) {
