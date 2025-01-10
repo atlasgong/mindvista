@@ -109,7 +109,7 @@ export interface Page {
  */
 export interface Legal {
   id: number;
-  page?: (number | null) | Page;
+  page: number | Page;
   content: {
     root: {
       type: string;

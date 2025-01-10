@@ -9,6 +9,7 @@ export const LegalPages: CollectionConfig = {
     fields: [
         {
             name: "page",
+            required: true,
             type: "relationship",
             relationTo: "pages", // reference the parent collection
         },
