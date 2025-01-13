@@ -48,7 +48,7 @@
         "conventional-changelog-atom": "^5.0.0",
         "eslint": "^9.16.0",
         "eslint-config-next": "15.1.0",
-        "husky": "^8.0.0",
+        "husky": "^8.0.3",
         "postcss": "^8.4.49",
         "prettier": "^3.4.2",
         "prettier-plugin-tailwindcss": "^0.6.9",
