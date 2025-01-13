@@ -13,7 +13,8 @@
         "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
         "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
         "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-        "commitlint": "commitlint --edit"
+        "commitlint": "commitlint --edit",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@hcaptcha/react-hcaptcha": "^1.11.0",
@@ -47,7 +48,7 @@
         "conventional-changelog-atom": "^5.0.0",
         "eslint": "^9.16.0",
         "eslint-config-next": "15.1.0",
-        "husky": "^9.1.7",
+        "husky": "^8.0.0",
         "postcss": "^8.4.49",
         "prettier": "^3.4.2",
         "prettier-plugin-tailwindcss": "^0.6.9",
