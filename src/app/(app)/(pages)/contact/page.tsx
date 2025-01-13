@@ -9,7 +9,7 @@ export default function ContactPage() {
             {/* Header Section */}
             <div className="mb-12 text-center">
                 <h1 className="mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-4xl font-bold text-transparent md:text-5xl dark:from-purple-400 dark:to-blue-300">Contact Us</h1>
-                <p className="mx-auto max-w-2xl text-xl font-medium text-cTextOffset">Have questions or feedback? We're here to listen and help. Your mental health journey matters to us.</p>
+                <p className="mx-auto max-w-2xl text-xl font-medium text-cTextOffset">Have questions or feedback? We&apos;re here to listen and help. Your mental health journey matters to us.</p>
             </div>
 
             {/* Contact Form Section */}
