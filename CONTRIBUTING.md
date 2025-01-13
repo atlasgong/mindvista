@@ -99,6 +99,33 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
 
 ## Pages
 
+## SEO
+
+### Pages
+
+SEO titles and meta descriptions for each page are pulled from Payload's `Pages` collection.
+
+Metadata is exported as such in each page's code:
+
+```tsx
+import { Metadata } from "next";
+import { getPageFromCMS } from "@/lib/getPageFromCMS";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const page = await getPageFromCMS("page-slug-here");
+    return {
+        ...(page && {
+            title: page.title,
+            description: page.seoDescription,
+        }),
+    };
+}
+```
+
+#### Clubs & Resources
+
+SEO title and description are respectively pulled from the `title` and `description` fields of Payload's `Clubs` or `Resources` collection.
+
 ## Error Handling / Common Errors
 
 ### Dynamic APIs are Asynchronous
