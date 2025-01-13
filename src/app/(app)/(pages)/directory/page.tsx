@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { DirectoryCount } from "./components/EntityCount";
+import { getPageFromCMS } from "@/lib/getPageFromCMS";
+import { Metadata } from "next";
 
 export default function DirectoryPage() {
     return (
@@ -51,4 +53,14 @@ export default function DirectoryPage() {
             </div>
         </div>
     );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+    const page = await getPageFromCMS("directory");
+    return {
+        ...(page && {
+            title: page.title,
+            description: page.seoDescription,
+        }),
+    };
 }

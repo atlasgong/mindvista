@@ -1,19 +1,17 @@
-"use client";
-
-import React from "react";
-import { useDirectory } from "../DirectoryProvider";
-import { Resource } from "@/payload-types";
-import { DirectoryItemBox } from "../components/DirectoryItemBox";
+import { getPageFromCMS } from "@/lib/getPageFromCMS";
+import { Metadata } from "next";
+import ResourceDirectoryClient from "./ResourceDirectoryClient";
 
 export default function ResourceDirectory() {
-    const { filteredItems } = useDirectory();
-    const resources = filteredItems as Resource[];
+    return <ResourceDirectoryClient />;
+}
 
-    return (
-        <>
-            {resources.map((resource) => (
-                <DirectoryItemBox key={resource.id} item={resource} type="resources" />
-            ))}
-        </>
-    );
+export async function generateMetadata(): Promise<Metadata> {
+    const page = await getPageFromCMS("directory/resources");
+    return {
+        ...(page && {
+            title: page.title,
+            description: page.seoDescription,
+        }),
+    };
 }
