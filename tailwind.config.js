@@ -27,6 +27,17 @@ export default {
                 cLightBlue: "var(--light-blue)",
                 cPurple: "var(--purple)",
             },
+            // for crisis page ------
+            keyframes: {
+                "emergency-pulse": {
+                    "0%, 100%": { opacity: "1" },
+                    "50%": { opacity: "0.9" },
+                },
+            },
+            animation: {
+                "emergency-pulse": "emergency-pulse 2s ease-in-out infinite",
+            },
+            // -----------------------
         },
     },
     plugins: [require("@tailwindcss/typography")],
