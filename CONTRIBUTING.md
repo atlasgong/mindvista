@@ -115,6 +115,22 @@ Then commit
 git commit -m "fix: sync dynamic APIs"
 ```
 
+### Type errors in src/app/(payload)/
+
+Do not edit any files in the `(payload)` folder, with the exception of `custom.scss` and `layout.tsx`. To address any type issues, consider upgrading Payload to the latest version. **CAUTION:** Verify that the project is already on the latest version of Payload before proceeding. Upgrading without this confirmation could introduce unexpected issues, so ensure the decision to upgrade is made carefully. If upgrading is not feasible, explore alternative solutions.
+
+To update Payload, use the following command:
+
+```sh
+npx create-payload-app@latest
+```
+
+Then commit:
+
+```sh
+git commit -m "cms: fix ts errors in (payload)"
+```
+
 # Archived Documentation
 
 For documentation which may no longer be relevant.
