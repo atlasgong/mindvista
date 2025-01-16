@@ -37,8 +37,8 @@ export default function ContactPage() {
                         <h3 className="mb-2 text-lg font-semibold text-cText">General Inquiries</h3>
                         <p className="text-cTextOffset">
                             For general questions, email us at{" "}
-                            <Link href="mailto:info@mindvista.ca" className="text-cAccent hover:opacity-80">
-                                info@mindvista.ca
+                            <Link href="mailto:mindvista.mcgill@gmail.com" className="text-cAccent hover:opacity-80">
+                                mindvista.mcgill@gmail.com
                             </Link>
                         </p>
                     </div>
