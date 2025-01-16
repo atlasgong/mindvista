@@ -28,6 +28,11 @@ const teams = {
         { role: "Newsletter Content Creator", name: "Gianluca Caporicci", pronouns: "", image: "/team/avatarPlaceholder.png" },
         { role: "French Coordinator", name: "Nous Embauchons!", pronouns: "", image: "/team/avatarPlaceholder.png" },
     ],
+    founders: [
+        { role: "Founder", name: "Safiia Abdulkadyrova", pronouns: "", image: "/team/safiia-abdulkadyrova.webp" },
+        { role: "Founder", name: "Lauren Harrison", pronouns: "", image: "/team/lauren-harrison.webp" },
+        { role: "Founder", name: "Hana Jamal", pronouns: "", image: "/team/hana-jamal.webp" },
+    ],
 };
 
 export default function AboutPage() {
@@ -69,6 +74,7 @@ export default function AboutPage() {
             <TeamSection title="Marketing + Social Media Team" members={teams.marketing} />
             <TeamSection title="Website Development Team" members={teams.development} />
             <TeamSection title="Newsletter Content Creators" members={teams.content} />
+            <TeamSection title="Founders" members={teams.founders} />
         </div>
     );
 }
