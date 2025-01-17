@@ -102,10 +102,10 @@ export default function ContactForm() {
             {isSuccess === true && <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in rounded-lg border py-4 text-center font-medium text-cAccent">Thank you for your message! We&apos;ll get back to you soon.</div>}
 
             {isSuccess === false && (
-                <div className="bg-cRed/10 border-cRed/20 animate-fade-in rounded-lg border py-4 text-center text-cRed">
+                <div className="animate-fade-in rounded-lg border border-cRed py-4 text-center text-cRed">
                     Something went wrong. Please try again later or email us directly at{" "}
-                    <a href="mailto:info@mindvista.ca" className="underline transition-opacity hover:opacity-80">
-                        info@mindvista.ca
+                    <a href="mailto:mindvista.mcgill@gmail.com" className="underline transition-opacity hover:opacity-80">
+                        mindvista.mcgill@gmail.com
                     </a>
                     .
                 </div>
