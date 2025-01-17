@@ -44,7 +44,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-black/40 p-4 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <h3 className="text-xl font-semibold">MindVista Team 2024-2025</h3>
-                    <p className="text-sm">Committed to student mental wellness.</p>
+                    <p className="text-sm">Committed to student wellness and engagement.</p>
                 </div>
             </div>
 
