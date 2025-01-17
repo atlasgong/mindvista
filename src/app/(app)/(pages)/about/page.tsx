@@ -6,32 +6,32 @@ import { getPageFromCMS } from "@/lib/getPageFromCMS";
 
 const teams = {
     leadership: [
-        { role: "President", name: "Charlotte Rotstein", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Internal Relations Coordinator", name: "Kristie Lam", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Sponsorship Coordinator", name: "Julia Rotiroti", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Finance Coordinator", name: "Christina Huan", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Events Coordinator", name: "Catherine McCourt  ", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Events Coordinator", name: "Sandrine Huard", pronouns: "", image: "/team/avatarPlaceholder.png" },
+        { role: "President", name: "Charlotte Rotstein", pronouns: "she/they", image: "/team/avatarPlaceholder.png" },
+        { role: "Internal Relations Coordinator", name: "Kristie Lam", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Sponsorship Coordinator", name: "Julia Rotiroti", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Finance Coordinator", name: "Christina Huan", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Events Coordinator", name: "Catherine McCourt  ", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Events Coordinator", name: "Sandrine Huard", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
     ],
     marketing: [
-        { role: "Social Media Coordinator", name: "Abbie Carnahan", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Marketing and Outreach Coordinator", name: "Paige Metcalf", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "TikTok Video Content Creator", name: "Dina Asadi", pronouns: "", image: "/team/avatarPlaceholder.png" },
+        { role: "Social Media Coordinator", name: "Abbie Carnahan", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Marketing and Outreach Coordinator", name: "Paige Metcalf", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "TikTok Video Content Creator", name: "We're hiring!", pronouns: "", image: "/team/avatarPlaceholder.png" },
     ],
     development: [
-        { role: "Website Content Creator", name: "Julie Burke", pronouns: "", image: "/team/avatarPlaceholder.png" },
+        { role: "Website Content Creator", name: "Julie Burke", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
         { role: "Website Developer", name: "Atlas Gong", pronouns: "he/him", image: "/team/avatarPlaceholder.png" },
-        { role: "Website Developer", name: "Murad Novruzov", pronouns: "", image: "/team/avatarPlaceholder.png" },
+        { role: "Website Developer", name: "Murad Novruzov", pronouns: "he/him", image: "/team/avatarPlaceholder.png" },
     ],
     content: [
-        { role: "Newsletter Content Creator", name: "Angélique Gouws", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "Newsletter Content Creator", name: "Gianluca Caporicci", pronouns: "", image: "/team/avatarPlaceholder.png" },
-        { role: "French Coordinator", name: "Nous Embauchons!", pronouns: "", image: "/team/avatarPlaceholder.png" },
+        { role: "Newsletter Content Creator", name: "Angélique Gouws", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Newsletter Content Creator", name: "Gianluca Caporicci", pronouns: "he/him", image: "/team/avatarPlaceholder.png" },
+        { role: "French Coordinator", name: "Nous embauchons!", pronouns: "", image: "/team/avatarPlaceholder.png" },
     ],
     founders: [
-        { role: "Founder", name: "Safiia Abdulkadyrova", pronouns: "", image: "/team/safiia-abdulkadyrova.webp" },
-        { role: "Founder", name: "Lauren Harrison", pronouns: "", image: "/team/lauren-harrison.webp" },
-        { role: "Founder", name: "Hana Jamal", pronouns: "", image: "/team/hana-jamal.webp" },
+        { role: "Founder", name: "Safiia Abdulkadyrova", pronouns: "she/her", image: "/team/safiia-abdulkadyrova.webp" },
+        { role: "Founder", name: "Lauren Harrison", pronouns: "she/her", image: "/team/lauren-harrison.webp" },
+        { role: "Founder", name: "Hana Jamal", pronouns: "she/her", image: "/team/hana-jamal.webp" },
     ],
 };
 
