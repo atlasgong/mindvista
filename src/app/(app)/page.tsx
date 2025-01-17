@@ -84,7 +84,7 @@ export default function Home() {
                 {/* MENTAL WELLNESS SECTION */}
                 <div className="px-[5vw]">
                     <h2 className="mt-16 text-center text-3xl font-bold md:text-4xl">What is Mental Wellness?</h2>
-                    <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one’s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
+                    <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one&apos;s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
 
                     {/* prettier-ignore */}
                     <div className="mb-8 mt-10 grid grid-cols-1 grid-rows-3 gap-4 sm:mx-6 sm:grid-cols-2 sm:grid-rows-3 lg:mx-6 xl:mx-12">
@@ -93,7 +93,7 @@ export default function Home() {
                         <div className="hidden p-4 sm:grid"><MentalWellnessFact icon={TbCirclesRelation} title="Mindfulness and Stress Management" description="Techniques like meditation, deep breathing, or journaling help regulate emotions, lower anxiety, and keep you grounded in the present moment." /></div>
                         <div className="hidden p-4 sm:grid"><MentalWellnessFact icon={TbApple} title="A Balanced Diet" description="A nutrient-rich diet fuels your brain and body. Consuming omega-3s, whole grains, fruits, and vegetables positively affects mood and cognitive function." /></div>
                         <div className="p-4"><MentalWellnessFact icon={TbZzz} title="Quality Sleep" description="Restorative sleep is essential for memory, mood regulation, and decision-making. Aim for 7-9 hours per night and establish a consistent bedtime routine." /></div>
-                        <div className="p-4"><MentalWellnessFact icon={TbUserCheck} title="Professional Support" description="Therapy or counseling can provide strategies to manage challenges and foster growth. It\'s a proactive step toward building long-term mental strength." /></div>
+                        <div className="p-4"><MentalWellnessFact icon={TbUserCheck} title="Professional Support" description="Therapy or counseling can provide strategies to manage challenges and foster growth. It&apos;s a proactive step toward building long-term mental strength." /></div>
                     </div>
 
                     <div className="flex justify-center">
