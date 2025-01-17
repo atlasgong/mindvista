@@ -41,7 +41,7 @@ export default function NavigationController() {
 function LandingNavBarDesktop() {
     return (
         <header>
-            <div className="fixed z-20 flex w-full flex-row items-center px-20 py-10 xl:px-28 xl:py-12 2xl:px-32 2xl:py-14">
+            <div className="fixed z-20 flex w-full flex-row items-center px-20 py-10 text-cAccent xl:px-28 xl:py-12 2xl:px-32 2xl:py-14 dark:text-cSoftWhite">
                 <nav className="flex w-2/5 flex-row gap-10 text-lg font-semibold xl:gap-12 2xl:gap-16">
                     <Link href="/">Home</Link>
                     <Link href="/about">About</Link>
@@ -49,7 +49,7 @@ function LandingNavBarDesktop() {
 
                 <div className="flex w-1/5 justify-center">
                     <Link href="/">
-                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-slate-600 bg-slate-600 dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
+                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-black bg-black dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
                     </Link>
                 </div>
 

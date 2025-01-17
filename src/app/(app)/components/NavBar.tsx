@@ -75,7 +75,7 @@ interface NavLinksProps {
 }
 function NavLinks(props: NavLinksProps) {
     return (
-        <nav className={`${props.className} flex flex-${props.flexDirection} font-semibold`}>
+        <nav className={`${props.className} flex flex-${props.flexDirection} text-mindvista-800 font-semibold dark:text-cSoftWhite`}>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/directory">Directory</Link>

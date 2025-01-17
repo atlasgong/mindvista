@@ -14,7 +14,7 @@
     --background: theme("colors.slate.50");
     --background-offset: theme("colors.white");
     --background-offset-accent: theme("colors.blue.50");
-    --accent: theme("colors.purple.500");
+    --accent: theme("colors.mindvista.800");
     --text: theme("colors.slate.900");
     --text-offset: theme("colors.slate.600");
     --border: theme("colors.slate.200");
@@ -26,7 +26,7 @@
     --background: theme("colors.mindvista.1000");
     --background-offset: theme("colors.slate.900");
     --background-offset-accent: theme("colors.slate.800");
-    --accent: theme("colors.blue.300");
+    --accent: theme("colors.mindvista.700");
     --text: theme("colors.neutral.100");
     --text-offset: theme("colors.neutral.300");
     --border: theme("colors.slate.700");
