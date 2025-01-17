@@ -26,6 +26,14 @@ export default {
                 cNavyBlue: "var(--navy-blue)",
                 cLightBlue: "var(--light-blue)",
                 cPurple: "var(--purple)",
+                mindvista: {
+                    1000: "#0c0a33",
+                    950: "#181553",
+                    800: "#392fad",
+                    700: "#516de4",
+                    400: "#96baff",
+                    50: "#f8f8ff",
+                },
             },
             // for crisis page ------
             keyframes: {

@@ -23,7 +23,7 @@
 }
 
 .dark {
-    --background: theme("colors.slate.950");
+    --background: theme("colors.mindvista.1000");
     --background-offset: theme("colors.slate.900");
     --background-offset-accent: theme("colors.slate.800");
     --accent: theme("colors.blue.300");
