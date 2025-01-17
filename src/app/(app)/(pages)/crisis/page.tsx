@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Hr from "../../components/Hr";
+// import Hr from "../../components/Hr";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
 
 export default function CrisisPage() {
@@ -9,7 +9,7 @@ export default function CrisisPage() {
             <div className="mb-16 text-center">
                 <p className="mb-0 text-2xl font-medium text-[var(--text)]">DIAL</p>
 
-                <h1 className="animate-emergency-pulse mb-1 bg-gradient-to-r from-red-400 to-red-700 bg-clip-text text-9xl font-bold leading-none text-transparent dark:from-red-500 dark:to-rose-400">911</h1>
+                <h1 className="mb-1 animate-emergency-pulse bg-gradient-to-r from-red-400 to-red-700 bg-clip-text text-9xl font-bold leading-none text-transparent dark:from-red-500 dark:to-rose-400">911</h1>
 
                 <p className="text-2xl font-medium text-[var(--text)]">
                     If you or someone else is in <span className="text-red-600 dark:text-red-500">immediate danger</span>.
@@ -17,7 +17,7 @@ export default function CrisisPage() {
             </div>
 
             {/* Crisis Resources Grid */}
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="mb-8 grid gap-8 md:grid-cols-2">
                 {/* 24/7 Support by Talk Suicide Canada */}
                 <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
                     <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">24/7 Support Line</h2>
@@ -29,9 +29,9 @@ export default function CrisisPage() {
                     </a>
                 </div>
 
-                {/* Student Support (Keep.meSAFE) */}
+                {/* Student Support (GuardMe) */}
                 <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
-                    <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">Student Support (Keep.meSAFE)</h2>
+                    <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">Student Support (GuardMe)</h2>
                     <p className="mb-4 text-[var(--text-offset)]">Free, confidential, emotional support for students.</p>
                     <div className="space-y-2 text-[var(--text)]">
                         <div>
@@ -41,7 +41,7 @@ export default function CrisisPage() {
                             <strong>International:</strong> 001-416-380-6578
                         </div>
                     </div>
-                    <a href="https://myssp.app/ca/home" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
+                    <a href="https://gmssp.org/" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
                         Access Services →
                     </a>
                 </div>
@@ -72,15 +72,15 @@ export default function CrisisPage() {
                 </div>
             </div>
 
-            <Hr className="mt-12" />
+            {/* <Hr className="mt-12" /> */}
 
             {/* Additional Resources */}
-            <div className="my-12 rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
-                <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">Additional Resources</h2>
-                <p className="mb-4 text-[var(--text-offset)]">If you&apos;re here to help you find the right resources.</p>
-                <button className="rounded px-4 py-2 font-bold text-white [background:var(--color-gradient)] hover:opacity-90"> Find Support </button>
-                {/* TODO: initalize button to redirect...somewhere */}
-            </div>
+            {/* <div className="my-12 rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]"> */}
+            {/* <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">Additional Resources</h2> */}
+            {/* <p className="mb-4 text-[var(--text-offset)]">If you&apos;re here to help you find the right resources.</p> */}
+            {/* <button className="rounded px-4 py-2 font-bold text-white [background:var(--color-gradient)] hover:opacity-90"> Find Support </button> */}
+            {/* TODO: initalize button to redirect...somewhere */}
+            {/* </div> */}
         </div>
     );
 }
