@@ -6,8 +6,8 @@ interface EmergencyButtonProps {
 
 export default function EmergencyButton(props: EmergencyButtonProps) {
     return (
-        <Link href="/crisis" className={`${props.className} border-cText bg-cRed text-cSoftWhite w-fit cursor-pointer rounded-lg border-2 border-solid p-2 font-bold hover:opacity-90`} role="button">
-            Need help NOW?
+        <Link href="/crisis" className={`${props.className} w-fit cursor-pointer rounded-lg border-2 border-solid border-cText bg-cRed p-2 font-bold text-cSoftWhite hover:opacity-90`} role="button">
+            EMERGENCY
         </Link>
     );
 }
