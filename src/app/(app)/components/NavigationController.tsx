@@ -53,35 +53,19 @@ function LandingNavBarDesktop() {
             icon: FaTiktok,
             label: "TikTok",
         },
-        // {
-        //     href: "https://facebook.com/mindvista.mcgill",
-        //     icon: FaFacebook,
-        //     label: "Facebook",
-        // },
-        // {
-        //     href: "https://linkedin.com/company/mindvista/",
-        //     icon: FaLinkedin,
-        //     label: "LinkedIn",
-        // },
-        // {
-        //     href: "https://github.com/atlasgong/mindvista",
-        //     icon: FaGithub,
-        //     label: "GitHub",
-        // },
     ];
 
     return (
         <header>
             <div className="fixed z-20 flex w-full flex-row items-center px-20 py-10 text-cAccent xl:px-28 xl:py-12 2xl:px-32 2xl:py-14 dark:text-cSoftWhite">
                 <nav className="flex w-2/5 flex-row gap-10 text-lg font-semibold xl:gap-12 2xl:gap-16">
-                    <Link href="/">Home</Link>
-                    <Link href="/about">About</Link>
-
-                    <div className="flex grow items-center gap-8">
+                    <div className="flex items-center gap-8">
                         {socialLinks.map((link) => (
                             <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent dark:text-white" size="1.5rem" />
                         ))}
                     </div>
+                    <Link href="/">Home</Link>
+                    <Link href="/about">About</Link>
                 </nav>
 
                 <div className="flex w-1/5 justify-center">
