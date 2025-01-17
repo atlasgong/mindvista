@@ -61,48 +61,48 @@ export default function ContactForm() {
 
     // html form
     return (
-        <form className="border-cBorder/20 bg-cBackground dark:border-cBorder mx-auto flex max-w-2xl flex-col space-y-8 rounded-xl border p-8 shadow-lg" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
+        <form className="border-cBorder/20 mx-auto flex max-w-2xl flex-col space-y-8 rounded-xl border bg-cBackground p-8 shadow-lg dark:border-cBorder" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="name" className="text-cText/80 text-md mb-2 block font-semibold">
                     Name
                 </label>
-                <input id="name" {...register("name")} type="text" placeholder="Johnny Appleseed" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 text-cText focus:border-cAccent dark:bg-cBackgroundOffset w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 dark:border-slate-600" />
-                {errors.name && <div className="text-md text-cRed mt-2">{errors.name.message}</div>}
+                <input id="name" {...register("name")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
+                {errors.name && <div className="text-md mt-2 text-cRed">{errors.name.message}</div>}
             </div>
 
             <div>
                 <label htmlFor="email" className="text-cText/80 text-md mb-2 block font-semibold">
                     Email
                 </label>
-                <input id="email" {...register("email")} type="text" placeholder="johnny.appleseed@mail.mcgill.ca" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 text-cText focus:border-cAccent dark:bg-cBackgroundOffset w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 dark:border-slate-600" />
-                {errors.email && <div className="text-md text-cRed mt-2">{errors.email.message}</div>}
+                <input id="email" {...register("email")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
+                {errors.email && <div className="text-md mt-2 text-cRed">{errors.email.message}</div>}
             </div>
 
             <div>
                 <label htmlFor="subject" className="text-cText/80 text-md mb-2 block font-semibold">
                     Subject
                 </label>
-                <input id="subject" {...register("subject")} type="text" placeholder="A concise subject line" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 text-cText focus:border-cAccent dark:bg-cBackgroundOffset w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 dark:border-slate-600" />
-                {errors.subject && <div className="text-md text-cRed mt-2">{errors.subject.message}</div>}
+                <input id="subject" {...register("subject")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
+                {errors.subject && <div className="text-md mt-2 text-cRed">{errors.subject.message}</div>}
             </div>
 
             <div>
                 <label htmlFor="message" className="text-cText/80 text-md mb-2 block font-semibold">
                     Message
                 </label>
-                <textarea id="message" {...register("message")} placeholder="An interesting message..." className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 text-cText focus:border-cAccent dark:bg-cBackgroundOffset min-h-[150px] w-full resize-none rounded-xl border border-slate-300 px-4 py-3 font-medium transition-all duration-200 focus:outline-none focus:ring-2 dark:border-slate-600"></textarea>
-                {errors.message && <div className="text-md text-cRed mt-2">{errors.message.message}</div>}
+                <textarea id="message" {...register("message")} className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 min-h-[150px] w-full resize-none rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"></textarea>
+                {errors.message && <div className="text-md mt-2 text-cRed">{errors.message.message}</div>}
             </div>
 
             <div className="flex justify-center">
                 <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" reCaptchaCompat={false} onVerify={onHCaptchaChange} theme={theme} />
             </div>
-            {errors.captcha && <div className="text-md text-cRed text-center">{errors.captcha.message}</div>}
+            {errors.captcha && <div className="text-md text-center text-cRed">{errors.captcha.message}</div>}
 
-            {isSuccess === true && <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in text-cAccent rounded-lg border py-4 text-center font-medium">Thank you for your message! We&apos;ll get back to you soon.</div>}
+            {isSuccess === true && <div className="bg-cAccent/10 border-cAccent/20 animate-fade-in rounded-lg border py-4 text-center font-medium text-cAccent">Thank you for your message! We&apos;ll get back to you soon.</div>}
 
             {isSuccess === false && (
-                <div className="bg-cRed/10 border-cRed/20 animate-fade-in text-cRed rounded-lg border py-4 text-center">
+                <div className="bg-cRed/10 border-cRed/20 animate-fade-in rounded-lg border py-4 text-center text-cRed">
                     Something went wrong. Please try again later or email us directly at{" "}
                     <a href="mailto:info@mindvista.ca" className="underline transition-opacity hover:opacity-80">
                         info@mindvista.ca
@@ -111,11 +111,11 @@ export default function ContactForm() {
                 </div>
             )}
 
-            <button type="submit" disabled={isSubmitting} className={`from-cPurple to-cLightBlue text-cSoftWhite w-full rounded-lg bg-gradient-to-r py-3 font-semibold transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto md:px-8 ${isSubmitting ? "relative text-transparent" : ""}`}>
+            <button type="submit" disabled={isSubmitting} className={`w-full rounded-lg bg-gradient-to-r from-cPurple to-cLightBlue py-3 font-semibold text-cSoftWhite transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto md:px-8 ${isSubmitting ? "relative text-transparent" : ""}`}>
                 Send Message
                 {isSubmitting && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="border-cSoftWhite h-5 w-5 animate-spin rounded-full border-2 border-r-transparent"></div>
+                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-cSoftWhite border-r-transparent"></div>
                     </div>
                 )}
             </button>
