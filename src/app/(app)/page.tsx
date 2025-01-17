@@ -6,8 +6,8 @@ import Footer from "./components/Footer";
 import Hr from "./components/Hr";
 import Image from "next/image";
 
-import lightThemeImage from "@public/landing/meritt-thomas.webp";
-import darkThemeImage from "@public/landing/jordan-steranka.webp";
+import lightThemeImage from "@public/landing/shifaaz-shamoon.webp";
+import darkThemeImage from "@public/landing/jon-j_mk18.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
 import Link from "next/link";
@@ -34,9 +34,9 @@ export default function Home() {
 
                         {/* Column Image */}
                         <div className="absolute inset-0 left-1/2 w-[25vw] -translate-x-1/2 transform">
-                            <Image src={lightThemeImage} alt="A green leafy plant." className="h-full w-full object-cover dark:hidden" />
+                            <Image src={lightThemeImage} alt="Waves on the beach." className="h-full w-full object-cover dark:hidden" />
                             <div className="hidden dark:inline">
-                                <Image src={darkThemeImage} alt="A green leafy plant." className="h-full w-full object-cover" />
+                                <Image src={darkThemeImage} alt="A mountain range with a big blue sky." className="h-full w-full object-cover" />
                                 <div className="absolute inset-0 bg-black/30"></div>
                             </div>
                         </div>
@@ -73,8 +73,8 @@ export default function Home() {
                         {/* <span className="hidden max-md:inline">Your Hub</span> <span className="hidden md:inline">The One-Stop-Shop</span> for <span className="text-cAccent">Wellness</span> and <span className="text-cAccent">Engagement</span> at McGill. */}
                     </h2>
 
-                    <p className="text-cTextOffset py-6 text-xl font-medium md:px-20 lg:px-28">
-                        Welcome to <span className="text-cAccent font-semibold">MindVista</span>, an innovative student-led initiative at McGill University committed to enhancing student wellness and engagement.
+                    <p className="py-6 text-xl font-medium text-cTextOffset md:px-20 lg:px-28">
+                        Welcome to <span className="font-semibold text-cAccent">MindVista</span>, an innovative student-led initiative at McGill University committed to enhancing student wellness and engagement.
                         <span className="hidden md:inline"> Our passionate team of volunteers is devoted to regularly updating our website to simplify the process of accessing essential resources for your well-being. </span>
                     </p>
                 </div>
@@ -85,7 +85,7 @@ export default function Home() {
                 {/* MENTAL WELLNESS SECTION */}
                 <div className="px-[5vw]">
                     <h2 className="mt-16 text-center text-3xl font-bold md:text-4xl">What is Mental Wellness?</h2>
-                    <p className="text-cTextOffset py-3 text-center text-xl font-medium md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one’s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
+                    <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">Mental wellness includes a range of factors that all contribute to one’s overall well-being. Achieving mental wellness is a journey, which requires ongoing effort and attention.</p>
 
                     {/* prettier-ignore */}
                     <div className="mb-8 mt-10 grid grid-cols-1 grid-rows-3 gap-4 sm:mx-6 sm:grid-cols-2 sm:grid-rows-3 lg:mx-6 xl:mx-12">
@@ -98,7 +98,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex justify-center">
-                        <Link href="/mental-wellness" className="border-cText bg-cBackground rounded-full border-2 p-3 text-lg font-semibold">
+                        <Link href="/mental-wellness" className="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold">
                             Learn More
                         </Link>
                     </div>
