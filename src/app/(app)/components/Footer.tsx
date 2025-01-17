@@ -1,8 +1,8 @@
 import EmergencyButton from "./EmergencyButton";
 import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
-import { type IconType } from "react-icons";
 import Hr from "./Hr";
 import Link from "next/link";
+import { SocialMediaLink } from "./SocialMediaLink";
 
 export default function Footer() {
     return (
@@ -129,22 +129,22 @@ function LegalBar() {
 
     const socialLinks = [
         {
-            href: "https://www.facebook.com/mindvista.mcgill",
+            href: "https://facebook.com/mindvista.mcgill",
             icon: FaFacebook,
             label: "Facebook",
         },
         {
-            href: "https://www.instagram.com/mindvista.mcgill/",
+            href: "https://instagram.com/mindvista.mcgill/",
             icon: FaInstagram,
             label: "Instagram",
         },
         {
-            href: "https://www.tiktok.com/@mindvistamcgill",
+            href: "https://tiktok.com/@mindvistamcgill",
             icon: FaTiktok,
             label: "TikTok",
         },
         {
-            href: "https://www.linkedin.com/company/mindvista/",
+            href: "https://linkedin.com/company/mindvista/",
             icon: FaLinkedin,
             label: "LinkedIn",
         },
@@ -172,24 +172,10 @@ function LegalBar() {
             </div>
             <div className="mt-4 flex grow basis-0 items-center justify-center gap-4 md:mt-0">
                 {socialLinks.map((link) => (
-                    <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} />
+                    <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-gray-600" />
                 ))}
             </div>
             <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">&copy; {year} MindVista. All rights reserved.</p>
         </div>
-    );
-}
-
-interface SocialMediaLinkProps {
-    href: string;
-    icon: IconType;
-    label: string;
-}
-
-function SocialMediaLink({ href, icon: Icon, label }: SocialMediaLinkProps) {
-    return (
-        <Link href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 text-gray-600 transition-colors" aria-label={`Visit our ${label} page.`}>
-            <Icon className="h-5 w-5" title={label} />
-        </Link>
     );
 }

@@ -38,28 +38,28 @@ export default function NavigationController() {
     );
 }
 
-import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
-import { type IconType } from "react-icons";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
+import { SocialMediaLink } from "./SocialMediaLink";
 
 function LandingNavBarDesktop() {
     const socialLinks = [
         {
-            href: "https://www.instagram.com/mindvista.mcgill/",
+            href: "https://instagram.com/mindvista.mcgill/",
             icon: FaInstagram,
             label: "Instagram",
         },
         {
-            href: "https://www.tiktok.com/@mindvistamcgill",
+            href: "https://tiktok.com/@mindvistamcgill",
             icon: FaTiktok,
             label: "TikTok",
         },
         // {
-        //     href: "https://www.facebook.com/mindvista.mcgill",
+        //     href: "https://facebook.com/mindvista.mcgill",
         //     icon: FaFacebook,
         //     label: "Facebook",
         // },
         // {
-        //     href: "https://www.linkedin.com/company/mindvista/",
+        //     href: "https://linkedin.com/company/mindvista/",
         //     icon: FaLinkedin,
         //     label: "LinkedIn",
         // },
@@ -79,7 +79,7 @@ function LandingNavBarDesktop() {
 
                     <div className="flex grow items-center gap-8">
                         {socialLinks.map((link) => (
-                            <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} />
+                            <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent dark:text-white" size="1.5rem" />
                         ))}
                     </div>
                 </nav>
@@ -97,19 +97,5 @@ function LandingNavBarDesktop() {
                 </nav>
             </div>
         </header>
-    );
-}
-
-interface SocialMediaLinkProps {
-    href: string;
-    icon: IconType;
-    label: string;
-}
-
-function SocialMediaLink({ href, icon: Icon, label }: SocialMediaLinkProps) {
-    return (
-        <Link href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 text-white transition-colors" aria-label={`Visit our ${label} page.`}>
-            <Icon className="h-5 w-5" title={label} />
-        </Link>
     );
 }
