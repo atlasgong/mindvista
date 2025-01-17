@@ -87,7 +87,8 @@ function NavLinks(props: NavLinksProps) {
 function LogoButton() {
     return (
         <Link href="/" className="flex flex-row gap-2 text-left text-cAccent">
-            <Image width={164} height={164} className="max-w-12 rounded-full border-4 border-cAccent bg-cAccent dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" priority />
+            <Image width={164} height={164} className="max-w-12 rounded-full border-4 border-cAccent bg-cAccent dark:border-0 dark:bg-transparent" src="/logoWhite.png" alt="MindVista Logo" priority />
+
             <div className="flex flex-col max-lg:hidden dark:text-white">
                 <h1 className="text-lg font-bold">MINDVISTA</h1>
                 <p className="-mt-1 text-[0.6rem] font-bold leading-[0.5rem]">Your wellness journey starts here.</p>

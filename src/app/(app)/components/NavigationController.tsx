@@ -86,7 +86,7 @@ function LandingNavBarDesktop() {
 
                 <div className="flex w-1/5 justify-center">
                     <Link href="/">
-                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-black bg-black dark:border-0 dark:bg-transparent" src="/logo.png" alt="MindVista Logo" />
+                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-black bg-black dark:border-0 dark:bg-transparent" src="/logoWhite.png" alt="MindVista Logo" />
                     </Link>
                 </div>
 
