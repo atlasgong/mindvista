@@ -69,8 +69,7 @@ export default function Home() {
                 {/* FIRST SECTION */}
                 <div className="px-[5vw] pb-12 pt-[10vh] text-center md:px-[7.5vw] lg:px-[10vw]">
                     <h2 className="text-5xl font-bold md:text-6xl">
-                        Your Central Hub for <span className="text-cAccent">Wellness</span> and <span className="text-cAccent">Growth</span> at McGill
-                        {/* <span className="hidden max-md:inline">Your Hub</span> <span className="hidden md:inline">The One-Stop-Shop</span> for <span className="text-cAccent">Wellness</span> and <span className="text-cAccent">Engagement</span> at McGill. */}
+                        The One-Stop-Shop for <span className="text-cAccent">Wellness</span> and <span className="text-cAccent">Engagement</span> at McGill.
                     </h2>
 
                     <p className="py-6 text-xl font-medium text-cTextOffset md:px-20 lg:px-28">
