@@ -132,7 +132,7 @@ SEO title and description are respectively pulled from the `title` and `descript
 
 API keys are secured server-side with Next.js' server components. See [Mailchimp's stance on API key security](https://mailchimp.com/help/about-api-keys/#api+key+security). See Mailchimp's [documentation](https://mailchimp.com/developer/marketing/api/) for more.
 
-#### To add a subscriber:
+#### To add a subscriber
 
 Use `addListMember(email_address: string)` from [addMailchimpSubscriber.ts](src/lib/addMailchimpSubscriber.ts).
 
