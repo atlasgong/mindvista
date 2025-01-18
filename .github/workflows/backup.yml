@@ -34,7 +34,7 @@ jobs:
               uses: aws-actions/configure-aws-credentials@v1
               with:
                   aws-region: us-east-1
-                  role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/mindvista
+                  role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/s3-mindvista-postgres-backup-github-actions
                   role-session-name: GitHubActionSession
 
             - name: Upload backup to S3
