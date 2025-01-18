@@ -126,6 +126,22 @@ export async function generateMetadata(): Promise<Metadata> {
 
 SEO title and description are respectively pulled from the `title` and `description` fields of Payload's `Clubs` or `Resources` collection.
 
+## Integrations
+
+### Mailchimp
+
+API keys are secured server-side with Next.js' server components. See [Mailchimp's stance on API key security](https://mailchimp.com/help/about-api-keys/#api+key+security). See Mailchimp's [documentation](https://mailchimp.com/developer/marketing/api/) for more.
+
+#### To add a subscriber:
+
+Use `addListMember(email_address: string)` from [addMailchimpSubscriber.ts](src/lib/addMailchimpSubscriber.ts).
+
+#### Removing subscribers
+
+Please ARCHIVE subscribers. Do not permanently delete a user unless they have requested their data deleted. If a user is permanently deleted; they will not be able to resubcribe with the same email using our newsletter form.
+
+See this [StackOverflow explanation](https://stackoverflow.com/a/52376496/) and Mailchimp's [official documentation](https://mailchimp.com/help/delete-contacts/#Archive_vs._Remove).
+
 ## Error Handling / Common Errors
 
 ### Dynamic APIs are Asynchronous

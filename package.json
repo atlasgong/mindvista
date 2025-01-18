@@ -19,6 +19,7 @@
     "dependencies": {
         "@hcaptcha/react-hcaptcha": "^1.11.0",
         "@hookform/resolvers": "^3.9.1",
+        "@mailchimp/mailchimp_marketing": "^3.0.80",
         "@payloadcms/db-vercel-postgres": "^3.16.0",
         "@payloadcms/next": "^3.16.0",
         "@payloadcms/payload-cloud": "^3.16.0",
@@ -41,6 +42,7 @@
         "@commitlint/config-conventional": "^19.6.0",
         "@eslint/eslintrc": "^3.2.0",
         "@tailwindcss/typography": "^0.5.15",
+        "@types/mailchimp__mailchimp_marketing": "^3.0.21",
         "@types/node": "^22.5.4",
         "@types/react": "19.0.1",
         "@types/react-dom": "19.0.1",
