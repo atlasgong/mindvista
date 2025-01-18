@@ -152,12 +152,8 @@ function LegalBar() {
                     Privacy Policy
                 </Link>
                 <span className="font-normal">|</span>
-                <Link href="/disclaimers" className="">
-                    Disclaimers
-                </Link>
-                <span className="font-normal">|</span>
-                <Link href="/copyright" className="">
-                    Copyright
+                <Link href="/terms-and-conditions" className="">
+                    Terms &amp; Conditions
                 </Link>
             </div>
             <div className="mt-4 flex grow basis-0 items-center justify-center gap-4 md:mt-0">

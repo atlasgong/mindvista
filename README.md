@@ -4,7 +4,7 @@ Contributors: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Legal
 
-See the [Privacy Policy](https://mindvista.ca/privacy-policy), [Disclaimers](https://mindvista.ca/disclaimers), and [Copyright](https://mindvista.ca/copyright).
+See our [Privacy Policy](https://mindvista.ca/privacy-policy) and [Terms and Conditions](https://mindvista.ca/terms-and-conditions).
 
 ## Licenses
 

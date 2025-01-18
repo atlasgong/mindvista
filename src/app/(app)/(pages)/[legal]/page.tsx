@@ -3,21 +3,21 @@ import { getPayloadClient } from "@/payloadClient";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import styles from "./legal.module.css";
-import { Page } from "@/payload-types";
+import { Legal, Page } from "@/payload-types";
+import { Metadata } from "next";
 
-async function getLegalPage(legal: string) {
+async function getLegalPage(slug: string): Promise<Legal | null> {
     const payload = await getPayloadClient();
-
-    const legalPages = await payload.find({
+    const { docs } = await payload.find({
         collection: "legal",
         where: {
-            "page.slug": {
-                equals: legal,
+            slug: {
+                equals: slug,
             },
         },
+        limit: 1, // should only exist one since slugs are unique
     });
-
-    return legalPages.docs[0];
+    return docs[0] || null;
 }
 
 interface LegalPageProps {
@@ -26,9 +26,9 @@ interface LegalPageProps {
     }>;
 }
 
-export async function generateMetadata(props: { params: Promise<{ legal: string }> }) {
-    const params = await props.params;
-    const legalPage = await getLegalPage(params.legal);
+export async function generateMetadata({ params }: LegalPageProps): Promise<Metadata> {
+    const legalPage = await getLegalPage((await params).legal);
+    if (!legalPage) return { title: "Legal Page Not Found" };
     const page = legalPage.page as Page;
 
     return {
