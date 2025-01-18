@@ -174,6 +174,8 @@ Then commit:
 git commit -m "cms: fix ts errors in (payload)"
 ```
 
+Ensure you add a message if an upgrade was actually made (i.e. the version changed).
+
 ## PostgreSQL Backups with AWS S3
 
 Originally set up with [these instructions](https://joshstrange.com/2024/04/26/nightly-postgres-backups-via-github-actions/) on Friday, January 17, 2025.
