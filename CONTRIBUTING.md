@@ -174,6 +174,20 @@ Then commit:
 git commit -m "cms: fix ts errors in (payload)"
 ```
 
+## PostgreSQL Backups with AWS S3
+
+Originally set up with [these instructions](https://joshstrange.com/2024/04/26/nightly-postgres-backups-via-github-actions/) on Friday, January 17, 2025.
+
+### Backups
+
+Backups are made nightly at 03:42 EST.
+
+### Lifecycle
+
+Current versions of objects will be [expired](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html) 30 days after object creation. Noncurrent versions of objects will be [permanently deleted](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html) after 90 days; 10 of the newest noncurrent versions are retained.
+
+![awsS3 lifecycle](docs/awsS3-lifecycle.png)
+
 # Archived Documentation
 
 For documentation which may no longer be relevant.
