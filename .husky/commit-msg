@@ -1,1 +1,1 @@
-npm run -s commitlint ${1}
+echo "Validating commit message..." && npm run -s commitlint ${1} && echo "Validated."
