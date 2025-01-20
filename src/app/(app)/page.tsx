@@ -10,8 +10,8 @@ import lightThemeImage from "@public/landing/shifaaz-shamoon.webp";
 import darkThemeImage from "@public/landing/jon-j_mk18.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
-import { LuBadgeInfo } from "react-icons/lu";
 import Link from "next/link";
+import InfoSeparator from "./components/InfoSeparator";
 
 export default function Home() {
     return (
@@ -57,7 +57,7 @@ export default function Home() {
                         {/* TODO: add logo overlay to bottom left corner */}
                     </div>
 
-                    <InfoBar />
+                    <InfoSeparator />
                 </section>
                 {/* TOP SECTION DESKTOP END */}
 
@@ -108,23 +108,5 @@ export default function Home() {
             </main>
             <Footer />
         </>
-    );
-}
-
-// prettier-ignore
-const infoBarMessages = [
-    "Core Values: Empowerment, Accessibility, and Community Connection.",
-    "Mission: A hub for growth, resilience, and engagement.",
-    "Vision: A campus where students thrive and connect.",
-    "Commitment: Adapting to student needs with innovation."
-];
-
-function InfoBar() {
-    const randomMessage = infoBarMessages[Math.floor(Math.random() * infoBarMessages.length)];
-
-    return (
-        <section className="flex min-h-[8vh] flex-row items-center justify-center gap-2 bg-mindvista-700 text-center text-lg font-bold text-white">
-            <LuBadgeInfo /> {randomMessage}
-        </section>
     );
 }
