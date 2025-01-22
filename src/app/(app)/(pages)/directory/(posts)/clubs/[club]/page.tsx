@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
 import { Club } from "@/payload-types";
-import { PostHeader, ContactSection, TagsSection } from "../../layout";
 import { FiShare2, FiFacebook, FiInstagram, FiLink } from "react-icons/fi";
+import TagsSection from "../../components/TagsSection";
+import ContactSection from "../../components/ContactSection";
+import PostHeader from "../../components/PostHeader";
 
 interface Props {
     params: Promise<{
@@ -18,7 +20,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const club = await getClub((await params).club);
-    if (!club) return { title: "Club Not Found" };
+    if (!club) return { title: "404: Page Not Found" };
 
     return {
         title: `${club.title} - MindVista`,

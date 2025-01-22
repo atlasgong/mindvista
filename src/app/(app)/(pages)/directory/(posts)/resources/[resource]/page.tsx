@@ -3,8 +3,10 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import { Resource } from "@/payload-types";
-import { PostHeader, ContactSection, TagsSection } from "../../layout";
 import { FiMapPin, FiGlobe, FiPhone, FiUser, FiShield } from "react-icons/fi";
+import TagsSection from "../../components/TagsSection";
+import ContactSection from "../../components/ContactSection";
+import PostHeader from "../../components/PostHeader";
 
 interface Props {
     params: Promise<{
@@ -17,7 +19,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resource = await getResource((await params).resource);
-    if (!resource) return { title: "Resource Not Found" };
+    if (!resource) return { title: "404: Page Not Found" };
 
     return {
         title: `${resource.title} - MindVista`,
