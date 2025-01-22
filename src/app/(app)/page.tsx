@@ -11,6 +11,7 @@ import darkThemeImage from "@public/landing/jon-j_mk18.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
 import Link from "next/link";
+import InfoSeparator from "./components/InfoSeparator";
 
 export default function Home() {
     return (
@@ -56,8 +57,7 @@ export default function Home() {
                         {/* TODO: add logo overlay to bottom left corner */}
                     </div>
 
-                    {/* INFO BAR */}
-                    <p className="min-h-[10vh] content-center bg-slate-300 text-center text-lg font-bold">SPONSORS HERE</p>
+                    <InfoSeparator />
                 </section>
                 {/* TOP SECTION DESKTOP END */}
 

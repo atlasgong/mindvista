@@ -24,7 +24,6 @@ const teams = {
         { role: "Website Developer", name: "Murad Novruzov", pronouns: "he/him", image: "/team/murad.webp" },
     ],
     content: [
-        { role: "Newsletter Content Creator", name: "Angélique Gouws", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
         { role: "Newsletter Content Creator", name: "Gianluca Caporicci", pronouns: "he/him", image: "/team/gianluca.webp" },
         { role: "French Coordinator", name: "Nous embauchons!", pronouns: "", image: "/team/avatarPlaceholder.png" },
     ],
