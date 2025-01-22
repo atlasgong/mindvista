@@ -84,7 +84,7 @@ export function TagsSection({ tags }: { tags: (Tag | number)[] }) {
     if (!tags || tags.length === 0) return null;
 
     return (
-        <div className="mx-[5vw] mt-10 flex justify-center">
+        <div className="mx-[5vw] mt-14 flex justify-center">
             <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                     <FiTag className="h-5 w-5 text-cTextOffset" />

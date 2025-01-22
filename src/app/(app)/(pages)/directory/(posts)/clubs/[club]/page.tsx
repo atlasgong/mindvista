@@ -117,12 +117,9 @@ export default async function ClubPage({ params }: Props) {
                     </div>
                 )}
             </div>
+
             {/* Tags */}
-            {tags.length > 0 && (
-                <div className="mt-4">
-                    <TagsSection tags={tags} />
-                </div>
-            )}
+            {tags.length > 0 && <TagsSection tags={tags} />}
         </>
     );
 }
