@@ -190,6 +190,17 @@ Current versions of objects will be [expired](https://docs.aws.amazon.com/Amazon
 
 ![awsS3 lifecycle](docs/awsS3-lifecycle.png)
 
+## Favicon
+
+All related files:
+
+- [public/web-app-manifest-192x192.png](public/web-app-manifest-192x192.png)
+- [public/web-app-manifest-512x512.png](public/web-app-manifest-512x512.png)
+- [src/app/apple-icon.png](src/app/apple-icon.png)
+- [src/app/favicon.ico](src/app/favicon.ico)
+- [src/app/icon.svg](src/app/icon.svg)
+- [src/app/manifest.json](src/app/manifest.json)
+
 # Archived Documentation
 
 For documentation which may no longer be relevant.
