@@ -17,7 +17,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const legalPage = await getLegalPage((await params).legal);
-    if (!legalPage) return { title: "Legal Page Not Found" };
+    if (!legalPage) return { title: "404: Page Not Found" };
     const page = legalPage.page as Page;
 
     return {
@@ -31,7 +31,7 @@ async function getLegalPage(slug: string): Promise<Legal | null> {
     const { docs } = await payload.find({
         collection: "legal",
         where: {
-            'page.slug': {
+            "page.slug": {
                 equals: slug,
             },
         },

@@ -7,6 +7,7 @@ import { FiMapPin, FiGlobe, FiPhone, FiUser, FiShield } from "react-icons/fi";
 import TagsSection from "../../components/TagsSection";
 import ContactSection from "../../components/ContactSection";
 import PostHeader from "../../components/PostHeader";
+import LastUpdatedSection from "../../components/LastUpdatedSection";
 
 interface Props {
     params: Promise<{
@@ -159,6 +160,9 @@ export default async function ResourcePage({ params }: Props) {
 
             {/* Tags */}
             {tags.length > 0 && <TagsSection tags={tags} />}
+
+            {/* Last Updated */}
+            <LastUpdatedSection updatedAt={resource.updatedAt} />
         </>
     );
 }
