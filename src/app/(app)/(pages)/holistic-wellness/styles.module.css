@@ -1,0 +1,55 @@
+.container {
+    @apply relative overflow-hidden text-center font-medium text-cText;
+}
+
+.mainContent {
+    @apply relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8;
+}
+
+.section {
+    @apply mx-[3vw] pb-16 lg:mx-[10vw];
+}
+
+.heroSection {
+    @apply pt-10 md:pb-20 md:pt-16;
+}
+
+.heading1 {
+    @apply mb-2 text-center font-serif text-5xl font-bold leading-tight tracking-tighter text-cText xl:text-7xl;
+}
+
+.heading2 {
+    @apply mb-6 text-center font-serif text-4xl font-bold leading-tight tracking-tight text-cText md:mb-12 md:text-5xl;
+}
+
+.paragraph {
+    @apply text-base leading-relaxed text-cTextOffset md:text-lg lg:text-xl;
+}
+
+.heroParagraph {
+    @apply mx-auto mt-4 max-w-3xl text-center text-lg leading-relaxed text-cTextOffset md:mt-8 md:text-xl;
+}
+
+.wheelSection {
+    @apply mx-auto px-[3vw] max-w-[90vw];
+}
+
+.card {
+    @apply rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-lg transition duration-300 hover:shadow-xl md:p-10;
+}
+
+.wheelCard {
+    @apply py-8 sm:px-8 md:px-[8vw] md:py-[6vh] lg:px-[10vw] lg:py-[7vh];
+}
+
+.wheelContainer {
+    @apply my-8 md:my-12 lg:my-16;
+}
+
+.textContent {
+    @apply space-y-4 md:space-y-6;
+}
+
+.gradientText {
+    @apply bg-gradient-to-r from-mindvista-800 to-mindvista-700 bg-clip-text text-transparent;
+}

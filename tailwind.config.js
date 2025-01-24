@@ -35,17 +35,23 @@ export default {
                     50: "#f8f8ff",
                 },
             },
-            // for crisis page ------
             keyframes: {
+                // crisis page
                 "emergency-pulse": {
                     "0%, 100%": { opacity: "1" },
                     "50%": { opacity: "0.9" },
                 },
+                // wellness wheel
+                "gentle-pulse": {
+                    "0%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.05)" },
+                    "100%": { transform: "scale(1)" }
+                },
             },
             animation: {
-                "emergency-pulse": "emergency-pulse 2s ease-in-out infinite",
+                "emergency-pulse": "emergency-pulse 2s ease-in-out infinite", // crisis-page
+                "gentle-pulse": "gentle-pulse 1.5s ease-in-out infinite", // wellness wheel
             },
-            // -----------------------
         },
     },
     plugins: [require("@tailwindcss/typography")],

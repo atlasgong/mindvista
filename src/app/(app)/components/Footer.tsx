@@ -22,14 +22,14 @@ export default function Footer() {
                         links={[
                             { href: "/", text: "Home" },
                             { href: "/about", text: "About" },
-                            { href: "/mental-wellness", text: "What is Mental Wellness?" },
+                            { href: "/holistic-wellness", text: "What is Holistic Wellness?" },
                         ]}
                     />
                     <Links
                         className="max-w-[50%] text-right"
                         links={[
-                            { href: "/directory/resources", text: "Wellness Resources" },
-                            { href: "/directory/clubs", text: "Club List" },
+                            { href: "/directory/resources", text: "Resource Directory" },
+                            { href: "/directory/clubs", text: "Club Directory" },
                             { href: "/contact", text: "Contact Us" },
                         ]}
                     />
@@ -44,15 +44,15 @@ export default function Footer() {
                     links={[
                         { href: "/", text: "Home" },
                         { href: "/about", text: "About" },
-                        { href: "/mental-wellness", text: "What is Mental Wellness?" },
+                        { href: "/holistic-wellness", text: "What is Holistic Wellness?" },
                     ]}
                 />
                 <EmergencySection className="max-w-[33%]" />
                 <Links
                     className="max-w-[33%] grow basis-0 text-right"
                     links={[
-                        { href: "/directory/resources", text: "Wellness Resources" },
-                        { href: "/directory/clubs", text: "Club List" },
+                        { href: "/directory/resources", text: "Resource Directory" },
+                        { href: "/directory/clubs", text: "Club Directory" },
                         { href: "/contact", text: "Contact Us" },
                     ]}
                 />
