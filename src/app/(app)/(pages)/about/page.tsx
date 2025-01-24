@@ -19,9 +19,11 @@ const teams = {
         { role: "Marketing and Outreach Coordinator", name: "Paige Metcalf", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
         // { role: "TikTok Video Content Creator", name: "We're hiring!", pronouns: "", image: "/team/avatarPlaceholder.png" },
     ],
-    development: [
+    webContent: [
         { role: "Website Content Creator", name: "Julie Burke", pronouns: "she/her", image: "/team/julie.webp" },
         { role: "Website Content Creator", name: "Stephanie Jean Pierre", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+    ],
+    development: [
         { role: "Website Developer", name: "Atlas Gong", pronouns: "he/him", image: "/team/atlas.webp" },
         { role: "Website Developer", name: "Murad Novruzov", pronouns: "he/him", image: "/team/murad.webp" },
     ],
@@ -73,6 +75,7 @@ export default function AboutPage() {
             {/* Photos sectioned by Team */}
             <TeamSection title="Leadership & Coordination Team" members={teams.leadership} />
             <TeamSection title="Marketing + Social Media Team" members={teams.marketing} />
+            <TeamSection title="Website Content Team" members={teams.webContent} />
             <TeamSection title="Website Development Team" members={teams.development} />
             <TeamSection title="Newsletter Content Creators" members={teams.content} />
             <TeamSection title="Founders" members={teams.founders} />
