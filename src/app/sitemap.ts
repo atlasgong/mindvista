@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: "https://mindvista.ca/mental-wellness",
+            url: "https://mindvista.ca/holistic-wellness",
             lastModified: "2025-01-19",
             changeFrequency: "monthly",
             priority: 0.8,
