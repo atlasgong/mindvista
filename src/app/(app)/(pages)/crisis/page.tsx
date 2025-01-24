@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 // import Hr from "../../components/Hr";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
+import Link from "next/link";
 
 export default function CrisisPage() {
     return (
@@ -24,9 +25,9 @@ export default function CrisisPage() {
                     <p className="mb-4 text-[var(--text-offset)]">Talk to someone anytime, day or night.</p>
                     <div className="mb-2 text-xl font-bold text-[var(--text)]">1-833-456-4566</div>
                     <p className="text-sm text-[var(--text-offset)]">Talk Suicide Canada (Toll Free)</p>
-                    <a href="https://talksuicide.ca/" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
+                    <Link href="https://talksuicide.ca/" target="_blank" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
                         Learn More →
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Student Support (GuardMe) */}
@@ -41,9 +42,9 @@ export default function CrisisPage() {
                             <strong>International:</strong> 001-416-380-6578
                         </div>
                     </div>
-                    <a href="https://gmssp.org/" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
+                    <Link href="https://gmssp.org/" target="_blank" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
                         Access Services →
-                    </a>
+                    </Link>
                 </div>
 
                 {/* SSMU Students' Nightline */}
@@ -52,9 +53,9 @@ export default function CrisisPage() {
                     <p className="mb-4 text-[var(--text-offset)]">Confidential listening service by students, for students.</p>
                     <div className="mb-2 text-xl font-bold text-[var(--text)]">514-398-6246</div>
                     <p className="text-sm text-[var(--text-offset)]">Available Monday-Sunday, 6PM-3AM</p>
-                    <a href="https://nightline.ssmu.ca/" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
+                    <Link href="https://nightline.ssmu.ca/" target="_blank" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
                         More Information →
-                    </a>
+                    </Link>
                 </div>
 
                 {/* McGill's Peer Support Center */}
@@ -66,9 +67,9 @@ export default function CrisisPage() {
                         <li>Appointment booking</li>
                         <li>Resource navigation assistance</li>
                     </ul>
-                    <a href="https://psc.ssmu.ca/" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
+                    <Link href="https://psc.ssmu.ca/" target="_blank" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
                         Book a Session →
-                    </a>
+                    </Link>
                 </div>
             </div>
 
