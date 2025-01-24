@@ -117,13 +117,13 @@ Once your changes are ready:
     - Provide a clear description of your changes.
     - Reference any related issues or tickets.
 
-Follow the pull request guidelines in CONTRIBUTING.md.
+Follow the pull request guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
 ## 6. Common Pitfalls and How to Avoid Them
 
-1. **Not Reading CONTRIBUTING.md**:
+1. **Not Reading [CONTRIBUTING.md](CONTRIBUTING.md)**:
     - Always follow the contribution guidelines to avoid unnecessary back-and-forth and redundant code
 2. **Editing Shared Logic Without Checking Dependencies**:
     - If you change files in **src/**, ensure these changes don’t break other parts of the website.
