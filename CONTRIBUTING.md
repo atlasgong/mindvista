@@ -10,6 +10,8 @@ Thank you and happy coding!
 
 [Skip to documentation.](#documentation)
 
+If you are a new developer working on this website, check [GUIDE.md](GUIDE.md) to figure out the backend faster.
+
 Please write clear and concise code. Use [Prettier](https://prettier.io/docs/en/) for formatting. Ensure that files are well-commented when necessary.
 
 ### Responsiveness
