@@ -52,11 +52,11 @@ export default function ContactForm() {
         trigger("captcha");
     };
 
-    const [theme, setTheme] = useState("light"); // default to light theme
+    const [theme, setTheme] = useState("dark"); // default to dark theme
 
     // handle theme change for hcaptcha
     useEffect(() => {
-        setTheme(localStorage.getItem("theme") || "light"); // default to light if theme null
+        setTheme(localStorage.getItem("theme") || "dark"); // default to dark if theme null
     }, []);
 
     // html form

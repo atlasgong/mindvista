@@ -14,7 +14,7 @@ export default function ThemeIcon() {
                 return "dark";
             }
         }
-        return "light";
+        return "dark";
     });
     const [isInCooldown, setIsInCooldown] = useState(false);
 
