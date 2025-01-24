@@ -7,7 +7,7 @@ import NewsletterEmailForm from "./NewsletterEmailForm";
 
 export default function Footer() {
     return (
-        <footer className="sticky top-[100vh] flex flex-col gap-8 bg-cBackgroundOffset px-[5vw] py-6 pt-8">
+        <footer className="sticky top-[100vh] flex flex-col gap-8 bg-cBackgroundOffset px-[5vw] pb-24 pt-8">
             <NewsletterSection />
 
             <Hr />
@@ -62,6 +62,16 @@ export default function Footer() {
             <Hr />
 
             <LegalBar />
+
+            <section className="absolute bottom-0 left-0 flex min-h-16 min-w-full items-center justify-center gap-4 bg-black p-1 text-lg font-medium text-white">
+                <p>
+                    <span className="hidden md:inline">Want to make a difference in mental wellness?</span>
+                    <span className="inline md:hidden">Make a difference today.</span>
+                </p>
+                <Link href="/sponsor-us" className="rounded-lg border border-white px-2 py-[0.15rem]">
+                    Sponsor Us!
+                </Link>
+            </section>
         </footer>
     );
 }

@@ -10,6 +10,7 @@ import useWeb3Forms from "@web3forms/react";
 // define form scheme for input validation
 const schema = z.object({
     name: z.string().min(2, { message: "Must be at least 2 characters long." }).max(64, { message: "Must be at most 64 characters long." }).trim(),
+    organization: z.optional(z.string().min(1, { message: "Must be at least 1 character long." }).max(32, { message: "Must be at most 32 characters long." }).trim()),
     email: z.string().email({ message: "You must enter a valid email address." }).trim(),
     subject: z.string().min(4, { message: "Must be at least 4 characters long." }).max(78, { message: "Subject line must not be longer than 78 characters." }).trim(),
     message: z.string().min(50, { message: "Please enter at least 50 characters." }).max(2048, { message: "Message cannot be longer than 2048 characters." }),
@@ -64,15 +65,23 @@ export default function ContactForm() {
         <form className="border-cBorder/20 mx-auto flex max-w-2xl flex-col space-y-8 rounded-xl border bg-cBackground p-8 shadow-lg dark:border-cBorder" id="contactForm" onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="name" className="text-cText/80 text-md mb-2 block font-semibold">
-                    Name
+                    Name*
                 </label>
                 <input id="name" {...register("name")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
                 {errors.name && <div className="text-md mt-2 text-cRed">{errors.name.message}</div>}
             </div>
 
             <div>
+                <label htmlFor="organization" className="text-cText/80 text-md mb-2 block font-semibold">
+                    Organization
+                </label>
+                <input id="organization" {...register("organization")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
+                {errors.organization && <div className="text-md mt-2 text-cRed">{errors.organization.message}</div>}
+            </div>
+
+            <div>
                 <label htmlFor="email" className="text-cText/80 text-md mb-2 block font-semibold">
-                    Email
+                    Email*
                 </label>
                 <input id="email" {...register("email")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
                 {errors.email && <div className="text-md mt-2 text-cRed">{errors.email.message}</div>}
@@ -80,7 +89,7 @@ export default function ContactForm() {
 
             <div>
                 <label htmlFor="subject" className="text-cText/80 text-md mb-2 block font-semibold">
-                    Subject
+                    Subject*
                 </label>
                 <input id="subject" {...register("subject")} type="text" className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset" />
                 {errors.subject && <div className="text-md mt-2 text-cRed">{errors.subject.message}</div>}
@@ -88,7 +97,7 @@ export default function ContactForm() {
 
             <div>
                 <label htmlFor="message" className="text-cText/80 text-md mb-2 block font-semibold">
-                    Message
+                    Message*
                 </label>
                 <textarea id="message" {...register("message")} className="bg-cBackgroundOffset/50 placeholder:text-cTextOffset/40 focus:ring-cAccent/20 focus:ring-cAccent/20 min-h-[150px] w-full resize-none rounded-xl border border-slate-300 px-4 py-3 font-medium text-cText transition-all duration-200 focus:border-cAccent focus:outline-none focus:ring-2 dark:border-slate-600 dark:bg-cBackgroundOffset"></textarea>
                 {errors.message && <div className="text-md mt-2 text-cRed">{errors.message.message}</div>}

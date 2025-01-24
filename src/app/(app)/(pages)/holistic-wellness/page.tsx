@@ -65,7 +65,7 @@ export default function MentalWellnessPage() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-    const page = await getPageFromCMS("mental-wellness");
+    const page = await getPageFromCMS("holistic-wellness");
     return {
         ...(page && {
             title: page.title,
