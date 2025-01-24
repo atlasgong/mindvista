@@ -31,11 +31,11 @@
 }
 
 .wheelSection {
-    @apply mx-auto px-[3vw] max-w-[90vw];
+    @apply mx-auto max-w-[90vw] px-[3vw];
 }
 
 .card {
-    @apply rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-lg transition duration-300 hover:shadow-xl md:p-10;
+    @apply rounded-2xl transition duration-300 hover:shadow-xl md:p-10 lg:border lg:border-cBorder lg:bg-cBackgroundOffset lg:p-6 lg:shadow-lg;
 }
 
 .wheelCard {
