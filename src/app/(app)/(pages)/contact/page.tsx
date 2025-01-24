@@ -38,8 +38,8 @@ export default function ContactPage() {
         <div className="container mx-auto max-w-4xl px-6 py-12 sm:px-4">
             {/* Header Section */}
             <div className="mb-12 text-center">
-                <h1 className="mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-4xl font-bold text-transparent md:text-5xl dark:from-purple-400 dark:to-blue-300">Contact Us</h1>
-                <p className="mx-auto max-w-2xl text-xl font-medium text-cTextOffset">Have questions or feedback? We&apos;re here to listen and help. Your mental health journey matters to us.</p>
+                <h1 className="mb-4 text-4xl font-bold tracking-tighter text-black md:text-5xl dark:text-white">Contact Us</h1>
+                <p className="mx-auto max-w-2xl text-xl font-medium leading-tight tracking-tight text-black dark:text-white">Have questions or feedback? We&apos;re here to listen and help. Your mental health journey matters to us.</p>
             </div>
 
             {/* Contact Form Section */}
@@ -50,7 +50,7 @@ export default function ContactPage() {
             {/* Additional Contact Info */}
             <div className="mt-16 text-center">
                 <h2 className="mb-4 text-2xl font-semibold text-cText">Other Ways to Reach Us</h2>
-                <p className="mb-5 text-cTextOffset">If you prefer other methods of communication or need immediate assistance:</p>
+                <p className="mb-5 font-medium text-cTextOffset">If you prefer other methods of communication or need immediate assistance:</p>
 
                 {/* SOCIAL MEDIA ICONS */}
                 <div className="mb-6 flex items-center justify-center gap-4">
