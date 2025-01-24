@@ -1,4 +1,4 @@
-import MentalWellnessFact from "./components/MentallWellnessFact";
+import MentalWellnessFact from "./components/MentalWellnessFact";
 import NavBar from "./components/NavBar";
 import NavigationController from "./components/NavigationController";
 import Birds from "./components/Birds";
@@ -97,7 +97,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex justify-center">
-                        <Link href="/mental-wellness" className="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold">
+                        <Link href="/holistic-wellness" className="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold">
                             Learn More
                         </Link>
                     </div>
