@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const page = legalPage.page as Page;
 
     return {
-        title: `${page.title} - MindVista`,
+        title: `${page.title}`,
         description: page.seoDescription,
     };
 }

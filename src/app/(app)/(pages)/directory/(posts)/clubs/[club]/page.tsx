@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!club) return { title: "404: Page Not Found" };
 
     return {
-        title: `${club.title} - MindVista`,
+        title: `${club.title}`,
         description: club.description,
     };
 }

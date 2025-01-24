@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!resource) return { title: "404: Page Not Found" };
 
     return {
-        title: `${resource.title} - MindVista`,
+        title: `${resource.title}`,
         description: resource.description,
     };
 }

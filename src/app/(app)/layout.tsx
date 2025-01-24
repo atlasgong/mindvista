@@ -4,8 +4,8 @@ import "src/global.css";
 
 export const metadata: Metadata = {
     title: {
-        template: "%s - MindVista",
-        default: "MindVista",
+        template: "%s – MindVista",
+        default: "MindVista – Your wellness journey starts here.",
     },
     description: "Discover MindVista - a transformative initiative enhancing student wellness at McGill University. Access mental health resources, on-campus club directories, weekly wellness newsletters, and engaging events designed to support your well-being. Explore holistic solutions for a thriving student life.",
 };
