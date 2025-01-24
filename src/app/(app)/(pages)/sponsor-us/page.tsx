@@ -29,7 +29,7 @@ export default function SponsorPage() {
                 {/* Header Section */}
                 <div className="mb-12 text-center">
                     <h1 className="mb-4 text-4xl font-bold tracking-tighter text-black md:text-5xl dark:text-white">Sponsor Us!</h1>
-                    <p className="mx-auto max-w-2xl text-xl font-medium leading-tight tracking-tight text-black dark:text-white">We'd love to partner with like-minded organizations and individuals to help spread mental wellness. If you're passionate about making a positive impact and would like to support MindVista, shoot us a message!</p>
+                    <p className="mx-auto max-w-2xl text-xl font-medium leading-tight tracking-tight text-black dark:text-white">We&apos;d love to partner with like-minded organizations and individuals to help spread mental wellness. If you&apos;re passionate about making a positive impact and would like to support MindVista, shoot us a message!</p>
                 </div>
 
                 {/* Contact Form Section */}
