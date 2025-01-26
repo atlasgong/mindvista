@@ -20,6 +20,7 @@ import { ClubTagCategories } from "./collections/lists/clubs/ClubTagCategories";
 import { ResourceTagCategories } from "./collections/lists/resources/ResourceTagCategories";
 import { ClubTags } from "./collections/lists/clubs/ClubTags";
 import { ResourceTags } from "./collections/lists/resources/ResourceTags";
+import { Events } from "./collections/Events";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -33,7 +34,7 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [Users, Pages, LegalPages, Media, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
+    collections: [Users, Pages, LegalPages, Media, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {

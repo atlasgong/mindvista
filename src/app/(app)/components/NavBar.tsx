@@ -136,7 +136,7 @@ function NavLinks(props: NavLinksProps) {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/directory">Directory</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/events">Events</Link>
         </nav>
     );
 }

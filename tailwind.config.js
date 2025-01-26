@@ -45,12 +45,36 @@ export default {
                 "gentle-pulse": {
                     "0%": { transform: "scale(1)" },
                     "50%": { transform: "scale(1.05)" },
-                    "100%": { transform: "scale(1)" }
+                    "100%": { transform: "scale(1)" },
+                },
+                // ongoing badge
+                "badge-shine": {
+                    "0%, 100%": {
+                        backgroundColor: "#22c55e",
+                        boxShadow: "0 0 1px #22c55e",
+                        transform: "scale(1)",
+                    },
+                    "50%": {
+                        backgroundColor: "#16a34a",
+                        boxShadow: "0 0 3px #16a34a",
+                        transform: "scale(1.05)",
+                    },
+                },
+                // ongoing event card border
+                "ongoing-border": {
+                    "0%, 100%": {
+                        borderColor: "#392fad",
+                    },
+                    "50%": {
+                        borderColor: "#96baff",
+                    },
                 },
             },
             animation: {
                 "emergency-pulse": "emergency-pulse 2s ease-in-out infinite", // crisis-page
                 "gentle-pulse": "gentle-pulse 1.5s ease-in-out infinite", // wellness wheel
+                "badge-shine": "badge-shine 2s ease-in-out infinite", // ongoing badge
+                "ongoing-border": "ongoing-border 3s ease-in-out infinite", // ongoing event card border
             },
         },
     },

@@ -76,7 +76,7 @@ function LandingNavBarDesktop() {
 
                 <nav className="flex w-2/5 flex-row justify-end gap-10 text-lg font-semibold xl:gap-14 2xl:gap-20">
                     <Link href="/directory">Directory</Link>
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/events">Events</Link>
                     <ThemeIcon />
                 </nav>
             </div>

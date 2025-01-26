@@ -15,6 +15,7 @@ export interface Config {
     pages: Page;
     legal: Legal;
     media: Media;
+    events: Event;
     clubs: Club;
     resources: Resource;
     'club-tag-categories': ClubTagCategory;
@@ -31,6 +32,7 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     legal: LegalSelect<false> | LegalSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    events: EventsSelect<false> | EventsSelect<true>;
     clubs: ClubsSelect<false> | ClubsSelect<true>;
     resources: ResourcesSelect<false> | ResourcesSelect<true>;
     'club-tag-categories': ClubTagCategoriesSelect<false> | ClubTagCategoriesSelect<true>;
@@ -146,6 +148,37 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  incentive?: string | null;
+  /**
+   * Check this if you cannot guarantee every attendee will receive the incentive (e.g. limited stock).
+   */
+  limitedAvailability?: boolean | null;
+  /**
+   * Check this if the incentive is not guaranteed (e.g., chance to win a prize).
+   */
+  isChance?: boolean | null;
+  /**
+   * Add one or more date ranges for this event
+   */
+  dateRanges: {
+    startDate: string;
+    endDate: string;
+    id?: string | null;
+  }[];
+  location: string;
+  locationLink?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -271,6 +304,10 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
+        relationTo: 'events';
+        value: number | Event;
+      } | null)
+    | ({
         relationTo: 'clubs';
         value: number | Club;
       } | null)
@@ -390,6 +427,29 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events_select".
+ */
+export interface EventsSelect<T extends boolean = true> {
+  slug?: T;
+  title?: T;
+  description?: T;
+  incentive?: T;
+  limitedAvailability?: T;
+  isChance?: T;
+  dateRanges?:
+    | T
+    | {
+        startDate?: T;
+        endDate?: T;
+        id?: T;
+      };
+  location?: T;
+  locationLink?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

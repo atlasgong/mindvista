@@ -7,7 +7,7 @@ import { FiMapPin, FiGlobe, FiPhone, FiUser, FiShield } from "react-icons/fi";
 import TagsSection from "../../components/TagsSection";
 import ContactSection from "../../components/ContactSection";
 import PostHeader from "../../components/PostHeader";
-import LastUpdatedSection from "../../components/LastUpdatedSection";
+import LastUpdatedSection from "../../../../../components/LastUpdatedSection";
 
 interface Props {
     params: Promise<{
