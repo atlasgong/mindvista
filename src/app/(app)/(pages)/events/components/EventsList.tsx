@@ -1,62 +1,41 @@
-import { getPayloadClient } from "@/payloadClient";
+"use client";
+
 import { EventCard } from "./EventCard";
+import { useEvents } from "../EventsProvider";
 
 interface EventsListProps {
-    filter: "ongoing" | "upcoming" | "past";
+    type: "ongoing" | "upcoming" | "past";
     className?: string;
     variant?: "default" | "featured";
 }
 
-async function getEvents(filter: EventsListProps["filter"]) {
-    const payload = await getPayloadClient();
-    const now = new Date().toISOString();
+export function EventsList({ type, className, variant = "default" }: EventsListProps) {
+    const { ongoingEvents, upcomingEvents, pastEvents, isLoading } = useEvents();
 
-    let where = {};
-
-    switch (filter) {
-        case "ongoing":
-            where = {
-                and: [{ "dateRanges.startDate": { less_than: now } }, { "dateRanges.endDate": { greater_than: now } }],
-            };
-            break;
-        case "upcoming":
-            where = {
-                "dateRanges.startDate": { greater_than: now },
-            };
-            break;
-        case "past":
-            where = {
-                "dateRanges.endDate": { less_than: now },
-            };
-            break;
+    if (isLoading) {
+        return <div className="text-center">Loading events...</div>;
     }
 
-    const events = await payload.find({
-        collection: "events",
-        where,
-        sort: filter === "past" ? "-dateRanges.0.startDate" : "dateRanges.0.startDate",
-    });
+    const events = {
+        ongoing: ongoingEvents,
+        upcoming: upcomingEvents,
+        past: pastEvents,
+    }[type];
 
-    return events.docs;
-}
-
-export async function EventsList({ filter, className, variant = "default" }: EventsListProps) {
-    const events = await getEvents(filter);
-
-    if (events.length === 0) {
-        if (filter === "ongoing") {
+    if (!events || events.length === 0) {
+        if (type === "ongoing") {
             return null;
         }
         return (
             <div className="text-center text-cTextOffset">
-                {filter === "upcoming" && "No upcoming events at the moment."}
-                {filter === "past" && "No past events to display."}
+                {type === "upcoming" && "No upcoming events at the moment."}
+                {type === "past" && "No past events to display."}
             </div>
         );
     }
 
     // grid layout for past events
-    if (filter === "past") {
+    if (type === "past") {
         return (
             <div className={className}>
                 {events.map((event) => (
