@@ -176,7 +176,15 @@ export interface Event {
     id?: string | null;
   }[];
   location: string;
+  /**
+   * The full URL to the location (e.g., Google Maps link). Must start with http:// or https://
+   */
   locationLink?: string | null;
+  /**
+   * The registration/sign up URL for this event. Must start with http:// or https://
+   */
+  signUpLink?: string | null;
+  graphic?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -456,6 +464,8 @@ export interface EventsSelect<T extends boolean = true> {
       };
   location?: T;
   locationLink?: T;
+  signUpLink?: T;
+  graphic?: T;
   updatedAt?: T;
   createdAt?: T;
 }

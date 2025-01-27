@@ -82,13 +82,49 @@ export const Events: CollectionConfig = {
         {
             name: "locationLink",
             type: "text",
+            admin: {
+                description: "The full URL to the location (e.g., Google Maps link). Must start with http:// or https://",
+            },
             validate: (value: string | null | undefined) => {
-                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (value && !urlRegex.test(value)) {
-                    return "Please provide a valid URL.";
+                if (!value) return true;
+
+                const protocolRegex = /^https?:\/\//i;
+                if (!protocolRegex.test(value)) {
+                    return "URL must start with http:// or https://";
+                }
+
+                const urlRegex = /^https?:\/\/([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
+                if (!urlRegex.test(value)) {
+                    return "Please provide a valid URL";
                 }
                 return true;
             },
+        },
+        {
+            name: "signUpLink",
+            type: "text",
+            admin: {
+                description: "The registration/sign up URL for this event. Must start with http:// or https://",
+            },
+            validate: (value: string | null | undefined) => {
+                if (!value) return true;
+
+                const protocolRegex = /^https?:\/\//i;
+                if (!protocolRegex.test(value)) {
+                    return "URL must start with http:// or https://";
+                }
+
+                const urlRegex = /^https?:\/\/([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
+                if (!urlRegex.test(value)) {
+                    return "Please provide a valid URL";
+                }
+                return true;
+            },
+        },
+        {
+            name: "graphic",
+            type: "upload",
+            relationTo: "media",
         },
     ],
 };
