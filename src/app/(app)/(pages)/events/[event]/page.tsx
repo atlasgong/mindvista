@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiMapPin, FiGift, FiExternalLink, FiInstagram } from "react-icons/fi";
-import { format } from "date-fns";
 import LastUpdatedSection from "@/app/(app)/components/LastUpdatedSection";
 import LocationButton from "./components/LocationButton";
 import Hr from "@/app/(app)/components/Hr";
 import { OngoingBadge } from "../components/OngoingBadge";
+import { EventDate } from "../components/EventDate";
 
 type PageProps = {
     params: Promise<{
@@ -87,21 +87,7 @@ export default async function EventPage({ params }: PageProps) {
                             <FiCalendar className="h-5 w-5 text-cTextOffset" />
                             <h2 className="text-lg font-semibold text-cText">Date & Time</h2>
                         </div>
-                        <div className="space-y-2">
-                            {event.dateRanges?.map((range, index) => {
-                                const startDate = new Date(range.startDate);
-                                const endDate = new Date(range.endDate);
-                                const isSameDay = startDate.toDateString() === endDate.toDateString();
-
-                                return (
-                                    <p key={index} className="text-cTextOffset">
-                                        {format(startDate, "MMM d, yyyy")} | {format(startDate, "h:mm a")}
-                                        {" - "}
-                                        {isSameDay ? format(endDate, "h:mm a") : `${format(endDate, "MMM d, yyyy")} | ${format(endDate, "h:mm a")}`}
-                                    </p>
-                                );
-                            })}
-                        </div>
+                        <div className="space-y-2">{event.dateRanges?.map((range, index) => <EventDate key={index} startDate={range.startDate} endDate={range.endDate} className="text-cTextOffset" />)}</div>
                     </div>
 
                     {/* Location */}

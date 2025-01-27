@@ -1,6 +1,6 @@
 import { Event } from "@/payload-types";
-import { format } from "date-fns";
 import Link from "next/link";
+import { EventDate } from "./EventDate";
 import { OngoingBadge } from "./OngoingBadge";
 import { OngoingPulse } from "./OngoingPulse";
 
@@ -39,21 +39,7 @@ export function EventCard({ event, variant = "default" }: EventCardProps) {
                         <p className="-mb-2 text-xs font-semibold">{isOngoing ? "Ongoing" : "Upcoming"}</p>
                         <h3 className={`${titleClassName} block overflow-hidden text-ellipsis whitespace-nowrap pr-8`}>{event.title}</h3>
 
-                        <div className="text-xs">
-                            {event.dateRanges?.map((range, index) => {
-                                const startDate = new Date(range.startDate);
-                                const endDate = new Date(range.endDate);
-                                const isSameDay = startDate.toDateString() === endDate.toDateString();
-
-                                return (
-                                    <p key={index} className="truncate whitespace-nowrap text-cTextOffset">
-                                        {format(startDate, "MMM d")} | {format(startDate, "h:mm a")}
-                                        {" - "}
-                                        {isSameDay ? format(endDate, "h:mm a") : `${format(endDate, "MMM d")} | ${format(endDate, "h:mm a")}`}
-                                    </p>
-                                );
-                            })}
-                        </div>
+                        <div className="text-xs">{event.dateRanges?.map((range, index) => <EventDate key={index} startDate={range.startDate} endDate={range.endDate} className="truncate whitespace-nowrap text-cTextOffset" compact />)}</div>
                     </div>
 
                     <div className="mt-auto space-y-1">
@@ -86,21 +72,7 @@ export function EventCard({ event, variant = "default" }: EventCardProps) {
                         )}
                     </div>
 
-                    <div className={`space-y-1 ${variant === "featured" ? "text-base" : "text-sm"}`}>
-                        {event.dateRanges?.map((range, index) => {
-                            const startDate = new Date(range.startDate);
-                            const endDate = new Date(range.endDate);
-                            const isSameDay = startDate.toDateString() === endDate.toDateString();
-
-                            return (
-                                <p key={index} className="text-cTextOffset">
-                                    {format(startDate, "MMM d, yyyy")} | {format(startDate, "h:mm a")}
-                                    {" - "}
-                                    {isSameDay ? format(endDate, "h:mm a") : `${format(endDate, "MMM d, yyyy")} | ${format(endDate, "h:mm a")}`}
-                                </p>
-                            );
-                        })}
-                    </div>
+                    <div className={`space-y-1 ${variant === "featured" ? "text-base" : "text-sm"}`}>{event.dateRanges?.map((range, index) => <EventDate key={index} startDate={range.startDate} endDate={range.endDate} className="text-cTextOffset" />)}</div>
 
                     <div className={`flex flex-col gap-2 ${variant === "featured" ? "text-base" : "text-sm"}`}>
                         <p className="font-medium text-cTextOffset">📍 {event.location}</p>

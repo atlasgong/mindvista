@@ -1,4 +1,13 @@
 import type { CollectionConfig } from "payload";
+import type { DateField } from "payload";
+
+type DateRange = {
+    startDate: string;
+    endDate: string;
+};
+
+// this replicates Payload's internal DateFieldValidation type
+type PayloadDateValidation = (value: string | Date | null | undefined, options: { siblingData?: { startDate?: string } }) => string | true | Promise<string | true>;
 
 export const Events: CollectionConfig = {
     slug: "events",
@@ -70,7 +79,16 @@ export const Events: CollectionConfig = {
                         date: {
                             pickerAppearance: "dayAndTime",
                         },
+                        description: "Must be same as or later than start date",
                     },
+                    validate: ((value, { siblingData }) => {
+                        if (!value || !siblingData?.startDate) return true;
+
+                        const endDate = new Date(value);
+                        const startDate = new Date(siblingData.startDate);
+
+                        return endDate >= startDate || "End date must be same as or later than start date";
+                    }) as PayloadDateValidation,
                 },
             ],
         },

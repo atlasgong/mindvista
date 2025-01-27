@@ -173,6 +173,9 @@ export interface Event {
    */
   dateRanges: {
     startDate: string;
+    /**
+     * Must be same as or later than start date
+     */
     endDate: string;
     id?: string | null;
   }[];
