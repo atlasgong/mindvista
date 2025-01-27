@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { validateURL, validateFacebookURL, validateInstagramURL } from "@lib/validations";
 
 export const Clubs: CollectionConfig = {
     slug: "clubs",
@@ -26,19 +27,7 @@ export const Clubs: CollectionConfig = {
         {
             name: "website",
             type: "text",
-            validate: (value: string | null | undefined) => {
-                // Allow URLs with:
-                // - Optional protocol
-                // - Domains with hyphens
-                // - Subdomains
-                // - Path segments with special chars
-                // - Query params and fragments
-                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (value && !urlRegex.test(value)) {
-                    return "Please provide a valid URL.";
-                }
-                return true;
-            },
+            validate: validateURL,
         },
         {
             name: "newsletter",
@@ -46,19 +35,7 @@ export const Clubs: CollectionConfig = {
             admin: {
                 description: "Does this club have a sign-up link for their newsletter?",
             },
-            validate: (value: string | null | undefined) => {
-                // Allow URLs with:
-                // - Optional protocol
-                // - Domains with hyphens
-                // - Subdomains
-                // - Path segments with special chars
-                // - Query params and fragments
-                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (value && !urlRegex.test(value)) {
-                    return "Please provide a valid URL.";
-                }
-                return true;
-            },
+            validate: validateURL,
         },
         {
             name: "email",
@@ -72,24 +49,12 @@ export const Clubs: CollectionConfig = {
         {
             name: "facebook",
             type: "text",
-            validate: (value: string | null | undefined) => {
-                const facebookRegex = /^(https?:\/\/)?(www\.)?(facebook|fb)\.com\/[A-Za-z0-9._%+-]+\/?.*$/;
-                if (value && !facebookRegex.test(value)) {
-                    return "Please provide a valid Facebook URL.";
-                }
-                return true;
-            },
+            validate: validateFacebookURL,
         },
         {
             name: "instagram",
             type: "text",
-            validate: (value: string | null | undefined) => {
-                const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._%+-]+\/?.*$/;
-                if (value && !instagramRegex.test(value)) {
-                    return "Please provide a valid Instagram URL.";
-                }
-                return true;
-            },
+            validate: validateInstagramURL,
         },
         {
             name: "otherSocials",
@@ -99,19 +64,7 @@ export const Clubs: CollectionConfig = {
                     name: "link",
                     type: "text",
                     required: true,
-                    validate: (value: string | null | undefined) => {
-                        // Allow URLs with:
-                        // - Optional protocol
-                        // - Domains with hyphens
-                        // - Subdomains
-                        // - Path segments with special chars
-                        // - Query params and fragments
-                        const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                        if (value && !urlRegex.test(value)) {
-                            return "Please provide a valid URL.";
-                        }
-                        return true;
-                    },
+                    validate: validateURL,
                 },
             ],
         },

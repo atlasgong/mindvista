@@ -1,10 +1,5 @@
 import type { CollectionConfig } from "payload";
-import type { DateField } from "payload";
-
-type DateRange = {
-    startDate: string;
-    endDate: string;
-};
+import { validateURLWithProtocol, validateInstagramURL } from "@lib/validations";
 
 // this replicates Payload's internal DateFieldValidation type
 type PayloadDateValidation = (value: string | Date | null | undefined, options: { siblingData?: { startDate?: string } }) => string | true | Promise<string | true>;
@@ -103,20 +98,7 @@ export const Events: CollectionConfig = {
             admin: {
                 description: "The full URL to the location (e.g., Google Maps link). Must start with http:// or https://",
             },
-            validate: (value: string | null | undefined) => {
-                if (!value) return true;
-
-                const protocolRegex = /^https?:\/\//i;
-                if (!protocolRegex.test(value)) {
-                    return "URL must start with http:// or https://";
-                }
-
-                const urlRegex = /^https?:\/\/([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (!urlRegex.test(value)) {
-                    return "Please provide a valid URL";
-                }
-                return true;
-            },
+            validate: validateURLWithProtocol,
         },
         {
             name: "signUpLink",
@@ -124,20 +106,7 @@ export const Events: CollectionConfig = {
             admin: {
                 description: "The registration/sign up URL for this event. Must start with http:// or https://",
             },
-            validate: (value: string | null | undefined) => {
-                if (!value) return true;
-
-                const protocolRegex = /^https?:\/\//i;
-                if (!protocolRegex.test(value)) {
-                    return "URL must start with http:// or https://";
-                }
-
-                const urlRegex = /^https?:\/\/([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (!urlRegex.test(value)) {
-                    return "Please provide a valid URL";
-                }
-                return true;
-            },
+            validate: validateURLWithProtocol,
         },
         {
             name: "instagramPost",
@@ -145,13 +114,7 @@ export const Events: CollectionConfig = {
             admin: {
                 description: "Link to an Instagram post.",
             },
-            validate: (value: string | null | undefined) => {
-                const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._%+-]+\/?.*$/;
-                if (value && !instagramRegex.test(value)) {
-                    return "Please provide a valid Instagram URL.";
-                }
-                return true;
-            },
+            validate: validateInstagramURL,
         },
         {
             name: "graphic",

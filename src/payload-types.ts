@@ -137,6 +137,10 @@ export interface Legal {
 export interface Media {
   id: number;
   alt: string;
+  /**
+   * Describe the purpose of this entity / where it is used.
+   */
+  purpose: string;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -440,6 +444,7 @@ export interface LegalSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  purpose?: T;
   prefix?: T;
   updatedAt?: T;
   createdAt?: T;

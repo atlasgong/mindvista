@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { validateURL } from "@lib/validations";
 
 export const Resources: CollectionConfig = {
     slug: "resources",
@@ -26,19 +27,7 @@ export const Resources: CollectionConfig = {
         {
             name: "website",
             type: "text",
-            validate: (value: string | null | undefined) => {
-                // Allow URLs with:
-                // - Optional protocol
-                // - Domains with hyphens
-                // - Subdomains
-                // - Path segments with special chars
-                // - Query params and fragments
-                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (value && !urlRegex.test(value)) {
-                    return "Please provide a valid URL.";
-                }
-                return true;
-            },
+            validate: validateURL,
         },
         {
             name: "newsletter",
@@ -46,19 +35,7 @@ export const Resources: CollectionConfig = {
             admin: {
                 description: "Does this resource have a sign-up link for their newsletter?",
             },
-            validate: (value: string | null | undefined) => {
-                // Allow URLs with:
-                // - Optional protocol
-                // - Domains with hyphens
-                // - Subdomains
-                // - Path segments with special chars
-                // - Query params and fragments
-                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
-                if (value && !urlRegex.test(value)) {
-                    return "Please provide a valid URL.";
-                }
-                return true;
-            },
+            validate: validateURL,
         },
         {
             name: "insuranceDetails",
