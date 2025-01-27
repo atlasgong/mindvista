@@ -1,4 +1,4 @@
-// storage-adapter-import-placeholder
+import { s3Storage } from "@payloadcms/storage-s3";
 import { vercelPostgresAdapter } from "@payloadcms/db-vercel-postgres";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
@@ -26,7 +26,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
-    serverURL: "https://mindvista.atl4s.org",
+    // serverURL: "https://mindvista.atl4s.org",
     telemetry: false,
     admin: {
         user: Users.slug,
@@ -57,6 +57,20 @@ export default buildConfig({
     },
     plugins: [
         payloadCloudPlugin(),
-        // storage-adapter-placeholder
+        s3Storage({
+            collections: {
+                media: {
+                    prefix: "media",
+                },
+            },
+            bucket: process.env.S3_BUCKET as string,
+            config: {
+                credentials: {
+                    accessKeyId: process.env.S3_ACCESS_KEY_ID as string,
+                    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY as string,
+                },
+                region: process.env.S3_REGION,
+            },
+        }),
     ],
 });

@@ -137,6 +137,7 @@ export interface Legal {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -187,7 +188,8 @@ export interface Event {
   /**
    * Link to an Instagram post.
    */
-  instagramGraphic?: string | null;
+  instagramPost?: string | null;
+  graphic?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -435,6 +437,7 @@ export interface LegalSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -468,7 +471,8 @@ export interface EventsSelect<T extends boolean = true> {
   location?: T;
   locationLink?: T;
   signUpLink?: T;
-  instagramGraphic?: T;
+  instagramPost?: T;
+  graphic?: T;
   updatedAt?: T;
   createdAt?: T;
 }

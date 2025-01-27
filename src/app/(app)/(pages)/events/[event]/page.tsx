@@ -58,8 +58,8 @@ export default async function EventPage({ params }: PageProps) {
                     <div className="flex-1">
                         <h1 className="text-2xl font-bold leading-tight text-cText sm:text-3xl lg:text-4xl">{event.title}</h1>
                         <p className="mt-4 text-base leading-relaxed text-cTextOffset sm:text-lg">{event.description}</p>
-                        {event.instagramGraphic && (
-                            <a href={event.instagramGraphic} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-cAccent hover:underline">
+                        {event.instagramPost && (
+                            <a href={event.instagramPost} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-cAccent hover:underline">
                                 <FiInstagram className="h-4 w-4" />
                                 More info on our Instagram
                                 <FiExternalLink className="h-4 w-4" />
@@ -132,11 +132,11 @@ export default async function EventPage({ params }: PageProps) {
                 </div>
 
                 {/* Event Graphic */}
-                {/* {typeof event.graphic === "object" && event.graphic?.url && (
+                {typeof event.graphic === "object" && event.graphic?.url && (
                     <div className="mx-auto my-8 flex justify-center md:mt-14">
                         <img src={event.graphic.url} alt={event.title} className="max-h-[400px] w-auto rounded-lg object-contain" />
                     </div>
-                )} */}
+                )}
 
                 <div className="min-h-4"></div>
                 {event.isChance && <p className="text-xs text-cTextOffset">&dagger;Incentives are awarded on a chance-to-win basis. There is no guaranteed prize.</p>}

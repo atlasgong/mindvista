@@ -122,7 +122,7 @@ export const Events: CollectionConfig = {
             },
         },
         {
-            name: "instagramGraphic",
+            name: "instagramPost",
             type: "text",
             admin: {
                 description: "Link to an Instagram post.",
@@ -135,10 +135,10 @@ export const Events: CollectionConfig = {
                 return true;
             },
         },
-        // {
-        //     name: "graphic",
-        //     type: "upload",
-        //     relationTo: "media",
-        // },
+        {
+            name: "graphic",
+            type: "upload",
+            relationTo: "media",
+        },
     ],
 };
