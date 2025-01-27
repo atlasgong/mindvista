@@ -5,11 +5,14 @@ import Birds from "./components/Birds";
 import Footer from "./components/Footer";
 import Hr from "./components/Hr";
 import Image from "next/image";
+import HomeEventsSection from "./components/HomeEventsSection";
 
 import lightThemeImage from "@public/landing/shifaaz-shamoon.webp";
 import darkThemeImage from "@public/landing/jon-j_mk18.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
+import { HiArrowLongRight } from "react-icons/hi2";
+
 import Link from "next/link";
 import InfoSeparator from "./components/InfoSeparator";
 
@@ -67,7 +70,7 @@ export default function Home() {
                 {/* TOP SECTION END */}
 
                 {/* FIRST SECTION */}
-                <div className="px-[5vw] pb-12 pt-[10vh] text-center md:px-[7.5vw] lg:px-[10vw]">
+                <section className="px-[5vw] pb-12 pt-[10vh] text-center md:px-[7.5vw] lg:px-[10vw]">
                     <h2 className="text-5xl font-bold md:text-6xl">
                         The One-Stop-Shop for <span className="text-cAccent">Wellness</span> and <span className="text-cAccent">Engagement</span> at McGill.
                     </h2>
@@ -76,13 +79,13 @@ export default function Home() {
                         Welcome to <span className="font-semibold text-cAccent">MindVista</span>, an innovative student-led initiative at McGill University committed to enhancing student wellness and engagement.
                         <span className="hidden md:inline"> Our passionate team of volunteers is devoted to regularly updating our website to simplify the process of accessing essential resources for your well-being. </span>
                     </p>
-                </div>
+                </section>
                 {/* END OF FIRST SECTION */}
 
                 <Hr className="mx-[25vw]" />
 
                 {/* MENTAL WELLNESS SECTION */}
-                <div className="px-[5vw]">
+                <section className="px-[5vw]">
                     <h2 className="mt-16 text-center text-3xl font-bold md:text-4xl">What is Mental Wellness?</h2>
                     <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">Mental wellness includes a range of factors that contribute to one&apos;s overall well-being. Achieving mental wellness is a journey which requires ongoing effort and attention. This may feel intimidating at first, however, your willingness to improve is the first step! Here is a glimpse of what achieving further mental wellness involves.</p>
 
@@ -101,10 +104,20 @@ export default function Home() {
                             Learn More
                         </Link>
                     </div>
-                </div>
+                </section>
                 {/* END OF MENTAL WELLNESS SECTION */}
 
-                <div className="mt-16"></div>
+                <Hr className="mx-[25vw] my-16" />
+
+                {/* EVENTS SECTION */}
+                <section className="mb-16 px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
+                    <HomeEventsSection />
+                    <div className="mt-10 flex justify-center">
+                        <Link href="/events" className="flex items-center gap-3 rounded-lg border p-3 text-lg font-semibold">
+                            View All Events <HiArrowLongRight />
+                        </Link>
+                    </div>
+                </section>
             </main>
             <Footer />
         </>
