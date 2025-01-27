@@ -29,6 +29,7 @@
         "cross-env": "^7.0.3",
         "graphql": "^16.8.1",
         "next": "15.1.0",
+        "nextjs-toploader": "^3.7.15",
         "payload": "^3.17.1",
         "react": "19.0.0",
         "react-dom": "19.0.0",

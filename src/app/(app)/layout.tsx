@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import NextTopLoader from "nextjs-toploader";
 import { Metadata } from "next";
 import "src/global.css";
 
@@ -36,7 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     }}
                 />
             </head>
-            <body className="min-h-screen bg-cBackground text-cText antialiased">{children}</body>
+            <body className="min-h-screen bg-cBackground text-cText antialiased">
+                <NextTopLoader showSpinner={false} />
+                {children}
+            </body>
 
             {/* https://vercel.com/docs/analytics/quickstart#add-the-analytics-component-to-your-app */}
             <Analytics />
