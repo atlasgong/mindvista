@@ -190,6 +190,10 @@ export interface Club {
   title: string;
   description: string;
   website?: string | null;
+  /**
+   * Does this club have a sign-up link for their newsletter?
+   */
+  newsletter?: string | null;
   email?: string | null;
   phoneNumber?: string | null;
   facebook?: string | null;
@@ -236,6 +240,10 @@ export interface Resource {
   title: string;
   description: string;
   website?: string | null;
+  /**
+   * Does this resource have a sign-up link for their newsletter?
+   */
+  newsletter?: string | null;
   insuranceDetails?: string | null;
   insuranceProviders?:
     | {
@@ -460,6 +468,7 @@ export interface ClubsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   website?: T;
+  newsletter?: T;
   email?: T;
   phoneNumber?: T;
   facebook?: T;
@@ -484,6 +493,7 @@ export interface ResourcesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   website?: T;
+  newsletter?: T;
   insuranceDetails?: T;
   insuranceProviders?:
     | T

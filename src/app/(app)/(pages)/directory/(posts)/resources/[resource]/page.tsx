@@ -64,13 +64,14 @@ export default async function ResourcePage({ params }: Props) {
 
             <div className="grid auto-rows-fr grid-cols-1 gap-6 md:auto-cols-fr md:grid-flow-col">
                 {/* Contact Information */}
-                {(resource.website || resource.email || resource.phoneNumber) && (
+                {(resource.website || resource.email || resource.phoneNumber || resource.newsletter) && (
                     <div className="h-full md:col-span-1">
                         <ContactSection
                             contactInfo={{
                                 website: resource.website || undefined,
                                 email: resource.email || undefined,
                                 phoneNumber: resource.phoneNumber || undefined,
+                                newsletter: resource.newsletter || undefined,
                             }}
                         />
                     </div>

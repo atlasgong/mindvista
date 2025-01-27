@@ -64,13 +64,14 @@ export default async function ClubPage({ params }: Props) {
 
             <div className="grid auto-rows-fr grid-cols-1 gap-6 md:auto-cols-fr md:grid-flow-col">
                 {/* Contact Information */}
-                {(club.website || club.email || club.phoneNumber) && (
+                {(club.website || club.email || club.phoneNumber || club.newsletter) && (
                     <div className="h-full md:col-span-1">
                         <ContactSection
                             contactInfo={{
                                 website: club.website || undefined,
                                 email: club.email || undefined,
                                 phoneNumber: club.phoneNumber || undefined,
+                                newsletter: club.newsletter || undefined,
                             }}
                         />
                     </div>

@@ -41,6 +41,26 @@ export const Clubs: CollectionConfig = {
             },
         },
         {
+            name: "newsletter",
+            type: "text",
+            admin: {
+                description: "Does this club have a sign-up link for their newsletter?",
+            },
+            validate: (value: string | null | undefined) => {
+                // Allow URLs with:
+                // - Optional protocol
+                // - Domains with hyphens
+                // - Subdomains
+                // - Path segments with special chars
+                // - Query params and fragments
+                const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(:\d+)?(\/[-\w\._~:/?#\[\]@!$&'\(\)\*\+,;=\%]*)?$/i;
+                if (value && !urlRegex.test(value)) {
+                    return "Please provide a valid URL.";
+                }
+                return true;
+            },
+        },
+        {
             name: "email",
             type: "email",
         },
