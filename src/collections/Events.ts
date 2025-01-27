@@ -122,9 +122,23 @@ export const Events: CollectionConfig = {
             },
         },
         {
-            name: "graphic",
-            type: "upload",
-            relationTo: "media",
+            name: "instagramGraphic",
+            type: "text",
+            admin: {
+                description: "Link to an Instagram post.",
+            },
+            validate: (value: string | null | undefined) => {
+                const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._%+-]+\/?.*$/;
+                if (value && !instagramRegex.test(value)) {
+                    return "Please provide a valid Instagram URL.";
+                }
+                return true;
+            },
         },
+        // {
+        //     name: "graphic",
+        //     type: "upload",
+        //     relationTo: "media",
+        // },
     ],
 };

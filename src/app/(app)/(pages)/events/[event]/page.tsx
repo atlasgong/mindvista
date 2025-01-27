@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
-import { FiArrowLeft, FiCalendar, FiMapPin, FiGift, FiExternalLink } from "react-icons/fi";
+import { FiArrowLeft, FiCalendar, FiMapPin, FiGift, FiExternalLink, FiInstagram } from "react-icons/fi";
 import { format } from "date-fns";
 import LastUpdatedSection from "@/app/(app)/components/LastUpdatedSection";
 import LocationButton from "./components/LocationButton";
@@ -58,6 +58,13 @@ export default async function EventPage({ params }: PageProps) {
                     <div className="flex-1">
                         <h1 className="text-2xl font-bold leading-tight text-cText sm:text-3xl lg:text-4xl">{event.title}</h1>
                         <p className="mt-4 text-base leading-relaxed text-cTextOffset sm:text-lg">{event.description}</p>
+                        {event.instagramGraphic && (
+                            <a href={event.instagramGraphic} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-cAccent hover:underline">
+                                <FiInstagram className="h-4 w-4" />
+                                More info on our Instagram
+                                <FiExternalLink className="h-4 w-4" />
+                            </a>
+                        )}
                     </div>
                     {isOngoing && <OngoingBadge className="flex-shrink-0" />}
                 </div>
@@ -73,7 +80,7 @@ export default async function EventPage({ params }: PageProps) {
                 <Hr className="mb-8 mt-6" />
 
                 {/* Event Details */}
-                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-8 flex justify-between gap-6">
                     {/* Date & Time */}
                     <div className="space-y-3">
                         <div className="flex items-center gap-2">
@@ -81,13 +88,19 @@ export default async function EventPage({ params }: PageProps) {
                             <h2 className="text-lg font-semibold text-cText">Date & Time</h2>
                         </div>
                         <div className="space-y-2">
-                            {event.dateRanges?.map((range, index) => (
-                                <p key={index} className="text-cTextOffset">
-                                    {format(new Date(range.startDate), "MMM d, yyyy h:mm a")}
-                                    {" - "}
-                                    {format(new Date(range.endDate), "MMM d, yyyy h:mm a")}
-                                </p>
-                            ))}
+                            {event.dateRanges?.map((range, index) => {
+                                const startDate = new Date(range.startDate);
+                                const endDate = new Date(range.endDate);
+                                const isSameDay = startDate.toDateString() === endDate.toDateString();
+
+                                return (
+                                    <p key={index} className="text-cTextOffset">
+                                        {format(startDate, "MMM d, yyyy")} | {format(startDate, "h:mm a")}
+                                        {" - "}
+                                        {isSameDay ? format(endDate, "h:mm a") : `${format(endDate, "MMM d, yyyy")} | ${format(endDate, "h:mm a")}`}
+                                    </p>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -119,11 +132,11 @@ export default async function EventPage({ params }: PageProps) {
                 </div>
 
                 {/* Event Graphic */}
-                {typeof event.graphic === "object" && event.graphic?.url && (
+                {/* {typeof event.graphic === "object" && event.graphic?.url && (
                     <div className="mx-auto my-8 flex justify-center md:mt-14">
                         <img src={event.graphic.url} alt={event.title} className="max-h-[400px] w-auto rounded-lg object-contain" />
                     </div>
-                )}
+                )} */}
 
                 <div className="min-h-4"></div>
                 {event.isChance && <p className="text-xs text-cTextOffset">&dagger;Incentives are awarded on a chance-to-win basis. There is no guaranteed prize.</p>}

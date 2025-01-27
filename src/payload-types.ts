@@ -184,7 +184,10 @@ export interface Event {
    * The registration/sign up URL for this event. Must start with http:// or https://
    */
   signUpLink?: string | null;
-  graphic?: (number | null) | Media;
+  /**
+   * Link to an Instagram post.
+   */
+  instagramGraphic?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -465,7 +468,7 @@ export interface EventsSelect<T extends boolean = true> {
   location?: T;
   locationLink?: T;
   signUpLink?: T;
-  graphic?: T;
+  instagramGraphic?: T;
   updatedAt?: T;
   createdAt?: T;
 }
