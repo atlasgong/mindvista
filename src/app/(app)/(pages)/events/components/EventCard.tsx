@@ -37,7 +37,7 @@ export function EventCard({ event, variant = "default" }: EventCardProps) {
                 <div className="flex h-full flex-col">
                     <div className="space-y-1.5">
                         <p className="-mb-2 text-xs font-semibold">{isOngoing ? "Ongoing" : "Upcoming"}</p>
-                        <h3 className={`${titleClassName} w-[calc(100%-24px)] truncate`}>{event.title}</h3>
+                        <h3 className={`${titleClassName} block overflow-hidden text-ellipsis whitespace-nowrap pr-8`}>{event.title}</h3>
 
                         <div className="text-xs">
                             {event.dateRanges?.map((range, index) => {
