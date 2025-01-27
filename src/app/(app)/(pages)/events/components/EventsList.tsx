@@ -1,6 +1,7 @@
 "use client";
 
 import { EventCard } from "./EventCard";
+import { EventCardSkeleton } from "./EventCardSkeleton";
 import { useEvents } from "../EventsProvider";
 
 interface EventsListProps {
@@ -12,22 +13,41 @@ interface EventsListProps {
 export function EventsList({ type, className, variant = "default" }: EventsListProps) {
     const { ongoingEvents, upcomingEvents, pastEvents, isLoading } = useEvents();
 
-    if (isLoading) {
-        return <div className="text-center">Loading events...</div>;
-    }
-
     const events = {
         ongoing: ongoingEvents,
         upcoming: upcomingEvents,
         past: pastEvents,
     }[type];
 
+    if (isLoading) {
+        // show appropriate number of skeletons based on section type
+        if (type === "past") {
+            return (
+                <div className={className}>
+                    {[...Array(6)].map((_, index) => (
+                        <EventCardSkeleton key={index} variant={variant} />
+                    ))}
+                </div>
+            );
+        }
+
+        // show one skeleton for upcoming
+        return (
+            <div className={className}>
+                <EventCardSkeleton variant={variant} />
+            </div>
+        );
+    }
+
+    // handle empty states
     if (!events || events.length === 0) {
+        // for ongoing events, return null to hide the section completely
         if (type === "ongoing") {
             return null;
         }
+        // for upcoming and past events, display message
         return (
-            <div className="text-center text-cTextOffset">
+            <div className="text-center text-lg text-cTextOffset">
                 {type === "upcoming" && "No upcoming events at the moment."}
                 {type === "past" && "No past events to display."}
             </div>

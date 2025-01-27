@@ -1,43 +1,18 @@
-import { Suspense } from "react";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import { Metadata } from "next";
-import { EventsList } from "./components/EventsList";
 import { EventsProvider } from "./EventsProvider";
+import { EventsContent } from "./components/EventsContent";
 
 export default function EventsPage() {
     return (
         <EventsProvider>
-            <div className="mx-auto mb-14 max-w-7xl px-4 py-8 sm:px-8 md:px-12 lg:px-20">
+            <div className="mx-auto mb-14 max-w-7xl px-4 py-8 sm:px-12 md:px-16 lg:px-20">
                 <header className="mb-12 mt-8 text-center">
-                    <h1 className="mb-4 text-4xl font-bold text-cText">Events</h1>
-                    <p className="text-xl text-cTextOffset">Discover and join exciting events in our community.</p>
+                    <h1 className="mb-2 text-4xl font-bold text-cText">Events</h1>
+                    <p className="px-8 text-xl tracking-tight text-cTextOffset md:px-12 lg:px-28 xl:px-40">View MindVista&apos;s upcoming wellness events at McGill University! Engage in activities that promote mental health and well-being, and stay connected to our supportive student community.</p>
                 </header>
 
-                <div className="space-y-16">
-                    {/* Ongoing Events Section - Conditionally Rendered */}
-                    <Suspense>
-                        <section>
-                            <h2 className="mb-8 text-center text-2xl font-bold text-cText">Ongoing Events</h2>
-                            <EventsList type="ongoing" className="mx-auto max-w-3xl" variant="featured" />
-                        </section>
-                    </Suspense>
-
-                    {/* Upcoming Events Section */}
-                    <section>
-                        <h2 className="mb-8 text-center text-2xl font-bold text-cText">Upcoming Events</h2>
-                        <Suspense fallback={<div className="text-center">Loading upcoming events...</div>}>
-                            <EventsList type="upcoming" className="mx-auto max-w-3xl" />
-                        </Suspense>
-                    </section>
-
-                    {/* Past Events Section */}
-                    <section>
-                        <h2 className="mb-8 text-2xl font-bold text-cText">Past Events</h2>
-                        <Suspense fallback={<div>Loading past events...</div>}>
-                            <EventsList type="past" className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" />
-                        </Suspense>
-                    </section>
-                </div>
+                <EventsContent />
             </div>
         </EventsProvider>
     );
