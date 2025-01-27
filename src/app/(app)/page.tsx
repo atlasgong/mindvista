@@ -12,9 +12,9 @@ import darkThemeImage from "@public/landing/jon-j_mk18.webp";
 
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
 import { HiArrowLongRight } from "react-icons/hi2";
-
 import Link from "next/link";
 import InfoSeparator from "./components/InfoSeparator";
+import SplashEventCard from "./components/SplashEventCard";
 
 export default function Home() {
     return (
@@ -57,7 +57,8 @@ export default function Home() {
                             <p className="text-[#1D1D1B]/60 dark:text-slate-400">&mdash; Global Wellness Institute</p>
                         </div>
 
-                        {/* TODO: add logo overlay to bottom left corner */}
+                        {/* Event card in bottom left */}
+                        <SplashEventCard />
                     </div>
 
                     <InfoSeparator />
