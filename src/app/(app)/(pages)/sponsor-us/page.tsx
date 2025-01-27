@@ -3,7 +3,6 @@ import ContactForm from "../contact/components/ContactForm";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import Image from "next/image";
 import Hr from "../../components/Hr";
-import Link from "next/link";
 
 export default function SponsorPage() {
     return (
@@ -18,10 +17,12 @@ export default function SponsorPage() {
 
                 {/* Sponsor Logos */}
                 <div className="grid grid-cols-2 grid-rows-1 items-center">
-                    <Link href="https://www.caffettiera.ca/" target="_blank">
+                    <a href="https://www.caffettiera.ca/" target="_blank">
                         <Image src="/sponsors/caffettiera.png" alt="Caffettiera Logo" width={2029} height={1291} className="mx-auto max-w-40 md:max-w-56" />
-                    </Link>
-                    <p className="mx-auto flex aspect-square h-24 w-24 items-center rounded-3xl bg-mindvista-800 p-2 text-center text-sm font-black text-white md:h-40 md:w-40 md:p-6 md:text-xl">YOUR LOGO COULD BE HERE</p>{" "}
+                    </a>
+                    <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full">
+                        <Image src="/sponsors/aym.webp" alt="AYM Yoga Logo" width={1399} height={1578} className="mx-auto -mt-4 max-w-32 md:max-w-44" />
+                    </a>
                 </div>
             </section>
 

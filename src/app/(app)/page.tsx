@@ -111,11 +111,32 @@ export default function Home() {
                 <Hr className="mx-[25vw] my-16" />
 
                 {/* EVENTS SECTION */}
-                <section className="mb-16 px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
+                <section className="px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
                     <HomeEventsSection />
                     <div className="mt-10 flex justify-center">
                         <Link href="/events" className="flex items-center gap-3 rounded-lg border p-3 text-lg font-semibold">
                             View All Events <HiArrowLongRight />
+                        </Link>
+                    </div>
+                </section>
+
+                <Hr className="mx-[25vw] my-16" />
+
+                {/* SPONSORS SECTION */}
+                <section className="mb-16 px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
+                    <h2 className="text-center text-3xl font-bold md:text-4xl">Big Thanks to Our Sponsors</h2>
+                    <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">We are incredibly grateful for the support and dedication of our sponsors who believe in our mission.</p>
+                    <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 items-center justify-items-center gap-4">
+                        <a href="https://www.caffettiera.ca/" target="_blank" className="w-full">
+                            <Image src="/sponsors/caffettiera.png" alt="Caffettiera Logo" width={2029} height={1291} className="mx-auto max-w-32 md:max-w-44" />
+                        </a>
+                        <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full">
+                            <Image src="/sponsors/aym.webp" alt="AYM Yoga Logo" width={1399} height={1578} className="mx-auto -mt-4 max-w-28 md:max-w-40" />
+                        </a>
+                    </div>
+                    <div className="mt-10 flex justify-center">
+                        <Link href="/sponsor-us" className="flex items-center gap-3 rounded-lg border p-3 text-lg font-semibold">
+                            Become a Sponsor <HiArrowLongRight />
                         </Link>
                     </div>
                 </section>
