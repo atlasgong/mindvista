@@ -40,6 +40,7 @@ This repository follows modified a [conventional commit](https://www.conventiona
 | `resp`     | Changes to improve responsive design.                                                    | `resp: decrease side margins for smaller devices`             |
 | `a11y`     | Accessibility improvements to enhance website usability.                                 | `a11y: add alt text to all homepage images`                   |
 | `ui`       | Visual changes to the site’s appearance (e.g., colors, fonts, spacing adjustments).      | `ui: change button color to match theme`                      |
+| `ux`       | Changes made to improve user experience (e.g., adding loading states).                   | `ux: add nextjs-toploader`                                    |
 | `perf`     | Changes made to improve website performance (e.g., optimizing images or code).           | `perf: lazy-load images on about us page`                     |
 | `refactor` | Code restructuring or cleaning that doesn’t change any functionality.                    | `refactor: reorganize header component files`                 |
 | `seo`      | Changes to improve search engine optimization.                                           | `seo: update meta descriptions for mental wellness page`      |
