@@ -9,8 +9,7 @@ Thank you and happy coding!
 # General Guidelines
 
 [Skip to documentation.](#documentation)
-
-If you are a new developer working on this website, check [GUIDE.md](GUIDE.md) to figure out the backend faster.
+New to this repo? See [GUIDE.md](GUIDE.md) to set up your repo.
 
 Please write clear and concise code. Use [Prettier](https://prettier.io/docs/en/) for formatting. Ensure that files are well-commented when necessary.
 
@@ -77,6 +76,26 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
 
 # Documentation
 
+## Table of Contents
+
+0. [General Guidelines](#general-guidelines)
+    1. [Commit Guidelines](#conventional-commit-guidelines)
+1. [Stack](#stack)
+2. [Payload CMS](#payload-cms)
+3. [Styling](#styling)
+    1. [Colours](#colours)
+    2. [Lexical Rich Text (Payload)](#payload-cms-lexical-rich-text)
+4. [Pages](#pages)
+5. [Search Engine Optimization](#search-engine-optimization-seo)
+    1. [Pages](#pages-1)
+        1. [Clubs and Resources](#clubs--resources)
+6. [Integrations](#integrations)
+    1. [Mailchimp](#mailchimp)
+7. [Error Handling / Common Errors](#error-handling--common-errors)
+8. [Backups](#postgresql-backups-with-aws-s3)
+9. [Favicon](#favicon)
+10. [Archived Documentation](#archived-documentation)
+
 ## Stack
 
 - Payload CMS
@@ -92,9 +111,9 @@ This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/w
 
 ## Styling
 
-### Colors
+### Colours
 
-[Tailwind CSS](https://tailwindcss.com/docs) is used for styling. See the [config](./tailwind.config.js) for colors defined in [src/global.css](src/global.css). Attempt to always use colors defined in these files.
+[Tailwind CSS](https://tailwindcss.com/docs) is used for styling. See the [config](./tailwind.config.js) for colours defined in [src/global.css](src/global.css). Attempt to always use colours defined in these files.
 
 ### Payload CMS' Lexical Rich Text
 
@@ -102,7 +121,7 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
 
 ## Pages
 
-## SEO
+## Search Engine Optimization (SEO)
 
 ### Pages
 
