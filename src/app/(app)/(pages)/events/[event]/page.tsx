@@ -54,20 +54,18 @@ export default async function EventPage({ params }: PageProps) {
         <div className="mx-auto max-w-4xl">
             <div className="rounded-2xl border border-cBorder bg-cBackgroundOffset px-6 pb-3 pt-6 shadow-sm transition-all hover:shadow-md md:px-8 md:pt-8">
                 {/* Header */}
-                <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                        <h1 className="text-2xl font-bold leading-tight text-cText sm:text-3xl lg:text-4xl">{event.title}</h1>
-                        <p className="mt-4 text-base leading-relaxed text-cTextOffset sm:text-lg">{event.description}</p>
-                        {event.instagramPost && (
-                            <a href={event.instagramPost} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-cAccent hover:underline">
-                                <FiInstagram className="h-4 w-4" />
-                                More info on our Instagram
-                                <FiExternalLink className="h-4 w-4" />
-                            </a>
-                        )}
-                    </div>
+                <div className="flex flex-row items-start justify-between">
+                    <h1 className="text-2xl font-bold leading-tight text-cText sm:text-3xl lg:text-4xl">{event.title}</h1>
                     {isOngoing && <OngoingBadge className="flex-shrink-0" />}
                 </div>
+                <p className="mt-4 text-base leading-relaxed text-cTextOffset sm:text-lg">{event.description}</p>
+                {event.instagramPost && (
+                    <a href={event.instagramPost} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-cAccent hover:underline">
+                        <FiInstagram className="h-4 w-4" />
+                        More info on our Instagram
+                        <FiExternalLink className="h-4 w-4" />
+                    </a>
+                )}
                 {event.signUpLink && (
                     <div className="mt-4 flex justify-center">
                         <a href={event.signUpLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-cBorder bg-cBackground px-4 py-2 text-sm font-medium text-cText transition-colors hover:border-cAccent hover:text-cAccent">
@@ -82,7 +80,7 @@ export default async function EventPage({ params }: PageProps) {
                 {/* Event Details */}
                 <div className="mt-8 flex flex-col justify-between gap-6 md:flex-row">
                     {/* Date & Time */}
-                    <div className="mx-auto space-y-3 md:max-w-[25%]">
+                    <div className="space-y-3 md:mx-auto md:max-w-[25%]">
                         <div className="flex items-center gap-2">
                             <FiCalendar className="h-5 w-5 text-cTextOffset" />
                             <h2 className="text-lg font-semibold text-cText">Date & Time</h2>
@@ -91,7 +89,7 @@ export default async function EventPage({ params }: PageProps) {
                     </div>
 
                     {/* Location */}
-                    <div className="mx-auto space-y-3 md:max-w-[33%]">
+                    <div className="space-y-3 md:mx-auto md:max-w-[33%]">
                         <div className="flex items-center gap-2">
                             <FiMapPin className="h-5 w-5 text-cTextOffset" />
                             <h2 className="text-lg font-semibold text-cText">Location</h2>
@@ -101,7 +99,7 @@ export default async function EventPage({ params }: PageProps) {
 
                     {/* Incentive */}
                     {event.incentive && (
-                        <div className="mx-auto space-y-3 md:max-w-[25%]">
+                        <div className="space-y-3 md:mx-auto md:max-w-[25%]">
                             <div className="flex items-center gap-2">
                                 <FiGift className="h-5 w-5 text-cTextOffset" />
                                 <h2 className="text-lg font-semibold text-cText">Incentive</h2>
