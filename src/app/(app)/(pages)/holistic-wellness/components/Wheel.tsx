@@ -63,8 +63,8 @@ export const Wheel: React.FC<WheelProps> = ({ radius = 200, className = "", slic
                 ))}
 
                 {/* center circle with content */}
-                <g className={activeIndex !== null ? 'animate-gentle-pulse' : ''}>
-                    <circle r={centerRadius} fill="white" className="drop-shadow-lg filter" filter="url(#dropShadow)" />
+                <g className={activeIndex !== null ? "animate-gentle-pulse" : ""}>
+                    <circle r={centerRadius * 1.05} fill="white" className="drop-shadow-lg filter" filter="url(#dropShadow)" />
                     <foreignObject x={-centerRadius * 0.8} y={-centerRadius * 0.8} width={centerRadius * 1.6} height={centerRadius * 1.6}>
                         {activeIndex === null ? (
                             // default content when no slice is active
@@ -73,8 +73,8 @@ export const Wheel: React.FC<WheelProps> = ({ radius = 200, className = "", slic
                             </div>
                         ) : (
                             // content when a slice is active
-                            <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full p-4 text-center">
-                                <p className="text-sm leading-snug text-black">{dimensions[activeIndex].description}</p>
+                            <div className="flex h-full w-full items-center justify-center rounded-full text-center">
+                                <p className="text-sm leading-tight text-black">{dimensions[activeIndex].description}</p>
                             </div>
                         )}
                     </foreignObject>

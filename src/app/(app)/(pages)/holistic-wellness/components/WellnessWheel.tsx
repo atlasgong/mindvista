@@ -50,42 +50,42 @@ const WellnessDimension = ({ title, description, position, isVisible }: { title:
 export const wellnessDimensions: WellnessDimension[] = [
     {
         title: "Intellectual",
-        description: "Engaging in creative and mentally stimulating activities.",
+        description: "Broadening your learning, expressing your creativity, and activities that encourage critical thinking which leads to personal growth.",
         color: "violet-500",
     },
     {
         title: "Emotional",
-        description: "Understanding and managing emotions, stress, and mental health.",
+        description: "Understanding, controlling, and expressing emotions in healthy ways while developing your self-awareness.",
         color: "pink-500",
     },
     {
         title: "Occupational",
-        description: "Finding satisfaction and enrichment in work and career pursuits.",
+        description: "Satisfaction & sense of purpose with work, school, and other daily activities. It can strengthen by aligning personal values with professional goals.",
         color: "amber-500",
     },
     {
         title: "Environmental",
-        description: "Creating and maintaining healthy living spaces and connection with nature.",
+        description: "Living in harmony with your surroundings, ensuring sustainability & safety in surrounding areas, and an overall positive relationship with the environment.",
         color: "emerald-500",
     },
     {
         title: "Financial",
-        description: "Managing resources and creating financial security and stability.",
+        description: "Financial wellness is about managing finances wisely, achieving stability, and reducing stress through planning & responsibility, resulting in less financial burden.",
         color: "red-500",
     },
     {
         title: "Spiritual",
-        description: "Exploring meaning, purpose, and connection to something greater.",
+        description: "Exploring personal values, beliefs, and purpose in order to better understand connections beyond oneself.",
         color: "indigo-500",
     },
     {
         title: "Physical",
-        description: "Exercise, nutrition, sleep, and overall physical health maintenance.",
+        description: "Maintaining health through exercise, nutrition, sleep, and health habits supports both mental & physical health.",
         color: "indigo-600",
     },
     {
         title: "Social",
-        description: "Building and maintaining meaningful relationships and support networks.",
+        description: "Focuses on building meaningful relationships with loved ones, fostering a sense of belonging, and maintaining a supportive social network.",
         color: "cyan-500",
     },
 ];
