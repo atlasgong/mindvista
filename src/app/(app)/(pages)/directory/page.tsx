@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { DirectoryCount } from "./components/EntityCount";
+import EntityCount from "./components/EntityCount";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import { Metadata } from "next";
 
@@ -19,7 +19,7 @@ export default function DirectoryPage() {
                         <h2 className="text-2xl font-bold text-cText md:text-3xl">Clubs</h2>
                         <span className="rounded-full bg-cBackgroundOffsetAccent px-3 py-1 text-sm font-medium text-cText md:px-4 md:py-2 md:text-base">
                             <Suspense fallback="... clubs">
-                                <DirectoryCount collection="clubs" />
+                                <EntityCount collection="clubs" />
                             </Suspense>
                         </span>
                     </div>
@@ -38,7 +38,7 @@ export default function DirectoryPage() {
                         <h2 className="text-2xl font-bold text-cText md:text-3xl">Resources</h2>
                         <span className="rounded-full bg-cBackgroundOffsetAccent px-3 py-1 text-sm font-medium text-cText md:px-4 md:py-2 md:text-base">
                             <Suspense fallback="... resources">
-                                <DirectoryCount collection="resources" />
+                                <EntityCount collection="resources" />
                             </Suspense>
                         </span>
                     </div>

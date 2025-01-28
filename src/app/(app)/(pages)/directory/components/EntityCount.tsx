@@ -2,11 +2,18 @@ import { getPayloadClient } from "@/payloadClient";
 
 async function getCount(collection: "clubs" | "resources") {
     const payload = await getPayloadClient();
-    const result = await payload.count({ collection });
+    const result = await payload.count({
+        collection,
+        where: {
+            currentlyActive: {
+                equals: true,
+            },
+        },
+    });
     return result.totalDocs;
 }
 
-export async function DirectoryCount({ collection }: { collection: "clubs" | "resources" }) {
+export default async function EntityCount({ collection }: { collection: "clubs" | "resources" }) {
     const count = await getCount(collection);
     return (
         <>
