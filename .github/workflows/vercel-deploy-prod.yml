@@ -1,10 +1,15 @@
 name: Vercel Production Deployment
-env:
-    VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-    VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
     workflow_dispatch: # manual triggering from Github's UI
     workflow_call: # reusable (able to be called by other workflows)
+        secrets:
+            VERCEL_TOKEN:
+                required: true
+            VERCEL_ORG_ID:
+                required: true
+            VERCEL_PROJECT_ID:
+                required: true
 
 jobs:
     Deploy-Production:
