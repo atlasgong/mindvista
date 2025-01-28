@@ -35,6 +35,7 @@ export default function NewsletterEmailForm() {
         try {
             await addListMember(data.email);
             setIsSubscribed(true);
+            console.log("Someone successfully subscribed to the newsletter via the footer form!");
 
             if (!audioRef.current) {
                 audioRef.current = new Audio("/confirmation-sfx.mp3");
