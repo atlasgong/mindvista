@@ -58,7 +58,9 @@ export default function Home() {
                         </div>
 
                         {/* Event card in bottom left */}
-                        <SplashEventCard />
+                        <div className="absolute bottom-[15vh] left-[10vw] z-10 h-[15vh] w-[20vw]">
+                            <SplashEventCard />
+                        </div>
                     </div>
 
                     <InfoSeparator />
@@ -101,7 +103,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex justify-center">
-                        <Link href="/holistic-wellness" className="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold">
+                        <Link href="/holistic-wellness" className="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
                             Learn More
                         </Link>
                     </div>
@@ -114,7 +116,7 @@ export default function Home() {
                 <section className="px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
                     <HomeEventsSection />
                     <div className="mt-10 flex justify-center">
-                        <Link href="/events" className="flex items-center gap-3 rounded-lg border p-3 text-lg font-semibold">
+                        <Link href="/events" className="flex items-center gap-3 rounded-lg border border-cBorder p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
                             View All Events <HiArrowLongRight />
                         </Link>
                     </div>
@@ -127,15 +129,15 @@ export default function Home() {
                     <h2 className="text-center text-3xl font-bold md:text-4xl">Big Thanks to Our Sponsors</h2>
                     <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">We are incredibly grateful for the support and dedication of our sponsors who believe in our mission.</p>
                     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 items-center justify-items-center gap-4">
-                        <a href="https://www.caffettiera.ca/" target="_blank" className="w-full">
+                        <a href="https://www.caffettiera.ca/" target="_blank" className="w-full transition-all duration-200 hover:scale-110">
                             <Image src="/sponsors/caffettiera.png" alt="Caffettiera Logo" width={2029} height={1291} className="mx-auto max-w-32 md:max-w-44" />
                         </a>
-                        <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full">
+                        <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full transition-all duration-200 hover:scale-110">
                             <Image src="/sponsors/aym.webp" alt="AYM Yoga Logo" width={1399} height={1578} className="mx-auto -mt-4 max-w-28 md:max-w-40" />
                         </a>
                     </div>
                     <div className="mt-10 flex justify-center">
-                        <Link href="/sponsor-us" className="flex items-center gap-3 rounded-lg border p-3 text-lg font-semibold">
+                        <Link href="/sponsor-us" className="flex items-center gap-3 rounded-lg border border-cBorder p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
                             Become a Sponsor <HiArrowLongRight />
                         </Link>
                     </div>

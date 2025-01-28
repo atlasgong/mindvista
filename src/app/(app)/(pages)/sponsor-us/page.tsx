@@ -17,10 +17,10 @@ export default function SponsorPage() {
 
                 {/* Sponsor Logos */}
                 <div className="grid grid-cols-2 grid-rows-1 items-center">
-                    <a href="https://www.caffettiera.ca/" target="_blank">
+                    <a href="https://www.caffettiera.ca/" target="_blank" className="w-full transition-all duration-200 hover:scale-110">
                         <Image src="/sponsors/caffettiera.png" alt="Caffettiera Logo" width={2029} height={1291} className="mx-auto max-w-40 md:max-w-56" />
                     </a>
-                    <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full">
+                    <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full transition-all duration-200 hover:scale-110">
                         <Image src="/sponsors/aym.webp" alt="AYM Yoga Logo" width={1399} height={1578} className="mx-auto -mt-4 max-w-32 md:max-w-44" />
                     </a>
                 </div>
