@@ -13,8 +13,8 @@ export function EventDate({ startDate, endDate, className = "", compact = false 
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    // check if dates are on the same day
-    const isSameDay = start.toDateString() === end.toDateString();
+    // check if dates are on the same day in Montreal timezone
+    const isSameDay = formatInTimeZone(start, montrealTz, "yyyy-MM-dd") === formatInTimeZone(end, montrealTz, "yyyy-MM-dd");
 
     // format dates based on compact prop
     const dateFormat = compact ? "MMM d" : "MMM d, yyyy";
