@@ -135,6 +135,12 @@ function NavLinks(props: NavLinksProps) {
         <nav className={`${props.className} flex flex-${props.flexDirection} font-semibold text-cAccent dark:text-cSoftWhite`}>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
+            <Link href="/holistic-wellness">
+                <span className="flex gap-1 max-lg:flex-col max-lg:leading-9">
+                    <span>Holistic</span>
+                    <span>Wellness</span>
+                </span>
+            </Link>
             <Link href="/directory">Directory</Link>
             <Link href="/events">Events</Link>
         </nav>
