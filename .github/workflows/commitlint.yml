@@ -44,3 +44,5 @@ jobs:
                   fi
 
                   echo "CommitLint from $FROM_HASH to $TO_HASH"
+
+                  npx commitlint --from "$FROM_HASH" --to "$TO_HASH" --verbose
