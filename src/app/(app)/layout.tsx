@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 import { Metadata } from "next";
 import "src/global.css";
@@ -51,11 +52,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body className="min-h-screen bg-cBackground text-cText antialiased">
                 <NextTopLoader showSpinner={false} />
-                {children}
-            </body>
 
-            {/* https://vercel.com/docs/analytics/quickstart#add-the-analytics-component-to-your-app */}
-            <Analytics />
+                {children}
+
+                {/* https://vercel.com/docs/speed-insights/quickstart */}
+                {/* https://vercel.com/docs/analytics/quickstart */}
+                <SpeedInsights />
+                <Analytics />
+            </body>
         </html>
     );
 }
