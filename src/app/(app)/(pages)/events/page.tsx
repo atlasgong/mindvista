@@ -13,7 +13,7 @@ export default function EventsPage() {
                     <p className="px-8 text-xl tracking-tight text-cTextOffset md:px-12 lg:px-28 xl:px-40">View MindVista&apos;s upcoming wellness events at McGill University! Engage in activities that promote mental health and well-being, and stay connected to our supportive student community.</p>
                 </header>
 
-                <Hr className="mb-12" />
+                <Hr className="mx-auto mb-12 max-w-[60vw]" />
 
                 <EventsContent />
             </div>

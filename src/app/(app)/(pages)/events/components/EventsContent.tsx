@@ -24,7 +24,7 @@ export function EventsContent() {
                 <EventsList type="upcoming" className="mx-auto max-w-3xl" />
             </section>
 
-            <Hr />
+            <Hr className="mx-auto lg:max-w-[60vw]" />
 
             {/* Past Events Section */}
             <section>
