@@ -6,10 +6,6 @@ type PayloadDateValidation = (value: string | Date | null | undefined, options: 
 
 export const Events: CollectionConfig = {
     slug: "events",
-    versions: {
-        drafts: true,
-        maxPerDoc: 10,
-    },
     admin: {
         useAsTitle: "title",
         group: "Events",

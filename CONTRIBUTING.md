@@ -113,8 +113,7 @@ This project runs on [Payload CMS](https://payloadcms.com/docs/getting-started/w
 
 Unless explicitly stated below, a collection does not allow for versioning nor drafting. (Note that drafting is dependent on versioning being enabled.)
 
-- The [Events](/src/collections/Events.ts) collection stores 10 versions per entity and allows drafting.
-- The [LegalPages](/src/collections/LegalPages.ts) collection stores 10 versions per entity and allows drafting.
+- there's nothing here cause there ain't no collections allowing versioning nor drafting
 
 ## Styling
 
