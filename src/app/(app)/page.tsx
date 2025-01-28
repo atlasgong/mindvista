@@ -14,7 +14,6 @@ import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbU
 import { HiArrowLongRight } from "react-icons/hi2";
 import Link from "next/link";
 import InfoSeparator from "./components/InfoSeparator";
-import SplashEventCard from "./components/SplashEventCard";
 
 export default function Home() {
     return (
@@ -55,11 +54,6 @@ export default function Home() {
                         <div className="text-md absolute bottom-[20vh] right-[10vw] z-10 max-w-[20vw] text-[2vh] font-semibold text-[#1D1D1B] dark:text-slate-100">
                             <p>Mental wellness is an active process that helps us to build resilience, grow, and flourish.</p>
                             <p className="text-[#1D1D1B]/60 dark:text-slate-400">&mdash; Global Wellness Institute</p>
-                        </div>
-
-                        {/* Event card in bottom left */}
-                        <div className="absolute bottom-[15vh] left-[10vw] z-10 h-[15vh] w-[20vw]">
-                            <SplashEventCard />
                         </div>
                     </div>
 
