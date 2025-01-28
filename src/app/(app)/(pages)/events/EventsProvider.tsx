@@ -48,7 +48,7 @@ export function EventsProvider({ children }: EventsProviderProps) {
             .finally(() => {
                 setIsLoading(false);
             });
-    }, []); // Only fetch on mount
+    }, []); // only fetch on mount
 
     return (
         <EventsContext.Provider

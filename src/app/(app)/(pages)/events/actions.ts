@@ -29,7 +29,14 @@ export async function fetchEvents(filter: "ongoing" | "upcoming" | "past") {
     const events = await payload.find({
         collection: "events",
         where,
-        sort: filter === "past" ? "-dateRanges.0.startDate" : "dateRanges.0.startDate",
+        // Sort orders are set to achieve the following display in UI:
+        // Past events: Newest first (i.e. most recent at top)
+        // Upcoming events: Closest dates first (e.g. January 27 before February 2)
+        // Ongoing events: Most recently started first
+        sort:
+            filter === "upcoming"
+                ? ["dateRanges.startDate", "dateRanges.endDate"] // ascending for upcoming (closer dates first)
+                : ["-dateRanges.startDate", "-dateRanges.endDate"], // descending for past/ongoing (newer dates first)
     });
 
     return events.docs;

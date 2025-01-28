@@ -1,5 +1,6 @@
 "use client";
 
+import Hr from "@/app/(app)/components/Hr";
 import { useEvents } from "../EventsProvider";
 import { EventsList } from "./EventsList";
 
@@ -9,7 +10,7 @@ export function EventsContent() {
 
     return (
         <div className="space-y-16">
-            {/* Ongoing Events Section - Only rendered if there are ongoing events */}
+            {/* Ongoing Events Section - only rendered if there are ongoing events */}
             {hasOngoingEvents && (
                 <section>
                     <h2 className="mb-8 text-center text-2xl font-bold text-cText">Ongoing Events</h2>
@@ -22,6 +23,8 @@ export function EventsContent() {
                 <h2 className="mb-8 text-center text-2xl font-bold text-cText">Upcoming Events</h2>
                 <EventsList type="upcoming" className="mx-auto max-w-3xl" />
             </section>
+
+            <Hr />
 
             {/* Past Events Section */}
             <section>

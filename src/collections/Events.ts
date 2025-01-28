@@ -60,6 +60,7 @@ export const Events: CollectionConfig = {
                     name: "startDate",
                     required: true,
                     type: "date",
+                    index: true,
                     admin: {
                         date: {
                             pickerAppearance: "dayAndTime",
@@ -70,6 +71,7 @@ export const Events: CollectionConfig = {
                     name: "endDate",
                     required: true,
                     type: "date",
+                    index: true,
                     admin: {
                         date: {
                             pickerAppearance: "dayAndTime",

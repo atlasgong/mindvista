@@ -2,6 +2,7 @@ import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import { Metadata } from "next";
 import { EventsProvider } from "./EventsProvider";
 import { EventsContent } from "./components/EventsContent";
+import Hr from "../../components/Hr";
 
 export default function EventsPage() {
     return (
@@ -11,6 +12,8 @@ export default function EventsPage() {
                     <h1 className="mb-2 text-4xl font-bold text-cText">Events</h1>
                     <p className="px-8 text-xl tracking-tight text-cTextOffset md:px-12 lg:px-28 xl:px-40">View MindVista&apos;s upcoming wellness events at McGill University! Engage in activities that promote mental health and well-being, and stay connected to our supportive student community.</p>
                 </header>
+
+                <Hr className="mb-12" />
 
                 <EventsContent />
             </div>
