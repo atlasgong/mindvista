@@ -16,7 +16,7 @@ const teams = {
     marketing: [
         { role: "Social Media Advisor", name: "Abbie Carnahan", pronouns: "she/her", image: "/team/abbie.webp" },
         { role: "Social Media Coordinator", name: "Amanda Borja", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
-        { role: "Marketing and Outreach Coordinator", name: "Paige Metcalf", pronouns: "she/her", image: "/team/avatarPlaceholder.png" },
+        { role: "Marketing and Outreach Coordinator", name: "Paige Metcalf", pronouns: "she/her", image: "/team/paige.webp" },
         // { role: "TikTok Video Content Creator", name: "We're hiring!", pronouns: "", image: "/team/avatarPlaceholder.png" },
     ],
     webContent: [
