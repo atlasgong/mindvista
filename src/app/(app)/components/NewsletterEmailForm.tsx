@@ -16,7 +16,7 @@ export default function NewsletterEmailForm() {
             setIsSubscribed(true); // update subscription status on success
         } catch (error) {
             console.error("Failed to subscribe:", error);
-            alert("There was an error subscribing. Please try again.");
+            alert("There was an error subscribing. Are you sure you aren't already subscribed? If not, please try again later or contact us for support.");
         }
     };
 
