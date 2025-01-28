@@ -12,4 +12,6 @@ This project includes certain open-source software components, each licensed sep
 
 ## Credits
 
-Images: [Jordan Steranka](https://jordansteranka.com/), [Meritt Thomas](https://meritt.me/)
+Images: [Shifaaz Shamoon](https://unsplash.com/@sotti), [Jon (j_mk18)](https://unsplash.com/@j_mk18)
+
+Sounds: [Universfield](https://pixabay.com/users/universfield-28281460)
