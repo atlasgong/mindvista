@@ -36,6 +36,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         `,
                     }}
                 />
+                {/* google site name: https://developers.google.com/search/docs/appearance/site-names */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "WebSite",
+                            name: "MindVista",
+                            url: "https://mindvista.ca/",
+                        }),
+                    }}
+                />
             </head>
             <body className="min-h-screen bg-cBackground text-cText antialiased">
                 <NextTopLoader showSpinner={false} />
