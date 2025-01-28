@@ -7,7 +7,7 @@ export function EventCardSkeleton({ variant = "default" }: EventCardSkeletonProp
     const isFeatured = variant === "featured" || variant === "compactFeatured";
 
     const cardClassName = `
-        group relative overflow-hidden rounded-xl border bg-cBackgroundOffset transition-all
+        group relative overflow-hidden rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all duration-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-800 dark:hover:shadow-blue-950/50
         ${isCompact ? "pt-3 pb-4 px-4" : "p-6"}
         ${isFeatured ? "border-cAccent bg-gradient-to-br from-cBackgroundOffset to-cBackgroundOffsetAccent" : "border-cBorder"}
         ${!isCompact && isFeatured ? "md:p-8" : ""}

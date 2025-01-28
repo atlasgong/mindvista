@@ -43,9 +43,5 @@ export default function SplashEventCard() {
 
     const variant = eventType === "ongoing" ? "compactFeatured" : "compactDefault";
 
-    return (
-        <div className="absolute bottom-[20vh] left-[10vw] z-10 h-[15vh] w-[20vw]">
-            <div className="flex h-full">{isLoading ? <EventCardSkeleton variant={variant} /> : event && <EventCard event={event} variant={variant} />}</div>
-        </div>
-    );
+    return <div className="flex h-full">{isLoading ? <EventCardSkeleton variant={variant} /> : event && <EventCard event={event} variant={variant} />}</div>;
 }
