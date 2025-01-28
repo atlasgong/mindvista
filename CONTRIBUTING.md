@@ -138,7 +138,7 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
 #### Vercel Production Deployment
 
 - **Name**: Vercel Production Deployment
-- **File**: [`reusables/vercel-deploy-prod.yml`](.github/workflows/reusables/vercel-deploy-prod.yml)
+- **File**: [`vercel-deploy-prod.yml`](.github/workflows/vercel-deploy-prod.yml)
 - **Description**: This reusable workflow is designed for deploying to the Vercel production environment.
 - **Triggers**:
     - `workflow_dispatch`: Allows manual triggering from GitHub's UI.
@@ -156,7 +156,7 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
 #### CommitLint
 
 - **Name**: CommitLint
-- **File**: [`reusables/commitlint.yml`](.github/workflows/reusables/commitlint.yml)
+- **File**: [`commitlint.yml`](.github/workflows/commitlint.yml)
 - **Description**: This reusable workflow is used for commit linting to ensure commit messages adhere to the conventional commit guidelines.
 - **Triggers**:
     - `workflow_call`: This workflow can be called by other workflows.
@@ -181,7 +181,7 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
 - **Triggers**: Push or PR on any branch except master
 - **Jobs**:
     - **commitlint**:
-        - Uses the reusable workflow [`reusables/commitlint.yml`](.github/workflows/reusables/commitlint.yml) to validate commit messages.
+        - Uses the reusable workflow [`commitlint.yml`](.github/workflows/commitlint.yml) to validate commit messages.
 
 #### Lint, Build, and Deploy to Vercel
 
@@ -193,10 +193,10 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
     - `pull_request`: Triggered on pull requests to the `master` branch.
 - **Jobs**:
     - **commitlint**:
-        - Uses the reusable workflow [`reusables/commitlint.yml`](.github/workflows/reusables/commitlint.yml) to validate commit messages.
+        - Uses the reusable workflow [`commitlint.yml`](.github/workflows/commitlint.yml) to validate commit messages.
     - **deploy**:
         - Depends on the `commitlint` job, ensuring that commit linting must pass before deployment.
-        - Uses the reusable workflow [`reusables/vercel-deploy-prod.yml`](.github/workflows/reusables/vercel-deploy-prod.yml) to deploy to Vercel production.
+        - Uses the reusable workflow [`vercel-deploy-prod.yml`](.github/workflows/vercel-deploy-prod.yml) to deploy to Vercel production.
 
 ### Scheduled Workflows
 

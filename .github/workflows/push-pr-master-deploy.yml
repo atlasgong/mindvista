@@ -10,8 +10,8 @@ on:
 
 jobs:
     commitlint:
-        uses: ./.github/workflows/resuables/commitlint.yml
+        uses: ./.github/workflows/commitlint.yml
 
     deploy:
         needs: [commitlint] # this ensures commitlint must pass first
-        uses: ./.github/workflows/resuables/vercel-deploy-prod.yml
+        uses: ./.github/workflows/vercel-deploy-prod.yml
