@@ -1,0 +1,13 @@
+name: Lint Commits on Non-Master Branches
+
+on:
+    push:
+        branches-ignore: [master]
+    pull_request:
+        branches-ignore: [master]
+
+jobs:
+    commitlint:
+        uses: ./.github/workflows/resuables/commitlint.yml
+# we don't need to deploy here as vercel is set to automatically generate
+# preview deployments for non-master branches

@@ -1,4 +1,4 @@
-name: Backup Database to S3
+name: Backup Payload Database to S3
 
 on:
     schedule:
@@ -15,7 +15,7 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Install PostgreSQL client
               run: |

@@ -1,0 +1,17 @@
+name: Lint, Build, and Deploy to Vercel
+env:
+    VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+
+jobs:
+    commitlint:
+        uses: ./.github/workflows/resuables/commitlint.yml
+
+    deploy:
+        needs: [commitlint] # this ensures commitlint must pass first
+        uses: ./.github/workflows/resuables/vercel-deploy-prod.yml

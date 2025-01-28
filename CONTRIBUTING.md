@@ -86,15 +86,19 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
     1. [Colours](#colours)
     2. [Lexical Rich Text (Payload)](#payload-cms-lexical-rich-text)
 4. [Pages](#pages)
-5. [Search Engine Optimization](#search-engine-optimization-seo)
+5. [GitHub Actions](#github-actions)
+    1. [Reusable Workflows](#reusable-workflows)
+    2. [On Pull / PR](#on-pull--pr)
+    3. [Scheduled Workflows](#scheduled-workflows)
+6. [Search Engine Optimization](#search-engine-optimization-seo)
     1. [Pages](#pages-1)
         1. [Clubs and Resources](#clubs--resources)
-6. [Integrations](#integrations)
+7. [Integrations](#integrations)
     1. [Mailchimp](#mailchimp)
-7. [Error Handling / Common Errors](#error-handling--common-errors)
-8. [Backups](#postgresql-backups-with-aws-s3)
-9. [Favicon](#favicon)
-10. [Archived Documentation](#archived-documentation)
+8. [Error Handling / Common Errors](#error-handling--common-errors)
+9. [Backups](#postgresql-backups-with-aws-s3)
+10. [Favicon](#favicon)
+11. [Archived Documentation](#archived-documentation)
 
 ## Stack
 
@@ -126,6 +130,83 @@ Unless explicitly stated below, a collection does not allow for versioning nor d
 See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography) for a set of prose classes to style Rich Text from Payload.
 
 ## Pages
+
+## GitHub Actions
+
+### Reusable Workflows
+
+#### Vercel Production Deployment
+
+- **Name**: Vercel Production Deployment
+- **File**: [`reusables/vercel-deploy-prod.yml`](.github/workflows/reusables/vercel-deploy-prod.yml)
+- **Description**: This reusable workflow is designed for deploying to the Vercel production environment.
+- **Triggers**:
+    - `workflow_dispatch`: Allows manual triggering from GitHub's UI.
+    - `workflow_call`: Allows the workflow to be called by other workflows.
+- **Jobs**:
+    - **Deploy-Production**:
+        - **Runs on**: `ubuntu-latest`
+        - **Steps**:
+            1. **Checkout Code**: Uses `actions/checkout@v4` to checkout the repository code.
+            2. **Install Vercel CLI**: Installs the latest version of the Vercel CLI.
+            3. **Pull Environment Information**: Pulls Vercel environment information for production.
+            4. **Build Project Artifacts**: Builds the project artifacts for production.
+            5. **Deploy to Vercel**: Deploys the prebuilt project artifacts to Vercel production.
+
+#### CommitLint
+
+- **Name**: CommitLint
+- **File**: [`reusables/commitlint.yml`](.github/workflows/reusables/commitlint.yml)
+- **Description**: This reusable workflow is used for commit linting to ensure commit messages adhere to the conventional commit guidelines.
+- **Triggers**:
+    - `workflow_call`: This workflow can be called by other workflows.
+- **Jobs**:
+    - **commitlint**:
+        - **Name**: Lint Commits
+        - **Runs on**: `ubuntu-latest`
+        - **Steps**:
+            1. **Checkout Code**: Uses `actions/checkout@v4` to checkout the repository code with full history to access all commits.
+            2. **Set up Node.js**: Uses `actions/setup-node@v4` to set up the Node.js environment with the latest LTS version.
+            3. **Print Versions**: Prints the versions of Git, Node.js, npm, and commitlint.
+            4. **Install Dependencies**: Installs project dependencies using `npm ci`.
+            5. **Validate Commits**: Uses `npx commitlint` to validate commit messages between the current and previous commits.
+
+### On Pull / PR
+
+#### Lint Commits on Non-Master Branches
+
+- **Name**: Lint Commits on Non-Master Branches
+- **File**: [`commitlint-other-branches.yml`](.github/workflows/commitlint-other-branches.yml)
+- **Description**: Enforces conventional commits on non-master branches
+- **Triggers**: Push or PR on any branch except master
+- **Jobs**:
+    - **commitlint**:
+        - Uses the reusable workflow [`reusables/commitlint.yml`](.github/workflows/reusables/commitlint.yml) to validate commit messages.
+
+#### Lint, Build, and Deploy to Vercel
+
+- **Name**: Lint, Build, and Deploy to Vercel
+- **File**: [`push-pr-master-deploy.yml`](.github/workflows/push-pr-master-deploy.yml)
+- **Description**: This workflow automates the process of linting, building, and deploying to Vercel for the master branch.
+- **Triggers**:
+    - `push`: Triggered on pushes to the `master` branch.
+    - `pull_request`: Triggered on pull requests to the `master` branch.
+- **Jobs**:
+    - **commitlint**:
+        - Uses the reusable workflow [`reusables/commitlint.yml`](.github/workflows/reusables/commitlint.yml) to validate commit messages.
+    - **deploy**:
+        - Depends on the `commitlint` job, ensuring that commit linting must pass before deployment.
+        - Uses the reusable workflow [`reusables/vercel-deploy-prod.yml`](.github/workflows/reusables/vercel-deploy-prod.yml) to deploy to Vercel production.
+
+### Scheduled Workflows
+
+#### Backup Payload / PostgreSQL Database
+
+- **Name**: Backup Payload / PostgreSQL Database
+- **File**: [`backup.yml`](.github/workflows/backup.yml)
+- **Description**: This workflow creates nightly backups of the PostgreSQL database and stores them in AWS S3.
+- **Schedule**: Backups are made nightly at 03:42 EST.
+- **More information**: See [PostgreSQL Backups with AWS S3](#postgresql-backups-with-aws-s3).
 
 ## Search Engine Optimization (SEO)
 
@@ -210,13 +291,10 @@ Originally set up with [these instructions](https://joshstrange.com/2024/04/26/n
 
 ### Backups
 
-Backups are made nightly at 03:42 EST.
-
-### Lifecycle
-
-Current versions of objects will be [expired](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html) 30 days after object creation. Noncurrent versions of objects will be [permanently deleted](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html) after 90 days; 10 of the newest noncurrent versions are retained.
-
-![awsS3 lifecycle](docs/awsS3-lifecycle.png)
+- **Schedule**: Backups are made nightly at 03:42 EST with Github Actions. See the [workflow]().
+- **Lifecycle**:
+    - Current versions of objects will be [expired](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html) 30 days after object creation.
+    - Noncurrent versions of objects will be [permanently deleted](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html) after 90 days; 10 of the newest noncurrent versions are retained.
 
 ## Favicon
 
