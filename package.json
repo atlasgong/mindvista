@@ -51,6 +51,7 @@
         "@types/react": "19.0.1",
         "@types/react-dom": "19.0.1",
         "autoprefixer": "^10.4.20",
+        "commitlint-plugin-selective-scope": "^1.0.1",
         "conventional-changelog-atom": "^5.0.0",
         "eslint": "^9.16.0",
         "eslint-config-next": "15.1.0",

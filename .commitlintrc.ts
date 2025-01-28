@@ -7,7 +7,15 @@ const Configuration: UserConfig = {
     formatter: "@commitlint/format",
     rules: {
         "type-enum": [RuleConfigSeverity.Error, "always", ["build", "ci", "cms", "merge", "content", "feat", "fix", "resp", "a11y", "ui", "ux", "perf", "refactor", "seo", "legal", "docs", "other"]],
+        "selective-scope": [
+            RuleConfigSeverity.Error,
+            "always",
+            {
+                build: [null, "deps", "deps-dev"],
+            },
+        ],
     },
+    plugins: ["selective-scope"],
     helpUrl: "https://github.com/atlasgong/mindvista/blob/master/CONTRIBUTING.md",
 };
 

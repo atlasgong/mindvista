@@ -47,6 +47,10 @@ This repository follows modified a [conventional commit](https://www.conventiona
 | `docs`     | Documentation changes, such as README updates, guidelines, or other informational files. | `docs: add commit guidelines for contributors`                |
 | `other`    | If you must...                                                                           | `other: go on a relaxing stroll in outremont`                 |
 
+### Selective Scopes
+
+The `build` type specifically may accept no scope, scope `deps`, or scope `deps-dev`.
+
 ### Example Usage
 
 - **Adding a New Page**: `feat: add a contact page with form`
@@ -186,11 +190,10 @@ See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcs
 #### Lint, Build, and Deploy to Vercel
 
 - **Name**: Lint, Build, and Deploy to Vercel
-- **File**: [`push-pr-master-deploy.yml`](.github/workflows/push-pr-master-deploy.yml)
+- **File**: [`deploy-master.yml`](.github/workflows/deploy-master.yml)
 - **Description**: This workflow automates the process of linting, building, and deploying to Vercel for the master branch.
 - **Triggers**:
-    - `push`: Triggered on pushes to the `master` branch.
-    - `pull_request`: Triggered on pull requests to the `master` branch.
+    - `push`: Triggered on pushes to the `master` branch (includes PR merges into `master`)
 - **Jobs**:
     - **commitlint**:
         - Uses the reusable workflow [`commitlint.yml`](.github/workflows/commitlint.yml) to validate commit messages.
