@@ -80,9 +80,9 @@ export default async function EventPage({ params }: PageProps) {
                 <Hr className="mb-8 mt-6" />
 
                 {/* Event Details */}
-                <div className="mt-8 flex justify-between gap-6">
+                <div className="mt-8 flex flex-col justify-between gap-6 md:flex-row">
                     {/* Date & Time */}
-                    <div className="space-y-3">
+                    <div className="mx-auto space-y-3 md:max-w-[25%]">
                         <div className="flex items-center gap-2">
                             <FiCalendar className="h-5 w-5 text-cTextOffset" />
                             <h2 className="text-lg font-semibold text-cText">Date & Time</h2>
@@ -91,7 +91,7 @@ export default async function EventPage({ params }: PageProps) {
                     </div>
 
                     {/* Location */}
-                    <div className="space-y-3">
+                    <div className="mx-auto space-y-3 md:max-w-[33%]">
                         <div className="flex items-center gap-2">
                             <FiMapPin className="h-5 w-5 text-cTextOffset" />
                             <h2 className="text-lg font-semibold text-cText">Location</h2>
@@ -101,7 +101,7 @@ export default async function EventPage({ params }: PageProps) {
 
                     {/* Incentive */}
                     {event.incentive && (
-                        <div className="space-y-3">
+                        <div className="mx-auto space-y-3 md:max-w-[25%]">
                             <div className="flex items-center gap-2">
                                 <FiGift className="h-5 w-5 text-cTextOffset" />
                                 <h2 className="text-lg font-semibold text-cText">Incentive</h2>
@@ -120,7 +120,9 @@ export default async function EventPage({ params }: PageProps) {
                 {/* Event Graphic */}
                 {typeof event.graphic === "object" && event.graphic?.url && (
                     <div className="mx-auto my-8 flex justify-center md:mt-14">
-                        <img src={event.graphic.url} alt={event.title} className="max-h-[400px] w-auto rounded-lg object-contain" />
+                        {/* these images are pulled from S3 and we will control optimization manually */}
+                        {/* eslint-disable @next/next/no-img-element */}
+                        <img src={event.graphic.url} alt={event.title} className="max-h-[40vh] min-h-[10vh] w-auto rounded-lg object-contain" />
                     </div>
                 )}
 
