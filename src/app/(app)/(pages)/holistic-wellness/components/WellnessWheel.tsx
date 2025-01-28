@@ -70,7 +70,7 @@ export const wellnessDimensions: WellnessDimension[] = [
     },
     {
         title: "Financial",
-        description: "Financial wellness is about managing finances wisely, achieving stability, and reducing stress through planning & responsibility, resulting in less financial burden.",
+        description: "Managing finances wisely, achieving stability, and reducing stress through planning & responsibility, resulting in less financial burden.",
         color: "red-500",
     },
     {
