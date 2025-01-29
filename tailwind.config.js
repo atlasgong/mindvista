@@ -55,8 +55,20 @@ export default {
                         transform: "scale(1)",
                     },
                     "50%": {
-                        backgroundColor: "#16a34a",
-                        boxShadow: "0 0 3px #16a34a",
+                        backgroundColor: "#1CCA5B",
+                        boxShadow: "0 0 3px #1CCA5B",
+                        transform: "scale(1.05)",
+                    },
+                },
+                "badge-shine-dark": {
+                    "0%, 100%": {
+                        backgroundColor: "#23E169",
+                        boxShadow: "0 0 1px #23E169",
+                        transform: "scale(1)",
+                    },
+                    "50%": {
+                        backgroundColor: "#1BC559",
+                        boxShadow: "0 0 3px #1BC559",
                         transform: "scale(1.05)",
                     },
                 },

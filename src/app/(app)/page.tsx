@@ -73,7 +73,7 @@ export default function Home() {
                     </h2>
 
                     <p className="py-6 text-xl font-medium text-cTextOffset md:px-20 lg:px-28">
-                        Welcome to <span className="font-semibold text-cAccent">MindVista</span>, an innovative student-led initiative at McGill University committed to enhancing student wellness and engagement.
+                        Welcome to <span className="font-semibold text-cAccent dark:text-mindvista-50">MindVista</span>, an innovative student-led initiative at McGill University committed to enhancing student wellness and engagement.
                         <span className="hidden md:inline"> Our passionate team of volunteers is devoted to regularly updating our website to simplify the process of accessing essential resources for your well-being. </span>
                     </p>
                 </section>
