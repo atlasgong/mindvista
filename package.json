@@ -1,7 +1,7 @@
 {
     "name": "mindvista",
-    "version": "1.0.0",
-    "description": "The home of mindvista.ca",
+    "version": "2.0.0",
+    "description": "The Home Base of mindvista.ca: Where It All Comes Together",
     "license": "MIT",
     "type": "module",
     "scripts": {
