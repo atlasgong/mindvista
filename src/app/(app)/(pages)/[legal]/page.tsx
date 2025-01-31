@@ -6,6 +6,32 @@ import styles from "./legal.module.css";
 import { Legal, Page } from "@/payload-types";
 import { Metadata } from "next";
 
+// ISR LOGIC START -----------------------------------------------------------------
+
+// set revalidation period to 24 hours
+// i.e. content will be fetched every 24 hours
+export const revalidate = 86400;
+
+// prevent on-demand rendering of unknown paths
+// i.e. all dynamic routes are generated only ONCE on build
+// e.g. adding a new page in Payload will do nothing until the next build
+export const dynamicParams = false;
+
+// generate static params for all legal pages at build time
+export async function generateStaticParams() {
+    const payload = await getPayloadClient();
+    const { docs } = await payload.find({
+        collection: "legal",
+        depth: 1,
+    });
+
+    return docs.map((doc) => ({
+        legal: (doc.page as Page).slug,
+    }));
+}
+
+// ISR LOGIC END -----------------------------------------------------------------
+
 interface Props {
     params: Promise<{
         legal: string;
