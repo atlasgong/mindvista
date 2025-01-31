@@ -64,8 +64,12 @@ function LandingNavBarDesktop() {
                             <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent dark:text-white" size="1.5rem" />
                         ))}
                     </div>
-                    <Link href="/">Home</Link>
-                    <Link href="/about">About</Link>
+                    <Link href="/" className="transition-transform duration-200 hover:scale-110">
+                        Home
+                    </Link>
+                    <Link href="/about" className="transition-transform duration-200 hover:scale-110">
+                        About
+                    </Link>
                 </nav>
 
                 <div className="flex w-1/5 justify-center">
@@ -75,8 +79,12 @@ function LandingNavBarDesktop() {
                 </div>
 
                 <nav className="flex w-2/5 flex-row justify-end gap-10 text-lg font-semibold xl:gap-14 2xl:gap-20">
-                    <Link href="/directory">Directory</Link>
-                    <Link href="/events">Events</Link>
+                    <Link href="/directory" className="transition-transform duration-200 hover:scale-110">
+                        Directory
+                    </Link>
+                    <Link href="/events" className="transition-transform duration-200 hover:scale-110">
+                        Events
+                    </Link>
                     <ThemeIcon />
                 </nav>
             </div>
