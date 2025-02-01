@@ -3,7 +3,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 import { Metadata } from "next";
 import "src/global.css";
-import Head from "next/head";
 
 export const metadata: Metadata = {
     title: {
@@ -16,11 +15,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <Head>
+            <head>
                 <meta name="apple-mobile-web-app-title" content="MindVista" />
                 {/* social media stuff here */}
-            </Head>
-            <head>
                 <script
                     // this script exists to solve the classic FOUC problem; a better solution can surely be found.
                     // suppressHydrationWarning is used as part of this solution
