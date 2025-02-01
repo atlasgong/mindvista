@@ -89,13 +89,18 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
 3. [Styling](#styling)
     1. [Colours](#colours)
     2. [Lexical Rich Text (Payload)](#payload-cms-lexical-rich-text)
-4. [Pages](#pages)
+4. [Routing and Rendering](#rendering)
+    1. [Static Routes](#static-routing)
+    2. [Dynamic Routes](#dynamic-routes)
+    3. [Static Rendering](#static-rendering-aka-ssg-in-the-pages-router)
+    4. [ISR](#incremental-static-regeneration-isr)
+    5. [Dynamic Rendering](#dynamic-rendering-aka-ssr-in-the-pages-router)
 5. [GitHub Actions](#github-actions)
     1. [Reusable Workflows](#reusable-workflows)
     2. [On Pull / PR](#on-pull--pr)
     3. [Scheduled Workflows](#scheduled-workflows)
 6. [Search Engine Optimization](#search-engine-optimization-seo)
-    1. [Pages](#pages-1)
+    1. [Pages](#pages)
         1. [Clubs and Resources](#clubs--resources)
 7. [Integrations](#integrations)
     1. [Mailchimp](#mailchimp)
@@ -133,7 +138,27 @@ Unless explicitly stated below, a collection does not allow for versioning nor d
 
 See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography) for a set of prose classes to style Rich Text from Payload.
 
-## Pages
+## Rendering
+
+### Static Routing
+
+All routes are statically generated on build, by default. If a page is not mentioned below as dynamically routed, it is statically routed (caution as the below is currently a WIP).
+
+### Dynamic Routes
+
+Coming soon...in the meantime, see Next.js' documentation on [Dynamic Routing](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes).
+
+### Static Rendering (aka SSG in the Pages router)
+
+Coming soon...in the meantime, see Next.js' documentation on [Static Rendering](https://nextjs.org/docs/app/building-your-application/rendering/server-components#static-rendering-default).
+
+### Incremental Static Regeneration (ISR)
+
+Coming soon...in the meantime, see Next.js' documentation on [ISR](https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration).
+
+### Dynamic Rendering (aka SSR in the Pages router)
+
+Coming soon...in the meantime, see Next.js' documentation on [Dynamic Rendering](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering).
 
 ## GitHub Actions
 
