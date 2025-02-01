@@ -41,6 +41,7 @@ This repository follows modified a [conventional commit](https://www.conventiona
 | `ui`       | Visual changes to the site’s appearance (e.g., colors, fonts, spacing adjustments).      | `ui: change button color to match theme`                      |
 | `ux`       | Changes made to improve user experience (e.g., adding loading states).                   | `ux: add nextjs-toploader`                                    |
 | `perf`     | Changes made to improve website performance (e.g., optimizing images or code).           | `perf: lazy-load images on about us page`                     |
+| `sec`      | Changes made to fix vulnerabilities or improve security.                                 | `sec: define explicit permissions for github action`          |
 | `refactor` | Code restructuring or cleaning that doesn’t change any functionality.                    | `refactor: reorganize header component files`                 |
 | `seo`      | Changes to improve search engine optimization.                                           | `seo: update meta descriptions for mental wellness page`      |
 | `legal`    | Updates to legal documents, like privacy policies or terms of service.                   | `legal: update privacy policy to include new data use clause` |
