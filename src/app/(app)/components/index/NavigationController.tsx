@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import ThemeIcon from "./ThemeIcon";
+import NavBar from "../NavBar";
+import ThemeIcon from "../ThemeIcon";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -39,7 +39,7 @@ export default function NavigationController() {
 }
 
 import { FaInstagram, FaTiktok } from "react-icons/fa";
-import { SocialMediaLink } from "./SocialMediaLink";
+import { SocialMediaLink } from "../SocialMediaLink";
 
 function LandingNavBarDesktop() {
     const socialLinks = [
