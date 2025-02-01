@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Footer from "./(app)/components/Footer";
+import NavBar from "./(app)/components/NavBar";
 
 const messages = [
     {
@@ -31,13 +33,21 @@ export default function NotFound() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
     return (
-        <div className="mb-[16vmin] mt-[5vh] flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-            <h1 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-[20vmax] font-bold text-transparent dark:to-cText">404</h1>
-            <p className="mb-3 text-xl font-semibold text-cText">{randomMessage.main}</p>
-            <p className="mb-8 text-lg font-medium text-cTextOffset">{randomMessage.sub}</p>
-            <Link href="/" className="inline-block rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-3 font-medium text-cBackground transition-opacity hover:opacity-90 dark:to-cText">
-                Go Home
-            </Link>
-        </div>
+        <>
+            <NavBar />
+
+            <main className="pt-[10vh]">
+                <div className="mb-[16vmin] mt-[5vh] flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
+                    <h1 className="bg-gradient-to-r from-cAccent to-cLightBlue bg-clip-text text-[20vmax] font-bold text-transparent dark:to-cText">404</h1>
+                    <p className="mb-3 text-xl font-semibold text-cText">{randomMessage.main}</p>
+                    <p className="mb-8 text-lg font-medium text-cTextOffset">{randomMessage.sub}</p>
+                    <Link href="/" className="inline-block rounded-lg bg-gradient-to-r from-cAccent to-cLightBlue px-6 py-3 font-medium text-cBackground transition-opacity hover:opacity-90 dark:to-cText">
+                        Go Home
+                    </Link>
+                </div>
+            </main>
+
+            <Footer />
+        </>
     );
 }
