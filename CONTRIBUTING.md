@@ -90,25 +90,26 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
 3. [Styling](#styling)
     1. [Colours](#colours)
     2. [Lexical Rich Text (Payload)](#payload-cms-lexical-rich-text)
-4. [Routing and Rendering](#rendering)
+4. [Layouts](#layouts)
+5. [Routing and Rendering](#rendering)
     1. [Static Routes](#static-routing)
     2. [Dynamic Routes](#dynamic-routes)
     3. [Static Rendering](#static-rendering-aka-ssg-in-the-pages-router)
     4. [ISR](#incremental-static-regeneration-isr)
     5. [Dynamic Rendering](#dynamic-rendering-aka-ssr-in-the-pages-router)
-5. [GitHub Actions](#github-actions)
+6. [GitHub Actions](#github-actions)
     1. [Reusable Workflows](#reusable-workflows)
     2. [On Pull / PR](#on-pull--pr)
     3. [Scheduled Workflows](#scheduled-workflows)
-6. [Search Engine Optimization](#search-engine-optimization-seo)
+7. [Search Engine Optimization](#search-engine-optimization-seo)
     1. [Pages](#pages)
         1. [Clubs and Resources](#clubs--resources)
-7. [Integrations](#integrations)
+8. [Integrations](#integrations)
     1. [Mailchimp](#mailchimp)
-8. [Error Handling / Common Errors](#error-handling--common-errors)
-9. [Backups](#postgresql-backups-with-aws-s3)
-10. [Favicon](#favicon)
-11. [Archived Documentation](#archived-documentation)
+9. [Error Handling / Common Errors](#error-handling--common-errors)
+10. [Backups](#postgresql-backups-with-aws-s3)
+11. [Favicon](#favicon)
+12. [Archived Documentation](#archived-documentation)
 
 ## Stack
 
@@ -138,6 +139,30 @@ Unless explicitly stated below, a collection does not allow for versioning nor d
 ### Payload CMS' Lexical Rich Text
 
 See Tailwind CSS' [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography) for a set of prose classes to style Rich Text from Payload.
+
+## Layouts
+
+There are 3 main layouts, [`RootLayout`](src/app/layout.tsx), [`AppLayout`](<src/app/(app)/layout.tsx>) and [`PageLayout`](<src/app/(app)/(pages)/layout.tsx>)
+
+```bash
+app
+└── (app)
+    ├── (pages)
+        └── layout.tsx # PageLayout
+    └── layout.tsx # AppLayout
+├── (payload)
+    └── layout.tsx # Payload's layout for the admin panel
+├── layout.tsx # RootLayout
+└── not-found.tsx # Acts as if it's under PageLayout (manually enforced)
+```
+
+The `RootLayout` contains nothing but it's children. Adding anything more will break Payload's admin panel.
+
+### Note about `not-found.tsx`
+
+`not-found.tsx` ONLY renders at the top level of `app/`. For that reason, we must extract the RootLayout to also be in said directory, to support `not-found.tsx`.
+
+Thus, `not-found.tsx` mirrors the code found in `AppLayout` and `PageLayout` to "act" as if it fits under the `(pages)` route group. It's not a pretty solution but this is the workaround Next.js allows when working with Payload CMS. With that being said, it is necessary that any changes made to the `AppLayout` or the `PageLayout` are (manually) mirrored in [`not-found.tsx`](src/app/not-found.tsx), and vice versa.
 
 ## Rendering
 
