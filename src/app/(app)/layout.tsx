@@ -12,7 +12,9 @@ export const metadata: Metadata = {
     description: "Discover MindVista - a transformative initiative enhancing student wellness at McGill University. Access mental health resources, on-campus club directories, weekly wellness newsletters, and engaging events designed to support your well-being. Explore holistic solutions for a thriving student life.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: { children: React.ReactNode }) {
+    // CHANGES MADE TO THIS COMPONENT MUST BE MIRRORED IN src/app/not-found.tsx.
+    // See CONTRIBUTING.md#note-about-not-foundtsx
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
