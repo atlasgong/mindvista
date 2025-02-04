@@ -47,7 +47,7 @@ export default function NavBar() {
                     <ThemeIcon />
                     <div className="flex items-center gap-5">
                         {socialLinks.map((link) => (
-                            <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent dark:text-white" size="1.5rem" />
+                            <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent transition-transform hover:scale-110 dark:text-white" size="1.5rem" />
                         ))}
                     </div>
                 </div>
@@ -133,23 +133,30 @@ interface NavLinksProps {
 function NavLinks(props: NavLinksProps) {
     return (
         <nav className={`${props.className} flex flex-${props.flexDirection} font-semibold text-cAccent dark:text-cSoftWhite`}>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
+            <Link href="/">
+                <span className="inline-block transition-transform hover:scale-110">Home</span>
+            </Link>
+            <Link href="/about">
+                <span className="inline-block transition-transform hover:scale-110">About</span>
+            </Link>
             <Link href="/holistic-wellness">
                 <span className="flex gap-1 max-lg:flex-col max-lg:leading-9">
-                    <span>Holistic</span>
-                    <span>Wellness</span>
+                    <span className="inline-block transition-transform hover:scale-110">Holistic Wellness</span>
                 </span>
             </Link>
-            <Link href="/directory">Directory</Link>
-            <Link href="/events">Events</Link>
+            <Link href="/directory">
+                <span className="inline-block transition-transform hover:scale-110">Directory</span>
+            </Link>
+            <Link href="/events">
+                <span className="inline-block transition-transform hover:scale-110">Events</span>
+            </Link>
         </nav>
     );
 }
 
 function LogoButton() {
     return (
-        <Link href="/" className="flex flex-row gap-2 text-left text-cAccent">
+        <Link href="/" className="flex flex-row gap-2 text-left text-cAccent transition-transform hover:scale-110">
             <Image width={164} height={164} className="max-w-12 rounded-full border-4 border-cAccent bg-cAccent dark:border-0 dark:bg-transparent" src="/logoWhite.png" alt="MindVista Logo" priority />
 
             <div className="flex flex-col max-lg:hidden dark:text-white">
