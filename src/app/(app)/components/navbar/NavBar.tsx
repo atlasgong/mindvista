@@ -72,7 +72,7 @@ interface HamburgerProps {
 }
 function Hamburger({ nav, setNav }: HamburgerProps) {
     return (
-        <button className={`${nav ? styles["is-active"] : ""} ${styles.hamburger} ${styles["hamburger--emphatic"]}`} type="button" aria-label="Toggle Navigation Menu" onClick={() => setNav(!nav)}>
+        <button className={`${nav ? styles["is-active"] : ""} ${styles.hamburger} ${styles["hamburger--spin"]}`} type="button" aria-label="Toggle Navigation Menu" aria-controls="navigation" onClick={() => setNav(!nav)}>
             <span className={styles["hamburger-box"]}>
                 <span className={styles["hamburger-inner"]}></span>
             </span>
