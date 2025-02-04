@@ -1,5 +1,5 @@
 import MentalWellnessFact from "./components/index/MentalWellnessFact";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navbar/NavBar";
 import NavigationController from "./components/index/NavigationController";
 import Birds from "./components/index/Birds";
 import Footer from "./components/Footer";

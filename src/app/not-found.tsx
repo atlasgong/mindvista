@@ -4,7 +4,7 @@ import "../global.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
-import NavBar from "./(app)/components/NavBar";
+import NavBar from "./(app)/components/navbar/NavBar";
 import Footer from "./(app)/components/Footer";
 
 const messages = [
