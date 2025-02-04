@@ -133,22 +133,23 @@ interface NavLinksProps {
 function NavLinks(props: NavLinksProps) {
     return (
         <nav className={`${props.className} flex flex-${props.flexDirection} font-semibold text-cAccent dark:text-cSoftWhite`}>
-            <Link href="/">
-                <span className="inline-block transition-transform hover:scale-110">Home</span>
+            <Link href="/" className="inline-block transition-transform hover:scale-110">
+                Home
             </Link>
-            <Link href="/about">
-                <span className="inline-block transition-transform hover:scale-110">About</span>
+            <Link href="/about" className="inline-block transition-transform hover:scale-110">
+                About
             </Link>
-            <Link href="/holistic-wellness">
+            <Link href="/holistic-wellness" className="inline-block transition-transform hover:scale-110">
                 <span className="flex gap-1 max-lg:flex-col max-lg:leading-9">
-                    <span className="inline-block transition-transform hover:scale-110">Holistic Wellness</span>
+                    <span>Holistic</span>
+                    <span>Wellness</span>
                 </span>
             </Link>
-            <Link href="/directory">
-                <span className="inline-block transition-transform hover:scale-110">Directory</span>
+            <Link href="/directory" className="inline-block transition-transform hover:scale-110">
+                Directory
             </Link>
-            <Link href="/events">
-                <span className="inline-block transition-transform hover:scale-110">Events</span>
+            <Link href="/events" className="inline-block transition-transform hover:scale-110">
+                Events
             </Link>
         </nav>
     );
