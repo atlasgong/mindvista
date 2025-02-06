@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import ThemeIcon from "./ThemeIcon";
+import NavBar from "../navbar/NavBar";
+import ThemeIcon from "../ThemeIcon";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -39,7 +39,7 @@ export default function NavigationController() {
 }
 
 import { FaInstagram, FaTiktok } from "react-icons/fa";
-import { SocialMediaLink } from "./SocialMediaLink";
+import { SocialMediaLink } from "../SocialMediaLink";
 
 function LandingNavBarDesktop() {
     const socialLinks = [
@@ -61,22 +61,30 @@ function LandingNavBarDesktop() {
                 <nav className="flex w-2/5 flex-row gap-10 text-lg font-semibold xl:gap-12 2xl:gap-16">
                     <div className="flex items-center gap-8">
                         {socialLinks.map((link) => (
-                            <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent dark:text-white" size="1.5rem" />
+                            <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent transition-transform duration-200 hover:scale-110 dark:text-white" size="1.5rem" />
                         ))}
                     </div>
-                    <Link href="/">Home</Link>
-                    <Link href="/about">About</Link>
+                    <Link href="/" className="transition-transform duration-200 hover:scale-110">
+                        Home
+                    </Link>
+                    <Link href="/about" className="transition-transform duration-200 hover:scale-110">
+                        About
+                    </Link>
                 </nav>
 
                 <div className="flex w-1/5 justify-center">
                     <Link href="/">
-                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-black bg-black dark:border-0 dark:bg-transparent" src="/logoWhite.png" alt="MindVista Logo" />
+                        <Image width={164} height={164} className="h-16 w-16 rounded-full border-4 border-black bg-black transition-transform duration-200 hover:scale-110 dark:border-0 dark:bg-transparent" src="/logoWhite.png" alt="MindVista Logo" />
                     </Link>
                 </div>
 
                 <nav className="flex w-2/5 flex-row justify-end gap-10 text-lg font-semibold xl:gap-14 2xl:gap-20">
-                    <Link href="/directory">Directory</Link>
-                    <Link href="/events">Events</Link>
+                    <Link href="/directory" className="transition-transform duration-200 hover:scale-110">
+                        Directory
+                    </Link>
+                    <Link href="/events" className="transition-transform duration-200 hover:scale-110">
+                        Events
+                    </Link>
                     <ThemeIcon />
                 </nav>
             </div>

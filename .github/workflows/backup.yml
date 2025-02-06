@@ -2,8 +2,8 @@ name: Backup Payload Database to S3
 
 on:
     schedule:
-        - cron: "42 8 * * *" # Run at 08:42 UTC (03:42 EST) every day
-    workflow_dispatch: # Allows manual triggering from GitHub UI
+        - cron: "42 8 * * *" # run at 08:42 UTC (03:42 EST) every day
+    workflow_dispatch: # allows manual triggering from GitHub UI
 
 permissions:
     id-token: write
@@ -31,7 +31,7 @@ jobs:
                   /usr/lib/postgresql/16/bin/pg_dump ${{ secrets.DB_CONNECTION }} | gzip > "${TIMESTAMP}.sql.gz"
 
             - name: Configure AWS credentials from Action OIDC
-              uses: aws-actions/configure-aws-credentials@v1
+              uses: aws-actions/configure-aws-credentials@4fc4975a852c8cd99761e2de1f4ba73402e44dd9 # v4.0.3
               with:
                   aws-region: ${{ secrets.AWS_REGION }}
                   role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/s3-mindvista-postgres-backup-github-actions

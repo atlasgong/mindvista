@@ -19,7 +19,13 @@ const schema = z.object({
 
 type FormFields = z.infer<typeof schema>;
 
+const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY;
+
 export default function ContactForm() {
+    if (!HCAPTCHA_SITE_KEY) {
+        console.error("NEXT_PUBLIC_HCAPTCHA_SITE_KEY NOT DEFINED");
+    }
+
     const {
         register,
         handleSubmit,
@@ -104,8 +110,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex justify-center">
-                {/* this is a fully PUBLIC sitekey given by web3forms. it is SAFE to include it as PLAINTEXT in client side code */}
-                <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" reCaptchaCompat={false} onVerify={onHCaptchaChange} theme={theme} />
+                <HCaptcha sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string} reCaptchaCompat={false} onVerify={onHCaptchaChange} theme={theme} />
             </div>
             {errors.captcha && <div className="text-md text-center text-cRed">{errors.captcha.message}</div>}
 

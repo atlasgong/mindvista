@@ -1,11 +1,11 @@
-import MentalWellnessFact from "./components/MentalWellnessFact";
-import NavBar from "./components/NavBar";
-import NavigationController from "./components/NavigationController";
-import Birds from "./components/Birds";
+import MentalWellnessFact from "./components/index/MentalWellnessFact";
+import NavBar from "./components/navbar/NavBar";
+import NavigationController from "./components/index/NavigationController";
+import Birds from "./components/index/Birds";
 import Footer from "./components/Footer";
 import Hr from "./components/Hr";
 import Image from "next/image";
-import HomeEventsSection from "./components/HomeEventsSection";
+import HomeEventsSection from "./components/index/HomeEventsSection";
 
 import lightThemeImage from "@public/landing/shifaaz-shamoon.webp";
 import darkThemeImage from "@public/landing/jon-j_mk18.webp";
@@ -13,7 +13,7 @@ import darkThemeImage from "@public/landing/jon-j_mk18.webp";
 import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbUserCheck } from "react-icons/tb";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Link from "next/link";
-import InfoSeparator from "./components/InfoSeparator";
+import InfoSeparator from "./components/index/InfoSeparator";
 
 export default function Home() {
     return (
@@ -97,8 +97,8 @@ export default function Home() {
                     </div>
 
                     <div className="flex justify-center">
-                        <Link href="/holistic-wellness" className="rounded-full border-2 border-cText bg-cBackground p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
-                            Learn More
+                        <Link href="/holistic-wellness" className="flex items-center gap-3 rounded-lg border border-cBorder p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
+                            Learn More <HiArrowLongRight />
                         </Link>
                     </div>
                 </section>

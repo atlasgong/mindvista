@@ -1,10 +1,10 @@
 "use client";
 
 import { Event } from "@/payload-types";
-import { fetchEvents } from "../(pages)/events/actions";
+import { fetchEvents } from "../../(pages)/events/actions";
 import { useEffect, useState } from "react";
-import { EventCard } from "../(pages)/events/components/EventCard";
-import { EventCardSkeleton } from "../(pages)/events/components/EventCardSkeleton";
+import { EventCard } from "../../(pages)/events/components/EventCard";
+import { EventCardSkeleton } from "../../(pages)/events/components/EventCardSkeleton";
 
 export default function HomeEventsSection() {
     const [events, setEvents] = useState<Event[]>([]);
