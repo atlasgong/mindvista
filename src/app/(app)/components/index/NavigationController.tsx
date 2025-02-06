@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NavBar from "../navbar/NavBar";
-import ThemeIcon from "../ThemeIcon";
+import ThemeSwitcher from "../switchers/ThemeSwitcher";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -40,6 +40,7 @@ export default function NavigationController() {
 
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { SocialMediaLink } from "../SocialMediaLink";
+import LanguageSwitcher from "../switchers/LanguageSwitcher";
 
 function LandingNavBarDesktop() {
     const socialLinks = [
@@ -85,7 +86,10 @@ function LandingNavBarDesktop() {
                     <Link href="/events" className="transition-transform duration-200 hover:scale-110">
                         Events
                     </Link>
-                    <ThemeIcon />
+                    <div className="flex items-center gap-8">
+                        <ThemeSwitcher />
+                        <LanguageSwitcher />
+                    </div>
                 </nav>
             </div>
         </header>

@@ -32,6 +32,8 @@
         "cross-env": "^7.0.3",
         "date-fns-tz": "^3.2.0",
         "graphql": "^16.8.1",
+        "i18next": "^24.2.2",
+        "i18next-browser-languagedetector": "^8.0.2",
         "next": "15.1.6",
         "nextjs-toploader": "^3.7.15",
         "payload": "^3.20.0",

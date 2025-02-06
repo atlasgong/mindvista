@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 import NavBar from "./(app)/components/navbar/NavBar";
 import Footer from "./(app)/components/Footer";
+import I18nProvider from "./providers/I18nProvider";
 
 const messages = [
     {
@@ -95,21 +96,21 @@ export default function NotFound() {
             </head>
             <body className="min-h-screen bg-cBackground text-cText antialiased">
                 <NextTopLoader showSpinner={false} />
+                <I18nProvider>
+                    {/* APP LAYOUT CHILDREN START */}
+                    {/* PAGES LAYOUT START */}
+                    <NavBar />
 
-                {/* APP LAYOUT CHILDREN START */}
-                {/* PAGES LAYOUT START */}
-                <NavBar />
+                    <main className="pt-[10vh]">
+                        {/* PAGES LAYOUT CHILDREN START */}
+                        <NotFoundComponent />
+                        {/* PAGES LAYOUT CHILDREN END */}
+                    </main>
 
-                <main className="pt-[10vh]">
-                    {/* PAGES LAYOUT CHILDREN START */}
-                    <NotFoundComponent />
-                    {/* PAGES LAYOUT CHILDREN END */}
-                </main>
-
-                <Footer />
-                {/* PAGES LAYOUT END */}
-                {/* APP LAYOUT CHILDREN END  */}
-
+                    <Footer />
+                    {/* PAGES LAYOUT END */}
+                    {/* APP LAYOUT CHILDREN END  */}
+                </I18nProvider>
                 {/* https://vercel.com/docs/speed-insights/quickstart */}
                 {/* https://vercel.com/docs/analytics/quickstart */}
                 <SpeedInsights />

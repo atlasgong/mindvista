@@ -1,0 +1,13 @@
+{
+    "welcome": "Bienvenue à MindVista",
+    "navigation": {
+        "home": "Accueil",
+        "about": "À propos",
+        "contact": "Contact"
+    },
+    "actions": {
+        "submit": "Soumettre",
+        "cancel": "Annuler",
+        "save": "Enregistrer"
+    }
+}

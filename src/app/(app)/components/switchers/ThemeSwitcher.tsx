@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
-export default function ThemeIcon() {
+export default function ThemeSwitcher() {
     const [theme, setTheme] = useState<Theme>(() => {
-        // Only access localStorage on the client side
+        // only access localStorage on the client side
         if (typeof window !== "undefined") {
             const storedTheme = localStorage.getItem("theme") as Theme;
             if (storedTheme) return storedTheme;
@@ -31,7 +31,7 @@ export default function ThemeIcon() {
     }, [theme]);
 
     useEffect(() => {
-        // Sync with system preferences
+        // sync with system preferences
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         const handleChange = (e: MediaQueryListEvent) => {
             if (!localStorage.getItem("theme")) {

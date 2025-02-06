@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 import { Metadata } from "next";
 import "src/global.css";
+import I18nProvider from "../providers/I18nProvider";
 
 export const metadata: Metadata = {
     title: {
@@ -52,9 +53,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </head>
             <body className="min-h-screen bg-cBackground text-cText antialiased">
                 <NextTopLoader showSpinner={false} />
-
-                {children}
-
+                <I18nProvider>{children}</I18nProvider>
                 {/* https://vercel.com/docs/speed-insights/quickstart */}
                 {/* https://vercel.com/docs/analytics/quickstart */}
                 <SpeedInsights />
