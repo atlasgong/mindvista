@@ -77,6 +77,30 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                     });
                 }
 
+                // add virtual Location category for resources
+                if (!isClubDirectory) {
+                    const virtualCategory: ResourceTagCategory = {
+                        id: -1, // use a unique negative ID to avoid conflicts
+                        name: "Location",
+                        createdAt: new Date().toISOString(),
+                        updatedAt: new Date().toISOString(),
+                    };
+
+                    tagsByCat["Location"] = {
+                        id: -1,
+                        name: "Location",
+                        tags: [
+                            {
+                                id: -2, // use a unique negative ID to avoid conflicts
+                                name: "On Campus",
+                                category: virtualCategory,
+                                createdAt: new Date().toISOString(),
+                                updatedAt: new Date().toISOString(),
+                            } as ResourceTag,
+                        ],
+                    };
+                }
+
                 // process tags
                 if (data.tags) {
                     data.tags.forEach((tag: ClubTag | ResourceTag) => {
@@ -137,7 +161,16 @@ export function DirectoryProvider({ children }: DirectoryProviderProps) {
                       return String(tag.id);
                   })
                 : [];
-            const hasAllSelectedTags = Array.from(activeFilters).every((filterId) => itemTagIds.includes(filterId));
+
+            // check each active filter
+            const hasAllSelectedTags = Array.from(activeFilters).every((filterId) => {
+                // special handling for onCampus virtual tag
+                if (filterId === "-2") {
+                    return (item as Resource).onCampus === true;
+                }
+                return itemTagIds.includes(filterId);
+            });
+
             if (!hasAllSelectedTags) return false;
         }
 
