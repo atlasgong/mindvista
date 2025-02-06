@@ -47,8 +47,8 @@ export default buildConfig({
     }),
     sharp,
     i18n: {
-        fallbackLanguage: "en",
         supportedLanguages: { en, fr },
+        fallbackLanguage: "en",
     },
     localization: {
         locales: ["en", "fr"],

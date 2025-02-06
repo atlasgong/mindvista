@@ -21,6 +21,7 @@ export const Events: CollectionConfig = {
             name: "title",
             required: true,
             type: "text",
+            localized: true,
         },
         {
             name: "description",
