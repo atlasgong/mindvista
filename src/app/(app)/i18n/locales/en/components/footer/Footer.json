@@ -1,0 +1,35 @@
+{
+    "newsletter": {
+        "title": "Join Our Wellness Newsletter",
+        "description": "Stay updated with new content, resources and events from MindVista. Unsubscribe anytime — no hard feelings! 🙂"
+    },
+    "links": {
+        "home": "Home",
+        "about": "About",
+        "holisticWellness": "What is Holistic Wellness?",
+        "resourceDirectory": "Resource Directory",
+        "clubDirectory": "Club Directory",
+        "contactUs": "Contact Us"
+    },
+    "mindvista": {
+        "title": "MINDVISTA",
+        "tagline": "Your wellness journey starts here."
+    },
+    "sponsorship": {
+        "desktop": "Want to make a difference in mental wellness?",
+        "mobile": "Make a difference today.",
+        "cta": "Sponsor Us!"
+    },
+    "legal": {
+        "privacyPolicy": "Privacy Policy",
+        "termsConditions": "Terms & Conditions",
+        "copyright": "© {{year}} MindVista. All rights reserved."
+    },
+    "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "tiktok": "TikTok",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    }
+}

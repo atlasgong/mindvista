@@ -20,6 +20,8 @@
         ],
         "paths": {
             "@/*": ["./src/*"],
+            "@i18n": ["./src/app/(app)/i18n"],
+            "@i18n/*": ["./src/app/(app)/i18n/*"],
             "@public/*": ["./public/*"],
             "@lib/*": ["./src/lib/*"],
             "@collections/*": ["./src/collections/*"],

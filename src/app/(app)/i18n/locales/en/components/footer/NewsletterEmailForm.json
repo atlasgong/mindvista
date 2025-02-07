@@ -1,0 +1,14 @@
+{
+    "email": {
+        "placeholder": "Enter your email",
+        "validation": "You must enter a valid email address."
+    },
+    "button": {
+        "subscribe": "Subscribe",
+        "subscribing": "Subscribing...",
+        "subscribed": "Subscribed!"
+    },
+    "error": {
+        "generic": "There was an error subscribing. Are you sure you aren't already subscribed? If not, please try again later or contact us for support."
+    }
+}

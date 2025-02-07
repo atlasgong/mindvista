@@ -1,0 +1,46 @@
+{
+    "emergency": {
+        "dial": "DIAL",
+        "warning": "If you or someone else is in",
+        "warningHighlight": "immediate danger"
+    },
+    "supportLine": {
+        "title": "24/7 Support Line",
+        "description": "Talk to someone anytime, day or night.",
+        "phone": "1-833-456-4566",
+        "provider": "Talk Suicide Canada (Toll Free)",
+        "learnMore": "Learn More"
+    },
+    "guardMe": {
+        "title": "Student Support (GuardMe)",
+        "description": "Free, confidential, emotional support for students.",
+        "phones": {
+            "northAmerica": {
+                "label": "North America",
+                "number": "1-844-451-9700"
+            },
+            "international": {
+                "label": "International",
+                "number": "001-416-380-6578"
+            }
+        },
+        "accessServices": "Access Services"
+    },
+    "nightline": {
+        "title": "SSMU Students' Nightline",
+        "description": "Confidential listening service by students, for students.",
+        "phone": "514-398-6246",
+        "hours": "Available Monday-Sunday, 6PM-3AM",
+        "moreInfo": "More Information"
+    },
+    "peerSupport": {
+        "title": "McGill's Peer Support Centre",
+        "description": "45-minute sessions with trained student supporters.",
+        "services": {
+            "dropIn": "Drop-in sessions available",
+            "booking": "Appointment booking",
+            "navigation": "Resource navigation assistance"
+        },
+        "bookSession": "Book a Session"
+    }
+}

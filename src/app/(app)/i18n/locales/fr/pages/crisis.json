@@ -1,0 +1,46 @@
+{
+    "emergency": {
+        "dial": "COMPOSEZ",
+        "warning": "Si vous ou quelqu'un d'autre êtes en",
+        "warningHighlight": "danger immédiat"
+    },
+    "supportLine": {
+        "title": "Ligne de soutien 24/7",
+        "description": "Parlez à quelqu'un à tout moment, jour et nuit.",
+        "phone": "1-833-456-4566",
+        "provider": "Parlons Suicide Canada (Sans frais)",
+        "learnMore": "En savoir plus"
+    },
+    "guardMe": {
+        "title": "Soutien aux étudiants (GuardMe)",
+        "description": "Soutien émotionnel gratuit et confidentiel pour les étudiants.",
+        "phones": {
+            "northAmerica": {
+                "label": "Amérique du Nord",
+                "number": "1-844-451-9700"
+            },
+            "international": {
+                "label": "International",
+                "number": "001-416-380-6578"
+            }
+        },
+        "accessServices": "Accéder aux services"
+    },
+    "nightline": {
+        "title": "Ligne de nuit des étudiants de l'AÉUM",
+        "description": "Service d'écoute confidentiel par les étudiants, pour les étudiants.",
+        "phone": "514-398-6246",
+        "hours": "Disponible du lundi au dimanche, de 18h à 3h",
+        "moreInfo": "Plus d'informations"
+    },
+    "peerSupport": {
+        "title": "Centre de soutien par les pairs de McGill",
+        "description": "Sessions de 45 minutes avec des étudiants formés.",
+        "services": {
+            "dropIn": "Sessions sans rendez-vous disponibles",
+            "booking": "Prise de rendez-vous",
+            "navigation": "Assistance à la navigation des ressources"
+        },
+        "bookSession": "Réserver une session"
+    }
+}

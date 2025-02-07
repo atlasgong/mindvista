@@ -1,0 +1,14 @@
+{
+    "email": {
+        "placeholder": "Entrez votre courriel",
+        "validation": "Vous devez entrer une adresse courriel valide."
+    },
+    "button": {
+        "subscribe": "S'abonner",
+        "subscribing": "Abonnement en cours...",
+        "subscribed": "Abonné !"
+    },
+    "error": {
+        "generic": "Une erreur s'est produite lors de l'abonnement. Êtes-vous sûr de ne pas être déjà abonné ? Si non, veuillez réessayer plus tard ou nous contacter pour obtenir de l'aide."
+    }
+}

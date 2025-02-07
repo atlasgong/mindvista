@@ -40,6 +40,7 @@ This repository follows modified a [conventional commit](https://www.conventiona
 | `a11y`     | Accessibility improvements to enhance website usability.                                 | `a11y: add alt text to all homepage images`                   |
 | `ui`       | Visual changes to the site’s appearance (e.g., colors, fonts, spacing adjustments).      | `ui: change button color to match theme`                      |
 | `ux`       | Changes made to improve user experience (e.g., adding loading states).                   | `ux: add nextjs-toploader`                                    |
+| `i18n`     | Enhancements for internationalization and localization support.                          | `i18n: cache user language preference in local storage`       |
 | `perf`     | Changes made to improve website performance (e.g., optimizing images or code).           | `perf: lazy-load images on about us page`                     |
 | `sec`      | Changes made to fix vulnerabilities or improve security.                                 | `sec: define explicit permissions for github action`          |
 | `refactor` | Code restructuring or cleaning that doesn’t change any functionality.                    | `refactor: reorganize header component files`                 |
@@ -50,7 +51,8 @@ This repository follows modified a [conventional commit](https://www.conventiona
 
 ### Selective Scopes
 
-The `build` type specifically may accept no scope, scope `deps`, or scope `deps-dev`.
+- The `build` type may accept no scope, scope `deps`, or scope `deps-dev`.
+- The `i18n` type may accept no scope or scope `l10n`.
 
 ### Example Usage
 
@@ -105,7 +107,8 @@ If you would like to add additional commit types, you may edit [/.commitlintrc.t
     1. [Pages](#pages)
         1. [Clubs and Resources](#clubs--resources)
 8. [Integrations](#integrations)
-    1. [Mailchimp](#mailchimp)
+    1. [i18n](#i18n)
+    2. [Mailchimp](#mailchimp)
 9. [Error Handling / Common Errors](#error-handling--common-errors)
 10. [Backups](#postgresql-backups-with-aws-s3)
 11. [Favicon](#favicon)
@@ -290,6 +293,40 @@ export async function generateMetadata(): Promise<Metadata> {
 SEO title and description are respectively pulled from the `title` and `description` fields of Payload's `Clubs` or `Resources` collection.
 
 ## Integrations
+
+### i18n
+
+The project uses i18next and react-i18next for internationalization and localization, to support both English and French. See [https://locize.com/blog/next-app-dir-i18n/](https://locize.com/blog/next-app-dir-i18n/) for documentation.
+
+#### Configuration
+
+Coming soon...
+
+#### Translation Structure
+
+Translations must mirror the component structure in `src/app/(app)/[lng]/`. For example, if you have a component at `src/app/(app)/[lng]/components/footer/NewsletterEmailForm.tsx`, its translations should be at:
+
+```
+src/app/(app)/i18n/locales/
+├── en/
+│   └── components/
+│       └── footer/
+│           └── NewsletterEmailForm.json
+└── fr/
+    └── components/
+        └── footer/
+            └── NewsletterEmailForm.json
+```
+
+Route groups like `(pages)` are treated without the parentheses, e.g. `pages`.
+
+#### French-Specific Styling
+
+A custom Tailwind variant `fr:` is available for French-specific styling. This is particularly useful for adjusting text sizes or layouts when French text is typically longer:
+
+```tsx
+<p className="fr:text-sm text-base">{t("some.translation.key")}</p>
+```
 
 ### Mailchimp
 

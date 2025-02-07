@@ -1,0 +1,35 @@
+{
+    "newsletter": {
+        "title": "Abonnez-vous à notre infolettre bien-être",
+        "description": "Restez informé des nouveaux contenus, ressources et événements de MindVista. Désabonnez-vous à tout moment — sans rancune ! 🙂"
+    },
+    "links": {
+        "home": "Accueil",
+        "about": "À propos",
+        "holisticWellness": "Qu'est-ce que le bien-être holistique ?",
+        "resourceDirectory": "Répertoire des ressources",
+        "clubDirectory": "Répertoire des clubs",
+        "contactUs": "Contactez-nous"
+    },
+    "mindvista": {
+        "title": "MINDVISTA",
+        "tagline": "Votre parcours bien-être commence ici."
+    },
+    "sponsorship": {
+        "desktop": "Vous voulez faire une différence dans le bien-être mental ?",
+        "mobile": "Faites une différence aujourd'hui.",
+        "cta": "Commanditez-nous !"
+    },
+    "legal": {
+        "privacyPolicy": "Politique de confidentialité",
+        "termsConditions": "Conditions d'utilisation",
+        "copyright": "© {{year}} MindVista. Tous droits réservés."
+    },
+    "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "tiktok": "TikTok",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    }
+}
