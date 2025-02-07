@@ -168,7 +168,7 @@ function LegalBar() {
             </div>
             <div className="mt-4 flex grow basis-0 items-center justify-center gap-4 md:mt-0">
                 {socialLinks.map((link) => (
-                    <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-gray-600" />
+                    <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-gray-600 transition-transform duration-200 hover:scale-110" />
                 ))}
             </div>
             <p className="mt-4 grow basis-0 font-medium text-cTextOffset md:mt-0">&copy; {year} MindVista. All rights reserved.</p>
