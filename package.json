@@ -21,6 +21,7 @@
         "@hookform/resolvers": "^3.9.1",
         "@mailchimp/mailchimp_marketing": "^3.0.80",
         "@payloadcms/db-vercel-postgres": "^3.20.0",
+        "@payloadcms/email-resend": "^3.22.0",
         "@payloadcms/next": "^3.20.0",
         "@payloadcms/payload-cloud": "^3.20.0",
         "@payloadcms/richtext-lexical": "^3.20.0",

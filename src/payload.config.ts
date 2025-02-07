@@ -1,5 +1,6 @@
 import { s3Storage } from "@payloadcms/storage-s3";
 import { vercelPostgresAdapter } from "@payloadcms/db-vercel-postgres";
+import { resendAdapter } from "@payloadcms/email-resend";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
@@ -55,6 +56,11 @@ export default buildConfig({
         defaultLocale: "en",
         fallback: true,
     },
+    email: resendAdapter({
+        defaultFromAddress: process.env.RESEND_DEFAULT_EMAIL || "",
+        defaultFromName: "MindVista | Payload CMS",
+        apiKey: process.env.RESEND_API_KEY || "",
+    }),
     plugins: [
         payloadCloudPlugin(),
         s3Storage({
