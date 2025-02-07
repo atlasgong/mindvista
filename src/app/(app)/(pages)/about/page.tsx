@@ -29,7 +29,7 @@ const teams = {
     ],
     content: [
         { role: "Newsletter Content Creator", name: "Gianluca Caporicci", pronouns: "he/him", image: "/team/gianluca.webp" },
-        { role: "French Coordinator", name: "Alizée Cyr-Comeault", pronouns: "", image: "/team/alizee.webp" },
+        { role: "French Coordinator", name: "Alizée Cyr-Comeault", pronouns: "she/her", image: "/team/alizee.webp" },
     ],
     founders: [
         { role: "Founder", name: "Safiia Abdulkadyrova", pronouns: "she/her", image: "/team/safiia-abdulkadyrova.webp" },
