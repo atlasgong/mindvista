@@ -37,9 +37,9 @@ export default function Home() {
 
                         {/* Column Image */}
                         <div className="absolute inset-0 left-1/2 w-[25vw] -translate-x-1/2 transform">
-                            <Image src={lightThemeImage} alt="Waves on the beach." className="h-full w-full object-cover dark:hidden" />
+                            <Image priority src={lightThemeImage} alt="Waves on the beach." className="h-full w-full object-cover dark:hidden" />
                             <div className="hidden dark:inline">
-                                <Image src={darkThemeImage} alt="A mountain range with a big blue sky." className="h-full w-full object-cover" />
+                                <Image priority src={darkThemeImage} alt="A mountain range with a big blue sky." className="h-full w-full object-cover" />
                                 <div className="absolute inset-0 bg-black/30"></div>
                             </div>
                         </div>
