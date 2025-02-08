@@ -74,7 +74,7 @@ export default function AboutPage() {
 
             {/* Photos sectioned by Team */}
             <TeamSection title="Leadership & Coordination Team" members={teams.leadership} />
-            <TeamSection title="Marketing + Social Media Team" members={teams.marketing} />
+            <TeamSection title="Marketing & Social Media Team" members={teams.marketing} />
             <TeamSection title="Website Content Team" members={teams.webContent} />
             <TeamSection title="Website Development Team" members={teams.development} />
             <TeamSection title="Newsletter Content Creators" members={teams.content} />
