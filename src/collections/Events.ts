@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { validateURLWithProtocol, validateInstagramURL } from "@lib/validations";
+import { canEditContent, canEditFrenchContent } from "@lib/access";
 
 // this replicates Payload's internal DateFieldValidation type
 type PayloadDateValidation = (value: string | Date | null | undefined, options: { siblingData?: { startDate?: string } }) => string | true | Promise<string | true>;
@@ -10,27 +11,43 @@ export const Events: CollectionConfig = {
         useAsTitle: "title",
         group: "Events",
     },
+    access: {
+        create: canEditContent,
+        delete: canEditContent,
+    },
     fields: [
         {
             name: "slug",
             type: "text",
             required: true,
             unique: true,
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "title",
             required: true,
             type: "text",
             localized: true,
+            access: {
+                update: canEditFrenchContent,
+            },
         },
         {
             name: "description",
             required: true,
             type: "textarea",
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "incentive",
             type: "text",
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "limitedAvailability",
@@ -38,6 +55,9 @@ export const Events: CollectionConfig = {
             label: "Limited quantity?",
             admin: {
                 description: "Check this if you cannot guarantee every attendee will receive the incentive (e.g. limited stock).",
+            },
+            access: {
+                update: canEditContent,
             },
         },
         {
@@ -47,6 +67,9 @@ export const Events: CollectionConfig = {
             admin: {
                 description: "Check this if the incentive is not guaranteed (e.g., chance to win a prize).",
             },
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "dateRanges",
@@ -55,6 +78,9 @@ export const Events: CollectionConfig = {
             minRows: 1,
             admin: {
                 description: "Add one or more date ranges for this event",
+            },
+            access: {
+                update: canEditContent,
             },
             fields: [
                 {
@@ -94,6 +120,9 @@ export const Events: CollectionConfig = {
             name: "location",
             required: true,
             type: "text",
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "locationLink",
@@ -102,6 +131,9 @@ export const Events: CollectionConfig = {
                 description: "The full URL to the location (e.g., Google Maps link). Must start with http:// or https://",
             },
             validate: validateURLWithProtocol,
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "signUpLink",
@@ -110,6 +142,9 @@ export const Events: CollectionConfig = {
                 description: "The registration/sign up URL for this event. Must start with http:// or https://",
             },
             validate: validateURLWithProtocol,
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "instagramPost",
@@ -118,11 +153,17 @@ export const Events: CollectionConfig = {
                 description: "Link to an Instagram post.",
             },
             validate: validateInstagramURL,
+            access: {
+                update: canEditContent,
+            },
         },
         {
             name: "graphic",
             type: "upload",
             relationTo: "media",
+            access: {
+                update: canEditContent,
+            },
         },
     ],
 };

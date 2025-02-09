@@ -1,11 +1,17 @@
 import type { CollectionConfig } from "payload";
 import { validateURL } from "@lib/validations";
+import { canEditContent } from "@lib/access";
 
 export const Resources: CollectionConfig = {
     slug: "resources",
     admin: {
         useAsTitle: "title",
         group: "Resources",
+    },
+    access: {
+        create: canEditContent,
+        update: canEditContent,
+        delete: canEditContent,
     },
     fields: [
         {

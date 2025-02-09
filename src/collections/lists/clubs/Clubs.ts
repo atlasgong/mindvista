@@ -1,11 +1,17 @@
 import type { CollectionConfig } from "payload";
 import { validateURL, validateFacebookURL, validateInstagramURL } from "@lib/validations";
+import { canEditContent } from "@lib/access";
 
 export const Clubs: CollectionConfig = {
     slug: "clubs",
     admin: {
         useAsTitle: "title",
         group: "Clubs",
+    },
+    access: {
+        create: canEditContent,
+        update: canEditContent,
+        delete: canEditContent,
     },
     fields: [
         {

@@ -1,10 +1,16 @@
 import type { CollectionConfig } from "payload";
+import { canEditContent } from "@lib/access";
 
 export const ResourceTags: CollectionConfig = {
     slug: "resource-tags",
     admin: {
         useAsTitle: "name",
         group: "Resources",
+    },
+    access: {
+        create: canEditContent,
+        update: canEditContent,
+        delete: canEditContent,
     },
     fields: [
         {
