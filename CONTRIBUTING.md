@@ -4,7 +4,7 @@ Please make an effort to follow our guidelines and conventions to help us keep o
 
 Thank you and happy coding!
 
-— Atlas ❤️
+— Atlas and Murad ❤️
 
 # General Guidelines
 
