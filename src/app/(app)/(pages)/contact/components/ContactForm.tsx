@@ -10,7 +10,7 @@ import useWeb3Forms from "@web3forms/react";
 // define form scheme for input validation
 const schema = z.object({
     name: z.string().min(2, { message: "Must be at least 2 characters long." }).max(64, { message: "Must be at most 64 characters long." }).trim(),
-    organization: z.optional(z.string().min(1, { message: "Must be at least 1 character long." }).max(32, { message: "Must be at most 32 characters long." }).trim()),
+    organization: z.optional(z.string().max(32, { message: "Must be at most 32 characters long." }).trim()),
     email: z.string().email({ message: "You must enter a valid email address." }).trim(),
     subject: z.string().min(4, { message: "Must be at least 4 characters long." }).max(78, { message: "Subject line must not be longer than 78 characters." }).trim(),
     message: z.string().min(50, { message: "Please enter at least 50 characters." }).max(2048, { message: "Message cannot be longer than 2048 characters." }),
