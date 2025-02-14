@@ -107,16 +107,7 @@ export default function Home() {
                 <Hr className="mx-[25vw] my-16" />
 
                 {/* EVENTS SECTION */}
-                <section className="px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
-                    <HomeEventsSection />
-                    <div className="mt-10 flex justify-center">
-                        <Link href="/events" className="flex items-center gap-3 rounded-lg border border-cBorder p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
-                            View All Events <HiArrowLongRight />
-                        </Link>
-                    </div>
-                </section>
-
-                <Hr className="mx-[25vw] my-16" />
+                <HomeEventsSection />
 
                 {/* SPONSORS SECTION */}
                 <section className="mb-16 px-[5vw] md:px-[7.5vw] lg:px-[10vw]">
