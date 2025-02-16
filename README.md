@@ -24,7 +24,8 @@ This project includes certain open-source software components, each licensed sep
 
 - For **general inquiries** or **suggestions** regarding the **repository**, **code**, or **web app**, create an issue [here](https://github.com/atlasgong/mindvista/issues/new).
 - For **security-related matters** regarding the code you see in this repository, privately report a vulnerability [here](https://github.com/atlasgong/mindvista/security/advisories/new).
-- For **private matters** regarding the **respository**, **code**, or **web app**, contact Atlas directly: [mindvista@atlasgong.dev](mailto:mindvista@atlasgong.dev).
+- For **private matters** regarding the **respository**, **code**, or **web app**, contact Atlas or Murad directly: [mindvista@atlasgong.dev](mailto:mindvista@atlasgong.dev).
+  [murad.novruzov1899@gmail.com](mailto:murad.novruzov1899@gmail.com)
 - For **all other inquiries**, contact MindVista [here](https://mindvista.ca/contact).
 
 ## Credits
