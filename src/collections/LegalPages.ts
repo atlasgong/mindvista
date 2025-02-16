@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { canEditContent, denyAccess, denyFieldAccess } from "@lib/access";
+import { canEditContent, canEditFrenchContent, denyAccess, denyAccessField } from "@lib/access";
 
 export const LegalPages: CollectionConfig = {
     slug: "legal",
@@ -9,7 +9,6 @@ export const LegalPages: CollectionConfig = {
     },
     access: {
         create: denyAccess,
-        update: canEditContent,
         delete: denyAccess,
     },
     fields: [
@@ -19,13 +18,28 @@ export const LegalPages: CollectionConfig = {
             type: "relationship",
             relationTo: "pages", // reference the parent collection
             access: {
-                update: denyFieldAccess,
+                update: denyAccessField,
             },
         },
         {
             name: "content",
+            label: "Content - En",
             required: true,
             type: "richText",
+            access: {
+                update: canEditContent,
+            },
+        },
+        {
+            name: "contentFr",
+            label: "Content - Fr",
+            required: false,
+            type: "richText",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
+            },
         },
     ],
 };

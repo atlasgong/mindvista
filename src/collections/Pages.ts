@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { denyAccess, canEditContent, denyFieldAccess } from "@/lib/access";
+import { denyAccess, canEditContent, denyAccessField, canEditFrenchContent } from "@/lib/access";
 
 export const Pages: CollectionConfig = {
     slug: "pages",
@@ -9,7 +9,6 @@ export const Pages: CollectionConfig = {
     },
     access: {
         create: denyAccess,
-        update: canEditContent,
         delete: denyAccess,
     },
     fields: [
@@ -19,19 +18,48 @@ export const Pages: CollectionConfig = {
             required: true,
             unique: true,
             access: {
-                update: denyFieldAccess,
+                update: denyAccessField,
             },
         },
         {
             name: "title",
+            label: "Title - En",
             required: true,
             type: "text",
+            access: {
+                update: canEditContent,
+            },
+        },
+        {
+            name: "titleFr",
+            label: "Title - Fr",
+            required: false,
+            type: "text",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
+            },
         },
         {
             name: "seoDescription",
-            label: "SEO Description",
+            label: "SEO Description - En",
             required: true,
             type: "text",
+            access: {
+                update: canEditContent,
+            },
+        },
+        {
+            name: "seoDescriptionFr",
+            label: "SEO Description - Fr",
+            required: false,
+            type: "text",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
+            },
         },
     ],
 };

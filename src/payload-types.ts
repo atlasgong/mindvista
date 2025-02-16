@@ -102,7 +102,9 @@ export interface Page {
   id: number;
   slug: string;
   title: string;
+  titleFr?: string | null;
   seoDescription: string;
+  seoDescriptionFr?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -128,6 +130,21 @@ export interface Legal {
     };
     [k: string]: unknown;
   };
+  contentFr?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -138,6 +155,7 @@ export interface Legal {
 export interface Media {
   id: number;
   alt: string;
+  altFr?: string | null;
   /**
    * Describe the purpose of this entity / where it is used.
    */
@@ -163,8 +181,11 @@ export interface Event {
   id: number;
   slug: string;
   title: string;
+  titleFr?: string | null;
   description: string;
+  descriptionFr?: string | null;
   incentive?: string | null;
+  incentiveFr?: string | null;
   /**
    * Check this if you cannot guarantee every attendee will receive the incentive (e.g. limited stock).
    */
@@ -185,6 +206,7 @@ export interface Event {
     id?: string | null;
   }[];
   location: string;
+  locationFr?: string | null;
   /**
    * The full URL to the location (e.g., Google Maps link). Must start with http:// or https://
    */
@@ -209,7 +231,9 @@ export interface Club {
   id: number;
   slug: string;
   title: string;
+  titleFr?: string | null;
   description: string;
+  descriptionFr?: string | null;
   website?: string | null;
   /**
    * Does this club have a sign-up link for their newsletter?
@@ -259,18 +283,23 @@ export interface Resource {
   id: number;
   slug: string;
   title: string;
+  titleFr?: string | null;
   description: string;
+  descriptionFr?: string | null;
   website?: string | null;
   /**
    * Does this resource have a sign-up link for their newsletter?
    */
   newsletter?: string | null;
   insuranceDetails?: string | null;
+  insuranceDetailFr?: string | null;
   insuranceProviders?:
     | {
         insuranceProvider: {
           name: string;
+          nameFr?: string | null;
           description?: string | null;
+          descriptionFr?: string | null;
           id?: string | null;
         }[];
         id?: string | null;
@@ -279,6 +308,7 @@ export interface Resource {
   email?: string | null;
   phoneNumber?: string | null;
   location?: string | null;
+  locationFr?: string | null;
   channelOnline?: boolean | null;
   channelTelephone?: boolean | null;
   channelInPerson?: boolean | null;
@@ -426,7 +456,9 @@ export interface UsersSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
+  titleFr?: T;
   seoDescription?: T;
+  seoDescriptionFr?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -437,6 +469,7 @@ export interface PagesSelect<T extends boolean = true> {
 export interface LegalSelect<T extends boolean = true> {
   page?: T;
   content?: T;
+  contentFr?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -446,6 +479,7 @@ export interface LegalSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  altFr?: T;
   purpose?: T;
   prefix?: T;
   updatedAt?: T;
@@ -467,8 +501,11 @@ export interface MediaSelect<T extends boolean = true> {
 export interface EventsSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
+  titleFr?: T;
   description?: T;
+  descriptionFr?: T;
   incentive?: T;
+  incentiveFr?: T;
   limitedAvailability?: T;
   isChance?: T;
   dateRanges?:
@@ -479,6 +516,7 @@ export interface EventsSelect<T extends boolean = true> {
         id?: T;
       };
   location?: T;
+  locationFr?: T;
   locationLink?: T;
   signUpLink?: T;
   instagramPost?: T;
@@ -493,7 +531,9 @@ export interface EventsSelect<T extends boolean = true> {
 export interface ClubsSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
+  titleFr?: T;
   description?: T;
+  descriptionFr?: T;
   website?: T;
   newsletter?: T;
   email?: T;
@@ -518,10 +558,13 @@ export interface ClubsSelect<T extends boolean = true> {
 export interface ResourcesSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
+  titleFr?: T;
   description?: T;
+  descriptionFr?: T;
   website?: T;
   newsletter?: T;
   insuranceDetails?: T;
+  insuranceDetailFr?: T;
   insuranceProviders?:
     | T
     | {
@@ -529,7 +572,9 @@ export interface ResourcesSelect<T extends boolean = true> {
           | T
           | {
               name?: T;
+              nameFr?: T;
               description?: T;
+              descriptionFr?: T;
               id?: T;
             };
         id?: T;
@@ -537,6 +582,7 @@ export interface ResourcesSelect<T extends boolean = true> {
   email?: T;
   phoneNumber?: T;
   location?: T;
+  locationFr?: T;
   channelOnline?: T;
   channelTelephone?: T;
   channelInPerson?: T;

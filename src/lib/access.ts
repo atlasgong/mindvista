@@ -22,7 +22,7 @@ export const isContentEditorFr: FieldAccess = ({ req }) => {
 
 // PERMISSIONS START BELOW ------------
 
-export const denyFieldAccess: FieldAccess = () => {
+export const denyAccessField: FieldAccess = () => {
     return false;
 };
 

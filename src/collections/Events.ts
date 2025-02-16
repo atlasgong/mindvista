@@ -27,15 +27,27 @@ export const Events: CollectionConfig = {
         },
         {
             name: "title",
+            label: "Title - En",
             required: true,
             type: "text",
-            localized: true,
             access: {
+                update: canEditContent,
+            },
+        },
+        {
+            name: "titleFr",
+            label: "Title - Fr",
+            required: false,
+            type: "text",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
                 update: canEditFrenchContent,
             },
         },
         {
             name: "description",
+            label: "Description - En",
             required: true,
             type: "textarea",
             access: {
@@ -43,10 +55,32 @@ export const Events: CollectionConfig = {
             },
         },
         {
+            name: "descriptionFr",
+            label: "Description - Fr",
+            required: false,
+            type: "textarea",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
+            },
+        },
+        {
             name: "incentive",
+            label: "Incentive - En",
             type: "text",
             access: {
                 update: canEditContent,
+            },
+        },
+        {
+            name: "incentiveFr",
+            label: "Incentive - Fr",
+            type: "text",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
             },
         },
         {
@@ -118,10 +152,22 @@ export const Events: CollectionConfig = {
         },
         {
             name: "location",
+            label: "Location - En",
             required: true,
             type: "text",
             access: {
                 update: canEditContent,
+            },
+        },
+        {
+            name: "locationFr",
+            label: "Location - Fr",
+            required: false,
+            type: "text",
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
             },
         },
         {
