@@ -26,7 +26,7 @@ export default function TeamSection(props: Props) {
                         key={member.name}
                         className={`flex w-full flex-col items-center rounded-xl bg-cBackgroundOffset p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] ${
                             isMarketingTeam
-                                ? 'lg:w-[calc(50%-1rem)]'
+                                ? 'lg:w-[calc(33.333%-1rem)]'  // Adjusted width for marketing team
                                 : 'lg:w-[calc(33.333%-1.34rem)]'
                         } dark:bg-mindvista-950`}
                     >
