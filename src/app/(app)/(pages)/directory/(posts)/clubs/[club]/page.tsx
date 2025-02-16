@@ -91,8 +91,6 @@ export default async function ClubPage({ params }: Props) {
                                         <Link href={club.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cAccent transition-colors hover:text-cPurple">
                                             <FiFacebook className="h-5 w-5 flex-shrink-0" />
                                             <span className="font-medium">Facebook</span>
-                                            <span className="text-cTextOffset transition-transform group-hover:translate-x-1">→</span>
-                                            <span className="hidden truncate break-all text-sm text-cTextOffset sm:inline-block">{club.facebook}</span>
                                         </Link>
                                     </div>
                                 )}
@@ -101,8 +99,6 @@ export default async function ClubPage({ params }: Props) {
                                         <Link href={club.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cAccent transition-colors hover:text-cPurple">
                                             <FiInstagram className="h-5 w-5 flex-shrink-0" />
                                             <span className="font-medium">Instagram</span>
-                                            <span className="text-cTextOffset transition-transform group-hover:translate-x-1">→</span>
-                                            <span className="hidden truncate break-all text-sm text-cTextOffset sm:inline-block">{club.instagram}</span>
                                         </Link>
                                     </div>
                                 )}
@@ -111,8 +107,6 @@ export default async function ClubPage({ params }: Props) {
                                         <Link href={social.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cAccent transition-colors hover:text-cPurple">
                                             <FiLink className="h-5 w-5 flex-shrink-0" />
                                             <span className="font-medium">Others</span>
-                                            <span className="text-cTextOffset transition-transform group-hover:translate-x-1">→</span>
-                                            <span className="hidden truncate break-all text-sm text-cTextOffset sm:inline-block">{social.link}</span>
                                         </Link>
                                     </div>
                                 ))}
