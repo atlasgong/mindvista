@@ -126,7 +126,7 @@ export default function ContactForm() {
                 </div>
             )}
 
-            <button type="submit" disabled={isSubmitting} className={`w-full rounded-lg bg-gradient-to-r from-cPurple to-cLightBlue py-3 font-semibold text-cSoftWhite transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto md:px-8 ${isSubmitting ? "relative text-transparent" : ""}`}>
+            <button type="submit" disabled={isSubmitting} className={`w-full rounded-lg bg-gradient-to-r from-cPurple to-cLightBlue py-3 font-semibold text-cSoftWhite transition-all duration-200 hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto md:px-8 ${isSubmitting ? "relative text-transparent" : ""}`}>
                 Send Message
                 {isSubmitting && (
                     <div className="absolute inset-0 flex items-center justify-center">
