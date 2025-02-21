@@ -94,11 +94,15 @@ interface NavigatorExtended extends Navigator {
     msMaxTouchPoints?: number; // optional because not all browsers support it
 }
 
+interface WellnessWheelProps {
+    wellnessDimensions: WellnessDimension[];
+}
+
 /**
  * main wellness wheel component that handles interactions and state management
  * supports both touch and mouse-based interactions
  */
-export function WellnessWheel() {
+export function WellnessWheel({ wellnessDimensions }: WellnessWheelProps) {
     const [activeSlice, setActiveSlice] = useState<number | null>(null);
     const [isTouch, setIsTouch] = useState(false);
 
