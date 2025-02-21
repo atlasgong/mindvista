@@ -27,12 +27,52 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
-    serverURL: "https://mindvista.ca",
+    serverURL: process.env.SERVER_URL,
     telemetry: false,
     admin: {
         user: Users.slug,
         importMap: {
             baseDir: path.resolve(dirname),
+        },
+        livePreview: {
+            breakpoints: [
+                {
+                    name: "GalaxyS10",
+                    label: "Galaxy S10",
+                    width: 360,
+                    height: 760,
+                },
+                {
+                    name: "iPhone13Pro",
+                    label: "iPhone 13 Pro",
+                    width: 390,
+                    height: 844,
+                },
+                {
+                    name: "iPadPortrait",
+                    label: "iPad (Portait)",
+                    width: 810,
+                    height: 1080,
+                },
+                {
+                    name: "iPadLandscape",
+                    label: "iPad (Landscape)",
+                    width: 1080,
+                    height: 810,
+                },
+                {
+                    name: "macbookPro",
+                    label: "MacBook Pro",
+                    width: 1512,
+                    height: 982,
+                },
+                {
+                    name: "chromebook",
+                    label: "Chromebook",
+                    width: 1366,
+                    height: 768,
+                },
+            ],
         },
     },
     collections: [Users, Pages, LegalPages, Media, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],

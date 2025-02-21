@@ -1,3 +1,5 @@
+import { RefreshRouteOnSave } from "@/app/(app)/components/RefreshRouteOnSave";
+import { Fragment } from "react";
 import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -52,7 +54,8 @@ export default async function ResourcePage({ params }: Props) {
     const hasInsurance = resource.insuranceDetails || (resource.insuranceProviders && resource.insuranceProviders.length > 0);
 
     return (
-        <>
+        <Fragment>
+            <RefreshRouteOnSave />
             <PostHeader
                 title={resource.title}
                 description={resource.description}
@@ -164,6 +167,6 @@ export default async function ResourcePage({ params }: Props) {
 
             {/* Last Updated */}
             <LastUpdatedSection updatedAt={resource.updatedAt} />
-        </>
+        </Fragment>
     );
 }

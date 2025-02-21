@@ -10,6 +10,9 @@ export const Events: CollectionConfig = {
     admin: {
         useAsTitle: "title",
         group: "Events",
+        livePreview: {
+            url: ({ data }) => `${process.env.NEXT_PUBLIC_SERVER_URL}/events/${data.slug}`,
+        },
     },
     access: {
         create: canEditContent,
