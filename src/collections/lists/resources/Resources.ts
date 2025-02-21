@@ -7,6 +7,9 @@ export const Resources: CollectionConfig = {
     admin: {
         useAsTitle: "title",
         group: "Resources",
+        livePreview: {
+            url: ({ data }) => `${process.env.NEXT_PUBLIC_SERVER_URL}/directory/resources/${data.slug}`,
+        },
     },
     access: {
         create: canEditContent,

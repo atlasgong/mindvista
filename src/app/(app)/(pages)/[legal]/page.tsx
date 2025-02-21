@@ -1,3 +1,5 @@
+import { RefreshRouteOnSave } from "@/app/(app)/components/RefreshRouteOnSave";
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { getPayloadClient } from "@/payloadClient";
 import { RichText } from "@payloadcms/richtext-lexical/react";
@@ -74,10 +76,13 @@ export default async function LegalPage({ params }: Props) {
     }
 
     return (
-        <section className="rounded-xl px-[10vw] py-[10vh] md:px-[15vw] lg:px-[20vw]">
-            <article className={styles.legalContent}>
-                <RichText data={page.content as SerializedEditorState} />
-            </article>
-        </section>
+        <Fragment>
+            <RefreshRouteOnSave />
+            <section className="rounded-xl px-[10vw] py-[10vh] md:px-[15vw] lg:px-[20vw]">
+                <article className={styles.legalContent}>
+                    <RichText data={page.content as SerializedEditorState} />
+                </article>
+            </section>
+        </Fragment>
     );
 }

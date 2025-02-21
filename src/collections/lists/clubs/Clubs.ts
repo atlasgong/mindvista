@@ -7,6 +7,9 @@ export const Clubs: CollectionConfig = {
     admin: {
         useAsTitle: "title",
         group: "Clubs",
+        livePreview: {
+            url: ({ data }) => `${process.env.NEXT_PUBLIC_SERVER_URL}/directory/clubs/${data.slug}`,
+        },
     },
     access: {
         create: canEditContent,
