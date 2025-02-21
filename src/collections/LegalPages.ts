@@ -37,6 +37,9 @@ export const LegalPages: CollectionConfig = {
             },
         ],
     },
+    versions: {
+        drafts: true,
+    },
     access: {
         create: denyAccess,
         delete: denyAccess,
