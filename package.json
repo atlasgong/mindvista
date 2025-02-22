@@ -14,7 +14,8 @@
         "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
         "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
         "commitlint": "commitlint --edit",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "buildrun": "npm run build && npm run start"
     },
     "dependencies": {
         "@hcaptcha/react-hcaptcha": "^1.11.2",
