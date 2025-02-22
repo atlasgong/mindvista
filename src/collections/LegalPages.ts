@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { canEditContent, canEditFrenchContent, denyAccess, denyAccessField } from "@lib/access";
 import { getPayloadClient } from "../payloadClient";
+import { revalidatePath } from "next/cache";
 
 export const LegalPages: CollectionConfig = {
     slug: "legal",
@@ -9,14 +10,35 @@ export const LegalPages: CollectionConfig = {
         group: "Content",
         livePreview: {
             url: async ({ data }) => {
-                if (!data.page) return process.env.NEXT_PUBLIC_SERVER_URL || "";
-                const page = (await getPayloadClient()).findByID({
+                const payload = await getPayloadClient();
+                const page = await payload.findByID({
                     collection: "pages",
                     id: data.page,
                 });
-                return `${process.env.NEXT_PUBLIC_SERVER_URL}/${(await page).slug}`;
+                return `${process.env.NEXT_PUBLIC_SERVER_URL}/${page.slug}`;
             },
         },
+    },
+    hooks: {
+        // revalidate legal page on "save"
+        afterChange: [
+            async ({ doc }) => {
+                if (!doc?.page) return;
+                const payload = await getPayloadClient();
+                const page = await payload.findByID({
+                    collection: "pages",
+                    id: doc.page as string,
+                    depth: 0,
+                });
+                if (page?.slug) {
+                    // console.log(`Revalidating '/${page.slug}'...`);
+                    revalidatePath("/" + page.slug);
+                }
+            },
+        ],
+    },
+    versions: {
+        drafts: true,
     },
     access: {
         create: denyAccess,
@@ -27,7 +49,7 @@ export const LegalPages: CollectionConfig = {
             name: "page",
             required: true,
             type: "relationship",
-            relationTo: "pages", // reference the parent collection
+            relationTo: "pages",
             access: {
                 update: denyAccessField,
             },

@@ -10,14 +10,10 @@ import { Metadata } from "next";
 
 // ISR LOGIC START -----------------------------------------------------------------
 
-// set revalidation period to 24 hours
-// i.e. content will be fetched every 24 hours
-export const revalidate = 86400;
-
-// prevent on-demand rendering of unknown paths
-// i.e. all dynamic routes are generated only ONCE on build
-// e.g. adding a new page in Payload will do nothing until the next build
-export const dynamicParams = false;
+// We'll prerender only the params from `generateStaticParams` at build time.
+// If a request comes in for a path that hasn't been generated,
+// Next.js will server-render the page on-demand.
+export const dynamicParams = true;
 
 // generate static params for all legal pages at build time
 export async function generateStaticParams() {
