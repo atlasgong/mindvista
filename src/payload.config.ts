@@ -15,6 +15,7 @@ import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
 import { Pages } from "@collections/Pages";
 import { LegalPages } from "@collections/LegalPages";
+import { HolisticWellnessPage } from "@globals/HolisticWellnessPage";
 import { Clubs } from "./collections/lists/clubs/Clubs";
 import { Resources } from "./collections/lists/resources/Resources";
 import { ClubTagCategories } from "./collections/lists/clubs/ClubTagCategories";
@@ -75,7 +76,8 @@ export default buildConfig({
             ],
         },
     },
-    collections: [Users, Pages, LegalPages, Media, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
+    collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
+    globals: [HolisticWellnessPage],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
@@ -85,7 +87,7 @@ export default buildConfig({
         pool: {
             connectionString: process.env.POSTGRES_URL || "",
         },
-        push: true,
+        push: false,
     }),
     sharp,
     i18n: {
