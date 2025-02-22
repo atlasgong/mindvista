@@ -1,14 +1,27 @@
 import type { GlobalConfig } from "payload";
 import { canEditContent, canEditFrenchContent, denyAccessField } from "@lib/access";
+import { revalidatePath } from "next/cache";
 
 export const SponsorPage: GlobalConfig = {
     slug: "sponsor",
     admin: {
         group: "Static Content",
+        preview: () => `${process.env.NEXT_PUBLIC_SERVER_URL}/sponsor`,
+        livePreview: {
+            url: `${process.env.NEXT_PUBLIC_SERVER_URL}/sponsor`,
+        },
     },
     versions: {
         max: 25,
         drafts: true,
+    },
+    hooks: {
+        // revalidate page on "save"
+        afterChange: [
+            () => {
+                revalidatePath("/sponsor");
+            },
+        ],
     },
     fields: [
         {
@@ -99,16 +112,6 @@ export const SponsorPage: GlobalConfig = {
                     name: "logo",
                     type: "upload",
                     relationTo: "media",
-                    required: true,
-                    access: {
-                        update: canEditContent,
-                    },
-                },
-                {
-                    name: "utilityClasses",
-                    label: "Tailwind Utility Classes",
-                    type: "text",
-                    defaultValue: "max-w-40 md:max-w-56",
                     required: true,
                     access: {
                         update: canEditContent,

@@ -887,7 +887,6 @@ export interface Sponsor {
   sponsors: {
     url?: string | null;
     logo: number | Media;
-    utilityClasses: string;
     id?: string | null;
   }[];
   _status?: ('draft' | 'published') | null;
@@ -944,7 +943,6 @@ export interface SponsorSelect<T extends boolean = true> {
     | {
         url?: T;
         logo?: T;
-        utilityClasses?: T;
         id?: T;
       };
   _status?: T;
