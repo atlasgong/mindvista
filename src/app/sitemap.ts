@@ -51,9 +51,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         {
-            url: "https://mindvista.ca/contact",
+            url: "https://mindvista.ca/sponsor",
             lastModified: "2025-01-19",
             changeFrequency: "monthly",
+            priority: 0.6,
+        },
+        {
+            url: "https://mindvista.ca/contact",
+            lastModified: "2025-01-19",
+            changeFrequency: "yearly",
             priority: 0.6,
         },
     ];

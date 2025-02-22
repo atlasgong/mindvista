@@ -103,9 +103,11 @@ export interface Config {
   };
   globals: {
     'holistic-wellness': HolisticWellness;
+    sponsor: Sponsor;
   };
   globalsSelect: {
     'holistic-wellness': HolisticWellnessSelect<false> | HolisticWellnessSelect<true>;
+    sponsor: SponsorSelect<false> | SponsorSelect<true>;
   };
   locale: 'en' | 'fr';
   user: User & {
@@ -871,6 +873,28 @@ export interface HolisticWellness {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sponsor".
+ */
+export interface Sponsor {
+  id: number;
+  page: number | Page;
+  ourSponsorsSection: string;
+  ourSponsorsSectionFr?: string | null;
+  callout: string;
+  calloutFr?: string | null;
+  sponsorUsSection: string;
+  sponsorUsSectionFr?: string | null;
+  sponsors: {
+    url?: string | null;
+    logo: number | Media;
+    id?: string | null;
+  }[];
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "holistic-wellness_select".
  */
 export interface HolisticWellnessSelect<T extends boolean = true> {
@@ -898,6 +922,30 @@ export interface HolisticWellnessSelect<T extends boolean = true> {
         contentFr?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sponsor_select".
+ */
+export interface SponsorSelect<T extends boolean = true> {
+  page?: T;
+  ourSponsorsSection?: T;
+  ourSponsorsSectionFr?: T;
+  callout?: T;
+  calloutFr?: T;
+  sponsorUsSection?: T;
+  sponsorUsSectionFr?: T;
+  sponsors?:
+    | T
+    | {
+        url?: T;
+        logo?: T;
+        id?: T;
+      };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
