@@ -14,8 +14,13 @@ import { TbStretching2, TbHeartHandshake, TbCirclesRelation, TbApple, TbZzz, TbU
 import { HiArrowLongRight } from "react-icons/hi2";
 import Link from "next/link";
 import InfoSeparator from "./components/index/InfoSeparator";
+import { getPayloadClient } from "@/payloadClient";
+import { Media } from "@/payload-types";
 
-export default function Home() {
+export default async function Home() {
+    // fetch sponsor data
+    const data = await (await getPayloadClient()).findGlobal({ slug: "sponsor" });
+
     return (
         <>
             <div className="max-lg:hidden">
@@ -114,12 +119,14 @@ export default function Home() {
                     <h2 className="text-center text-3xl font-bold md:text-4xl">Big Thanks to Our Sponsors</h2>
                     <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">We are incredibly grateful for the support and dedication of our sponsors who believe in our mission.</p>
                     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 items-center justify-items-center gap-4">
-                        <a href="https://www.caffettiera.ca/" target="_blank" className="w-full transition-all duration-200 hover:scale-110">
-                            <Image src="/sponsors/caffettiera.png" alt="Caffettiera Logo" width={2029} height={1291} className="mx-auto max-w-32 md:max-w-44" />
-                        </a>
-                        <a href="https://www.ashtangamontreal.com/" target="_blank" className="w-full transition-all duration-200 hover:scale-110">
-                            <Image src="/sponsors/aym.webp" alt="AYM Yoga Logo" width={1399} height={1578} className="mx-auto -mt-4 max-w-28 md:max-w-40" />
-                        </a>
+                        {data.sponsors.map((sponsor) => {
+                            const logo = sponsor.logo as Media;
+                            return (
+                                <a key={sponsor.id} href={sponsor.url || undefined} target="_blank" className="w-full transition-all duration-200 hover:scale-110">
+                                    <Image src={logo.url || "/404.jpg"} alt={logo.alt} width={logo.width || 1000} height={logo.height || 1000} className={`mx-auto ${sponsor.utilityClasses}`} />
+                                </a>
+                            );
+                        })}
                     </div>
                     <div className="mt-10 flex justify-center">
                         <Link href="/sponsor-us" className="flex items-center gap-3 rounded-lg border border-cBorder p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
