@@ -1,12 +1,11 @@
 import { getPayloadClient } from "../src/payloadClient";
 
+const COLLECTION_TO_UPDATE = "some-collection"; // change this to the collection you want to update
+
 /**
  * Need to enable versioning for an existing collection?
  * See https://github.com/payloadcms/payload/discussions/5353
  */
-
-const COLLECTION_TO_UPDATE = "some-collection"; // change this to the collection you want to update
-
 async function patchCollectionVersioning() {
     try {
         const payload = await getPayloadClient();
