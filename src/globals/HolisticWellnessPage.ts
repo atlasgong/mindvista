@@ -1,13 +1,26 @@
 import type { GlobalConfig } from "payload";
 import { canEditContent, canEditFrenchContent, denyAccessField } from "@lib/access";
+import { revalidatePath } from "next/cache";
 
 export const HolisticWellnessPage: GlobalConfig = {
     slug: "holistic-wellness",
     admin: {
         group: "Static Content",
+        preview: () => `${process.env.NEXT_PUBLIC_SERVER_URL}/holistic-wellness`,
+        livePreview: {
+            url: `${process.env.NEXT_PUBLIC_SERVER_URL}/holistic-wellness`,
+        },
     },
     versions: {
         max: 25,
+    },
+    hooks: {
+        // revalidate page on "save"
+        afterChange: [
+            () => {
+                revalidatePath("/holistic-wellness");
+            },
+        ],
     },
     fields: [
         {
