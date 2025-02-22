@@ -69,7 +69,7 @@ export default function Footer() {
                     <span className="hidden md:inline">Want to make a difference in mental wellness?</span>
                     <span className="inline md:hidden">Make a difference today.</span>
                 </p>
-                <Link href="/sponsor-us" className="rounded-lg border border-white px-2 py-[0.15rem] transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
+                <Link href="/sponsor" className="rounded-lg border border-white px-2 py-[0.15rem] transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">
                     Sponsor Us!
                 </Link>
             </section>
@@ -92,21 +92,13 @@ function Links(props: LinkProps) {
     return (
         <div className={`${props.className} flex grow flex-col justify-center gap-[0.5vh] font-semibold`}>
             {props.links.map((link, index) => (
-                <a
-                    key={index}
-                    href={link.href}
-                    className={`transition-transform duration-200 hover:scale-110 transform ${
-                        props.className?.includes("text-right") ? "origin-right" : "origin-left"
-                    }`}
-                >
+                <a key={index} href={link.href} className={`transform transition-transform duration-200 hover:scale-110 ${props.className?.includes("text-right") ? "origin-right" : "origin-left"}`}>
                     {link.text}
                 </a>
             ))}
         </div>
     );
 }
-
-
 
 function NewsletterSection() {
     return (
