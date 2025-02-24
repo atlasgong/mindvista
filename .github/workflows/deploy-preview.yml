@@ -1,0 +1,22 @@
+name: Lint, Build, and Deploy (Preview)
+
+on:
+    push:
+        branches-ignore: [master]
+    pull_request:
+        branches-ignore: [master]
+
+permissions:
+    contents: read
+
+jobs:
+    commitlint:
+        uses: ./.github/workflows/commitlint.yml
+
+    deploy:
+        needs: [commitlint] # this ensures commitlint must pass first
+        uses: ./.github/workflows/vercel-deploy-preview.yml
+        secrets:
+            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+            VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
