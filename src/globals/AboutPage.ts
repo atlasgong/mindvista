@@ -2,121 +2,155 @@ import type { GlobalConfig } from "payload";
 import { canEditContent, canEditFrenchContent, denyAccessField } from "@lib/access";
 import { revalidatePath } from "next/cache";
 
-export const SponsorPage: GlobalConfig = {
-    slug: "about",
-    admin: {
-        group: "Static Content",
-        preview: () => `${process.env.NEXT_PUBLIC_SERVER_URL}/about`,
-        livePreview: {
-            url: `${process.env.NEXT_PUBLIC_SERVER_URL}/about`,
-        },
+export const AboutPage: GlobalConfig = {
+  slug: "about",
+  admin: {
+    group: "Static Content",
+    preview: () => `${process.env.NEXT_PUBLIC_SERVER_URL}/about`,
+    livePreview: {
+      url: `${process.env.NEXT_PUBLIC_SERVER_URL}/about`,
     },
-    versions: {
-        max: 25,
-    },
-    hooks: {
-        // revalidate page on "save"
-        afterChange: [
-            () => {
-                revalidatePath("/about");
-            },
-        ],
-    },
-    fields: [
-        {
-            name: "page",
-            required: true,
-            type: "relationship",
-            relationTo: "pages",
-            access: {
-                update: denyAccessField,
-            },
-        },
-        {
-            name: "aboutSection",
-            label: "About MindVista - En",
-            required: true,
-            type: "richText",
-            access: {
-                update: canEditContent,
-            },
-        },
-        {
-            name: "aboutSectionFr",
-            label: "About MindVista - Fr",
-            required: false,
-            type: "richText",
-            access: {
-                read: canEditFrenchContent,
-                update: canEditFrenchContent,
-            },
-        },
-        /* {
-            name: "callout",
-            label: "Callout - En",
-            required: true,
-            type: "text",
-            access: {
-                update: canEditContent,
-            },
-        },
-        {
-            name: "calloutFr",
-            label: "Callout - Fr",
-            required: false,
-            type: "text",
-            access: {
-                read: canEditFrenchContent,
-                update: canEditFrenchContent,
-            },
-        },
-        {
-            name: "sponsorUsSection",
-            label: "Sponsor Us Section - En",
-            required: true,
-            type: "textarea",
-            access: {
-                update: canEditContent,
-            },
-        },
-        {
-            name: "sponsorUsSectionFr",
-            label: "Sponsor Us Section - Fr",
-            required: false,
-            type: "textarea",
-            access: {
-                read: canEditFrenchContent,
-                update: canEditFrenchContent,
-            },
-        },
-        {
-            name: "sponsors",
-            type: "array",
-            label: "Sponsor Logos",
-            required: true,
-            access: {
-                create: canEditContent,
-            },
-            fields: [
-                {
-                    name: "url",
-                    label: "Sponsor's Website",
-                    type: "text",
-                    required: false,
-                    access: {
-                        update: canEditContent,
-                    },
-                },
-                {
-                    name: "logo",
-                    type: "upload",
-                    relationTo: "media",
-                    required: true,
-                    access: {
-                        update: canEditContent,
-                    },
-                },
-            ],
-        }, */
+  },
+  versions: {
+    max: 25,
+    drafts: true,
+  },
+  hooks: {
+    // Revalidate page on "save"
+    afterChange: [
+      () => {
+        revalidatePath("/about");
+      },
     ],
+  },
+  fields: [
+    {
+      name: "page",
+      required: true,
+      type: "relationship",
+      relationTo: "pages",
+      access: {
+        update: denyAccessField,
+      },
+    },
+    {
+      name: "groupPhoto",
+      label: "Group Photo",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+      access: {
+        update: canEditContent,
+      },
+    },
+    {
+      name: "title",
+      label: "Page Title",
+      type: "text",
+      required: true,
+      access: {
+        update: canEditContent,
+      },
+    },
+    {
+      name: "introduction",
+      label: "Introduction - En",
+      type: "textarea",
+      required: true,
+      access: {
+        update: canEditContent,
+      },
+    },
+    {
+      name: "introductionFr",
+      label: "Introduction - Fr",
+      type: "textarea",
+      required: false,
+      access: {
+        read: canEditFrenchContent,
+        update: canEditFrenchContent,
+      },
+    },
+    {
+      name: "initiativeDetails",
+      label: "Initiative Details - En",
+      type: "textarea",
+      required: true,
+      access: {
+        update: canEditContent,
+      },
+    },
+    {
+      name: "initiativeDetailsFr",
+      label: "Initiative Details - Fr",
+      type: "textarea",
+      required: false,
+      access: {
+        read: canEditFrenchContent,
+        update: canEditFrenchContent,
+      },
+    },
+    {
+      name: "teams",
+      label: "Team Sections",
+      type: "array",
+      required: true,
+      fields: [
+        {
+          name: "title",
+          label: "Team Section Title",
+          type: "text",
+          required: true,
+          access: {
+            update: canEditContent,
+          },
+        },
+        {
+          name: "members",
+          label: "Team Members",
+          type: "array",
+          required: true,
+          fields: [
+            {
+              name: "role",
+              label: "Role",
+              type: "text",
+              required: true,
+              access: {
+                update: canEditContent,
+              },
+            },
+            {
+              name: "name",
+              label: "Name",
+              type: "text",
+              required: true,
+              access: {
+                update: canEditContent,
+              },
+            },
+            {
+              name: "pronouns",
+              label: "Pronouns",
+              type: "text",
+              required: false,
+              access: {
+                update: canEditContent,
+              },
+            },
+            {
+              name: "image",
+              label: "Profile Image",
+              type: "upload",
+              relationTo: "media",
+              required: false,
+              access: {
+                update: canEditContent,
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
