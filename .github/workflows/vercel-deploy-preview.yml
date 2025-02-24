@@ -15,7 +15,7 @@ permissions:
     contents: read
 
 jobs:
-    Deploy-Production:
+    Deploy-Preview:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
