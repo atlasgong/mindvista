@@ -1,0 +1,37 @@
+name: Vercel Deploy
+
+on:
+    workflow_call:
+        inputs:
+            PRODUCTION:
+                required: true
+                type: boolean
+                description: "Whether to create a production deployment"
+        secrets:
+            VERCEL_TOKEN:
+                required: true
+            VERCEL_ORG_ID:
+                required: true
+            VERCEL_PROJECT_ID:
+                required: true
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install Vercel CLI
+              run: npm install --global vercel@latest
+
+            - name: Pull Vercel Environment Information
+              run: vercel pull --yes --environment=${{ inputs.PRODUCTION && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Build Project Artifacts
+              run: vercel build ${{ inputs.PRODUCTION && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Deploy Project Artifacts to Vercel
+              id: deploy
+              run: |
+                  DEPLOYMENT_URL=$(vercel deploy --prebuilt ${{ inputs.PRODUCTION && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }})
+                  echo "url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT

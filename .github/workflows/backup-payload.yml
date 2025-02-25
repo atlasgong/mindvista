@@ -10,7 +10,7 @@ permissions:
     contents: read
 
 jobs:
-    backup-and-upload:
+    backup_and_upload:
         runs-on: ubuntu-latest
 
         steps:

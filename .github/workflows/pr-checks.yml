@@ -1,0 +1,61 @@
+name: PR Checks
+
+on:
+    pull_request:
+        branches:
+            - "**"
+    workflow_dispatch: # manual triggering from Github's UI
+
+# ensures only one PR check per PR runs at a time
+concurrency:
+    group: pr-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint_commits:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/workflows/lint-commits.yml
+
+    link_deployment:
+        needs: [lint_commits]
+        runs-on: ubuntu-latest
+
+        # set environment for PR deployment
+        environment:
+            name: development
+            url: ${{ steps.get_url.outputs.url }}
+
+        steps:
+            - id: get_url
+              name: Get Preview URL
+              run: |
+                  # if PR is from same repo, deployment already exists from push
+                  if [[ "${{ github.event.pull_request.head.repo.full_name }}" == "${{ github.repository }}" ]]; then
+                    # use Vercel API to get latest deployment for this branch
+                    DEPLOYMENT_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+                      "https://api.vercel.com/v6/deployments?projectId=${{ secrets.VERCEL_PROJECT_ID }}&meta-githubCommitRef=${{ github.event.pull_request.head.ref }}" \
+                      | jq -r '.deployments[0].url')
+                    
+                    if [[ ! -z "$DEPLOYMENT_URL" ]]; then
+                      echo "Using existing deployment: $DEPLOYMENT_URL"
+                      echo "url=https://$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+                      exit 0
+                    fi
+                  fi
+
+                  # if no deployment found or PR is from fork, create new preview
+                  echo "Creating new preview deployment..."
+                  echo "url=" >> $GITHUB_OUTPUT # will be set by deploy step
+
+            # only create new deployment if no existing one was found
+            - name: Deploy Preview
+              if: steps.get_url.outputs.url == ''
+              id: deploy
+              uses: ./.github/workflows/vercel-deploy.yml
+              with:
+                  PRODUCTION: false
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
