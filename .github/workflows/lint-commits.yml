@@ -8,6 +8,7 @@ permissions:
 
 jobs:
     lint_commits:
+        name: Lint Commits
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4

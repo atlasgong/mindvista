@@ -13,31 +13,18 @@ concurrency:
 
 permissions:
     contents: read
+    deployments: write
 
 jobs:
     lint_commits:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-            - uses: ./.github/workflows/lint-commits.yml
+        uses: ./.github/workflows/lint-commits.yml
 
     deploy:
         needs: [lint_commits]
-        runs-on: ubuntu-latest
-
-        # set environment based on branch
-        environment:
-            name: ${{ github.ref == 'refs/heads/master' && 'production' || 'development' }}
-            url: ${{ steps.deploy.outputs.url }} # will be set by Vercel
-
-        steps:
-            - uses: actions/checkout@v4
-
-            - id: deploy
-              name: Deploy to ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
-              uses: ./.github/workflows/vercel-deploy.yml
-              with:
-                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-                  PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
+        uses: ./.github/workflows/vercel-deploy.yml
+        with:
+            PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
+        secrets:
+            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+            VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

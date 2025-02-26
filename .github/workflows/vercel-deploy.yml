@@ -7,6 +7,10 @@ on:
                 required: true
                 type: boolean
                 description: "Whether to create a production deployment"
+        outputs:
+            url:
+                description: "The deployment URL"
+                value: ${{ jobs.deploy.outputs.deployment_url }}
         secrets:
             VERCEL_TOKEN:
                 required: true
@@ -21,7 +25,13 @@ permissions:
 
 jobs:
     deploy:
+        name: Deploy to ${{ inputs.PRODUCTION && 'Production' || 'Preview' }}
         runs-on: ubuntu-latest
+        environment:
+            name: ${{ inputs.PRODUCTION && 'production' || 'preview' }}
+            url: ${{ steps.deploy.outputs.url }}
+        outputs:
+            deployment_url: ${{ steps.deploy.outputs.url }}
         steps:
             - uses: actions/checkout@v4
 
