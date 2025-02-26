@@ -4,11 +4,15 @@ on:
     push:
         branches:
             - "**"
+    workflow_dispatch: # manual triggering from Github's UI
 
 # ensures only one deployment per ref/branch runs at a time
 concurrency:
     group: deploy-${{ github.ref }}
     cancel-in-progress: true
+
+permissions:
+    contents: read
 
 jobs:
     lint_commits:
