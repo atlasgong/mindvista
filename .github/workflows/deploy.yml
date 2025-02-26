@@ -13,6 +13,7 @@ concurrency:
 
 permissions:
     contents: read
+    deployments: write
 
 jobs:
     lint_commits:

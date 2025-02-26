@@ -7,7 +7,6 @@ on:
 
 permissions:
     contents: read
-    pull-requests: read
 
 # ensures only one PR check per PR runs at a time
 concurrency:
