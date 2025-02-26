@@ -28,7 +28,7 @@ jobs:
         name: Deploy to ${{ inputs.PRODUCTION && 'Production' || 'Preview' }}
         runs-on: ubuntu-latest
         environment:
-            name: ${{ inputs.PRODUCTION && 'production' || 'preview' }}
+            name: ${{ inputs.PRODUCTION && 'Production' || 'Preview' }}
             url: ${{ steps.deploy.outputs.url }}
         outputs:
             deployment_url: ${{ steps.deploy.outputs.url }}
@@ -39,7 +39,7 @@ jobs:
               run: npm install --global vercel@latest
 
             - name: Pull Vercel Environment Information
-              run: vercel pull --yes --environment=${{ inputs.PRODUCTION && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
+              run: vercel pull --yes --environment=${{ inputs.PRODUCTION && 'Production' || 'Preview' }} --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Build Project Artifacts
               run: vercel build ${{ inputs.PRODUCTION && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
