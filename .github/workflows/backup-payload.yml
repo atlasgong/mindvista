@@ -2,7 +2,7 @@ name: Backup Payload Database to S3
 
 on:
     schedule:
-        - cron: "42 8 * * *" # run at 08:42 UTC (03:42 EST) every day
+        - cron: "*/30 * * * *" # runs every 30 minutes
     workflow_dispatch: # allows manual triggering from GitHub UI
 
 permissions:
@@ -23,21 +23,31 @@ jobs:
                   yes '' | sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
                   sudo apt-get install -y postgresql-client-16
 
-            - name: Set timestamp
-              run: echo "TIMESTAMP=$(date -u +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
+            - name: Set timestamps
+              run: |
+                  echo "TIMESTAMP=$(date -u +'%Y%m%dT%H%M%SZ')" >> $GITHUB_ENV
+                  echo "YEAR_MONTH_DATE_HOUR=$(date -u +'%Y/%m/%d/%H')" >> $GITHUB_ENV
 
             - name: Dump database
               run: |
-                  /usr/lib/postgresql/16/bin/pg_dump ${{ secrets.DB_CONNECTION }} | gzip > "${TIMESTAMP}.sql.gz"
+                  /usr/lib/postgresql/16/bin/pg_dump ${{ secrets.PAYLOAD_POSTGRES_URL }} | gzip > "${TIMESTAMP}.sql.gz"
 
             - name: Configure AWS credentials from Action OIDC
-              uses: aws-actions/configure-aws-credentials@4fc4975a852c8cd99761e2de1f4ba73402e44dd9 # v4.0.3
+              uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 # v4.1.0
               with:
                   aws-region: ${{ secrets.AWS_REGION }}
-                  role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/s3-mindvista-postgres-backup-github-actions
+                  role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_GH_ACTIONS_ROLE_NAME }}
                   role-session-name: GitHubActionSession
 
             - name: Upload backup to S3
               run: |
-                  YEAR_MONTH=$(date -u +"%Y/%m")
-                  aws s3 cp "${TIMESTAMP}.sql.gz" s3://mindvista-payload-backups/database/${YEAR_MONTH}/
+                  aws s3 cp "${TIMESTAMP}.sql.gz" s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/
+
+            - name: Verify backup exists in S3
+              run: |
+                  if aws s3 ls "s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz"; then
+                      echo "Backup successfully uploaded to S3."
+                  else
+                      echo "ERROR: Backup file not found in S3 after upload."
+                      exit 1
+                  fi
