@@ -25,9 +25,10 @@ permissions:
 
 jobs:
     deploy:
+        name: Deploy to ${{ inputs.PRODUCTION && 'Production' || 'Preview' }}
         runs-on: ubuntu-latest
         environment:
-            name: ${{ inputs.PRODUCTION && 'production' || 'development' }}
+            name: ${{ inputs.PRODUCTION && 'production' || 'preview' }}
             url: ${{ steps.deploy.outputs.url }}
         outputs:
             deployment_url: ${{ steps.deploy.outputs.url }}
