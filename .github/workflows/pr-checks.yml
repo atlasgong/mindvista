@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
     lint_commits_from_fork:
-        name: Lint Commits (applies to external PRs only)
+        name: Lint Commits - applies to external PRs only
         # only run if PR is from a fork
         if: github.event.pull_request.head.repo.full_name != github.repository
         uses: ./.github/workflows/lint-commits.yml
