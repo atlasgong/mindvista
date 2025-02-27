@@ -75,6 +75,11 @@ export const Slice: React.FC<SliceProps> = ({ index, radius, color = "gray-200",
     const textRotation = (midAngle * 180) / Math.PI;
     const adjustedRotation = textRotation > 90 && textRotation < 270 ? textRotation + 180 : textRotation;
 
+    // truncate values to avoid nextjs' react hydration error
+    const textXTruncated = textX.toFixed(10);
+    const textYTruncated = textY.toFixed(10);
+    const adjustedRotationTruncated = adjustedRotation.toFixed(10);
+
     // calculate text opacity from active state
     const textOpacity = hasActiveSlice && !isActive ? 0.3 : 1;
 
@@ -104,7 +109,7 @@ export const Slice: React.FC<SliceProps> = ({ index, radius, color = "gray-200",
             {/* overlay for dimming non-active slices */}
             {hasActiveSlice && !isActive && <path d={pathData} fill="black" className="pointer-events-none" style={{ opacity: 0.5 }} />}
             {/* text element */}
-            <text x={textX} y={textY} textAnchor="middle" transform={`rotate(${adjustedRotation}, ${textX}, ${textY})`} className="pointer-events-none select-none text-sm font-medium" style={{ opacity: textOpacity }} fill="white">
+            <text x={textXTruncated} y={textYTruncated} textAnchor="middle" transform={`rotate(${adjustedRotationTruncated}, ${textXTruncated}, ${textYTruncated})`} className="pointer-events-none select-none text-sm font-medium" style={{ opacity: textOpacity }} fill="white">
                 {title}
             </text>
         </g>
