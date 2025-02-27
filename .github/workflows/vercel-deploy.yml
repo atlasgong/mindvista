@@ -28,7 +28,7 @@ jobs:
         name: Deploy to ${{ inputs.PRODUCTION && 'Production' || 'Preview' }}
         runs-on: ubuntu-latest
         environment:
-            name: ${{ inputs.PRODUCTION && 'production' || 'preview' }}
+            name: ${{ inputs.PRODUCTION && 'Production' || 'Preview' }}
             url: ${{ steps.deploy.outputs.url }}
         outputs:
             deployment_url: ${{ steps.deploy.outputs.url }}
