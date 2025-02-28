@@ -1,0 +1,26 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+while read local_ref local_sha remote_ref remote_sha; do
+    # skip master branch
+    if [ "$local_ref" = "refs/heads/master" ]; then
+        continue
+    fi
+
+    # get master's current SHA
+    master_sha=$(git rev-parse master)
+
+    # if local SHA matches master's SHA, this is an empty branch
+    if [ "$local_sha" = "$master_sha" ]; then
+        echo "ERROR: Branch '${local_ref#refs/heads/}' is identical to master"
+        echo "Please create a commit before pushing this branch."
+        exit 1
+    fi
+
+    # check if there are any commits unique to this branch
+    if [ -z "$(git rev-list $local_sha ^master)" ]; then
+        echo "ERROR: Branch '${local_ref#refs/heads/}' has no unique commits"
+        echo "Please create a commit before pushing this branch."
+        exit 1
+    fi
+done

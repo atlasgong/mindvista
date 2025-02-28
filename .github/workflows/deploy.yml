@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+    push:
+        branches:
+            - "**"
+    workflow_dispatch: # manual triggering from Github's UI
+
+# ensures only one deployment per ref/branch runs at a time
+concurrency:
+    group: deploy-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+    deployments: write
+
+jobs:
+    lint_commits:
+        uses: ./.github/workflows/lint-commits.yml
+
+    deploy:
+        needs: [lint_commits]
+        uses: ./.github/workflows/vercel-deploy.yml
+        with:
+            PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
+        secrets:
+            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+            VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
