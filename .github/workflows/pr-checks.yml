@@ -1,0 +1,21 @@
+name: PR Checks
+
+on:
+    pull_request:
+        branches:
+            - "**"
+
+permissions:
+    contents: read
+
+# ensures only one PR check per PR runs at a time
+concurrency:
+    group: pr-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint_commits_from_fork:
+        name: Lint Commits - applies to external PRs only
+        # only run if PR is from a fork
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        uses: ./.github/workflows/lint-commits.yml

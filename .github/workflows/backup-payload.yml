@@ -1,0 +1,53 @@
+name: Backup Payload Database to S3
+
+on:
+    schedule:
+        - cron: "13,43 * * * *" # runs every 30 minutes at hh:13 and hh:43
+    workflow_dispatch: # allows manual triggering from GitHub UI
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    backup_and_upload:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install PostgreSQL client
+              run: |
+                  sudo apt install -y postgresql-common
+                  yes '' | sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+                  sudo apt-get install -y postgresql-client-16
+
+            - name: Set timestamps
+              run: |
+                  echo "TIMESTAMP=$(date -u +'%Y%m%dT%H%M%SZ')" >> $GITHUB_ENV
+                  echo "YEAR_MONTH_DATE_HOUR=$(date -u +'%Y/%m/%d/%H')" >> $GITHUB_ENV
+
+            - name: Dump database
+              run: |
+                  /usr/lib/postgresql/16/bin/pg_dump ${{ secrets.PAYLOAD_POSTGRES_URL }} | gzip > "${TIMESTAMP}.sql.gz"
+
+            - name: Configure AWS credentials from Action OIDC
+              uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 # v4.1.0
+              with:
+                  aws-region: ${{ secrets.AWS_REGION }}
+                  role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_GH_ACTIONS_ROLE_NAME }}
+                  role-session-name: GitHubActionSession
+
+            - name: Upload backup to S3
+              run: |
+                  aws s3 cp "${TIMESTAMP}.sql.gz" s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/
+
+            - name: Verify backup exists in S3
+              run: |
+                  if aws s3 ls "s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz"; then
+                      echo "Backup successfully uploaded to S3."
+                  else
+                      echo "ERROR: Backup file not found in S3 after upload."
+                      exit 1
+                  fi
