@@ -55,7 +55,7 @@ export const AboutPage: GlobalConfig = {
     {
       name: "introduction",
       label: "Introduction - En",
-      type: "textarea",
+      type: "richText",
       required: true,
       access: {
         update: canEditContent,
@@ -64,7 +64,7 @@ export const AboutPage: GlobalConfig = {
     {
       name: "introductionFr",
       label: "Introduction - Fr",
-      type: "textarea",
+      type: "richText",
       required: false,
       access: {
         read: canEditFrenchContent,
@@ -74,7 +74,7 @@ export const AboutPage: GlobalConfig = {
     {
       name: "initiativeDetails",
       label: "Initiative Details - En",
-      type: "textarea",
+      type: "richText",
       required: true,
       access: {
         update: canEditContent,
@@ -83,7 +83,7 @@ export const AboutPage: GlobalConfig = {
     {
       name: "initiativeDetailsFr",
       label: "Initiative Details - Fr",
-      type: "textarea",
+      type: "richText",
       required: false,
       access: {
         read: canEditFrenchContent,

@@ -10,8 +10,10 @@ import TeamSection from "./components/TeamSection";
 import styles from "./styles.module.css";
 
 export default async function AboutPage() {
-    const payloadClient = await getPayloadClient();
-    const content = await payloadClient.findGlobal({ slug: "about" });
+    const payload = await getPayloadClient();
+    const content = await payload.findGlobal({
+        slug: "about",
+    });
 
     return (
         <Fragment>
@@ -21,7 +23,7 @@ export default async function AboutPage() {
                     {/* Hero / Group Photo Section */}
                     <section className={`${styles.section} ${styles.heroSection}`}>
                         <div className={styles.imageWrapper}>
-                            <Image src={content?.groupPhoto?.url || "/team/group-photo.webp"} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
+                            <Image src={typeof content?.groupPhoto === "object" && content?.groupPhoto?.url ? content.groupPhoto.url : "/team/group-photo.webp"} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
                         </div>
                         <div className={styles.heroText}>
                             <h1 className={styles.title}>{content?.title}</h1>
@@ -34,10 +36,10 @@ export default async function AboutPage() {
                     {/* Introduction and Initiative Details Section */}
                     <section className={styles.section}>
                         <div className={styles.textContent}>
-                            <RichText data={content?.introduction as SerializedEditorState} />
+                            <RichText data={content?.introduction as unknown as SerializedEditorState} />
                         </div>
                         <div className={styles.textContent}>
-                            <RichText data={content?.initiativeDetails as SerializedEditorState} />
+                            <RichText data={content?.initiativeDetails as unknown as SerializedEditorState} />
                         </div>
                     </section>
 
