@@ -105,12 +105,14 @@ export interface Config {
     defaultIDType: number;
   };
   globals: {
+    about: About;
     'holistic-wellness': HolisticWellness;
     sponsor: Sponsor;
     volunteer: Volunteer;
     'announcement-bar': AnnouncementBar;
   };
   globalsSelect: {
+    about: AboutSelect<false> | AboutSelect<true>;
     'holistic-wellness': HolisticWellnessSelect<false> | HolisticWellnessSelect<true>;
     sponsor: SponsorSelect<false> | SponsorSelect<true>;
     volunteer: VolunteerSelect<false> | VolunteerSelect<true>;
@@ -791,6 +793,90 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about".
+ */
+export interface About {
+  id: number;
+  page: number | Page;
+  groupPhoto: number | Media;
+  title: string;
+  introduction: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  introductionFr?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  initiativeDetails: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  initiativeDetailsFr?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  teams: {
+    title: string;
+    members: {
+      role: string;
+      name: string;
+      pronouns?: string | null;
+      image?: (number | null) | Media;
+      id?: string | null;
+    }[];
+    id?: string | null;
+  }[];
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "holistic-wellness".
  */
 export interface HolisticWellness {
@@ -1064,6 +1150,38 @@ export interface AnnouncementBar {
   _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about_select".
+ */
+export interface AboutSelect<T extends boolean = true> {
+  page?: T;
+  groupPhoto?: T;
+  title?: T;
+  introduction?: T;
+  introductionFr?: T;
+  initiativeDetails?: T;
+  initiativeDetailsFr?: T;
+  teams?:
+    | T
+    | {
+        title?: T;
+        members?:
+          | T
+          | {
+              role?: T;
+              name?: T;
+              pronouns?: T;
+              image?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
