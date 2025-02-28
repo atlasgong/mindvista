@@ -2,7 +2,7 @@ name: Backup Payload Database to S3
 
 on:
     schedule:
-        - cron: "*/30 * * * *" # runs every 30 minutes
+        - cron: "13,43 * * * *" # runs every 30 minutes at hh:13 and hh:43
     workflow_dispatch: # allows manual triggering from GitHub UI
 
 permissions:
