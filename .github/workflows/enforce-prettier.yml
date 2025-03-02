@@ -56,6 +56,13 @@ jobs:
               run: |
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+                  # get the current branch name or PR head ref
+                  BRANCH_NAME=${{ github.head_ref || github.ref_name }}
+
+                  # switch to the target branch
+                  git checkout "$BRANCH_NAME"
+
                   git commit -am "refactor: format files with prettier"
-                  git push
-                  echo "Formatted."
+                  git push origin "$BRANCH_NAME"
+                  echo "Formatted and pushed to $BRANCH_NAME"
