@@ -1,1 +1,4 @@
 src/payload-types.ts
+src/app/(payload)/admin/*
+src/app/(payload)/api/*
+src/app/(payload)/layout.tsx
