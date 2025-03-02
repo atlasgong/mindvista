@@ -7,6 +7,7 @@ on:
 
 permissions:
     contents: write
+    deployments: write
 
 # ensures only one PR check per PR runs at a time
 concurrency:
@@ -57,7 +58,6 @@ jobs:
 
             # Step 2: Check and enforce Prettier formatting
             - name: Check Prettier formatting
-              id: prettier-check
               run: |
                   if npx prettier --check .; then
                     echo "Files are properly formatted."
@@ -67,15 +67,11 @@ jobs:
                     echo "needs_formatting=true" >> $GITHUB_ENV
                   fi
 
-            - name: Configure Git and fetch branches
+            - name: Configure Git
               if: env.needs_formatting == 'true'
               run: |
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-                  # fetch and set up local master branch
-                  git fetch origin master:refs/remotes/origin/master
-                  git branch master origin/master || true
 
             - name: Format files with Prettier
               if: env.needs_formatting == 'true'
@@ -84,12 +80,15 @@ jobs:
             - name: Commit and push changes
               if: env.needs_formatting == 'true'
               run: |
-                  echo "confirming branch existence:"
-                  git remote -v
-                  git branch -a
+                  # fetch and set up local master branch to pass husky's pre-push hook
+                  git fetch origin master:refs/remotes/origin/master
+                  git branch master origin/master || true
 
-                  echo "enable husky debugging..."
-                  HUSKY_DEBUG=1
+                  # commit and push as usual
                   git commit -am "refactor: format files with prettier"
                   git push
                   echo "Formatted and pushed changes."
+
+    deploy:
+        needs: [pr_checks]
+        uses: ./.github/workflows/deploy.yml
