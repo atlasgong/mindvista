@@ -6,19 +6,75 @@ on:
             - "**"
 
 permissions:
-    contents: read
+    contents: write
 
 # ensures only one PR check per PR runs at a time
 concurrency:
-    group: pr-${{ github.event.pull_request.number || github.ref }}
+    group: pr-${{ github.event.pull_request.number }}
     cancel-in-progress: true
 
 jobs:
-    lint_commits_from_fork:
-        name: Lint Commits - applies to external PRs only
-        # only run if PR is from a fork
-        if: github.event.pull_request.head.repo.full_name != github.repository
-        uses: ./.github/workflows/lint-commits.yml
+    pr_checks:
+        name: PR Checks
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0 # fetch full history for commit linting
 
-    format:
-        uses: ./.github/workflows/enforce-prettier.yml
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "lts/*"
+
+            - name: Cache npm cache
+              id: cache-npm
+              uses: actions/cache@v4
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-npm-
+
+            - name: Install dependencies
+              run: npm ci
+
+            # Step 1: Lint Commits
+            - name: Validate commit messages
+              run: |
+                  FROM_HASH=${{ github.event.before }}
+                  TO_HASH=${{ github.event.after }}
+
+                  if [ "$FROM_HASH" = "0000000000000000000000000000000000000000" ] || [ -z "$FROM_HASH" ]; then
+                    echo "FROM_HASH is invalid or null. Using fallback."
+                    FROM_HASH=$(git rev-parse HEAD^ || git rev-parse origin/main)
+                  fi
+
+                  echo "CommitLint from $FROM_HASH to $TO_HASH"
+                  npx commitlint --from "$FROM_HASH" --to "$TO_HASH" --verbose
+
+            # Step 2: Check and enforce Prettier formatting
+            - name: Check Prettier formatting
+              id: prettier-check
+              run: |
+                  if npx prettier --check .; then
+                    echo "Files are properly formatted."
+                    echo "needs_formatting=false" >> $GITHUB_ENV
+                  else
+                    echo "Prettier formatting required."
+                    echo "needs_formatting=true" >> $GITHUB_ENV
+                  fi
+
+            - name: Run Prettier and commit changes if needed
+              if: env.needs_formatting == 'true'
+              run: |
+                  npx prettier --write .
+
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+                  BRANCH_NAME=${{ github.head_ref || github.ref_name }}
+                  git checkout "$BRANCH_NAME"
+                  git commit -am "refactor: format files with prettier"
+                  git push "https://${{ github.token }}@github.com/${{ github.repository }}.git" "$BRANCH_NAME"
+                  echo "Formatted and pushed to $BRANCH_NAME"
