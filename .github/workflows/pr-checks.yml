@@ -20,6 +20,8 @@ jobs:
         steps:
             - uses: actions/checkout@v4
               with:
+                  repository: ${{ github.event.pull_request.head.repo.full_name }}
+                  ref: ${{ github.event.pull_request.head.ref }}
                   fetch-depth: 0 # fetch full history for commit linting
 
             - name: Set up Node.js
@@ -65,15 +67,19 @@ jobs:
                     echo "needs_formatting=true" >> $GITHUB_ENV
                   fi
 
-            - name: Format files
+            - name: Configure Git
               if: env.needs_formatting == 'true'
               run: |
-                  npx prettier --write .
-
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+            - name: Format files with Prettier
+              if: env.needs_formatting == 'true'
+              run: npx prettier --write .
+
+            - name: Commit and push changes
+              if: env.needs_formatting == 'true'
+              run: |
                   git commit -am "refactor: format files with prettier"
                   git push
-
-                  echo "Formatted and pushed
+                  echo "Formatted and pushed changes."
