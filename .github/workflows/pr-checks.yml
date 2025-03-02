@@ -6,7 +6,7 @@ on:
             - "**"
 
 permissions:
-    contents: write
+    contents: read
 
 # ensures only one PR check per PR runs at a time
 concurrency:
@@ -47,7 +47,7 @@ jobs:
 
                   if [ "$FROM_HASH" = "0000000000000000000000000000000000000000" ] || [ -z "$FROM_HASH" ]; then
                     echo "FROM_HASH is invalid or null. Using fallback."
-                    FROM_HASH=$(git rev-parse HEAD^ || git rev-parse origin/main)
+                    FROM_HASH=$(git merge-base HEAD origin/master || git rev-parse HEAD^)
                   fi
 
                   echo "CommitLint from $FROM_HASH to $TO_HASH"
@@ -65,16 +65,36 @@ jobs:
                     echo "needs_formatting=true" >> $GITHUB_ENV
                   fi
 
-            - name: Run Prettier and commit changes if needed
+            # in case a comment on the PR has to be made for forked PRs
+            - name: Install GitHub CLI (if PR is from a fork)
+              if: github.event.pull_request.head.repo.full_name != github.repository
+              run: sudo apt update && sudo apt install gh -y
+
+            - name: Format files
               if: env.needs_formatting == 'true'
               run: |
-                  npx prettier --write .
+                  BRANCH_NAME=${{ github.head_ref || github.ref_name }}
+
+                  # check if this PR is from a fork
+                  if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+                      echo "This PR is from a fork. Cannot auto-commit."
+                      
+                      # comment on the PR informing the contributor
+                      COMMENT_BODY="Automated formatting check detected issues, but this PR is from a fork.\n\n\
+                      Please run \`npx prettier --write .\` locally and commit the changes with \`git commit -m \"refactor: format files with prettier\"\`, then push your changes."
+                      
+                      gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT_BODY"
+                      exit 1
+                  fi
+
+                  # if it's an internal PR, run prettier and commit changes
 
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-                  BRANCH_NAME=${{ github.head_ref || github.ref_name }}
                   git checkout "$BRANCH_NAME"
+                  npx prettier --write .
                   git commit -am "refactor: format files with prettier"
-                  git push "https://${{ github.token }}@github.com/${{ github.repository }}.git" "$BRANCH_NAME"
+                  git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "$BRANCH_NAME"
+
                   echo "Formatted and pushed to $BRANCH_NAME"
