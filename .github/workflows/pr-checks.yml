@@ -24,11 +24,6 @@ jobs:
                   ref: ${{ github.event.pull_request.head.ref }}
                   fetch-depth: 0 # fetch full history for commit linting
 
-            - name: Fetch all branches
-              run: |
-                  git remote add origin https://github.com/${{ github.repository }}.git
-                  git fetch origin master:master
-
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
