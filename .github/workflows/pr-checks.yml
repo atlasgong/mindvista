@@ -67,11 +67,15 @@ jobs:
                     echo "needs_formatting=true" >> $GITHUB_ENV
                   fi
 
-            - name: Configure Git
+            - name: Configure Git and fetch branches
               if: env.needs_formatting == 'true'
               run: |
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+                  # fetch and set up local master branch
+                  git fetch origin master:refs/remotes/origin/master
+                  git branch master origin/master || true
 
             - name: Format files with Prettier
               if: env.needs_formatting == 'true'
@@ -80,7 +84,6 @@ jobs:
             - name: Commit and push changes
               if: env.needs_formatting == 'true'
               run: |
-
                   echo "confirming branch existence:"
                   git remote -v
                   git branch -a
