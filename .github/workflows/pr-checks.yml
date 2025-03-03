@@ -26,12 +26,12 @@ jobs:
                   repository: ${{ github.event.pull_request.head.repo.full_name }}
                   ref: ${{ github.event.pull_request.head.ref }}
                   fetch-depth: 0 # fetch full history for commit linting
-            
+
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: "lts/*"
-                  cache: 'npm'
+                  cache: "npm"
 
             - name: Install dependencies
               run: npm ci
@@ -64,11 +64,6 @@ jobs:
                       exit $ERR_CODE
                   fi
 
-
-
-
-
-                  
             - name: Comment on PR to inform commit lint failure
               uses: actions/github-script@v7
               if: failure() && steps.commitlint.outcome == 'failure'
@@ -104,7 +99,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: "lts/*"
-                  cache: 'npm'
+                  cache: "npm"
 
             - name: Install dependencies
               run: npm ci
@@ -179,7 +174,7 @@ jobs:
                       ${{ steps.prettier.outputs.output }}
                       \`\`\`
 
-                      Please run \`npx prettier --write .\` locally and recommit to fix these formatting issues.`;
+                      Please run \`npx prettier --write .\` locally and recommit \`git commit -m \"refactor: format files with prettier\"\` to fix these formatting issues.`;
 
                       await github.rest.issues.createComment({
                         issue_number: context.issue.number,
