@@ -62,6 +62,7 @@
         "conventional-changelog-atom": "^5.0.0",
         "eslint": "^9.16.0",
         "eslint-config-next": "15.2.0",
+        "git-format-staged": "^3.1.1",
         "husky": "^8.0.3",
         "postcss": "^8.4.49",
         "prettier": "^3.4.2",
