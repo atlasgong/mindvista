@@ -4,6 +4,13 @@ on:
     push:
         branches: [master]
     workflow_call: # to be called by pr-checks.yml
+        secrets:
+            VERCEL_TOKEN:
+                required: true
+            VERCEL_ORG_ID:
+                required: true
+            VERCEL_PROJECT_ID:
+                required: true
     workflow_dispatch: # manual triggering for external fork PRs
 
 permissions:
