@@ -131,6 +131,40 @@ export const Clubs: CollectionConfig = {
             },
         },
         {
+            name: "graphicTitle",
+            label: "Graphic Title - En",
+            type: "text",
+            access: {
+                update: canEditContent,
+            },
+        },
+        {
+            name: "graphicTitleFr",
+            label: "Graphic Title - Fr",
+            type: "text",
+            admin: {
+                condition: (data: { graphicTitle?: string }) => Boolean(data.graphicTitle),
+            },
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
+            },
+        },
+        {
+            name: "graphic",
+            type: "upload",
+            relationTo: "media",
+            access: {
+                update: canEditContent,
+            },
+            required: true,
+            admin: {
+                condition: (data: { graphicTitle?: string }) => Boolean(data.graphicTitle),
+                description: "Required when Graphic Title is present.",
+            },
+        },
+        {
             name: "currentlyActive",
             type: "checkbox",
             access: {
