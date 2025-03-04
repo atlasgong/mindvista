@@ -15,7 +15,7 @@ export const Media: CollectionConfig = {
                 if (!(operation === "create" && req.file)) return;
 
                 const fileName = req.file.name;
-                const lowerSnakeCaseRegex = /^[a-z0-9]+(?:_[a-z0-9]+)*\.[a-z0-9]+$/; // one or more lowercase letters/digits, optionally followed by groups starting with an underscore and more letters/digits, ending with a dot and an extension in lowercase.
+                const lowerSnakeCaseRegex = /^[a-z0-9]+(?:_[a-z0-9]+)*\.(?:jpg|jpeg|png|webp|gif|bmp|svg|tiff|tif|avif)$/; // lowercase snake_case + lowercase file extension
                 if (!lowerSnakeCaseRegex.test(fileName)) {
                     throw new APIError("Invalid file name: File name must be in lower_snake_case (e.g., 'my_file_name.ext'). Please rename your file accordingly.", 400, undefined, true);
                 }
