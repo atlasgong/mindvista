@@ -1,4 +1,5 @@
 import { s3Storage } from "@payloadcms/storage-s3";
+import { awsCredentialsProvider } from "@vercel/functions/oidc";
 import { vercelPostgresAdapter } from "@payloadcms/db-vercel-postgres";
 import { resendAdapter } from "@payloadcms/email-resend";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
@@ -27,6 +28,22 @@ import { SponsorPage } from "./globals/SponsorPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+
+/**
+ * determine whether to use IAM role-based authentication (production) or access key authentication (local development)
+ * - if S3_ACCESS_KEY_ID and S3_SECRET_ACCESS_KEY are missing, assume we're in production and use IAM role authentication
+ * - otherwise, use explicit access keys for local development
+ * - if the both env vars are missing in local environment, it'll attempt and fail to use IAM authentication
+ */
+const useIAMRole = !process.env.S3_ACCESS_KEY_ID || !process.env.S3_SECRET_ACCESS_KEY;
+const credentials = useIAMRole
+    ? awsCredentialsProvider({
+          roleArn: process.env.AWS_ROLE_ARN || "",
+      })
+    : {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
+      };
 
 export default buildConfig({
     serverURL: process.env.SERVER_URL,
@@ -115,10 +132,7 @@ export default buildConfig({
             },
             bucket: process.env.S3_BUCKET || "",
             config: {
-                credentials: {
-                    accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
-                    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
-                },
+                credentials,
                 region: process.env.S3_REGION,
             },
         }),
