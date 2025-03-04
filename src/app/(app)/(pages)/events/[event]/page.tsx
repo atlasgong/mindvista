@@ -10,7 +10,6 @@ import LocationButton from "./components/LocationButton";
 import Hr from "@/app/(app)/components/Hr";
 import { OngoingBadge } from "../components/OngoingBadge";
 import { EventDate } from "../components/EventDate";
-import Image from "next/image";
 import ImageModal from "@/app/(app)/components/ImageModal";
 
 type PageProps = {

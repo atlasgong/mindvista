@@ -12,7 +12,6 @@ import TagsSection from "../../components/TagsSection";
 import ContactSection from "../../components/ContactSection";
 import PostHeader from "../../components/PostHeader";
 import LastUpdatedSection from "../../../../../components/LastUpdatedSection";
-import Image from "next/image";
 import ImageModal from "@/app/(app)/components/ImageModal";
 
 interface Props {
