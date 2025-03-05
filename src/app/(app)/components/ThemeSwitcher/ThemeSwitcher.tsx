@@ -1,25 +1,37 @@
 "use client";
-
 import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
-
 export const COOLDOWN_DURATION = 750; // in ms
 
-export default function ThemeSwitcher() {
-    const [theme, setTheme] = useState<Theme>(() => {
-        // Only access localStorage on the client side
-        if (typeof window !== "undefined") {
-            const storedTheme = localStorage.getItem("theme") as Theme;
-            if (storedTheme) return storedTheme;
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                return "dark";
-            }
-        }
+function getSystemPreference(): Theme {
+    if (typeof window === "undefined") return "dark";
+
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         return "dark";
-    });
+    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+        return "light";
+    }
+
+    return "dark"; // default fallback
+}
+
+function getThemePreference(): Theme {
+    if (typeof window === "undefined") return "dark";
+
+    // first check localStorage
+    const storedTheme = localStorage.getItem("theme") as Theme;
+    if (storedTheme) return storedTheme;
+
+    // if preference undefined in localStorage, use system preference
+    return getSystemPreference();
+}
+
+export default function ThemeSwitcher() {
+    const [theme, setTheme] = useState<Theme>(getThemePreference);
     const [isInCooldown, setIsInCooldown] = useState(false);
 
+    // apply theme to document
     useEffect(() => {
         const element = document.documentElement;
         if (theme === "light") {
@@ -29,20 +41,26 @@ export default function ThemeSwitcher() {
             element.classList.remove("light");
             element.classList.add("dark");
         }
-        localStorage.setItem("theme", theme);
     }, [theme]);
 
+    // listen for system preference changes
     useEffect(() => {
-        // Sync with system preferences
-        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-        const handleChange = (e: MediaQueryListEvent) => {
-            if (!localStorage.getItem("theme")) {
-                setTheme(e.matches ? "dark" : "light");
-            }
-        };
+        // only sync with system preferences if user hasn't explicitly set a preference
+        if (typeof window !== "undefined" && !localStorage.getItem("theme")) {
+            const updateThemeFromSystem = () => {
+                setTheme(getSystemPreference());
+            };
 
-        mediaQuery.addEventListener("change", handleChange);
-        return () => mediaQuery.removeEventListener("change", handleChange);
+            const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+            const lightModeMediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+            darkModeMediaQuery.addEventListener("change", updateThemeFromSystem);
+            lightModeMediaQuery.addEventListener("change", updateThemeFromSystem);
+
+            return () => {
+                darkModeMediaQuery.removeEventListener("change", updateThemeFromSystem);
+                lightModeMediaQuery.removeEventListener("change", updateThemeFromSystem);
+            };
+        }
     }, []);
 
     const handleToggleClick = () => {
@@ -50,6 +68,11 @@ export default function ThemeSwitcher() {
 
         const newTheme = theme === "dark" ? "light" : "dark";
         setTheme(newTheme);
+
+        // save preference to localStorage
+        if (typeof window !== "undefined") {
+            localStorage.setItem("theme", newTheme);
+        }
 
         setIsInCooldown(true);
         setTimeout(() => setIsInCooldown(false), COOLDOWN_DURATION);

@@ -14,24 +14,35 @@ export const metadata: Metadata = {
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     // CHANGES MADE TO THIS COMPONENT MUST BE MIRRORED IN src/app/not-found.tsx.
-    // See CONTRIBUTING.md#note-about-not-foundtsx
+    // See https://github.com/atlasgong/mindvista/wiki/Miscellaneous#404-page-handling
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
                 <meta name="apple-mobile-web-app-title" content="MindVista" />
-                {/* social media stuff here */}
+                {/* TODO: social media stuff here */}
                 <script
-                    // this script exists to solve the classic FOUC problem; a better solution can surely be found.
+                    // this script exists to solve the classic FOUC problem for theme switching
+                    // a better solution can surely be found
                     // suppressHydrationWarning is used as part of this solution
                     dangerouslySetInnerHTML={{
                         __html: `
                             (function() {
                                 function getInitialTheme() {
+                                    // first check local storage for if user has explicitly set a preference
                                     const storedTheme = localStorage.getItem('theme');
                                     if (storedTheme) return storedTheme;
-                                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                                }
+                                    // if not in localStorage, default to system preferences
+                                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                                        return 'dark';
+                                    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                                        return 'light';
+                                    } else {
+                                        return 'dark'; // default fallback
+                                    }
+                                }   
                                 const theme = getInitialTheme();
+                                // remove any existing theme classes and add the expected one
+                                document.documentElement.classList.remove('light', 'dark');
                                 document.documentElement.classList.add(theme);
                             })();
                         `,
