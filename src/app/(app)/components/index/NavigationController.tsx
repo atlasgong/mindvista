@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NavBar from "../navbar/NavBar";
-import ThemeIcon from "../ThemeIcon";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -85,7 +85,7 @@ function LandingNavBarDesktop() {
                     <Link href="/events" className="transition-transform duration-200 hover:scale-110">
                         Events
                     </Link>
-                    <ThemeIcon />
+                    <ThemeSwitcher />
                 </nav>
             </div>
         </header>

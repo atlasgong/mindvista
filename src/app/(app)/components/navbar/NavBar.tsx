@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./hamburger.module.css";
 import EmergencyButton from "../EmergencyButton";
-import ThemeIcon from "../ThemeIcon";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -45,7 +45,7 @@ export default function NavBar() {
 
                 <div className="flex flex-row gap-5 max-lg:hidden">
                     <EmergencyButton />
-                    <ThemeIcon />
+                    <ThemeSwitcher />
                     <div className="flex items-center gap-5">
                         {socialLinks.map((link) => (
                             <SocialMediaLink key={link.label} href={link.href} icon={link.icon} label={link.label} className="text-cAccent transition-transform hover:scale-110 dark:text-white" size="1.5rem" />
@@ -114,7 +114,7 @@ function NavMenu({ nav }: NavMenuProps) {
 
     return (
         <div className={`navMenu fixed left-0 top-0 z-10 h-full w-full bg-cBackground transition-transform duration-300 ${nav ? "translate-x-0" : "translate-x-full"} pointer-events-auto flex flex-col items-center justify-center gap-4`}>
-            <ThemeIcon />
+            <ThemeSwitcher />
             <NavLinks flexDirection="col" className="gap-2 text-center text-5xl" />
             <EmergencyButton className="mt-2" />
             <div className="mt-3 flex items-center gap-5">

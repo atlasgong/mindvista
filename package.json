@@ -16,7 +16,8 @@
         "commitlint": "commitlint --edit",
         "format": "prettier --write .",
         "prepare": "husky install",
-        "buildrun": "npm run build && npm run start"
+        "buildrun": "npm run build && npm run start",
+        "test": "vitest"
     },
     "dependencies": {
         "@aws-sdk/client-s3": "^3.758.0",
@@ -54,23 +55,29 @@
         "@commitlint/config-conventional": "^19.6.0",
         "@eslint/eslintrc": "^3.2.0",
         "@tailwindcss/typography": "^0.5.15",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.2.0",
         "@types/canvas-confetti": "^1.9.0",
         "@types/mailchimp__mailchimp_marketing": "^3.0.21",
         "@types/node": "^22.5.4",
         "@types/react": "19.0.10",
         "@types/react-dom": "19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
         "autoprefixer": "^10.4.20",
-        "commitlint-plugin-selective-scope": "^1.0.1",
         "conventional-changelog-atom": "^5.0.0",
         "eslint": "^9.16.0",
         "eslint-config-next": "15.2.0",
         "git-format-staged": "^3.1.1",
         "husky": "^8.0.3",
+        "jsdom": "^26.0.0",
         "postcss": "^8.4.49",
         "prettier": "^3.4.2",
         "prettier-plugin-tailwindcss": "^0.6.9",
         "tailwindcss": "^3.4.17",
-        "typescript": "5.7.2"
+        "typescript": "5.7.2",
+        "vite-tsconfig-paths": "^5.1.4",
+        "vitest": "^3.0.7"
     },
     "engines": {
         "node": "^18.20.2 || >=20.9.0"
