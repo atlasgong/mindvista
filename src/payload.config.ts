@@ -9,9 +9,6 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
-import { en } from "@payloadcms/translations/languages/en";
-import { fr } from "@payloadcms/translations/languages/fr";
-
 import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
 import { Pages } from "@collections/Pages";
@@ -108,15 +105,6 @@ export default buildConfig({
         push: false,
     }),
     sharp,
-    i18n: {
-        supportedLanguages: { en, fr },
-        fallbackLanguage: "en",
-    },
-    localization: {
-        locales: ["en", "fr"],
-        defaultLocale: "en",
-        fallback: true,
-    },
     email: resendAdapter({
         defaultFromAddress: process.env.RESEND_DEFAULT_EMAIL || "",
         defaultFromName: "MindVista | Payload CMS",
