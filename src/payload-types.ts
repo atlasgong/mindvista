@@ -109,7 +109,7 @@ export interface Config {
     'holistic-wellness': HolisticWellnessSelect<false> | HolisticWellnessSelect<true>;
     sponsor: SponsorSelect<false> | SponsorSelect<true>;
   };
-  locale: 'en' | 'fr';
+  locale: null;
   user: User & {
     collection: 'users';
   };
