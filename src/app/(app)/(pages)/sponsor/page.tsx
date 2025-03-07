@@ -1,7 +1,7 @@
 import { RefreshRouteOnSave } from "@/app/(app)/components/RefreshRouteOnSave";
 import { Fragment } from "react";
 import { Metadata } from "next";
-import ContactForm from "../contact/components/ContactForm";
+import ContactForm from "../contact/components/ContactForm/ContactForm";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import Hr from "../../components/Hr";
 import { getPayloadClient } from "@/payloadClient";
