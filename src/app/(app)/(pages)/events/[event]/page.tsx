@@ -10,6 +10,7 @@ import LocationButton from "./components/LocationButton";
 import Hr from "@/app/(app)/components/Hr";
 import { OngoingBadge } from "../components/OngoingBadge";
 import { EventDate } from "../components/EventDate";
+import ImageModal from "@/app/(app)/components/ImageModal";
 
 type PageProps = {
     params: Promise<{
@@ -120,13 +121,7 @@ export default async function EventPage({ params }: PageProps) {
                     </div>
 
                     {/* Event Graphic */}
-                    {typeof event.graphic === "object" && event.graphic?.url && (
-                        <div className="mx-auto my-8 flex justify-center md:mt-14">
-                            {/* these images are pulled from S3 and we will control optimization manually */}
-                            {/* eslint-disable @next/next/no-img-element */}
-                            <img src={event.graphic.url} alt={event.title} className="max-h-[40vh] min-h-[10vh] w-auto rounded-lg object-contain" />
-                        </div>
-                    )}
+                    {typeof event.graphic === "object" && event.graphic?.url && <ImageModal className="my-8 md:mt-14" url={event.graphic.url} altText={event.graphic.alt} width={event.graphic.width || 1000} height={event.graphic.height || 1000} />}
 
                     <div className="min-h-4"></div>
                     {event.isChance && <p className="text-xs text-cTextOffset">&dagger;Incentives are awarded on a chance-to-win basis. There is no guaranteed prize.</p>}

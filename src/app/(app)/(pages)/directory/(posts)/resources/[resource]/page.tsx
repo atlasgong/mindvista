@@ -10,6 +10,8 @@ import TagsSection from "../../components/TagsSection";
 import ContactSection from "../../components/ContactSection";
 import PostHeader from "../../components/PostHeader";
 import LastUpdatedSection from "../../../../../components/LastUpdatedSection";
+import { FaImage } from "react-icons/fa";
+import ImageModal from "@/app/(app)/components/ImageModal";
 
 interface Props {
     params: Promise<{
@@ -161,6 +163,17 @@ export default async function ResourcePage({ params }: Props) {
                     </div>
                 )}
             </div>
+
+            {/* Resource Graphic */}
+            {typeof resource.graphic === "object" && resource.graphic?.url && (
+                <div className="mt-6 flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
+                    <div className="flex flex-row items-center gap-2">
+                        <FaImage />
+                        <h2 className="text-xl font-semibold text-cText">{resource.graphicTitle}</h2>
+                    </div>
+                    <ImageModal className="my-8 md:mt-14" url={resource.graphic.url} altText={resource.graphic.alt} width={resource.graphic.width || 1000} height={resource.graphic.height || 1000} />
+                </div>
+            )}
 
             {/* Tags */}
             {tags.length > 0 && <TagsSection tags={tags} />}

@@ -1,4 +1,0 @@
-[submodule "mindvista.wiki"]
-	path = mindvista.wiki
-	url = https://github.com/atlasgong/mindvista.wiki.git
-	branch = master

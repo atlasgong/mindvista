@@ -6,16 +6,181 @@ on:
             - "**"
 
 permissions:
-    contents: read
+    contents: write
+    deployments: write
+    pull-requests: write
+    issues: write
 
 # ensures only one PR check per PR runs at a time
 concurrency:
-    group: pr-${{ github.event.pull_request.number || github.ref }}
+    group: pr-${{ github.event.pull_request.number }}
     cancel-in-progress: true
 
 jobs:
-    lint_commits_from_fork:
-        name: Lint Commits - applies to external PRs only
-        # only run if PR is from a fork
-        if: github.event.pull_request.head.repo.full_name != github.repository
-        uses: ./.github/workflows/lint-commits.yml
+    validate_commits:
+        name: Validate Commits
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  repository: ${{ github.event.pull_request.head.repo.full_name }}
+                  ref: ${{ github.event.pull_request.head.ref }}
+                  fetch-depth: 0 # fetch full history for commit linting
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "lts/*"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Validate commit messages
+              id: commitlint
+              run: |
+                  FROM_HASH=${{ github.event.before }}
+                  TO_HASH=${{ github.event.after }}
+
+                  if [ "$FROM_HASH" = "0000000000000000000000000000000000000000" ] || [ -z "$FROM_HASH" ]; then
+                      echo "FROM_HASH is invalid or null. Using fallback."
+                      BASE_BRANCH=${{ github.event.pull_request.base.ref }}
+                      FROM_HASH=$(git merge-base HEAD origin/$BASE_BRANCH || git rev-parse HEAD^)
+                  fi
+
+                  echo "CommitLint from $FROM_HASH to $TO_HASH"
+                  # run commitlint and capture both stdout and stderr
+                  if OUTPUT=$(npx commitlint --from "$FROM_HASH" --to "$TO_HASH" --verbose 2>&1); then
+                      echo "Commit messages follow guidelines"
+                  else
+                      ERR_CODE=$?
+                      echo "Commit lint failed with output:"
+                      echo "$OUTPUT"
+                      echo
+                      # store error for PR comment
+                      echo "output<<EOF" >> $GITHUB_OUTPUT
+                      echo "$OUTPUT" >> $GITHUB_OUTPUT
+                      echo "EOF" >> $GITHUB_OUTPUT
+                      exit $ERR_CODE
+                  fi
+
+            - name: Comment on PR to inform commit lint failure
+              uses: actions/github-script@v7
+              if: failure() && steps.commitlint.outcome == 'failure'
+              with:
+                  github-token: ${{secrets.GITHUB_TOKEN}}
+                  script: |
+                      const body = `Commit messages do not follow conventional commit guidelines.
+
+                      \`\`\`
+                      ${{ steps.commitlint.outputs.output }}
+                      \`\`\`
+
+                      Please see https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines for more information.`;
+
+                      await github.rest.issues.createComment({
+                        issue_number: context.issue.number,
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        body
+                      });
+
+    check_formatting:
+        name: Check Formatting
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "lts/*"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Get changed files
+              id: changed-files
+              uses: tj-actions/changed-files@dcc7a0cba800f454d79fff4b993e8c3555bcc0a8 # v45.0.7
+
+            - name: Check Prettier formatting
+              id: prettier
+              env:
+                  ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+              run: |
+                  echo "Files needed to be checked:"
+                  echo "${ALL_CHANGED_FILES}"
+
+                  if [ -z "${ALL_CHANGED_FILES}" ]; then
+                    echo "No files to check."
+                    echo "needs_formatting=false" >> $GITHUB_ENV
+                    exit 0
+                  fi
+
+                  # run prettier with --list-different
+                  echo "Running prettier on changed files..."
+                  for file in ${ALL_CHANGED_FILES}; do
+                      echo -n "Checking $file..."
+                      if [ ! -f "$file" ]; then
+                          echo " ⚠️ skipping - file not found"
+                          continue
+                      fi
+                      if OUTPUT=$(npx prettier --list-different --ignore-unknown "$file" 2>&1); then
+                          echo " ✓ properly formatted"
+                      else
+                          # check if it's a parser error
+                          if [[ $OUTPUT == *"No parser could be inferred"* ]]; then
+                              echo " ⚠️ skipping - $OUTPUT"
+                          else
+                              echo " ✗ needs formatting"
+                              FAILED_FILES="$FAILED_FILES$file"$'\n'
+                          fi
+                      fi
+                  done
+
+                  if [ -z "$FAILED_FILES" ]; then
+                      echo "✓ All files are properly formatted"
+                      echo "needs_formatting=false" >> $GITHUB_ENV
+                  else
+                      # strip trailing newlines
+                      FAILED_FILES_CLEAN=$(echo "$FAILED_FILES" | sed -e 's/[[:space:]]*$//')
+                      
+                      echo "✗ The following files need formatting:"
+                      echo "$FAILED_FILES_CLEAN"
+                      echo
+                      echo "needs_formatting=true" >> $GITHUB_ENV
+                      echo "output<<EOF" >> $GITHUB_OUTPUT
+                      echo "$FAILED_FILES_CLEAN" >> $GITHUB_OUTPUT
+                      echo "EOF" >> $GITHUB_OUTPUT
+                      exit 1
+                  fi
+
+            - name: Comment on PR to inform bad formatting
+              uses: actions/github-script@v7
+              if: failure() && steps.prettier.outcome == 'failure'
+              with:
+                  github-token: ${{secrets.GITHUB_TOKEN}}
+                  script: |
+                      const body = `Code formatting check failed.
+
+                      The following files need formatting:
+                      \`\`\`
+                      ${{ steps.prettier.outputs.output }}
+                      \`\`\`
+
+                      Please run \`npx prettier --write .\` locally and recommit \`git commit -m \"refactor: format files with prettier\"\` to fix these formatting issues.`;
+
+                      await github.rest.issues.createComment({
+                        issue_number: context.issue.number,
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        body
+                      });
+
+    deploy:
+        uses: ./.github/workflows/deploy.yml
+        secrets:
+            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+            VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

@@ -36,7 +36,7 @@ const messages = [
 
 // This is the "acting" "default" component for the NotFound page.
 // It may be freely edited as if it were any other component.
-// See CONTRIBUTING.md#note-about-not-foundtsx for more details.
+// See https://github.com/atlasgong/mindvista/wiki/Miscellaneous#404-page-handling for more details.
 function NotFoundComponent() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
@@ -56,25 +56,36 @@ export default function NotFound() {
     // CHANGES MUST ONLY BE MADE BELOW IF MIRRORED FROM ONE OF:
     // - src/app/(app)/(pages)/layout.tsx or
     // - src/app/(app)/layout.tsx
-    // See CONTRIBUTING.md#note-about-not-foundtsx
+    // See https://github.com/atlasgong/mindvista/wiki/Miscellaneous#404-page-handling
     return (
         // APP LAYOUT START
         <html lang="en" suppressHydrationWarning>
             <head>
                 <meta name="apple-mobile-web-app-title" content="MindVista" />
-                {/* social media stuff here */}
+                {/* TODO: social media stuff here */}
                 <script
-                    // this script exists to solve the classic FOUC problem; a better solution can surely be found.
+                    // this script exists to solve the classic FOUC problem for theme switching
+                    // a better solution can surely be found
                     // suppressHydrationWarning is used as part of this solution
                     dangerouslySetInnerHTML={{
                         __html: `
                             (function() {
                                 function getInitialTheme() {
+                                    // first check local storage for if user has explicitly set a preference
                                     const storedTheme = localStorage.getItem('theme');
                                     if (storedTheme) return storedTheme;
-                                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                                }
+                                    // if not in localStorage, default to system preferences
+                                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                                        return 'dark';
+                                    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                                        return 'light';
+                                    } else {
+                                        return 'dark'; // default fallback
+                                    }
+                                }   
                                 const theme = getInitialTheme();
+                                // remove any existing theme classes and add the expected one
+                                document.documentElement.classList.remove('light', 'dark');
                                 document.documentElement.classList.add(theme);
                             })();
                         `,

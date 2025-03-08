@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import ContactForm from "./components/ContactForm";
+import ContactForm from "./components/ContactForm/ContactForm";
 import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SocialMediaLink } from "../../components/SocialMediaLink";

@@ -7,23 +7,36 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import useWeb3Forms from "@web3forms/react";
 
+// validation error messages
+export const ERROR_MESSAGES = {
+    nameMin: "Must be at least 2 characters long.",
+    nameMax: "Must be at most 64 characters long.",
+    orgMax: "Must be at most 32 characters long.",
+    emailInvalid: "You must enter a valid email address.",
+    subjectMin: "Must be at least 4 characters long.",
+    subjectMax: "Subject line must not be longer than 78 characters.",
+    messageMin: "Please enter at least 50 characters.",
+    messageMax: "Message cannot be longer than 2048 characters.",
+    captchaRequired: "Captcha verification is required!",
+} as const;
+
 // define form scheme for input validation
 const schema = z.object({
-    name: z.string().min(2, { message: "Must be at least 2 characters long." }).max(64, { message: "Must be at most 64 characters long." }).trim(),
-    organization: z.optional(z.string().max(32, { message: "Must be at most 32 characters long." }).trim()),
-    email: z.string().email({ message: "You must enter a valid email address." }).trim(),
-    subject: z.string().min(4, { message: "Must be at least 4 characters long." }).max(78, { message: "Subject line must not be longer than 78 characters." }).trim(),
-    message: z.string().min(50, { message: "Please enter at least 50 characters." }).max(2048, { message: "Message cannot be longer than 2048 characters." }),
-    captcha: z.string({ message: "Captcha verification is required!" }),
+    name: z.string().min(2, { message: ERROR_MESSAGES.nameMin }).max(64, { message: ERROR_MESSAGES.nameMax }).trim(),
+    organization: z.optional(z.string().max(32, { message: ERROR_MESSAGES.orgMax }).trim()),
+    email: z.string().email({ message: ERROR_MESSAGES.emailInvalid }).trim(),
+    subject: z.string().min(4, { message: ERROR_MESSAGES.subjectMin }).max(78, { message: ERROR_MESSAGES.subjectMax }).trim(),
+    message: z.string().min(50, { message: ERROR_MESSAGES.messageMin }).max(2048, { message: ERROR_MESSAGES.messageMax }),
+    captcha: z.string({ message: ERROR_MESSAGES.captchaRequired }),
 });
 
 type FormFields = z.infer<typeof schema>;
 
-const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY;
-
 export default function ContactForm() {
+    const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY;
+
     if (!HCAPTCHA_SITE_KEY) {
-        console.error("NEXT_PUBLIC_HCAPTCHA_SITE_KEY NOT DEFINED");
+        throw new Error("NEXT_PUBLIC_HCAPTCHA_SITE_KEY is undefined");
     }
 
     const {
@@ -110,7 +123,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex justify-center">
-                <HCaptcha sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string} reCaptchaCompat={false} onVerify={onHCaptchaChange} theme={theme} />
+                <HCaptcha sitekey={HCAPTCHA_SITE_KEY} reCaptchaCompat={false} onVerify={onHCaptchaChange} theme={theme} />
             </div>
             {errors.captcha && <div className="text-md text-center text-cRed">{errors.captcha.message}</div>}
 

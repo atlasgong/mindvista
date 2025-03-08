@@ -109,7 +109,7 @@ export interface Config {
     'holistic-wellness': HolisticWellnessSelect<false> | HolisticWellnessSelect<true>;
     sponsor: SponsorSelect<false> | SponsorSelect<true>;
   };
-  locale: 'en' | 'fr';
+  locale: null;
   user: User & {
     collection: 'users';
   };
@@ -311,6 +311,12 @@ export interface Club {
         id?: string | null;
       }[]
     | null;
+  graphicTitle?: string | null;
+  graphicTitleFr?: string | null;
+  /**
+   * Required when Graphic Title is present.
+   */
+  graphic?: (number | null) | Media;
   currentlyActive?: boolean | null;
   tags?: (number | ClubTag)[] | null;
   updatedAt: string;
@@ -375,6 +381,12 @@ export interface Resource {
   channelTelephone?: boolean | null;
   channelInPerson?: boolean | null;
   onCampus?: boolean | null;
+  graphicTitle?: string | null;
+  graphicTitleFr?: string | null;
+  /**
+   * Required when Graphic Title is present.
+   */
+  graphic?: (number | null) | Media;
   currentlyActive?: boolean | null;
   tags?: (number | ResourceTag)[] | null;
   updatedAt: string;
@@ -609,6 +621,9 @@ export interface ClubsSelect<T extends boolean = true> {
         link?: T;
         id?: T;
       };
+  graphicTitle?: T;
+  graphicTitleFr?: T;
+  graphic?: T;
   currentlyActive?: T;
   tags?: T;
   updatedAt?: T;
@@ -650,6 +665,9 @@ export interface ResourcesSelect<T extends boolean = true> {
   channelTelephone?: T;
   channelInPerson?: T;
   onCampus?: T;
+  graphicTitle?: T;
+  graphicTitleFr?: T;
+  graphic?: T;
   currentlyActive?: T;
   tags?: T;
   updatedAt?: T;

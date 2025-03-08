@@ -7,10 +7,12 @@ import { getPayloadClient } from "@/payloadClient";
 import Link from "next/link";
 import { Club } from "@/payload-types";
 import { FiShare2, FiFacebook, FiInstagram, FiLink } from "react-icons/fi";
+import { FaImage } from "react-icons/fa";
 import TagsSection from "../../components/TagsSection";
 import ContactSection from "../../components/ContactSection";
 import PostHeader from "../../components/PostHeader";
 import LastUpdatedSection from "../../../../../components/LastUpdatedSection";
+import ImageModal from "@/app/(app)/components/ImageModal";
 
 interface Props {
     params: Promise<{
@@ -79,7 +81,6 @@ export default async function ClubPage({ params }: Props) {
                         />
                     </div>
                 )}
-
                 {/* Social Media */}
                 {hasSocialMedia && (
                     <div className={`h-full ${!club.website && !club.email && !club.phoneNumber ? "md:col-span-2" : "md:col-span-1"}`}>
@@ -118,6 +119,17 @@ export default async function ClubPage({ params }: Props) {
                     </div>
                 )}
             </div>
+
+            {/* Club Graphic */}
+            {typeof club.graphic === "object" && club.graphic?.url && (
+                <div className="mt-6 flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
+                    <div className="flex flex-row items-center gap-2">
+                        <FaImage />
+                        <h2 className="text-xl font-semibold text-cText">{club.graphicTitle}</h2>
+                    </div>
+                    <ImageModal className="my-8 md:mt-14" url={club.graphic.url} altText={club.graphic.alt} width={club.graphic.width || 1000} height={club.graphic.height || 1000} />
+                </div>
+            )}
 
             {/* Tags */}
             {tags.length > 0 && <TagsSection tags={tags} />}
