@@ -8,7 +8,7 @@ permissions:
 
 # ensures only one check per PR runs at a time
 concurrency:
-    group: pr-${{ github.event.pull_request.number }}
+    group: playwright-${{ github.event.pull_request.number }}
     cancel-in-progress: true
 
 jobs:
