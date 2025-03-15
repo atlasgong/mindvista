@@ -6,8 +6,13 @@ on:
 permissions:
     contents: read
 
+# ensures only one check per PR runs at a time
+concurrency:
+    group: playwright-${{ github.event.pull_request.number }}
+    cancel-in-progress: true
+
 jobs:
-    test:
+    test_e2e:
         timeout-minutes: 10
         runs-on: ubuntu-latest
         steps:
