@@ -179,7 +179,7 @@ export default async function ResourcePage({ params }: Props) {
             {tags.length > 0 && <TagsSection tags={tags} />}
 
             {/* Last Updated */}
-            <LastUpdatedSection updatedAt={resource.updatedAt} />
+            <LastUpdatedSection updatedAt={new Date(resource.updatedAt)} />
         </Fragment>
     );
 }

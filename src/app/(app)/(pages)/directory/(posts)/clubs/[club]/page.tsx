@@ -135,7 +135,7 @@ export default async function ClubPage({ params }: Props) {
             {tags.length > 0 && <TagsSection tags={tags} />}
 
             {/* Last Updated */}
-            <LastUpdatedSection updatedAt={club.updatedAt} />
+            <LastUpdatedSection updatedAt={new Date(club.updatedAt)} />
         </Fragment>
     );
 }
