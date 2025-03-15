@@ -107,6 +107,7 @@ jobs:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
                   # Use gh api to get all changed files with pagination
+                  # see https://github.com/cli/cli/issues/5368#issuecomment-1344253654
                   FILES=$(gh api graphql -f query='
                     query($owner: String!, $repo: String!, $pr: Int!, $endCursor: String) {
                       repository(owner: $owner, name: $repo) {
