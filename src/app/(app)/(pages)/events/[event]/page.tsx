@@ -133,7 +133,7 @@ export default async function EventPage({ params }: PageProps) {
                         <FiArrowLeft className="h-5 w-5" />
                         Go back to Events
                     </Link>
-                    <LastUpdatedSection updatedAt={event.updatedAt} />
+                    <LastUpdatedSection updatedAt={new Date(event.updatedAt)} />
                 </div>
             </div>
         </Fragment>
