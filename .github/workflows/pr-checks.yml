@@ -102,7 +102,28 @@ jobs:
 
             - name: Get changed files
               id: changed-files
-              uses: tj-actions/changed-files@dcc7a0cba800f454d79fff4b993e8c3555bcc0a8 # v45.0.7
+              env:
+                  PR_NUMBER: ${{ github.event.pull_request.number }}
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  # Use gh api to get all changed files with pagination
+                  FILES=$(gh api graphql -f query='
+                    query($owner: String!, $repo: String!, $pr: Int!, $endCursor: String) {
+                      repository(owner: $owner, name: $repo) {
+                        pullRequest(number: $pr) {
+                          files(first: 100, after: $endCursor) {
+                            pageInfo{ hasNextPage, endCursor }
+                            nodes {
+                              path
+                            }
+                          }
+                        }
+                      }
+                    }' -F owner=${{ github.repository_owner }} -F repo=${{ github.event.repository.name }} -F pr=$PR_NUMBER --paginate --jq '.data.repository.pullRequest.files.nodes.[].path')
+
+                  # Convert newline-separated list to space-separated for Prettier
+                  FILES_SPACE_SEPARATED=$(echo "$FILES" | tr '\n' ' ')
+                  echo "all_changed_files=$FILES_SPACE_SEPARATED" >> $GITHUB_OUTPUT
 
             - name: Check Prettier formatting
               id: prettier
