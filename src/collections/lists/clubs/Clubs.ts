@@ -137,6 +137,9 @@ export const Clubs: CollectionConfig = {
             access: {
                 update: canEditContent,
             },
+            admin: {
+                description: "This field must be filled out before the option to add a graphic is shown. To remove the graphic, simply remove this field. If the graphic is not used elsewhere, please remember to delete it from the Media collection.",
+            },
         },
         {
             name: "graphicTitleFr",
