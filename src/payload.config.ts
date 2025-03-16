@@ -1,5 +1,6 @@
 import { s3Storage } from "@payloadcms/storage-s3";
 import { awsCredentialsProvider } from "@vercel/functions/oidc";
+import { postgresAdapter } from "@payloadcms/db-postgres";
 import { vercelPostgresAdapter } from "@payloadcms/db-vercel-postgres";
 import { resendAdapter } from "@payloadcms/email-resend";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
@@ -26,20 +27,35 @@ import { SponsorPage } from "./globals/SponsorPage";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-/**
- * determine whether to use IAM role-based authentication (production) or access key authentication (local development)
- * - if S3_ACCESS_KEY_ID and S3_SECRET_ACCESS_KEY are missing, assume we're in production and use IAM role authentication
- * - otherwise, use explicit access keys for local development
- * - if the both env vars are missing in local environment, it'll attempt and fail to use IAM authentication
- */
-const useIAMRole = !process.env.S3_ACCESS_KEY_ID || !process.env.S3_SECRET_ACCESS_KEY;
-const credentials = useIAMRole
-    ? awsCredentialsProvider({
-          roleArn: process.env.AWS_ROLE_ARN || "",
+const isDevelopment = process.env.APP_ENV === "development";
+
+// use local postgres server in development, neon otherwise
+const dbAdapter = isDevelopment
+    ? postgresAdapter({
+          pool: {
+              connectionString: process.env.POSTGRES_URL,
+          },
       })
+    : vercelPostgresAdapter({
+          push: false,
+      });
+
+// use access key authentication in development, IAM role-based authentication otherwise
+const storageConfig = isDevelopment
+    ? {
+          credentials: {
+              accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
+              secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
+          },
+          region: process.env.S3_REGION,
+          endpoint: process.env.S3_ENDPOINT,
+          forcePathStyle: true,
+      }
     : {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
+          credentials: awsCredentialsProvider({
+              roleArn: process.env.AWS_ROLE_ARN || "",
+          }),
+          region: process.env.S3_REGION,
       };
 
 export default buildConfig({
@@ -98,12 +114,7 @@ export default buildConfig({
     typescript: {
         outputFile: path.resolve(dirname, "payload-types.ts"),
     },
-    db: vercelPostgresAdapter({
-        pool: {
-            connectionString: process.env.POSTGRES_URL || "",
-        },
-        push: false,
-    }),
+    db: dbAdapter,
     sharp,
     email: resendAdapter({
         defaultFromAddress: process.env.RESEND_DEFAULT_EMAIL || "",
@@ -119,10 +130,7 @@ export default buildConfig({
                 },
             },
             bucket: process.env.S3_BUCKET || "",
-            config: {
-                credentials,
-                region: process.env.S3_REGION,
-            },
+            config: storageConfig,
         }),
     ],
 });
