@@ -7,10 +7,10 @@
     "scripts": {
         "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
         "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
-        "setup:dev": "tsx --env-file=.env.development scripts/environments/setup-local-dev.ts",
-        "sync:db:dev": "tsx --env-file=.env.development scripts/environments/development/seed-db.ts",
+        "setup:dev": "tsx --env-file=.env scripts/environments/setup-local-dev.ts",
+        "sync:db:dev": "tsx --env-file=.env scripts/environments/development/seed-db.ts",
         "sync:db:staging": "tsx --env-file=.env.staging scripts/environments/staging/seed-db.ts",
-        "sync:storage:dev": "tsx --env-file=.env.development scripts/environments/development/seed-s3.ts",
+        "sync:storage:dev": "tsx --env-file=.env scripts/environments/development/seed-s3.ts",
         "sync:storage:staging": "tsx --env-file=.env.staging scripts/environments/staging/seed-s3.ts",
         "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
         "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
