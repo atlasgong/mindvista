@@ -12,3 +12,5 @@ pr_review:
     # You can allow Ellipsis to approve PRs using enable_approve_prs. Note: in common branch GitHub protection configurations,
     # the Ellipsis approval will count towards the approval total and allow the PR to be merged when it otherwise may not be.
     enable_approve_prs: true
+
+    auto_review_draft: true
