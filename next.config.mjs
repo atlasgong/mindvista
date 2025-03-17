@@ -7,7 +7,7 @@ const isProduction = process.env.APP_ENV === "production";
 const isStaging = process.env.APP_ENV === "staging";
 
 // parse NEXT_PUBLIC_SERVER_URL for local development
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL || "localhost:3000";
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
 const [localHostname, localPort] = serverUrl.replace(/^https?:\/\//, "").split(":");
 
 const nextConfig = {
