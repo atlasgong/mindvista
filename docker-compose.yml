@@ -3,7 +3,7 @@ name: mindvista-env
 services:
     postgres:
         image: postgres:15
-        env_file: .env.development
+        env_file: .env # copied from .env.development
         environment:
             POSTGRES_DB: ${POSTGRES_DB:-mindvista}
             POSTGRES_USER: ${POSTGRES_USER:-mindvista}
@@ -15,7 +15,7 @@ services:
 
     localstack:
         image: localstack/localstack:latest
-        env_file: .env.development
+        env_file: .env # copied from .env.development
         environment:
             - SERVICES=s3
             - DEFAULT_REGION=${S3_REGION:-ca-central-1}
