@@ -59,7 +59,7 @@ const storageConfig = isDevelopment
       };
 
 export default buildConfig({
-    serverURL: process.env.SERVER_URL,
+    serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
     telemetry: false,
     admin: {
         user: Users.slug,
@@ -82,7 +82,7 @@ export default buildConfig({
                 },
                 {
                     name: "iPadPortrait",
-                    label: "iPad (Portait)",
+                    label: "iPad (Portrait)",
                     width: 810,
                     height: 1080,
                 },
