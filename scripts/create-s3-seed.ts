@@ -16,12 +16,12 @@
 
 import { S3Client, ListObjectsV2Command, GetObjectCommand } from "@aws-sdk/client-s3";
 import { createWriteStream } from "fs";
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import { promisify } from "util";
 import path from "path";
 import fs from "fs";
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 // Required environment variables
 const requiredEnvVars = ["PROD_S3_BUCKET", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_REGION"];
@@ -139,7 +139,7 @@ async function main() {
 
         // Create tar.gz archive
         console.log("\nCreating backup archive...");
-        await execAsync(`tar -czf ${backupFile} -C ${tmpDir} .`);
+        await execFileAsync("tar", ["-czf", backupFile, "-C", tmpDir, "."]);
 
         // Clean up
         fs.rmSync(tmpDir, { recursive: true });

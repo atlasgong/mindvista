@@ -1,9 +1,10 @@
-import { exec } from "child_process";
+import { execFile, spawn, type SpawnOptions, type ChildProcess } from "child_process";
 import { promisify } from "util";
 import path from "path";
 import fs from "fs";
+import { Readable, Writable } from "stream";
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 // Environment variables from .env.development
 const POSTGRES_URL = process.env.POSTGRES_URL;
@@ -13,16 +14,56 @@ if (!POSTGRES_URL) {
     process.exit(1);
 }
 
-async function executeCommand(command: string): Promise<void> {
+// Ensure POSTGRES_URL is available after check
+const POSTGRES_URL_SAFE = POSTGRES_URL;
+
+async function executePsql(query: string): Promise<void> {
     try {
-        const { stdout, stderr } = await execAsync(command);
-        if (stdout) console.log(stdout);
-        if (stderr) console.error(stderr);
+        await execFileAsync("psql", [POSTGRES_URL_SAFE, "-c", query], { shell: false });
     } catch (error) {
-        console.error(`Error executing command: ${command}`);
+        console.error(`Error executing psql query: ${query}`);
         console.error(error);
         throw error;
     }
+}
+
+async function executeGunzipPsql(dumpFile: string): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+        const spawnOptions: SpawnOptions = {
+            stdio: ["pipe", "pipe", "pipe"],
+            shell: false,
+        };
+
+        const gunzip = spawn("gunzip", ["-c", dumpFile], spawnOptions) as ChildProcess & {
+            stdout: Readable;
+            stderr: Readable;
+        };
+        const psql = spawn("psql", [POSTGRES_URL_SAFE], spawnOptions) as ChildProcess & {
+            stdin: Writable;
+            stderr: Readable;
+        };
+
+        if (!gunzip.stdout || !psql.stdin || !gunzip.stderr || !psql.stderr) {
+            reject(new Error("Failed to create process streams"));
+            return;
+        }
+
+        gunzip.stdout.pipe(psql.stdin);
+
+        gunzip.stderr.on("data", (data) => console.error(`gunzip error: ${data}`));
+        psql.stderr.on("data", (data) => console.error(`psql error: ${data}`));
+
+        psql.on("close", (code) => {
+            if (code === 0) {
+                resolve();
+            } else {
+                reject(new Error(`psql process exited with code ${code}`));
+            }
+        });
+
+        gunzip.on("error", reject);
+        psql.on("error", reject);
+    });
 }
 
 async function getLatestDump(): Promise<string> {
@@ -50,9 +91,9 @@ async function main() {
 
         // Restore to local database
         console.log("Restoring to local database...");
-        await executeCommand(`psql "${POSTGRES_URL}" -c "DROP SCHEMA public CASCADE;"`);
-        await executeCommand(`psql "${POSTGRES_URL}" -c "CREATE SCHEMA public;"`);
-        await executeCommand(`gunzip -c ${dumpFile} | psql "${POSTGRES_URL}"`);
+        await executePsql("DROP SCHEMA public CASCADE;");
+        await executePsql("CREATE SCHEMA public;");
+        await executeGunzipPsql(dumpFile);
 
         console.log("Database seed complete.");
     } catch (error) {
