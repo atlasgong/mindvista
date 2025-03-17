@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/app/(app)/components/Image";
 import { Media, Sponsor } from "@/payload-types";
 
 interface SponsorLogosProps {
