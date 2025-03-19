@@ -20,7 +20,7 @@ export default function CrisisPage() {
             {/* Crisis Resources Grid */}
             <div className="mb-8 grid gap-8 md:grid-cols-2">
                 {/* 24/7 Support by Talk Suicide Canada */}
-                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
+                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-all duration-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)] dark:hover:border-blue-800 dark:hover:shadow-blue-950/50">
                     <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">24/7 Support Line</h2>
                     <p className="mb-4 text-[var(--text-offset)]">Talk to someone anytime, day or night.</p>
                     <div className="mb-2 text-xl font-bold text-[var(--text)]">1-833-456-4566</div>
@@ -31,7 +31,7 @@ export default function CrisisPage() {
                 </div>
 
                 {/* Student Support (GuardMe) */}
-                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
+                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-all duration-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)] dark:hover:border-blue-800 dark:hover:shadow-blue-950/50">
                     <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">Student Support (GuardMe)</h2>
                     <p className="mb-4 text-[var(--text-offset)]">Free, confidential, emotional support for students.</p>
                     <div className="space-y-2 text-[var(--text)]">
@@ -39,7 +39,7 @@ export default function CrisisPage() {
                             <strong>North America:</strong> 1-844-451-9700
                         </div>
                         <div>
-                            <strong>International:</strong> 001-416-380-6578
+                            <strong>International:</strong> +1-416-380-6578
                         </div>
                     </div>
                     <Link href="https://gmssp.org/" target="_blank" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
@@ -48,7 +48,7 @@ export default function CrisisPage() {
                 </div>
 
                 {/* SSMU Students' Nightline */}
-                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
+                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-all duration-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)] dark:hover:border-blue-800 dark:hover:shadow-blue-950/50">
                     <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">SSMU Students&apos; Nightline</h2>
                     <p className="mb-4 text-[var(--text-offset)]">Confidential listening service by students, for students.</p>
                     <div className="mb-2 text-xl font-bold text-[var(--text)]">514-398-6246</div>
@@ -59,7 +59,7 @@ export default function CrisisPage() {
                 </div>
 
                 {/* McGill's Peer Support Center */}
-                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)]">
+                <div className="rounded-lg border border-cBorder bg-cBackgroundOffset p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-all duration-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 dark:shadow-[0_4px_20px_rgb(15,23,42,0.2)] dark:hover:border-blue-800 dark:hover:shadow-blue-950/50">
                     <h2 className="mb-4 text-2xl font-semibold text-[var(--text)]">McGill&apos;s Peer Support Centre</h2>
                     <p className="mb-4 text-[var(--text-offset)]">45-minute sessions with trained student supporters.</p>
                     <ul className="mb-4 list-inside list-disc text-[var(--text-offset)]">
