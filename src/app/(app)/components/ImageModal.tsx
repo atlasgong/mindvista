@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/app/(app)/components/Image";
 import { FiX } from "react-icons/fi";
 
 interface ImageModalProps {

@@ -121,7 +121,7 @@ export default async function ClubPage({ params }: Props) {
             </div>
 
             {/* Club Graphic */}
-            {typeof club.graphic === "object" && club.graphic?.url && (
+            {club.graphicTitle && typeof club.graphic === "object" && club.graphic?.url && (
                 <div className="mt-6 flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
                     <div className="flex flex-row items-center gap-2">
                         <FaImage />
@@ -135,7 +135,7 @@ export default async function ClubPage({ params }: Props) {
             {tags.length > 0 && <TagsSection tags={tags} />}
 
             {/* Last Updated */}
-            <LastUpdatedSection updatedAt={club.updatedAt} />
+            <LastUpdatedSection updatedAt={new Date(club.updatedAt)} />
         </Fragment>
     );
 }

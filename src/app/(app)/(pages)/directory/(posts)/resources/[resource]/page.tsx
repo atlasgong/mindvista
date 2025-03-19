@@ -165,7 +165,7 @@ export default async function ResourcePage({ params }: Props) {
             </div>
 
             {/* Resource Graphic */}
-            {typeof resource.graphic === "object" && resource.graphic?.url && (
+            {resource.graphicTitle && typeof resource.graphic === "object" && resource.graphic?.url && (
                 <div className="mt-6 flex h-full flex-col rounded-2xl border border-cBorder bg-cBackgroundOffset p-6 shadow-sm transition-all hover:shadow-md md:p-8">
                     <div className="flex flex-row items-center gap-2">
                         <FaImage />
@@ -179,7 +179,7 @@ export default async function ResourcePage({ params }: Props) {
             {tags.length > 0 && <TagsSection tags={tags} />}
 
             {/* Last Updated */}
-            <LastUpdatedSection updatedAt={resource.updatedAt} />
+            <LastUpdatedSection updatedAt={new Date(resource.updatedAt)} />
         </Fragment>
     );
 }
