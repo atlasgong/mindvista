@@ -39,7 +39,7 @@ export default function CrisisPage() {
                             <strong>North America:</strong> 1-844-451-9700
                         </div>
                         <div>
-                            <strong>International:</strong> 001-416-380-6578
+                            <strong>International:</strong> +1-416-380-6578
                         </div>
                     </div>
                     <Link href="https://gmssp.org/" target="_blank" className="mt-2 inline-block text-[var(--accent)] hover:opacity-80">
