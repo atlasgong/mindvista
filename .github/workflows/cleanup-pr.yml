@@ -8,7 +8,7 @@ permissions:
     pull-requests: write
 
 jobs:
-    cleanup_preview:
+    cleanup_staging:
         name: Cleanup Staging Environment
         runs-on: ubuntu-latest
         env:
@@ -48,8 +48,8 @@ jobs:
               run: |
                   echo "Looking up redirect rule for PR #${PR_NUMBER}..."
 
-                  # list existing redirect rules, capture response and status code
-                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
+                  # list existing rulesets, capture response and status code
+                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets" \
                     -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                     -H "Content-Type: application/json")
 
@@ -59,44 +59,64 @@ jobs:
                   RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
                   if [ "$HTTP_STATUS" -eq 200 ]; then
-                      # safely check if rule exists by looking for PR number in description
-                      RULE_ID=$(echo "$RESPONSE_BODY" | jq -r "if .result then .result[] | select(.description | contains(\"PR #${PR_NUMBER}\")) | .id else empty end")
-                  else
-                      echo "Failed to list redirect rules (HTTP ${HTTP_STATUS}):"
-                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
-                      exit 1
-                  fi
+                      # check if PR preview ruleset exists
+                      RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r 'if .result then .result[] | select(.name == "PR Preview Redirects") | .id else empty end')
+                      
+                      if [ -n "$RULESET_ID" ]; then
+                          # get current rules
+                          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                            -H "Content-Type: application/json")
 
-                  if [ -n "$RULE_ID" ]; then
-                      echo "Found redirect rule. Deleting..."
+                          # extract status code from last line
+                          HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                          # extract response body (everything except last line)
+                          RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
-                      # make API request and capture response and status code
-                      RESPONSE=$(curl -s -w "\n%{http_code}" -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect/${RULE_ID}" \
-                        -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                        -H "Content-Type: application/json")
+                          if [ "$HTTP_STATUS" -eq 200 ]; then
+                              # remove rule for this PR from rules array
+                              NEW_RULES=$(echo "$RESPONSE_BODY" | jq -r '.result.rules | map(select(.description | contains("PR #'"${PR_NUMBER}"'") | not))')
+                              
+                              # update ruleset with new rules
+                              RESPONSE=$(curl -s -w "\n%{http_code}" -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                -H "Content-Type: application/json" \
+                                --data "{
+                                  \"rules\": ${NEW_RULES}
+                                }")
 
-                      # extract status code from last line
-                      HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
-                      # extract response body (everything except last line)
-                      RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+                              # extract status code from last line
+                              HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                              # extract response body (everything except last line)
+                              RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
-                      if [ "$HTTP_STATUS" -eq 200 ]; then
-                          SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
-                          if [ "$SUCCESS" = "true" ]; then
-                              echo "Successfully deleted redirect rule for PR #${PR_NUMBER}."
-                              gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted." || echo "ERROR: Failed to comment on PR. Skipping..."
+                              if [ "$HTTP_STATUS" -eq 200 ]; then
+                                  SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
+                                  if [ "$SUCCESS" = "true" ]; then
+                                      echo "Successfully removed redirect rule for PR #${PR_NUMBER}."
+                                      gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted." || echo "ERROR: Failed to comment on PR. Skipping..."
+                                  else
+                                      echo "Failed to update ruleset (API reported failure):"
+                                      echo "$RESPONSE_BODY" | jq '.'
+                                      exit 1
+                                  fi
+                              else
+                                  echo "Failed to update ruleset (HTTP ${HTTP_STATUS}):"
+                                  echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                                  exit 1
+                              fi
                           else
-                              echo "Failed to delete redirect rule (API reported failure):"
-                              echo "$RESPONSE_BODY" | jq '.'
+                              echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                              echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
                               exit 1
                           fi
                       else
-                          echo "Failed to delete redirect rule (HTTP ${HTTP_STATUS}):"
-                          echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
-                          exit 1
+                          echo "No PR preview ruleset found. Nothing to delete."
                       fi
                   else
-                      echo "No redirect rule found for PR #${PR_NUMBER}. Nothing to delete."
+                      echo "Failed to list rulesets (HTTP ${HTTP_STATUS}):"
+                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                      exit 1
                   fi
 
             - name: Delete Artifact
