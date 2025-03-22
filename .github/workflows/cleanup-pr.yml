@@ -40,43 +40,42 @@ jobs:
                       echo "WARN: No deployment mapping file found."
                   fi
 
-            - name: Delete DNS Record (Cloudflare Mirrored PR Staging URL)
+            - name: Delete redirect rule
               env:
                   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  MIRROR_URL=${PR_NUMBER}.staging.mindvista.ca
+                  echo "Looking up redirect rule for PR #${PR_NUMBER}..."
 
-                  echo "Looking up DNS record for ${MIRROR_URL}..."
-
-                  # get the record ID first
-                  RECORD_INFO=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/dns_records?type=CNAME&name=${MIRROR_URL}" \
+                  # list existing redirect rules
+                  EXISTING_RULES=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
                     -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                     -H "Content-Type: application/json")
 
-                  RECORD_ID=$(echo "$RECORD_INFO" | jq -r '.result[0].id')
+                  # check if rule exists by looking for PR number in description
+                  RULE_ID=$(echo "$EXISTING_RULES" | jq -r ".result[] | select(.description | contains(\"PR #${PR_NUMBER}\")) | .id")
 
-                  if [ "$RECORD_ID" != "null" ]; then
-                      echo "Found DNS record. Deleting..."
+                  if [ -n "$RULE_ID" ]; then
+                      echo "Found redirect rule. Deleting..."
 
-                      # delete the record
-                      DELETE_RESULT=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${RECORD_ID}" \
+                      # delete the rule
+                      DELETE_RESULT=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect/${RULE_ID}" \
                         -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                         -H "Content-Type: application/json")
 
                       SUCCESS=$(echo "$DELETE_RESULT" | jq -r '.success')
 
                       if [ "$SUCCESS" = "true" ]; then
-                          echo "Successfully deleted DNS record for ${MIRROR_URL}"
+                          echo "Successfully deleted redirect rule for PR #${PR_NUMBER}."
                           gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted."
                       else
-                          echo "Failed to delete DNS record:"
+                          echo "Failed to delete redirect rule:"
                           echo "$DELETE_RESULT" | jq '.'
                           exit 1
                       fi
                   else
-                      echo "No DNS record found for ${MIRROR_URL}. Nothing to delete."
+                      echo "No redirect rule found for PR #${PR_NUMBER}. Nothing to delete."
                   fi
 
             - name: Delete Artifact
