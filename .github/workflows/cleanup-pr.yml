@@ -59,19 +59,29 @@ jobs:
                   if [ -n "$RULE_ID" ]; then
                       echo "Found redirect rule. Deleting..."
 
-                      # delete the rule
-                      DELETE_RESULT=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect/${RULE_ID}" \
+                      # make API request and capture response and status code
+                      RESPONSE=$(curl -s -w "\n%{http_code}" -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect/${RULE_ID}" \
                         -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                         -H "Content-Type: application/json")
 
-                      SUCCESS=$(echo "$DELETE_RESULT" | jq -r '.success')
+                      # extract status code from last line
+                      HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                      # extract response body (everything except last line)
+                      RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
-                      if [ "$SUCCESS" = "true" ]; then
-                          echo "Successfully deleted redirect rule for PR #${PR_NUMBER}."
-                          gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted."
+                      if [ "$HTTP_STATUS" -eq 200 ]; then
+                          SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
+                          if [ "$SUCCESS" = "true" ]; then
+                              echo "Successfully deleted redirect rule for PR #${PR_NUMBER}."
+                              gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted."
+                          else
+                              echo "Failed to delete redirect rule (API reported failure):"
+                              echo "$RESPONSE_BODY" | jq '.'
+                              exit 1
+                          fi
                       else
-                          echo "Failed to delete redirect rule:"
-                          echo "$DELETE_RESULT" | jq '.'
+                          echo "Failed to delete redirect rule (HTTP ${HTTP_STATUS}):"
+                          echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
                           exit 1
                       fi
                   else
