@@ -11,6 +11,10 @@ on:
                 required: true
             VERCEL_PROJECT_ID:
                 required: true
+        outputs:
+            url:
+                description: "Preview deployment URL"
+                value: ${{ jobs.deploy.outputs.url }}
     workflow_dispatch: # manual triggering for external fork PRs
 
 permissions:
@@ -26,6 +30,8 @@ jobs:
     deploy:
         name: Deploy to ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
         runs-on: ubuntu-latest
+        outputs:
+            url: ${{ steps.deploy.outputs.url }}
         environment:
             name: ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
             url: ${{ steps.deploy.outputs.url }}
