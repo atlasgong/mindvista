@@ -74,16 +74,14 @@ jobs:
                           RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
                           if [ "$HTTP_STATUS" -eq 200 ]; then
-                              # remove rule for this PR from rules array
+                              # safely remove rule for this PR from rules array
                               NEW_RULES=$(echo "$RESPONSE_BODY" | jq -r '.result.rules | map(select(.description | contains("PR #'"${PR_NUMBER}"'") | not))')
                               
                               # update ruleset with new rules
                               RESPONSE=$(curl -s -w "\n%{http_code}" -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
                                 -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                                 -H "Content-Type: application/json" \
-                                --data "{
-                                  \"rules\": ${NEW_RULES}
-                                }")
+                                --data "$(jq -n --argjson rules "$NEW_RULES" '{"rules": $rules}')")
 
                               # extract status code from last line
                               HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
