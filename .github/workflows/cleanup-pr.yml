@@ -1,0 +1,99 @@
+name: Cleanup PR Environment
+
+on:
+    pull_request:
+        types: [closed]
+
+permissions:
+    pull-requests: write
+
+jobs:
+    cleanup_preview:
+        name: Cleanup Staging Environment
+        runs-on: ubuntu-latest
+        env:
+            PR_NUMBER: ${{ github.event.pull_request.number }}
+        steps:
+            # download the artifact containing deployment URL
+            - uses: actions/download-artifact@v4
+              with:
+                  name: pr-${{ env.PR_NUMBER }}-deploy-url
+                  path: .
+
+            - name: Install Vercel CLI
+              run: npm install --global vercel@latest
+
+            - name: Delete Vercel Preview Deployment
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+              run: |
+                  if [ -f "pr-deploy-mapping.json" ]; then
+                      DEPLOY_URL=$(jq -r '.url' pr-deploy-mapping.json)
+                      if [ ! -z "$DEPLOY_URL" ]; then
+                          echo "Found deployment URL: $DEPLOY_URL"
+                          vercel remove "$DEPLOY_URL" -y --token=$VERCEL_TOKEN
+                          echo "Deleted Vercel preview deployment for PR #${PR_NUMBER}."
+                      else
+                          echo "No deployment URL found in mapping file. Skipping deletion."
+                      fi
+                  else
+                      echo "WARN: No deployment mapping file found."
+                  fi
+
+            - name: Delete DNS Record (Cloudflare Mirrored PR Staging URL)
+              env:
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  MIRROR_URL=${PR_NUMBER}.staging.mindvista.ca
+
+                  echo "Looking up DNS record for ${MIRROR_URL}..."
+
+                  # get the record ID first
+                  RECORD_INFO=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/dns_records?type=CNAME&name=${MIRROR_URL}" \
+                    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                    -H "Content-Type: application/json")
+
+                  RECORD_ID=$(echo "$RECORD_INFO" | jq -r '.result[0].id')
+
+                  if [ "$RECORD_ID" != "null" ]; then
+                      echo "Found DNS record. Deleting..."
+
+                      # delete the record
+                      DELETE_RESULT=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${RECORD_ID}" \
+                        -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                        -H "Content-Type: application/json")
+
+                      SUCCESS=$(echo "$DELETE_RESULT" | jq -r '.success')
+
+                      if [ "$SUCCESS" = "true" ]; then
+                          echo "Successfully deleted DNS record for ${MIRROR_URL}"
+                          gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted."
+                      else
+                          echo "Failed to delete DNS record:"
+                          echo "$DELETE_RESULT" | jq '.'
+                          exit 1
+                      fi
+                  else
+                      echo "No DNS record found for ${MIRROR_URL}. Nothing to delete."
+                  fi
+
+            - name: Delete Artifact
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  ARTIFACT_NAME="pr-${PR_NUMBER}-deploy-url"
+
+                  echo "Fetching artifacts for the repository..."
+                  ARTIFACTS=$(gh api repos/${{ github.repository }}/actions/artifacts)
+
+                  ARTIFACT_ID=$(echo "$ARTIFACTS" | jq ".artifacts[] | select(.name == \"$ARTIFACT_NAME\") | .id")
+
+                  if [ -n "$ARTIFACT_ID" ]; then
+                      echo "Found artifact ID: $ARTIFACT_ID. Deleting..."
+                      gh api --method DELETE repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID
+                      echo "Artifact deleted successfully."
+                  else
+                      echo "No matching artifact found to delete."
+                  fi
