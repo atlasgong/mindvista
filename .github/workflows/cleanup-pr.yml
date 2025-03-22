@@ -73,7 +73,7 @@ jobs:
                           SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
                           if [ "$SUCCESS" = "true" ]; then
                               echo "Successfully deleted redirect rule for PR #${PR_NUMBER}."
-                              gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted."
+                              gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted." || echo "ERROR: Failed to comment on PR. Skipping..."
                           else
                               echo "Failed to delete redirect rule (API reported failure):"
                               echo "$RESPONSE_BODY" | jq '.'
