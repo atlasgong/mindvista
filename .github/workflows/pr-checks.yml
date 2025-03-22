@@ -262,7 +262,7 @@ jobs:
                     echo "Redirect rule not found. Creating it now..."
                     echo "Creating redirect rule: ${MIRROR_URL} -> ${DEPLOY_URL}"
 
-                    curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
+                    CREATE_RESULT=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
                       -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                       -H "Content-Type: application/json" \
                       --data '{
@@ -283,12 +283,20 @@ jobs:
                           },
                           "preserve_query_string": true
                         }
-                      }'
+                      }')
 
-                    echo "Successfully created redirect rule for PR #${PR_NUMBER}."
+                    SUCCESS=$(echo "$CREATE_RESULT" | jq -r '.success')
 
-                    echo "Posting comment to PR..."
-                    gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${PR_NUMBER}.staging.mindvista.ca)." || echo "ERROR: Failed to comment on PR. Skipping..."
+                    if [ "$SUCCESS" = "true" ]; then
+                        echo "Successfully created redirect rule for PR #${PR_NUMBER}."
+
+                        echo "Posting comment to PR..."
+                        gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${PR_NUMBER}.staging.mindvista.ca)." || echo "ERROR: Failed to comment on PR. Skipping..."
+                    else
+                        echo "Failed to create redirect rule:"
+                        echo "$CREATE_RESULT" | jq '.'
+                        exit 1
+                    fi
                   else
                     echo "Redirect rule already exists. Skipping creation and comment."
                   fi
