@@ -262,7 +262,8 @@ jobs:
                     echo "Redirect rule not found. Creating it now..."
                     echo "Creating redirect rule: ${MIRROR_URL} -> ${DEPLOY_URL}"
 
-                    CREATE_RESULT=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
+                    # make API request and capture response and status code
+                    RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
                       -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                       -H "Content-Type: application/json" \
                       --data '{
@@ -285,16 +286,26 @@ jobs:
                         }
                       }')
 
-                    SUCCESS=$(echo "$CREATE_RESULT" | jq -r '.success')
+                    # extract status code from last line
+                    HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                    # extract response body (everything except last line)
+                    RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
-                    if [ "$SUCCESS" = "true" ]; then
-                        echo "Successfully created redirect rule for PR #${PR_NUMBER}."
+                    if [ "$HTTP_STATUS" -eq 200 ]; then
+                        SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
+                        if [ "$SUCCESS" = "true" ]; then
+                            echo "Successfully created redirect rule for PR #${PR_NUMBER}."
 
-                        echo "Posting comment to PR..."
-                        gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${PR_NUMBER}.staging.mindvista.ca)." || echo "ERROR: Failed to comment on PR. Skipping..."
+                            echo "Posting comment to PR..."
+                            gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${PR_NUMBER}.staging.mindvista.ca)." || echo "ERROR: Failed to comment on PR. Skipping..."
+                        else
+                            echo "Failed to create redirect rule (API reported failure):"
+                            echo "$RESPONSE_BODY" | jq '.'
+                            exit 1
+                        fi
                     else
-                        echo "Failed to create redirect rule:"
-                        echo "$CREATE_RESULT" | jq '.'
+                        echo "Failed to create redirect rule (HTTP ${HTTP_STATUS}):"
+                        echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
                         exit 1
                     fi
                   else
