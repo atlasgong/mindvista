@@ -250,13 +250,24 @@ jobs:
 
                   echo "Checking if redirect rule exists for ${MIRROR_URL}..."
 
-                  # list existing redirect rules
-                  EXISTING_RULES=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
+                  # list existing redirect rules, capture response and status code
+                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rules/redirect" \
                     -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                     -H "Content-Type: application/json")
 
-                  # check if rule exists by looking for PR number in description
-                  RULE_ID=$(echo "$EXISTING_RULES" | jq -r ".result[] | select(.description | contains(\"PR #${PR_NUMBER}\")) | .id")
+                  # extract status code from last line
+                  HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                  # extract response body (everything except last line)
+                  RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                  if [ "$HTTP_STATUS" -eq 200 ]; then
+                      # safely check if rule exists by looking for PR number in description
+                      RULE_ID=$(echo "$RESPONSE_BODY" | jq -r "if .result then .result[] | select(.description | contains(\"PR #${PR_NUMBER}\")) | .id else empty end")
+                  else
+                      echo "Failed to list redirect rules (HTTP ${HTTP_STATUS}):"
+                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                      exit 1
+                  fi
 
                   if [ -z "$RULE_ID" ]; then
                     echo "Redirect rule not found. Creating it now..."
