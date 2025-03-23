@@ -364,3 +364,13 @@ jobs:
                           else
                               echo "Redirect rule already exists. Skipping creation and comment."
                           fi
+                      else
+                          echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                          echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                          exit 1
+                      fi
+                  else
+                      echo "Failed to list rulesets (HTTP ${HTTP_STATUS}):"
+                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                      exit 1
+                  fi
