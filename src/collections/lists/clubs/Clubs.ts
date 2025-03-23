@@ -131,6 +131,43 @@ export const Clubs: CollectionConfig = {
             },
         },
         {
+            name: "graphicTitle",
+            label: "Graphic Title - En",
+            type: "text",
+            access: {
+                update: canEditContent,
+            },
+            admin: {
+                description: "This field must be filled out before the option to add a graphic is shown. To remove the graphic, simply remove this field. If the graphic is not used elsewhere, please remember to delete it from the Media collection.",
+            },
+        },
+        {
+            name: "graphicTitleFr",
+            label: "Graphic Title - Fr",
+            type: "text",
+            admin: {
+                condition: (data: { graphicTitle?: string }) => Boolean(data.graphicTitle),
+            },
+            access: {
+                create: canEditFrenchContent,
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
+            },
+        },
+        {
+            name: "graphic",
+            type: "upload",
+            relationTo: "media",
+            access: {
+                update: canEditContent,
+            },
+            required: true,
+            admin: {
+                condition: (data: { graphicTitle?: string }) => Boolean(data.graphicTitle),
+                description: "Required when Graphic Title is present.",
+            },
+        },
+        {
             name: "currentlyActive",
             type: "checkbox",
             access: {

@@ -1,4 +1,6 @@
 import { s3Storage } from "@payloadcms/storage-s3";
+import { awsCredentialsProvider } from "@vercel/functions/oidc";
+import { postgresAdapter } from "@payloadcms/db-postgres";
 import { vercelPostgresAdapter } from "@payloadcms/db-vercel-postgres";
 import { resendAdapter } from "@payloadcms/email-resend";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
@@ -7,9 +9,6 @@ import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
-
-import { en } from "@payloadcms/translations/languages/en";
-import { fr } from "@payloadcms/translations/languages/fr";
 
 import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
@@ -29,8 +28,39 @@ import { SponsorPage } from "./globals/SponsorPage";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+const isDevelopment = process.env.APP_ENV === "development";
+
+// use local postgres server in development, neon otherwise
+const dbAdapter = isDevelopment
+    ? postgresAdapter({
+          pool: {
+              connectionString: process.env.POSTGRES_URL,
+          },
+      })
+    : vercelPostgresAdapter({
+          push: false,
+      });
+
+// use access key authentication in development, IAM role-based authentication otherwise
+const storageConfig = isDevelopment
+    ? {
+          credentials: {
+              accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
+              secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
+          },
+          region: process.env.S3_REGION,
+          endpoint: process.env.S3_ENDPOINT,
+          forcePathStyle: true,
+      }
+    : {
+          credentials: awsCredentialsProvider({
+              roleArn: process.env.AWS_ROLE_ARN || "",
+          }),
+          region: process.env.S3_REGION,
+      };
+
 export default buildConfig({
-    serverURL: process.env.SERVER_URL,
+    serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
     telemetry: false,
     admin: {
         user: Users.slug,
@@ -53,7 +83,7 @@ export default buildConfig({
                 },
                 {
                     name: "iPadPortrait",
-                    label: "iPad (Portait)",
+                    label: "iPad (Portrait)",
                     width: 810,
                     height: 1080,
                 },
@@ -89,22 +119,8 @@ export default buildConfig({
     typescript: {
         outputFile: path.resolve(dirname, "payload-types.ts"),
     },
-    db: vercelPostgresAdapter({
-        pool: {
-            connectionString: process.env.POSTGRES_URL || "",
-        },
-        push: false,
-    }),
+    db: dbAdapter,
     sharp,
-    i18n: {
-        supportedLanguages: { en, fr },
-        fallbackLanguage: "en",
-    },
-    localization: {
-        locales: ["en", "fr"],
-        defaultLocale: "en",
-        fallback: true,
-    },
     email: resendAdapter({
         defaultFromAddress: process.env.RESEND_DEFAULT_EMAIL || "",
         defaultFromName: "MindVista | Payload CMS",
@@ -119,13 +135,7 @@ export default buildConfig({
                 },
             },
             bucket: process.env.S3_BUCKET || "",
-            config: {
-                credentials: {
-                    accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
-                    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
-                },
-                region: process.env.S3_REGION,
-            },
+            config: storageConfig,
         }),
     ],
 });

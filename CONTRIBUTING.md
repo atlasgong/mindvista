@@ -9,7 +9,7 @@ Thank you and happy coding!
 # General Guidelines
 
 [Skip to documentation.](https://github.com/atlasgong/mindvista/wiki/)
-New to this repo? See [GUIDE.md](GUIDE.md) to set up your local server.
+New to this repo? See [Getting Started](https://github.com/atlasgong/mindvista/wiki#getting-started) to set up your local server.
 
 Before committing, see our [Conventional Commit Guidelines](https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines).
 
@@ -17,7 +17,7 @@ Please write clear and concise code. We use [Prettier](https://prettier.io/docs/
 
 ### Responsiveness
 
-REM is 16px. Do not use any absolute length units. Justification must be provided if you break this rule. Borders excepted.
+Ensure you test on common device sizes before creating a PR.
 
 ### Accessibility
 
