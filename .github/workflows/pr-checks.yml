@@ -350,7 +350,7 @@ jobs:
                                       echo "Successfully created redirect rule for PR #${PR_NUMBER}."
 
                                       echo "Posting comment to PR..."
-                                      gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${MIRROR_URL})." || echo "ERROR: Failed to comment on PR. Skipping..."
+                                      gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${MIRROR_URL}). <!-- preview-url -->" || echo "ERROR: Failed to comment on PR. Skipping..."
                                   else
                                       echo "Failed to create redirect rule (API reported failure):"
                                       echo "$RESPONSE_BODY" | jq '.'
