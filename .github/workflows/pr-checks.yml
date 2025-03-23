@@ -214,7 +214,7 @@ jobs:
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-    # create a [pr-number].staging.mindvista.ca redirect to the vercel preview deployment URL
+    # create a pr-[pr-number].mindvista.ca redirect to the vercel preview deployment URL
     create_redirect_url:
         needs: deploy
         runs-on: ubuntu-latest
@@ -231,7 +231,7 @@ jobs:
 
             - uses: actions/upload-artifact@v4
               with:
-                  name: pr-${PR_NUMBER}-deploy-url
+                  name: pr-${{ env.PR_NUMBER }}-deploy-url
                   path: pr-deploy-mapping.json
                   retention-days: 90
 
@@ -241,7 +241,7 @@ jobs:
                   CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  MIRROR_URL=${PR_NUMBER}.staging.mindvista.ca
+                  MIRROR_URL=pr-${PR_NUMBER}.mindvista.ca
 
                   if [ -z "$DEPLOY_URL" ]; then
                     echo "DEPLOY_URL is empty. Something went wrong in deploy step."
@@ -265,7 +265,7 @@ jobs:
                       RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r 'if .result then .result[] | select(.name == "PR Preview Redirects") | .id else empty end')
                       
                       if [ -z "$RULESET_ID" ]; then
-                          echo "Creating PR preview ruleset..."
+                          echo "Redirect rule not found. Creating PR preview ruleset..."
                           # create the ruleset
                           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets" \
                             -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
@@ -350,7 +350,7 @@ jobs:
                                       echo "Successfully created redirect rule for PR #${PR_NUMBER}."
 
                                       echo "Posting comment to PR..."
-                                      gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${PR_NUMBER}.staging.mindvista.ca)." || echo "ERROR: Failed to comment on PR. Skipping..."
+                                      gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready [here](https://${MIRROR_URL})." || echo "ERROR: Failed to comment on PR. Skipping..."
                                   else
                                       echo "Failed to create redirect rule (API reported failure):"
                                       echo "$RESPONSE_BODY" | jq '.'
