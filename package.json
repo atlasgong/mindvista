@@ -41,7 +41,7 @@
         "cross-env": "^7.0.3",
         "date-fns-tz": "^3.2.0",
         "graphql": "^16.8.1",
-        "next": "15.2.0",
+        "next": "15.2.3",
         "nextjs-toploader": "^3.7.15",
         "payload": "^3.29.0",
         "react": "19.0.0",
@@ -66,14 +66,14 @@
         "@types/canvas-confetti": "^1.9.0",
         "@types/mailchimp__mailchimp_marketing": "^3.0.21",
         "@types/node": "^22.5.4",
-        "@types/react": "19.0.10",
+        "@types/react": "19.0.12",
         "@types/react-dom": "19.0.4",
         "@types/tar": "^6.1.13",
         "@vitejs/plugin-react": "^4.3.4",
         "autoprefixer": "^10.4.20",
         "conventional-changelog-atom": "^5.0.0",
         "eslint": "^9.16.0",
-        "eslint-config-next": "15.2.0",
+        "eslint-config-next": "15.2.3",
         "git-format-staged": "^3.1.1",
         "husky": "^8.0.3",
         "jsdom": "^26.0.0",
@@ -90,7 +90,7 @@
         "node": "^18.20.2 || >=20.9.0"
     },
     "overrides": {
-        "@types/react": "19.0.10",
+        "@types/react": "19.0.12",
         "@types/react-dom": "19.0.4"
     }
 }
