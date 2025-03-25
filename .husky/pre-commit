@@ -22,6 +22,6 @@ echo "$OUTPUT" | awk '
     print file
   }
 ' | tee /dev/tty | wc -l | {
-  read count
+  read -r count
   echo "Formatted $count files."
 }
