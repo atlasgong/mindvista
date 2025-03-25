@@ -4,6 +4,14 @@ echo "Formatting files..."
 
 # Run git-format-staged and capture its output
 OUTPUT=$(npx git-format-staged -f 'prettier --ignore-unknown --stdin-filepath "{}"' '*')
+STATUS=$?
+
+# if npx failed, abort with its output and exit code
+if [ $STATUS -ne 0 ]; then
+  echo "Error running git-format-staged:"
+  echo "$OUTPUT"
+  exit $STATUS
+fi
 
 # if no output, no files were formatted
 if [ -z "$OUTPUT" ]; then
