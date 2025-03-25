@@ -1,1 +1,7 @@
-echo "Validating commit message..." && npm run -s commitlint ${1} && echo "Validated."
+#!/usr/bin/env bash
+
+export PATH="$(dirname "$(which node)"):$PATH"
+
+echo "Validating commit message..."
+npm run -s commitlint "$1"
+echo "Validated."
