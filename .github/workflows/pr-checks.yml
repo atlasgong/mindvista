@@ -4,6 +4,7 @@ on:
     pull_request:
         branches:
             - "**"
+    workflow_dispatch: # allows manual triggering from GitHub UI
 
 permissions:
     contents: write
