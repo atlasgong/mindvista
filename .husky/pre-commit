@@ -7,10 +7,10 @@ OUTPUT=$(npx git-format-staged -f 'prettier --ignore-unknown --stdin-filepath "{
 STATUS=$?
 
 # if npx failed, abort with its output and exit code
-if [ $STATUS -ne 0 ]; then
+if [ "$STATUS" -ne 0 ]; then
   echo "Error running git-format-staged:"
   echo "$OUTPUT"
-  exit $STATUS
+  exit "$STATUS"
 fi
 
 # if no output, no files were formatted
