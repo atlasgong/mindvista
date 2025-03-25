@@ -18,7 +18,7 @@ while read local_ref local_sha remote_ref remote_sha; do
     fi
 
     # check if there are any commits unique to this branch
-    if [ -z "$(git rev-list $local_sha ^master)" ]; then
+    if [ -z "$(git rev-list "$local_sha" ^master)" ]; then
         echo "ERROR: Branch '${local_ref#refs/heads/}' has no unique commits"
         echo "Please create a commit before pushing this branch."
         exit 1

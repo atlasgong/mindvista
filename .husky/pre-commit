@@ -12,8 +12,16 @@ if [ -z "$OUTPUT" ]; then
 fi
 
 # extract filenames and count them, then output cleanly
-echo "$OUTPUT" | while read -r line; do
-  if [[ $line =~ Reformatted[[:space:]](.+)[[:space:]]with ]]; then
-    echo "${BASH_REMATCH[1]}"
-  fi
-done | tee /dev/tty | wc -l | { read count; echo "Formatted $count files."; }
+
+echo "$OUTPUT" | awk '
+  /Reformatted/ && /with/ {
+    for (i=1; i<=NF; i++) {
+      if ($i == "Reformatted") file=$(i+1)
+      if ($i == "with") break
+    }
+    print file
+  }
+' | tee /dev/tty | wc -l | {
+  read count
+  echo "Formatted $count files."
+}
