@@ -48,7 +48,7 @@ jobs:
                   aws s3api put-object-tagging \
                   --bucket "${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}" \
                   --key "${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz" \
-                  --tagging 'TagSet=[{Key=RetainDaily,Value=false}]'
+                  --tagging '{"TagSet":[{"Key":"RetainDaily","Value":"false"}]}'
 
             - name: Verify backup exists in S3
               run: |
