@@ -2,7 +2,12 @@
 
 echo "Formatting files..."
 
-# Run git-format-staged and capture its output
+# run git-format-staged and capture its output
+command -v npx >/dev/null 2>&1 || {
+  echo >&2 "Error: npx is not installed or not in PATH. Please install Node.js and ensure it is available in your PATH.";
+  exit 3;
+}
+
 OUTPUT=$(npx git-format-staged -f 'prettier --ignore-unknown --stdin-filepath "{}"' '*')
 STATUS=$?
 
