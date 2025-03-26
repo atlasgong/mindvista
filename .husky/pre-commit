@@ -1,26 +1,19 @@
-#!/usr/bin/env bash
-
-# Dynamically prepend the directory containing `node` (and thus npm, npx) to PATH
-export PATH="$(dirname "$(which node)"):$PATH"
+#!/bin/sh
 
 echo "Formatting files..."
 
 # Run git-format-staged and capture its output
 OUTPUT=$(npx git-format-staged -f 'prettier --ignore-unknown --stdin-filepath "{}"' '*')
 
-# If no output, no files were formatted
+# if no output, no files were formatted
 if [ -z "$OUTPUT" ]; then
   echo "No changes needed."
   exit 0
 fi
 
-# Extract filenames and count them, then output cleanly
+# extract filenames and count them, then output cleanly
 echo "$OUTPUT" | while read -r line; do
-  # Bash-only syntax for pattern matching
   if [[ $line =~ Reformatted[[:space:]](.+)[[:space:]]with ]]; then
     echo "${BASH_REMATCH[1]}"
   fi
-done | tee /dev/tty | wc -l | {
-  read -r count
-  echo "Formatted $count files."
-}
+done | tee /dev/tty | wc -l | { read count; echo "Formatted $count files."; }
