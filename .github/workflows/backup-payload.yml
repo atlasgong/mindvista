@@ -41,7 +41,14 @@ jobs:
 
             - name: Upload backup to S3
               run: |
-                  aws s3 cp "${TIMESTAMP}.sql.gz" s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/ --tagging "RetainDaily=false"
+                  aws s3 cp "${TIMESTAMP}.sql.gz" s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/
+
+            - name: Tag uploaded backup
+              run: |
+                  aws s3api put-object-tagging \
+                  --bucket "${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}" \
+                  --key "${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz" \
+                  --tagging 'TagSet=[{Key=RetainDaily,Value=false}]'
 
             - name: Verify backup exists in S3
               run: |
