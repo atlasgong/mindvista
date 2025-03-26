@@ -43,10 +43,26 @@ jobs:
               run: |
                   aws s3 cp "${TIMESTAMP}.sql.gz" s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/
 
+            - name: Tag uploaded backup
+              run: |
+                  aws s3api put-object-tagging \
+                  --bucket "${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}" \
+                  --key "${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz" \
+                  --tagging '{"TagSet":[{"Key":"RetainDaily","Value":"false"}]}'
+
             - name: Verify backup exists in S3
               run: |
                   if aws s3 ls "s3://${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}/${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz"; then
                       echo "Backup successfully uploaded to S3."
+                      if aws s3api get-object-tagging \
+                          --bucket "${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}" \
+                          --key "${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz" | jq -e \
+                          '.TagSet[] | select(.Key == "RetainDaily" and .Value == "false")' > /dev/null; then
+                          echo "Tag successfully set."
+                      else
+                          echo "ERROR: File successfully uploaded but tag was not correctly set."
+                          exit 2
+                      fi
                   else
                       echo "ERROR: Backup file not found in S3 after upload."
                       exit 1
