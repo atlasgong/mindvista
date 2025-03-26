@@ -56,8 +56,9 @@ jobs:
                       echo "Backup successfully uploaded to S3."
                       if aws s3api get-object-tagging \
                           --bucket "${{ secrets.AWS_S3_PAYLOAD_POSTGRES_BUCKET }}" \
-                          --key "${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz" | grep -q '"Key": "RetainDaily".*Value": "false"'; then
-                            echo "Tag successfully set."
+                          --key "${YEAR_MONTH_DATE_HOUR}/${TIMESTAMP}.sql.gz" | jq -e \
+                          '.TagSet[] | select(.Key == "RetainDaily" and .Value == "false")' > /dev/null; then
+                          echo "Tag successfully set."
                       else
                           echo "ERROR: File successfully uploaded but tag was not correctly set."
                           exit 2
