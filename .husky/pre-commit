@@ -2,8 +2,21 @@
 
 echo "Formatting files..."
 
-# Run git-format-staged and capture its output
+# run git-format-staged and capture its output
+command -v npx >/dev/null 2>&1 || {
+  echo >&2 "Error: npx is not installed or not in PATH. Please install Node.js and ensure it is available in your PATH.";
+  exit 3;
+}
+
 OUTPUT=$(npx git-format-staged -f 'prettier --ignore-unknown --stdin-filepath "{}"' '*')
+STATUS=$?
+
+# if npx failed, abort with its output and exit code
+if [ "$STATUS" -ne 0 ]; then
+  echo "Error running git-format-staged:"
+  echo "$OUTPUT"
+  exit "$STATUS"
+fi
 
 # if no output, no files were formatted
 if [ -z "$OUTPUT" ]; then
@@ -12,8 +25,16 @@ if [ -z "$OUTPUT" ]; then
 fi
 
 # extract filenames and count them, then output cleanly
-echo "$OUTPUT" | while read -r line; do
-  if [[ $line =~ Reformatted[[:space:]](.+)[[:space:]]with ]]; then
-    echo "${BASH_REMATCH[1]}"
-  fi
-done | tee /dev/tty | wc -l | { read count; echo "Formatted $count files."; }
+
+echo "$OUTPUT" | awk '
+  /Reformatted/ && /with/ {
+    for (i=1; i<=NF; i++) {
+      if ($i == "Reformatted") file=$(i+1)
+      if ($i == "with") break
+    }
+    print file
+  }
+' | tee /dev/tty | wc -l | {
+  read -r count
+  echo "Formatted $count files."
+}
