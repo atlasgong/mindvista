@@ -5,7 +5,9 @@ on:
         types: [closed]
 
 permissions:
+    contents: write
     pull-requests: write
+    issues: write
 
 jobs:
     cleanup_staging:
