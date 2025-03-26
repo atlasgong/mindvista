@@ -1,7 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-while read -r local_ref local_sha; do
+while read -r local_ref local_sha remote_ref remote_sha; do
     # skip master branch
     if [ "$local_ref" = "refs/heads/master" ]; then
         continue
