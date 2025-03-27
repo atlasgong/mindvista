@@ -16,7 +16,6 @@ export const AboutPage: GlobalConfig = {
     drafts: true,
   },
   hooks: {
-    // Revalidate page on "save"
     afterChange: [
       () => {
         revalidatePath("/about");
@@ -44,12 +43,33 @@ export const AboutPage: GlobalConfig = {
       },
     },
     {
+      // From requested changes: caption for group photo added
+      name: "groupPhotoCaption",
+      label: "Group Photo Caption",
+      type: "text",
+      required: false,
+      access: {
+        update: canEditContent,
+      },
+    },
+    {
       name: "title",
-      label: "Page Title",
+      label: "Page Title (EN)",
       type: "text",
       required: true,
       access: {
         update: canEditContent,
+      },
+    },
+    {
+      // // From requested changes: fr support added
+      name: "titleFr",
+      label: "Page Title (FR)",
+      type: "text",
+      required: false,
+      access: {
+        read: canEditFrenchContent,
+        update: canEditFrenchContent,
       },
     },
     {
@@ -98,11 +118,21 @@ export const AboutPage: GlobalConfig = {
       fields: [
         {
           name: "title",
-          label: "Team Section Title",
+          label: "Team Section Title (EN)",
           type: "text",
           required: true,
           access: {
             update: canEditContent,
+          },
+        },
+        {
+          name: "titleFr",
+          label: "Team Section Title (FR)",
+          type: "text",
+          required: false,
+          access: {
+            read: canEditFrenchContent,
+            update: canEditFrenchContent,
           },
         },
         {
@@ -113,11 +143,21 @@ export const AboutPage: GlobalConfig = {
           fields: [
             {
               name: "role",
-              label: "Role",
+              label: "Role (EN)",
               type: "text",
               required: true,
               access: {
                 update: canEditContent,
+              },
+            },
+            {
+              name: "roleFr",
+              label: "Role (FR)",
+              type: "text",
+              required: false,
+              access: {
+                read: canEditFrenchContent,
+                update: canEditFrenchContent,
               },
             },
             {
