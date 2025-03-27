@@ -799,7 +799,9 @@ export interface About {
   id: number;
   page: number | Page;
   groupPhoto: number | Media;
+  groupPhotoCaption?: string | null;
   title: string;
+  titleFr?: string | null;
   introduction: {
     root: {
       type: string;
@@ -862,8 +864,10 @@ export interface About {
   } | null;
   teams: {
     title: string;
+    titleFr?: string | null;
     members: {
       role: string;
+      roleFr?: string | null;
       name: string;
       pronouns?: string | null;
       image?: (number | null) | Media;
@@ -1158,7 +1162,9 @@ export interface AnnouncementBar {
 export interface AboutSelect<T extends boolean = true> {
   page?: T;
   groupPhoto?: T;
+  groupPhotoCaption?: T;
   title?: T;
+  titleFr?: T;
   introduction?: T;
   introductionFr?: T;
   initiativeDetails?: T;
@@ -1167,10 +1173,12 @@ export interface AboutSelect<T extends boolean = true> {
     | T
     | {
         title?: T;
+        titleFr?: T;
         members?:
           | T
           | {
               role?: T;
+              roleFr?: T;
               name?: T;
               pronouns?: T;
               image?: T;
