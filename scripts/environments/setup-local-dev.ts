@@ -1,7 +1,11 @@
 import { exec } from "child_process";
 import { promisify } from "util";
+import { S3Client, CreateBucketCommand, BucketLocationConstraint, BucketAlreadyOwnedByYou, BucketAlreadyExists } from "@aws-sdk/client-s3";
 
 const execAsync = promisify(exec);
+
+// parse command line arguments
+const withSudo = process.argv.includes("--with-sudo");
 
 const LOCALSTACK_ENDPOINT = process.env.S3_ENDPOINT || "http://localhost:4566";
 const BUCKET_NAME = process.env.S3_BUCKET || "mindvista-local";
@@ -11,7 +15,10 @@ const AWS_SECRET_ACCESS_KEY = process.env.S3_SECRET_ACCESS_KEY || "test";
 
 async function executeCommand(command: string): Promise<void> {
     try {
-        const { stdout, stderr } = await execAsync(command);
+        // prepend sudo to docker commands if --with-sudo flag is present
+        const finalCommand = withSudo && command.startsWith("docker") ? `sudo ${command}` : command;
+
+        const { stdout, stderr } = await execAsync(finalCommand);
         if (stdout) console.log(stdout);
         if (stderr) console.error(stderr);
     } catch (error) {
@@ -39,29 +46,43 @@ async function waitForLocalStack(): Promise<void> {
     }
 }
 
-async function runAwsCommand(command: string): Promise<void> {
-    // Use AWS CLI through Docker
-    const dockerAwsCommand = `docker run --rm --network=host \
-        -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
-        -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
-        amazon/aws-cli ${command} --endpoint-url=${LOCALSTACK_ENDPOINT}`;
-    await executeCommand(dockerAwsCommand);
-}
+// runAwsCommand function removed as S3 operations now use the SDK
 
 async function setupS3(): Promise<void> {
-    console.log("\nSetting up S3 bucket...");
+    console.log("\nSetting up S3 bucket using AWS SDK...");
+
+    const s3Client = new S3Client({
+        region: REGION,
+        endpoint: LOCALSTACK_ENDPOINT,
+        credentials: {
+            accessKeyId: AWS_ACCESS_KEY_ID,
+            secretAccessKey: AWS_SECRET_ACCESS_KEY,
+        },
+        forcePathStyle: true, // Required for LocalStack compatibility
+    });
+
+    const createBucketCommand = new CreateBucketCommand({
+        Bucket: BUCKET_NAME,
+        // CreateBucketConfiguration is needed if region is not us-east-1
+        ...(REGION !== "us-east-1" && {
+            CreateBucketConfiguration: { LocationConstraint: REGION as BucketLocationConstraint },
+        }),
+    });
 
     try {
-        // Create bucket
-        await runAwsCommand(`s3 mb s3://${BUCKET_NAME} --region ${REGION}`);
-
-        // Enable versioning
-        await runAwsCommand(`s3api put-bucket-versioning --bucket ${BUCKET_NAME} --versioning-configuration Status=Enabled`);
-
-        console.log("S3 bucket setup complete");
+        console.log(`Attempting to create bucket '${BUCKET_NAME}'...`);
+        await s3Client.send(createBucketCommand);
+        console.log(`Bucket '${BUCKET_NAME}' created successfully.`);
+        console.log("S3 bucket setup complete.");
     } catch (error) {
-        console.error("Failed to set up S3 bucket:", error);
-        throw error;
+        if (error instanceof BucketAlreadyOwnedByYou || error instanceof BucketAlreadyExists) {
+            // LocalStack might return BucketAlreadyExists, AWS proper returns BucketAlreadyOwnedByYou
+            console.log(`Bucket '${BUCKET_NAME}' already exists. Skipping creation and continuing...`);
+        } else {
+            // For any other error during bucket creation, log and re-throw
+            console.error(`Failed to create or access S3 bucket '${BUCKET_NAME}':`, error);
+            throw error;
+        }
     }
 }
 
@@ -87,7 +108,7 @@ async function checkPrerequisites(): Promise<boolean> {
 
 async function checkExistingContainers(): Promise<boolean> {
     try {
-        const { stdout } = await execAsync("docker compose ps --format json");
+        const { stdout } = await execAsync(`${withSudo ? "sudo " : ""}docker compose ps --format json`);
         const containers = JSON.parse(stdout);
 
         if (containers.length > 0) {
@@ -106,6 +127,8 @@ async function checkExistingContainers(): Promise<boolean> {
 async function main() {
     console.log("Setting up local development environment...\n");
 
+    const cmdPrefix = withSudo ? "sudo " : "";
+
     try {
         // Check prerequisites
         const prereqsOk = await checkPrerequisites();
@@ -116,10 +139,11 @@ async function main() {
         // Check for existing containers
         const containersExist = await checkExistingContainers();
         if (containersExist) {
+            const cmdPrefix = withSudo ? "sudo " : "";
             console.log("\nContainers are already set up. You can:");
-            console.log("1. Use existing containers: docker compose start");
-            console.log("2. Recreate containers: docker compose up -d");
-            console.log("3. Remove containers: docker compose down\n");
+            console.log(`1. Use existing containers: ${cmdPrefix}docker compose start`);
+            console.log(`2. Recreate containers: ${cmdPrefix}docker compose up -d`);
+            console.log(`3. Remove containers: ${cmdPrefix}docker compose down\n`);
             process.exit(0);
         }
 
@@ -135,16 +159,16 @@ async function main() {
 
         console.log("\nLocal development environment setup complete!");
         console.log("\nContainer Management:");
-        console.log("- Check status: docker compose ps");
-        console.log("- Start containers: docker compose start");
-        console.log("- Stop containers: docker compose stop");
-        console.log("- Remove containers: docker compose down");
+        console.log(`- Check status: ${cmdPrefix}docker compose ps`);
+        console.log(`- Start containers: ${cmdPrefix}docker compose start`);
+        console.log(`- Stop containers: ${cmdPrefix}docker compose stop`);
+        console.log(`- Remove containers: ${cmdPrefix}docker compose down`);
         console.log("\nLogs:");
-        console.log("- All containers: docker compose logs -f");
-        console.log("- PostgreSQL: docker compose logs -f postgres");
-        console.log("- LocalStack: docker compose logs -f localstack");
+        console.log(`- All containers: ${cmdPrefix}docker compose logs -f`);
+        console.log(`- PostgreSQL: ${cmdPrefix}docker compose logs -f postgres`);
+        console.log(`- LocalStack: ${cmdPrefix}docker compose logs -f localstack`);
         console.log("\nS3 Storage:");
-        console.log("- List buckets: docker run --rm --network=host -e AWS_ACCESS_KEY_ID=test -e AWS_SECRET_ACCESS_KEY=test amazon/aws-cli s3 ls --endpoint-url=http://localhost:4566");
+        console.log(`- List buckets: ${cmdPrefix}docker run --rm --network=host -e AWS_ACCESS_KEY_ID=test -e AWS_SECRET_ACCESS_KEY=test amazon/aws-cli s3 ls --endpoint-url=http://localhost:4566`);
         console.log("\nApplication:");
         console.log("- Start development server: npm run dev");
     } catch (error) {
