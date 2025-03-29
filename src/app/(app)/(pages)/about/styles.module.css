@@ -1,0 +1,80 @@
+/* styles.module.css */
+
+/* 
+  .container:
+  - Centers content with a max-width.
+  - Uses fixed rem-based padding to ensure consistent spacing.
+*/
+.container {
+    @apply mx-auto max-w-7xl px-6 pb-12 pt-20;
+}
+
+/* 
+    .mainContent:
+    - Acts as a wrapper for the page’s main content.
+  */
+.mainContent {
+    @apply relative;
+}
+
+/* 
+    .section:
+    - Provides vertical spacing between sections.
+    - Previously, a vw-based margin was used (mx-[3vw]); now replaced with fixed rem spacing (mx-4)
+      for consistency across screen sizes.
+  */
+.section {
+    @apply mx-4 pb-16;
+}
+
+/* 
+    .heroSection:
+    - Specific padding for the hero section.
+    - Uses responsive top and bottom padding (pt-10 md:pt-16, pb-10 md:pb-20) defined in rem.
+  */
+.heroSection {
+    @apply pb-10 pt-10 md:pb-20 md:pt-16;
+}
+
+/* 
+    .imageWrapper:
+    - Styles the container of the hero image.
+    - Ensures the image is clipped with rounded corners and has a shadow.
+  */
+.imageWrapper {
+    @apply relative overflow-hidden rounded-xl shadow-lg;
+}
+
+/* 
+    .heroImage:
+    - Ensures the hero image covers its container, with smooth scaling transitions.
+  */
+.heroImage {
+    @apply object-cover transition-transform duration-500;
+}
+
+/* 
+    .textContent:
+    - Adds consistent vertical spacing between text blocks.
+  */
+.textContent {
+    @apply space-y-4;
+}
+
+/* 
+    .title:
+    - Sets the page title with a bold, centered text style.
+    - Uses rem-based font sizes (text-3xl) and margin (mb-4) to remain consistent.
+  */
+.title {
+    @apply mb-4 text-center text-3xl font-bold;
+}
+
+/* 
+    .subtitle:
+    - Sets the subtitle styling using a base font size.
+    - The text color uses a custom variable (text-cTextOffset) defined in your Tailwind config.
+  */
+.subtitle {
+    @apply text-center text-base text-cTextOffset;
+}
