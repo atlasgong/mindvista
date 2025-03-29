@@ -19,6 +19,7 @@ concurrency:
 
 jobs:
     validate_commits:
+        timeout-minutes: 3
         name: Validate Commits
         runs-on: ubuntu-latest
         steps:
@@ -87,6 +88,7 @@ jobs:
                       });
 
     check_formatting:
+        timeout-minutes: 3
         name: Check Formatting
         runs-on: ubuntu-latest
         steps:
@@ -207,8 +209,6 @@ jobs:
         # forked PRs require a workflow_trigger of deploy-preview.yml
         if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
         uses: ./.github/workflows/deploy-preview.yml
-        with:
-            pr_number: ${{ github.event.pull_request.number }}
         secrets:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
