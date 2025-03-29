@@ -79,7 +79,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"updated_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
   	"created_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
   	"url" varchar,
-  	"thumbnail_u_r_l" varchar,
+  	"thumbnail_url" varchar,
   	"filename" varchar,
   	"mime_type" varchar,
   	"filesize" numeric,
