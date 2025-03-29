@@ -1,9 +1,7 @@
 name: Deploy
 
 on:
-    push:
-        branches: [master]
-    workflow_call: # to be called by pr-checks.yml
+    workflow_call:
         secrets:
             VERCEL_TOKEN:
                 required: true
@@ -11,7 +9,13 @@ on:
                 required: true
             VERCEL_PROJECT_ID:
                 required: true
+
     workflow_dispatch: # manual triggering for external fork PRs
+        inputs:
+            pr_number:
+                description: "Pull Request Number"
+                required: true
+                type: number
 
 permissions:
     contents: read
@@ -19,35 +23,42 @@ permissions:
 
 # ensures only one deployment per ref/branch runs at a time
 concurrency:
-    group: deploy-${{ github.ref }}
+    group: deploy-preview-${{ github.ref }}
     cancel-in-progress: true
 
 jobs:
-    deploy:
-        name: Deploy to ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
+    deploy_preview:
+        name: Deploy Preview
         runs-on: ubuntu-latest
         environment:
-            name: ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
+            name: Preview
             url: ${{ steps.deploy.outputs.url }}
 
         steps:
-            - uses: actions/checkout@v4
+            - name: Checkout PR code
+              uses: actions/checkout@v4
+              with:
+                  # fetch the PR's head (fork) code by PR number
+                  ref: refs/pull/${{ inputs.pr_number }}/merge
+                  repository: ${{ github.repository }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Install Vercel CLI
               run: npm install --global vercel@latest
 
             - name: Pull Vercel Environment Information
-              run: vercel pull --yes --environment=${{ github.ref == 'refs/heads/master' && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
+              run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Build Project Artifacts
-              run: vercel build ${{ github.ref == 'refs/heads/master' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+              run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Deploy Project Artifacts to Vercel
-              id: deploy
-              run: |
-                  DEPLOYMENT_URL=$(vercel deploy --prebuilt ${{ github.ref == 'refs/heads/master' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }})
-                  echo "url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+              id: deploy-preview
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+              run: |
+                  DEPLOYMENT_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+                  echo "url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
