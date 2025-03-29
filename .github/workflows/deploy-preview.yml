@@ -32,7 +32,7 @@ jobs:
         runs-on: ubuntu-latest
         environment:
             name: Preview
-            url: ${{ steps.deploy.outputs.url }}
+            url: ${{ steps.deploy-preview.outputs.url }}
 
         steps:
             - name: Checkout PR code
