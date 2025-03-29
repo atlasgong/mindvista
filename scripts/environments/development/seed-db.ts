@@ -58,7 +58,7 @@ async function verifyDockerRunning(): Promise<void> {
     } catch (error) {
         if (error instanceof Error) {
             if (error.message.includes("permission denied") && !CONFIG.docker.withSudo) {
-                throw new DockerError("Permission denied. Try running the script with `--with-sudo` flag.");
+                throw new DockerError("Permission denied when executing Docker command. Try running the script with `--with-sudo` flag.");
             }
             // check if Docker daemon is actually not running
             if (error.message.includes("Cannot connect to the Docker daemon")) {

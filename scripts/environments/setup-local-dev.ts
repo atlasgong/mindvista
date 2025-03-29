@@ -22,7 +22,14 @@ async function executeCommand(command: string): Promise<void> {
         if (stdout) console.log(stdout);
         if (stderr) console.error(stderr);
     } catch (error) {
-        console.error(`Error executing command: ${command}`);
+        if (error instanceof Error) {
+            if (error.message.includes("permission denied") && !withSudo) {
+                console.error("\nPermission denied when executing Docker command.");
+                console.error("Try running the script with `--with-sudo` flag.");
+                process.exit(1);
+            }
+        }
+        console.error(`\nError executing command: ${command}`);
         console.error(error);
         throw error;
     }
