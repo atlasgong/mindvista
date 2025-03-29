@@ -1,7 +1,7 @@
-import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-vercel-postgres'
+import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-vercel-postgres";
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
-  await db.execute(sql`
+    await db.execute(sql`
    CREATE TYPE "public"."_locales" AS ENUM('en', 'fr');
   CREATE TYPE "public"."enum_users_role" AS ENUM('admin', 'contentEditor', 'contentEditorFr');
   CREATE TYPE "public"."enum_legal_status" AS ENUM('draft', 'published');
@@ -894,11 +894,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "_sponsor_v_updated_at_idx" ON "_sponsor_v" USING btree ("updated_at");
   CREATE INDEX IF NOT EXISTS "_sponsor_v_snapshot_idx" ON "_sponsor_v" USING btree ("snapshot");
   CREATE INDEX IF NOT EXISTS "_sponsor_v_published_locale_idx" ON "_sponsor_v" USING btree ("published_locale");
-  CREATE INDEX IF NOT EXISTS "_sponsor_v_latest_idx" ON "_sponsor_v" USING btree ("latest");`)
+  CREATE INDEX IF NOT EXISTS "_sponsor_v_latest_idx" ON "_sponsor_v" USING btree ("latest");`);
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
-  await db.execute(sql`
+    await db.execute(sql`
    DROP TABLE "users" CASCADE;
   DROP TABLE "media" CASCADE;
   DROP TABLE "pages" CASCADE;
@@ -948,5 +948,5 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   DROP TYPE "public"."enum__about_v_published_locale";
   DROP TYPE "public"."enum_sponsor_status";
   DROP TYPE "public"."enum__sponsor_v_version_status";
-  DROP TYPE "public"."enum__sponsor_v_published_locale";`)
+  DROP TYPE "public"."enum__sponsor_v_published_locale";`);
 }

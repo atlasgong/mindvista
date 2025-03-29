@@ -109,11 +109,7 @@ export default buildConfig({
         },
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
-    globals: [
-        AboutPage, 
-        HolisticWellnessPage, 
-        SponsorPage
-    ],
+    globals: [AboutPage, HolisticWellnessPage, SponsorPage],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
