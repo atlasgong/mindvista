@@ -146,7 +146,6 @@ async function main() {
         // Check for existing containers
         const containersExist = await checkExistingContainers();
         if (containersExist) {
-            const cmdPrefix = withSudo ? "sudo " : "";
             console.log("\nContainers are already set up. You can:");
             console.log(`1. Use existing containers: ${cmdPrefix}docker compose start`);
             console.log(`2. Recreate containers: ${cmdPrefix}docker compose up -d`);
