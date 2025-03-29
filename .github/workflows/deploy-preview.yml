@@ -1,6 +1,7 @@
 name: Deploy
 
 on:
+    # called by pr-checks.yml only if on base repository (skips for forks)
     workflow_call:
         secrets:
             VERCEL_TOKEN:
@@ -28,6 +29,7 @@ concurrency:
 
 jobs:
     deploy_preview:
+        timeout-minutes: 10
         name: Deploy Preview
         runs-on: ubuntu-latest
         environment:
@@ -35,11 +37,11 @@ jobs:
             url: ${{ steps.deploy-preview.outputs.url }}
 
         steps:
-            - name: Checkout PR code
-              uses: actions/checkout@v4
+            - uses: actions/checkout@v4
               with:
-                  # fetch the PR's head (fork) code by PR number
-                  ref: refs/pull/${{ inputs.pr_number }}/merge
+                  # for workflow_dispatch (fork PRs), use PR number
+                  # for workflow_call (base repo), use branch ref
+                  ref: ${{ inputs.pr_number != null && format('refs/pull/{0}/merge', inputs.pr_number) || github.ref }}
                   repository: ${{ github.repository }}
                   token: ${{ secrets.GITHUB_TOKEN }}
 
