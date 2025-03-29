@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to Preview
 
 on:
     # called by pr-checks.yml only if on base repository (skips for forks)
