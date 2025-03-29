@@ -16,7 +16,6 @@ concurrency:
 jobs:
     deploy_prod:
         timeout-minutes: 10
-        name: Deploy for Production
         runs-on: ubuntu-latest
         environment:
             name: Production
