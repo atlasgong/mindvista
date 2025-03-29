@@ -1,0 +1,64 @@
+name: Deploy
+
+on:
+    workflow_call:
+        secrets:
+            VERCEL_TOKEN:
+                required: true
+            VERCEL_ORG_ID:
+                required: true
+            VERCEL_PROJECT_ID:
+                required: true
+
+    workflow_dispatch: # manual triggering for external fork PRs
+        inputs:
+            pr_number:
+                description: "Pull Request Number"
+                required: true
+                type: number
+
+permissions:
+    contents: read
+    deployments: write
+
+# ensures only one deployment per ref/branch runs at a time
+concurrency:
+    group: deploy-preview-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    deploy_preview:
+        name: Deploy Preview
+        runs-on: ubuntu-latest
+        environment:
+            name: Preview
+            url: ${{ steps.deploy-preview.outputs.url }}
+
+        steps:
+            - name: Checkout PR code
+              uses: actions/checkout@v4
+              with:
+                  # fetch the PR's head (fork) code by PR number
+                  ref: refs/pull/${{ inputs.pr_number }}/merge
+                  repository: ${{ github.repository }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Install Vercel CLI
+              run: npm install --global vercel@latest
+
+            - name: Pull Vercel Environment Information
+              run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Build Project Artifacts
+              run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Deploy Project Artifacts to Vercel
+              id: deploy-preview
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+              run: |
+                  DEPLOYMENT_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+                  echo "url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT

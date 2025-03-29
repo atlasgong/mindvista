@@ -201,8 +201,14 @@ jobs:
                         body
                       });
 
-    deploy:
-        uses: ./.github/workflows/deploy.yml
+    deploy_preview:
+        # runs only for internal PRs, i.e. if PR's head repo is the same as the base repo
+        # job is skipped otherwise, i.e. do not run for forked PRs
+        # forked PRs require a workflow_trigger of deploy-preview.yml
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        uses: ./.github/workflows/deploy-preview.yml
+        with:
+            pr_number: ${{ github.event.pull_request.number }}
         secrets:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
