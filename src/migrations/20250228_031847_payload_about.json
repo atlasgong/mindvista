@@ -195,8 +195,8 @@
                     "primaryKey": false,
                     "notNull": false
                 },
-                "thumbnail_u_r_l": {
-                    "name": "thumbnail_u_r_l",
+                "thumbnail_url": {
+                    "name": "thumbnail_url",
                     "type": "varchar",
                     "primaryKey": false,
                     "notNull": false
