@@ -30,7 +30,6 @@ concurrency:
 jobs:
     deploy_preview:
         timeout-minutes: 10
-        name: Deploy Preview
         runs-on: ubuntu-latest
         environment:
             name: Preview
