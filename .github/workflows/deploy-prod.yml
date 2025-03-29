@@ -19,7 +19,7 @@ jobs:
         runs-on: ubuntu-latest
         environment:
             name: Production
-            url: ${{ steps.deploy.outputs.url }}
+            url: ${{ steps.deploy-prod.outputs.url }}
 
         steps:
             - uses: actions/checkout@v4
