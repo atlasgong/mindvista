@@ -798,7 +798,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface About {
   id: number;
   page: number | Page;
-  groupPhoto: number | Media;
+  groupPhoto?: (number | null) | Media;
   groupPhotoCaption?: string | null;
   title: string;
   titleFr?: string | null;
