@@ -14,6 +14,7 @@ import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
 import { Pages } from "@collections/Pages";
 import { LegalPages } from "@collections/LegalPages";
+import { AboutPage } from "@globals/AboutPage";
 import { HolisticWellnessPage } from "@globals/HolisticWellnessPage";
 import { Clubs } from "./collections/lists/clubs/Clubs";
 import { Resources } from "./collections/lists/resources/Resources";
@@ -108,7 +109,7 @@ export default buildConfig({
         },
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
-    globals: [HolisticWellnessPage, SponsorPage],
+    globals: [AboutPage, HolisticWellnessPage, SponsorPage],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
