@@ -29,7 +29,7 @@ export const AboutPage: GlobalConfig = {
             type: "relationship",
             relationTo: "pages",
             access: {
-                update: denyAccessField,
+                update: canEditContent,
             },
         },
         {
@@ -37,7 +37,7 @@ export const AboutPage: GlobalConfig = {
             label: "Group Photo",
             type: "upload",
             relationTo: "media",
-            required: true,
+            required: false,
             access: {
                 update: canEditContent,
             },

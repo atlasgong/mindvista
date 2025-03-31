@@ -1,80 +1,110 @@
-/* styles.module.css */
-
-/* 
-  .container:
-  - Centers content with a max-width.
-  - Uses fixed rem-based padding to ensure consistent spacing.
-*/
+/* Container for the entire page */
 .container {
     @apply mx-auto max-w-7xl px-6 pb-12 pt-20;
 }
 
-/* 
-    .mainContent:
-    - Acts as a wrapper for the page’s main content.
-  */
+/* Main content wrapper */
 .mainContent {
     @apply relative;
 }
 
-/* 
-    .section:
-    - Provides vertical spacing between sections.
-    - Previously, a vw-based margin was used (mx-[3vw]); now replaced with fixed rem spacing (mx-4)
-      for consistency across screen sizes.
-  */
+/* Section spacing */
 .section {
-    @apply mx-4 pb-16;
+    @apply mb-16;
 }
 
-/* 
-    .heroSection:
-    - Specific padding for the hero section.
-    - Uses responsive top and bottom padding (pt-10 md:pt-16, pb-10 md:pb-20) defined in rem.
-  */
+/* Hero Section styles */
 .heroSection {
-    @apply pb-10 pt-10 md:pb-20 md:pt-16;
+    /* Additional adjustments if needed can be added here */
 }
 
-/* 
-    .imageWrapper:
-    - Styles the container of the hero image.
-    - Ensures the image is clipped with rounded corners and has a shadow.
-  */
-.imageWrapper {
-    @apply relative overflow-hidden rounded-xl shadow-lg;
+/* Wrapper for the hero image (group photo container) */
+.heroImageWrapper {
+    @apply relative mb-16 aspect-[16/9] w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300;
 }
 
-/* 
-    .heroImage:
-    - Ensures the hero image covers its container, with smooth scaling transitions.
-  */
+/* Hero image styling */
 .heroImage {
-    @apply object-cover transition-transform duration-500;
+    @apply h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105 group-hover:brightness-100;
 }
 
-/* 
-    .textContent:
-    - Adds consistent vertical spacing between text blocks.
-  */
+/* Text content container for various sections */
 .textContent {
     @apply space-y-4;
 }
 
-/* 
-    .title:
-    - Sets the page title with a bold, centered text style.
-    - Uses rem-based font sizes (text-3xl) and margin (mb-4) to remain consistent.
-  */
+/* Page title styling */
 .title {
-    @apply mb-4 text-center text-3xl font-bold;
+    @apply mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-center text-3xl font-bold text-transparent md:text-4xl dark:from-purple-400 dark:to-blue-300;
 }
 
-/* 
-    .subtitle:
-    - Sets the subtitle styling using a base font size.
-    - The text color uses a custom variable (text-cTextOffset) defined in your Tailwind config.
-  */
+/* Subtitle styling */
 .subtitle {
-    @apply text-center text-base text-cTextOffset;
+    @apply text-base font-medium leading-relaxed text-cTextOffset;
+}
+
+/* ------------------- */
+/* Team Section Styles */
+/* ------------------- */
+
+/* Container for each team section */
+.teamSection {
+    @apply mb-16;
+}
+
+/* Team section title styling */
+.teamTitle {
+    @apply mb-8 text-center text-3xl font-bold text-cText;
+}
+
+/* Grid layout for team member cards */
+.teamGrid {
+    @apply flex flex-wrap justify-center gap-8;
+}
+
+/* Individual team card styling */
+.teamCard {
+    @apply flex w-full flex-col items-center rounded-xl bg-cBackgroundOffset p-6 text-center shadow-lg;
+}
+
+@media (min-width: 640px) {
+    .teamCard {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .teamCard {
+        width: calc(33.333% - 1rem);
+    }
+}
+
+/* Wrapper for the team member image */
+.teamImageWrapper {
+    @apply mb-4 h-40 w-40 overflow-hidden rounded-full;
+}
+
+/* Team member image styling */
+.teamImage {
+    @apply h-full w-full object-cover;
+}
+
+/* Container for team member information */
+.memberInfo {
+    @apply flex flex-col items-center;
+}
+
+/* Team member name styling */
+.memberName {
+    @apply text-xl font-semibold text-cText;
+}
+
+/* Team member pronouns styling */
+.memberPronouns {
+    @apply ml-1 text-sm italic text-cTextOffset;
+}
+
+/* Team member role styling */
+.memberRole {
+    @apply font-medium text-cTextOffset;
 }
