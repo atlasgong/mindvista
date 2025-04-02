@@ -7,7 +7,7 @@ import { getPageFromCMS } from "@/lib/getPageFromCMS";
 const teams = {
     leadership: [
         { role: "Senior Advisor", name: "Charlotte Rotstein", pronouns: "she/they", image: "/team/charlotte.webp" },
-        { role: "President", name: "Kristie Lam", pronouns: "she/her", image: "/team/kristie.webp" },
+        { role: "Co-President", name: "Kristie Lam", pronouns: "she/her", image: "/team/kristie.webp" },
         { role: "Co-President", name: "Abbie Carnahan", pronouns: "she/her", image: "/team/abbie.webp" },
     ],
     events: [
