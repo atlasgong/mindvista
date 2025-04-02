@@ -23,6 +23,7 @@ import { ClubTags } from "./collections/lists/clubs/ClubTags";
 import { ResourceTags } from "./collections/lists/resources/ResourceTags";
 import { Events } from "./collections/Events";
 import { SponsorPage } from "./globals/SponsorPage";
+import { VolunteerPage } from "./globals/VolunteerPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -108,7 +109,7 @@ export default buildConfig({
         },
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
-    globals: [HolisticWellnessPage, SponsorPage],
+    globals: [HolisticWellnessPage, SponsorPage, VolunteerPage],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
