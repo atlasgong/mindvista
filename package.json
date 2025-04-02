@@ -40,7 +40,7 @@
         "cross-env": "^7.0.3",
         "date-fns-tz": "^3.2.0",
         "graphql": "^16.8.1",
-        "next": "15.2.3",
+        "next": "15.2.4",
         "nextjs-toploader": "^3.7.15",
         "payload": "^3.29.0",
         "react": "19.0.0",
