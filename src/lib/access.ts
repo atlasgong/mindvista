@@ -1,8 +1,10 @@
 import type { FieldAccess, Access } from "payload";
 import type { User } from "@/payload-types";
 
-export const denyAccess: Access = () => {
-    return false;
+export const denyAccess: Access = ({ req }) => {
+    const user = req.user as User | null;
+    if (!user) return false;
+    return user.role === "root";
 };
 
 export const isAdmin: FieldAccess = ({ req }) => {
@@ -22,8 +24,10 @@ export const isContentEditorFr: FieldAccess = ({ req }) => {
 
 // PERMISSIONS START BELOW ------------
 
-export const denyAccessField: FieldAccess = () => {
-    return false;
+export const denyAccessField: FieldAccess = ({ req }) => {
+    const user = req.user as User | null;
+    if (!user) return false;
+    return user.role === "root";
 };
 
 // only admin and contentEditor can edit content
