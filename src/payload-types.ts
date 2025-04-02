@@ -105,10 +105,12 @@ export interface Config {
   globals: {
     'holistic-wellness': HolisticWellness;
     sponsor: Sponsor;
+    volunteer: Volunteer;
   };
   globalsSelect: {
     'holistic-wellness': HolisticWellnessSelect<false> | HolisticWellnessSelect<true>;
     sponsor: SponsorSelect<false> | SponsorSelect<true>;
+    volunteer: VolunteerSelect<false> | VolunteerSelect<true>;
   };
   locale: null;
   user: User & {
@@ -920,6 +922,91 @@ export interface Sponsor {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "volunteer".
+ */
+export interface Volunteer {
+  id: number;
+  page: number | Page;
+  title: string;
+  titleFr?: string | null;
+  description: string;
+  descriptionFr?: string | null;
+  positions: {
+    title: string;
+    titleFr?: string | null;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    descriptionFr?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    requirements: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    requirementsFr?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    timeCommitment: string;
+    timeCommitmentFr?: string | null;
+    datePosted: string;
+    formLink: string;
+    isOpen: boolean;
+    id?: string | null;
+  }[];
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "holistic-wellness_select".
  */
 export interface HolisticWellnessSelect<T extends boolean = true> {
@@ -968,6 +1055,37 @@ export interface SponsorSelect<T extends boolean = true> {
     | {
         url?: T;
         logo?: T;
+        id?: T;
+      };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "volunteer_select".
+ */
+export interface VolunteerSelect<T extends boolean = true> {
+  page?: T;
+  title?: T;
+  titleFr?: T;
+  description?: T;
+  descriptionFr?: T;
+  positions?:
+    | T
+    | {
+        title?: T;
+        titleFr?: T;
+        description?: T;
+        descriptionFr?: T;
+        requirements?: T;
+        requirementsFr?: T;
+        timeCommitment?: T;
+        timeCommitmentFr?: T;
+        datePosted?: T;
+        formLink?: T;
+        isOpen?: T;
         id?: T;
       };
   _status?: T;

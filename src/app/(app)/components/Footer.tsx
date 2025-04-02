@@ -28,6 +28,7 @@ export default function Footer() {
                     <Links
                         className="max-w-[50%] text-right"
                         links={[
+                            { href: "/volunteer", text: "Volunteer" },
                             { href: "/directory/resources", text: "Resource Directory" },
                             { href: "/directory/clubs", text: "Club Directory" },
                             { href: "/contact", text: "Contact Us" },
@@ -51,6 +52,7 @@ export default function Footer() {
                 <Links
                     className="max-w-[33%] grow basis-0 text-right"
                     links={[
+                        { href: "/volunteer", text: "Volunteer" },
                         { href: "/directory/resources", text: "Resource Directory" },
                         { href: "/directory/clubs", text: "Club Directory" },
                         { href: "/contact", text: "Contact Us" },
