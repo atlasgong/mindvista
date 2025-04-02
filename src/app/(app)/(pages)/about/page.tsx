@@ -6,24 +6,25 @@ import { getPageFromCMS } from "@/lib/getPageFromCMS";
 
 const teams = {
     leadership: [
-        { role: "President", name: "Charlotte Rotstein", pronouns: "she/they", image: "/team/charlotte.webp" },
+        { role: "Senior Advisor", name: "Charlotte Rotstein", pronouns: "she/they", image: "/team/charlotte.webp" },
         { role: "Co-President", name: "Kristie Lam", pronouns: "she/her", image: "/team/kristie.webp" },
-        { role: "Sponsorship Coordinator", name: "Julia Rotiroti", pronouns: "she/her", image: "/team/julia.webp" },
-        { role: "Finance Coordinator", name: "Christina Huan", pronouns: "she/her", image: "/team/christina.webp" },
+        { role: "Co-President", name: "Abbie Carnahan", pronouns: "she/her", image: "/team/abbie.webp" },
+    ],
+    events: [
         { role: "Events Coordinator", name: "Catherine McCourt  ", pronouns: "she/her", image: "/team/catherine.webp" },
         { role: "Events Coordinator", name: "Sandrine Huard", pronouns: "she/her", image: "/team/sandrine.webp" },
     ],
+    finance: [
+        { role: "Sponsorship Coordinator", name: "Julia Rotiroti", pronouns: "she/her", image: "/team/julia.webp" },
+        { role: "Finance Coordinator", name: "Christina Huan", pronouns: "she/her", image: "/team/christina.webp" },
+    ],
     marketing: [
-        { role: "Social Media Advisor", name: "Abbie Carnahan", pronouns: "she/her", image: "/team/abbie.webp" },
         { role: "Social Media Coordinator", name: "Amanda Borja", pronouns: "she/her" },
         { role: "Marketing & Outreach Coordinator", name: "Paige Metcalf", pronouns: "she/her", image: "/team/paige.webp" },
         { role: "TikTok & Video Content Creator", name: "Naomi Harmel", pronouns: "she/her", image: "/team/naomi.webp" },
     ],
-    webContent: [
+    website: [
         { role: "Website Content Creator", name: "Julie Burke", pronouns: "she/her", image: "/team/julie.webp" },
-        { role: "Website Content Creator", name: "Stephanie Jean Pierre", pronouns: "she/her", image: "/team/stephanie.webp" },
-    ],
-    development: [
         { role: "Website Developer", name: "Atlas Gong", pronouns: "he/him", image: "/team/atlas.webp" },
         { role: "Website Developer", name: "Murad Novruzov", pronouns: "he/him", image: "/team/murad.webp" },
     ],
@@ -74,9 +75,10 @@ export default function AboutPage() {
 
             {/* Photos sectioned by Team */}
             <TeamSection title="Leadership & Coordination Team" members={teams.leadership} />
+            <TeamSection title="Events Team" members={teams.events} />
+            <TeamSection title="Finance Team" members={teams.finance} />
             <TeamSection title="Marketing & Social Media Team" members={teams.marketing} />
-            <TeamSection title="Website Content Team" members={teams.webContent} />
-            <TeamSection title="Website Development Team" members={teams.development} />
+            <TeamSection title="Website Team" members={teams.website} />
             <TeamSection title="Newsletter Content Creators" members={teams.content} />
             <TeamSection title="Founders" members={teams.founders} />
         </div>
