@@ -34,7 +34,6 @@ export const Users: CollectionConfig = {
                 update: isAdmin, // only admins can update user roles
             },
             options: [
-                { label: "Root", value: "root" },
                 { label: "Admin", value: "admin" },
                 { label: "Content Editor", value: "contentEditor" },
                 { label: "Content Editor (fr)", value: "contentEditorFr" },
