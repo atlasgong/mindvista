@@ -19,7 +19,7 @@ export function VolunteerCard(props: Position) {
                             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            Posted {formattedDate}
+                            <time dateTime={props.datePosted}>Posted {formattedDate}</time>
                         </p>
                     </div>
                     <span className={`h-fit whitespace-nowrap rounded-full px-4 py-1.5 text-base font-medium ${props.isOpen ? "bg-green-500/10 text-green-600 ring-1 ring-green-500/20 dark:bg-green-400/10 dark:text-green-400 dark:ring-green-400/20" : "bg-red-500/10 text-red-600 ring-1 ring-red-500/20 dark:bg-red-400/10 dark:text-red-400 dark:ring-red-400/20"}`}>{props.isOpen ? "Open" : "Closed"}</span>
