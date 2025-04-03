@@ -2,15 +2,59 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-postgres";
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
     await db.execute(sql`
-   CREATE TYPE "public"."enum_users_role" AS ENUM('root', 'admin', 'contentEditor', 'contentEditorFr');
-  CREATE TYPE "public"."enum_legal_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum__legal_v_version_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum_sponsor_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum__sponsor_v_version_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum_volunteer_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum__volunteer_v_version_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum_announcement_bar_status" AS ENUM('draft', 'published');
-  CREATE TYPE "public"."enum__announcement_bar_v_version_status" AS ENUM('draft', 'published');
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_users_role" AS ENUM('root', 'admin', 'contentEditor', 'contentEditorFr');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_legal_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum__legal_v_version_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_sponsor_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum__sponsor_v_version_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_volunteer_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum__volunteer_v_version_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_announcement_bar_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
+
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum__announcement_bar_v_version_status" AS ENUM('draft', 'published');
+   EXCEPTION
+    WHEN duplicate_object THEN null;
+   END $$;
   CREATE TABLE IF NOT EXISTS "users" (
   	"id" serial PRIMARY KEY NOT NULL,
   	"full_name" varchar NOT NULL,
