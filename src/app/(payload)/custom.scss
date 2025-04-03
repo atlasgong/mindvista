@@ -1,0 +1,25 @@
+@import "~@payloadcms/ui/scss";
+
+.custom-view-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--theme-elevation-800);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin: 1rem 0 2rem;
+    border: 1px solid var(--theme-elevation-200);
+    transition: all 0.2s ease-in-out;
+
+    [data-theme="light"] & {
+        background-color: aliceblue;
+    }
+
+    [data-theme="dark"] & {
+        background-color: var(--theme-elevation-150);
+        border-color: var(--theme-elevation-300);
+    }
+
+    &:empty {
+        display: none;
+    }
+}

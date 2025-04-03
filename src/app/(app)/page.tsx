@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Hr from "./components/Hr";
 import Image from "next/image";
 import HomeEventsSection from "./components/index/HomeEventsSection";
+import { AnnouncementBar } from "./components/AnnouncementBar";
 
 import lightThemeImage from "@public/landing/shifaaz-shamoon.webp";
 import darkThemeImage from "@public/landing/jon-j_mk18.webp";
@@ -18,13 +19,16 @@ import { getPayloadClient } from "@/payloadClient";
 import { SponsorLogos } from "./(pages)/sponsor/components/SponsorLogos";
 
 export default async function Home() {
-    // fetch sponsor data
-    const data = await (await getPayloadClient()).findGlobal({ slug: "sponsor" });
+    // fetch data
+    const payload = await getPayloadClient();
+    const sponsorData = await payload.findGlobal({ slug: "sponsor" });
+    const announcementData = await payload.findGlobal({ slug: "announcement-bar" });
 
     return (
         <>
             <div className="max-lg:hidden">
-                <NavigationController />
+                <AnnouncementBar {...announcementData} />
+                <NavigationController hasAnnouncement={announcementData.isEnabled} />
             </div>
             <div className="lg:hidden">
                 <NavBar />
@@ -119,7 +123,7 @@ export default async function Home() {
                     <h2 className="text-center text-3xl font-bold md:text-4xl">Big Thanks to Our Sponsors</h2>
                     <p className="py-3 text-center text-xl font-medium text-cTextOffset md:px-20 lg:px-28">We are incredibly grateful for the support and dedication of our sponsors who believe in our mission.</p>
                     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 items-center justify-items-center gap-8 md:grid-cols-2 md:gap-0">
-                        <SponsorLogos sponsors={data.sponsors} />
+                        <SponsorLogos sponsors={sponsorData.sponsors} />
                     </div>
                     <div className="mt-10 flex justify-center">
                         <Link href="/sponsor" className="flex items-center gap-3 rounded-lg border border-cBorder p-3 text-lg font-semibold transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-50 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:shadow-blue-950/50">

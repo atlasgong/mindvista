@@ -2,47 +2,15 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-postgres";
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
     await db.execute(sql`
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum_users_role" AS ENUM('admin', 'contentEditor', 'contentEditorFr');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
-   
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum_legal_status" AS ENUM('draft', 'published');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
-   
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum__legal_v_version_status" AS ENUM('draft', 'published');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
-   
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum_sponsor_status" AS ENUM('draft', 'published');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
-   
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum__sponsor_v_version_status" AS ENUM('draft', 'published');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
-   
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum_volunteer_status" AS ENUM('draft', 'published');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
-   
-   DO $$ BEGIN
-     CREATE TYPE "public"."enum__volunteer_v_version_status" AS ENUM('draft', 'published');
-   EXCEPTION
-     WHEN duplicate_object THEN null;
-   END $$;
+   CREATE TYPE "public"."enum_users_role" AS ENUM('root', 'admin', 'contentEditor', 'contentEditorFr');
+  CREATE TYPE "public"."enum_legal_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum__legal_v_version_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum_sponsor_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum__sponsor_v_version_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum_volunteer_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum__volunteer_v_version_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum_announcement_bar_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum__announcement_bar_v_version_status" AS ENUM('draft', 'published');
   CREATE TABLE IF NOT EXISTS "users" (
   	"id" serial PRIMARY KEY NOT NULL,
   	"full_name" varchar NOT NULL,
@@ -485,6 +453,35 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"latest" boolean
   );
   
+  CREATE TABLE IF NOT EXISTS "announcement_bar" (
+  	"id" serial PRIMARY KEY NOT NULL,
+  	"is_enabled" boolean DEFAULT false,
+  	"message" varchar,
+  	"message_fr" varchar,
+  	"link_text" varchar,
+  	"link_text_fr" varchar,
+  	"link_href" varchar,
+  	"_status" "enum_announcement_bar_status" DEFAULT 'draft',
+  	"updated_at" timestamp(3) with time zone,
+  	"created_at" timestamp(3) with time zone
+  );
+  
+  CREATE TABLE IF NOT EXISTS "_announcement_bar_v" (
+  	"id" serial PRIMARY KEY NOT NULL,
+  	"version_is_enabled" boolean DEFAULT false,
+  	"version_message" varchar,
+  	"version_message_fr" varchar,
+  	"version_link_text" varchar,
+  	"version_link_text_fr" varchar,
+  	"version_link_href" varchar,
+  	"version__status" "enum__announcement_bar_v_version_status" DEFAULT 'draft',
+  	"version_updated_at" timestamp(3) with time zone,
+  	"version_created_at" timestamp(3) with time zone,
+  	"created_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
+  	"updated_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
+  	"latest" boolean
+  );
+  
   DO $$ BEGIN
    ALTER TABLE "legal" ADD CONSTRAINT "legal_page_id_pages_id_fk" FOREIGN KEY ("page_id") REFERENCES "public"."pages"("id") ON DELETE set null ON UPDATE no action;
   EXCEPTION
@@ -883,7 +880,12 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "_volunteer_v_version_version__status_idx" ON "_volunteer_v" USING btree ("version__status");
   CREATE INDEX IF NOT EXISTS "_volunteer_v_created_at_idx" ON "_volunteer_v" USING btree ("created_at");
   CREATE INDEX IF NOT EXISTS "_volunteer_v_updated_at_idx" ON "_volunteer_v" USING btree ("updated_at");
-  CREATE INDEX IF NOT EXISTS "_volunteer_v_latest_idx" ON "_volunteer_v" USING btree ("latest");`);
+  CREATE INDEX IF NOT EXISTS "_volunteer_v_latest_idx" ON "_volunteer_v" USING btree ("latest");
+  CREATE INDEX IF NOT EXISTS "announcement_bar__status_idx" ON "announcement_bar" USING btree ("_status");
+  CREATE INDEX IF NOT EXISTS "_announcement_bar_v_version_version__status_idx" ON "_announcement_bar_v" USING btree ("version__status");
+  CREATE INDEX IF NOT EXISTS "_announcement_bar_v_created_at_idx" ON "_announcement_bar_v" USING btree ("created_at");
+  CREATE INDEX IF NOT EXISTS "_announcement_bar_v_updated_at_idx" ON "_announcement_bar_v" USING btree ("updated_at");
+  CREATE INDEX IF NOT EXISTS "_announcement_bar_v_latest_idx" ON "_announcement_bar_v" USING btree ("latest");`);
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
@@ -925,11 +927,15 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   DROP TABLE "volunteer" CASCADE;
   DROP TABLE "_volunteer_v_version_positions" CASCADE;
   DROP TABLE "_volunteer_v" CASCADE;
+  DROP TABLE "announcement_bar" CASCADE;
+  DROP TABLE "_announcement_bar_v" CASCADE;
   DROP TYPE "public"."enum_users_role";
   DROP TYPE "public"."enum_legal_status";
   DROP TYPE "public"."enum__legal_v_version_status";
   DROP TYPE "public"."enum_sponsor_status";
   DROP TYPE "public"."enum__sponsor_v_version_status";
   DROP TYPE "public"."enum_volunteer_status";
-  DROP TYPE "public"."enum__volunteer_v_version_status";`);
+  DROP TYPE "public"."enum__volunteer_v_version_status";
+  DROP TYPE "public"."enum_announcement_bar_status";
+  DROP TYPE "public"."enum__announcement_bar_v_version_status";`);
 }
