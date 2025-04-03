@@ -57,7 +57,7 @@ export function VolunteerCard(props: Position) {
                 {/* Apply button */}
                 {props.isOpen && (
                     <div className="pt-2">
-                        <a href={props.formLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-5 py-2.5 text-base font-medium text-white transition-colors hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500">
+                        <a href={props.formLink} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-lg bg-blue-500 px-5 py-2.5 text-base font-medium text-white transition-colors hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500">
                             Apply Now
                             <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
