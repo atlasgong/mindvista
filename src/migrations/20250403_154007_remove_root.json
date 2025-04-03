@@ -1,5 +1,5 @@
 {
-    "id": "61f3fa25-c4c5-4011-945e-703eafca0599",
+    "id": "9f48abd2-abe4-4aad-97c9-bb4c461b1c6e",
     "prevId": "00000000-0000-0000-0000-000000000000",
     "version": "7",
     "dialect": "postgresql",
@@ -5104,7 +5104,7 @@
         "public.enum_users_role": {
             "name": "enum_users_role",
             "schema": "public",
-            "values": ["root", "admin", "contentEditor", "contentEditorFr"]
+            "values": ["admin", "contentEditor", "contentEditorFr"]
         },
         "public.enum_legal_status": {
             "name": "enum_legal_status",
