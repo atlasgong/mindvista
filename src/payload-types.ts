@@ -106,11 +106,13 @@ export interface Config {
     'holistic-wellness': HolisticWellness;
     sponsor: Sponsor;
     volunteer: Volunteer;
+    'announcement-bar': AnnouncementBar;
   };
   globalsSelect: {
     'holistic-wellness': HolisticWellnessSelect<false> | HolisticWellnessSelect<true>;
     sponsor: SponsorSelect<false> | SponsorSelect<true>;
     volunteer: VolunteerSelect<false> | VolunteerSelect<true>;
+    'announcement-bar': AnnouncementBarSelect<false> | AnnouncementBarSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1006,6 +1008,29 @@ export interface Volunteer {
   createdAt?: string | null;
 }
 /**
+ * Configure the announcement bar that appears at the top of the site.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "announcement-bar".
+ */
+export interface AnnouncementBar {
+  id: number;
+  isEnabled: boolean;
+  message: string;
+  messageFr?: string | null;
+  link: {
+    text: string;
+    textFr?: string | null;
+    /**
+     * Internal means your URL must redirect to a page on mindvista.ca. For example, you could enter `/sponsor` for the sponsors page.
+     */
+    href: string;
+  };
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "holistic-wellness_select".
  */
@@ -1087,6 +1112,26 @@ export interface VolunteerSelect<T extends boolean = true> {
         formLink?: T;
         isOpen?: T;
         id?: T;
+      };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "announcement-bar_select".
+ */
+export interface AnnouncementBarSelect<T extends boolean = true> {
+  isEnabled?: T;
+  message?: T;
+  messageFr?: T;
+  link?:
+    | T
+    | {
+        text?: T;
+        textFr?: T;
+        href?: T;
       };
   _status?: T;
   updatedAt?: T;

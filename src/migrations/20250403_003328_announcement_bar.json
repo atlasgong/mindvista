@@ -1,5 +1,5 @@
 {
-    "id": "f4858a35-e2cf-43b2-bc44-b78dcc27cf76",
+    "id": "61f3fa25-c4c5-4011-945e-703eafca0599",
     "prevId": "00000000-0000-0000-0000-000000000000",
     "version": "7",
     "dialect": "postgresql",
@@ -4849,6 +4849,255 @@
             "policies": {},
             "checkConstraints": {},
             "isRLSEnabled": false
+        },
+        "public.announcement_bar": {
+            "name": "announcement_bar",
+            "schema": "",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "is_enabled": {
+                    "name": "is_enabled",
+                    "type": "boolean",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "default": false
+                },
+                "message": {
+                    "name": "message",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "message_fr": {
+                    "name": "message_fr",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "link_text": {
+                    "name": "link_text",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "link_text_fr": {
+                    "name": "link_text_fr",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "link_href": {
+                    "name": "link_href",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "_status": {
+                    "name": "_status",
+                    "type": "enum_announcement_bar_status",
+                    "typeSchema": "public",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "default": "'draft'"
+                },
+                "updated_at": {
+                    "name": "updated_at",
+                    "type": "timestamp(3) with time zone",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "created_at": {
+                    "name": "created_at",
+                    "type": "timestamp(3) with time zone",
+                    "primaryKey": false,
+                    "notNull": false
+                }
+            },
+            "indexes": {
+                "announcement_bar__status_idx": {
+                    "name": "announcement_bar__status_idx",
+                    "columns": [
+                        {
+                            "expression": "_status",
+                            "isExpression": false,
+                            "asc": true,
+                            "nulls": "last"
+                        }
+                    ],
+                    "isUnique": false,
+                    "concurrently": false,
+                    "method": "btree",
+                    "with": {}
+                }
+            },
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {},
+            "policies": {},
+            "checkConstraints": {},
+            "isRLSEnabled": false
+        },
+        "public._announcement_bar_v": {
+            "name": "_announcement_bar_v",
+            "schema": "",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "version_is_enabled": {
+                    "name": "version_is_enabled",
+                    "type": "boolean",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "default": false
+                },
+                "version_message": {
+                    "name": "version_message",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "version_message_fr": {
+                    "name": "version_message_fr",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "version_link_text": {
+                    "name": "version_link_text",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "version_link_text_fr": {
+                    "name": "version_link_text_fr",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "version_link_href": {
+                    "name": "version_link_href",
+                    "type": "varchar",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "version__status": {
+                    "name": "version__status",
+                    "type": "enum__announcement_bar_v_version_status",
+                    "typeSchema": "public",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "default": "'draft'"
+                },
+                "version_updated_at": {
+                    "name": "version_updated_at",
+                    "type": "timestamp(3) with time zone",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "version_created_at": {
+                    "name": "version_created_at",
+                    "type": "timestamp(3) with time zone",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "created_at": {
+                    "name": "created_at",
+                    "type": "timestamp(3) with time zone",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "default": "now()"
+                },
+                "updated_at": {
+                    "name": "updated_at",
+                    "type": "timestamp(3) with time zone",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "default": "now()"
+                },
+                "latest": {
+                    "name": "latest",
+                    "type": "boolean",
+                    "primaryKey": false,
+                    "notNull": false
+                }
+            },
+            "indexes": {
+                "_announcement_bar_v_version_version__status_idx": {
+                    "name": "_announcement_bar_v_version_version__status_idx",
+                    "columns": [
+                        {
+                            "expression": "version__status",
+                            "isExpression": false,
+                            "asc": true,
+                            "nulls": "last"
+                        }
+                    ],
+                    "isUnique": false,
+                    "concurrently": false,
+                    "method": "btree",
+                    "with": {}
+                },
+                "_announcement_bar_v_created_at_idx": {
+                    "name": "_announcement_bar_v_created_at_idx",
+                    "columns": [
+                        {
+                            "expression": "created_at",
+                            "isExpression": false,
+                            "asc": true,
+                            "nulls": "last"
+                        }
+                    ],
+                    "isUnique": false,
+                    "concurrently": false,
+                    "method": "btree",
+                    "with": {}
+                },
+                "_announcement_bar_v_updated_at_idx": {
+                    "name": "_announcement_bar_v_updated_at_idx",
+                    "columns": [
+                        {
+                            "expression": "updated_at",
+                            "isExpression": false,
+                            "asc": true,
+                            "nulls": "last"
+                        }
+                    ],
+                    "isUnique": false,
+                    "concurrently": false,
+                    "method": "btree",
+                    "with": {}
+                },
+                "_announcement_bar_v_latest_idx": {
+                    "name": "_announcement_bar_v_latest_idx",
+                    "columns": [
+                        {
+                            "expression": "latest",
+                            "isExpression": false,
+                            "asc": true,
+                            "nulls": "last"
+                        }
+                    ],
+                    "isUnique": false,
+                    "concurrently": false,
+                    "method": "btree",
+                    "with": {}
+                }
+            },
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {},
+            "policies": {},
+            "checkConstraints": {},
+            "isRLSEnabled": false
         }
     },
     "enums": {
@@ -4884,6 +5133,16 @@
         },
         "public.enum__volunteer_v_version_status": {
             "name": "enum__volunteer_v_version_status",
+            "schema": "public",
+            "values": ["draft", "published"]
+        },
+        "public.enum_announcement_bar_status": {
+            "name": "enum_announcement_bar_status",
+            "schema": "public",
+            "values": ["draft", "published"]
+        },
+        "public.enum__announcement_bar_v_version_status": {
+            "name": "enum__announcement_bar_v_version_status",
             "schema": "public",
             "values": ["draft", "published"]
         }

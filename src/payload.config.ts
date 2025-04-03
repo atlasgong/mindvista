@@ -24,6 +24,7 @@ import { ResourceTags } from "./collections/lists/resources/ResourceTags";
 import { Events } from "./collections/Events";
 import { SponsorPage } from "./globals/SponsorPage";
 import { VolunteerPage } from "./globals/VolunteerPage";
+import { AnnouncementBar } from "./globals/AnnouncementBar";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -109,7 +110,7 @@ export default buildConfig({
         },
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
-    globals: [HolisticWellnessPage, SponsorPage, VolunteerPage],
+    globals: [HolisticWellnessPage, SponsorPage, VolunteerPage, AnnouncementBar],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
