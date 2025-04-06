@@ -17,10 +17,18 @@ jobs:
             PR_NUMBER: ${{ github.event.pull_request.number }}
         steps:
             # download the artifact containing deployment URL
-            - uses: actions/download-artifact@v4
+            - name: Download deployment URL artifact
+              id: download-artifact
+              continue-on-error: true
+              uses: actions/download-artifact@v4
               with:
                   name: pr-${{ env.PR_NUMBER }}-deploy-url
                   path: .
+
+            - name: Check if artifact was downloaded
+              if: steps.download-artifact.outcome != 'success'
+              run: |
+                  echo "::warning::Could not download deployment URL artifact. The preview deployment may need to be cleaned up manually."
 
             # hide preview URL comment
             - uses: int128/hide-comment-action@dba8ef7116a5609731b75a2ceb566d561c0e57f5 # v1.40.0
@@ -29,23 +37,30 @@ jobs:
                   ends-with: <!-- preview-url -->
 
             - name: Install Vercel CLI
-              run: npm install --global vercel@latest
+              id: install-vercel
+              run: |
+                  if ! npm install --global vercel@latest; then
+                    echo "::error::Failed to install Vercel CLI"
+                    exit 1
+                  fi
 
             - name: Delete Vercel Preview Deployment
+              if: steps.install-vercel.outcome == 'success'
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
               run: |
-                  if [ -f "pr-deploy-mapping.json" ]; then
-                      DEPLOY_URL=$(jq -r '.url' pr-deploy-mapping.json)
-                      if [ ! -z "$DEPLOY_URL" ]; then
-                          echo "Found deployment URL: $DEPLOY_URL"
-                          vercel remove "$DEPLOY_URL" -y --token=$VERCEL_TOKEN
-                          echo "Deleted Vercel preview deployment for PR #${PR_NUMBER}."
-                      else
-                          echo "No deployment URL found in mapping file. Skipping deletion."
-                      fi
+                  if [ ! -f "pr-deploy-mapping.json" ]; then
+                    echo "::warning::No deployment mapping file found. Skipping Vercel cleanup."
+                    exit 0
+                  fi
+
+                  DEPLOY_URL=$(jq -r '.url' pr-deploy-mapping.json)
+                  if [ -n "$DEPLOY_URL" ]; then
+                      echo "Found deployment URL: $DEPLOY_URL"
+                      vercel remove "$DEPLOY_URL" -y --token=$VERCEL_TOKEN || echo "::warning::Deployment cleanup failed. Is it possible the deploymeny was already removed?"
+                      echo "Deleted Vercel preview deployment for PR #${PR_NUMBER}."
                   else
-                      echo "WARN: No deployment mapping file found."
+                      echo "::warning::No deployment URL found in mapping file. Skipping deletion."
                   fi
 
             - name: Delete redirect rule
@@ -69,7 +84,7 @@ jobs:
                   if [ "$HTTP_STATUS" -eq 200 ]; then
                       # check if PR preview ruleset exists
                       RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r 'if .result then .result[] | select(.name == "PR Preview Redirects") | .id else empty end')
-                      
+
                       if [ -n "$RULESET_ID" ]; then
                           # get current rules
                           RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
@@ -82,35 +97,59 @@ jobs:
                           RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
 
                           if [ "$HTTP_STATUS" -eq 200 ]; then
-                              # safely remove rule for this PR from rules array
-                              NEW_RULES=$(echo "$RESPONSE_BODY" | jq -r '.result.rules | map(select(.description | contains("PR #'"${PR_NUMBER}"'") | not))')
-                              
-                              # update ruleset with new rules
-                              RESPONSE=$(curl -s -w "\n%{http_code}" -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
-                                -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                                -H "Content-Type: application/json" \
-                                --data "$(jq -n --argjson rules "$NEW_RULES" '{"rules": $rules}')")
+                              MAX_RETRIES=3
+                              for attempt in $(seq 1 $MAX_RETRIES); do
+                                  echo "Attempting to update ruleset (attempt ${attempt}/${MAX_RETRIES})..."
 
-                              # extract status code from last line
-                              HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
-                              # extract response body (everything except last line)
-                              RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+                                  # get current ruleset state
+                                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                      -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                      -H "Content-Type: application/json")
 
-                              if [ "$HTTP_STATUS" -eq 200 ]; then
-                                  SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
-                                  if [ "$SUCCESS" = "true" ]; then
-                                      echo "Successfully removed redirect rule for PR #${PR_NUMBER}."
-                                      gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted." || echo "ERROR: Failed to comment on PR. Skipping..."
+                                  HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                                  RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                                  if [ "$HTTP_STATUS" -eq 200 ]; then
+                                      # get current ruleset version and prepare new rules
+                                      RULESET_VERSION=$(echo "$RESPONSE_BODY" | jq -r '.result.version')
+                                      NEW_RULES=$(echo "$RESPONSE_BODY" | jq -r --arg pr "PR #${PR_NUMBER}" '.result.rules | map(select(.description | contains($pr) | not))')
+
+                                      # try to update with version lock
+                                      RESPONSE=$(curl -s -w "\n%{http_code}" -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                          -H "If-Match: \"${RULESET_VERSION}\"" \
+                                          -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                          -H "Content-Type: application/json" \
+                                          --data "$(jq -n --argjson rules "$NEW_RULES" '{"rules": $rules}')")
+
+                                      HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                                      RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                                      if [ "$HTTP_STATUS" -eq 200 ]; then
+                                          SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
+                                          if [ "$SUCCESS" = "true" ]; then
+                                              echo "Successfully removed redirect rule for PR #${PR_NUMBER}."
+                                              gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted." || echo "ERROR: Failed to comment on PR. Skipping..."
+                                              break 2 # exit both loops on success
+                                          fi
+                                      elif [ "$HTTP_STATUS" -eq 412 ] && [ "$attempt" -lt "$MAX_RETRIES" ]; then
+                                          echo "Version conflict detected. Retrying in 1 second..."
+                                          sleep 1
+                                          continue
+                                      else
+                                          if [ "$attempt" -eq "$MAX_RETRIES" ]; then
+                                              echo "Failed to update ruleset after $MAX_RETRIES attempts (HTTP ${HTTP_STATUS}):"
+                                              echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                                              exit 1
+                                          fi
+                                          echo "Request failed (HTTP ${HTTP_STATUS}). Retrying in 1 second..."
+                                          sleep 1
+                                      fi
                                   else
-                                      echo "Failed to update ruleset (API reported failure):"
-                                      echo "$RESPONSE_BODY" | jq '.'
+                                      echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
                                       exit 1
                                   fi
-                              else
-                                  echo "Failed to update ruleset (HTTP ${HTTP_STATUS}):"
-                                  echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
-                                  exit 1
-                              fi
+                              done
                           else
                               echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
                               echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
@@ -134,12 +173,21 @@ jobs:
                   echo "Fetching artifacts for the repository..."
                   ARTIFACTS=$(gh api repos/${{ github.repository }}/actions/artifacts)
 
+                  MAX_RETRIES=3
+                  RETRY_DELAY=5
                   ARTIFACT_ID=$(echo "$ARTIFACTS" | jq ".artifacts[] | select(.name == \"$ARTIFACT_NAME\") | .id")
 
                   if [ -n "$ARTIFACT_ID" ]; then
-                      echo "Found artifact ID: $ARTIFACT_ID. Deleting..."
-                      gh api --method DELETE repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID
-                      echo "Artifact deleted successfully."
+                      for i in $(seq 1 $MAX_RETRIES); do
+                          echo "Deleting artifact ID: $ARTIFACT_ID (attempt $i)..."
+                          if gh api --method DELETE repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID; then
+                              echo "Artifact deleted successfully."
+                              break
+                          else
+                              echo "::warning::Attempt $i failed. Retrying in $RETRY_DELAY seconds..."
+                              sleep $RETRY_DELAY
+                          fi
+                      done
                   else
                       echo "No matching artifact found to delete."
                   fi
