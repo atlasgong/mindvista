@@ -1,7 +1,7 @@
 name: Cleanup PR Environment
 
 on:
-    pull_request:
+    pull_request_target:
         types: [closed]
 
 permissions:
@@ -128,7 +128,15 @@ jobs:
                                           SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
                                           if [ "$SUCCESS" = "true" ]; then
                                               echo "Successfully removed redirect rule for PR #${PR_NUMBER}."
-                                              gh pr comment ${PR_NUMBER} --body "🧹 PR closed or merged. Staging URL has been deleted." || echo "ERROR: Failed to comment on PR. Skipping..."
+                                              # use github-script action for reliable PR commenting
+                                              echo "::group::Creating PR comment"
+                                              echo 'await github.rest.issues.createComment({
+                                                owner: context.repo.owner,
+                                                repo: context.repo.repo,
+                                                issue_number: '"${PR_NUMBER}"',
+                                                body: "🧹 PR closed or merged. Staging URL has been deleted."
+                                              });' | npx -p @actions/github-script github-script --script-stdin || echo "ERROR: Failed to comment on PR. Skipping..."
+                                              echo "::endgroup::"
                                               break 2 # exit both loops on success
                                           fi
                                       elif [ "$HTTP_STATUS" -eq 412 ] && [ "$attempt" -lt "$MAX_RETRIES" ]; then
@@ -164,30 +172,39 @@ jobs:
                       exit 1
                   fi
 
-            - name: Delete Artifact
-              env:
-                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: |
-                  ARTIFACT_NAME="pr-${PR_NUMBER}-deploy-url"
+            - name: Delete Artifacts
+              uses: actions/github-script@v7
+              with:
+                  script: |
+                      const artifactName = `pr-${process.env.PR_NUMBER}-deploy-url`;
+                      console.log(`Looking for artifacts with name: ${artifactName}`);
 
-                  echo "Fetching artifacts for the repository..."
-                  ARTIFACTS=$(gh api repos/${{ github.repository }}/actions/artifacts)
+                      const artifacts = await github.rest.actions.listArtifactsForRepo({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo
+                      });
 
-                  MAX_RETRIES=3
-                  RETRY_DELAY=5
-                  ARTIFACT_ID=$(echo "$ARTIFACTS" | jq ".artifacts[] | select(.name == \"$ARTIFACT_NAME\") | .id")
+                      const matchingArtifacts = artifacts.data.artifacts.filter(
+                        artifact => artifact.name === artifactName
+                      );
 
-                  if [ -n "$ARTIFACT_ID" ]; then
-                      for i in $(seq 1 $MAX_RETRIES); do
-                          echo "Deleting artifact ID: $ARTIFACT_ID (attempt $i)..."
-                          if gh api --method DELETE repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID; then
-                              echo "Artifact deleted successfully."
-                              break
-                          else
-                              echo "::warning::Attempt $i failed. Retrying in $RETRY_DELAY seconds..."
-                              sleep $RETRY_DELAY
-                          fi
-                      done
-                  else
-                      echo "No matching artifact found to delete."
-                  fi
+                      if (matchingArtifacts.length === 0) {
+                        console.log('No matching artifacts found');
+                        return;
+                      }
+
+                      console.log(`Found ${matchingArtifacts.length} matching artifact(s)`);
+
+                      for (const artifact of matchingArtifacts) {
+                        try {
+                          console.log(`Deleting artifact ${artifact.id}`);
+                          await github.rest.actions.deleteArtifact({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            artifact_id: artifact.id
+                          });
+                          console.log(`Successfully deleted artifact ${artifact.id}`);
+                        } catch (error) {
+                          console.log(`Failed to delete artifact ${artifact.id}: ${error.message}`);
+                        }
+                      }
