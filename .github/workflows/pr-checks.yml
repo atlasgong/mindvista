@@ -217,6 +217,7 @@ jobs:
     # create a pr-[pr-number].mindvista.ca redirect to the vercel preview deployment URL
     create_redirect_url:
         needs: deploy_preview
+        if: ${{ success() && needs.deploy_preview.result == 'success' }}
         runs-on: ubuntu-latest
         env:
             DEPLOY_URL: ${{ needs.deploy_preview.outputs.url }}
@@ -263,7 +264,7 @@ jobs:
                   if [ "$HTTP_STATUS" -eq 200 ]; then
                       # check if PR preview ruleset exists
                       RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r --arg name "PR Preview Redirects" 'if .result then .result[] | select(.name == $name) | .id else empty end')
-                      
+
                       if [ -z "$RULESET_ID" ]; then
                           echo "Redirect rule not found. Creating PR preview ruleset..."
                           # create the ruleset
