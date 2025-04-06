@@ -3,6 +3,10 @@ name: Deploy to Preview
 on:
     # called by pr-checks.yml only if on base repository (skips for forks)
     workflow_call:
+        outputs:
+            url:
+                description: "The deployment URL from Vercel"
+                value: ${{ jobs.deploy_preview.outputs.url }}
         secrets:
             VERCEL_TOKEN:
                 required: true
@@ -32,6 +36,8 @@ jobs:
         timeout-minutes: 10
         name: Deploy to Preview
         runs-on: ubuntu-latest
+        outputs:
+            url: ${{ steps.deploy-preview.outputs.url }}
         environment:
             name: Preview
             url: ${{ steps.deploy-preview.outputs.url }}

@@ -213,3 +213,191 @@ jobs:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+    # create a pr-[pr-number].mindvista.ca redirect to the vercel preview deployment URL
+    create_redirect_url:
+        needs: deploy_preview
+        if: ${{ success() && needs.deploy_preview.result == 'success' }}
+        runs-on: ubuntu-latest
+        env:
+            DEPLOY_URL: ${{ needs.deploy_preview.outputs.url }}
+            PR_NUMBER: ${{ github.event.pull_request.number }}
+        steps:
+            - uses: actions/checkout@v4
+
+            # store deployment URL for later cleanup
+            - name: Store deployment URL
+              run: |
+                  printf '{"pr": "%s", "url": "%s"}\n' "${PR_NUMBER}" "${DEPLOY_URL}" > pr-deploy-mapping.json
+
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: pr-${{ env.PR_NUMBER }}-deploy-url
+                  path: pr-deploy-mapping.json
+                  retention-days: 90
+
+            - name: Create redirect rule
+              env:
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  MIRROR_URL=pr-${PR_NUMBER}.mindvista.ca
+
+                  if [ -z "$DEPLOY_URL" ]; then
+                    echo "DEPLOY_URL is empty. Something went wrong in deploy step."
+                    exit 1
+                  fi
+
+                  echo "Checking if redirect rule exists for ${MIRROR_URL}..."
+
+                  # list existing rulesets, capture response and status code
+                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets" \
+                    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                    -H "Content-Type: application/json")
+
+                  # extract status code from last line
+                  HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                  # extract response body (everything except last line)
+                  RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                  if [ "$HTTP_STATUS" -eq 200 ]; then
+                      # check if PR preview ruleset exists
+                      RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r --arg name "PR Preview Redirects" 'if .result then .result[] | select(.name == $name) | .id else empty end')
+
+                      if [ -z "$RULESET_ID" ]; then
+                          echo "Redirect rule not found. Creating PR preview ruleset..."
+                          # create the ruleset
+                          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets" \
+                            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                            -H "Content-Type: application/json" \
+                            --data '{
+                              "name": "PR Preview Redirects",
+                              "kind": "zone",
+                              "phase": "http_request_dynamic_redirect",
+                              "rules": []
+                            }')
+
+                          # extract status code from last line
+                          HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                          # extract response body (everything except last line)
+                          RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                          if [ "$HTTP_STATUS" -eq 200 ]; then
+                              RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r '.result.id')
+                          else
+                              echo "Failed to create ruleset (HTTP ${HTTP_STATUS}):"
+                              echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                              exit 1
+                          fi
+                      fi
+
+                      # get current rules
+                      RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                        -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                        -H "Content-Type: application/json")
+
+                      # extract status code from last line
+                      HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                      # extract response body (everything except last line)
+                      RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                      if [ "$HTTP_STATUS" -eq 200 ]; then
+                          # check if rule for this PR exists
+                          EXISTING_RULES=$(echo "$RESPONSE_BODY" | jq -r '.result.rules')
+                          RULE_EXISTS=$(echo "$EXISTING_RULES" | jq -r --arg pr_num "${PR_NUMBER}" 'if . then map(select(.description | contains("PR #\($pr_num)"))) | length > 0 else false end')
+
+                          if [ "$RULE_EXISTS" = "false" ]; then
+                              echo "Adding redirect rule: ${MIRROR_URL} -> ${DEPLOY_URL}"
+
+                              # construct new rule JSON safely
+                              NEW_RULE=$(jq -n \
+                                --arg expr "http.host eq \"${MIRROR_URL}\"" \
+                                --arg desc "Preview deployment for PR #${PR_NUMBER}. Generated by GitHub Actions." \
+                                --arg url "${DEPLOY_URL}" \
+                                '{
+                                  "expression": $expr,
+                                  "description": $desc,
+                                  "enabled": true,
+                                  "action": "redirect",
+                                  "action_parameters": {
+                                    "from_value": {
+                                      "target_url": {
+                                        "value": $url
+                                      },
+                                      "status_code": 301,
+                                      "preserve_query_string": true
+                                    }
+                                  }
+                                }')
+
+                              MAX_RETRIES=3
+                              for attempt in $(seq 1 $MAX_RETRIES); do
+                                  echo "Attempting to update ruleset (attempt ${attempt}/${MAX_RETRIES})..."
+
+                                  # get current ruleset state to get latest version
+                                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                      -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                      -H "Content-Type: application/json")
+
+                                  HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                                  RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                                  if [ "$HTTP_STATUS" -eq 200 ]; then
+                                      # get current version and rules
+                                      RULESET_VERSION=$(echo "$RESPONSE_BODY" | jq -r '.result.version')
+                                      EXISTING_RULES=$(echo "$RESPONSE_BODY" | jq -r '.result.rules')
+
+                                      # add new rule to existing rules
+                                      NEW_RULES=$(echo "$EXISTING_RULES" | jq ". + [$NEW_RULE]")
+
+                                      # try to update with version lock
+                                      RESPONSE=$(curl -s -w "\n%{http_code}" -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                          -H "If-Match: \"${RULESET_VERSION}\"" \
+                                          -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                          -H "Content-Type: application/json" \
+                                          --data "$(jq -n --argjson rules "$NEW_RULES" '{"rules": $rules}')")
+
+                                      HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                                      RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                                      if [ "$HTTP_STATUS" -eq 200 ]; then
+                                          SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
+                                          if [ "$SUCCESS" = "true" ]; then
+                                              echo "Successfully created redirect rule for PR #${PR_NUMBER}."
+                                              echo "Posting comment to PR..."
+                                              gh pr comment ${PR_NUMBER} --body "🚀 Preview deployment is ready at https://${MIRROR_URL}. <!-- preview-url -->" || echo "ERROR: Failed to comment on PR. Skipping..."
+                                              break
+                                          fi
+                                      elif [ "$HTTP_STATUS" -eq 412 ] && [ "$attempt" -lt "$MAX_RETRIES" ]; then
+                                          echo "Version conflict detected. Retrying in 1 second..."
+                                          sleep 1
+                                          continue
+                                      else
+                                          if [ "$attempt" -eq "$MAX_RETRIES" ]; then
+                                              echo "Failed to update ruleset after $MAX_RETRIES attempts (HTTP ${HTTP_STATUS}):"
+                                              echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                                              exit 1
+                                          fi
+                                          echo "Request failed (HTTP ${HTTP_STATUS}). Retrying in 1 second..."
+                                          sleep 1
+                                      fi
+                                  else
+                                      echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                                      exit 1
+                                  fi
+                              done
+                          else
+                              echo "Redirect rule already exists. Skipping creation and comment."
+                          fi
+                      else
+                          echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                          echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                          exit 1
+                      fi
+                  else
+                      echo "Failed to list rulesets (HTTP ${HTTP_STATUS}):"
+                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                      exit 1
+                  fi
