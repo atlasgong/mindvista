@@ -9,8 +9,8 @@ import Hr from "../../components/Hr";
 import styles from "./styles.module.css";
 
 /**
- * Types for Payload global data.
- * - groupPhoto can be either a number (ID) or an object with a URL.
+ * Types for the Payload global "about" content.
+ * - groupPhoto is now required and expected to be an object with a URL.
  */
 interface TeamMember {
     role: string;
@@ -25,16 +25,15 @@ interface TeamSectionData {
 }
 
 interface AboutContent {
-    groupPhoto?: { url: string } | number;
+    groupPhoto: { url: string };
     title?: string;
     introduction?: SerializedEditorState;
     initiativeDetails?: SerializedEditorState;
     teams?: TeamSectionData[];
-    // Note: seoDescription is not defined on the global schema, so we use a fallback.
 }
 
 /**
- * Inline TeamSection component.
+ * Inline TeamSection component – purely presentational.
  */
 function TeamSection({ title, members }: TeamSectionData) {
     return (
@@ -62,6 +61,11 @@ export default async function AboutPage() {
     // Fetch the global "about" content from Payload
     const content = (await (await getPayloadClient()).findGlobal({ slug: "about" })) as AboutContent | null;
 
+    // If no content or group photo is found, display an error message.
+    if (!content || !content.groupPhoto || !content.groupPhoto.url) {
+        return <div>Error: Group photo is not set in Payload.</div>;
+    }
+
     return (
         <Fragment>
             <RefreshRouteOnSave />
@@ -69,11 +73,14 @@ export default async function AboutPage() {
                 <div className={styles.mainContent}>
                     {/* Hero Section */}
                     <section className={`${styles.section} ${styles.heroSection}`}>
-                        <div className={styles.heroImageWrapper}>
-                            <Image src={typeof content?.groupPhoto === "object" && content?.groupPhoto?.url ? content.groupPhoto.url : "/team/group-photo.webp"} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
-                        </div>
-                        <div className={styles.textContent}>
-                            <h1 className={styles.title}>{content?.title}</h1>
+                        {/* Add "group" class here so children can use group-hover */}
+                        <div className={`${styles.heroImageWrapper} group`}>
+                            <Image src={content.groupPhoto.url} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
+                            <div className={styles.heroOverlay}></div>
+                            <div className={styles.heroCaption}>
+                                <h3 className={styles.heroCaptionTitle}>MindVista Team 2024-2025</h3>
+                                <p className={styles.heroCaptionSubtitle}>Committed to student wellness and engagement.</p>
+                            </div>
                         </div>
                     </section>
 
@@ -106,8 +113,6 @@ export default async function AboutPage() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-    // Here we cast page as any to allow for seoDescription fallback,
-    // since the global might not include that property.
     const page = await getPayloadClient().then((client) => client.findGlobal({ slug: "about" }));
     return {
         title: page?.title || "About MindVista",

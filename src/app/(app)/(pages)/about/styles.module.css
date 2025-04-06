@@ -28,6 +28,26 @@
     @apply h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105 group-hover:brightness-100;
 }
 
+/* Purple-to-blue overlay that appears on hover */
+.heroOverlay {
+    @apply absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+}
+
+/* Caption area at the bottom with dark background */
+.heroCaption {
+    @apply absolute bottom-0 left-0 right-0 bg-black/40 p-4 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+}
+
+/* Caption title text */
+.heroCaptionTitle {
+    @apply text-xl font-semibold;
+}
+
+/* Caption subtitle text */
+.heroCaptionSubtitle {
+    @apply text-sm;
+}
+
 /* Text content container for various sections */
 .textContent {
     @apply space-y-4;
