@@ -57,7 +57,7 @@ jobs:
                   DEPLOY_URL=$(jq -r '.url' pr-deploy-mapping.json)
                   if [ -n "$DEPLOY_URL" ]; then
                       echo "Found deployment URL: $DEPLOY_URL"
-                      vercel remove "$DEPLOY_URL" -y --token=$VERCEL_TOKEN || echo "::warning::Deployment cleanup failed. Is it possible the deploymeny was already removed?"
+                      vercel remove "$DEPLOY_URL" -y --token=$VERCEL_TOKEN || echo "::warning::Deployment cleanup failed. Is it possible the deployment was already removed?"
                       echo "Deleted Vercel preview deployment for PR #${PR_NUMBER}."
                   else
                       echo "::warning::No deployment URL found in mapping file. Skipping deletion."
