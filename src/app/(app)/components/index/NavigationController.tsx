@@ -10,7 +10,7 @@ interface NavigationControllerProps {
     hasAnnouncement?: boolean;
 }
 
-export default function NavigationController({ hasAnnouncement = false }: NavigationControllerProps) {
+export default function NavigationController({ hasAnnouncement }: NavigationControllerProps) {
     const [showMainNav, setShowMainNav] = useState(false);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function NavigationController({ hasAnnouncement = false }: Naviga
     return (
         <div className="fixed left-0 top-0 z-20 w-full">
             <div className={`absolute left-0 top-0 w-full transform transition-all duration-300 ${showMainNav ? "pointer-events-none -translate-y-full opacity-0" : "pointer-events-auto translate-y-0 opacity-100"}`}>
-                <LandingNavBarDesktop hasAnnouncement />
+                <LandingNavBarDesktop hasAnnouncement={hasAnnouncement} />
             </div>
             <div className={`absolute left-0 top-0 w-full transform transition-all duration-300 ${showMainNav ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-[-100%] opacity-0"}`}>
                 <NavBar />
