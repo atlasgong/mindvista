@@ -78,6 +78,22 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "_events_v_updated_at_idx" ON "_events_v" USING btree ("updated_at");
   CREATE INDEX IF NOT EXISTS "_events_v_latest_idx" ON "_events_v" USING btree ("latest");
   CREATE INDEX IF NOT EXISTS "events__status_idx" ON "events" USING btree ("_status");`);
+
+    // patch all existing events documents to 'published' to trigger versioning
+    try {
+        const result = await payload.update({
+            collection: "events",
+            where: {},
+            data: {
+                _status: "published",
+            },
+        });
+        console.log(`Successfully patched ${result.docs.length} documents to published status.`);
+        console.log("This will trigger the versioning system to populate the versions collection.");
+    } catch (error) {
+        console.error("Error patching documents during migration:", error);
+        throw error;
+    }
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
