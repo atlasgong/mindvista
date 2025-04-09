@@ -1,7 +1,7 @@
 import type { FieldAccess, Access } from "payload";
 import type { User } from "@/payload-types";
 
-export const denyAccess: Access = ({ req }) => {
+export const denyAccess: Access = () => {
     return false;
 };
 
@@ -22,7 +22,7 @@ export const isContentEditorFr: FieldAccess = ({ req }) => {
 
 // PERMISSIONS START BELOW ------------
 
-export const denyAccessField: FieldAccess = ({ req }) => {
+export const denyAccessField: FieldAccess = () => {
     return false;
 };
 
