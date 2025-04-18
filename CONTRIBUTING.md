@@ -11,8 +11,6 @@ Thank you and happy coding!
 [Skip to documentation.](https://github.com/atlasgong/mindvista/wiki/)
 New to this repo? See [Getting Started](https://github.com/atlasgong/mindvista/wiki#getting-started) to set up your local server.
 
-Before committing, see our [Conventional Commit Guidelines](https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines).
-
 Please write clear and concise code. We use [Prettier](https://prettier.io/docs/en/) for formatting. Ensure that files are well-commented when necessary.
 
 ### Responsiveness
