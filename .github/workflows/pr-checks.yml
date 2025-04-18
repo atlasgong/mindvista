@@ -78,7 +78,7 @@ jobs:
                       ${{ steps.commitlint.outputs.output }}
                       \`\`\`
 
-                      Please see https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines for more information.`;
+                      Please see https://github.com/MindVista/website/wiki/Commit-Guidelines for more information.`;
 
                       await github.rest.issues.createComment({
                         issue_number: context.issue.number,

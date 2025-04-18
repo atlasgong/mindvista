@@ -12,7 +12,7 @@ const Configuration: UserConfig = {
         "header-min-length": [RuleConfigSeverity.Error, "always", 12],
         "header-max-length": [RuleConfigSeverity.Error, "always", 72],
     },
-    helpUrl: "https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines",
+    helpUrl: "https://github.com/MindVista/website/wiki/Commit-Guidelines",
     defaultIgnores: true,
 };
 
