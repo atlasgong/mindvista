@@ -37,6 +37,11 @@ const dbAdapter = isDevelopment
           pool: {
               connectionString: process.env.POSTGRES_URL,
           },
+          /**
+           * Prevent Payload from attempting to push schema changes during startup in development.
+           * Schema is managed by migrations and the seeding script.
+           */
+          push: false,
       })
     : vercelPostgresAdapter({
           push: false,
