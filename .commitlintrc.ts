@@ -8,7 +8,7 @@ const Configuration: UserConfig = {
     rules: {
         "type-enum": [RuleConfigSeverity.Error, "always", ["build", "ci", "cms", "test", "merge", "content", "feat", "fix", "resp", "a11y", "ui", "ux", "perf", "sec", "refactor", "seo", "legal", "docs", "other"]],
     },
-    helpUrl: "https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines",
+    helpUrl: "https://github.com/MindVista/website/wiki/Commit-Guidelines",
     defaultIgnores: true,
 };
 

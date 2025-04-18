@@ -106,7 +106,7 @@ function NavMenu({ nav }: NavMenuProps) {
             label: "LinkedIn",
         },
         {
-            href: "https://github.com/atlasgong/mindvista",
+            href: "https://github.com/MindVista/website",
             icon: FaGithub,
             label: "GitHub",
         },
