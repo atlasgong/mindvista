@@ -113,6 +113,7 @@ export default buildConfig({
                 },
             ],
         },
+        avatar: "default",
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
     globals: [HolisticWellnessPage, SponsorPage, VolunteerPage, AnnouncementBar],
