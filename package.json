@@ -10,6 +10,7 @@
         "setup:dev": "tsx --env-file=.env scripts/environments/setup-local-dev.ts --",
         "seed:db:dev": "tsx --env-file=.env scripts/environments/development/seed-db.ts --",
         "seed:storage:dev": "tsx --env-file=.env scripts/environments/development/seed-s3.ts",
+        "setup:all:dev": "\"$npm_execpath\" run setup:dev && \"$npm_execpath\" run seed:db:dev && \"$npm_execpath\" run seed:storage:dev",
         "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
         "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
         "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
