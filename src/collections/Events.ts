@@ -14,6 +14,10 @@ export const Events: CollectionConfig = {
             url: ({ data }) => `${process.env.NEXT_PUBLIC_SERVER_URL}/events/${data.slug}`,
         },
     },
+    versions: {
+        drafts: true,
+        maxPerDoc: 20,
+    },
     access: {
         create: canEditContent,
         delete: canEditContent,
