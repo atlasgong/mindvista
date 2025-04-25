@@ -28,7 +28,7 @@ done
 echo "Generating types..."
 npm run generate:types
 exit_code="$?"
-test "$exit_code" -eq 0 || (echo "Failed to generate types." && exit "$exit_code")
+test "$exit_code" -eq 0 || { echo "Failed to generate types." && exit "$exit_code"; }
 
 echo "Generating import map..."
 npm run generate:importmap
