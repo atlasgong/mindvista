@@ -43,6 +43,7 @@
         "next": "15.2.4",
         "nextjs-toploader": "^3.7.15",
         "payload": "^3.35.1",
+        "payload-sentinel": "^0.1.1",
         "react": "19.0.0",
         "react-dom": "19.0.0",
         "react-hook-form": "^7.54.2",
