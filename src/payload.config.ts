@@ -10,6 +10,8 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
+import { payloadSentinel } from "payload-sentinel";
+
 import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
 import { Pages } from "@collections/Pages";
@@ -140,5 +142,6 @@ export default buildConfig({
             bucket: process.env.S3_BUCKET || "",
             config: storageConfig,
         }),
+        payloadSentinel(),
     ],
 });
