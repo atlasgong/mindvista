@@ -24,3 +24,15 @@ while read -r local_ref local_sha remote_ref remote_sha; do
         exit 1
     fi
 done
+
+echo "Generating types..."
+npm run generate:types
+exit_code="$?"
+test "$exit_code" -eq 0 || { echo "Failed to generate types." && exit "$exit_code"; }
+
+echo "Generating import map..."
+npm run generate:importmap
+exit_code="$?"
+test "$exit_code" -eq 0 || (echo "Failed to generate import map." && exit "$exit_code")
+
+exit 0
