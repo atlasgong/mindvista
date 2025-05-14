@@ -9,7 +9,7 @@ import useWeb3Forms from "@web3forms/react";
 
 // validation error messages
 export const ERROR_MESSAGES = {
-    nameMin: "Must be at least 2 characters long.",
+    nameMin: "Must be at least 1 character long.",
     nameMax: "Must be at most 64 characters long.",
     orgMax: "Must be at most 32 characters long.",
     emailInvalid: "You must enter a valid email address.",
@@ -22,7 +22,7 @@ export const ERROR_MESSAGES = {
 
 // define form scheme for input validation
 const schema = z.object({
-    name: z.string().min(2, { message: ERROR_MESSAGES.nameMin }).max(64, { message: ERROR_MESSAGES.nameMax }).trim(),
+    name: z.string().min(1, { message: ERROR_MESSAGES.nameMin }).max(64, { message: ERROR_MESSAGES.nameMax }).trim(),
     organization: z.optional(z.string().max(32, { message: ERROR_MESSAGES.orgMax }).trim()),
     email: z.string().email({ message: ERROR_MESSAGES.emailInvalid }).trim(),
     subject: z.string().min(4, { message: ERROR_MESSAGES.subjectMin }).max(78, { message: ERROR_MESSAGES.subjectMax }).trim(),
