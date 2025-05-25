@@ -1,6 +1,7 @@
 import { RefreshRouteOnSave } from "@/app/(app)/components/RefreshRouteOnSave";
 import { Fragment } from "react";
 import { getPayloadClient } from "@/payloadClient";
+import { getPageFromCMS } from "@/lib/getPageFromCMS";
 import { Metadata } from "next";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
@@ -113,9 +114,11 @@ export default async function AboutPage() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-    const page = await getPayloadClient().then((client) => client.findGlobal({ slug: "about" }));
+    const page = await getPageFromCMS("about");
     return {
-        title: page?.title || "About MindVista",
-        description: (page as any)?.seoDescription || "Committed to student wellness and engagement.",
+        ...(page && {
+            title: page.title,
+            description: page.seoDescription,
+        }),
     };
 }
