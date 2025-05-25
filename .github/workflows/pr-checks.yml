@@ -210,6 +210,9 @@ jobs:
         if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
         uses: ./.github/workflows/deploy-preview.yml
         secrets:
+            NEON_DATABASE_USERNAME: ${{ secrets.NEON_DATABASE_USERNAME }}
+            NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+            NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
