@@ -11,6 +11,10 @@ on:
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+    contents: read
+    pull-requests: write
+
 jobs:
     setup:
         name: Setup
@@ -24,9 +28,6 @@ jobs:
 
     create_neon_branch:
         name: Create Neon Branch
-        permissions:
-            contents: read
-            pull-requests: write
         outputs:
             db_url: ${{ steps.create_neon_branch_encode.outputs.db_url }}
             db_url_with_pooler: ${{ steps.create_neon_branch_encode.outputs.db_url_with_pooler }}
