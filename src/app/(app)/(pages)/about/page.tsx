@@ -24,7 +24,7 @@ function TeamSection({ title, members }: TeamSection) {
                 {members.map((member: TeamMember) => (
                     <div key={member.name} className={styles.teamCard}>
                         <div className={styles.teamImageWrapper}>
-                            <Image src={(member.image as Media).url || "/team/avatarPlaceholder.png"} alt={(member.image as Media).url || member.name} width={500} height={500} className={styles.teamImage} />
+                            <Image src={(member.image as Media)?.url || "/team/avatarPlaceholder.png"} alt={(member.image as Media)?.url || member.name} width={500} height={500} className={styles.teamImage} />
                         </div>
                         <div className={styles.memberInfo}>
                             <h3 className={styles.memberName}>{member.name}</h3>
@@ -42,11 +42,7 @@ export default async function AboutPage() {
     // Fetch the global "about" content from Payload
     const content = await (await getPayloadClient()).findGlobal({ slug: "about" });
 
-    // If no content or group photo is found, display an error message.
-    if (!content || !content.groupPhoto || !(content.groupPhoto as Media).url) {
-        return <div>Error: Group photo is not set in Payload.</div>;
-    }
-    const groupPhotoURL = (content.groupPhoto as Media).url as string;
+    const groupPhotoUrl = (content?.groupPhoto as Media)?.url;
 
     return (
         <Fragment>
@@ -57,7 +53,7 @@ export default async function AboutPage() {
                     <section className={`${styles.section} ${styles.heroSection}`}>
                         {/* Add "group" class here so children can use group-hover */}
                         <div className={`${styles.heroImageWrapper} group`}>
-                            <Image src={groupPhotoURL} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
+                            {groupPhotoUrl ? <Image src={(content.groupPhoto as Media).url as string} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} /> : <div>Error: Group photo is not set in Payload.</div>}
                             <div className={styles.heroOverlay}></div>
                             <div className={styles.heroCaption}>
                                 <h3 className={styles.heroCaptionTitle}>MindVista Team 2024-2025</h3>
