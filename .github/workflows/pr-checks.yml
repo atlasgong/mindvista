@@ -6,11 +6,7 @@ on:
             - "**"
     workflow_dispatch: # allows manual triggering from GitHub UI
 
-permissions:
-    contents: write
-    deployments: write
-    pull-requests: write
-    issues: write
+permissions: write-all
 
 # ensures only one PR check per PR runs at a time
 concurrency:
