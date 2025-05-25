@@ -10,6 +10,8 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
+import { payloadSentinel } from "payload-sentinel";
+
 import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
 import { Pages } from "@collections/Pages";
@@ -113,6 +115,7 @@ export default buildConfig({
                 },
             ],
         },
+        avatar: "default",
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
     globals: [HolisticWellnessPage, SponsorPage, VolunteerPage, AnnouncementBar],
@@ -139,5 +142,6 @@ export default buildConfig({
             bucket: process.env.S3_BUCKET || "",
             config: storageConfig,
         }),
+        payloadSentinel(),
     ],
 });
