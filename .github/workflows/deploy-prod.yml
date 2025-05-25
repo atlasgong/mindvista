@@ -13,8 +13,14 @@ concurrency:
     group: deploy-production
     cancel-in-progress: true
 
+env:
+    VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
 jobs:
     deploy_prod:
+        permissions: write-all
         timeout-minutes: 10
         name: Deploy to Production
         runs-on: ubuntu-latest
@@ -24,6 +30,11 @@ jobs:
 
         steps:
             - uses: actions/checkout@v4
+
+            - name: Run Migrations and Generate Import Map
+              run: |
+                  npx payload migrate
+                  npx payload generate:importmap
 
             - name: Install Vercel CLI
               run: npm install --global vercel@latest

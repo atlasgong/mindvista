@@ -8,6 +8,12 @@ on:
                 description: "The deployment URL from Vercel"
                 value: ${{ jobs.deploy_preview.outputs.url }}
         secrets:
+            NEON_DATABASE_USERNAME:
+                required: true
+            NEON_API_KEY:
+                required: true
+            NEON_PROJECT_ID:
+                required: true
             VERCEL_TOKEN:
                 required: true
             VERCEL_ORG_ID:
@@ -35,13 +41,13 @@ jobs:
     deploy_preview:
         timeout-minutes: 10
         name: Deploy to Preview
+        permissions: write-all
         runs-on: ubuntu-latest
         outputs:
             url: ${{ steps.deploy-preview.outputs.url }}
         environment:
             name: Preview
             url: ${{ steps.deploy-preview.outputs.url }}
-
         steps:
             - uses: actions/checkout@v4
               with:
@@ -50,6 +56,29 @@ jobs:
                   ref: ${{ inputs.pr_number != null && format('refs/pull/{0}/merge', inputs.pr_number) || github.ref }}
                   repository: ${{ github.repository }}
                   token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Get branch name
+              id: branch-name
+              uses: tj-actions/branch-names@v8
+
+            - name: Create Neon Branch
+              id: create-branch
+              uses: neondatabase/create-branch-action@v4
+              with:
+                  project_id: ${{ env.NEON_PROJECT_ID }}
+                  branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}
+                  username: ${{ env.NEON_DATABASE_USERNAME }}
+                  api_key: ${{ env.NEON_API_KEY }}
+
+            - name: Run Migrations and Generate Import Map
+              run: |
+                  touch .env
+
+                  echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}?sslmode=require >> .env
+                  echo DIRECT_URL=${{ steps.create-branch.outputs.db_url }}?sslmode=require >> .env
+
+                  npx payload migrate
+                  npx payload generate:importmap
 
             - name: Install Vercel CLI
               run: npm install --global vercel@latest
