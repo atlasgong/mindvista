@@ -57,7 +57,7 @@ jobs:
                   repository: ${{ github.repository }}
                   token: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Get branch name
+            - name: Get Branch Name
               id: branch-name
               uses: tj-actions/branch-names@v8
 
@@ -90,6 +90,7 @@ jobs:
                   touch .env
 
                   echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}?sslmode=require >> .env
+                  echo POSTGRES_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}?sslmode=require >> .env
                   echo DIRECT_URL=${{ steps.create-branch.outputs.db_url }}?sslmode=require >> .env
 
                   npx payload migrate
