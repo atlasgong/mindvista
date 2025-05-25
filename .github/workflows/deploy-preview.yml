@@ -70,6 +70,15 @@ jobs:
                   username: ${{ secrets.NEON_DATABASE_USERNAME }}
                   api_key: ${{ secrets.NEON_API_KEY }}
 
+            - name: Install Vercel CLI
+              run: npm install --global vercel@latest
+
+            - name: Link Vercel Project
+              run: vercel link --yes --scope agvq --project mindvista --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Pull Vercel Environment Information
+              run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
@@ -88,15 +97,6 @@ jobs:
 
                   npx payload migrate
                   npx payload generate:importmap
-
-            - name: Install Vercel CLI
-              run: npm install --global vercel@latest
-
-            - name: Link Vercel Project
-              run: vercel link --yes --scope agvq --project mindvista --token=${{ secrets.VERCEL_TOKEN }}
-
-            - name: Pull Vercel Environment Information
-              run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Build Project Artifacts
               run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
