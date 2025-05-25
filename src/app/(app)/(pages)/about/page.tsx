@@ -8,43 +8,23 @@ import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import Image from "next/image";
 import Hr from "../../components/Hr";
 import styles from "./styles.module.css";
+import { About, Media } from "@/payload-types";
 
-/**
- * Types for the Payload global "about" content.
- * - groupPhoto is now required and expected to be an object with a URL.
- */
-interface TeamMember {
-    role: string;
-    name: string;
-    pronouns?: string;
-    image?: string;
-}
-
-interface TeamSectionData {
-    title: string;
-    members: TeamMember[];
-}
-
-interface AboutContent {
-    groupPhoto: { url: string };
-    title?: string;
-    introduction?: SerializedEditorState;
-    initiativeDetails?: SerializedEditorState;
-    teams?: TeamSectionData[];
-}
+type TeamMember = About["teams"][number]["members"][number];
+type TeamSection = About["teams"][number];
 
 /**
  * Inline TeamSection component – purely presentational.
  */
-function TeamSection({ title, members }: TeamSectionData) {
+function TeamSection({ title, members }: TeamSection) {
     return (
         <section className={styles.teamSection}>
             <h2 className={styles.teamTitle}>{title}</h2>
             <div className={styles.teamGrid}>
-                {members.map((member) => (
+                {members.map((member: TeamMember) => (
                     <div key={member.name} className={styles.teamCard}>
                         <div className={styles.teamImageWrapper}>
-                            <Image src={member.image || "/team/avatarPlaceholder.png"} alt={member.name} width={500} height={500} className={styles.teamImage} />
+                            <Image src={(member.image as Media).url || "/team/avatarPlaceholder.png"} alt={(member.image as Media).url || member.name} width={500} height={500} className={styles.teamImage} />
                         </div>
                         <div className={styles.memberInfo}>
                             <h3 className={styles.memberName}>{member.name}</h3>
@@ -60,12 +40,13 @@ function TeamSection({ title, members }: TeamSectionData) {
 
 export default async function AboutPage() {
     // Fetch the global "about" content from Payload
-    const content = (await (await getPayloadClient()).findGlobal({ slug: "about" })) as AboutContent | null;
+    const content = await (await getPayloadClient()).findGlobal({ slug: "about" });
 
     // If no content or group photo is found, display an error message.
-    if (!content || !content.groupPhoto || !content.groupPhoto.url) {
+    if (!content || !content.groupPhoto || !(content.groupPhoto as Media).url) {
         return <div>Error: Group photo is not set in Payload.</div>;
     }
+    const groupPhotoURL = (content.groupPhoto as Media).url as string;
 
     return (
         <Fragment>
@@ -76,7 +57,7 @@ export default async function AboutPage() {
                     <section className={`${styles.section} ${styles.heroSection}`}>
                         {/* Add "group" class here so children can use group-hover */}
                         <div className={`${styles.heroImageWrapper} group`}>
-                            <Image src={content.groupPhoto.url} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
+                            <Image src={groupPhotoURL} alt="MindVista Team" width={1920} height={1280} className={styles.heroImage} />
                             <div className={styles.heroOverlay}></div>
                             <div className={styles.heroCaption}>
                                 <h3 className={styles.heroCaptionTitle}>MindVista Team 2024-2025</h3>
