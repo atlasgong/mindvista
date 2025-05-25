@@ -29,7 +29,7 @@ export const AboutPage: GlobalConfig = {
             type: "relationship",
             relationTo: "pages",
             access: {
-                update: canEditContent,
+                update: denyAccessField,
             },
         },
         {
