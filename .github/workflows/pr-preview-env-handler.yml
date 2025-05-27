@@ -14,6 +14,7 @@ concurrency:
 permissions:
     contents: read
     pull-requests: write
+    deployments: write
 
 jobs:
     setup:
@@ -87,12 +88,19 @@ jobs:
         # runs only for internal PRs, i.e. if PR's head repo is the same as the base repo
         # job is skipped otherwise, i.e. do not run for forked PRs
         # forked PRs require a workflow_trigger of deploy-preview.yml
-        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        if: |
+            github.event.pull_request.head.repo.full_name == github.repository &&
+            github.event_name == 'pull_request' && (
+            github.event.action == 'synchronize'
+            || github.event.action == 'opened'
+            || github.event.action == 'reopened')
+        needs: [setup, create_neon_branch]
         uses: ./.github/workflows/deploy-preview.yml
         secrets:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+            NEON_DATABASE_URL: ${{ needs.create_neon_branch.outputs.db_url_with_pooler }}
 
     # create a pr-[pr-number].mindvista.ca redirect to the vercel preview deployment URL
     create_redirect_url:

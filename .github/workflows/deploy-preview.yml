@@ -14,6 +14,8 @@ on:
                 required: true
             VERCEL_PROJECT_ID:
                 required: true
+            NEON_DATABASE_URL:
+                required: true
 
     workflow_dispatch: # manual triggering for external fork PRs
         inputs:
@@ -47,7 +49,7 @@ jobs:
               with:
                   # for workflow_dispatch (fork PRs), use PR number
                   # for workflow_call (base repo), use branch ref
-                  ref: ${{ inputs.pr_number != null && format('refs/pull/{0}/merge', inputs.pr_number) || github.ref }}
+                  ref: ${{ github.event.pr_number && format('refs/pull/{0}/merge', github.event.pr_number) || github.ref }}
                   repository: ${{ github.repository }}
                   token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -61,6 +63,8 @@ jobs:
               run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Build Project Artifacts
+              env:
+                  POSTGRES_URL: ${{ secrets.NEON_DATABASE_URL }}
               run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Deploy Project Artifacts to Vercel
