@@ -30,8 +30,7 @@ jobs:
     create_neon_branch:
         name: Create Neon Branch
         outputs:
-            db_url: ${{ steps.create_neon_branch.outputs.db_url }}
-            db_url_with_pooler: ${{ steps.create_neon_branch.outputs.db_url_with_pooler }}
+            encoded_db_url_with_pooler: ${{ steps.encode_db_url.outputs.encoded_url }}
         needs: setup
         if: |
             github.event_name == 'pull_request' && (
@@ -47,6 +46,14 @@ jobs:
                   project_id: ${{ vars.NEON_PROJECT_ID }}
                   branch_name: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
                   api_key: ${{ secrets.NEON_API_KEY }}
+
+            - name: Encode DB URL
+              id: encode_db_url
+              if: steps.create_neon_branch.outputs.db_url_with_pooler != ''
+              run: |
+                  encoded_url=$(echo -n "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}" | base64)
+                  echo "encoded_url=${encoded_url}" >> $GITHUB_OUTPUT
+              shell: bash
 
             # The step above creates a new Neon branch.
             # You may want to do something with the new branch, such as run migrations, run tests
@@ -100,7 +107,7 @@ jobs:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-            NEON_DATABASE_URL: ${{ needs.create_neon_branch.outputs.db_url_with_pooler }}
+            ENCODED_NEON_DATABASE_URL: ${{ needs.create_neon_branch.outputs.encoded_db_url_with_pooler }}
 
     # create a pr-[pr-number].mindvista.ca redirect to the vercel preview deployment URL
     create_redirect_url:

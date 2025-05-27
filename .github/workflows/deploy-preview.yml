@@ -14,7 +14,7 @@ on:
                 required: true
             VERCEL_PROJECT_ID:
                 required: true
-            NEON_DATABASE_URL:
+            ENCODED_NEON_DATABASE_URL:
                 required: true
 
     workflow_dispatch: # manual triggering for external fork PRs
@@ -62,9 +62,20 @@ jobs:
             - name: Pull Vercel Environment Information
               run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
+            - name: Decode DB URL and Set for Build
+              id: decode_db_url
+              env:
+                  ENCODED_URL_FROM_SECRET: ${{ secrets.ENCODED_NEON_DATABASE_URL }}
+              if: env.ENCODED_URL_FROM_SECRET != ''
+              run: |
+                  decoded_url=$(echo -n "${{ env.ENCODED_URL_FROM_SECRET }}" | base64 --decode)
+                  echo "POSTGRES_URL_DECODED=${decoded_url}" >> $GITHUB_ENV
+                  echo "::add-mask::${decoded_url}" # Mask the decoded URL in logs
+              shell: bash
+
             - name: Build Project Artifacts
               env:
-                  POSTGRES_URL: ${{ secrets.NEON_DATABASE_URL }}
+                  POSTGRES_URL: ${{ env.POSTGRES_URL_DECODED }}
               run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Deploy Project Artifacts to Vercel
