@@ -31,8 +31,9 @@ jobs:
     create_neon_branch:
         name: Create Neon Branch
         outputs:
-            db_url: ${{ steps.create_neon_branch.outputs.db_url }}
-            db_url_with_pooler: ${{ steps.create_neon_branch.outputs.db_url_with_pooler }}
+            # db_url: ${{ steps.create_neon_branch.outputs.db_url }}
+            # db_url_with_pooler: ${{ steps.create_neon_branch.outputs.db_url_with_pooler }}
+            db_host_pooled: ${{ steps.create_neon_branch.outputs.db_host_pooled }}
         needs: setup
         if: |
             github.event_name == 'pull_request' && (
@@ -94,7 +95,7 @@ jobs:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-            DATABASE_URL: ${{ needs.create_neon_branch.outputs.db_url_with_pooler }}
+            DATABASE_URL: "postgres://${{ vars.NEON_DB_USER }}:${{ secrets.NEON_DB_PASSWORD }}@${{ needs.create_neon_branch.outputs.db_host_pooled }}/${{ vars.NEON_DB_NAME }}?sslmode=require"
 
     create_redirect_url:
         name: Create Cloudflare Redirect URL
