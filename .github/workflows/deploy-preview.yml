@@ -64,6 +64,9 @@ jobs:
 
             - name: Pass Database Connection String From Neon To Vercel
               run: |
+                  echo "Resetting environment variable POSTGRES_URL..."
+                  vercel env rm POSTGRES_URL preview --yes --token=${{ secrets.VERCEL_TOKEN }}
+                  echo "Adding environment variable POSTGRES_URL..."
                   vercel env add POSTGRES_URL preview --token=${{ secrets.VERCEL_TOKEN }} <<EOF
                   ${{ secrets.DATABASE_URL }}
                   EOF
