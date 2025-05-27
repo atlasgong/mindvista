@@ -36,7 +36,7 @@ const messages = [
 
 // This is the "acting" "default" component for the NotFound page.
 // It may be freely edited as if it were any other component.
-// See https://github.com/atlasgong/mindvista/wiki/Miscellaneous#404-page-handling for more details.
+// See https://github.com/MindVista/website/wiki/Miscellaneous#404-page-handling for more details.
 function NotFoundComponent() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
@@ -56,7 +56,7 @@ export default function NotFound() {
     // CHANGES MUST ONLY BE MADE BELOW IF MIRRORED FROM ONE OF:
     // - src/app/(app)/(pages)/layout.tsx or
     // - src/app/(app)/layout.tsx
-    // See https://github.com/atlasgong/mindvista/wiki/Miscellaneous#404-page-handling
+    // See https://github.com/MindVista/website/wiki/Miscellaneous#404-page-handling
     return (
         // APP LAYOUT START
         <html lang="en" suppressHydrationWarning>

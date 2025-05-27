@@ -78,7 +78,7 @@ jobs:
                       ${{ steps.commitlint.outputs.output }}
                       \`\`\`
 
-                      Please see https://github.com/atlasgong/mindvista/wiki/Commit-Guidelines for more information.`;
+                      Please see https://github.com/MindVista/website/wiki/Commit-Guidelines for more information.`;
 
                       await github.rest.issues.createComment({
                         issue_number: context.issue.number,
@@ -202,14 +202,3 @@ jobs:
                         repo: context.repo.repo,
                         body
                       });
-
-    deploy_preview:
-        # runs only for internal PRs, i.e. if PR's head repo is the same as the base repo
-        # job is skipped otherwise, i.e. do not run for forked PRs
-        # forked PRs require a workflow_trigger of deploy-preview.yml
-        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: ./.github/workflows/deploy-preview.yml
-        secrets:
-            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-            VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-            VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

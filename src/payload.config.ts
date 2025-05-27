@@ -10,6 +10,8 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
+import { payloadSentinel } from "payload-sentinel";
+
 import { Users } from "@collections/Users";
 import { Media } from "@collections/Media";
 import { Pages } from "@collections/Pages";
@@ -37,6 +39,11 @@ const dbAdapter = isDevelopment
           pool: {
               connectionString: process.env.POSTGRES_URL,
           },
+          /**
+           * Prevent Payload from attempting to push schema changes during startup in development.
+           * Schema is managed by migrations and the seeding script.
+           */
+          push: false,
       })
     : vercelPostgresAdapter({
           push: false,
@@ -108,6 +115,7 @@ export default buildConfig({
                 },
             ],
         },
+        avatar: "default",
     },
     collections: [Users, Media, Pages, LegalPages, Events, Clubs, Resources, ClubTagCategories, ResourceTagCategories, ClubTags, ResourceTags],
     globals: [HolisticWellnessPage, SponsorPage, VolunteerPage, AnnouncementBar],
@@ -134,5 +142,6 @@ export default buildConfig({
             bucket: process.env.S3_BUCKET || "",
             config: storageConfig,
         }),
+        payloadSentinel(),
     ],
 });

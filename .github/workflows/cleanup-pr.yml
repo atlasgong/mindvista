@@ -1,0 +1,223 @@
+name: Cleanup PR Environment
+
+on:
+    pull_request_target:
+        types: [closed]
+
+permissions:
+    contents: write
+    pull-requests: write
+    issues: write
+    actions: write
+
+jobs:
+    cleanup_staging:
+        name: Cleanup Staging Environment
+        runs-on: ubuntu-latest
+        outputs:
+            redirect_deleted: ${{ steps.delete-redirect.outputs.success }}
+        env:
+            PR_NUMBER: ${{ github.event.pull_request.number }}
+        steps:
+            # download the artifact containing deployment URL
+            - name: Download deployment URL artifact
+              id: download-artifact
+              continue-on-error: true
+              uses: actions/download-artifact@v4
+              with:
+                  name: pr-${{ env.PR_NUMBER }}-deploy-url
+                  path: .
+
+            - name: Check if artifact was downloaded
+              if: steps.download-artifact.outcome != 'success'
+              run: |
+                  echo "::warning::Could not download deployment URL artifact. The preview deployment may need to be cleaned up manually."
+
+            # hide preview URL comment
+            - uses: int128/hide-comment-action@dba8ef7116a5609731b75a2ceb566d561c0e57f5 # v1.40.0
+              with:
+                  authors: github-actions
+                  ends-with: <!-- preview-url -->
+
+            - name: Install Vercel CLI
+              id: install-vercel
+              run: |
+                  if ! npm install --global vercel@latest; then
+                    echo "::error::Failed to install Vercel CLI"
+                    exit 1
+                  fi
+
+            - name: Delete Vercel Preview Deployment
+              if: steps.install-vercel.outcome == 'success'
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+              run: |
+                  if [ ! -f "pr-deploy-mapping.json" ]; then
+                    echo "::warning::No deployment mapping file found. Skipping Vercel cleanup."
+                    exit 0
+                  fi
+
+                  DEPLOY_URL=$(jq -r '.url' pr-deploy-mapping.json)
+                  if [ -n "$DEPLOY_URL" ]; then
+                      echo "Found deployment URL: $DEPLOY_URL"
+                      vercel remove "$DEPLOY_URL" -y --token=$VERCEL_TOKEN || echo "::warning::Deployment cleanup failed. Is it possible the deployment was already removed?"
+                      echo "Deleted Vercel preview deployment for PR #${PR_NUMBER}."
+                  else
+                      echo "::warning::No deployment URL found in mapping file. Skipping deletion."
+                  fi
+
+            - name: Delete redirect rule
+              id: delete-redirect
+              env:
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+              run: |
+                  echo "Looking up redirect rule for PR #${PR_NUMBER}..."
+
+                  # list existing rulesets, capture response and status code
+                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets" \
+                    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                    -H "Content-Type: application/json")
+
+                  # extract status code from last line
+                  HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                  # extract response body (everything except last line)
+                  RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                  if [ "$HTTP_STATUS" -eq 200 ]; then
+                      # check if PR preview ruleset exists
+                      RULESET_ID=$(echo "$RESPONSE_BODY" | jq -r 'if .result then .result[] | select(.name == "PR Preview Redirects") | .id else empty end')
+
+                      if [ -n "$RULESET_ID" ]; then
+                          # get current rules
+                          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                            -H "Content-Type: application/json")
+
+                          # extract status code from last line
+                          HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                          # extract response body (everything except last line)
+                          RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                          if [ "$HTTP_STATUS" -eq 200 ]; then
+                              MAX_RETRIES=3
+                              for attempt in $(seq 1 $MAX_RETRIES); do
+                                  echo "Attempting to update ruleset (attempt ${attempt}/${MAX_RETRIES})..."
+
+                                  # get current ruleset state
+                                  RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                      -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                      -H "Content-Type: application/json")
+
+                                  HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                                  RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                                  if [ "$HTTP_STATUS" -eq 200 ]; then
+                                      # get current ruleset version and prepare new rules
+                                      RULESET_VERSION=$(echo "$RESPONSE_BODY" | jq -r '.result.version')
+                                      NEW_RULES=$(echo "$RESPONSE_BODY" | jq -r --arg pr "PR #${PR_NUMBER}" '.result.rules | map(select(.description | contains($pr) | not))')
+
+                                      # try to update with version lock
+                                      RESPONSE=$(curl -s -w "\n%{http_code}" -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/rulesets/${RULESET_ID}" \
+                                          -H "If-Match: \"${RULESET_VERSION}\"" \
+                                          -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                                          -H "Content-Type: application/json" \
+                                          --data "$(jq -n --argjson rules "$NEW_RULES" '{"rules": $rules}')")
+
+                                      HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+                                      RESPONSE_BODY=$(echo "$RESPONSE" | sed \$d)
+
+                                      if [ "$HTTP_STATUS" -eq 200 ]; then
+                                          SUCCESS=$(echo "$RESPONSE_BODY" | jq -r '.success')
+                                          if [ "$SUCCESS" = "true" ]; then
+                                              echo "Successfully removed redirect rule for PR #${PR_NUMBER}."
+                                              echo "success=true" >> $GITHUB_OUTPUT
+                                              break 2 # exit both loops on success
+                                          fi
+                                      elif [ "$HTTP_STATUS" -eq 412 ] && [ "$attempt" -lt "$MAX_RETRIES" ]; then
+                                          echo "Version conflict detected. Retrying in 1 second..."
+                                          sleep 1
+                                          continue
+                                      else
+                                          if [ "$attempt" -eq "$MAX_RETRIES" ]; then
+                                              echo "Failed to update ruleset after $MAX_RETRIES attempts (HTTP ${HTTP_STATUS}):"
+                                              echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                                              exit 1
+                                          fi
+                                          echo "Request failed (HTTP ${HTTP_STATUS}). Retrying in 1 second..."
+                                          sleep 1
+                                      fi
+                                  else
+                                      echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                                      exit 1
+                                  fi
+                              done
+                          else
+                              echo "Failed to get ruleset (HTTP ${HTTP_STATUS}):"
+                              echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                              exit 1
+                          fi
+                      else
+                          echo "No PR preview ruleset found. Nothing to delete."
+                      fi
+                  else
+                      echo "Failed to list rulesets (HTTP ${HTTP_STATUS}):"
+                      echo "$RESPONSE_BODY" | jq '.' || echo "$RESPONSE_BODY"
+                      exit 1
+                  fi
+
+            - name: Delete Artifacts
+              uses: actions/github-script@v7
+              with:
+                  script: |
+                      const artifactName = `pr-${process.env.PR_NUMBER}-deploy-url`;
+                      console.log(`Looking for artifacts with name: ${artifactName}`);
+
+                      const artifacts = await github.rest.actions.listArtifactsForRepo({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo
+                      });
+
+                      const matchingArtifacts = artifacts.data.artifacts.filter(
+                        artifact => artifact.name === artifactName
+                      );
+
+                      if (matchingArtifacts.length === 0) {
+                        console.log('No matching artifacts found');
+                        return;
+                      }
+
+                      console.log(`Found ${matchingArtifacts.length} matching artifact(s)`);
+
+                      for (const artifact of matchingArtifacts) {
+                        try {
+                          console.log(`Deleting artifact ${artifact.id}`);
+                          await github.rest.actions.deleteArtifact({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            artifact_id: artifact.id
+                          });
+                          console.log(`Successfully deleted artifact ${artifact.id}`);
+                        } catch (error) {
+                          console.log(`Failed to delete artifact ${artifact.id}: ${error.message}`);
+                        }
+                      }
+
+    notify_success:
+        needs: cleanup_staging
+        if: needs.cleanup_staging.outputs.redirect_deleted == 'true'
+        runs-on: ubuntu-latest
+        env:
+            PR_NUMBER: ${{ github.event.pull_request.number }}
+        steps:
+            - name: Comment on PR
+              uses: actions/github-script@v7
+              with:
+                  script: |
+                      await github.rest.issues.createComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: context.issue.number,
+                        body: 'PR closed or merged. Staging URL has been deleted.'
+                      });

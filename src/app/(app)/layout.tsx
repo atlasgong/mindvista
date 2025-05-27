@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     // CHANGES MADE TO THIS COMPONENT MUST BE MIRRORED IN src/app/not-found.tsx.
-    // See https://github.com/atlasgong/mindvista/wiki/Miscellaneous#404-page-handling
+    // See https://github.com/MindVista/website/wiki/Miscellaneous#404-page-handling
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
