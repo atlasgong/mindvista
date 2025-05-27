@@ -94,6 +94,7 @@ jobs:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+            DATABASE_URL: ${{ needs.create_neon_branch.outputs.db_url_with_pooler }}
 
     create_redirect_url:
         name: Create Cloudflare Redirect URL
