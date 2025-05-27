@@ -1,0 +1,130 @@
+/* Container for the entire page */
+.container {
+    @apply mx-auto max-w-7xl px-6 pb-12 pt-20;
+}
+
+/* Main content wrapper */
+.mainContent {
+    @apply relative;
+}
+
+/* Section spacing */
+.section {
+    @apply mb-16;
+}
+
+/* Hero Section styles */
+.heroSection {
+    /* Additional adjustments if needed can be added here */
+}
+
+/* Wrapper for the hero image (group photo container) */
+.heroImageWrapper {
+    @apply relative mb-16 aspect-[16/9] w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300;
+}
+
+/* Hero image styling */
+.heroImage {
+    @apply h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105 group-hover:brightness-100;
+}
+
+/* Purple-to-blue overlay that appears on hover */
+.heroOverlay {
+    @apply absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+}
+
+/* Caption area at the bottom with dark background */
+.heroCaption {
+    @apply absolute bottom-0 left-0 right-0 bg-black/40 p-4 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+}
+
+/* Caption title text */
+.heroCaptionTitle {
+    @apply text-xl font-semibold;
+}
+
+/* Caption subtitle text */
+.heroCaptionSubtitle {
+    @apply text-sm;
+}
+
+/* Text content container for various sections */
+.textContent {
+    @apply space-y-4;
+}
+
+/* Page title styling */
+.title {
+    @apply mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-center text-3xl font-bold text-transparent md:text-4xl dark:from-purple-400 dark:to-blue-300;
+}
+
+/* Subtitle styling */
+.subtitle {
+    @apply text-base font-medium leading-relaxed text-cTextOffset;
+}
+
+/* ------------------- */
+/* Team Section Styles */
+/* ------------------- */
+
+/* Container for each team section */
+.teamSection {
+    @apply mb-16;
+}
+
+/* Team section title styling */
+.teamTitle {
+    @apply mb-8 text-center text-3xl font-bold text-cText;
+}
+
+/* Grid layout for team member cards */
+.teamGrid {
+    @apply flex flex-wrap justify-center gap-8;
+}
+
+/* Individual team card styling */
+.teamCard {
+    @apply flex w-full flex-col items-center rounded-xl bg-cBackgroundOffset p-6 text-center shadow-lg;
+}
+
+@media (min-width: 640px) {
+    .teamCard {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .teamCard {
+        width: calc(33.333% - 1rem);
+    }
+}
+
+/* Wrapper for the team member image */
+.teamImageWrapper {
+    @apply mb-4 h-40 w-40 overflow-hidden rounded-full;
+}
+
+/* Team member image styling */
+.teamImage {
+    @apply h-full w-full object-cover;
+}
+
+/* Container for team member information */
+.memberInfo {
+    @apply flex flex-col items-center;
+}
+
+/* Team member name styling */
+.memberName {
+    @apply text-xl font-semibold text-cText;
+}
+
+/* Team member pronouns styling */
+.memberPronouns {
+    @apply ml-1 text-sm italic text-cTextOffset;
+}
+
+/* Team member role styling */
+.memberRole {
+    @apply font-medium text-cTextOffset;
+}
