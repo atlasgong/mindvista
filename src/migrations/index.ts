@@ -1,5 +1,5 @@
 import * as migration_20250403_154007_remove_root from "./20250403_154007_remove_root";
-import * as migration_20250409_185348_versioning_drafts_events from "./20250409_185348_versioning_drafts_events";
+import * as migration_20250430_051055_sentinel from "./20250430_051055_sentinel";
 
 export const migrations = [
     {
@@ -8,8 +8,8 @@ export const migrations = [
         name: "20250403_154007_remove_root",
     },
     {
-        up: migration_20250409_185348_versioning_drafts_events.up,
-        down: migration_20250409_185348_versioning_drafts_events.down,
-        name: "20250409_185348_versioning_drafts_events",
+        up: migration_20250430_051055_sentinel.up,
+        down: migration_20250430_051055_sentinel.down,
+        name: "20250430_051055_sentinel",
     },
 ];

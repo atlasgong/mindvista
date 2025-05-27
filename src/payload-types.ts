@@ -78,6 +78,7 @@ export interface Config {
     'resource-tag-categories': ResourceTagCategory;
     'club-tags': ClubTag;
     'resource-tags': ResourceTag;
+    'audit-log': AuditLog;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -95,6 +96,7 @@ export interface Config {
     'resource-tag-categories': ResourceTagCategoriesSelect<false> | ResourceTagCategoriesSelect<true>;
     'club-tags': ClubTagsSelect<false> | ClubTagsSelect<true>;
     'resource-tags': ResourceTagsSelect<false> | ResourceTagsSelect<true>;
+    'audit-log': AuditLogSelect<false> | AuditLogSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -427,6 +429,21 @@ export interface ResourceTagCategory {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "audit-log".
+ */
+export interface AuditLog {
+  id: number;
+  timestamp: string;
+  operation: 'create' | 'read' | 'update' | 'delete';
+  resourceURL: string;
+  documentId: string;
+  previousVersionId?: string | null;
+  user?: (number | null) | User;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -475,6 +492,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'resource-tags';
         value: number | ResourceTag;
+      } | null)
+    | ({
+        relationTo: 'audit-log';
+        value: number | AuditLog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -721,6 +742,20 @@ export interface ClubTagsSelect<T extends boolean = true> {
 export interface ResourceTagsSelect<T extends boolean = true> {
   name?: T;
   category?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "audit-log_select".
+ */
+export interface AuditLogSelect<T extends boolean = true> {
+  timestamp?: T;
+  operation?: T;
+  resourceURL?: T;
+  documentId?: T;
+  previousVersionId?: T;
+  user?: T;
   updatedAt?: T;
   createdAt?: T;
 }
