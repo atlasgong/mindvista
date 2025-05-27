@@ -51,8 +51,10 @@ jobs:
               id: encode_db_url
               if: steps.create_neon_branch.outputs.db_url_with_pooler != ''
               run: |
-                  encoded_url=$(echo -n "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}" | base64)
-                  echo "encoded_url=${encoded_url}" >> $GITHUB_OUTPUT
+                  encoded_url=$(echo -n "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}" | base64 -w0)
+                  echo "encoded_url<<EOF" >> $GITHUB_OUTPUT
+                  echo "${encoded_url}" >> $GITHUB_OUTPUT
+                  echo "EOF" >> $GITHUB_OUTPUT
               shell: bash
 
             # The step above creates a new Neon branch.
