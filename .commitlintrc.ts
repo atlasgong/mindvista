@@ -11,6 +11,7 @@ const Configuration: UserConfig = {
         "subject-empty": [RuleConfigSeverity.Disabled],
         "header-min-length": [RuleConfigSeverity.Error, "always", 12],
         "header-max-length": [RuleConfigSeverity.Error, "always", 72],
+        "body-max-length": [RuleConfigSeverity.Disabled],
     },
     helpUrl: "https://github.com/MindVista/website/wiki/Commit-Guidelines",
     defaultIgnores: true,

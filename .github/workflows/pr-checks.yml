@@ -19,6 +19,7 @@ concurrency:
 
 jobs:
     validate_commits:
+        if: ${{ github.actor != 'dependabot[bot]' }}
         timeout-minutes: 3
         name: Validate Commits
         runs-on: ubuntu-latest
