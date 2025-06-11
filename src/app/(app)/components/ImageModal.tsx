@@ -16,7 +16,14 @@ export default function ImageModal({ url, altText, width = 1000, height = 1000, 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <div className={`relative cursor-pointer ${className}`} onClick={() => setIsModalOpen(true)}>
+        <div
+            className={`relative cursor-pointer ${className}`}
+            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                if ((e.target as HTMLElement).tagName === "IMG") {
+                    setIsModalOpen(true);
+                }
+            }}
+        >
             {/* Regular Image */}
             <Image src={url} alt={altText} width={width} height={height} className="mx-auto max-h-[40vh] min-h-[10vh] w-auto rounded-lg object-contain md:max-h-[50vh] lg:max-h-[60vh] xl:max-h-[70vh]" />
             <p className="mt-2 text-center text-sm text-cTextOffset md:px-[4vw] lg:px-[7vw]">{altText}</p>
