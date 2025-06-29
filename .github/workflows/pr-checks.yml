@@ -1,7 +1,7 @@
 name: PR Checks
 
 on:
-    pull_request:
+    pull_request_target:
         branches:
             - "**"
     workflow_dispatch: # allows manual triggering from GitHub UI
@@ -171,7 +171,7 @@ jobs:
                   else
                       # strip trailing newlines
                       FAILED_FILES_CLEAN=$(echo "$FAILED_FILES" | sed -e 's/[[:space:]]*$//')
-                      
+
                       echo "✗ The following files need formatting:"
                       echo "$FAILED_FILES_CLEAN"
                       echo
