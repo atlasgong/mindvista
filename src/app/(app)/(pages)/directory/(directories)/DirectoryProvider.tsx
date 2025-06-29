@@ -40,6 +40,8 @@ interface DirectoryProviderProps {
     children: React.ReactNode;
 }
 
+// TODO: use nextjs' native search params to handle filters (and search query?)
+// https://nextjs.org/docs/app/api-reference/functions/use-search-params
 export function DirectoryProvider({ children }: DirectoryProviderProps) {
     const pathname = usePathname();
     const isClubDirectory = pathname?.includes("/clubs");
