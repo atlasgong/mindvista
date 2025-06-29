@@ -1,12 +1,19 @@
 name: Create/Delete Branch for Pull Request
 
 on:
-    pull_request:
+    pull_request: # skips automatically for forks, requires manual triggering via workflow_dispatch
         types:
             - opened
             - reopened
             - synchronize
             - closed
+
+    workflow_dispatch: # manual triggering for external fork PRs
+        inputs:
+            pr_number:
+                description: "Pull Request Number"
+                required: true
+                type: number
 
 permissions:
     contents: write
@@ -36,10 +43,11 @@ jobs:
             db_host_pooled: ${{ steps.create_neon_branch.outputs.db_host_pooled }}
         needs: setup
         if: |
-            github.event_name == 'pull_request' && (
+            (github.event_name == 'pull_request' && (
             github.event.action == 'synchronize'
             || github.event.action == 'opened'
-            || github.event.action == 'reopened')
+            || github.event.action == 'reopened'))
+            || github.event_name == 'workflow_dispatch'
         runs-on: ubuntu-latest
         steps:
             - name: Create Neon Branch
@@ -47,7 +55,7 @@ jobs:
               uses: neondatabase/create-branch-action@v6
               with:
                   project_id: ${{ vars.NEON_PROJECT_ID }}
-                  branch_name: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
+                  branch_name: preview/pr-${{ github.event.pull_request.number || inputs.pr_number }}-${{ needs.setup.outputs.branch }}
                   api_key: ${{ secrets.NEON_API_KEY }}
 
     # The step above creates a new Neon branch.
@@ -89,8 +97,10 @@ jobs:
     deploy_preview:
         name: Deploy Preview to Vercel
         needs: create_neon_branch
-        if: success() && github.event.pull_request.head.repo.full_name == github.repository
+        if: success() && (github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'workflow_dispatch')
         uses: ./.github/workflows/deploy-preview.yml
+        with:
+            pr_number: ${{ github.event.pull_request.number || inputs.pr_number }}
         secrets:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -104,7 +114,7 @@ jobs:
         runs-on: ubuntu-latest
         env:
             DEPLOY_URL: ${{ needs.deploy_preview.outputs.url }}
-            PR_NUMBER: ${{ github.event.pull_request.number }}
+            PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
         steps:
             - uses: actions/checkout@v4
 
@@ -295,5 +305,5 @@ jobs:
               uses: neondatabase/delete-branch-action@v3
               with:
                   project_id: ${{ vars.NEON_PROJECT_ID }}
-                  branch: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
+                  branch: preview/pr-${{ github.event.pull_request.number || inputs.pr_number }}-${{ needs.setup.outputs.branch }}
                   api_key: ${{ secrets.NEON_API_KEY }}
