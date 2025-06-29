@@ -19,7 +19,7 @@ export default function ImageModal({ url, altText, width = 1000, height = 1000, 
         <div
             className={`relative cursor-pointer ${className}`}
             onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                if ((e.target as HTMLElement).tagName === "IMG") {
+                if (e.target instanceof HTMLImageElement) {
                     setIsModalOpen(true);
                 }
             }}
