@@ -26,7 +26,7 @@ const nextConfig = {
                 ? [
                       {
                           protocol: "https",
-                          hostname: "mindvista-[a-z0-9]{9}-agvq.vercel.app",
+                          hostname: "mindvista-[a-z0-9]{9}-mindvista-dev.vercel.app",
                           pathname: "/api/media/**",
                       },
                   ]
