@@ -1,8 +1,13 @@
 name: Deploy to Preview
 
 on:
-    # called by pr-checks.yml only if on base repository (skips for forks)
+    # called by neon.yml only if on base repository (skips for forks)
     workflow_call:
+        inputs:
+            pr_number:
+                description: "Pull Request Number"
+                required: false
+                type: number
         outputs:
             url:
                 description: "The deployment URL from Vercel"
@@ -16,13 +21,6 @@ on:
                 required: true
             DATABASE_URL:
                 required: true
-
-    workflow_dispatch: # manual triggering for external fork PRs
-        inputs:
-            pr_number:
-                description: "Pull Request Number"
-                required: true
-                type: number
 
 permissions:
     contents: read
