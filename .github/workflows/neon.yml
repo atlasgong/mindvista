@@ -94,6 +94,7 @@ jobs:
             VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+            VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
             DATABASE_URL: "postgres://${{ vars.NEON_DB_USER }}:${{ secrets.NEON_DB_PASSWORD }}@${{ needs.create_neon_branch.outputs.db_host_pooled }}/${{ vars.NEON_DB_NAME }}?sslmode=require"
 
     create_redirect_url:
